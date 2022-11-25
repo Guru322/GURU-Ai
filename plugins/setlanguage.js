@@ -12,7 +12,7 @@ let language = Object.keys(translate.languages).splice(1);
 		if (q == "default") db.splice(getPosition(msg.sender, db));
 		q == "default" ? "" : db.push({ jid: msg.sender, country: q });
 		writeFileSync("./language.json", Json.stringify(db));
-		await msg.reply(`Success change language to "${q == "default" ? "default" : translate.languages[q]}"`);
+		m.reply(`Success change language to "${q == "default" ? "default" : translate.languages[q]}"`);
 }
 handler.help = ['setlanguage'] 
 handler.tags = ['Tools']
