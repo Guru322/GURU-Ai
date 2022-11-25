@@ -482,7 +482,7 @@ export async function participantsUpdate({ id, participants, action }) {
                         ppgp = await this.profilePictureUrl(id, 'image')
                         } finally {
                         text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user').replace('@group', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'Desconocido') :
-                            (chat.sBye || this.bye || conn.bye || 'Adiós, @user')).replace('@user', '@' + user.split('@')[0])
+                            (chat.sBye || this.bye || conn.bye || 'HELLO, @user')).replace('@user', '@' + user.split('@')[0])
                          
                             let wel = API('fgmods', '/api/welcome', {
                                 username: await this.getName(user),
@@ -512,11 +512,11 @@ export async function participantsUpdate({ id, participants, action }) {
             break
         case 'promote':
         case 'promover':
-            text = (chat.sPromote || this.spromote || conn.spromote || '@user ahora es administrador')
+            text = (chat.sPromote || this.spromote || conn.spromote || '@user is now administrador')
         case 'demote':
         case 'degradar':
             if (!text)
-                text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ya no es administrador')
+                text = (chat.sDemote || this.sdemote || conn.sdemote || '@user not now an administrador')
             text = text.replace('@user', '@' + participants[0].split('@')[0])
             if (chat.detect)
                 this.sendMessage(id, { text, mentions: this.parseMention(text) })
