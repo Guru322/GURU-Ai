@@ -3,7 +3,7 @@ let handler = async (m, { conn }) => {
   let name = conn.getName(who)
   conn.sendFile(m.chat, global.API('https://some-random-api.ml', '/canvas/gay', {
     avatar: await conn.profilePictureUrl(who, 'image').catch(_ => './src/avatar_contact.png'), 
-  }), 'gay.png', `🏳️‍🌈  *Gay :* ${name}\n\nQuién quiere violar a este gay? `, m)
+  }), 'gay.png', `🏳️‍🌈  *Gay :* ${name}\n\nWho wants to rape this gay☠️? `, m)
 }
 
 handler.help = ['gay @user']
