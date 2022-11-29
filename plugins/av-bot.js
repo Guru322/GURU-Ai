@@ -2,9 +2,9 @@
 let handler = async (m, { conn}) => {
 
 let name = conn.getName(m.sender)
-let av = `./src/mp3/${pickRandom(["criss", "andrea"])}.mp3`
+let av = `./src/mp3/${pickRandom(["Guru", "Guru1", "Guru2", "Guru3", "Guru4"])}.mp3`
 
-conn.sendButton(m.chat, `Hallo *${name}* \n \nNeed help? \n`, igfg, null, [
+conn.sendButton(m.chat, `Hello *${name}* \n \nNeed help? \n`, igfg, null, [
       ['⦙☰ Menu', '/help'],
       ['⦙☰ Menu 2', '/menu2'],
       ['⌬ Groups', '/gpdylux']
