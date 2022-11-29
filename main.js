@@ -118,7 +118,7 @@ async function clearTmp() {
 }
 setInterval(async () => {
 	var a = await clearTmp()
-	console.log(chalk.cyan(`✅  Auto clear  | Se limpio la carpeta tmp`))
+	console.log(chalk.cyan(`✅  Auto clear  | The tmp folder was cleaned`))
 }, 60000) //1 munto
 
 async function connectionUpdate(update) {
