@@ -10,7 +10,7 @@ _📌Example : ${usedPrefix+command} normal_
 `.trim()
   let mode = args[0].toLowerCase()
   if (!(mode in modes)) throw `
-  🧮 Dificultades disponibles : 
+  🧮 available difficulties : 
   
  ${Object.keys(modes).join(' | ')}
 
