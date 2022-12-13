@@ -39,7 +39,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "github:fgmods/baileys",
+        "@adiwajshing/baileys":  "^4.4.0",
         "@bochilteam/scraper": "^3.0.0",
         "awesome-phonenumber": "^3.4.0",
         "axios": "^1.1.2",
