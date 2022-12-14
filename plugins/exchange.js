@@ -1,8 +1,8 @@
-const xpperexp = 350 
+const xpperexp = 1 
 let handler = async (m, { conn, command, args }) => {
   let count = command.replace(/^buy/i, '')
   amount = amount ? /all/i.test(amount) ? Math.floor(global.db.data.users[m.sender].diamond / xpperexp) : parseInt(amount) : args[0] ? parseInt(args[0]) : 1
-  amount = Math.max(1, amount)
+  amount = Math.max(350, amount)
   if (global.db.data.users[m.sender].exp >= xpperexp * amount) {
     global.db.data.users[m.sender].exp -= xpperexp * amount
     global.db.data.users[m.sender].exp += count
