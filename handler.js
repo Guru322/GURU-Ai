@@ -395,7 +395,7 @@ export async function handler(chatUpdate) {
                         }
                     }
                     if (m.diamond)
-                        m.reply(`Utilizaste *${+m.diamond}* 💎`)
+                        m.reply(`consumed *${+m.diamond}* 💎`)
                 }
                 break
             }
@@ -503,7 +503,7 @@ export async function participantsUpdate({ id, participants, action }) {
                             }, 'apikey')
                             // this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
                             this.sendButton(id, text, igfg, action === 'add' ? wel : lea, [
-                             [(action == 'add' ? '⦙☰ MENU' : 'BYE'), (action == 'add' ? '/help' : 'khajs')], 
+                             [(action == 'add' ? '⦙☰ MENU' : 'BYE'), (action == 'add' ? '/help' : '')], 
                              [(action == 'add' ? '⏍ INFO' : 'ッ'), (action == 'add' ? '/info' : ' ')] ], null, {mentions: [user]})
                           
                     }
