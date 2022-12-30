@@ -22,7 +22,7 @@ switch (type) {
           ['🎥 MP4', `${usedPrefix}xnxxdl ${v.link}`, `▢ 📌 *Títle* : ${v.title}`]
         ]])
 	})
-	return conn.sendList(m.chat, '  ≡ *XNXX DL*🔎', `\n 🔞 Result:\n *${text}*`, fgig, `Click here`, listSections, m)
+	return conn.sendList(m.chat, '  ≡ *XNXX DL*🔎', `\n 🔞 Result:\n *${text}*`, igfg , `Click here`, listSections, m)
 	} catch (e) {
     m.reply(`🔴 Error: invalid link`)
      }
