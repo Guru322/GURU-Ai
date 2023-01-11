@@ -4,7 +4,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 	
 	if (!text) throw `✳️ *Enter a song title*\n\n📌Example *${usedPrefix + command}* Lil Peep hate my life`
 	let vid = (await yts(text)).all[0]
-	if (!vid) throw `✳️ Vídeo/Audio no encontrado`
+	if (!vid) throw `✳️ Vídeo/Audio name only`
 	let { title, description, thumbnail, videoId, timestamp, views, ago, url } = vid
 	//const url = 'https://www.youtube.com/watch?v=' + videoId
 	m.react('🎧')
