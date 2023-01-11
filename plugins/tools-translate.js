@@ -1,14 +1,14 @@
 
 import translate from '@vitalets/google-translate-api'
-const defaultLang = 'es'
+const defaultLang = 'en'
 const tld = 'cn'
 
 let handler = async (m, { args, usedPrefix, command }) => {
     let err = `
 📌 *Example:*
 
-*${usedPrefix + command}* <idioma> [texto]
-*${usedPrefix + command}* es Hello World
+*${usedPrefix + command}* <id> [text]
+*${usedPrefix + command}* en Hello World
 
 ≡ *List of supported languages:* 
 
