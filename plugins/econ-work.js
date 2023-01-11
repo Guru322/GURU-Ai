@@ -4,7 +4,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
   let hasil = Math.floor(Math.random() * 2000)
   let time = global.db.data.users[m.sender].lastwork + 3600000
-  if (new Date - global.db.data.users[m.sender].lastwork < 3600000) throw `*🧘🏻‍♂️ Estas cansado* y por lo tanto hay que esperar *${msToTime(time - new Date())}* para volver a trabajar!`
+  if (new Date - global.db.data.users[m.sender].lastwork < 3600000) throw `*🧘🏻‍♂️ You are tired* and therefore you have to wait *${msToTime(time - new Date())}* to work again!`
 
     /*let w = await axios.get(global.API('fgmods', '/api/work', { }, 'apikey'))
     let res = w.data.result*/
@@ -19,7 +19,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 }
 handler.help = ['work']
 handler.tags = ['econ']
-handler.command = ['work', 'w', 'trabajar']
+handler.command = ['work', 'w', 'majduri']
 
 export default handler
 
@@ -33,7 +33,7 @@ function msToTime(duration) {
   minutes = (minutes < 10) ? "0" + minutes : minutes
   seconds = (seconds < 10) ? "0" + seconds : seconds
 
-  return minutes + " minuto(s) " + seconds + " segundo(s)" 
+  return minutes + " minut(s) " + seconds + " sec(s)" 
 }
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
