@@ -6,5 +6,5 @@
 
 
 
-<P HEROKU DEPLOY SOON>
+ <h3 HEROKU DEPLOY SOON </h3>
 
