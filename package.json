@@ -1,6 +1,6 @@
 { 
     "name": "GURU",
-    "version": "2.1.9",
+    "version": "0.0.1",
     "description": "Customizable WhatsApp Bot",
     "main": "index.js",
     "type": "module",
