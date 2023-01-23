@@ -4,12 +4,12 @@ import { fileURLToPath } from 'url'
 
 global.owner = [
   ['917605902011', 'GURU', true],
-  [''], 
+  ['32460248586'. 'Ash', true], 
   [''] 
 ] //Numeros de owner 
 
-global.mods = ['917605902011'] 
-global.prems = ['917605902011', '923258787253', '919398758484']
+global.mods = ['917605902011','32460248586'] 
+global.prems = ['917605902011', '32460248586', '919398758484']
 global.APIs = { // API Prefix
   // name: 'https://website'
   xteam: 'https://api.xteam.xyz', 
