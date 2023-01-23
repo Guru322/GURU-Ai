@@ -9,7 +9,7 @@ if (m.isBaileys && m.fromMe)
     
       if (!user.chatbot)
         return !0
-        let api = await fetch(`https://api.simsimi.net/v2/?text=${m.text}&lc=es`)
+        let api = await fetch(`https://api.simsimi.net/v2/?text=${m.text}&lc=en`)
         let res = await api.json()
         m.reply(res.success.replace('simsimi', 'GURU').replace('Simsimi', 'GURU').replace('sim simi', 'GURU'))
     
