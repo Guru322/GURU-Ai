@@ -38,7 +38,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!stiker) stiker = e
   } finally {
     if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, null, rpl)
-    else throw 'La conversión ha fallado, intenta enviar primero *imagen/video/gif* y then respond with the command'
+    else throw 'Conversion failed, try to send *image/video/gif* first and then respond with the command'
   }
 }
 handler.help = ['sticker']
