@@ -162,7 +162,7 @@ let m2 = `
 ▢ .ssweb <url> (ⓓ)
 ▢ .tourl
 ▢ .trad <leng> <text>
-▢ .tts <lang> <teks>
+▢ .tts <lang> <teXTSs>
 ▢ .wikipedia
 └───────────
 
@@ -222,7 +222,7 @@ let m2 = `
 Bot has more than 300 commands and i am lazy to write all
 `
 //const pp = await (await fetch('https://i.ibb.co/qMG1JPY/fg.jpg')).buffer()
-    let pp = './src/fg_logo.jpg' 
+    let pp = './Guru.jpg' 
     conn.sendButton(m.chat, m2, '▢ ᴳᵁᴿᵁ  ┃ ᴮᴼᵀ\n▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru69\n', pp, [
       ['⏍ Info', `${usedPrefix}botinfo`],
       ['⌬ Groups', `${usedPrefix}gpguru`]
