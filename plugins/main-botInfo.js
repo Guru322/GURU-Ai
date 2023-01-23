@@ -73,7 +73,7 @@ ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.m
 `
 conn.sendButton(m.chat, infobt, igfg, null, [
   ['ꨄ︎ donate', `${usedPrefix}donate`],
-   ['⌬ Groups', `${usedPrefix}gpdylux`]
+   ['⌬ Groups', `${usedPrefix}gpguru`]
  ], m)
 
 }
