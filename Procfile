@@ -1,1 +1,1 @@
-web: node . --server
+web: node . --server -- db 'Your Mongo URI'
