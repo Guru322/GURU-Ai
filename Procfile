@@ -1,1 +1,1 @@
-web: node . -- db 'mongodb+srv://guru:guru@cluster0.mrvw5rt.mongodb.net/?retryWrites=true&w=majority'
+web: node . -- db 'mongodb+srv://guru:guru@cluster0.khqdrpu.mongodb.net/?retryWrites=true&w=majority'
