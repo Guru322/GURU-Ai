@@ -3,5 +3,5 @@
 
 
 
- <h3 HEROKU DEPLOY SOON </h3>
+ <P> Easy and free deployment soon </p>
 
