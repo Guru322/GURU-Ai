@@ -63,7 +63,7 @@ How much you want to bet?
         
 ${end}`) 
 }
-handler.help = ['slot <apuesta>']
+handler.help = ['slot <bet amount>']
 handler.tags = ['game']
 handler.command = ['slot']
 
@@ -79,5 +79,5 @@ function msToTime(duration) {
     minutes = (minutes < 10) ? "0" + minutes : minutes
     seconds = (seconds < 10) ? "0" + seconds : seconds
 
-    return seconds + " Segundo(s)"
+    return seconds + " Seconds(s)"
 }
