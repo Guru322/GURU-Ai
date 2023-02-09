@@ -36,7 +36,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
 - Star ⭐ the repo if you like GURU-BOT.
 
-## BASE ORI BY [BochilGaming](https://github.com/BochilGaming/games-wabot/tree/multi-device)
+## BASE OG BY [BochilGaming](https://github.com/BochilGaming/games-wabot/tree/multi-device)
 
 
  **THANKS TO** |[here](https://github.com/Guru322/GURU-BOT/#thanks-to) | 
