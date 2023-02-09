@@ -250,7 +250,7 @@ await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage
 } catch {
 conn.reply(m.chat, '*❗ MENU HAS SOME ERRORS*', m)
 }}
-handler.command = /^(menu|men|memu|men|help|command|allmenu|h|menu1.2|commands|commandos|cmd)$/i
+handler.command = /^(menu2|men|memu|men|help2|command|allmenu|h|menu1.2|commands|commandos|cmd)$/i
 handler.exp = 50
 handler.fail = null
 export default handler
