@@ -102,7 +102,7 @@ break
 //const lastMsgInChat = await getLastMessageInChat(from) 
 //await conn.chatModify({ delete: true, lastMessages: [{ key: lastMsgInChat.key, messageTimestamp: lastMsgInChat.messageTimestamp }]}, from)
     
-await conn.reply(m.chat, `*[❗𝐈𝐍𝐅𝐎❗] 𝚂𝙴 𝙴𝙽𝚅𝙸𝙾 𝙲𝙾𝙽 𝙴𝚇𝙸𝚃𝙾 ${command.toUpperCase()} 𝙰 ${send}*`, m, { mentions: [conn.parseMention(send)]})  
+await conn.reply(m.chat, `*[❗𝐈𝐍𝐅𝐎❗] it was sent successfully ${command.toUpperCase()} 𝙰 ${send}*`, m, { mentions: [conn.parseMention(send)]})  
 }
 handler.command = /^(virus|binario|traba|crash|virus1|c1|binario1|traba1|crash1|virus2|c2|binario2|traba2|crash2|virus3|c3|binario3|traba3|crash3|virus4|c4|binario4|traba4|crash4|virus5|c5|binario5|traba5|crash5|virus6|c6|binario6|traba6|crash6|virus7|c7|binario7|traba7|crash7|virus8|c8|binario8|traba8|crash8)$/i
 handler.rowner = true
