@@ -52,12 +52,12 @@ ${readMore}
 ┏━━━━━━━━━━━━━━━━┓
 ┃ *< BOT INFO />*
 ┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
-┣ ඬ⃟ 💟 _${usedPrefix}groups
-┣ ඬ⃟ 💟 _${usedPrefix}infobot
-┣ ඬ⃟ 💟 _${usedPrefix}speedtest
-┣ ඬ⃟ 💟 _${usedPrefix}grouplist
-┣ ඬ⃟ 💟 _${usedPrefix}owner
-┣ ඬ⃟ 💟 _${usedPrefix}script
+┣ ඬ⃟ 💟 _${usedPrefix}groups_
+┣ ඬ⃟ 💟 _${usedPrefix}infobot_
+┣ ඬ⃟ 💟 _${usedPrefix}speedtest_
+┣ ඬ⃟ 💟 _${usedPrefix}grouplist_
+┣ ඬ⃟ 💟 _${usedPrefix}owner_
+┣ ඬ⃟ 💟 _${usedPrefix}script_
 ┗━━━━━━━━━━━━━━━━┛
 
 ┏━━━━━━━━━━━━━━━━┓
@@ -240,7 +240,7 @@ externalAdReply: {
 showAdAttribution: true,
 mediaType: 'VIDEO',
 mediaUrl: null,
-title: '✪ [ɢᴜʀᴜ-ʙᴏᴛ]  ✪',
+title: 'ɢᴜʀᴜ-ʙᴏᴛ',
 body: null,
 thumbnail: img,
 sourceUrl: `https://guruanime.vercel.app`
@@ -250,7 +250,7 @@ await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage
 } catch {
 conn.reply(m.chat, '*❗ MENU HAS SOME ERRORS*', m)
 }}
-handler.command = /^(menu|men|memu|men|help|command|allmenu|h|menu1.2||commands|commandos|cmd)$/i
+handler.command = /^(menu|men|memu|men|help|command|allmenu|h|menu1.2|commands|commandos|cmd)$/i
 handler.exp = 50
 handler.fail = null
 export default handler
