@@ -1,24 +1,11 @@
-
-
-import fetch from 'node-fetch'
-
+import { wallpaper, wallpaperv2 } from '@bochilteam/scraper'
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) throw `✳️ What wallpaper am I looking for??`
-  let res = await fetch(global.API('https://wall.alphacoders.com/api2.0','/get.php', {
-    auth: '3e7756c85df54b78f934a284c11abe4e',
-    method: 'search',
-    term: text
-  }))
-  if (!res.ok) throw await res.text()
-  let json = await res.json()
-  let img = json.wallpapers[Math.floor(Math.random() * json.wallpapers.length)]
-    
-  await conn.sendFile(m.chat, img.url_image, 'wallpaper', '✅ not great?', m)
-  
+if (!text) throw `*EXAMPLE USAGE ${usedPrefix + command} Minecraft*`
+const res = await (/2/.test(command) ? wallpaperv2 : wallpaper)(text)
+const img = res[Math.floor(Math.random() * res.length)]
+conn.sendFile(m.chat, img, 'error.jpg', `*𝚁𝙴𝚂𝚄𝙻𝚃 ${text}*`, m)
 }
-handler.help = ['wallpaper']
-handler.tags = ['img']
-handler.command = ['wallpaper', 'wallpapers', 'wp']
-handler.diamond = true
-
+handler.help = ['', '2'].map(v => 'wallpaper' + v + ' <query>')
+handler.tags = ['downloader']
+handler.command = /^(wallpaper2?)$/i
 export default handler
