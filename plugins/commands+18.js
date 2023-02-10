@@ -6,7 +6,7 @@ if (!global.db.data.chats[m.chat].nsfw) throw `🚫 group doesnt supprt nsfw \n\
     if (user < 17) throw m.reply(`❎ uneed to be atleast 18 years`)
 
 if (command == 'hloli') {
-let res = (await axios.get('https://raw.githubusercontent.com/Guru322/api/Guru/BOT-JSON/nsfwloli.json`)).data  
+let res = (await axios.get(`https://raw.githubusercontent.com/Guru322/api/Guru/BOT-JSON/nsfwloli.json`)).data  
 let haha = await res[Math.floor(res.length * Math.random())]  
 conn.sendButton(m.chat, `_${command}_`.trim(), author, haha, [['🔄 Smash? 🔄', `/${command}`]], m)}
   
