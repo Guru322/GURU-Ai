@@ -122,7 +122,7 @@ await conn.reply(m.chat, global.wait, m)
 conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['🔄 NEXT 🔄', `/${command}`]], fgif, { mentions: [who] })}
 
 }
-handler.command = ['wpmontaña', 'pubg', 'wpgaming', 'wpaesthetic', 'wprandom', 'coffee', 'pentol', 'caricatura', 'ciberespacio', 'technology', 'doraemon', 'hacker', 'planeta', 'randomprofile', 'wpaesthetic2', 'wpvehiculo', 'wallhp', 'wpmoto']
+handler.command = ['mountain', 'pubg', 'wpgaming', 'wpaesthetic', 'wprandom', 'coffee', 'pentol', 'cartoon', 'space', 'technology', 'doraemon', 'hacker', 'planet', 'randomprofile', 'wpaesthetic2', 'wpvehicle', 'wallhp', 'wpmoto']
 export default handler
 
 async function wallpaper(title, page = '1') {
