@@ -8,7 +8,6 @@ import { join } from 'path'
 let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text }) => {
 try {
 let vn = './src/mp3/Guru.mp3'
-let pp = imagen4
 let img = await(await fetch('https://cdn.jsdelivr.net/gh/Guru322/api@Guru/guru.jpg')).buffer()
 let d = new Date(new Date + 3600000)
 let locale = 'en'
@@ -16,9 +15,9 @@ let week = d.toLocaleDateString(locale, { weekday: 'long' })
 let date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })
 let _uptime = process.uptime() * 1000
 let uptime = clockString(_uptime)
-let user = global.db.data.users[m.sender]
+let name = await conn.getName(m.sender)
 let { money, joincount } = global.db.data.users[m.sender]
-let { exp, limit, level, role } = global.db.data.users[m.sender]
+let { exp, diamond, level, role } = global.db.data.users[m.sender]
 let { min, xp, max } = xpRange(level, global.multiplier)
 let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length 
 let more = String.fromCharCode(8206)
@@ -28,25 +27,24 @@ let str = `
 ╭═══〘 ✯✯✯✯✯✯✯ 〙══╮
 ║    *ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ* 
 ║≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡║
-║➤ *Hii, ${taguser}*
+║➤ *Hii, %name*
 ║≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡║
 ║➤ *Creater:* Guru
 ║➤ *Number:* wa.me/917605902011
 ║➤ *Bot ofc:* wa.me/19048885690
 ║➤ *Insta:* asli_guru69
-║➤ *Date:* ${date}
-║➤ *Runtime:* ${uptime}
-║➤ *Total users:* ${rtotalreg}
+║➤ *Date: %date*  
+║➤ *Runtime: %muptime*
+║➤ *Total users:* %rtotalreg
 ╰═══╡✯✯✯✯✯✯✯╞═══╯
 
 ┏━━━━━━━━━━━━━━━━┓
 ┃ *< USER INFO />*
 ┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
-┣ *🎖️ Level:* ${level}
-┣ *🧰 Experience:* ${exp}
-┣ *⚓ Rank:* ${role}
-┣ *💎 Diamonds:* ${limit}
-┣ *🎟️ Premium:* ${user.premiumTime > 0 ? '✅' : '❌'}
+┣ *🎖️ Level:* %level
+┣ *🧰 Experience:* %exp
+┣ *⚓ Rank:* %role
+┣ *💎 Diamonds:* %limit
 ┗━━━━━━━━━━━━━━━━┛
 ${readMore}
 ┏━━━━━━━━━━━━━━━━┓
@@ -242,11 +240,11 @@ mediaType: 'VIDEO',
 mediaUrl: null,
 title: 'ɢᴜʀᴜ-ʙᴏᴛ',
 body: null,
-thumbnail: img,
+thumbnail: pp,
 sourceUrl: `https://guruanime.vercel.app`
 }}}
 conn.sendMessage(m.chat, buttonMessage, { quoted: m })
-await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
+//await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
 } catch {
 conn.reply(m.chat, '*❗ MENU HAS SOME ERRORS*', m)
 }}
