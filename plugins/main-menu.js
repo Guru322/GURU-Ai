@@ -8,6 +8,7 @@ import { join } from 'path'
 let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text }) => {
 try {
 let vn = './src/mp3/Guru.mp3'
+let pp = './Guru.mp3'
 let img = await(await fetch('https://cdn.jsdelivr.net/gh/Guru322/api@Guru/guru.jpg')).buffer()
 let d = new Date(new Date + 3600000)
 let locale = 'en'
@@ -229,7 +230,7 @@ let buttonMessage = {
 image: pp,
 caption: str.trim(),
 mentions: [m.sender],
-footer: `*${wm}*`,
+footer: `*GURU*`,
 buttons: buttons,
 headerType: 4,
 contextInfo: {
