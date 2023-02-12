@@ -3,7 +3,8 @@ import fetch from 'node-fetch'
 const { prepareWAMessageMedia, proto, generateWAMessageFromContent, getLastMessageInChat } = (await import('@adiwajshing/baileys')).default
 
 let handler  = async (m, { conn, args, text, command, usedPrefix, participants }) => {
-    
+
+let imagen4 = './Guru.jpg'
 let from 
 if (text) from = `${text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'}`;
 if (!text) from = `${m.chat}`;
