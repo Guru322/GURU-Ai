@@ -1,5 +1,5 @@
 // created by Guru , provided for free , valentine gift for single londo
-
+import fetch from 'node-fetch'
 import axios from "axios"
 let handler = async (m, { conn, usedPrefix, command }) => {
 	
@@ -7,7 +7,6 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let user = global.db.data.users[m.sender].age
     if (user < 17) throw m.reply(`❎ uneed to be atleast 18 years`) 
    
-m.react(rwait)
 let type = (command).toLowerCase()
 let apikey = global.keysxxx
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
@@ -47,18 +46,9 @@ conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp
 
 }
 handler.command = ['schoolswimsuit', 'swimsuit', 'nipple', 'genshin', 'spreadpussy']
+handler.diamond = true
+handler.register = true
+handler.group = true
+
 export default handler
 
-async function wallpaper(title, page = '1') {
-return new Promise((resolve, reject) => {
-axios.get(`https://www.besthdwallpaper.com/search?CurrentPage=${page}&q=${title}`).then(({ data }) => {
-let $ = cheerio.load(data)
-let hasil = []
-$('div.grid-item').each(function (a, b) {
-hasil.push({
-title: $(b).find('div.info > a > h3').text(),
-type: $(b).find('div.info > a:nth-child(2)').text(),
-source: 'https://www.besthdwallpaper.com/'+$(b).find('div > a:nth-child(3)').attr('href'),
-image: [$(b).find('picture > img').attr('data-src') || $(b).find('picture > img').attr('src'), $(b).find('picture > source:nth-child(1)').attr('srcset'), $(b).find('picture > source:nth-child(2)').attr('srcset')]
-})})
-resolve(hasil)})})}
