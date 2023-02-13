@@ -7,48 +7,49 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let user = global.db.data.users[m.sender].age
     if (user < 17) throw m.reply(`❎ uneed to be atleast 18 years`) 
    
-let type = (command).toLowerCase()
-let apikey = global.keysxxx
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let name = await conn.getName[who]
-let fgif = m
+    m.react(rwait)
+    let type = (command).toLowerCase()
+    
+    switch (type) {
 
     
-if (command == 'schoolswimsuit') {
-let haha = await conn.getFile(`https://fantox-apis.vercel.app/schoolswimsuit`)
-await conn.reply(m.chat, global.wait, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['🔄 NEXT 🔄', `/${command}`]], fgif, { mentions: [who] })}
-  
-if (command == 'spreadpussy') {
-let haha = await conn.getFile(`https://fantox-apis.vercel.app/spreadpussy`)
-await conn.reply(m.chat, global.wait, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['🔄 NEXT 🔄', `/${command}`]], fgif, { mentions: [who] })}
+case 'sswimsuit':
+ let img = await conn.getFile(`https://fantox-apis.vercel.app/schoolswimsuit`)
+	     conn.sendButton(m.chat, `✅ Result 🤭\n Random *${command}*`, fgyt, img.data, [['▷▷ NEXT', `${usedPrefix + command}`]], m)
+         m.react(xmoji) 
+         break
 
-if (command == 'swimsuit') {
-let haha = await conn.getFile(`https://fantox-apis.vercel.app/swimsuit`)
-await conn.reply(m.chat, global.wait, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['🔄 NEXT 🔄', `/${command}`]], fgif, { mentions: [who] })}
+ case 'underwear':
+let im = await conn.getFile(`https://fantox-apis.vercel.app/underwear`)
+conn.sendButton(m.chat, `✅ Result 🤭\n Random *${command}*`, fgyt, im.data, [['▷▷ NEXT', `${usedPrefix + command}`]], m)
+ m.react(xmoji) 
+break
 
-if (command == 'genshin') {
-let haha = await conn.getFile(`https://fantox-apis.vercel.app/genshin`)
-await conn.reply(m.chat, global.wait, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['🔄 NEXT 🔄', `/${command}`]], fgif, { mentions: [who] })}
+case 'swimsuit':
+ let imgi = await conn.getFile(`https://fantox-apis.vercel.app/swimsuit`)
+	     conn.sendButton(m.chat, `✅ Result 🤭\n Random *${command}*`, fgyt, imgi.data, [['▷▷ NEXT', `${usedPrefix + command}`]], m)
+         m.react(xmoji) 
+         break
+case 'nipple':
+let mg = await conn.getFile(`https://fantox-apis.vercel.app/nipple`)
+        conn.sendButton(m.chat, `✅ Result 🤭\n Random *${command}*`, fgyt, mg.data, [['▷▷ NEXT', `${usedPrefix + command}`]], m)
+        m.react(xmoji) 
+            break
 
-if (command == 'underwear') {
-let haha = await conn.getFile(`https://fantox-apis.vercel.app/underwear`)
-await conn.reply(m.chat, global.wait, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['🔄 NEXT 🔄', `/${command}`]], fgif, { mentions: [who] })}
+case 'genshin':
+    let tg = await conn.getFile(`https://fantox-apis.vercel.app/genshin`)
+         conn.sendButton(m.chat, `✅ Result 🤭\n Random *${command}*`, fgyt, tg.data, [['▷▷ NEXT', `${usedPrefix + command}`]], m)
+            m.react(xmoji) 
+             break
 
-if (command == 'nipple') {
-let haha = await conn.getFile(`https://fantox-apis.vercel.app/nipples`)
-await conn.reply(m.chat, global.wait, m)
-conn.sendButton(m.chat, `_${command}_`.trim(), `*◈•@${who.split("@s.whatsapp.net")[0]}*`, haha.data, [['🔄 NEXT 🔄', `/${command}`]], fgif, { mentions: [who] })}
-
-}
-handler.command = ['schoolswimsuit', 'swimsuit', 'nipple', 'genshin', 'spreadpussy']
-handler.diamond = true
-handler.register = true
-handler.group = true
-
-export default handler
-
+             default:
+            }
+           }
+           handler.help = ['swimsuit', 'nipple', 'sswimsuit', 'underwear', 'genshin']
+           handler.tags = ['nsfw']
+           handler.command = /^(swimsuit|nipple|schoolswimsuit|underwear|genshin)$/i
+           handler.diamond = true
+           handler.register = true
+           handler.group = true
+           
+           export default handler
