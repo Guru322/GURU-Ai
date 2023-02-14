@@ -26,16 +26,16 @@
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/Guru322/GURU-BOT-V1",
+    "homepage": "https://github.com/Guru322/GURU-BOT",
     "author": {
         "name": "GURU"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Guru322/GURU-BOT-V1.git"
+        "url": "git+https://github.com/Guru322/GURU-BOT.git"
     },
     "bugs": {
-        "url": "https://github.com/Guru322/GURU-BOT-V1/issues"
+        "url": "https://github.com/Guru322/GURU-BOT/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
