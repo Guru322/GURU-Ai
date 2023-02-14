@@ -32,24 +32,4 @@ case 'swimsuit':
          break
 case 'nipple':
 let mg = await conn.getFile(`https://fantox-apis.vercel.app/nipple`)
-        conn.sendButton(m.chat, `✅ Result 🤭\n Random *${command}*`, fgyt, mg.data, [['▷▷ NEXT', `${usedPrefix + command}`]], m)
-        m.react(xmoji) 
-            break
-
-case 'genshin':
-    let tg = await conn.getFile(`https://fantox-apis.vercel.app/genshin`)
-         conn.sendButton(m.chat, `✅ Result 🤭\n Random *${command}*`, fgyt, tg.data, [['▷▷ NEXT', `${usedPrefix + command}`]], m)
-            m.react(xmoji) 
-             break
-
-             default:
-            }
-           }
-           handler.help = ['swimsuit', 'nipple', 'sswimsuit', 'underwear', 'genshin']
-           handler.tags = ['nsfw']
-           handler.command = /^(swimsuit|nipple|schoolswimsuit|underwear|genshin)$/i
-           handler.diamond = true
-           handler.register = true
-           handler.group = true
-           
-           export default handler
+        conn.sendButton(m.chat, `✅ Result 🤭\n Random *${command}*`, fgyt
