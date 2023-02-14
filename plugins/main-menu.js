@@ -1,70 +1,58 @@
-import fs from 'fs'
 import fetch from 'node-fetch'
+import fs from 'fs'
 import { xpRange } from '../lib/levelling.js'
 const { levelling } = '../lib/levelling.js'
 import PhoneNumber from 'awesome-phonenumber'
 import { promises } from 'fs'
 import { join } from 'path'
+
 let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text }) => {
-try {
-let vn = './src/mp3/Guru.mp3'
-let pp = './Guru.jpg'
-let img = await(await fetch('https://cdn.jsdelivr.net/gh/Guru322/api@Guru/guru.jpg')).buffer()
-let d = new Date(new Date + 3600000)
-let locale = 'en'
-let week = d.toLocaleDateString(locale, { weekday: 'long' })
-let date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })
-let _uptime = process.uptime() * 1000
-let uptime = clockString(_uptime)
-let name = await conn.getName(m.sender)
-let { money, joincount } = global.db.data.users[m.sender]
-let { exp, diamond, level, role } = global.db.data.users[m.sender]
-let { min, xp, max } = xpRange(level, global.multiplier)
-let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length 
-let more = String.fromCharCode(8206)
-let readMore = more.repeat(850)   
-let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
-let str = `
+    let user = global.db.data.users[m.sender] 
+    let name = await conn.getName(m.sender)
+    let { money, joincount } = global.db.data.users[m.sender]
+    let { exp, diamond, level, role } = global.db.data.users[m.sender]
+    let { min, xp, max } = xpRange(level, global.multiplier)
+    let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length 
+    let more = String.fromCharCode(8206)
+    let readMore = more.repeat(850)   
+    let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
+let m2 = `
 ╭═══〘 ✯✯✯✯✯✯✯ 〙══╮
 ║    *ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ* 
 ║≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡║
-║➤ *Hii, %name*
+║➤ *𝗛ii, ${taguser}* 
 ║≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡║
 ║➤ *Creater:* Guru
 ║➤ *Number:* wa.me/917605902011
-║➤ *Bot ofc:* wa.me/19048885690
+║➤ *Bot ofc:* wa.me/19048880099
 ║➤ *Insta:* asli_guru69
-║➤ *Date: %date*  
-║➤ *Runtime: %muptime*
-║➤ *Total users:* %rtotalreg
+║➤ *Total Users:* ${rtotalreg}
 ╰═══╡✯✯✯✯✯✯✯╞═══╯
-
 ┏━━━━━━━━━━━━━━━━┓
 ┃ *< USER INFO />*
 ┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
-┣ *🎖️ Level:* %level
-┣ *🧰 Experience:* %exp
-┣ *⚓ Rank:* %role
-┣ *💎 Diamonds:* %limit
+┣ *🎖️ level:* ${level}
+┣ *🧰 Experience:* ${exp}
+┣ *⚓ Rank:* ${role}
+┣ *💎 Diamonds:* ${diamond}
+┣ *🎟️ Premium:* ${user.premium = 'true' ? '✅' : '❌'}
 ┗━━━━━━━━━━━━━━━━┛
 ${readMore}
-┏━━━━━━━━━━━━━━━━┓
-┃ *< BOT INFO />*
-┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
-┣ ඬ⃟ 💟 _${usedPrefix}groups_
-┣ ඬ⃟ 💟 _${usedPrefix}infobot_
-┣ ඬ⃟ 💟 _${usedPrefix}speedtest_
-┣ ඬ⃟ 💟 _${usedPrefix}grouplist_
-┣ ඬ⃟ 💟 _${usedPrefix}owner_
-┣ ඬ⃟ 💟 _${usedPrefix}script_
-┗━━━━━━━━━━━━━━━━┛
 
+┏━━━━━━━━━━━━━━━━┓
+┃  *< MAIN />*
+┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
+┣  💟 groups
+┣  💟 infobot
+┣  💟 speedtest
+┣  💟 grouplist
+┣  💟 owner
+┣  💟 script
+┗━━━━━━━━━━━━━━━━┛
 ┏━━━━━━━━━━━━━━━━┓
 ┃ *< GROUPS />* 
 ┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
 ┣ ඬ⃟ 💎 _${usedPrefix}kick *<@tag>*_
-┣ ඬ⃟ 💎 _${usedPrefix}grupo *<abrir / cerrar>*_
-┣ ඬ⃟ 💎 _${usedPrefix}grouptime *<opcion> <tiempo>*_
 ┣ ඬ⃟ 💎 _${usedPrefix}promote *<@tag>*_
 ┣ ඬ⃟ 💎 _${usedPrefix}demote *<@tag>*_
 ┣ ඬ⃟ 💎 _${usedPrefix}demote *<@tag>*_
@@ -85,7 +73,6 @@ ${readMore}
 ┣ ඬ⃟ 💎 _${usedPrefix}listwarn_
 ┣ ඬ⃟ 💎 _${usedPrefix}setpp *<image>*_
 ┗━━━━━━━━━━━━━━━━┛
-
 ┏━━━━━━━━━━━━━━━━┓
 ┃ *< ECONOMY />*
 ┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
@@ -102,16 +89,15 @@ ${readMore}
 ┣ ඬ⃟ 💵 _${usedPrefix}buyall_
 ┣ ඬ⃟ 💵 _${usedPrefix}register_
 ┣ ඬ⃟ 💵 _${usedPrefix}rob <@tag>*_
-┣ ඬ⃟ 💵 _${usedPrefix}transfer *<tipo> <cantidad> <@tag>*_
-┣ ඬ⃟ 💵 _${usedPrefix}unreg *<seriel num>*_
+┣ ඬ⃟ 💵 _${usedPrefix}transfer *<type> <amount> <@tag>*_
+┣ ඬ⃟ 💵 _${usedPrefix}ureg*<seriel num>*_
 ┗━━━━━━━━━━━━━━━━┛
-
 ┏━━━━━━━━━━━━━━━━┓
 ┃ *< OWNER />*
 ┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
-┣ ඬ⃟ 👑 > *<funcion>*
-┣ ඬ⃟ 👑 => *<funcion>*
-┣ ඬ⃟ 👑 $ *<funcion>*
+┣ ඬ⃟ 👑 > *<function>*
+┣ ඬ⃟ 👑 => *<function>*
+┣ ඬ⃟ 👑 $ *<function>*
 ┣ ඬ⃟ 👑 _${usedPrefix}setprefix *<prefix>*_
 ┣ ඬ⃟ 👑 _${usedPrefix}resetprefix_
 ┣ ඬ⃟ 👑 _${usedPrefix}autoadmin_
@@ -136,11 +122,6 @@ ${readMore}
 ┣ ඬ⃟ 👑 _${usedPrefix}unbanuser *<@tag>*_
 ┣ ඬ⃟ 👑 _${usedPrefix}banuser *<@tag>*_
 ┣ ඬ⃟ 👑 _${usedPrefix}bc *<text>*_
-┣ ඬ⃟ 👑 _${usedPrefix}bcchats *<text>*_
-┣ ඬ⃟ 👑 _${usedPrefix}bcgc *<text>*_
-┣ ඬ⃟ 👑 _${usedPrefix}bcgc2 *<audio>*_
-┣ ඬ⃟ 👑 _${usedPrefix}bcgc2 *<video>*_
-┣ ඬ⃟ 👑 _${usedPrefix}bcgc2 *<image>*_
 ┣ ඬ⃟ 👑 _${usedPrefix}bcbot *<text>*_
 ┣ ඬ⃟ 👑 _${usedPrefix}cleartpm_
 ┣ ඬ⃟ 👑 _${usedPrefix}restart_
@@ -152,9 +133,7 @@ ${readMore}
 ┣ ඬ⃟ 👑 _${usedPrefix}listcmd_
 ┣ ඬ⃟ 👑 _${usedPrefix}setppbot *<respondr a image>*_
 ┣ ඬ⃟ 👑 _${usedPrefix}addcmd *<texto> <respond a sticker/image>*_
-┣ ඬ⃟ 👑 _${usedPrefix}delcmd *<respond a sticker/imagen con comando o texto asignado>*_
 ┗━━━━━━━━━━━━━━━━┛
-
 ┏━━━━━━━━━━━━━━━━┓
 ┃ *< DOWNLOADER />*
 ┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
@@ -173,24 +152,18 @@ ${readMore}
 ┣ ඬ⃟ 📥 _${usedPrefix}ytmp3doc *< link / url>*_
 ┣ ඬ⃟ 📥 _${usedPrefix}ytmp4doc *< link / url>*_
 ┣ ඬ⃟ 📥 _${usedPrefix}play *<text>*_
-┣ ඬ⃟ 📥 _${usedPrefix}playdoc *<text>*_
-┣ ඬ⃟ 📥 _${usedPrefix}playlist *<text>*_
 ┣ ඬ⃟ 📥 _${usedPrefix}spotify *<text>*_
 ┗━━━━━━━━━━━━━━━━┛
-
 ┏━━━━━━━━━━━━━━━━┓
 ┃ *< NSFW />*
 ┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
-┣ ඬ⃟ 🔞 _${usedPrefix}pack_
-┣ ඬ⃟ 🔞 _${usedPrefix}pack2_
-┣ ඬ⃟ 🔞 _${usedPrefix}pack3_
 ┣ ඬ⃟ 🔞 _${usedPrefix}videoxxx_
 ┣ ඬ⃟ 🔞 _${usedPrefix}videolesbixxx_
 ┣ ඬ⃟ 🔞 _${usedPrefix}tit_
 ┣ ඬ⃟ 🔞 _${usedPrefix}booty_
 ┣ ඬ⃟ 🔞 _${usedPrefix}ecchi_
 ┣ ඬ⃟ 🔞 _${usedPrefix}furro_
-┣ ඬ⃟ 🔞 _${usedPrefix}imagenlesbians_
+┣ ඬ⃟ 🔞 _${usedPrefix}lesbians_
 ┣ ඬ⃟ 🔞 _${usedPrefix}panties_
 ┣ ඬ⃟ 🔞 _${usedPrefix}penis_
 ┣ ඬ⃟ 🔞 _${usedPrefix}porn_
@@ -202,59 +175,85 @@ ${readMore}
 ┣ ඬ⃟ 🔞 _${usedPrefix}yuri2_
 ┣ ඬ⃟ 🔞 _${usedPrefix}trap_
 ┣ ඬ⃟ 🔞 _${usedPrefix}hentai_
-┣ ඬ⃟ 🔞 _${usedPrefix}nsfwloli_
-┣ ඬ⃟ 🔞 _${usedPrefix}nsfworgy_
-┣ ඬ⃟ 🔞 _${usedPrefix}nsfwfoot_
-┣ ඬ⃟ 🔞 _${usedPrefix}nsfwass_
-┣ ඬ⃟ 🔞 _${usedPrefix}nsfwbdsm_
-┣ ඬ⃟ 🔞 _${usedPrefix}nsfwcum_
-┣ ඬ⃟ 🔞 _${usedPrefix}nsfwero_
-┣ ඬ⃟ 🔞 _${usedPrefix}nsfwfemdom_
-┣ ඬ⃟ 🔞 _${usedPrefix}nsfwglass_
-┣ ඬ⃟ 🔞 _${usedPrefix}hentaipdf *<text>*_
+┣ ඬ⃟ 🔞 _${usedPrefix}hloli_
+┣ ඬ⃟ 🔞 _${usedPrefix}orgy_
+┣ ඬ⃟ 🔞 _${usedPrefix}foot_
+┣ ඬ⃟ 🔞 _${usedPrefix}hass_
+┣ ඬ⃟ 🔞 _${usedPrefix}bdsm_
+┣ ඬ⃟ 🔞 _${usedPrefix}cum_
+┣ ඬ⃟ 🔞 _${usedPrefix}ero_
+┣ ඬ⃟ 🔞 _${usedPrefix}femdom_
+┣ ඬ⃟ 🔞 _${usedPrefix}glass_
+┣ ඬ⃟ 🔞 _${usedPrefix}hentai*_
+┣ ඬ⃟ 🔞 _${usedPrefix}underwear_
+┣ ඬ⃟ 🔞 _${usedPrefix}spussy_
+┣ ඬ⃟ 🔞 _${usedPrefix}bunnygirl_
+┣ ඬ⃟ 🔞 _${usedPrefix}bunnyear_
+┣ ඬ⃟ 🔞 _${usedPrefix}sswimsuit_
+┣ ඬ⃟ 🔞 _${usedPrefix}chain_
+┣ ඬ⃟ 🔞 _${usedPrefix}genshin_
+┣ ඬ⃟ 🔞 _${usedPrefix}white_
+┣ ඬ⃟ 🔞 _${usedPrefix}barefoot_
+┣ ඬ⃟ 🔞 _${usedPrefix}whitehair_
+┣ ඬ⃟ 🔞 _${usedPrefix}touhou_
+┣ ඬ⃟ 🔞 _${usedPrefix}holo_
+┣ ඬ⃟ 🔞 _${usedPrefix}gamecg_
+┣ ඬ⃟ 🔞 _${usedPrefix}uncensored_
+┣ ඬ⃟ 🔞 _${usedPrefix}sunglass_
+┣ ඬ⃟ 🔞 _${usedPrefix}glass_
+┣ ඬ⃟ 🔞 _${usedPrefix}demon_
+┣ ඬ⃟ 🔞 _${usedPrefix}bondage_
+┣ ඬ⃟ 🔞 _${usedPrefix}torn cloth_
+┣ ඬ⃟ 🔞 _${usedPrefix}fingering_
+┣ ඬ⃟ 🔞 _${usedPrefix}gun_
+┣ ඬ⃟ 🔞 _${usedPrefix}vampire_
+┣ ඬ⃟ 🔞 _${usedPrefix}idol_
+┣ ඬ⃟ 🔞 _${usedPrefix}beach_
+┣ ඬ⃟ 🔞 _${usedPrefix}bra_
+┣ ඬ⃟ 🔞 _${usedPrefix}topless_
+┣ ඬ⃟ 🔞 _${usedPrefix}stokings_
+┣ ඬ⃟ 🔞 _${usedPrefix}shorts_
+┣ ඬ⃟ 🔞 _${usedPrefix}anus_
+┣ ඬ⃟ 🔞 _${usedPrefix}tie_
+┣ ඬ⃟ 🔞 _${usedPrefix}headphone_
+┣ ඬ⃟ 🔞 _${usedPrefix}pantypull_
+┣ ඬ⃟ 🔞 _${usedPrefix}wet_
+┣ ඬ⃟ 🔞 _${usedPrefix}breast_
+┣ ඬ⃟ 🔞 _${usedPrefix}twintail_
+┣ ඬ⃟ 🔞 _${usedPrefix}sex_
+┣ ඬ⃟ 🔞 _${usedPrefix}sex2_
+┣ ඬ⃟ 🔞 _${usedPrefix}sex3_
+┣ ඬ⃟ 🔞 _${usedPrefix}skirt_
+┣ ඬ⃟ 🔞 _${usedPrefix}uniform_
+┣ ඬ⃟ 🔞 _${usedPrefix}foxgirl_
+┣ ඬ⃟ 🔞 _${usedPrefix}ponytail_
+┣ ඬ⃟ 🔞 _${usedPrefix}nude_
+┣ ඬ⃟ 🔞 _${usedPrefix}bed_
+┣ ඬ⃟ 🔞 _${usedPrefix}pinkhair_
+┣ ඬ⃟ 🔞 _${usedPrefix}bikini_
+┣ ඬ⃟ 🔞 _${usedPrefix}nobra_
+┣ ඬ⃟ 🔞 _${usedPrefix}maid_
 ┗━━━━━━━━━━━━━━━━┛
-
 ┏━━━━━━━━━━━━━━━━┓
 ┃ *< NOTE />*
 ┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
 ┣ soon adding more
 ┣ sticker cmds are
-┣ there some logo
-┣ maker
+┣ there For logo
+┣ makers type 
+┣ _${usedPrefix}logo_
 ┗━━━━━━━━━━━━━━━━┛
-`.trim()
-let buttons = [
-{ buttonId: '#gpguru', buttonText: { displayText: '📮 GROUPS 📮' }, type: 1 },
-{ buttonId: '#infobot', buttonText: { displayText: '🐾 INFOBOT 🐾' }, type: 1 }]
-let buttonMessage = {
-image: pp,
-caption: str.trim(),
-mentions: [m.sender],
-footer: `*GURU*`,
-buttons: buttons,
-headerType: 4,
-contextInfo: {
-mentionedJid: [m.sender],
-externalAdReply: {
-showAdAttribution: true,
-mediaType: 'VIDEO',
-mediaUrl: null,
-title: 'ɢᴜʀᴜ-ʙᴏᴛ',
-body: null,
-thumbnail: pp,
-sourceUrl: `https://guruanime.vercel.app`
-}}}
-conn.sendMessage(m.chat, buttonMessage, { quoted: m })
-//await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
-} catch {
-conn.reply(m.chat, '*❗ MENU HAS SOME ERRORS*', m)
-}}
-handler.command = /^(menu2|men|memu|men|help2|command|allmenu|h|menu1.2|commands|commandos|cmd)$/i
-handler.exp = 50
-handler.fail = null
+`
+let pp = './Guru.jpg' 
+    conn.sendButton(m.chat, m2, '▢ ᴳᵁᴿᵁ  ┃ ᴮᴼᵀ\n▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru69\n', pp, 
+      ['⌬ Groups', `${usedPrefix}gpguru`]
+    ,m, rpyt)
+    //await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
+   
+}
+
+handler.help = ['audios']
+handler.tags = ['main']
+handler.command = ['menu', 'help', 'h'] 
+
 export default handler
-function clockString(ms) {
-let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
-let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')}
