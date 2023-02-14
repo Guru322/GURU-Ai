@@ -59,13 +59,13 @@ let json = await res.json()
 let url = json.url
 conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)} 
 
-if (command == 'twintails') {
+if (command == 'twintail') {
 let res = await fetch(`https://fantox-apis.vercel.app/twintails`)
 let json = await res.json()
 let url = json.url
 conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)} 
 
-if (command == 'breasts') {
+if (command == 'breast') {
 let res = await fetch(`https://fantox-apis.vercel.app/breasts`)
 let json = await res.json()
 let url = json.url
@@ -173,7 +173,7 @@ let json = await res.json()
 let url = json.url
 conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
 
-if (command == 'bunnyears') {
+if (command == 'bunnyear') {
 let res = await fetch(`https://fantox-apis.vercel.app/bunnyears`)
 let json = await res.json()
 let url = json.url
@@ -215,7 +215,7 @@ let json = await res.json()
 let url = json.url
 conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
 
-if (command == 'headphones') {
+if (command == 'headphone') {
 let res = await fetch(`https://fantox-apis.vercel.app/headphones`)
 let json = await res.json()
 let url = json.url
@@ -334,3 +334,8 @@ let res = await fetch(`https://fantox-apis.vercel.app/white`)
 let json = await res.json()
 let url = json.url
 conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+}  
+handler.help = ['genshin', 'swimsuit', 'sswimsuit', 'white', 'barefoot', 'touhou', 'gamecg', 'holo', 'uncensored', 'sunglass', 'glass', 'weapon', 'shirt lift', 'chain', 'fingering', 'flat chest', 'torn cloth', 'bondage', 'demon', 'wet', 'pantypull', 'headdress', 'headphone', 'tie', 'anus', 'shorts','stokings', 'topless', 'beach', 'bunnygirl', 'bunnyear', 'idol', 'vampire', 'gun', 'maid', 'bra', 'nobra', 'bikini', 'whitehair', 'blonde', 'pinkhair', 'bed', 'ponytail', 'nude', 'dress', 'underwear', 'foxgirl', 'uniform', 'skirt', 'sex', 'sex2', 'sex3', 'breast', 'twintail', 'spussy' ]
+handler.command = ['hloli', 'foot', 'hass', 'bdsm', 'cum', 'ero', 'femdom', 'foot', 'glass', 'nsfworgy', 'yuri', 'yuri2', 'yaoi', 'yaoi2', 'panties', 'tetas', 'booty', 'ecchi', 'furro', 'rhentai', 'trap', 'lesb', 'penis', 'porn', 'randomxxx', 'pechos']
+handler.tags = ['nsfw']
+export default  handler
