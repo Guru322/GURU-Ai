@@ -245,3 +245,92 @@ let json = await res.json()
 let url = json.url
 conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
 
+if (command == 'bondage') {
+let res = await fetch(`https://fantox-apis.vercel.app/bondage`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'torn cloth') {
+let res = await fetch(`https://fantox-apis.vercel.app/tornclothes`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'flat chest') {
+let res = await fetch(`https://fantox-apis.vercel.app/flatchest`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'fingering') {
+let res = await fetch(`https://fantox-apis.vercel.app/fingering`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'chain') {
+let res = await fetch(`https://fantox-apis.vercel.app/chain`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'shirt lift') {
+let res = await fetch(`https://fantox-apis.vercel.app/shirtlift`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'weapon') {
+let res = await fetch(`https://fantox-apis.vercel.app/weapon`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'glass') {
+let res = await fetch(`https://fantox-apis.vercel.app/glasses`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'sunglass') {
+let res = await fetch(`https://fantox-apis.vercel.app/sunglasses`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'uncensored') {
+let res = await fetch(`https://fantox-apis.vercel.app/uncensored`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'holo') {
+let res = await fetch(`https://fantox-apis.vercel.app/hololive`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'gamecg') {
+let res = await fetch(`https://fantox-apis.vercel.app/gamecg`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'touhou') {
+let res = await fetch(`https://fantox-apis.vercel.app/touhou`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'barefoot') {
+let res = await fetch(`https://fantox-apis.vercel.app/barefoot`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
+
+if (command == 'white') {
+let res = await fetch(`https://fantox-apis.vercel.app/white`)
+let json = await res.json()
+let url = json.url
+conn.sendButton(m.chat, `_${command}_`.trim(), author, url, [['🔄 next🔄', `/${command}`]], m)}
