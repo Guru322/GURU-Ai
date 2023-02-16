@@ -17,7 +17,10 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text }) =
     let readMore = more.repeat(850)   
     let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let m2 = `
-╭═══〘 ✯✯✯✯✯✯✯ 〙══╮
+ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ
+`
+let pp = './Guru.jpg' 
+    conn.sendButton(m.chat, m2, `╭═══〘 ✯✯✯✯✯✯✯ 〙══╮
 ║    *ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ* 
 ║≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡║
 ║➤ *𝗛ii, ${taguser}* 
@@ -36,10 +39,7 @@ let m2 = `
 ┣ *⚓ Rank:* ${role}
 ┣ *💎 Diamonds:* ${diamond}
 ┣ *🎟️ Premium:* ${user.premium = 'true' ? '✅' : '❌'}
-┗━━━━━━━━━━━━━━━━┛
-`
-let pp = './Guru.jpg' 
-    conn.sendButton(m.chat, m2, '▢ ᴳᵁᴿᵁ  ┃ ᴮᴼᵀ\n▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru69\n', pp, 
+┗━━━━━━━━━━━━━━━━┛`, pp, 
       ['⌬ MENU LIST', `${usedPrefix}list`]
     ,m, rpyt)
     //await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
