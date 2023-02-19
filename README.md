@@ -15,8 +15,15 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
 1. Fork the repo
     <br>
-<a href="https://github.com/Guru322/GURU-BOT/fork">
-    <img alt="Fork repo" height="35" src="https://i.redd.it/upc6sexvri151.jpg">
+<a href='https://github.com/Guru322/GURU-BOT/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+
+2. Scan the QR and upload guru.data.json to your fork(will recieve it on your bot number after scanning)
+    <br>
+<a href='https://replit.com/@Guru322/GURU-BOT-QR-CODE-GENERATOR?v=1' target="_blank"><img alt='SCAN QR' src='https://img.shields.io/badge/Scan_qr-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+
+1. Mongodb (Get your mongodb connection url and Replace <a href='https://github.com/Guru322/GURU-BOT/blob/f44bd0daf41a9ad97e9df14dd49d1fb124fbbdd8/config.js#L58'>Here</a>  , use Nodejs version 3.6 or later)
+    <br>
+<a href='https://www.mongodb.com' target="_blank"><img alt='MONGODB' src='https://img.shields.io/badge/Mongodb-100000?style=for-the-badge&logo=scan&logoColor=Green&labelColor=green&color=green'/></a>
 
 
 #### DEPLOY TO SCALINGO 
@@ -29,6 +36,15 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://youtu.be/WcA7GZuaN0A"> <img src="https://img.shields.io/badge/Scalingo%20Deploy-blue?style=for-the-badge&logo=youtube" width="220" height="38.45"/></a></p>
 
+#### DEPLOY TO DOPRAX 
+
+1. If You don't have a account in Doprax. Create a account.
+    <br>
+<p align="center"><a href="https://doprax.com/"> <img src="https://img.shields.io/badge/doprax%20Account-blue?style=for-the-badge&logo=doprax" width="220" height="38.45"/></a></p>
+
+2. Now Deploy
+    <br>
+<p align="center"><a href="https://youtu.be/WcA7GZuaN0A"> <img src="https://img.shields.io/badge/doprax%20Deploy-blue?style=for-the-badge&logo=youtube" width="220" height="38.45"/></a></p>
 
 
 
