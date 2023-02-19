@@ -21,7 +21,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <a href='https://replit.com/@Guru322/GURU-BOT-QR-CODE-GENERATOR?v=1' target="_blank"><img alt='SCAN QR' src='https://img.shields.io/badge/Scan_qr-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
-1. Mongodb (Get your mongodb connection url and Replace <a href='https://github.com/Guru322/GURU-BOT/blob/f44bd0daf41a9ad97e9df14dd49d1fb124fbbdd8/config.js#L58'>Here</a>  , use Nodejs version 3.6 or later)
+1. Mongodb (Get your mongodb connection url and Replace global.dbase with yours in <a href='https://github.com/Guru322/GURU-BOT/blob/223d2bb9d09aeb3ed862dcff101f1991c356e52f/config.js'>Config.js</a>  , use Nodejs version 3.6 or later)
     <br>
 <a href='https://www.mongodb.com' target="_blank"><img alt='MONGODB' src='https://img.shields.io/badge/Mongodb-100000?style=for-the-badge&logo=scan&logoColor=Green&labelColor=green&color=green'/></a>
 
