@@ -38,7 +38,7 @@ let pp = './Guru.jpg'
 ┣ *🧰 Experience:* ${exp}
 ┣ *⚓ Rank:* ${role}
 ┣ *💎 Diamonds:* ${diamond}
-┣ *🎟️ Premium:* ${user.premium = 'true' ? '✅' : '❌'}
+┣ *🎟️ Premium:* ${user.premium = 'true' ? '❌' : '✅'}
 ┗━━━━━━━━━━━━━━━━┛`, pp, 
       ['⌬ MENU LIST', `${usedPrefix}list`]
     ,m, rpyt)
