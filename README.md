@@ -53,7 +53,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
 2. Now Deploy
     <br>
-<p align="center"><a href="https://youtu.be/WcA7GZuaN0A"> <img src="https://img.shields.io/badge/doprax%20Deploy-blue?style=for-the-badge&logo=youtube" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://youtu.be/TNvH1cWlwNY"> <img src="https://img.shields.io/badge/doprax%20Deploy-blue?style=for-the-badge&logo=youtube" width="220" height="38.45"/></a></p>
 
 
 
