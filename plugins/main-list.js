@@ -12,6 +12,11 @@ let m2 = `
 ┣  💟 grouplist
 ┣  💟 owner
 ┣  💟 script
+┣  💟 toanime
+┣  💟 qrcode
+┣  💟 readqr
+┣  💟 weather
+┣  💟 nowa
 ┣ ඬ⃟ 💎 _${usedPrefix}kick *<@tag>*_
 ┣ ඬ⃟ 💎 _${usedPrefix}promote *<@tag>*_
 ┣ ඬ⃟ 💎 _${usedPrefix}demote *<@tag>*_
