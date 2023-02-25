@@ -35,7 +35,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 <a href='https://www.mongodb.com' target="_blank"><img alt='MONGODB' src='https://img.shields.io/badge/Mongodb-100000?style=for-the-badge&logo=scan&logoColor=Green&labelColor=green&color=green'/></a>
 
 
-#### DEPLOY TO SCALINGO 
+#### DEPLOY TO SCALINGO (NOT RECOMMENDED)
 
 1. If You don't have a account in Scalingo. Create a account.
     <br>
