@@ -1,3 +1,4 @@
+const rewards = {
  exp: 15000,
     money: 35999,
     potion: 9,
@@ -12,7 +13,7 @@
       user[reward] += rewards[reward]
       text += `*+${rewards[reward]}* ${global.rpg.emoticon(reward)}${reward}\n`
     }
-    conn.sendButton(m.chat,'*––––––『 WEEKLY 』––––––*', text.trim(), null, [['Profile', '.profile'], ['Monthly', '.monthly']],m)
+    conn.sendButton(m.chat,'*––––––『 WEEKLY 』––––––*', text.trim(), null, [['Profile', ''], ['Monthly', '.monthly']],m)
     user.lastweekly = new Date * 1
   }
   handler.help = ['weekly']

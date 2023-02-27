@@ -64,7 +64,7 @@ Usage example: *${usedPrefix}${command} potion 10*
 📍Items list: 
 ${Object.keys(listItems).map((v) => {
         let paymentMethod = Object.keys(listItems[v]).find(v => v in user)
-        return `${global.rpg.emoticon(v)}${v} | ${listItems[v][paymentMethod]} ${global.rpg.emoticon(paymentMethod)}${paymentMethod}`.trim()
+        return `${v} | ${listItems[v][paymentMethod]} ${paymentMethod}`.trim()
     }).join('\n')}
 `.trim()
     const item = (args[0] || '').toLowerCase()
@@ -80,7 +80,7 @@ ${Object.keys(listItems).map((v) => {
         if (user[item] < total) return m.reply(`You don't have enough *${global.rpg.emoticon(item)}${item}* to sell, you only have ${user[item]} items`)
         user[item] -= total
         user.money += listItems[item].money * total
-        return m.reply(`You sold *${total}* ${global.rpg.emoticon(item)}${item}`)
+        return m.reply(`You sold *${total}* ${item}`)
     }
 }
 

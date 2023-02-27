@@ -13,8 +13,8 @@ let handler = async (m, {conn, usedPrefix}) => {
 
 *NOTE :* 
 You can buy 💎 diamonds using the commands*
-❏ *${usedPrefix}buy <amount>
-❏ *${usedPrefix}buyall*`, m, { mentions: [who] })
+❏ *${usedPrefix}todiamond* <amount>
+❏ *${usedPrefix}todiamondall*`, m, { mentions: [who] })
 }
 handler.help = ['balance']
 handler.tags = ['econ']
