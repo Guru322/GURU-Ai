@@ -86,8 +86,7 @@
         "fg-ig": "^0.0.2",
         "api-dylux": "^1.2.8",
         "@vitalets/google-translate-api": "^8.0.0",
-        "yargs": "^17.6.0",
-        "ytdl-core": "^4.11.2"
+        "yargs": "^17.6.0"
     },
     "optionalDependencies": {
          "wa-sticker-formatter": "^4.3.2",
