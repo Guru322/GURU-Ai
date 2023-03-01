@@ -1,0 +1,19 @@
+{
+    "totalCosmetics": 1292,
+    "matrix": [
+      {
+        "type": "loading",
+        "rarity": [
+          {
+            "rarity": "uncommon",
+            "count": 62
+          },
+          {
+            "rarity": "rare",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "unreleased": 10
+  }

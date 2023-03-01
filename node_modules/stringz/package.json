@@ -1,0 +1,66 @@
+{
+  "name": "stringz",
+  "version": "2.1.0",
+  "description": "Zero-dependency unicode-aware string tools",
+  "main": "dist/index.js",
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/index.d.ts.map"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --coverage",
+    "format": "prettier --write '{src,test,benchmark}/**/*.{js,ts}'",
+    "lint": "prettier-check '{src,test,benchmark}/**/*.{js,ts}'",
+    "nyc-report": "codecov",
+    "precommit": "lint-staged",
+    "prepublish": "npm run build",
+    "build": "tsc"
+  },
+  "lint-staged": {
+    "{src,test,benchmark}/**/*.{js,ts}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sallar/stringz.git"
+  },
+  "keywords": [
+    "string",
+    "truncate",
+    "length",
+    "unicode",
+    "substr",
+    "substring",
+    "emoji",
+    "pad",
+    "leftpad",
+    "rightpad",
+    "length",
+    "count"
+  ],
+  "author": "Sallar Kaboli <sallar.kaboli@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sallar/stringz/issues"
+  },
+  "homepage": "https://github.com/sallar/stringz#readme",
+  "devDependencies": {
+    "@types/assert": "^1.4.2",
+    "@types/jest": "^24.0.13",
+    "codecov": "^3.5.0",
+    "husky": "^2.3.0",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.1.7",
+    "prettier": "^1.9.1",
+    "prettier-check": "^2.0.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "char-regex": "^1.0.2"
+  }
+}

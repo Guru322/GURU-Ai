@@ -1,0 +1,958 @@
+{
+    "accountId": "126c2c59-f456-4671-8a5e-0406d83be593",
+    "platformId": 2,
+    "platformName": "psn",
+    "platformNameLong": "PlayStation 4",
+    "epicUserHandle": "Ñoт Tfuе",
+    "stats": {
+      "p2": {
+        "trnRating": {
+          "label": "TRN Rating",
+          "field": "TRNRating",
+          "category": "Rating",
+          "valueInt": 1190,
+          "value": "1190",
+          "rank": 1646154,
+          "percentile": 56,
+          "displayValue": "1,190"
+        },
+        "score": {
+          "label": "Score",
+          "field": "Score",
+          "category": "General",
+          "valueInt": 354303,
+          "value": "354303",
+          "rank": 1032392,
+          "percentile": 0.1,
+          "displayValue": "354,303"
+        },
+        "top1": {
+          "label": "Wins",
+          "field": "Top1",
+          "category": "Tops",
+          "valueInt": 26,
+          "value": "26",
+          "rank": 2834691,
+          "percentile": 2.4,
+          "displayValue": "26"
+        },
+        "top3": {
+          "label": "Top 3",
+          "field": "Top3",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "rank": 1,
+          "displayValue": "0"
+        },
+        "top5": {
+          "label": "Top 5",
+          "field": "Top5",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "rank": 1,
+          "displayValue": "0"
+        },
+        "top6": {
+          "label": "Top 6",
+          "field": "Top6",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "rank": 1,
+          "displayValue": "0"
+        },
+        "top10": {
+          "label": "Top 10",
+          "field": "Top10",
+          "category": "Tops",
+          "valueInt": 203,
+          "value": "203",
+          "rank": 2690257,
+          "percentile": 0.4,
+          "displayValue": "203"
+        },
+        "top12": {
+          "label": "Top 12",
+          "field": "Top12",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "rank": 1,
+          "displayValue": "0"
+        },
+        "top25": {
+          "label": "Top 25",
+          "field": "Top25",
+          "category": "Tops",
+          "valueInt": 520,
+          "value": "520",
+          "rank": 2119708,
+          "percentile": 0.1,
+          "displayValue": "520"
+        },
+        "kd": {
+          "label": "K/d",
+          "field": "KD",
+          "category": "General",
+          "valueDec": 1.36,
+          "value": "1.36",
+          "rank": 7683967,
+          "percentile": 29,
+          "displayValue": "1.36"
+        },
+        "winRatio": {
+          "label": "Win %",
+          "field": "WinRatio",
+          "category": "General",
+          "valueDec": 0.9,
+          "value": "0.9",
+          "rank": 10525951,
+          "percentile": 37,
+          "displayValue": "0.90"
+        },
+        "matches": {
+          "label": "Matches",
+          "field": "Matches",
+          "category": "General",
+          "valueInt": 2943,
+          "value": "2943",
+          "rank": 728572,
+          "percentile": 0.1,
+          "displayValue": "2,943"
+        },
+        "kills": {
+          "label": "Kills",
+          "field": "Kills",
+          "category": "General",
+          "valueInt": 3971,
+          "value": "3971",
+          "rank": 676639,
+          "percentile": 0.1,
+          "displayValue": "3,971"
+        },
+        "kpg": {
+          "label": "Kills Per Match",
+          "field": "KPG",
+          "category": "General",
+          "valueDec": 1.35,
+          "value": "1.35",
+          "rank": 7510428,
+          "percentile": 28,
+          "displayValue": "1.35"
+        },
+        "scorePerMatch": {
+          "label": "Score per Match",
+          "field": "ScorePerMatch",
+          "category": "General",
+          "valueDec": 120.39,
+          "value": "120.39",
+          "rank": 22819656,
+          "percentile": 67,
+          "displayValue": "120.39"
+        }
+      },
+      "p10": {
+        "trnRating": {
+          "label": "TRN Rating",
+          "field": "TRNRating",
+          "category": "Rating",
+          "valueInt": 1200,
+          "value": "1200",
+          "percentile": 54,
+          "displayValue": "1,200"
+        },
+        "score": {
+          "label": "Score",
+          "field": "Score",
+          "category": "General",
+          "valueInt": 328987,
+          "value": "328987",
+          "rank": 16341819,
+          "percentile": 0.1,
+          "displayValue": "328,987"
+        },
+        "top1": {
+          "label": "Wins",
+          "field": "Top1",
+          "category": "Tops",
+          "valueInt": 40,
+          "value": "40",
+          "rank": 17256092,
+          "percentile": 2.2,
+          "displayValue": "40"
+        },
+        "top3": {
+          "label": "Top 3",
+          "field": "Top3",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "rank": 1,
+          "displayValue": "0"
+        },
+        "top5": {
+          "label": "Top 5",
+          "field": "Top5",
+          "category": "Tops",
+          "valueInt": 190,
+          "value": "190",
+          "rank": 18855215,
+          "percentile": 0.2,
+          "displayValue": "190"
+        },
+        "top6": {
+          "label": "Top 6",
+          "field": "Top6",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "rank": 1,
+          "displayValue": "0"
+        },
+        "top10": {
+          "label": "Top 10",
+          "field": "Top10",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "rank": 1,
+          "displayValue": "0"
+        },
+        "top12": {
+          "label": "Top 12",
+          "field": "Top12",
+          "category": "Tops",
+          "valueInt": 440,
+          "value": "440",
+          "rank": 18059947,
+          "percentile": 0.1,
+          "displayValue": "440"
+        },
+        "top25": {
+          "label": "Top 25",
+          "field": "Top25",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "rank": 1,
+          "displayValue": "0"
+        },
+        "kd": {
+          "label": "K/d",
+          "field": "KD",
+          "category": "General",
+          "valueDec": 1.29,
+          "value": "1.29",
+          "rank": 22280441,
+          "percentile": 31,
+          "displayValue": "1.29"
+        },
+        "winRatio": {
+          "label": "Win %",
+          "field": "WinRatio",
+          "category": "General",
+          "valueDec": 1.6,
+          "value": "1.6",
+          "rank": 20387477,
+          "percentile": 44,
+          "displayValue": "1.60"
+        },
+        "matches": {
+          "label": "Matches",
+          "field": "Matches",
+          "category": "General",
+          "valueInt": 2513,
+          "value": "2513",
+          "rank": 14467037,
+          "percentile": 0.1,
+          "displayValue": "2,513"
+        },
+        "kills": {
+          "label": "Kills",
+          "field": "Kills",
+          "category": "General",
+          "valueInt": 3180,
+          "value": "3180",
+          "rank": 13782204,
+          "percentile": 0.1,
+          "displayValue": "3,180"
+        },
+        "kpg": {
+          "label": "Kills Per Match",
+          "field": "KPG",
+          "category": "General",
+          "valueDec": 1.27,
+          "value": "1.27",
+          "rank": 22028982,
+          "percentile": 30,
+          "displayValue": "1.27"
+        },
+        "scorePerMatch": {
+          "label": "Score per Match",
+          "field": "ScorePerMatch",
+          "category": "General",
+          "valueDec": 130.91,
+          "value": "130.91",
+          "rank": 33101638,
+          "percentile": 73,
+          "displayValue": "130.91"
+        }
+      },
+      "p9": {
+        "trnRating": {
+          "label": "TRN Rating",
+          "field": "TRNRating",
+          "category": "Rating",
+          "valueInt": 1200,
+          "value": "1200",
+          "percentile": 52,
+          "displayValue": "1,200"
+        },
+        "score": {
+          "label": "Score",
+          "field": "Score",
+          "category": "General",
+          "valueInt": 362532,
+          "value": "362532",
+          "rank": 4058841,
+          "percentile": 0.3,
+          "displayValue": "362,532"
+        },
+        "top1": {
+          "label": "Wins",
+          "field": "Top1",
+          "category": "Tops",
+          "valueInt": 45,
+          "value": "45",
+          "rank": 8175278,
+          "percentile": 7,
+          "displayValue": "45"
+        },
+        "top3": {
+          "label": "Top 3",
+          "field": "Top3",
+          "category": "Tops",
+          "valueInt": 134,
+          "value": "134",
+          "rank": 7492959,
+          "percentile": 2.7,
+          "displayValue": "134"
+        },
+        "top5": {
+          "label": "Top 5",
+          "field": "Top5",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "rank": 1,
+          "displayValue": "0"
+        },
+        "top6": {
+          "label": "Top 6",
+          "field": "Top6",
+          "category": "Tops",
+          "valueInt": 295,
+          "value": "295",
+          "rank": 6055188,
+          "percentile": 0.9,
+          "displayValue": "295"
+        },
+        "top10": {
+          "label": "Top 10",
+          "field": "Top10",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "rank": 1,
+          "displayValue": "0"
+        },
+        "top12": {
+          "label": "Top 12",
+          "field": "Top12",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "rank": 1,
+          "displayValue": "0"
+        },
+        "top25": {
+          "label": "Top 25",
+          "field": "Top25",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "rank": 1,
+          "displayValue": "0"
+        },
+        "kd": {
+          "label": "K/d",
+          "field": "KD",
+          "category": "General",
+          "valueDec": 1.42,
+          "value": "1.42",
+          "rank": 7191929,
+          "percentile": 27,
+          "displayValue": "1.42"
+        },
+        "winRatio": {
+          "label": "Win %",
+          "field": "WinRatio",
+          "category": "General",
+          "valueDec": 1.6,
+          "value": "1.6",
+          "rank": 22936211,
+          "percentile": 62,
+          "displayValue": "1.60"
+        },
+        "matches": {
+          "label": "Matches",
+          "field": "Matches",
+          "category": "General",
+          "valueInt": 2774,
+          "value": "2774",
+          "rank": 1713206,
+          "percentile": 0.1,
+          "displayValue": "2,774"
+        },
+        "kills": {
+          "label": "Kills",
+          "field": "Kills",
+          "category": "General",
+          "valueInt": 3863,
+          "value": "3863",
+          "rank": 1492034,
+          "percentile": 0.2,
+          "displayValue": "3,863"
+        },
+        "kpg": {
+          "label": "Kills Per Match",
+          "field": "KPG",
+          "category": "General",
+          "valueDec": 1.39,
+          "value": "1.39",
+          "rank": 6555184,
+          "percentile": 26,
+          "displayValue": "1.39"
+        },
+        "scorePerMatch": {
+          "label": "Score per Match",
+          "field": "ScorePerMatch",
+          "category": "General",
+          "valueDec": 130.69,
+          "value": "130.69",
+          "rank": 33212233,
+          "percentile": 86,
+          "displayValue": "130.69"
+        }
+      },
+      "curr_p2": {
+        "trnRating": {
+          "label": "TRN Rating",
+          "field": "TRNRating",
+          "category": "Rating",
+          "valueInt": 1190,
+          "value": "1190",
+          "percentile": 66,
+          "displayValue": "1,190"
+        },
+        "score": {
+          "label": "Score",
+          "field": "Score",
+          "category": "General",
+          "valueInt": 2539,
+          "value": "2539",
+          "percentile": 67,
+          "displayValue": "2,539"
+        },
+        "top1": {
+          "label": "Wins",
+          "field": "Top1",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "top3": {
+          "label": "Top 3",
+          "field": "Top3",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "top5": {
+          "label": "Top 5",
+          "field": "Top5",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "top6": {
+          "label": "Top 6",
+          "field": "Top6",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "top10": {
+          "label": "Top 10",
+          "field": "Top10",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "top12": {
+          "label": "Top 12",
+          "field": "Top12",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "top25": {
+          "label": "Top 25",
+          "field": "Top25",
+          "category": "Tops",
+          "valueInt": 2,
+          "value": "2",
+          "percentile": 83,
+          "displayValue": "2"
+        },
+        "kd": {
+          "label": "K/d",
+          "field": "KD",
+          "category": "General",
+          "valueDec": 0.94,
+          "value": "0.94",
+          "percentile": 52,
+          "displayValue": "0.94"
+        },
+        "winRatio": {
+          "label": "Win %",
+          "field": "WinRatio",
+          "category": "General",
+          "valueDec": 0,
+          "value": "0",
+          "displayValue": "0.00"
+        },
+        "matches": {
+          "label": "Matches",
+          "field": "Matches",
+          "category": "General",
+          "valueInt": 35,
+          "value": "35",
+          "percentile": 49,
+          "displayValue": "35"
+        },
+        "kills": {
+          "label": "Kills",
+          "field": "Kills",
+          "category": "General",
+          "valueInt": 33,
+          "value": "33",
+          "percentile": 52,
+          "displayValue": "33"
+        },
+        "kpg": {
+          "label": "Kills Per Match",
+          "field": "KPG",
+          "category": "General",
+          "valueDec": 0.94,
+          "value": "0.94",
+          "percentile": 51,
+          "displayValue": "0.94"
+        },
+        "scorePerMatch": {
+          "label": "Score per Match",
+          "field": "ScorePerMatch",
+          "category": "General",
+          "valueDec": 72.54,
+          "value": "72.54",
+          "percentile": 93,
+          "displayValue": "72.54"
+        }
+      },
+      "curr_p10": {
+        "trnRating": {
+          "label": "TRN Rating",
+          "field": "TRNRating",
+          "category": "Rating",
+          "valueInt": 1200,
+          "value": "1200",
+          "percentile": 34,
+          "displayValue": "1,200"
+        },
+        "score": {
+          "label": "Score",
+          "field": "Score",
+          "category": "General",
+          "valueInt": 30386,
+          "value": "30386",
+          "percentile": 14,
+          "displayValue": "30,386"
+        },
+        "top1": {
+          "label": "Wins",
+          "field": "Top1",
+          "category": "Tops",
+          "valueInt": 5,
+          "value": "5",
+          "displayValue": "5"
+        },
+        "top3": {
+          "label": "Top 3",
+          "field": "Top3",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "top5": {
+          "label": "Top 5",
+          "field": "Top5",
+          "category": "Tops",
+          "valueInt": 21,
+          "value": "21",
+          "percentile": 11,
+          "displayValue": "21"
+        },
+        "top6": {
+          "label": "Top 6",
+          "field": "Top6",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "top10": {
+          "label": "Top 10",
+          "field": "Top10",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "top12": {
+          "label": "Top 12",
+          "field": "Top12",
+          "category": "Tops",
+          "valueInt": 46,
+          "value": "46",
+          "percentile": 10,
+          "displayValue": "46"
+        },
+        "top25": {
+          "label": "Top 25",
+          "field": "Top25",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "kd": {
+          "label": "K/d",
+          "field": "KD",
+          "category": "General",
+          "valueDec": 1.75,
+          "value": "1.75",
+          "percentile": 14,
+          "displayValue": "1.75"
+        },
+        "winRatio": {
+          "label": "Win %",
+          "field": "WinRatio",
+          "category": "General",
+          "valueDec": 2.1,
+          "value": "2.1",
+          "percentile": 38,
+          "displayValue": "2.10"
+        },
+        "matches": {
+          "label": "Matches",
+          "field": "Matches",
+          "category": "General",
+          "valueInt": 235,
+          "value": "235",
+          "percentile": 3.8,
+          "displayValue": "235"
+        },
+        "kills": {
+          "label": "Kills",
+          "field": "Kills",
+          "category": "General",
+          "valueInt": 402,
+          "value": "402",
+          "percentile": 6,
+          "displayValue": "402"
+        },
+        "kpg": {
+          "label": "Kills Per Match",
+          "field": "KPG",
+          "category": "General",
+          "valueDec": 1.71,
+          "value": "1.71",
+          "percentile": 13,
+          "displayValue": "1.71"
+        },
+        "scorePerMatch": {
+          "label": "Score per Match",
+          "field": "ScorePerMatch",
+          "category": "General",
+          "valueDec": 129.3,
+          "value": "129.3",
+          "percentile": 66,
+          "displayValue": "129.30"
+        }
+      },
+      "curr_p9": {
+        "trnRating": {
+          "label": "TRN Rating",
+          "field": "TRNRating",
+          "category": "Rating",
+          "valueInt": 1200,
+          "value": "1200",
+          "percentile": 34,
+          "displayValue": "1,200"
+        },
+        "score": {
+          "label": "Score",
+          "field": "Score",
+          "category": "General",
+          "valueInt": 39929,
+          "value": "39929",
+          "percentile": 13,
+          "displayValue": "39,929"
+        },
+        "top1": {
+          "label": "Wins",
+          "field": "Top1",
+          "category": "Tops",
+          "valueInt": 8,
+          "value": "8",
+          "percentile": 16,
+          "displayValue": "8"
+        },
+        "top3": {
+          "label": "Top 3",
+          "field": "Top3",
+          "category": "Tops",
+          "valueInt": 16,
+          "value": "16",
+          "percentile": 18,
+          "displayValue": "16"
+        },
+        "top5": {
+          "label": "Top 5",
+          "field": "Top5",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "top6": {
+          "label": "Top 6",
+          "field": "Top6",
+          "category": "Tops",
+          "valueInt": 29,
+          "value": "29",
+          "percentile": 18,
+          "displayValue": "29"
+        },
+        "top10": {
+          "label": "Top 10",
+          "field": "Top10",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "top12": {
+          "label": "Top 12",
+          "field": "Top12",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "top25": {
+          "label": "Top 25",
+          "field": "Top25",
+          "category": "Tops",
+          "valueInt": 0,
+          "value": "0",
+          "displayValue": "0"
+        },
+        "kd": {
+          "label": "K/d",
+          "field": "KD",
+          "category": "General",
+          "valueDec": 1.4,
+          "value": "1.4",
+          "percentile": 28,
+          "displayValue": "1.40"
+        },
+        "winRatio": {
+          "label": "Win %",
+          "field": "WinRatio",
+          "category": "General",
+          "valueDec": 2.5,
+          "value": "2.5",
+          "percentile": 51,
+          "displayValue": "2.50"
+        },
+        "matches": {
+          "label": "Matches",
+          "field": "Matches",
+          "category": "General",
+          "valueInt": 326,
+          "value": "326",
+          "percentile": 2,
+          "displayValue": "326"
+        },
+        "kills": {
+          "label": "Kills",
+          "field": "Kills",
+          "category": "General",
+          "valueInt": 446,
+          "value": "446",
+          "percentile": 6,
+          "displayValue": "446"
+        },
+        "kpg": {
+          "label": "Kills Per Match",
+          "field": "KPG",
+          "category": "General",
+          "valueDec": 1.37,
+          "value": "1.37",
+          "percentile": 26,
+          "displayValue": "1.37"
+        },
+        "scorePerMatch": {
+          "label": "Score per Match",
+          "field": "ScorePerMatch",
+          "category": "General",
+          "valueDec": 122.48,
+          "value": "122.48",
+          "percentile": 85,
+          "displayValue": "122.48"
+        }
+      }
+    },
+    "lifeTimeStats": [
+      {
+        "key": "Top 5s",
+        "value": "190"
+      },
+      {
+        "key": "Top 3s",
+        "value": "134"
+      },
+      {
+        "key": "Top 6s",
+        "value": "295"
+      },
+      {
+        "key": "Top 10",
+        "value": "203"
+      },
+      {
+        "key": "Top 12s",
+        "value": "440"
+      },
+      {
+        "key": "Top 25s",
+        "value": "520"
+      },
+      {
+        "key": "Score",
+        "value": "1,045,822"
+      },
+      {
+        "key": "Matches Played",
+        "value": "8230"
+      },
+      {
+        "key": "Wins",
+        "value": "111"
+      },
+      {
+        "key": "Win%",
+        "value": "1%"
+      },
+      {
+        "key": "Kills",
+        "value": "11014"
+      },
+      {
+        "key": "K/d",
+        "value": "1.36"
+      }
+    ],
+    "recentMatches": [
+      {
+        "id": 1227383493,
+        "accountId": "126c2c59-f456-4671-8a5e-0406d83be593",
+        "playlist": "p2",
+        "kills": 6,
+        "minutesPlayed": 0,
+        "top1": 0,
+        "top5": 0,
+        "top6": 0,
+        "top10": 0,
+        "top12": 0,
+        "top25": 1,
+        "matches": 6,
+        "top3": 0,
+        "dateCollected": "2019-01-13T00:03:53.737",
+        "score": 442,
+        "platform": 3,
+        "trnRating": 1105.3,
+        "trnRatingChange": -2.535024352288184
+      },
+      {
+        "id": 1227383486,
+        "accountId": "126c2c59-f456-4671-8a5e-0406d83be593",
+        "playlist": "p9",
+        "kills": 5,
+        "minutesPlayed": -438,
+        "top1": 0,
+        "top5": 0,
+        "top6": 3,
+        "top10": 0,
+        "top12": 0,
+        "top25": 0,
+        "matches": 9,
+        "top3": 1,
+        "dateCollected": "2019-01-13T00:03:53.72",
+        "score": 1430,
+        "platform": 3,
+        "trnRating": 1180.3,
+        "trnRatingChange": -0.5282336533837286
+      },
+      {
+        "id": 1227383480,
+        "accountId": "126c2c59-f456-4671-8a5e-0406d83be593",
+        "playlist": "p10",
+        "kills": 26,
+        "minutesPlayed": -444,
+        "top1": 0,
+        "top5": 1,
+        "top6": 0,
+        "top10": 0,
+        "top12": 2,
+        "top25": 0,
+        "matches": 17,
+        "top3": 0,
+        "dateCollected": "2019-01-13T00:03:53.69",
+        "score": 1982,
+        "platform": 3,
+        "trnRating": 1198.1,
+        "trnRatingChange": -0.0043725966597089605
+      }
+    ]
+  }

@@ -1,0 +1,19 @@
+{
+  "name": "fortnite",
+  "version": "4.3.2",
+  "description": "An API wrapper, for Fortnite, around the FortniteTracker API.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jake-Ruston/fortnite.git"
+  },
+  "author": "Jake Ruston <rjake@hotmail.co.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jake-Ruston/fortnite/issues"
+  },
+  "homepage": "https://github.com/Jake-Ruston/fortnite#readme",
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  }
+}

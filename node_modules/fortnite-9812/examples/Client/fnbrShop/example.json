@@ -1,0 +1,200 @@
+{
+    "status": 200,
+    "data": {
+      "date": "2019-01-12T00:00:00.000Z",
+      "featured": [
+        {
+          "id": "5c37dc85b34d5c093ce5790d",
+          "name": "Ark",
+          "price": "2,000",
+          "priceIcon": "vbucks",
+          "priceIconLink": "https://image.fnbr.co/price/icon_vbucks.png",
+          "images": {
+            "icon": "https://image.fnbr.co/outfit/5c37dc85b34d5c093ce5790d/icon.png",
+            "png": false,
+            "gallery": "https://image.fnbr.co/outfit/5c37dc85b34d5c093ce5790d/gallery.jpg",
+            "featured": "https://image.fnbr.co/outfit/5c37dc85b34d5c093ce5790d/featured.png"
+          },
+          "rarity": "legendary",
+          "type": "outfit",
+          "slug": "ark",
+          "readableType": "Outfit",
+          "description": "Upholding the principles of righteous victory.",
+          "bundleSet": false
+        },
+        {
+          "id": "5ab17d6f5f957f27504aa53c",
+          "name": "Red-Nosed Raider",
+          "price": "1,200",
+          "priceIcon": "vbucks",
+          "priceIconLink": "https://image.fnbr.co/price/icon_vbucks.png",
+          "images": {
+            "icon": "https://image.fnbr.co/outfit/5ab17d6f5f957f27504aa53c/icon.png",
+            "png": "https://image.fnbr.co/outfit/5ab17d6f5f957f27504aa53c/png.png",
+            "gallery": "https://image.fnbr.co/outfit/5ab17d6f5f957f27504aa53c/gallery.jpg",
+            "featured": "https://image.fnbr.co/outfit/5ab17d6f5f957f27504aa53c/featured.png"
+          },
+          "rarity": "rare",
+          "type": "outfit",
+          "slug": "red-nosed-raider",
+          "readableType": "Outfit",
+          "description": "It's time for some reindeer games.",
+          "bundleSet": false
+        },
+        {
+          "id": "5c19139041eb8a7d9f40b67a",
+          "name": "Virtue",
+          "price": "800",
+          "priceIcon": "vbucks",
+          "priceIconLink": "https://image.fnbr.co/price/icon_vbucks.png",
+          "images": {
+            "icon": "https://image.fnbr.co/pickaxe/5c19139041eb8a7d9f40b67a/icon.png",
+            "png": false,
+            "gallery": false,
+            "featured": false
+          },
+          "rarity": "rare",
+          "type": "pickaxe",
+          "slug": "virtue",
+          "readableType": "Pickaxe",
+          "description": "Swing forever true.",
+          "bundleSet": false
+        },
+        {
+          "id": "5c198a0570b3e19ed993681d",
+          "name": "Red-nosed Ranger",
+          "price": "800",
+          "priceIcon": "vbucks",
+          "priceIconLink": "https://image.fnbr.co/price/icon_vbucks.png",
+          "images": {
+            "icon": "https://image.fnbr.co/outfit/5c198a0570b3e19ed993681d/icon.png",
+            "png": false,
+            "gallery": "https://image.fnbr.co/outfit/5c198a0570b3e19ed993681d/gallery.jpg",
+            "featured": "https://image.fnbr.co/outfit/5c198a0570b3e19ed993681d/featured.png"
+          },
+          "rarity": "uncommon",
+          "type": "outfit",
+          "slug": "red-nosed-ranger",
+          "readableType": "Outfit",
+          "description": "Known for his antler antics.",
+          "bundleSet": false
+        }
+      ],
+      "daily": [
+        {
+          "id": "5b5629fa781e196abf378f52",
+          "name": "Shade",
+          "price": "1,500",
+          "priceIcon": "vbucks",
+          "priceIconLink": "https://image.fnbr.co/price/icon_vbucks.png",
+          "images": {
+            "icon": "https://image.fnbr.co/outfit/5b5629fa781e196abf378f52/icon.png",
+            "png": "https://image.fnbr.co/outfit/5b5629fa781e196abf378f52/png.png",
+            "gallery": "https://image.fnbr.co/outfit/5b5629fa781e196abf378f52/gallery.jpg",
+            "featured": "https://image.fnbr.co/outfit/5b5629fa781e196abf378f52/featured.png"
+          },
+          "rarity": "epic",
+          "type": "outfit",
+          "slug": "shade",
+          "readableType": "Outfit",
+          "description": "Stay cool.",
+          "bundleSet": false
+        },
+        {
+          "id": "5bd049fd5a7c957090967f92",
+          "name": "Busy",
+          "price": "500",
+          "priceIcon": "vbucks",
+          "priceIconLink": "https://image.fnbr.co/price/icon_vbucks.png",
+          "images": {
+            "icon": "https://image.fnbr.co/emote/5bd049fd5a7c957090967f92/icon.png",
+            "png": false,
+            "gallery": false,
+            "featured": false
+          },
+          "rarity": "rare",
+          "type": "emote",
+          "slug": "busy",
+          "readableType": "Emote",
+          "description": "I'll be with you in just a moment.",
+          "bundleSet": false
+        },
+        {
+          "id": "5c1918a241eb8a38b740b683",
+          "name": "Lazy Shuffle",
+          "price": "500",
+          "priceIcon": "vbucks",
+          "priceIconLink": "https://image.fnbr.co/price/icon_vbucks.png",
+          "images": {
+            "icon": "https://image.fnbr.co/emote/5c1918a241eb8a38b740b683/icon.png",
+            "png": false,
+            "gallery": false,
+            "featured": false
+          },
+          "rarity": "rare",
+          "type": "emote",
+          "slug": "lazy-shuffle",
+          "readableType": "Emote",
+          "description": "Keep it lazy.",
+          "bundleSet": false
+        },
+        {
+          "id": "5ab1bd579116ac5688c6d7f9",
+          "name": "Warthog",
+          "price": "500",
+          "priceIcon": "vbucks",
+          "priceIconLink": "https://image.fnbr.co/price/icon_vbucks.png",
+          "images": {
+            "icon": "https://image.fnbr.co/glider/5ab1bd579116ac5688c6d7f9/icon.png",
+            "png": "https://image.fnbr.co/glider/5ab1bd579116ac5688c6d7f9/png.png",
+            "gallery": "https://image.fnbr.co/glider/5ab1bd579116ac5688c6d7f9/gallery.jpg",
+            "featured": false
+          },
+          "rarity": "uncommon",
+          "type": "glider",
+          "slug": "warthog",
+          "readableType": "Glider",
+          "description": "Hit the ground running with the battle tested Warthog Glider.",
+          "bundleSet": false
+        },
+        {
+          "id": "5abcf2bf9542fb144ada12a9",
+          "name": "Whiplash",
+          "price": "800",
+          "priceIcon": "vbucks",
+          "priceIconLink": "https://image.fnbr.co/price/icon_vbucks.png",
+          "images": {
+            "icon": "https://image.fnbr.co/outfit/5abcf2bf9542fb144ada12a9/icon.png",
+            "png": "https://image.fnbr.co/outfit/5abcf2bf9542fb144ada12a9/png.png",
+            "gallery": "https://image.fnbr.co/outfit/5abcf2bf9542fb144ada12a9/gallery.jpg",
+            "featured": "https://image.fnbr.co/outfit/5abcf2bf9542fb144ada12a9/featured.png"
+          },
+          "rarity": "uncommon",
+          "type": "outfit",
+          "slug": "whiplash",
+          "readableType": "Outfit",
+          "description": "Brake for no one.",
+          "bundleSet": false
+        },
+        {
+          "id": "5c1915ce41eb8a183340b67f",
+          "name": "Candy Cane",
+          "price": "300",
+          "priceIcon": "vbucks",
+          "priceIconLink": "https://image.fnbr.co/price/icon_vbucks.png",
+          "images": {
+            "icon": "https://image.fnbr.co/wrap/5c1915ce41eb8a183340b67f/icon.png",
+            "png": "https://image.fnbr.co/wrap/5c1915ce41eb8a183340b67f/png.png",
+            "gallery": false,
+            "featured": false
+          },
+          "rarity": "uncommon",
+          "type": "wrap",
+          "slug": "candy-cane",
+          "readableType": "Wrap",
+          "description": "Show your style.",
+          "bundleSet": false
+        }
+      ]
+    }
+  }

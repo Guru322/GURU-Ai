@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "libphonenumber-js/min",
+  "main": "index.cjs",
+  "module": "index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "../min/index.d.ts",
+      "import": "./index.js",
+      "require": "./index.cjs"
+    }
+  },
+  "sideEffects": false
+}

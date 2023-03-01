@@ -1,0 +1,38 @@
+{
+  "name": "knights-canvas",
+  "version": "1.3.7-a",
+  "description": "hello world（＞////＜）",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/squad-404/knights-canvas.git"
+  },
+  "keywords": [
+    "canvas",
+    "canvas discord",
+    "canvas-discord",
+    "discord-canvas",
+    "discord canvas",
+    "djs",
+    "djs bot",
+    "bot discord",
+    "discord",
+    "html5",
+    "discord js",
+    "herokuapp",
+    "knights canvas",
+    "squad 404"
+  ],
+  "author": "squad404",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/squad-404/knights-canvas/issues"
+  },
+  "homepage": "https://github.com/squad-404/knights-canvas#readme",
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "fortnite-9812": "^1.0.4",
+    "fortnite": "^4.3.2",
+    "moment": "^2.29.1"
+  }
+}

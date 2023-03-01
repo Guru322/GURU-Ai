@@ -1,0 +1,26 @@
+{
+  "name": "translate-google-api",
+  "version": "1.0.4",
+  "description": "A free and unlimited API for Google Translate（contains single and multiple）",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "google",
+    "translate",
+    "multiple",
+    "language",
+    "react",
+    "react-native"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Binhluan1234/react-google-translate-api"
+  },
+  "author": "LuanNguyen",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0"
+  }
+}

@@ -1,0 +1,46 @@
+{
+	"name": "decode-gif",
+	"version": "1.0.1",
+	"description": "Decode the frames of a gif.",
+	"repository": "https://github.com/Richienb/decode-gif.git",
+	"author": "Richie Bendall <richiebendall@gmail.com>",
+	"license": "MIT",
+	"main": "index.js",
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"lint": "xo",
+		"test": "xo && ava"
+	},
+	"keywords": [
+		"gif",
+		"decode",
+		"array",
+		"items"
+	],
+	"dependencies": {
+		"array-range": "^1.0.1",
+		"omggif": "^1.0.10"
+	},
+	"devDependencies": {
+		"ava": "^3.10.1",
+		"eslint-config-richienb": "^0.4.2",
+		"xo": "^0.32.1"
+	},
+	"xo": {
+		"extends": "richienb",
+		"overrides": [
+			{
+				"files": "test.js",
+				"rules": {
+					"node/no-unsupported-features/node-builtins": 0
+				}
+			}
+		]
+	}
+}

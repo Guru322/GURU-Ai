@@ -1,0 +1,21 @@
+import { TIdentifierNamesGeneratorFactory } from '../../types/container/generators/TIdentifierNamesGeneratorFactory';
+import { TStatement } from '../../types/node/TStatement';
+import { TStringArrayIndexNodeFactory } from '../../types/container/custom-nodes/string-array-index-nodes/TStringArrayIndexNodeFactory';
+import { IArrayUtils } from '../../interfaces/utils/IArrayUtils';
+import { ICustomCodeHelperFormatter } from '../../interfaces/custom-code-helpers/ICustomCodeHelperFormatter';
+import { IOptions } from '../../interfaces/options/IOptions';
+import { IRandomGenerator } from '../../interfaces/utils/IRandomGenerator';
+import { IStringArrayStorage } from '../../interfaces/storages/string-array-transformers/IStringArrayStorage';
+import { AbstractStringArrayCallNode } from './AbstractStringArrayCallNode';
+import { IStringArrayScopeCallsWrapperData } from '../../interfaces/node-transformers/string-array-transformers/IStringArrayScopeCallsWrapperData';
+export declare class StringArrayCallNode extends AbstractStringArrayCallNode {
+    private decodeKey;
+    private index;
+    private indexShiftAmount;
+    private stringArrayCallsWrapperData;
+    constructor(identifierNamesGeneratorFactory: TIdentifierNamesGeneratorFactory, stringArrayIndexNodeFactory: TStringArrayIndexNodeFactory, customCodeHelperFormatter: ICustomCodeHelperFormatter, stringArrayStorage: IStringArrayStorage, arrayUtils: IArrayUtils, randomGenerator: IRandomGenerator, options: IOptions);
+    initialize(index: number, indexShiftAmount: number, stringArrayCallsWrapperData: IStringArrayScopeCallsWrapperData, decodeKey: string | null): void;
+    protected getNodeStructure(): TStatement[];
+    private getFakeStringArrayIndexNode;
+    private getFakeStringArrayIndex;
+}

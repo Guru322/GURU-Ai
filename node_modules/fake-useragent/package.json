@@ -1,0 +1,25 @@
+{
+  "name": "fake-useragent",
+  "version": "1.0.1",
+  "description": "generate a fake userAgent for bypass guys",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiennq/fake-user-agent.git"
+  },
+  "keywords": [
+    "userAgent",
+    "fake",
+    "nodejs",
+    "npm"
+  ],
+  "author": "Thien Nguyen",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/thiennq/fake-user-agent/issues"
+  },
+  "homepage": "https://github.com/thiennq/fake-user-agent#readme"
+}

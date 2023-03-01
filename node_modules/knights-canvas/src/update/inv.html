@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Image to use:</p>
+<img id="bg" width="1280" height="640" src="https://i.ibb.co/PtrY9pp/IMG-20210623-154538-171.jpg" alt="bg">
+<img id="inv" width="1280" height="640" src="https://i.ibb.co/BtFYCR8/Inventory-v2.png" alt="inv">
+<img id="avatar" width="500" height="500" src="https://i.imgur.com/cNuEFiQ.jpg" alt="avatar">
+
+<p>Canvas:</p>
+<canvas id="myCanvas" width="1280" height="640" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+window.onload = function() {
+   
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  
+  //background
+  var bg = document.getElementById("bg");
+  ctx.drawImage(bg, 0, 0, 1280, 640);
+  
+  //frame background
+  ctx.globalAlpha = 1;
+  var img = document.getElementById("inv");
+  ctx.drawImage(img, 0, 0, 1280, 640);
+  
+  //avatar
+  
+  ctx.globalAlpha = 1;
+  ctx.beginPath(); 
+  ctx.strokeStyle = 'black';  // some color/style
+  ctx.lineWidth = 10;  
+  var pp = document.getElementById("avatar");
+  ctx.drawImage(pp, 60, 200, 250, 250);
+  ctx.strokeRect(60, 200, 250, 250);
+  
+  
+         //coal
+        ctx.globalAlpha = 1;
+        ctx.font = "bold 45px arial";
+        ctx.textAlign = 'center';
+        ctx.fillStyle = "black";
+        ctx.fillText("10", 589, 293);
+        
+        //stone
+        ctx.globalAlpha = 1;
+        ctx.font = "bold 45px arial";
+        ctx.textAlign = 'center';
+        ctx.fillStyle = "black";
+        ctx.fillText("70", 850, 293);
+        
+         // copper ore
+        ctx.globalAlpha = 1;
+        ctx.font = "bold 45px arial";
+        ctx.textAlign = 'center';
+        ctx.fillStyle = "black";
+        ctx.fillText("10", 1120, 293);
+        
+        //copper ingot
+        ctx.globalAlpha = 1;
+        ctx.font = "bold 45px arial";
+        ctx.textAlign = 'center';
+        ctx.fillStyle = "black";
+        ctx.fillText("10", 589, 560);
+        
+        //woods
+        ctx.globalAlpha = 1;
+        ctx.font = "bold 45px arial";
+        ctx.textAlign = 'center';
+        ctx.fillStyle = "black";
+        ctx.fillText("70", 850, 560);
+        
+        //fish
+        ctx.globalAlpha = 1;
+        ctx.font = "bold 45px arial";
+        ctx.textAlign = 'center';
+        ctx.fillStyle = "black";
+        ctx.fillText("10", 1120, 560);
+  }
+</script>
+
+</body>
+</html>

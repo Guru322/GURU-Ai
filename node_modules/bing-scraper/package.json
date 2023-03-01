@@ -1,0 +1,33 @@
+{
+  "name": "bing-scraper",
+  "version": "1.4.11",
+  "description": "Web scraper for Bing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/scrape.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/normanlol/bing-scraper.git"
+  },
+  "keywords": [
+    "scraper",
+    "bing",
+    "bing-scraper",
+    "search-engine-scraper"
+  ],
+  "author": "n0rmancodes",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/normanlol/bing-scraper/issues"
+  },
+  "homepage": "https://github.com/normanlol/bing-scraper#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
+    "got": "^11.8.2"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {}
+}

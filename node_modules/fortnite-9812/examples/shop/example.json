@@ -1,0 +1,300 @@
+{
+    "date_layout": "day-month-year",
+    "lastupdate": 1547251203,
+    "language": "en",
+    "date": "12-01-19",
+    "rows": 10,
+    "vbucks": "https://fortnite-public-files.theapinetwork.com/fortnite-vbucks-icon.png",
+    "items": [
+      {
+        "itemid": "eb15c77-d0ac8ec-ca444b0-c61443d",
+        "name": "Red-Nosed Raider",
+        "cost": "1200",
+        "featured": 1,
+        "refundable": 1,
+        "lastupdate": 1547251203,
+        "youtube": "https://www.youtube.com/watch?v=j60G-J8fWiQ",
+        "item": {
+          "image": "https://fortnite-public-files.theapinetwork.com/outfit/6d2d47c11279d5584da65d66acf74d77.png",
+          "images": {
+            "transparent": "https://fortnite-public-files.theapinetwork.com/outfit/6d2d47c11279d5584da65d66acf74d77.png",
+            "background": "https://fortnite-public-files.theapinetwork.com/image/eb15c77-d0ac8ec-ca444b0-c61443d.png",
+            "information": "https://fortnite-public-files.theapinetwork.com/image/eb15c77-d0ac8ec-ca444b0-c61443d/item.png",
+            "featured": {
+              "transparent": "https://fortnite-public-files.theapinetwork.com/featured/eb15c77-d0ac8ec-ca444b0-c61443d.png"
+            }
+          },
+          "captial": "outfit",
+          "type": "outfit",
+          "rarity": "rare",
+          "obtained_type": "vbucks"
+        },
+        "ratings": {
+          "avgStars": 4.29,
+          "totalPoints": 300,
+          "numberVotes": 70
+        }
+      },
+      {
+        "itemid": "2cae081-828dd4d-eb19098-83b342f",
+        "name": "Red-nosed Ranger",
+        "cost": "800",
+        "featured": 1,
+        "refundable": 1,
+        "lastupdate": 1547251203,
+        "youtube": null,
+        "item": {
+          "image": "https://fortnite-public-files.theapinetwork.com/outfit/90fc29511f1dfe7b9a89143466666dda.png",
+          "images": {
+            "transparent": "https://fortnite-public-files.theapinetwork.com/outfit/90fc29511f1dfe7b9a89143466666dda.png",
+            "background": "https://fortnite-public-files.theapinetwork.com/image/2cae081-828dd4d-eb19098-83b342f.png",
+            "information": "https://fortnite-public-files.theapinetwork.com/image/2cae081-828dd4d-eb19098-83b342f/item.png",
+            "featured": {
+              "transparent": "https://fortnite-public-files.theapinetwork.com/featured/2cae081-828dd4d-eb19098-83b342f.png"
+            }
+          },
+          "captial": "outfit",
+          "type": "outfit",
+          "rarity": "uncommon",
+          "obtained_type": "vbucks"
+        },
+        "ratings": {
+          "avgStars": 2.89,
+          "totalPoints": 101,
+          "numberVotes": 35
+        }
+      },
+      {
+        "itemid": "f3b50ea-abe55f3-afe5376-d409e3c",
+        "name": "Ark",
+        "cost": "2000",
+        "featured": 1,
+        "refundable": 1,
+        "lastupdate": 1547251203,
+        "youtube": null,
+        "item": {
+          "image": "https://fortnite-public-files.theapinetwork.com/outfit/3cc9d4b395669e96dcb29c9c4bbc4c13.png",
+          "images": {
+            "transparent": "https://fortnite-public-files.theapinetwork.com/outfit/3cc9d4b395669e96dcb29c9c4bbc4c13.png",
+            "background": "https://fortnite-public-files.theapinetwork.com/image/f3b50ea-abe55f3-afe5376-d409e3c.png",
+            "information": "https://fortnite-public-files.theapinetwork.com/image/f3b50ea-abe55f3-afe5376-d409e3c/item.png",
+            "featured": {
+              "transparent": "https://fortnite-public-files.theapinetwork.com/featured/f3b50ea-abe55f3-afe5376-d409e3c.png"
+            }
+          },
+          "captial": "outfit",
+          "type": "outfit",
+          "rarity": "legendary",
+          "obtained_type": "vbucks"
+        },
+        "ratings": {
+          "avgStars": 3.95,
+          "totalPoints": 1565,
+          "numberVotes": 396
+        }
+      },
+      {
+        "itemid": "11b98f1-4717821-9d5c564-5181f28",
+        "name": "Virtue",
+        "cost": "800",
+        "featured": 1,
+        "refundable": 1,
+        "lastupdate": 1547251203,
+        "youtube": null,
+        "item": {
+          "image": "https://fortnite-public-files.theapinetwork.com/pickaxe/f72950b41adb89dcbd90d22655be80bf.png",
+          "images": {
+            "transparent": "https://fortnite-public-files.theapinetwork.com/pickaxe/f72950b41adb89dcbd90d22655be80bf.png",
+            "background": "https://fortnite-public-files.theapinetwork.com/image/11b98f1-4717821-9d5c564-5181f28.png",
+            "information": "https://fortnite-public-files.theapinetwork.com/image/11b98f1-4717821-9d5c564-5181f28/item.png",
+            "featured": {
+              "transparent": null
+            }
+          },
+          "captial": "pickaxe",
+          "type": "pickaxe",
+          "rarity": "rare",
+          "obtained_type": "vbucks"
+        },
+        "ratings": {
+          "avgStars": 4.04,
+          "totalPoints": 481,
+          "numberVotes": 119
+        }
+      },
+      {
+        "itemid": "8caf27b-8e2e7c7-f2db92c-bed70f4",
+        "name": "Candy Cane",
+        "cost": "300",
+        "featured": 0,
+        "refundable": 1,
+        "lastupdate": 1547251203,
+        "youtube": null,
+        "item": {
+          "image": "https://fortnite-public-files.theapinetwork.com/wrap/db0904c6a420021907ff8b33cc69d158.png",
+          "images": {
+            "transparent": "https://fortnite-public-files.theapinetwork.com/wrap/db0904c6a420021907ff8b33cc69d158.png",
+            "background": "https://fortnite-public-files.theapinetwork.com/image/8caf27b-8e2e7c7-f2db92c-bed70f4.png",
+            "information": "https://fortnite-public-files.theapinetwork.com/image/8caf27b-8e2e7c7-f2db92c-bed70f4/item.png",
+            "featured": {
+              "transparent": null
+            }
+          },
+          "captial": "wrap",
+          "type": "wrap",
+          "rarity": "uncommon",
+          "obtained_type": "vbucks"
+        },
+        "ratings": {
+          "avgStars": 4.24,
+          "totalPoints": 140,
+          "numberVotes": 33
+        }
+      },
+      {
+        "itemid": "1c51712-d7f18fe-ce7eccf-ecdbf18",
+        "name": "Lazy Shuffle",
+        "cost": "500",
+        "featured": 0,
+        "refundable": 1,
+        "lastupdate": 1547251203,
+        "youtube": null,
+        "item": {
+          "image": "https://fortnite-public-files.theapinetwork.com/emote/0f361074fd675a5e9b46c2b8d693c24b.png",
+          "images": {
+            "transparent": "https://fortnite-public-files.theapinetwork.com/emote/0f361074fd675a5e9b46c2b8d693c24b.png",
+            "background": "https://fortnite-public-files.theapinetwork.com/image/1c51712-d7f18fe-ce7eccf-ecdbf18.png",
+            "information": "https://fortnite-public-files.theapinetwork.com/image/1c51712-d7f18fe-ce7eccf-ecdbf18/item.png",
+            "featured": {
+              "transparent": null
+            }
+          },
+          "captial": "emote",
+          "type": "emote",
+          "rarity": "rare",
+          "obtained_type": "vbucks"
+        },
+        "ratings": {
+          "avgStars": 4.02,
+          "totalPoints": 494,
+          "numberVotes": 123
+        }
+      },
+      {
+        "itemid": "1de2326-5a1147c-f695b0e-f41326c",
+        "name": "Busy",
+        "cost": "500",
+        "featured": 0,
+        "refundable": 1,
+        "lastupdate": 1547251203,
+        "youtube": null,
+        "item": {
+          "image": "https://fortnite-public-files.theapinetwork.com/emote/ea813372217b1416b339c43f59534d59.png",
+          "images": {
+            "transparent": "https://fortnite-public-files.theapinetwork.com/emote/ea813372217b1416b339c43f59534d59.png",
+            "background": "https://fortnite-public-files.theapinetwork.com/image/1de2326-5a1147c-f695b0e-f41326c.png",
+            "information": "https://fortnite-public-files.theapinetwork.com/image/1de2326-5a1147c-f695b0e-f41326c/item.png",
+            "featured": {
+              "transparent": null
+            }
+          },
+          "captial": "emote",
+          "type": "emote",
+          "rarity": "rare",
+          "obtained_type": "vbucks"
+        },
+        "ratings": {
+          "avgStars": 4.16,
+          "totalPoints": 179,
+          "numberVotes": 43
+        }
+      },
+      {
+        "itemid": "a3b8ee9-dc53339-effd12e-ebc66fb",
+        "name": "Warthog",
+        "cost": "500",
+        "featured": 0,
+        "refundable": 1,
+        "lastupdate": 1547251203,
+        "youtube": null,
+        "item": {
+          "image": "https://fortnite-public-files.theapinetwork.com/glider/28c848fe047bc9bbae7fc7bcfccb88ff.png",
+          "images": {
+            "transparent": "https://fortnite-public-files.theapinetwork.com/glider/28c848fe047bc9bbae7fc7bcfccb88ff.png",
+            "background": "https://fortnite-public-files.theapinetwork.com/image/a3b8ee9-dc53339-effd12e-ebc66fb.png",
+            "information": "https://fortnite-public-files.theapinetwork.com/image/a3b8ee9-dc53339-effd12e-ebc66fb/item.png",
+            "featured": {
+              "transparent": "https://fortnite-public-files.theapinetwork.com/featured/a3b8ee9-dc53339-effd12e-ebc66fb.png"
+            }
+          },
+          "captial": "glider",
+          "type": "glider",
+          "rarity": "uncommon",
+          "obtained_type": "vbucks"
+        },
+        "ratings": {
+          "avgStars": 3.18,
+          "totalPoints": 89,
+          "numberVotes": 28
+        }
+      },
+      {
+        "itemid": "88778dc-264b96d-2f34091-4130e6e",
+        "name": "Whiplash",
+        "cost": "800",
+        "featured": 0,
+        "refundable": 1,
+        "lastupdate": 1547251204,
+        "youtube": null,
+        "item": {
+          "image": "https://fortnite-public-files.theapinetwork.com/outfit/92ce54f2d72318bcfb306ea86f7ac1b3.png",
+          "images": {
+            "transparent": "https://fortnite-public-files.theapinetwork.com/outfit/92ce54f2d72318bcfb306ea86f7ac1b3.png",
+            "background": "https://fortnite-public-files.theapinetwork.com/image/88778dc-264b96d-2f34091-4130e6e.png",
+            "information": "https://fortnite-public-files.theapinetwork.com/image/88778dc-264b96d-2f34091-4130e6e/item.png",
+            "featured": {
+              "transparent": "https://fortnite-public-files.theapinetwork.com/featured/88778dc-264b96d-2f34091-4130e6e.png"
+            }
+          },
+          "captial": "outfit",
+          "type": "outfit",
+          "rarity": "uncommon",
+          "obtained_type": "vbucks"
+        },
+        "ratings": {
+          "avgStars": 3.91,
+          "totalPoints": 172,
+          "numberVotes": 44
+        }
+      },
+      {
+        "itemid": "3eabe36-1114edb-6d1db0a-89c0e08",
+        "name": "Shade",
+        "cost": "1500",
+        "featured": 0,
+        "refundable": 1,
+        "lastupdate": 1547251204,
+        "youtube": null,
+        "item": {
+          "image": "https://fortnite-public-files.theapinetwork.com/outfit/317b1a5fcb01c114c3ff78f1338761c4.png",
+          "images": {
+            "transparent": "https://fortnite-public-files.theapinetwork.com/outfit/317b1a5fcb01c114c3ff78f1338761c4.png",
+            "background": "https://fortnite-public-files.theapinetwork.com/image/3eabe36-1114edb-6d1db0a-89c0e08.png",
+            "information": "https://fortnite-public-files.theapinetwork.com/image/3eabe36-1114edb-6d1db0a-89c0e08/item.png",
+            "featured": {
+              "transparent": "https://fortnite-public-files.theapinetwork.com/featured/3eabe36-1114edb-6d1db0a-89c0e08.png"
+            }
+          },
+          "captial": "outfit",
+          "type": "outfit",
+          "rarity": "epic",
+          "obtained_type": "vbucks"
+        },
+        "ratings": {
+          "avgStars": 2.73,
+          "totalPoints": 109,
+          "numberVotes": 40
+        }
+      }
+    ]
+  }

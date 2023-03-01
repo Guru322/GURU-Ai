@@ -1,0 +1,35 @@
+{
+  "name": "restructure",
+  "version": "2.0.1",
+  "description": "Declaratively encode and decode binary data",
+  "main": "index.js",
+  "devDependencies": {
+    "chai": "~4.2.0",
+    "concat-stream": "~2.0.0",
+    "coveralls": "^3.0.11",
+    "iconv-lite": "^0.5.1",
+    "mocha": "~7.1.1",
+    "nyc": "^15.0.1"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "cover": "nyc --reporter=html --reporter=text mocha",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/devongovett/restructure.git"
+  },
+  "keywords": [
+    "binary",
+    "struct",
+    "encode",
+    "decode"
+  ],
+  "author": "Devon Govett <devongovett@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devongovett/restructure/issues"
+  },
+  "homepage": "https://github.com/devongovett/restructure"
+}

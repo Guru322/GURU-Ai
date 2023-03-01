@@ -1,0 +1,38 @@
+{
+  "name": "node-gtts",
+  "version": "2.0.2",
+  "description": "Google Text-to-Speech for NodeJS (Unofficial API)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "bin": {
+    "node-gtts": "./bin.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiennq/node-gtts.git"
+  },
+  "keywords": [
+    "node",
+    "google",
+    "text-to-speech",
+    "read",
+    "text",
+    "google",
+    "translate"
+  ],
+  "author": "Thien Nguyen",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/thiennq/node-gtts/issues"
+  },
+  "homepage": "https://github.com/thiennq/node-gtts#readme",
+  "dependencies": {
+    "async": "^2.4.1",
+    "escape-string-regexp": "^1.0.5",
+    "fake-useragent": "^1.0.1",
+    "multistream": "^2.1.0",
+    "request": "^2.81.0"
+  }
+}

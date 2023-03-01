@@ -1,0 +1,42 @@
+{
+  "name": "acrcloud",
+  "version": "1.4.0",
+  "description": "Recognize audio recordings with the ACRCloud recognition API",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "example": "node ./example/index.js",
+    "build": "tsc ./src/index.ts --outDir ./lib && cp ./src/index.d.ts ./lib/index.d.ts",
+    "ts": "ts-node ./src/index.ts",
+    "test": "mocha"
+  },
+  "keywords": [
+    "acr",
+    "acrcloud",
+    "audio",
+    "music",
+    "song"
+  ],
+  "author": "Arron Hunt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arronhunt/acrcloud-node"
+  },
+  "dependencies": {
+    "form-data": "^2.5.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.5",
+    "chai": "^4.2.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "mocha": "^6.2.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3"
+  }
+}

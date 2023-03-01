@@ -1,0 +1,1 @@
+{"version":3,"file":"inject.js","sourceRoot":"","sources":["../../src/annotation/inject.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,YAAY,MAAM,4BAA4B,CAAC;AAC3D,OAAO,EAAE,UAAU,EAAE,MAAM,eAAe,CAAC;AAE3C,IAAM,MAAM,GAAG,UAAU,CAAC,YAAY,CAAC,UAAU,CAAC,CAAC;AAEnD,OAAO,EAAE,MAAM,EAAE,CAAC"}

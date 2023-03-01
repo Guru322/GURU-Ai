@@ -1,0 +1,1 @@
+{"version":3,"file":"multi_inject.js","sourceRoot":"","sources":["../../src/annotation/multi_inject.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,YAAY,MAAM,4BAA4B,CAAC;AAC3D,OAAO,EAAE,UAAU,EAAE,MAAM,eAAe,CAAC;AAE3C,IAAM,WAAW,GAAG,UAAU,CAAC,YAAY,CAAC,gBAAgB,CAAC,CAAC;AAE9D,OAAO,EAAE,WAAW,EAAE,CAAC"}

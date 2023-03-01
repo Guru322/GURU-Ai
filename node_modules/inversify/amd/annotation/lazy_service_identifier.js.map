@@ -1,0 +1,1 @@
+{"version":3,"file":"lazy_service_identifier.js","sourceRoot":"","sources":["../../src/annotation/lazy_service_identifier.ts"],"names":[],"mappings":";;;;IAIA;QAEE,8BAAmB,EAAyC;YAC1D,IAAI,CAAC,GAAG,GAAG,EAAE,CAAC;QAChB,CAAC;QAEM,qCAAM,GAAb;YACE,OAAO,IAAI,CAAC,GAAG,EAAE,CAAC;QACpB,CAAC;QACH,2BAAC;IAAD,CAAC,AATD,IASC;IATY,oDAAoB"}

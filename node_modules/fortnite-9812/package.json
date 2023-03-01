@@ -1,0 +1,35 @@
+{
+  "name": "fortnite-9812",
+  "version": "1.0.4",
+  "description": "A nodejs module for retrieving data from TRN, fnbr.co and https://fortniteapi.com/",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manaf941/fortnite-manaf941-api.git"
+  },
+  "keywords": [
+    "fortnite",
+    "api",
+    "manaf941",
+    "fnbr.co",
+    "fortniteapi.com",
+    "TRN",
+    "fortnitetracker",
+    "the",
+    "tracker",
+    "network"
+  ],
+  "author": "Manaf941",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manaf941/fortnite-manaf941-api/issues"
+  },
+  "homepage": "https://github.com/Manaf941/fortnite-manaf941-api#readme"
+}

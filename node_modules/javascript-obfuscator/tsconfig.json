@@ -1,0 +1,29 @@
+{
+  "ts-node": {
+    "files": true
+  },
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "exactOptionalPropertyTypes": false,
+    "experimentalDecorators": true,
+    "lib": [
+      "es2019",
+      "dom"
+    ],
+    "target": "es2018",
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "noImplicitOverride": true,
+    "noImplicitThis": false,
+    "noUnusedLocals": true,
+    "removeComments": true,
+    "strict": true,
+    "useUnknownInCatchVariables": false
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false
+}

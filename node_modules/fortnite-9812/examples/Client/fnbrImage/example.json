@@ -1,0 +1,28 @@
+{
+    "status": 200,
+    "data": [
+      {
+        "id": "5bb4753bd022e1faa8cbfb5c",
+        "name": "Straw Ops",
+        "price": "1,500",
+        "priceIcon": "vbucks",
+        "priceIconLink": "https://image.fnbr.co/price/icon_vbucks.png",
+        "images": {
+          "icon": "https://image.fnbr.co/outfit/5bb4753bd022e1faa8cbfb5c/icon.png",
+          "png": false,
+          "gallery": false,
+          "featured": "https://image.fnbr.co/outfit/5bb4753bd022e1faa8cbfb5c/featured.png"
+        },
+        "rarity": "epic",
+        "type": "outfit",
+        "slug": "straw-ops",
+        "readableType": "Outfit",
+        "description": "The harvest grows near."
+      }
+    ],
+    "query": {
+      "search": "straw ops",
+      "limit": 10,
+      "type": "outfit"
+    }
+  }

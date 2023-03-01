@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Image to use:</p>
+<img id="bg" width="550" height="375" src="https://i.ibb.co/ct0c6Yy/Spongebob.png" alt="inv">
+<img id="avatar" width="450" height="450" src="https://www.hostpic.org/images/2106050955340178.jpeg" alt="avatar">
+
+
+<p>Canvas:</p>
+<canvas id="myCanvas" width="550" height="375" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+window.onload = function() {
+   
+   
+   
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  
+  var pp = document.getElementById("avatar");
+  ctx.drawImage(pp, 335, 8, 140, 172);
+  
+  
+  
+  //background
+  var bg = document.getElementById("bg");
+  ctx.drawImage(bg, 0, 0, 550, 375);
+  
+  
+        
+  
+}
+</script>
+
+</body>
+</html>

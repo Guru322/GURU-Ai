@@ -1,0 +1,47 @@
+{
+	"name": "app-path",
+	"version": "4.0.0",
+	"description": "Get the path to an app (macOS)",
+	"license": "MIT",
+	"repository": "sindresorhus/app-path",
+	"funding": "https://github.com/sponsors/sindresorhus",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "https://sindresorhus.com"
+	},
+	"type": "module",
+	"exports": "./index.js",
+	"engines": {
+		"node": ">=12"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd",
+		"compile-x64": "clang main.m -fmodules -mmacosx-version-min=10.6 -target x86_64-apple-darwin -o main-x64",
+		"compile-arm64": "clang main.m -fmodules -mmacosx-version-min=11.0 -target arm64-apple-darwin -o main-arm64",
+		"compile": "npm run compile-x64 && npm run compile-arm64 && lipo -create -output main main-x64 main-arm64 && rm main-x64 main-arm64"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts",
+		"main"
+	],
+	"keywords": [
+		"macos",
+		"applescript",
+		"app",
+		"application",
+		"path",
+		"directory",
+		"bundle",
+		"location"
+	],
+	"dependencies": {
+		"execa": "^5.0.0"
+	},
+	"devDependencies": {
+		"ava": "^3.15.0",
+		"tsd": "^0.14.0",
+		"xo": "^0.39.1"
+	}
+}

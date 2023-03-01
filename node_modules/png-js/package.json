@@ -1,0 +1,34 @@
+{
+    "name": "png-js",
+    "description": "A PNG decoder in JavaScript",
+    "version": "1.0.0",
+    "author": {
+        "name": "Devon Govett",
+        "email": "devongovett@gmail.com",
+        "url": "http://badassjs.com/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/devongovett/png.js.git"
+    },
+    "bugs": "http://github.com/devongovett/png.js/issues",
+    "devDependencies": {
+        "jest": "^24.1.0",
+        "prettier": "^1.16.4"
+    },
+    "scripts": {
+        "test": "jest",
+        "prettier": "prettier test/**/*.js png-node.js png.js --write"
+    },
+    "main": "png-node.js",
+    "engine": [
+        "node >= v0.6.0"
+    ],
+    "jest": {
+        "setupFiles": [
+            "<rootDir>/test/patch-canvas.js",
+            "<rootDir>/zlib.js",
+            "<rootDir>/png.js"
+        ]
+    }
+}

@@ -1,0 +1,82 @@
+[
+    {
+      "imageUrl": "https://cdn.thetrackernetwork.com/cdn/fortnite/7F6A6728_large.png",
+      "manifestId": 6728,
+      "name": "Virtue",
+      "rarity": "Sturdy",
+      "storeCategory": "BRWeeklyStorefront",
+      "vBucks": 800
+    },
+    {
+      "imageUrl": "https://cdn.thetrackernetwork.com/cdn/fortnite/9E3D6826_large.png",
+      "manifestId": 6826,
+      "name": "Ark",
+      "rarity": "Fine",
+      "storeCategory": "BRWeeklyStorefront",
+      "vBucks": 2000
+    },
+    {
+      "imageUrl": "https://cdn.thetrackernetwork.com/cdn/fortnite/24276760_large.png",
+      "manifestId": 6760,
+      "name": "Red-nosed Ranger",
+      "rarity": "Handmade",
+      "storeCategory": "BRWeeklyStorefront",
+      "vBucks": 800
+    },
+    {
+      "imageUrl": "https://cdn.thetrackernetwork.com/cdn/fortnite/2EC8777_large.png",
+      "manifestId": 777,
+      "name": "Red-Nosed Raider",
+      "rarity": "Sturdy",
+      "storeCategory": "BRWeeklyStorefront",
+      "vBucks": 1200
+    },
+    {
+      "imageUrl": "https://cdn.thetrackernetwork.com/cdn/fortnite/9DE65590_large.png",
+      "manifestId": 5590,
+      "name": "Shade",
+      "rarity": "Quality",
+      "storeCategory": "BRDailyStorefront",
+      "vBucks": 1500
+    },
+    {
+      "imageUrl": "https://cdn.thetrackernetwork.com/cdn/fortnite/BEB91263_large.png",
+      "manifestId": 1263,
+      "name": "Whiplash",
+      "rarity": "Handmade",
+      "storeCategory": "BRDailyStorefront",
+      "vBucks": 800
+    },
+    {
+      "imageUrl": "https://cdn.thetrackernetwork.com/cdn/fortnite/E8B4882_large.png",
+      "manifestId": 882,
+      "name": "Warthog",
+      "rarity": "Handmade",
+      "storeCategory": "BRDailyStorefront",
+      "vBucks": 500
+    },
+    {
+      "imageUrl": "https://cdn.thetrackernetwork.com/cdn/fortnite/6E0A6371_large.png",
+      "manifestId": 6371,
+      "name": "Busy",
+      "rarity": "Sturdy",
+      "storeCategory": "BRDailyStorefront",
+      "vBucks": 500
+    },
+    {
+      "imageUrl": "https://cdn.thetrackernetwork.com/cdn/fortnite/199E6706_large.png",
+      "manifestId": 6706,
+      "name": "Lazy Shuffle",
+      "rarity": "Sturdy",
+      "storeCategory": "BRDailyStorefront",
+      "vBucks": 500
+    },
+    {
+      "imageUrl": "https://cdn.thetrackernetwork.com/cdn/fortnite/9EFA6797_large.png",
+      "manifestId": 6797,
+      "name": "Candy Cane",
+      "rarity": "Handmade",
+      "storeCategory": "BRDailyStorefront",
+      "vBucks": 300
+    }
+  ]

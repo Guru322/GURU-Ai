@@ -1,0 +1,33 @@
+{
+    "name": "hispamemes",
+    "version": "1.0.7",
+    "description": "El npm mas grande de habla hispana dedicado a generar imagen/video de memes para los bots de discord , actualmente +300 memes diferentes",
+    "main": "index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "keywords": [
+        "meme",
+        "spanish",
+        "meme spanish",
+        "memes",
+        "meme español",
+        "español",
+        "spain",
+        "meme spain",
+        "discord",
+        "hispano",
+        "hispanohablante",
+        "hispanos"
+    ],
+    "author": "Misterioso32",
+    "homepage": "https://github.com/Misterioso32/Hispamemes#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Misterioso32/Hispamemes"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "discord.js": "^13.9.0"
+    }
+}

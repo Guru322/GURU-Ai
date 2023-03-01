@@ -1,0 +1,318 @@
+{
+    "language": "en",
+    "season": 7,
+    "currentweek": 6,
+    "star": "https://fortnite-public-files.theapinetwork.com/fortnite-br-challenges-star.png",
+    "challenges": {
+      "week1": [
+        {
+          "identifier": "e2c420d-928d4bf-8ce0ff2-ec19b37",
+          "challenge": "Pick up an item of each rarity",
+          "total": 5,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "e2c420d-928d4bf-8ce0ff2-ec19b37",
+          "challenge": "Dance in different forbidden locations",
+          "total": 7,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "e2c420d-928d4bf-8ce0ff2-ec19b37",
+          "challenge": "Play matches with at least one elimination",
+          "total": 5,
+          "stars": 10,
+          "difficulty": "hard"
+        },
+        {
+          "identifier": "e2c420d-928d4bf-8ce0ff2-ec19b37",
+          "challenge": "Stage 1: Dance on top of a crown of RV's",
+          "total": 1,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "e2c420d-928d4bf-8ce0ff2-ec19b37",
+          "challenge": "Deal Headshot Damage to opponents",
+          "total": 500,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "e2c420d-928d4bf-8ce0ff2-ec19b37",
+          "challenge": "Stage 1: Search Ammo Boxes in a single match",
+          "total": 5,
+          "stars": 10,
+          "difficulty": "hard"
+        },
+        {
+          "identifier": "e2c420d-928d4bf-8ce0ff2-ec19b37",
+          "challenge": "Eliminate opponents in different Named Locations",
+          "total": 5,
+          "stars": 10,
+          "difficulty": "hard"
+        }
+      ],
+      "week2": [
+        {
+          "identifier": "32bb90e-8976aab-5298d5d-a10fe66",
+          "challenge": "Search a Chest in different Named Locations",
+          "total": 7,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "32bb90e-8976aab-5298d5d-a10fe66",
+          "challenge": "Damage opponents with different types of weapons",
+          "total": 5,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "32bb90e-8976aab-5298d5d-a10fe66",
+          "challenge": "Eliminate opponents in Snobby Shores or Fatal Fields",
+          "total": 3,
+          "stars": 10,
+          "difficulty": "hard"
+        },
+        {
+          "identifier": "32bb90e-8976aab-5298d5d-a10fe66",
+          "challenge": "Stage 1: Visit Snobby Shores and Pleasant Park in a single match",
+          "total": 2,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "32bb90e-8976aab-5298d5d-a10fe66",
+          "challenge": "Play the Sheet Music on the planos near Pleasant Park and Lonely Lodge",
+          "total": 2,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "32bb90e-8976aab-5298d5d-a10fe66",
+          "challenge": "Complete in a Dance Off at an abandoned mansion",
+          "total": 1,
+          "stars": 10,
+          "difficulty": "hard"
+        },
+        {
+          "identifier": "32bb90e-8976aab-5298d5d-a10fe66",
+          "challenge": "Eliminate an opponents from at least 50m away",
+          "total": 1,
+          "stars": 10,
+          "difficulty": "hard"
+        }
+      ],
+      "week3": [
+        {
+          "identifier": "d2ddea1-8f00665-ce8623e-36bd4e3",
+          "challenge": "Ride a Zipline in different matches",
+          "total": 5,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "d2ddea1-8f00665-ce8623e-36bd4e3",
+          "challenge": "Stage 1: Land at Lonely Lodge",
+          "total": 1,
+          "stars": 1,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "d2ddea1-8f00665-ce8623e-36bd4e3",
+          "challenge": "Legendary weapon Eliminations",
+          "total": 2,
+          "stars": 10,
+          "difficulty": "hard"
+        },
+        {
+          "identifier": "d2ddea1-8f00665-ce8623e-36bd4e3",
+          "challenge": "Search Chests at Polar Peak or Tomato Temple",
+          "total": 7,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "d2ddea1-8f00665-ce8623e-36bd4e3",
+          "challenge": "Ring a doorbell in different named locations in a single match",
+          "total": 2,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "d2ddea1-8f00665-ce8623e-36bd4e3",
+          "challenge": "Search between three ski lodges",
+          "total": 1,
+          "stars": 10,
+          "difficulty": "hard"
+        },
+        {
+          "identifier": "d2ddea1-8f00665-ce8623e-36bd4e3",
+          "challenge": "Stage 1: Deal damage with Shotguns to opponents",
+          "total": 200,
+          "stars": 3,
+          "difficulty": "normal"
+        }
+      ],
+      "week4": [
+        {
+          "identifier": "ad61ab1-43223ef-bc24c7d-2583be6",
+          "challenge": "Use an X-4 Stormwing plane in different matches",
+          "total": 5,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "ad61ab1-43223ef-bc24c7d-2583be6",
+          "challenge": "Launch fireworks",
+          "total": 3,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "ad61ab1-43223ef-bc24c7d-2583be6",
+          "challenge": "Eliminate opponents at Expedition Outposts",
+          "total": 3,
+          "stars": 10,
+          "difficulty": "hard"
+        },
+        {
+          "identifier": "ad61ab1-43223ef-bc24c7d-2583be6",
+          "challenge": "Stage 1: Destroy chairs",
+          "total": 80,
+          "stars": 2,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "ad61ab1-43223ef-bc24c7d-2583be6",
+          "challenge": "Deal damage with a pickaxe to opponents",
+          "total": 100,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "ad61ab1-43223ef-bc24c7d-2583be6",
+          "challenge": "Eliminate opponents at Happy Hamlet or Pleasent Park",
+          "total": 3,
+          "stars": 10,
+          "difficulty": "hard"
+        },
+        {
+          "identifier": "ad61ab1-43223ef-bc24c7d-2583be6",
+          "challenge": "Stage 1: Search the letter 'O' west of Pleasent Park",
+          "total": 1,
+          "stars": 2,
+          "difficulty": "normal"
+        }
+      ],
+      "week5": [
+        {
+          "identifier": "d09bf41-544a336-5a46c90-77ebb5e",
+          "challenge": "Stage 1: Land at Polar Peak",
+          "total": 1,
+          "stars": 1,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "d09bf41-544a336-5a46c90-77ebb5e",
+          "challenge": "Deal damage to opponent's structures",
+          "total": 5000,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "d09bf41-544a336-5a46c90-77ebb5e",
+          "challenge": "Suppressed weapon eliminations",
+          "total": 3,
+          "stars": 10,
+          "difficulty": "hard"
+        },
+        {
+          "identifier": "d09bf41-544a336-5a46c90-77ebb5e",
+          "challenge": "Stage 1: Dance on top of a Water Tower",
+          "total": 1,
+          "stars": 1,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "d09bf41-544a336-5a46c90-77ebb5e",
+          "challenge": "Search Chests at Wailing Woods or Paradise Palms",
+          "total": 7,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "d09bf41-544a336-5a46c90-77ebb5e",
+          "challenge": "Search between a Giant Rock Man, a Crowned Tomato and an Encircled Tree",
+          "total": 1,
+          "stars": 10,
+          "difficulty": "hard"
+        },
+        {
+          "identifier": "d09bf41-544a336-5a46c90-77ebb5e",
+          "challenge": "Eliminate an opponent from closer than 5m away",
+          "total": 3,
+          "stars": 10,
+          "difficulty": "hard"
+        }
+      ],
+      "week6": [
+        {
+          "identifier": "fbd7939-d674997-cdb4692-d34de86",
+          "challenge": "Search an Ammo Box in different Named Locations",
+          "total": 7,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "fbd7939-d674997-cdb4692-d34de86",
+          "challenge": "Search Chilly Gnomes",
+          "total": 7,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "fbd7939-d674997-cdb4692-d34de86",
+          "challenge": "Eliminate opponents in Lucky Landing or Tilted Towers",
+          "total": 3,
+          "stars": 10,
+          "difficulty": "hard"
+        },
+        {
+          "identifier": "fbd7939-d674997-cdb4692-d34de86",
+          "challenge": "Stage 1: Visit Polar Peak and Tilted Towers in a single match",
+          "total": 2,
+          "stars": 1,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "fbd7939-d674997-cdb4692-d34de86",
+          "challenge": "Slide a Ice Puck over 150m in a single throw",
+          "total": 1,
+          "stars": 5,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "fbd7939-d674997-cdb4692-d34de86",
+          "challenge": "Stage 1: Deal damage with SMGs to opponents",
+          "total": 200,
+          "stars": 3,
+          "difficulty": "normal"
+        },
+        {
+          "identifier": "fbd7939-d674997-cdb4692-d34de86",
+          "challenge": "Deal damage with different weapons in a single match",
+          "total": 5,
+          "stars": 10,
+          "difficulty": "hard"
+        }
+      ],
+      "week7": [],
+      "week8": [],
+      "week9": [],
+      "week10": []
+    }
+  }

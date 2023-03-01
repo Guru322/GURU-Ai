@@ -1,0 +1,1 @@
+{"version":3,"file":"pre_destroy.js","sourceRoot":"","sources":["../../src/annotation/pre_destroy.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,WAAW,MAAM,yBAAyB,CAAC;AACvD,OAAO,KAAK,YAAY,MAAM,4BAA4B,CAAC;AAC3D,OAAO,EAAE,sBAAsB,EAAE,MAAM,4BAA4B,CAAC;AAEpE,IAAM,UAAU,GAAG,sBAAsB,CACvC,YAAY,CAAC,WAAW,EACxB,WAAW,CAAC,4BAA4B,CACzC,CAAC;AAEF,OAAO,EAAE,UAAU,EAAE,CAAC"}

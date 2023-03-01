@@ -1,0 +1,37 @@
+import * as ESTree from 'estree';
+import { TIdentifierNamesGeneratorFactory } from '../../types/container/generators/TIdentifierNamesGeneratorFactory';
+import { TStringArrayCustomNodeFactory } from '../../types/container/custom-nodes/TStringArrayCustomNodeFactory';
+import { ILiteralNodesCacheStorage } from '../../interfaces/storages/string-array-transformers/ILiteralNodesCacheStorage';
+import { IOptions } from '../../interfaces/options/IOptions';
+import { IRandomGenerator } from '../../interfaces/utils/IRandomGenerator';
+import { IStringArrayScopeCallsWrappersDataStorage } from '../../interfaces/storages/string-array-transformers/IStringArrayScopeCallsWrappersDataStorage';
+import { IStringArrayStorage } from '../../interfaces/storages/string-array-transformers/IStringArrayStorage';
+import { IStringArrayStorageAnalyzer } from '../../interfaces/analyzers/string-array-storage-analyzer/IStringArrayStorageAnalyzer';
+import { IVisitedLexicalScopeNodesStackStorage } from '../../interfaces/storages/string-array-transformers/IVisitedLexicalScopeNodesStackStorage';
+import { IVisitor } from '../../interfaces/node-transformers/IVisitor';
+import { NodeTransformer } from '../../enums/node-transformers/NodeTransformer';
+import { NodeTransformationStage } from '../../enums/node-transformers/NodeTransformationStage';
+import { AbstractNodeTransformer } from '../AbstractNodeTransformer';
+export declare class StringArrayTransformer extends AbstractNodeTransformer {
+    private static readonly minShiftedIndexValue;
+    private static readonly maxShiftedIndexValue;
+    readonly runAfter: NodeTransformer[];
+    private readonly identifierNamesGenerator;
+    private readonly literalNodesCacheStorage;
+    private readonly stringArrayStorage;
+    private readonly stringArrayStorageAnalyzer;
+    private readonly stringArrayScopeCallsWrappersDataStorage;
+    private readonly stringArrayTransformerCustomNodeFactory;
+    private readonly visitedLexicalScopeNodesStackStorage;
+    constructor(randomGenerator: IRandomGenerator, options: IOptions, literalNodesCacheStorage: ILiteralNodesCacheStorage, visitedLexicalScopeNodesStackStorage: IVisitedLexicalScopeNodesStackStorage, stringArrayStorage: IStringArrayStorage, stringArrayScopeCallsWrappersDataStorage: IStringArrayScopeCallsWrappersDataStorage, stringArrayStorageAnalyzer: IStringArrayStorageAnalyzer, identifierNamesGeneratorFactory: TIdentifierNamesGeneratorFactory, stringArrayTransformerCustomNodeFactory: TStringArrayCustomNodeFactory);
+    getVisitor(nodeTransformationStage: NodeTransformationStage): IVisitor | null;
+    prepareNode(programNode: ESTree.Program): void;
+    transformNode(literalNode: ESTree.Literal, parentNode: ESTree.Node): ESTree.Node;
+    private getStringArrayCallNode;
+    private getStringArrayScopeCallsWrapperData;
+    private getRootStringArrayScopeCallsWrapperData;
+    private getUpperStringArrayScopeCallsWrapperData;
+    private getAndUpdateStringArrayScopeCallsWrappersDataByEncoding;
+    private getStringArrayCallsWrapperShiftedIndex;
+    private getStringArrayCallsWrapperParameterIndexesData;
+}

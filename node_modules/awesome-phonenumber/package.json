@@ -1,0 +1,82 @@
+{
+  "name": "awesome-phonenumber",
+  "description": "Google's libphonenumber pre-compiled with the closure compiler",
+  "license": "MIT",
+  "version": "3.4.0",
+  "author": "Gustaf Räntilä <g.rantila@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grantila/awesome-phonenumber.git"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "default": "./index-esm.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build:libphonenumber": "node_modules/.bin/gulp",
+    "build:rewrite": "ts-node scripts/rewrite.ts",
+    "build:esm:build": "rollup -c ./rollup.config.js",
+    "build:esm:rewrite": "cat build/index-esm.js src/esm-outro.js > index-esm.mjs",
+    "build:esm": "yarn build:esm:build && yarn build:esm:rewrite",
+    "build": "yarn build:libphonenumber && yarn build:rewrite && yarn build:esm",
+    "test:compile": "scripts/test.sh",
+    "test": "yarn test:compile && NODE_OPTIONS=--experimental-vm-modules jest",
+    "cz": "git-cz",
+    "semantic-release": "semantic-release"
+  },
+  "pre-commit": [
+    "test"
+  ],
+  "files": [
+    "lib",
+    "index.js",
+    "index-esm.mjs",
+    "index.d.ts"
+  ],
+  "keywords": [
+    "libphonenumber",
+    "phonenumber",
+    "phone",
+    "number",
+    "closure",
+    "web",
+    "browser",
+    "browserify",
+    "awesome"
+  ],
+  "devDependencies": {
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-typescript": "^7.16.7",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@types/jest": "^27.5.0",
+    "@types/mkdirp": "^1.0.1",
+    "@types/node": "^16.11.12",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "google-closure-compiler": "20220502.0.0",
+    "google-closure-library": "^20220502.0.0",
+    "gulp": "^4.0.2",
+    "jest": "^28.1.0",
+    "mkdirp": "^1.0.4",
+    "pre-commit": "^1.2.2",
+    "replace": "^1.2.1",
+    "rmfr": "^2.0.0",
+    "ts-jest-resolver": "^2.0.0",
+    "rollup": "^2.66.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.2.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

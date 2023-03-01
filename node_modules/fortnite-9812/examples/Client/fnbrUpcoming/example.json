@@ -1,0 +1,195 @@
+{
+    "status": 200,
+    "data": [
+      {
+        "id": "5c19185a41eb8a88a040b680",
+        "name": "Cheer Up",
+        "price": "???",
+        "priceIcon": false,
+        "priceIconLink": false,
+        "images": {
+          "icon": "https://image.fnbr.co/emote/5c19185a41eb8a88a040b680/icon.png",
+          "png": false,
+          "gallery": false,
+          "featured": false
+        },
+        "rarity": "epic",
+        "type": "emote",
+        "slug": "cheer-up",
+        "readableType": "Emote",
+        "description": "Be aggressive. B-E aggressive.",
+        "bundleSet": false
+      },
+      {
+        "id": "5bdacad068cdd928eb9bf386",
+        "name": "Instinct",
+        "price": "???",
+        "priceIcon": false,
+        "priceIconLink": false,
+        "images": {
+          "icon": "https://image.fnbr.co/outfit/5bdacad068cdd928eb9bf386/icon.png",
+          "png": false,
+          "gallery": false,
+          "featured": "https://image.fnbr.co/outfit/5bdacad068cdd928eb9bf386/featured.png"
+        },
+        "rarity": "rare",
+        "type": "outfit",
+        "slug": "instinct",
+        "readableType": "Outfit",
+        "description": "Victory comes naturally.",
+        "bundleSet": false
+      },
+      {
+        "id": "5bd04f735a7c951e09967f9b",
+        "name": "Longhorn",
+        "price": "???",
+        "priceIcon": false,
+        "priceIconLink": false,
+        "images": {
+          "icon": "https://image.fnbr.co/pickaxe/5bd04f735a7c951e09967f9b/icon.png",
+          "png": false,
+          "gallery": false,
+          "featured": false
+        },
+        "rarity": "rare",
+        "type": "pickaxe",
+        "slug": "longhorn",
+        "readableType": "Pickaxe",
+        "description": "Corral the competition.",
+        "bundleSet": false
+      },
+      {
+        "id": "5bdacdcf68cdd971bd9bf39a",
+        "name": "Reaction Tank",
+        "price": "???",
+        "priceIcon": false,
+        "priceIconLink": false,
+        "images": {
+          "icon": "https://image.fnbr.co/backpack/5bdacdcf68cdd971bd9bf39a/icon.png",
+          "png": false,
+          "gallery": false,
+          "featured": false
+        },
+        "rarity": "rare",
+        "type": "backpack",
+        "slug": "reaction-tank",
+        "readableType": "Back Bling",
+        "description": "Pressurized.",
+        "bundleSet": false
+      },
+      {
+        "id": "5c19153a41eb8af6fc40b67d",
+        "name": "Uni-horn",
+        "price": "???",
+        "priceIcon": false,
+        "priceIconLink": false,
+        "images": {
+          "icon": "https://image.fnbr.co/pickaxe/5c19153a41eb8af6fc40b67d/icon.png",
+          "png": false,
+          "gallery": false,
+          "featured": false
+        },
+        "rarity": "rare",
+        "type": "pickaxe",
+        "slug": "uni-horn",
+        "readableType": "Pickaxe",
+        "description": "Take the competition by the horn.",
+        "bundleSet": false
+      },
+      {
+        "id": "5c19131641eb8ad34840b675",
+        "name": "Vision",
+        "price": "???",
+        "priceIcon": false,
+        "priceIconLink": false,
+        "images": {
+          "icon": "https://image.fnbr.co/pickaxe/5c19131641eb8ad34840b675/icon.png",
+          "png": false,
+          "gallery": false,
+          "featured": false
+        },
+        "rarity": "rare",
+        "type": "pickaxe",
+        "slug": "vision",
+        "readableType": "Pickaxe",
+        "description": "Unending gaze.",
+        "bundleSet": false
+      },
+      {
+        "id": "5b47b8df582d6f70c3a1d18c",
+        "name": "Helium",
+        "price": "???",
+        "priceIcon": false,
+        "priceIconLink": false,
+        "images": {
+          "icon": "https://image.fnbr.co/glider/5b47b8df582d6f70c3a1d18c/icon.png",
+          "png": "https://image.fnbr.co/glider/5b47b8df582d6f70c3a1d18c/png.png",
+          "gallery": "https://image.fnbr.co/glider/5b47b8df582d6f70c3a1d18c/gallery.jpg",
+          "featured": false
+        },
+        "rarity": "uncommon",
+        "type": "glider",
+        "slug": "helium",
+        "readableType": "Glider",
+        "description": "Lighter than air.",
+        "bundleSet": false
+      },
+      {
+        "id": "5b47b8ca582d6f04fba1d18b",
+        "name": "Rush",
+        "price": "???",
+        "priceIcon": false,
+        "priceIconLink": false,
+        "images": {
+          "icon": "https://image.fnbr.co/glider/5b47b8ca582d6f04fba1d18b/icon.png",
+          "png": "https://image.fnbr.co/glider/5b47b8ca582d6f04fba1d18b/png.png",
+          "gallery": "https://image.fnbr.co/glider/5b47b8ca582d6f04fba1d18b/gallery.jpg",
+          "featured": false
+        },
+        "rarity": "uncommon",
+        "type": "glider",
+        "slug": "rush",
+        "readableType": "Glider",
+        "description": "It's a rush!",
+        "bundleSet": false
+      },
+      {
+        "id": "5ae89f5ef3d31bf094c5b803",
+        "name": "Steadfast",
+        "price": "???",
+        "priceIcon": false,
+        "priceIconLink": false,
+        "images": {
+          "icon": "https://image.fnbr.co/glider/5ae89f5ef3d31bf094c5b803/icon.png",
+          "png": "https://image.fnbr.co/glider/5ae89f5ef3d31bf094c5b803/png.png",
+          "gallery": "https://image.fnbr.co/glider/5ae89f5ef3d31bf094c5b803/gallery.jpg",
+          "featured": false
+        },
+        "rarity": "uncommon",
+        "type": "glider",
+        "slug": "steadfast",
+        "readableType": "Glider",
+        "description": "Battle-tested.",
+        "bundleSet": false
+      },
+      {
+        "id": "5bec4bc2e575640f17fd58fb",
+        "name": "Time Out",
+        "price": "???",
+        "priceIcon": false,
+        "priceIconLink": false,
+        "images": {
+          "icon": "https://image.fnbr.co/emote/5bec4bc2e575640f17fd58fb/icon.png",
+          "png": false,
+          "gallery": false,
+          "featured": false
+        },
+        "rarity": "uncommon",
+        "type": "emote",
+        "slug": "time-out",
+        "readableType": "Emote",
+        "description": "Stop the clock.",
+        "bundleSet": false
+      }
+    ]
+  }

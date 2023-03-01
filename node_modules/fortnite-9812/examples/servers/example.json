@@ -1,0 +1,14 @@
+{
+    "status": "UP",
+    "message": "Fortnite is up.",
+    "version": "7.10",
+    "time": {
+      "since": {
+        "seconds": "1545132605"
+      },
+      "duration": {
+        "seconds": 2198745,
+        "formated": "25 days, 10 hour, 45 minutes and 45 seconds"
+      }
+    }
+  }

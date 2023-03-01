@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - lts/*
+addons:
+  sauce_connect: true
+  hosts:
+    - airtap.local
+env:
+  global:
+  - secure: LNatP/8w5zyemrTbVV6E4vqfi9BfLwUk3J1eLAEzXvTKu6uVOH/Y6kVkdIHWYCsld4VTGnuJHcq7WAb5xdE0chTKqt6Y0/8uZcgzDVJZgaksC3gKgqXSiajPmpEThfYTygIRGQ45rTHsaGxRMDMQOJxZj3FDS+QOCXYpa6exuYQ=
+  - secure: AdYifmUGcwW+ZKNk5v0WiVQJl/I7/ZmSRoiLZQ/NDe6Y3uj5ckzearfs1a5QAliTiHafIgQZ/Garo7o3Wty2uXlbVrcS3b8AyL3gtSxKkCbDGZxn9cMMPEYknOifpUIU3aPmfQ8kx/jT2lwk/6Q8EZuS8AkFZhXSnHqQkkym1Bo=

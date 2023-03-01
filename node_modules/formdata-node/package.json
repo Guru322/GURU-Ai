@@ -1,0 +1,88 @@
+{
+  "name": "formdata-node",
+  "version": "5.0.0",
+  "type": "module",
+  "description": "Spec-compliant FormData implementation for Node.js",
+  "repository": "octet-stream/form-data",
+  "sideEffects": false,
+  "keywords": [
+    "form-data",
+    "node",
+    "form",
+    "upload",
+    "files-upload",
+    "ponyfill"
+  ],
+  "author": "Nick K. <io@octetstream.me>",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "module": "./lib/browser.js",
+  "browser": "./lib/browser.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "node": {
+        "types": "./@type/index.d.ts",
+        "import": "./lib/index.js"
+      },
+      "browser": {
+        "types": "./@type/browser.d.ts",
+        "import": "./lib/browser.js"
+      },
+      "default": "./lib/index.js"
+    },
+    "./file-from-path": {
+      "types": "./@type/fileFromPath.d.ts",
+      "import": "./lib/fileFromPath.js"
+    }
+  },
+  "types": "./@type/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "file-from-path": [
+        "@type/fileFromPath.d.ts"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">= 14.17"
+  },
+  "scripts": {
+    "eslint": "eslint src/**/*.ts",
+    "staged": "lint-staged",
+    "coverage": "c8 npm test",
+    "report:html": "c8 -r=html npm test",
+    "ci": "c8 npm test && c8 report --reporter=json",
+    "build:types": "tsc --project tsconfig.d.ts.json",
+    "build": "tsc && npm run build:types",
+    "test": "ava --fail-fast",
+    "cleanup": "del-cli @type lib",
+    "prepare": "npm run cleanup && npm run build",
+    "husky": "husky install"
+  },
+  "devDependencies": {
+    "@octetstream/eslint-config": "6.2.2",
+    "@types/node": "18.6.3",
+    "@types/sinon": "10.0.13",
+    "@typescript-eslint/eslint-plugin": "5.32.0",
+    "@typescript-eslint/parser": "5.32.0",
+    "ava": "4.3.1",
+    "c8": "7.12.0",
+    "del-cli": "5.0.0",
+    "eslint": "8.21.0",
+    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-import-resolver-typescript": "3.4.0",
+    "eslint-plugin-ava": "13.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "husky": "8.0.1",
+    "lint-staged": "13.0.3",
+    "pinst": "3.0.0",
+    "sinon": "14.0.0",
+    "ts-node": "10.9.1",
+    "typescript": "4.7.4"
+  },
+  "dependencies": {
+    "node-domexception": "1.0.0",
+    "web-streams-polyfill": "4.0.0-beta.3"
+  }
+}

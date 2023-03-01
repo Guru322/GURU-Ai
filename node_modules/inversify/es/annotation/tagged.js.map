@@ -1,0 +1,1 @@
+{"version":3,"file":"tagged.js","sourceRoot":"","sources":["../../src/annotation/tagged.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,sBAAsB,CAAC;AAChD,OAAO,EAAE,qBAAqB,EAAE,MAAM,mBAAmB,CAAC;AAG1D,SAAS,MAAM,CAAI,WAAqC,EAAE,aAAsB;IAC9E,OAAO,qBAAqB,CAAC,IAAI,QAAQ,CAAC,WAAW,EAAE,aAAa,CAAC,CAAC,CAAC;AACzE,CAAC;AAED,OAAO,EAAE,MAAM,EAAE,CAAC"}

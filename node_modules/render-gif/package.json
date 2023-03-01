@@ -1,0 +1,53 @@
+{
+	"name": "render-gif",
+	"version": "2.0.4",
+	"description": "Render a gif and provide frames to draw.",
+	"repository": "https://github.com/Richienb/render-gif.git",
+	"author": "Richie Bendall <richiebendall@gmail.com>",
+	"license": "MIT",
+	"main": "index.js",
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"lint": "xo",
+		"test": "xo && ava"
+	},
+	"keywords": [
+		"gif",
+		"render",
+		"animate",
+		"sequence",
+		"decode",
+		"parse",
+		"draw",
+		"write",
+		"buffer"
+	],
+	"dependencies": {
+		"cycled": "^1.2.0",
+		"decode-gif": "^1.0.1",
+		"delay": "^4.3.0",
+		"jimp": "^0.14.0"
+	},
+	"devDependencies": {
+		"ava": "^3.10.1",
+		"eslint-config-richienb": "^0.4.2",
+		"xo": "^0.32.1"
+	},
+	"xo": {
+		"extends": "richienb",
+		"overrides": [
+			{
+				"files": "test.js",
+				"rules": {
+					"node/no-unsupported-features/node-builtins": 0
+				}
+			}
+		]
+	}
+}
