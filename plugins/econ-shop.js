@@ -1,8 +1,8 @@
 //import db from '../lib/database.js'
 const items = {
     buy: {
-        limit: {
-            exp: 999
+        diamond: {
+            exp: 350
         },
         potion: {
             money: 1250,
@@ -77,7 +77,7 @@ ${Object.keys(listItems).map((v) => {
         user[item] += total
         return m.reply(`You bought *${total}* ${global.rpg.emoticon(item)}${item}`)
     } else {
-        if (user[item] < total) return m.reply(`You don't have enough *${global.rpg.emoticon(item)}${item}* to sell, you only have ${user[item]} items`)
+        if (user[item] < total) return m.reply(`You don't have enough *${item}* to sell, you only have ${user[item]} items`)
         user[item] -= total
         user.money += listItems[item].money * total
         return m.reply(`You sold *${total}* ${item}`)

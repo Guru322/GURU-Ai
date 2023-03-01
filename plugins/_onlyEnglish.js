@@ -6,13 +6,13 @@ handler.before = async function (m, {conn, isAdmin, isBotAdmin, isOwner } ) {
 	if (!m.isGroup) return !1
 	let chat = global.db.data.chats[m.chat]
 	let te = `✳️Only English-speaking people are allowed in this group`
-	if (isBotAdmin && chat.onlyLatinos && !isAdmin && !isOwner) {
-   if (m.sender.startsWith('212')) {
+	if (isBotAdmin && chat.onlyenglish && !isAdmin && !isOwner) {
+   if (m.sender.startsWith('1')) {
   //global.db.data.users[m.sender].banned = true
  m.reply(te, m.sender)
 conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
    } 
-   if (m.sender.startsWith('265')) {
+   if (m.sender.startsWith('43')) {
   m.reply(te, m.sender)
 conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
    } 
@@ -20,19 +20,19 @@ conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
   m.reply(te, m.sender)
 conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
    } 
-   if (m.sender.startsWith('258')) {
+   if (m.sender.startsWith('44')) {
   m.reply(te, m.sender)
 conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
    } 
-   if (m.sender.startsWith('263')) {
+   if (m.sender.startsWith('94')) {
   m.reply(te, m.sender)
 conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
    } 
-   if (m.sender.startsWith('967')) {
+   if (m.sender.startsWith('92')) {
   m.reply(te, m.sender)
 conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
    } 
-   if (m.sender.startsWith('20')) {
+   if (m.sender.startsWith('91')) {
   m.reply(te, m.sender)
 conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
    } 

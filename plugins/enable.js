@@ -9,16 +9,17 @@ const sections = [
 	{title: "🔮 | Welcome", rowId: `${usedPrefix + command} welcome`},
 	{title: "🌎 | Public", rowId: `${usedPrefix + command} public`},
 	{title: "🔞 | Nsfw", rowId: `${usedPrefix + command} nsfw`},
-	{title: "🧬 | OnlyLatinos", rowId: `${usedPrefix + command} onlylatinos`},
+	{title: "🧬 | OnlyEnglish", rowId: `${usedPrefix + command} onlyenglish`},
 	{title: "🔗 | Antilink", rowId: `${usedPrefix + command} antilink`},
     {title: "🚫 | Antidelete", rowId: `${usedPrefix + command} antidelete`},
+    {title: "🖼 | Autosticker", rowId: `${usedPrefix + command} autoSticker`},
 	{title: "⏏️ | Autolevelup", rowId: `${usedPrefix + command} autolevelup`},
 	{title: "🗣️ | ChatBot", rowId: `${usedPrefix + command} chatbot`},
 	{title: "🔎 | Detect", rowId: `${usedPrefix + command} detect`},
 	{title: "📑 | Document", rowId: `${usedPrefix + command} document`},
 	{title: "🛡️ | Restrict", rowId: `${usedPrefix + command} restrict`},
-	{title: "💬 | OnlyPv", rowId: `${usedPrefix + command} onlydm`},
-	{title: "👥 | OnlyGp", rowId: `${usedPrefix + command} onlygp`}
+	{title: "💬 | OnlyPvivate", rowId: `${usedPrefix + command} onlydm`},
+	{title: "👥 | OnlyGroup", rowId: `${usedPrefix + command} onlygp`}
 	]
     },
 ]
@@ -66,7 +67,15 @@ const listMessage = {
        }
        chat.detect = isEnable
      break
-    
+      case 'autoSticker':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.autoSticker = isEnable
+      break
     case 'antidelete':
     case 'delete':
       if (m.isGroup) {
@@ -106,19 +115,19 @@ const listMessage = {
       chat.antiLink = isEnable
       break
       
-      case 'sololatinos':
-      case 'sololatino':
-      case 'onlylatinos':
-      case 'onlylat':
-      case 'onlylatan':
-      case 'sololatan':
+      case 'soloenglish':
+      case 'sololatin':
+      case 'onlyenglishs':
+      case 'onlyeng':
+      case 'onlyenglish':
+      case 'soloenglish':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
           throw false
         }
       }
-      chat.onlyLatinos = isEnable
+      chat.onlyenglish = isEnable
       break
       
       case 'nsfw':
@@ -193,7 +202,7 @@ const listMessage = {
 */
 
 m.reply(`
-✅ *${type}* Se *${isEnable ? 'Active' : 'Deactive'}* ${isAll ? 'for this bot' : isUser ? '' : 'for this bot'}
+✅ *${type}* Now *${isEnable ? 'Active' : 'Deactive'}* ${isAll ? 'for this bot' : isUser ? '' : 'for this bot'}
 `.trim()) 
 
 }

@@ -303,6 +303,8 @@ export async function handler(chatUpdate) {
                     chat.autoSticker = false
                 if (!('premium' in chat))
                     chat.premium = false
+                 if (!('onlyenglish' in chat))
+                    chat.onlyLatinos = false
                 if (!('premiumTime' in chat)) 
                     chat.premiumTime = false
                 if (!('premnsfw' in chat))
@@ -324,6 +326,7 @@ export async function handler(chatUpdate) {
                     antiToxic: true,
                     simi: false,
                     expired: 0,
+                    onlyenglish: false,
                     autoSticker: false,
                     premium: false,
 	            premiumTime: false,
