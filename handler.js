@@ -538,7 +538,7 @@ export async function handler(chatUpdate) {
                 else
                     m.exp += xp
                 if (!isPrems && plugin.diamond && global.db.data.users[m.sender].diamond < plugin.diamond * 1) {
-                    this.sendButton(m.chat, `✳️ your diamonds ran out \n use the following command to buy more diamonds \n*${usedPrefix}buy* <cantidad> \n*${usedPrefix}buyall*`, igfg, null, [['Buy', `${usedPrefix}buy`], ['Buy All', `${usedPrefix}buyall`]], m)
+                    this.sendButton(m.chat, `✳️ your diamonds ran out \n use the following command to buy more diamonds \n*${usedPrefix}todiamond* <amount> \n*${usedPrefix}todiamondall*`, igfg, null, [['Buy', `${usedPrefix}todiamond`], ['Buy All', `${usedPrefix}todiamondall`]], m)
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {
@@ -675,8 +675,8 @@ export async function participantsUpdate({ id, participants, action }) {
             if (chat.welcome) {
                 let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                 for (let user of participants) {
-                    let pp = 'https://i.imgur.com/whjlJSf.jpg'
-                    let ppgp = 'https://i.imgur.com/whjlJSf.jpg'
+                    let pp = 'https://i.imgur.com/8B4jwGq.jpeg'
+                    let ppgp = 'https://i.imgur.com/8B4jwGq.jpeg'
                     try {
                         pp = await this.profilePictureUrl(user, 'image')
                         ppgp = await this.profilePictureUrl(id, 'image')
