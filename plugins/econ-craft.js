@@ -29,7 +29,7 @@ let lgocraft = `
 〉 10 wood
 〉 15 Iron
 ▧ Fishingrod 🎣
-〉 10 kayu
+〉 10 wood
 〉 2 Iron
 〉 20 String
 ▧ Armor 🥼
@@ -75,7 +75,7 @@ const listMessage = {
             global.db.data.users[m.sender].string -= 20
             global.db.data.users[m.sender].pickaxe += 1
             user.pickaxedurability = 40
-            m.reply("Sukses membuat 1 pickaxe 🔨")
+            m.reply("Sucess making 1 pickaxe 🔨")
             break
           case 'sword':
           if (user.sword > 0) return m.reply(' You already have this')
