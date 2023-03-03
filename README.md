@@ -33,6 +33,14 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
 #### DEPLOY TO BACK4APP (SOON)
 
+1. If You don't have a account in Back4app. Create a account.
+    <br>
+<p align="center"><a href="https://www.back4app.com"> <img src="https://img.shields.io/badge/Back4app%20Account-blue?style=for-the-badge&logo=back4app" width="220" height="38.45"/></a></p>
+
+2. Now Deploy
+    <br>
+<p align="center"><a href=""> <img src="https://img.shields.io/badge/Back4app%20Deploy-blue?style=for-the-badge&logo=youtube" width="220" height="38.45"/></a></p>
+
 
 #### DEPLOY TO SCALINGO (NOT RECOMMENDED)
 
