@@ -23,7 +23,7 @@ maybe you meant :
 
  இ *${usedPrefix + mean}*
  இ *Similarity:* _${parseInt(som)}%_`
-	    if (mean) this.sendButton(m.chat, caption, igfg, null, [['✅ SUI', `${usedPrefix + mean}`], ['❎ NO', 'OK']], m, { mentions: [who]})
+ if (mean) this.sendButton(m.chat, caption, igfg, null, [['✅ yes', `ok`], ['❎ NO', 'OK']], m, { mentions: [who]})
 	    }
 }
-export const disabled = true
+export const disabled = false
