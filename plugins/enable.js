@@ -12,7 +12,7 @@ const sections = [
 	{title: "🧬 | OnlyEnglish", rowId: `${usedPrefix + command} onlyenglish`},
 	{title: "🔗 | Antilink", rowId: `${usedPrefix + command} antilink`},
     {title: "🚫 | Antidelete", rowId: `${usedPrefix + command} antidelete`},
-    {title: "🖼 | Autosticker", rowId: `${usedPrefix + command} autoSticker`},
+    {title: "🖼 | Autosticker", rowId: `${usedPrefix + command} autosticker`},
 	{title: "⏏️ | Autolevelup", rowId: `${usedPrefix + command} autolevelup`},
 	{title: "🗣️ | ChatBot", rowId: `${usedPrefix + command} chatbot`},
 	{title: "🔎 | Detect", rowId: `${usedPrefix + command} detect`},
@@ -67,14 +67,14 @@ const listMessage = {
        }
        chat.detect = isEnable
      break
-      case 'autoSticker':
+      case 'autosticker':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
           throw false
         }
       }
-      chat.autoSticker = isEnable
+      chat.autosticker = isEnable
       break
     case 'antidelete':
     case 'delete':

@@ -10,6 +10,7 @@ let handler = async (m, {conn, usedPrefix}) => {
 ▢ *💎Diamonds* : _${user.diamond}_
 ▢ *💎Gold* : _${user.gold}_
 ▢ *💎Rock* : _${user.rock}_
+▢ *💎EMARALD* : _${user.emerald}_
 ▢ *💎Rank* : _${user.role}_
 ▢ *💎Health* : _${user.health}_
 ▢ *💎Wood* : _${user.wood}_
