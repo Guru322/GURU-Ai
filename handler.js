@@ -299,8 +299,8 @@ export async function handler(chatUpdate) {
                     chat.antiToxic = false
                 if (!('simi' in chat))
                     chat.simi = false
-                if (!('autoSticker' in chat))
-                    chat.autoSticker = false
+                if (!('autosticker' in chat))
+                    chat.autosticker = false
                 if (!('premium' in chat))
                     chat.premium = false
                  if (!('onlyenglish' in chat))
@@ -327,7 +327,7 @@ export async function handler(chatUpdate) {
                     simi: false,
                     expired: 0,
                     onlyenglish: false,
-                    autoSticker: false,
+                    autosticker: false,
                     premium: false,
 	            premiumTime: false,
                     premnsfw: false, 
