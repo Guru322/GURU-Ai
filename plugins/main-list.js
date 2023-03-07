@@ -12,12 +12,9 @@ let m2 = `
 ┣  💟 grouplist
 ┣  💟 owner
 ┣  💟 script
-┣  💟 toanime
-┣  💟 qrcode
-┣  💟 readqr
-┣  💟 weather
-┣  💟 nowa
-┣ ඬ⃟ 💎 _${usedPrefix}kick *<@tag>*_
+----------- 💎 ADMIN MENU 💎-----------
+
+ |💎 _${usedPrefix}kick *<@tag>*_
 ┣ ඬ⃟ 💎 _${usedPrefix}promote *<@tag>*_
 ┣ ඬ⃟ 💎 _${usedPrefix}demote *<@tag>*_
 ┣ ඬ⃟ 💎 _${usedPrefix}demote *<@tag>*_
@@ -37,6 +34,9 @@ let m2 = `
 ┣ ඬ⃟ 💎 _${usedPrefix}unwarn *<@tag>*_
 ┣ ඬ⃟ 💎 _${usedPrefix}listwarn_
 ┣ ඬ⃟ 💎 _${usedPrefix}setpp *<image>*_
+
+----------- 💰 ECONOMY MENU💰---------------
+
 ┣ ඬ⃟ 💵 _${usedPrefix}balance_
 ┣ ඬ⃟ 💵 _${usedPrefix}claim_
 ┣ ඬ⃟ 💵 _${usedPrefix}lb_
@@ -44,22 +44,17 @@ let m2 = `
 ┣ ඬ⃟ 💵 _${usedPrefix}myns_
 ┣ ඬ⃟ 💵 _${usedPrefix}profile_
 ┣ ඬ⃟ 💵 _${usedPrefix}work_
-┣ ඬ⃟ 💵 _${usedPrefix}adventure_
-┣ ඬ⃟ 💵 _${usedPrefix}heal_
-┣ ඬ⃟ 💵 _${usedPrefix}dungeon_
-┣ ඬ⃟ 💵 _${usedPrefix}todiamond_
-┣ ඬ⃟ 💵 _${usedPrefix}tomoney_
-┣ ඬ⃟ 💵 _${usedPrefix}weekly_
-┣ ඬ⃟ 💵 _${usedPrefix}monthly_
 ┣ ඬ⃟ 💵 _${usedPrefix}mine_
 ┣ ඬ⃟ 💵 _${usedPrefix}mine_
 ┣ ඬ⃟ 💵 _${usedPrefix}buy_
-┣ ඬ⃟ 💵 _${usedPrefix}sell_
-┣ ඬ⃟ 💵 _${usedPrefix}todiamondall_
+┣ ඬ⃟ 💵 _${usedPrefix}buyall_
 ┣ ඬ⃟ 💵 _${usedPrefix}register_
 ┣ ඬ⃟ 💵 _${usedPrefix}rob <@tag>*_
 ┣ ඬ⃟ 💵 _${usedPrefix}transfer *<type> <amount> <@tag>*_
 ┣ ඬ⃟ 💵 _${usedPrefix}ureg*<seriel num>*_
+
+------------- 👑 BOT OWNER MENU 👑----------------
+
 ┣ ඬ⃟ 👑 _${usedPrefix}setprefix *<prefix>*_
 ┣ ඬ⃟ 👑 _${usedPrefix}resetprefix_
 ┣ ඬ⃟ 👑 _${usedPrefix}autoadmin_
@@ -95,6 +90,8 @@ let m2 = `
 ┣ ඬ⃟ 👑 _${usedPrefix}listcmd_
 ┣ ඬ⃟ 👑 _${usedPrefix}setppbot *<respondr a image>*_
 ┣ ඬ⃟ 👑 _${usedPrefix}addcmd *<text> <respond a sticker/image>*_
+
+-------------📥 DOWNLOAD MENU 📥---------------------
 ┣ ඬ⃟ 📥 _${usedPrefix}instagram *< / link / url>*_
 ┣ ඬ⃟ 📥 _${usedPrefix}mediafire *< LINK >
 ┣ ඬ⃟ 📥 _${usedPrefix}instagram *< link / url>*_
@@ -111,6 +108,9 @@ let m2 = `
 ┣ ඬ⃟ 📥 _${usedPrefix}ytmp4doc *< link / url>*_
 ┣ ඬ⃟ 📥 _${usedPrefix}play *<text>*_
 ┣ ඬ⃟ 📥 _${usedPrefix}spotify *<text>*_
+
+-----------🔞 NSFW MENU🔞 ------------------------
+   
 ┣ ඬ⃟ 🔞 _${usedPrefix}videoxxx_
 ┣ ඬ⃟ 🔞 _${usedPrefix}videolesbixxx_
 ┣ ඬ⃟ 🔞 _${usedPrefix}tit_
@@ -187,6 +187,9 @@ let m2 = `
 ┣ ඬ⃟ 🔞 _${usedPrefix}bikini_
 ┣ ඬ⃟ 🔞 _${usedPrefix}nobra_
 ┣ ඬ⃟ 🔞 _${usedPrefix}maid_
+
+-------------- 🔫 EXTRA MENU🔫--------------
+
 ┣ ඬ⃟ 🧧 _${usedPrefix}toimg *<sticker>*_
 ┣ ඬ⃟ 🧧 _${usedPrefix}tomp3 *<video>*_
 ┣ ඬ⃟ 🧧 _${usedPrefix}tovideo *<sticker>*_
@@ -283,8 +286,8 @@ let m2 = `
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 `
 let pp = './Guru.jpg' 
-    conn.sendButton(m.chat, m2, '▢ ᴳᵁᴿᵁ  ┃ ᴮᴼᵀ\n▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru69\n', pp, 
-      ['⌬ Groups', `${usedPrefix}gpguru`]
+    conn.sendButton(m.chat, m2, '▢ ASG  ┃ ᴮᴼᵀ\n', pp, 
+      ['⌬ Owner', `${usedPrefix}gpguru`]
     ,m, rpyt)
 
 }
