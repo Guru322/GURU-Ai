@@ -1,7 +1,7 @@
 let handler = async m => m.reply(`
 
 ≡  *ASH ┃ ᴮᴼᵀ*   
-
+wa.me/6281255369012
 ─────────────
 `.trim())
 handler.help = ['gpdylux']
