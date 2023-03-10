@@ -32,7 +32,7 @@ global.APIs = { // API Prefix
   zenzapis: 'https://zenzapis.xyz',
   akuari: 'https://api.akuari.my.id',
   akuari2: 'https://apimu.my.id',
-  nrtm: 'https://fg-nrtm-nhie.onrender.com',
+  nrtm: 'https://fg-nrtm.ddns.net',
   bg: 'http://bochil.ddns.net',
   fgmods: 'https://api-fgmods.ddns.net'
 }
@@ -47,6 +47,7 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
+global.botname = 'GURU┃ᴮᴼᵀ'
 global.packname = 'GURU┃ᴮᴼᵀ' 
 global.author = '@Asliguru' 
 global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru69\n' 
