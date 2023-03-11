@@ -21,6 +21,6 @@ if (!args[0]) throw `✳️ Send the link of a Facebook video\n\n📌 Example :\
 handler.help = ['facebook'].map(v => v + ' <url>')
 handler.tags = ['dl']
 handler.command = /^((facebook|fb)(downloder|dl)?)$/i
-handler.diamond = true
+handler.diamond = ${premium}
 
 export default handler
