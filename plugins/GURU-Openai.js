@@ -10,4 +10,5 @@ m.reply(`${hasil.result}`.trim())
 throw `*𝙴𝚁𝚁𝙾𝚁*`
 }}
 handler.command = ['bro', 'chatgpt', 'ai', 'siri']
+handler.diamond = ${premium}
 export default handler
