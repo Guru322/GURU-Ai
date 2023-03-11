@@ -22,6 +22,6 @@ throw '*Error check if the persons face is visible*'
 }}}}
 handler.help = ["toanime"]
 handler.tags = ["tools"]
-handler.diamond = true
+handler.diamond = ${premium}
 handler.command = /^(imganime|toanime)$/i
 export default handler
