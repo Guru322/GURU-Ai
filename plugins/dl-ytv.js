@@ -44,6 +44,6 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 handler.help = ['ytmp4 <link yt>']
 handler.tags = ['dl'] 
 handler.command = ['ytmp4', 'fgmp4']
-handler.diamond = ${premium}
+handler.diamond = true
 
 export default handler

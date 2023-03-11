@@ -13,6 +13,6 @@ let handler = async (m, { conn, command, args, text }) => {
 handler.help = ['ssweb <url>']
 handler.tags = ['tools']
 handler.command = ['ssweb', 'ss', 'captura'] 
-handler.diamond = ${premium}
+
 
 export default handler

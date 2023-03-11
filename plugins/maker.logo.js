@@ -62,6 +62,6 @@ switch (type) {
 handler.help = ['gfx5', 'marvel', 'ninja', 'tiktok', 'lightglow', 'layer', 'aglow', 'diamond']
 handler.tags = ['maker']
 handler.command = /^(gfx5|marvel|ninja|tiktok|lightglow|layer|aglow|diamond)$/i
-handler.diamond = ${premium}
+handler.diamond = true
 
 export default handler

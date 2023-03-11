@@ -50,7 +50,7 @@ default:
 handler.help = ['xnxx 🔎', 'xnxxdl <link>'] 
 handler.tags = ['nsfw', 'prem']
 handler.command = ['xnxxsearch', 'xnxxdl', 'xnxx'] 
-handler.diamond = ${premium}
+handler.diamond = false
 handler.premium = false
 handler.register = true
 

@@ -17,6 +17,11 @@ let m2 = `
 ┣  💟 readqr
 ┣  💟 weather
 ┣  💟 nowa
+┣  💟 hornycard
+┣  💟 simpcard
+┣  💟 ytcomment
+┣  💟 whatmusic
+┣  💟 lolicon
 ┣ ඬ⃟ 💎 _${usedPrefix}kick *<@tag>*_
 ┣ ඬ⃟ 💎 _${usedPrefix}promote *<@tag>*_
 ┣ ඬ⃟ 💎 _${usedPrefix}demote *<@tag>*_
