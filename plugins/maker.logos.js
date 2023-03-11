@@ -45,6 +45,6 @@ switch (type) {
 handler.help = ['logololi', 'neon', 'devil', 'wolf', 'phlogo']
 handler.tags = ['maker']
 handler.command = /^(logololi|neon|devil|wolf|phlogo)$/i
-handler.diamond = true
+handler.diamond = ${premium}
 
 export default handler
