@@ -19,6 +19,6 @@ m.react(done)
 handler.help = ['twitter'].map(v => v + ' <url>')
 handler.tags = ['dl']
 handler.command = /^(twitter|tw)$/i
-handler.diamond = true
+handler.diamond = ${premium}
 
 export default handler
