@@ -2,10 +2,10 @@ let { MessageType } = (await import('@adiwajshing/baileys')).default
 import fetch from 'node-fetch'
 
 let handler = async(m, { conn, usedPrefix, command, text }) => {
-	
+	 
     let user = global.db.data.users[m.sender]
     let htki = '––––––『'
-   let htka = '』––––––'
+    let htka = '』––––––'
     let SWORD = user.sword < 1
     let ARMOR = user.armor < 1
     let HEALT = user.health < 90
@@ -30,7 +30,7 @@ let handler = async(m, { conn, usedPrefix, command, text }) => {
     global.dungeon = global.dungeon ? global.dungeon : {}
     if (Object.values(global.dungeon).find(room => room.id.startsWith('dungeon') && [room.game.player1, room.game.player2, room.game.player3, room.game.player4].includes(m.sender))) return m.reply('You are still in the Dungeon') // nek iseh neng njero dungeon
     let timing = (new Date - (user.lastdungeon * 1)) * 1
-    if (timing < 600000) return conn.sendButton(m.chat, `*${htki} COOLDOWN ${htka}*`, `ʏᴏᴜ ʜᴀᴠᴇ ɢᴏɴᴇ ᴛᴏ ᴛʜᴇ ᴅᴜɴɢᴇᴏɴ, please wait...\n➞ ${clockString(600000 - timing)}`, null, [['PROFILE', '']],m) // Cooldown
+    if (timing < 600000) return conn.sendButton(m.chat, `*${htki} COOLDOWN ${htka}*`, `ʏᴏᴜ ʜᴀᴠᴇ ɢᴏɴᴇ ᴛᴏ ᴛʜᴇ ᴅᴜɴɢᴇᴏɴ, please wait...\n➞ ${clockString(600000 - timing)}`, null, [['WAIT', '']],m) // Cooldown
     let room = Object.values(global.dungeon).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
     if (room) {
 
@@ -57,17 +57,17 @@ let handler = async(m, { conn, usedPrefix, command, text }) => {
       }
         
        const buttons = [
-           {buttonId: 'id1', buttonText: {displayText: 'gass..'}, type: 1}
+           {buttonId: 'id1', buttonText: {displayText: 'send'}, type: 1}
        ]
         
         let lmao = `${!room.game.player4 ? `[• • •] ᴡᴀɪᴛɪɴɢ ${!room.game.player3 && !room.game.player4 ? '2' : '1'} ᴘʟᴀʏᴇʀ ᴀɢᴀɪɴ... ${room.name ? `\n➞ ᴛʏᴘᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ғᴏʀ ᴊᴏɪɴ *${usedPrefix}${command} ${room.name}*` : ''}` : 'ᴀʟʟ ᴘʟᴀʏᴇʀ ᴀʀᴇ ᴄᴏᴍᴘʟᴀᴛᴇ...'}`
         const buttonMessage = {
-            contentText: `*${htki} DUNGEON ${htka}*`,
+            contentText: `DUNGEON`,
             footerText: lmao,
             buttons: buttons,
             headerType: 1
         }
-        conn.sendButton(m.chat, `*${htki} DUNGEON ${htka}*`, lmao, null, ['gass..', 'gass..'], false, {quoted: m})
+        conn.sendButton(m.chat, `*${htki} DUNGEON ${htka}*`, lmao, null, ['send', ''], false, {quoted: m})
         
         if (room.game.player1 && room.game.player2 && room.game.player3 && room.game.player4) {
 
@@ -166,13 +166,13 @@ let handler = async(m, { conn, usedPrefix, command, text }) => {
             contextInfo: {
               mentionedJid: conn.parseMention(str2),
             externalAdReply :{
-    mediaUrl: sig,
+    mediaUrl: fgyt,
     mediaType: 2,
-    description: titlebot, 
+    description: botname, 
     title: '- ᴅ ᴜ ɴ ɢ ᴇ ᴏ ɴ -',
-    body: titlebot,
+    body: botname,
     thumbnail: await(await fetch('https://telegra.ph/file/1836eec6c22d949829474.jpg')).buffer(),
-    sourceUrl: sgc
+    sourceUrl: fgsc
      }}
   })
           if (![c1, c3, c4].includes(c2)) m.reply(str2, c2, {
@@ -343,18 +343,18 @@ let handler = async(m, { conn, usedPrefix, command, text }) => {
         }
         if (text) room.name = text
         const buttons = [
-            {buttonId: 'id1', buttonText: {displayText: 'sendsolo'}, type: 1}
+            {buttonId: 'id1', buttonText: {displayText: 'send'}, type: 1}
         ]
         
         let lmao = '[ • • • ] ᴡᴀɪᴛɪɴɢ ᴘʟᴀʏᴇʀ ' + (text ? `ᴛʏᴘᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ
-*${usedPrefix}${command} ${text}*` : '') + '\nᴏʀ ᴛʏᴘᴇ *sendsolo* ᴛᴏ ᴘʟᴀʏ sᴏʟᴏ'
+*${usedPrefix}${command} ${text}*` : '') + '\nᴏʀ ᴛʏᴘᴇ *send* ᴛᴏ ᴘʟᴀʏ'
         const buttonMessage = {
-            contentText: `*${htki} WAITING ${htka}*`,
+            contentText: `*WAITING*`,
             footerText: lmao,
             buttons: buttons,
             headerType: 1
         }
-        conn.sendButton(m.chat, `*${htki} DUNGEON ${htka}*`,lmao, null, ['sendsolo', 'sendsolo'], false, { quoted: m})
+        conn.sendButton(m.chat, `*DUNGEON*`,lmao, null, ['send', 'Gass..'], false, { quoted: m})
         global.dungeon[room.id] = room
       }
 }
@@ -380,12 +380,12 @@ handler.before = function (m) {
     let P = data(PLAYER)
     if (/^(sendsolo|dewean)$/i.test(m.text.toLowerCase())) {
         const buttons = [
-            {buttonId: 'id1', buttonText: {displayText: 'gass..'}, type: 1}
+            {buttonId: 'id1', buttonText: {displayText: 'send'}, type: 1}
         ]
         
-        let lmao = '! ʏᴏᴜ ᴄᴀɴᴛ ᴘʟᴀʏ sᴏʟᴏ ʙᴇᴄᴀᴜsᴇ ʏᴏᴜ ᴀʟʀᴇᴀᴅʏ ʜᴀᴠᴇ ᴀ ᴘᴀʀᴛɴᴇʀ\n➞ ᴘʟᴇᴀsᴇ ᴛʏᴘᴇ *gass* ᴛᴏ ᴘʟᴀʏ ᴡɪᴛʜ ᴏᴛʜᴇʀ ᴘᴀʀᴛɴᴇʀs...'
+        let lmao = '! ʏᴏᴜ ᴄᴀɴᴛ ᴘʟᴀʏ sᴏʟᴏ ʙᴇᴄᴀᴜsᴇ ʏᴏᴜ ᴀʟʀᴇᴀᴅʏ ʜᴀᴠᴇ ᴀ ᴘᴀʀᴛɴᴇʀ\n➞ ᴘʟᴇᴀsᴇ ᴛʏᴘᴇ *send* ᴛᴏ ᴘʟᴀʏ ᴡɪᴛʜ ᴏᴛʜᴇʀ ᴘᴀʀᴛɴᴇʀs...'
         const buttonMessage = {
-          contentText: `*${htki} INFO ${htka}*`,
+          contentText: `*INFO*`,
           footerText: lmao,
           buttons: buttons,
           headerType: 1
@@ -436,13 +436,13 @@ ${P}
         users.petFood += petFood * 1
         users.lastdungeon = new Date * 1
         await m.reply(str2, room.player1, { contextInfo:{ externalAdReply :{
-    mediaUrl: sig,
+    mediaUrl: fgyt,
     mediaType: 2,
-    description: titlebot, 
+    description: botname, 
     title: '- ᴅ ᴜ ɴ ɢ ᴇ ᴏ ɴ -',
-    body: titlebot,
+    body: botname,
     thumbnail: await(await fetch('https://telegra.ph/file/1836eec6c22d949829474.jpg')).buffer(),
-    sourceUrl: sgc
+    sourceUrl: fgsc
      }}
   })
         if (mythic > 0) {
@@ -473,7 +473,7 @@ ${P}
       }, pickRandom([1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000]))
       if (global.dungeon && room.state == 'PLAYING') delete global.dungeon[room.id]
 
-    } else if (/^(gass?s?s?s?.?.?.?|mulai)$/i.test(m.text.toLowerCase())) {
+    } else if (/^(s?s?s?s?.?.?.?|tart)$/i.test(m.text.toLowerCase())) {
         let str = `
 ➞ *ʀᴏᴏᴍ ɪᴅ:* ${room.id}
 👩‍🏫 *ᴘʟᴀʏᴇʀ:*
@@ -530,13 +530,13 @@ ${P}
           contextInfo: {
             mentionedJid: this.parseMention(str2),
           externalAdReply :{
-    mediaUrl: sig,
+    mediaUrl: fgyt,
     mediaType: 2,
-    description: titlebot, 
+    description: botname, 
     title: '- ᴅ ᴜ ɴ ɢ ᴇ ᴏ ɴ -',
-    body: titlebot,
+    body: botname,
     thumbnail: await(await fetch('https://telegra.ph/file/1836eec6c22d949829474.jpg')).buffer(),
-    sourceUrl: sgc
+    sourceUrl: fgsc
      }}
   })
         if (c2 && ![c1, c3, c4].includes(c2)) m.reply(str2, c2, {
