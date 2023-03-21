@@ -42,7 +42,7 @@ I was invited by *${m.name}*`, m, {
      })
      if (!e.length) await conn.reply(global.owner[1]+'@s.whatsapp.net', `≡ *INVITACIÓN A GRUPO*\n\n@${m.sender.split('@')[0]} has invited *${conn.user.name}* to group\n\n*${await conn.getName(res)}*\n\n*ID* : ${res}\n\n📌 link : ${args[0]}\n\nThe bot will exit automatically after\n\n ${msToDate(global.db.data.chats[res].expired - now)}`, null, {mentions: [m.sender]})
      if (!e.length) await m.reply(`✳️ Successfully invite bot to group\n\n${await conn.getName(res)}\n\nThe bot will exit automatically after *${msToDate(global.db.data.chats[res].expired - now)}*`).then(async () => {
-     let mes = `Hola a todos 👋🏻
+     let mes = `Hii 👋🏻
      
 *${conn.user.name}* is one of the multi-device WhatsApp bots built with Node.js, *${conn.user.name}* just invited by *${m.name}*
 
@@ -56,7 +56,7 @@ ${usedPrefix}help
      })
     } catch (e) {
       conn.reply(global.owner[1]+'@s.whatsapp.net', e)
-      throw `✳️ Sorry, the bot can't join groups`
+      throw `✳️ Sorry, the bot  joined group`
       }
 }
 handler.help = ['join <chat.whatsapp.com> <dias>']
