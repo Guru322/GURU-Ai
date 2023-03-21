@@ -289,12 +289,12 @@ let m2 = `
 `
 let pp = './Guru.jpg' 
     conn.sendButton(m.chat, m2, '▢ ᴳᵁᴿᵁ  ┃ ᴮᴼᵀ\n▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru69\n', pp, 
-      ['⌬ Groups', `${usedPrefix}gpguru`]
+      ['⌬ INFO', `${usedPrefix}info`]
     ,m, rpyt)
 
 }
 
-handler.help = ['fun']
+handler.help = ['LIST']
 handler.tags = ['main']
 handler.command = ['allmenu', 'list', 'listmenu'] 
 
