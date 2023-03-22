@@ -30,6 +30,15 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <a href='https://replit.com/@Guru322/GURU-BOT-QR-CODE-GENERATOR?v=1' target="_blank"><img alt='SCAN QR' src='https://img.shields.io/badge/Scan_qr-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
+#### DEPLOY TO RENDER (change Guru322 with your git username in line 41)
+
+1. If You don't have a account in Render. Create a account.
+    <br>
+<p align="center"><a href="https://www.render.com"> <img src="https://img.shields.io/badge/render%20Account-blue?style=for-the-badge&logo=render" width="220" height="38.45"/></a></p>
+
+2. Now Deploy
+    <br>
+<p align="center"><a href="https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%2FGuru322%2FGURU-BOT"> <img src="https://img.shields.io/badge/Render%20Deploy-blue?style=for-the-badge&logo=render" width="220" height="38.45"/></a></p>
 
 #### DEPLOY TO BACK4APP (SOON)
 
