@@ -1,0 +1,5 @@
+npm i -g serverless && serverless \
+    --org=guru322 \
+    --app=gurutest \
+    --name=gurutest \
+    --template=aws-node
