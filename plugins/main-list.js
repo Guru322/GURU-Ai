@@ -1,8 +1,4 @@
-import fetch from 'node-fetch'
-
-let handler = async function (m, { conn, text, usedPrefix }) {
-  
-let m2 = `
+let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems })  => m.reply(`
 ┏━━━━━━━━━━━━━━━━┓
 ┃  *<All menu />*
 ┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
@@ -286,16 +282,9 @@ let m2 = `
 ┣ ඬ⃟ 👽 _${usedPrefix}kiss *<@tag>*_
 ┣ ඬ⃟ 👽 _${usedPrefix}wm *<packname> <author>*_
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-`
-let pp = './Guru.jpg' 
-    conn.sendButton(m.chat, m2, '▢ ᴳᵁᴿᵁ  ┃ ᴮᴼᵀ\n▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru69\n', pp, 
-      ['⌬ INFO', `${usedPrefix}info`]
-    ,m, rpyt)
-
-}
-
-handler.help = ['LIST']
+`.trim())
+handler.help = ['allmenu']
 handler.tags = ['main']
-handler.command = ['allmenu', 'list', 'listmenu'] 
+handler.command = ['list', 'all menu'] 
 
 export default handler
