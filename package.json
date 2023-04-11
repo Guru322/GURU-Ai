@@ -39,7 +39,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys":  "Guru322/baileys",
+        "@adiwajshing/baileys":  "github:Guru322/baileys",
         "@bochilteam/scraper": "^3.0.0",
         "awesome-phonenumber": "^3.4.0",
         "acrcloud": "^1.4.0",
