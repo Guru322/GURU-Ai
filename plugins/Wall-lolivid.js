@@ -1,6 +1,6 @@
 let handler  = async (m, { conn, usedPrefix, command }) => {
-let res = `https://recoders-area.caliph.repl.co/api/lolivid`
-conn.sendButton(m.chat, `ʟᴏʟɪ ɪѕ ᴄᴜᴛᴇ 🥺`, res, [['🔄 NEXT 🔄', `/${command}`]], m)}
+let res = "https://recoders-area.caliph.repl.co/api/lolivid"
+conn.sendButton(m.chat, `ʟᴏʟɪ ɪѕ ᴄᴜᴛᴇ 🥺`,author, res, [['🔄 NEXT 🔄', `/${command}`]], m)}
 handler.help = ['lolivid']
 handler.tags = ['random']
 handler.command = /^(lolivid|lolivideos|lolívid)$/i
