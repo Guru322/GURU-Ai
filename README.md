@@ -34,7 +34,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
 1. If You don't have a account in Coolify. Create a account.
     <br>
-<p align="center"><a href=""> <img src="https://img.shields.io/badge/coolify%20Account-blue?style=for-the-badge&logo=coolify" width="220" height="38.45"/></a></p>
+<p align="center"><a href="http://65.21.52.72:3000/register"> <img src="https://img.shields.io/badge/coolify%20Account-blue?style=for-the-badge&logo=coolify" width="220" height="38.45"/></a></p>
 
 2. Now Deploy
     <br>
