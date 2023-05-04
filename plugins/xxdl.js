@@ -14,7 +14,7 @@ switch (type) {
   case 'xnxx':
   //if (!text) return m.reply(`✳️ ${msg.search()}`)
   try {
-  let res = await fetch(global.API('fgmods', '/api/xnxxsearch', { q: text }, 'apikey'))
+  let res = await fetch(global.API('fgmods', '/api/xnxxsearch', { text }, 'apikey'))
   let json = await res.json()
    let listSections = []
 	Object.values(json.result).map((v, index) => {
