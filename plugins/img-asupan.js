@@ -9,7 +9,7 @@ let handler = async(m, { conn, usedPrefix, command }) => {
 }
 handler.help = ['tvid']
 handler.tags = ['img']
-handler.command = ['asupan', 'tvid', 'videos', 'vid', 'video']
+handler.command = ['asupan', 'tvid']
 handler.premium = false
 handler.diamond = true
 
