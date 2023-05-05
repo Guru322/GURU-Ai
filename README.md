@@ -30,7 +30,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <a href='https://replit.com/@Guru322/GURU-BOT-QR-CODE-GENERATOR?v=1' target="_blank"><img alt='SCAN QR' src='https://img.shields.io/badge/Scan_qr-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
-#### DEPLOY TO COOLIFY (server overloaded right now)
+#### DEPLOY TO COOLIFY (Error occurs when server gets overloaded)
 
 1. If You don't have a account in Coolify. Create a account.
     <br>
