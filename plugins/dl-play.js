@@ -23,7 +23,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
 ⬡ Views: ${views}
 ⬡ Upload: ${ago}
 ⬡ Link: ${url}
-╰────────⬣`, author.trim(), await( await conn.getFile(thumbnail)).data, ['VIDEO', `${usedPrefix}ytmp4 ${url} 360`], false, { quoted: m, 'document': { 'url':'https://wa.me/917605902011' },
+╰────────⬣`, author.trim(), await( await conn.getFile(thumbnail)).data, ['VIDEO', `${usedPrefix}ytmp4 ${url}`], false, { quoted: m, 'document': { 'url':'https://wa.me/917605902011' },
 'mimetype': global.dpdf,
 'fileName': `𝔾𝕌ℝ𝕌 ℙ𝕃𝔸𝕐𝔼ℝ`,
 'fileLength': 666666666666666,
