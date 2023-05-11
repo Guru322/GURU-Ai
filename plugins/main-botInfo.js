@@ -40,6 +40,10 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   
   let neww = performance.now()
   let speed = neww - old
+  let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
+let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './src/avatar_contact.png')
+let user = global.db.data.users[who]
   
 let infobt = `
 ≡ *INFO BOT*
@@ -55,8 +59,6 @@ let infobt = `
   *GURU*
 ▢ Instagram :
   • https://instagram.com/asli_guru69
-▢ WhatsApp :
-  • (NO NEED) 
 ▢ GitHub :
   • https://github.com/Guru322
 ▢ Telegram : 
@@ -71,10 +73,8 @@ let infobt = `
 *≡  NodeJS memory *
 ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}
 `
-conn.sendButton(m.chat, infobt, igfg, null, [
-  ['ꨄ︎ donate', `${usedPrefix}donate`],
-   ['⌬ Groups', `${usedPrefix}gpguru`]
- ], m)
+conn.sendFile(m.chat, pp, 'prefil.jpg', infobt, m, false, { mentions: [who] })
+m.react(done)
 
 }
 handler.help = ['info']
