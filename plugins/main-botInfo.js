@@ -56,15 +56,13 @@ let infobt = `
 ▢ *${chats.length}* Total Chats
 
 *≡ OWNER*
-  *GURU*
+  *Sandaru*
 ▢ Instagram :
   • https://instagram.com/asli_guru69
 ▢ GitHub :
-  • https://github.com/Guru322
-▢ Telegram : 
-  • t.me/i_want_to_be_isekaied (GURU) 
+  • https://github.com/Mr-Katussa
 ▢ YouTube : 
-  • https://youtube.com/@Asliguru
+  • https://youtube.com/@SANDARU-YT
 
  *≡ S E R V E R*
 *🛑 RAM:* ${format(totalmem() - freemem())} / ${format(totalmem())}
@@ -79,6 +77,6 @@ m.react(done)
 }
 handler.help = ['info']
 handler.tags = ['main']
-handler.command = ['info', 'infobot', 'botinfo']
+handler.command = ['info', 'infobot', 'bot']
 
 export default handler
