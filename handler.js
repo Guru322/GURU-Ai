@@ -541,7 +541,7 @@ export async function handler(chatUpdate) {
                 else
                     m.exp += xp
                 if (!isPrems && plugin.diamond && global.db.data.users[m.sender].diamond < plugin.diamond * 1) {
-                    this.sendButton(m.chat, `✳️ your diamonds ran out \n use the following command to buy more diamonds \n*${usedPrefix}todiamond* <amount> \n*${usedPrefix}todiamondall*`, igfg, null, [['Buy', `${usedPrefix}todiamond`], ['Buy All', `${usedPrefix}todiamondall`]], m)
+                     this.reply(m.chat, `✳️ your diamonds ran out \n use the following command to buy more diamonds \n*${usedPrefix}todiamond* <amount`, m)
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {
@@ -704,11 +704,11 @@ export async function participantsUpdate({ id, participants, action }) {
                                 profile: pp,
                                 background: 'https://i.imgur.com/klTSO3d.jpg'
                             }, 'apikey')
-                            // this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
-                            this.sendButton(id, text, igfg, action === 'add' ? wel : lea, [
+                             this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
+                            /*this.sendButton(id, text, igfg, action === 'add' ? wel : lea, [
                              [(action == 'add' ? '⦙☰ MENU' : 'BYE'), (action == 'add' ? '/help' : '')], 
                              [(action == 'add' ? '⏍ INFO' : 'ッ'), (action == 'add' ? '/info' : ' ')] ], null, {mentions: [user]})
-                          
+                          */
                     }
                 }
             }
@@ -792,7 +792,7 @@ global.dfail = (type, m, conn) => {
         unreg: '*ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ʀᴇɢɪsᴛᴇʀᴇᴅ ʏᴇᴛ* •  Sign in to use this feature Typing:\n\n*/reg name.age*\n\n📌Example : */reg GURU.20*', 
         restrict: '*ʀᴇsᴛʀɪᴄᴛ* • This feature is *disabled*',
     }[type]
-    if (msg) return conn.sendButton(m.chat, msg, igfg, null, [['🔖 OK', 'huh'], ['⦙☰ Menu', '/menu'] ], m)
+    if (msg) return m.reply(msg)
 }
 
 let file = global.__filename(import.meta.url, true)
