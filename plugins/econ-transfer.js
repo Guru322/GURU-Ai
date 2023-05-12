@@ -2,11 +2,11 @@ const items = ['diamond', 'exp']
 let confirmation = {}
 
 async function handler(m, { conn, args, usedPrefix, command }) {
-    if (confirmation[m.sender]) return m.reply('estas haciendo una transferencia')
+    if (confirmation[m.sender]) return m.reply('You are making a transfer')
     let user = global.db.data.users[m.sender]
     const item = items.filter(v => v in user && typeof user[v] == 'number')
     let lol = `✳️ Correct use of the command 
-*${usedPrefix + command}*  [tipo] [cantidad] [@user]
+*${usedPrefix + command}*  [item] [quantity] [@user]
 
 📌 Example : 
 *${usedPrefix + command}* exp 65 @${m.sender.split('@')[0]}
@@ -25,20 +25,21 @@ async function handler(m, { conn, args, usedPrefix, command }) {
     if (!(who in global.db.data.users)) return m.reply(`✳️ User is not in my database`)
     if (user[type] * 1 < count) return m.reply(`✳️  *${type}*  insufficient to transfer`)
     let confirm = `
-Are you sure you want to transfer? *${count}* _*${type}*_ a  *@${(who || '').replace(/@s\.whatsapp\.net/g, '')}* ? 
+Are you sure you want to transfer *${count}* _*${type}*_ a  *@${(who || '').replace(/@s\.whatsapp\.net/g, '')}* ? 
 
-- You have  *60s* 
-_press a button_
+- Have  *60s* 
+_respond *yes* o *no*_
 `.trim()
    
-    conn.sendButton(m.chat, confirm, igfg, null, [['si'], ['no']], m, { mentions: [who] })
+    //conn.sendButton(m.chat, confirm, igfg, null, [['yes'], ['no']], m, { mentions: [who] })
+     m.reply(confirm, null, { mentions: [who] })
     confirmation[m.sender] = {
         sender: m.sender,
         to: who,
         message: m,
         type,
         count,
-        timeout: setTimeout(() => (m.reply('⏳ Se acabó el tiempo'), delete confirmation[m.sender]), 60 * 1000)
+        timeout: setTimeout(() => (m.reply('⏳ Time is up'), delete confirmation[m.sender]), 60 * 1000)
     }
 }
 
@@ -71,7 +72,7 @@ handler.before = async m => {
     }
 }
 
-handler.help = ['transfer'].map(v => v + ' [tipo] [monto] [@tag]')
+handler.help = ['transfer'].map(v => v + ' [item] [quantity] [@tag]')
 handler.tags = ['econ']
 handler.command = ['payxp','paydi', 'transfer', 'darxp','dardi',]
 
