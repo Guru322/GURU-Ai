@@ -1,22 +1,19 @@
-import fetch from 'node-fetch'
+import { promises } from 'fs'
+import { join } from 'path'
 
-let handler = async function (m, { conn, text, usedPrefix }) {
+let handler = async function (m, { conn, __dirname }) {
+let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
+  
+m.reply(`
+*≡ SCRIPT*
 
-let m2 = `
-ᴛʜᴇ ɢᴜʀᴜ ʙᴏᴛ ꜱᴄʀɪᴘᴛ
-https://github.com/Guru322/GURU-BOT
-ᴅᴏ ꜱᴛᴀʀ ᴛʜᴇ ʀᴇᴘᴏ ᴀɴᴅ ꜰᴏʀᴋ
-`
-let pp = 'AsliGuru' 
-conn.sendButton(m.chat, m2, pp, [
-  ['⏍ Info', `${usedPrefix}botinfo`],
-  ['⌬ Groups', `${usedPrefix}gpguru`]
-],m, rpyt)
-
+▢ Git : ${_package.homepage}
+`.trim())
+    
 }
 
-handler.help = ['audios']
+handler.help = ['script']
 handler.tags = ['main']
-handler.command = ['script', 'sc', 'repo'] 
+handler.command = ['sc', 'git', 'script'] 
 
 export default handler
