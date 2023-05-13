@@ -1,23 +1,25 @@
-
-//import db from '../lib/database.js'
-
 const rewards = {
   exp: 9999,
   money: 4999,
   potion: 5,
 }
 const cooldown = 86400000
-let handler = async (m,{ conn} ) => {
+let handler = async (m, {conn, isPrems }) => {
   let user = global.db.data.users[m.sender]
-  if (new Date - user.lastclaim < cooldown) throw `You have already claimed this daily claim!, wait for *${((user.lastclaim + cooldown) - new Date()).toTimeString()}*`
+  let time = global.db.data.users[m.sender].lastclaim + 86400000
+  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `You have already claimed this daily claim!, wait for *${msToTime(time - new Date())}* `
   let text = ''
   for (let reward of Object.keys(rewards)) {
     if (!(reward in user)) continue
     user[reward] += rewards[reward]
     text += `*+${rewards[reward]}* ${global.rpg.emoticon(reward)}${reward}\n`
   }
-  conn.sendButton(m.chat,'*––––––『 DAILY 』––––––*', text.trim(), null, [['Adventure', '.adventure'], ['Weekly', '.weekly']],m)
-  user.lastclaim = new Date * 1
+  m.reply(`
+🎁 *daily reward*
+
+▢ *Has recieved:*
+ ${text}`)
+  global.db.data.users[m.sender].lastclaim = new Date * 1
 }
 handler.help = ['daily', 'claim']
 handler.tags = ['xp']
@@ -39,5 +41,5 @@ function msToTime(duration) {
   minutes = (minutes < 10) ? "0" + minutes : minutes
   seconds = (seconds < 10) ? "0" + seconds : seconds
 
-  return hours + " Horas " + minutes + " Minutos"
+  return hours + " Hours " + minutes + " Minutes"
 }
