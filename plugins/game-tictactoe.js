@@ -38,10 +38,10 @@ ${arr.slice(6).join('')}
 ▢ *Rules*
 ‣ Make 3 rows of symbols vertically, horizontally or diagonally to win ‣ Type *surrender* to exit the game and be declared defeated
 `.trim()
-        if (room.x !== room.o) await conn.sendButton(room.x, str, igfg, ['Surrender', 'surrender'], m, {
+        if (room.x !== room.o) await conn.reply(room.x, str, m, {
             mentions: conn.parseMention(str)
         })
-        await conn.sendButton(room.o, str, igfg, ['Surrender', 'surrender'], m, {
+        await conn.reply(room.o, str, m, {
             mentions: conn.parseMention(str)
         })
     } else {
@@ -54,10 +54,10 @@ ${arr.slice(6).join('')}
         }
         if (text) room.name = text
         
-     conn.sendButton(m.chat, `⏳ *expecting partner*\nType the following command to accept or press the button
+     conn.reply(m.chat, `⏳ *expecting partner*\nType the following command to accept
 ▢ *${usedPrefix + command} ${text}*
 
-🎁 Reward: *4999 XP*`, igfg, ['👍🏻 Aceptar', `${usedPrefix + command} ${text}`], m, {
+🎁 Reward:  *4999 XP*`, m, {
             mentions: conn.parseMention(text)
         })
         
@@ -66,7 +66,7 @@ ${arr.slice(6).join('')}
     
 }
 
-handler.help = ['tictactoe <mention number>']
+handler.help = ['tictactoe <tag number>']
 handler.tags = ['game']
 handler.command = ['tictactoe', 'ttc', 'ttt', 'xo']
 

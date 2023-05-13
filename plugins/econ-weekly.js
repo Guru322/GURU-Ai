@@ -13,7 +13,12 @@ const rewards = {
       user[reward] += rewards[reward]
       text += `*+${rewards[reward]}* ${global.rpg.emoticon(reward)}${reward}\n`
     }
-    conn.sendButton(m.chat,'*––––––『 WEEKLY 』––––––*', text.trim(), null, [['Profile', ''], ['Monthly', '.monthly']],m)
+    //conn.sendButton(m.chat,'*––––––『 WEEKLY 』––––––*', text.trim(), null, [['Profile', ''], ['Monthly', '.monthly']],m)
+    m.reply(`
+    🎁 *weekly reward*
+    
+    ▢ *Has recieved:*
+     ${text}`)
     user.lastweekly = new Date * 1
   }
   handler.help = ['weekly']
