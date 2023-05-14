@@ -11,7 +11,7 @@ switch (type) {
 	case 'loli':
 	     let img = await conn.getFile(global.API('fgmods', '/api/loli', {}, 'apikey'))
 	     let loli = img.data 
-	     conn.sendButton(m.chat, `✅ Random ${command}`, igfg, loli, [['▷▷ NEXT', `${usedPrefix + command}`]], m)
+	      conn.sendFile(m.chat, loli.data, 'img.jpg', `✅ Random ${command}`, m)
 	     m.react(dmoji) 
 	break
 	
@@ -22,7 +22,7 @@ case 'neko':
     if (!res.ok) throw await res.text()
     let json = await res.json(`https://raw.githubusercontent.com/mask-sir/api.mask-ser/main/Loli.json`)
     if (!json.url) throw '❎ Error'
-    conn.sendButton(m.chat, `✅ Random ${command}`, igfg, json.url, [['▷▷ NEXT', `${usedPrefix + command}`]], m)
+    conn.sendFile(m.chat, json.url, 'img.jpg', `✅ Random ${command}`, m)
    m.react(dmoji) 
 break
 
