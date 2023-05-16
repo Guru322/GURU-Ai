@@ -3,5 +3,16 @@
   "description": "Customizable WhatsApp Bot",
   "repository": "https://github.com/Guru322/GURU-BOT",
   "logo": "https://i.imgur.com/gEj1qC6.jpeg",
-  "keywords": ["bot", "whatsapp", "whatsapp-bot", "rpg", "GURU-bot-md", "GURU-bot"]
+  "keywords": ["bot", "whatsapp", "whatsapp-bot", "rpg", "GURU-bot-md", "GURU-bot"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ]
 }
