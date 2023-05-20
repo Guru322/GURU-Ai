@@ -40,7 +40,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://youtu.be/hBxSyqyeoFU"> <img src="https://img.shields.io/badge/Coolify%20Deploy-blue?style=for-the-badge&logo=coolify" width="220" height="38.45"/></a></p>
 
-#### DEPLOY TO CLEVER CLOUD
+#### DEPLOY TO CLEVER CLOUD [KILLED]
 
 1. If You don't have a account in Clever cloud. Create a account.
     <br>
@@ -62,7 +62,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%2FGuru322%2FGURU-BOT"> <img src="https://img.shields.io/badge/Render%20Deploy-blue?style=for-the-badge&logo=render" width="220" height="38.45"/></a></p>
 
-#### DEPLOY TO SCALINGO (NOT RECOMMENDED)
+#### DEPLOY TO SCALINGO (WORKING AGAIN)
 
 1. If You don't have a account in Scalingo. Create a account.
     <br>
