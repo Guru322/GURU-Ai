@@ -10,7 +10,7 @@ https://chat.whatsapp.com/EzDWHKJch49AOSGl4d2AAf
 ≡ Disabled links? enter here! 
 
 ▢ Group WhatsApp 
-https://chat.whatsapp.com/EzDWHKJch49AOSGl4d2AAf
+contact vivek
 ▢ *Owner Telegram*
  https://t.me/
 
