@@ -20,8 +20,8 @@ await conn.sendFile(m.chat, anime3, 'error.jpg', null, m)
 } catch (e) {
 throw '*Error check if the persons face is visible*'
 }}}}
-handler.help = ["toanime","tmanime"]
+handler.help = ["toanime"]
 handler.tags = ["tools"]
 handler.diamond = true
-handler.command = /^(imganime|toanime)$/i
+handler.command = /^(imganime|toanime|tmanime|vivekanime)$/i
 export default handler
