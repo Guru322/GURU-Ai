@@ -3,6 +3,7 @@ import { canLevelUp } from '../lib/levelling.js'
 
 export async function before(m, { conn }) {
     let user = global.db.data.users[m.sender]
+    let pp = await  './src/Whatsapp.mp4'
     if (!user.autolevelup)
         return !0
     let before = user.level * 1
@@ -16,8 +17,7 @@ export async function before(m, { conn }) {
  *${before}* ‣  *${user.level}*
  ROLE : *${user.role}*
  
- _to deactivate write_
-_*/off autolevelup*_
+
 	`.trim())
     }
 }
