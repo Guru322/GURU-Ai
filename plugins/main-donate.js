@@ -3,14 +3,13 @@ let handler = async(m, { conn, usedPrefix, command }) => {
 
     let don = `
 ≡ *DONATION*
-ONLY WANT YOUR LOVE
-SUPPORT ME BY MAKING 69 MILLION FOLLOWERS ON MY INSTAGRAM`
-let img = 'https://raw.githubusercontent.com/Guru322/api/Guru/guru.jpg'
+suck my dick
+let img = 'https://github.com/troublemaker515/GURU-BOT/blob/main/src/Guru.jpg'
 conn.sendFile(m.chat, img, 'img.jpg', don, m)
 }
 
 handler.help = ['donate']
 handler.tags = ['main']
-handler.command = [''] 
+handler.command = ['donate'] 
 
 export default handler
