@@ -56,15 +56,13 @@ let infobt = `
 ▢ *${chats.length}* Total Chats
 
 *≡ OWNER*
-  *GURU*
+  *VIVEK*
 ▢ Instagram :
-  • https://instagram.com/asli_guru69
+  • Beg me
 ▢ GitHub :
-  • https://github.com/Guru322
-▢ Telegram : 
-  • t.me/i_want_to_be_isekaied (GURU) 
+  • contact Vivek
 ▢ YouTube : 
-  • https://youtube.com/@Asliguru
+  • https://www.youtube.com/@troublemaker4748
 
  *≡ S E R V E R*
 *🛑 RAM:* ${format(totalmem() - freemem())} / ${format(totalmem())}
