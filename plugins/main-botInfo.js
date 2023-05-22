@@ -63,6 +63,8 @@ let infobt = `
   • contact Vivek
 ▢ YouTube : 
   • https://www.youtube.com/@troublemaker4748
+▢ Group : 
+  • https://chat.whatsapp.com/EzDWHKJch49AOSGl4d2AAf
 
  *≡ S E R V E R*
 *🛑 RAM:* ${format(totalmem() - freemem())} / ${format(totalmem())}
