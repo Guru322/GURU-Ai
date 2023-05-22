@@ -14,6 +14,6 @@ m.reply(`
 
 handler.help = ['script']
 handler.tags = ['main']
-handler.command = ['sc', 'git', 'script'] 
+handler.command = [''] 
 
 export default handler
