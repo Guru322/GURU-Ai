@@ -2,13 +2,13 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 ┏━━━━━━━━━━━━━━━━┓
 ┃  *<TROUBLEMAKER menu />*
 ┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
-┣  💟 groups
-┣  💟 infobot
+┣  💟 tmai
+┣  💟 tmanime
+┣  💟 tmgpt
 ┣  💟 speedtest
-┣  💟 grouplist
 ┣  💟 owner
 ┣  💟 script
-┣  💟 toanime
+┣  💟 infobot
 ┣  💟 qrcode
 ┣  💟 readqr
 ┣  💟 weather
@@ -16,6 +16,7 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 ┣  💟 hornycard
 ┣  💟 simpcard
 ┣  💟 ytcomment
+┣  💟 tmporn
 ┣  💟 whatmusic
 ┣  💟 lolicon
 ┣ 💎 _${usedPrefix}kick *<@tag>*_
