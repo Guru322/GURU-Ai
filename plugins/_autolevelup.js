@@ -2,8 +2,10 @@
 import { canLevelUp } from '../lib/levelling.js'
 
 export async function before(m, { conn }) {
-    let user = global.db.data.users[m.sender]
-    let pp = await  './src/Whatsapp.mp4'
+   let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
+	let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './src/Whatsapp.mp4')
+	let user = global.db.data.users[m.sender]
     if (!user.autolevelup)
         return !0
     let before = user.level * 1
