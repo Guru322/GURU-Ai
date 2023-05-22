@@ -8,7 +8,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   //let res = await fetch(global.API('https://api.simsimi.net', '/v2/', { text: encodeURIComponent(m.text), lc: "es" }, ''))
   let res = await fetch(`https://api.simsimi.net/v2/?text=${text}&lc=en`)
   let json = await res.json()
-  if (json.success) m.reply(json.success.replace('simsimi', 'Guru').replace('Simsimi', 'Guru').replace('sim simi', 'Guru'))
+  if (json.success) m.reply(json.success.replace('simsimi', 'Troublemaker').replace('Simsimi', 'Troublemaker').replace('sim simi', 'Troublemaker'))
   else throw json
 }
 handler.help = ['bot']
