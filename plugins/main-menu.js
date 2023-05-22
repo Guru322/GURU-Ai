@@ -62,13 +62,13 @@ let str = `
 ┏━━━━━━━━━━━━━━━━┓
 ┃  *<TROUBLEMAKER menu />*
 ┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
-┣  💟 groups
-┣  💟 infobot
+┣  💟 tmai
+┣  💟 tmanime
 ┣  💟 speedtest
 ┣  💟 grouplist
 ┣  💟 owner
 ┣  💟 script
-┣  💟 toanime
+┣  💟 infobot
 ┣  💟 qrcode
 ┣  💟 readqr
 ┣  💟 weather
@@ -76,6 +76,7 @@ let str = `
 ┣  💟 hornycard
 ┣  💟 simpcard
 ┣  💟 ytcomment
+┣  💟 tmporn
 ┣  💟 whatmusic
 ┣  💟 lolicon
 ┣ 💎 _${usedPrefix}kick *<@tag>*_
