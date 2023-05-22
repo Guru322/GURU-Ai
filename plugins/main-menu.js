@@ -64,8 +64,8 @@ let str = `
 ┃≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡┃
 ┣  💟 tmai
 ┣  💟 tmanime
+┣  💟 tmgpt
 ┣  💟 speedtest
-┣  💟 grouplist
 ┣  💟 owner
 ┣  💟 script
 ┣  💟 infobot
