@@ -58,7 +58,7 @@ global.fgpyp = 'https://youtube.com/'
 global.fglog = 'https://i.imgur.com/trvGIIh.jpeg' 
 global.dbase = 'mongodb+srv://botuse:botuse@cluster0.ucapl9j.mongodb.net/?retryWrites=true&w=majority' //ADD YOUR MONGODB BY CHANGIMG IT
 
-global.wait = '*⌛⌛⌛ _Charging..._*\n*▰▰▰▱▱▱▱▱*'
+global.wait = '*⌛⌛⌛ _LOADING..._*\n*▰▰▰▱▱▱▱▱*'
 global.rwait = '⌛⌛⌛⌛⌛'
 global.dmoji = '🙂'
 global.done = '✅'
