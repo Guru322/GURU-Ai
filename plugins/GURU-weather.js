@@ -1,6 +1,6 @@
 import axios from "axios"
 let handler = async (m, { args }) => {
-if (!args[0]) throw `*This command generates image from texts*\n\n*—◉ 𝙴xample usage*\n*◉ ${usedPrefix + command} bangalore*\n*◉ ${usedPrefix + command} mangalore*`
+if (!args[0]) throw "*please give a place to search*"
 try {
 const response = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273`)
 const res = await response
