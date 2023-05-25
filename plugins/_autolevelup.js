@@ -14,10 +14,22 @@ if (!(who in global.db.data.users)) throw `✳️ The user is not found in my da
     user.role = global.rpg.role(user.level).name
     if (before !== user.level) {
         m.reply(` 
-	*${name}*
-*▢ LEVEL UP*
- *${before}* ‣  *${user.level}*
- ROLE : *${user.role}*
+
+ ╔════◇
+
+║ *Congratulations*
+
+║ *leveled Up 😚😈*
+
+║ *🗣️Name*: *${name}*
+
+║ *${before}* ‣  *${user.level}*
+
+║ *📍Role*: *${user.role}*
+
+║ *Enjoy😍🤩*
+
+╚════════════╝
  
 
 	`.trim())
