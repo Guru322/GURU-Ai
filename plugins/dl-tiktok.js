@@ -11,10 +11,11 @@ try {
     let p = await fg.tiktok(args[0]) 
     let te = `
 ┌─⊷ TIKTOK
-▢ *Username:* ${p.author}
-▢ *Descripción:* ${p.title}
+▢ *Username:* ${p.unique_id}
+▢ *Description:* ${p.title}
+▢ *Duration:* ${p.duration}
 └───────────`
-    conn.sendButton(m.chat, te, igfg, p.nowm, [['⎘ Stalkig', `${usedPrefix}ttstalk ${p.author.replace(/^@/, '')}`], ['♫ Audio', `${usedPrefix}tomp3`]], m)
+   conn.sendFile(m.chat, p.play, 'tiktok.mp4', te, m)
     m.react(done)
     } catch {  	
 	const { author: { nickname }, video, description } = await tiktokdl(args[0])
@@ -22,10 +23,10 @@ try {
          .catch(async _ => await tiktokdlv3(args[0]))
     const url = video.no_watermark2 || video.no_watermark || 'https://tikcdn.net' + video.no_watermark_raw || video.no_watermark_hd
     if (!url) throw '❎ Error downloading the video'
-    conn.sendButton(m.chat, `
-┌─⊷ TIKTOK
-▢ *Nickname:* ${nickname} ${description ? `\n▢ *Description:* ${description}` : ''}
-└───────────`, igfg, url, [['♫ Audio', `${usedPrefix}tomp3`]], m)
+     conn.sendFile(m.chat, url, 'fb.mp4', `
+┌─⊷ *TIKTOK DL*
+▢ *Username:* ${nickname} ${description ? `\n▢ *Description:* ${description}` : ''}
+└───────────`, m)
 m.react(done)
 } 
     
