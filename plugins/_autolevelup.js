@@ -15,14 +15,17 @@ if (!(who in global.db.data.users)) throw `✳️ The user is not found in my da
     if (before !== user.level) {
         m.reply(` 
 
-╔════◇
-║ *Congratulations*
-║ *leveled Up 😚😈*
-║ *🗣️Name*: *${user.name}*
-║ *${before}* ‣  *${user.level}*
-║ *📍Role*: *${user.role}*
-║ *Enjoy😍🤩*
-╚════════════╝
+┌───⊷ *LEVEL*
+
+▢ Number : *${name}*
+
+▢ Level : *${user.level}*
+
+▢ *${before}* ‣  *${user.level}*
+
+▢ Role : *${user.role}*
+
+└──────────────
  
 
 	`.trim())
