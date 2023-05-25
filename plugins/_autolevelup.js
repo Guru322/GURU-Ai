@@ -16,6 +16,9 @@ if (!(who in global.db.data.users)) throw `✳️ The user is not found in my da
         m.reply(`
 *▢ LEVEL UP*
 
+• ${username} ${registered ? '\n   • ' + name + ' ': ''}
+
+   • @${who.replace(/@.+/, '')}
  *${before}* ‣  *${user.level}*
  ROLE : *${user.role}*
  
