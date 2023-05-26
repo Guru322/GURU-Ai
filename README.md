@@ -30,6 +30,16 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <a href='https://replit.com/@Guru322/GURU-BOT-QR-CODE-GENERATOR?v=1' target="_blank"><img alt='SCAN QR' src='https://img.shields.io/badge/Scan_qr-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
+#### DEPLOY TO Replit 
+
+1. If You don't have a account in Replit. Create a account.
+    <br>
+<p align="center"><a href="https://replit.com/signup"> <img src="https://img.shields.io/badge/replit%20Account-blue?style=for-the-badge&logo=replit" width="220" height="38.45"/></a></p>
+
+2. Now Deploy
+    <br>
+<p align="center"><a href="https://repl.it/github/avi453/GURU-BOT"> <img src="https://img.shields.io/badge/replit%20Deploy-blue?style=for-the-badge&logo=replit" width="220" height="38.45"/></a></p>
+
 #### DEPLOY TO COOLIFY (Error occurs when server gets overloaded)
 
 1. If You don't have a account in Coolify. Create a account.
@@ -91,7 +101,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 ## BASE OG BY [BochilGaming](https://github.com/BochilGaming/games-wabot/tree/multi-device)
 
 
- **THANKS TO** |[here](https://github.com/Guru322/GURU-BOT/#thanks-to) | 
+ **THANKS TO** |[GURU](https://github.com/Guru322/GURU-BOT) | 
 
 
 
