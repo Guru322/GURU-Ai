@@ -61,6 +61,7 @@
         "link-preview-js": "^3.0.0",
         "lodash": "^4.17.21",
         "lowdb": "^3.0.0",
+        "moment-timezone": "^0.5.37",
         "mongoose": "^6.6.5",
         "node-fetch": "^3.2.10",
         "node-gtts": "^2.0.2",
@@ -89,10 +90,8 @@
         "api-dylux": "^1.2.8",
         "@vitalets/google-translate-api": "^8.0.0",
         "yargs": "^17.6.0",
-        "ytdl-core": "^4.11.2"
-    },
-    "optionalDependencies": {
-         "wa-sticker-formatter": "^4.3.2",
-        "moment-timezone": "^0.5.37"
+        "ytdl-core": "^4.11.2",
+         "wa-sticker-formatter": "^4.3.2"
+       
     }
 }
