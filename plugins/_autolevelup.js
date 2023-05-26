@@ -17,8 +17,6 @@ if (!(who in global.db.data.users)) throw `✳️ The user is not found in my da
 
 ┌───⊷ *LEVEL*
 
-▢ Number : *${name}*
-
 ▢ Level : *${user.level}*
 
 ▢ *${before}* ‣  *${user.level}*
