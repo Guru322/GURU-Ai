@@ -20,7 +20,7 @@ let handler = async (m, { conn, usedPrefix, command}) => {
     let uptime = clockString(_uptime)
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-
+let pp = await  './src/Whatsapp.mp4'
 let user = global.db.data.users[who]
 let { name, exp, diamond, lastclaim, registered, regTime, age, level, role, warn } = global.db.data.users[who]
 let { min, xp, max } = xpRange(user.level, global.multiplier)
@@ -318,8 +318,8 @@ let str = `
 ┣ 👾 _${usedPrefix}sasuke_
 ┣ 👾 _${usedPrefix}sakura_
 ┣ 👾 _${usedPrefix}cosplay_
-┣ 🛠️ _${usedPrefix}chatgpt *<text>*_
-┣ 🛠️ _${usedPrefix}dall-e *<text>*_
+┣ 🛠️ _${usedPrefix}tmgpt *<text>*_
+┣ 🛠️ _${usedPrefix}tmdall-e *<text>*_
 ┣ 🛠️ _${usedPrefix}styletext *<text>*_
 ┣ 👽 _${usedPrefix}sticker *<respond a image video>*_
 ┣ 👽 _${usedPrefix}sticker *<link / url>*_
