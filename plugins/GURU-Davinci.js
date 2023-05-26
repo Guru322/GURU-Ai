@@ -7,5 +7,5 @@ await conn.sendFile(m.chat, tiores.data, null, null, m)
 } catch {
 throw `*🚮ERROR*`
 }}
-handler.command = ['tmai' ]
+handler.command = ['tmai','tmdall-e' ]
 export default handler
