@@ -11,8 +11,7 @@
     },
     "scripts": {
         "start": "node --max_old_space_size=8192 index.js",
-        "test": "node test.js",
-        "test2": "nodemon index.js"
+        "test": "node test.js"
     },
     "keywords": [
         "termux-whatsapp-bot",
