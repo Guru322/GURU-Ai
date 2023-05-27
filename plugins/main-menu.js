@@ -66,6 +66,8 @@ let str = `
 ┣  💟 tmanime
 ┣  💟 tmcartoon
 ┣  💟 tmgpt
+┣  💟 tmrmbg
+┣  💟 tmrmbgsticker
 ┣  💟 speedtest
 ┣  💟 owner
 ┣  💟 script
@@ -329,7 +331,7 @@ let str = `
 ┣ 👽 _${usedPrefix}sfull *<imagen o video>*_
 ┣ 👽 _${usedPrefix}emojimix *<emoji 1>&<emoji 2>*_
 ┣ 👽 _${usedPrefix}scircle *<image>*_
-┣ 👽 _${usedPrefix}sremovebg *<image>*_
+┣ 👽 _${usedPrefix}tmrmbgsticker *<image>*_
 ┣ 👽 _${usedPrefix}semoji *<tip> <emoji>*_
 ┣ 👽 _${usedPrefix}attp *<text>*_
 ┣ 👽 _${usedPrefix}attp2 *<text>*_
