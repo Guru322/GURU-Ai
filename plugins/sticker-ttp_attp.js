@@ -11,15 +11,13 @@ let a2 = await createSticker(a1, false, global.packname, global.author)
 conn.sendFile(m.chat, a2, 'sticker.webp', '', m, { asSticker: true })}
 
 if (command == 'attp2') {
-conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/attp?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
+conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/attp?apikey=${lolkeysapi}&text=${teks}`false, global.packname, global.author, 'sticker.webp', '', m, { asSticker: true })}
     
 if (command == 'attp3') {
 conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/attp2?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
 
-    if (command == 'ttp5') {
-let a1 = await (await fetch(`https://api.lolhuman.xyz/api/ttp6?apikey=${lolkeysapi}&text=${teks`)).buffer()
-let a2 = await createSticker(a1, false, global.packname, global.author)
-conn.sendFile(m.chat, a2, 'sticker.webp', '', m, { asSticker: true })}
+if (command == 'ttp5') {
+conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp6?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
 
 if (command == 'ttp4') {
 conn.sendFile(m.chat, `https://api.lolhuman.xyz/api/ttp5?apikey=${lolkeysapi}&text=${teks}`, 'sticker.webp', '', m, { asSticker: true })}
