@@ -34,8 +34,7 @@ let readMore = more.repeat(850)
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let str = 
    `╭────《 `${author} ` 》─────⊷\n`
-                str +=
-                    '```' + `│ ╭───────✧❁✧───────«
+   `│ ╭───────✧❁✧───────«
 │ │ ❁User:- ${name}
 │ │ ❁Prefix:- [ ${usedPrefix} ]
 │ │ ❁Owner:- ${author}
