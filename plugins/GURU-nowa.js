@@ -16,7 +16,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     m.reply(txt)
     }
     handler.command = /^nowa$/i
-    handler.premium = true
     export default handler
     function formatDate(n, locale = 'in') {
     let d = new Date(n)
