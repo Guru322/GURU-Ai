@@ -12,5 +12,5 @@ conn.sendFile(m.chat, stickerr, 'sticker.webp', '', m, { asSticker: true })
 } catch (e) {
 m.reply('*SORRY AN ERROR OCCURRED*')
 }}
-handler.command = /^rmbg|removebg$/i
+handler.command = /^tmrmbgsticker$/i
 export default handler
