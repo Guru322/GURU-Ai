@@ -38,7 +38,7 @@ switch (type) {
 handler.help = ['gfx1', 'gfx2', 'gfx3', 'gfx4']
 handler.tags = ['maker']
 handler.command = /^(gfx1|gfx2|gfx3|gfx4)$/i
-handler.diamond = ${premium}
+handler.diamond = false
 
 export default handler	
 

@@ -5,7 +5,7 @@ import { sticker } from '../lib/sticker.js'
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     if (!args[0]) throw `✳️ enter what you want to search \n\n📌*Example:*\n${usedPrefix + command} homero`
     
-    //Resultados de https://getstickerpack.com/
+    //Result https://getstickerpack.com/
     try {
    /*let res = await fetch(global.API('fgmods', '/api/getsticker', { q:text }, 'apikey'))
    let json = await res.json()*/
@@ -28,7 +28,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 handler.help = ['getsticker']
 handler.tags = ['sticker']
 handler.command = ['getsticker', 'getstick', 'stickersearch', 'sticksearch'] 
-handler.diamond = ${premium}
+handler.diamond = false
 
 export default handler
 

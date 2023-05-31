@@ -7,11 +7,6 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     m.react(rwait)
 let type = (command).toLowerCase()
 switch (type) {
-                case 'gfx5': 
-	let tf = global.API('fgmods', '/api/xnxxmaker', 'apikey', avatar: pp, username: name )
-	conn.sendFile(m.chat, tf, 'logo.png', `✅ Result`, m)
-	m.react(done)
-    break
     case 'marvel': 
 	if (!text) throw tee
 	let di = global.API('fgmods', '/api/textpro/marvel', { text }, 'apikey')
@@ -20,8 +15,8 @@ switch (type) {
 	break 
      case 'ninja': 
 	if (!text) throw tee
-	let de = global.API('fgmods', '/api/textpro/ninja', { text }, 'apikey')
-	conn.sendFile(m.chat, de, 'logo.png', `✅ Result`, m)
+	let mh = global.API('fgmods', '/api/textpro/ninja', { text }, 'apikey')
+	conn.sendFile(m.chat, mh, 'logo.png', `✅ Result`, m)
 	m.react(done)
 	break 
      case 'tiktok': 
