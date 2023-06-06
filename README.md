@@ -40,7 +40,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
 2. Watch the following video to create Heroku acc for free.
     <br>
-<p align="center"><a href=""> <img src="https://img.shields.io/badge/heroku%20Tutorial-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://www.youtube.com/watch?v=J_Sq5OxK8ZE"> <img src="https://img.shields.io/badge/heroku%20Tutorial-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 3. Now Deploy
     <br>
