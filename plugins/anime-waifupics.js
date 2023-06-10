@@ -20,7 +20,7 @@ case 'megumin':
 case 'neko':
   let res = await fetch(`https://api.waifu.pics/sfw/${command}`)
     if (!res.ok) throw await res.text()
-    let json = await res.json(`https://raw.githubusercontent.com/mask-sir/api.mask-ser/main/Loli.json`)
+    let json = await res.json(`https://raw.githubusercontent.com/Guru322/api/Guru/BOT-JSON/waifu.json`)
     if (!json.url) throw '❎ Error'
     conn.sendFile(m.chat, json.url, 'img.jpg', `✅ Random ${command}`, m)
    m.react(dmoji) 
