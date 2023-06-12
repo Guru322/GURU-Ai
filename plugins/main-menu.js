@@ -20,7 +20,7 @@ let handler = async (m, { conn, usedPrefix, command}) => {
     let uptime = clockString(_uptime)
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './Guru.jpg')
+let pp = './Guru.jpg'
 let user = global.db.data.users[who]
 let { name, exp, diamond, lastclaim, registered, regTime, age, level, role, warn } = global.db.data.users[who]
 let { min, xp, max } = xpRange(user.level, global.multiplier)
@@ -28,41 +28,38 @@ let username = conn.getName(who)
 let math = max - xp
 let prem = global.prems.includes(who.split`@`[0])
 let sn = createHash('md5').update(who).digest('hex')
+let totaluser = Object.values(global.db.data.users).length 
 let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length 
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let str = `
-┏─────────────────⬣
-┆ 𝑯𝒂𝒊, ${name}
-┗┬──────────────┈ ⳹
-┏┤ Bot Info  
-┆┗──────────────┈ ⳹
-┆♠︎ 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${botname}
-┆♠︎ 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${author}
-┆♠︎ 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿 𝗡𝗮𝗺𝗲 :𝐺𝑈𝑅𝑈
-┆♠︎ 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 :linux 
-┆♠︎ *Uptime* : ${uptime}
-┆♠︎ *Experience:* ${exp}
-┆♠︎ *Rank:* ${role}
-┆♠︎ *Diamonds:* ${diamond}
-┆♠︎ *Total users:* ${rtotalreg}
-┗┬──────────────┈ ⳹
-┏┤   User Info
-┆┗──────────────┈ ⳹ 
-┆♠︎ 𝗡𝗮𝗺𝗲 :${name}
-│♠︎ 𝗡𝘂𝗺𝗯𝗲𝗿 : ${taguser}
-│♠︎ 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 : ${user.premium = 'true' ? '✅' : '❌'}
-┗┬──────────────┈ ⳹
-┏┤ Calender
-┆┗──────────────┈ ⳹
-┆Time :${wib} 
-┆𝗗𝗮𝘁𝗲 :${date} 
-┗─────────────────⬣
-┆──────────────┈ ⳹
-┆type /list to
-┆to see all cmd
-┗─────────────────⬣`
+┌─•✧𝑰𝑵𝑭𝑶 𝑼𝑺𝑬𝑹✧•─┐
+┊ 👨‍💻  *𝑼𝑺𝑬𝑹:* ${taguser}
+┊ 👨‍💻  *𝙉𝘼𝙈𝙀:* ${name}
+┊ 😈  𝙊𝙒𝙉𝙀𝙍 𝙉𝘼𝙈𝙀 :${author}
+┊ 💎  *𝘿𝙄𝘼𝙈𝙊𝙉𝘿𝙎:* ${diamond}
+┊ 📱  *𝙍𝘼𝙉𝙆:* ${role}
+┊ 🃏  *𝙀𝙓𝙋𝙀𝙍𝙄𝙀𝙉𝘾𝙀:* ${exp}
+└─── •✧✧• ────┘
+
+┌──•✧𝑻𝒐𝒅𝒂𝒚✧•─────┐
+┊ 📅   *𝘿𝘼𝙏𝙀:* ${date}
+┊ ⏲️   *𝙏𝙄𝙈𝙀:* ${wib}
+└── •✧✧• ───────┘ 
+
+┌─•✧𝑩𝑶𝑻 𝑰𝑵𝑭𝑶✧•──┐
+┊ 🤖  *𝘽𝙊𝙏 𝙉𝘼𝙈𝙀:*${botname}
+┊ 👨‍💻   𝙋𝙇𝘼𝙏𝙁𝙊𝙍𝙈:Linux 
+┊ 🛑  *𝙋𝙍𝙀𝙁𝙄𝙓:* ${usedPrefix}
+┊ 🕛  *𝙐𝙋𝙏𝙄𝙈𝙀:* ${uptime} 
+┊ 💌  *𝘿𝘼𝙏𝘼𝘽𝘼𝙎𝙀:* ${rtotalreg} FROM ${totaluser}
+┊ 🗃️  *𝑻𝑶𝑻𝑨𝑳 𝑼𝑺𝑬𝑹𝑺:* ${totaluser}
+└─── •✧✧• ────┘ 
+≻───── ⋆✩⋆ ─────≺
+✎𝙐𝙎𝙀 ${usedPrefix}list 𝑻𝑶 𝑺𝑬𝑬 𝑨𝑳𝑳 𝑼𝑺𝑨𝑩𝑳𝑬 𝑪𝑶𝑴𝑴𝑨𝑵𝑫𝑺
+≻───── ⋆✩⋆ ─────≺
+`
     conn.sendFile(m.chat, pp, 'perfil.jpg', str, m, false, { mentions: [who] })
     m.react(done)
 

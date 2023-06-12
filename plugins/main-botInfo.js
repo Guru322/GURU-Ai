@@ -42,7 +42,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   let speed = neww - old
   let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './src/avatar_contact.png')
+let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './Guru.jpg')
 let user = global.db.data.users[who]
   
 let infobt = `
