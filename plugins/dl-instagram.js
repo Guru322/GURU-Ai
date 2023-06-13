@@ -4,7 +4,7 @@ let handler = async (m, { conn, usedPrefix, args, command, text }) => {
   if (!text) throw `LINK?`;
   m.reply(wait);
 
-  let res = await fetch(`https://api.zeltoria.my.id/api/download/instagram?apikey=${global.zeltoria}&url=${text}`);
+  let res = await fetch(`https://api.zeltoria.my.id/api/download/instagram?apikey=Elistz&url=${text}`);
   let x = await res.json();
 
   let cap = `HERE IS THE VIDEO >,<`;
