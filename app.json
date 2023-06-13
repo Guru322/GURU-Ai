@@ -1,10 +1,24 @@
 {
-  "name": "GURU-BOT",
-  "description": "Customizable WhatsApp Bot",
+  "name": "whatsapp-bot (GURU-BOT)",
+  "description": " Whatsapp bot.",
+  "keywords": [
+    "whatsapp bot"
+  ],
   "repository": "https://github.com/Guru322/GURU-BOT",
-  "logo": "https://i.imgur.com/gEj1qC6.jpeg",
-  "keywords": ["bot", "whatsapp", "whatsapp-bot", "rpg", "GURU-bot-md", "GURU-bot"],
-  "buildpacks": [
+  "stack": "container",
+  "env": {
+    "OPENAI_API_KEY": {
+      "description": "openai apikey",
+      "required": false,
+      "value": ""
+    },
+    "OPENAI_ORGANIZATION": {
+      "description": "openai organisation id",
+      "required": false,
+      "value": "null"
+    }
+    },
+    "buildpacks": [
     {
       "url": "heroku/nodejs"
     },
