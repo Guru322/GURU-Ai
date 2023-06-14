@@ -1,33 +1,34 @@
 let handler = async m => m.reply(`
 
-≡  *GURU  ┃ ᴮᴼᵀ*   GROUPS
+≡  *𝓜𝓻 𝓟𝓻𝓲𝓷𝓬𝓮♥️  ┃ ᴮᴼᵀ*   _GROUPS_
 
 ─────────────
-▢ Join public bot group and support
-https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp
+▢ *🇵🇰Join public bot group🇵🇰*
+https://chat.whatsapp.com/FFDazafm9Z5IYthaQecbyN
 
-▢ Group 2
-https://chat.whatsapp.com/LwLQab5mZVW6WWRbBPnDGC
+▢ *🇵🇰Group 2 Only For +92🇵🇰*
+https://chat.whatsapp.com/H0dGFRMFGlwHTmWXva1I7G
 
-▢ Group 3
-https://chat.whatsapp.com/Jn9qVerYN6Q1L0vlVFe2XL
+▢ *🇵🇰Group 3 Global Learning🇵🇰*
+https://chat.whatsapp.com/GUUcaQbewDLFpcFvUMZ4jm
 
 ─────────────
 ≡ Disabled links? enter here! 
 
-▢ Group WhatsApp 
- https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp
+▢ *_🇵🇰Group WhatsApp🇵🇰_*
+ https://chat.whatsapp.com/FFDazafm9Z5IYthaQecbyN
 ─────────────
-▢ *Owner Telegram*
- https://t.me/i_want_to_be_isekaied
+▢ *Owner Number*
+ wa.me/+923042205427
+ 𝓜𝓻 𝓟𝓻𝓲𝓷𝓬𝓮♥️
 
-▢ *YouTube*
-• https://www.youtube.com/@Asliguru
+
+
 
 
 `.trim())
-handler.help = ['gpguru']
+handler.help = ['gpprince']
 handler.tags = ['main']
-handler.command = ['groups', 'groupguru', 'gugp', 'ggp', 'gpguru'] 
+handler.command = ['groups', 'groupprince', 'gugp', 'ggp', 'gpprince'] 
 
 export default handler
