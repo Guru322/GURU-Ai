@@ -1,18 +1,30 @@
-import fetch from 'node-fetch'
+import fetch from 'node-fetch';
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-	
- let name = conn.getName(m.sender)
-  if (!text) throw `Hii *${name}* want to talk? \nrespond *${usedPrefix + command}* (your message) \n\n📌 Exemplo : *${usedPrefix + command}* Hii bot`
-  m.react('🗣️') 
-  //let res = await fetch(global.API('https://api.simsimi.net', '/v2/', { text: encodeURIComponent(m.text), lc: "es" }, ''))
-  let res = await fetch(`https://api.simsimi.net/v2/?text=${text}&lc=en`)
-  let json = await res.json()
-  if (json.success) m.reply(json.success.replace('simsimi', 'Guru').replace('Simsimi', 'Guru').replace('sim simi', 'Guru'))
-  else throw json
-}
-handler.help = ['bot']
-handler.tags = ['fun']
-handler.command = ['bot', 'alexa'] 
+  const name = conn.getName(m.sender);
+  if (!text) {
+    throw `Hi *${name}*, do you want to talk? Respond with *${usedPrefix + command}* (your message)\n\n📌 Example: *${usedPrefix + command}* Hi bot`;
+  }
+  
+  m.react('🗣️');
+  
+  const uid = encodeURIComponent(m.sender);
+  const msg = encodeURIComponent(text);
+  
+  const res = await fetch(`http://api.brainshop.ai/get?bid=176001&key=M4fzqfe99b3THOYi&uid=${uid}&msg=${msg}`);
+  const json = await res.json();
+  
+  if (json.cnt) {
+    const reply = json.cnt;
+    m.reply(reply);
+  } else {
+    throw json;
+  }
+};
 
-export default handler
+handler.help = ['bot'];
+handler.tags = ['fun'];
+handler.command = ['bot', 'alexa'];
+
+export default handler;
+
