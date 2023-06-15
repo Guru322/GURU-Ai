@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, isROwner, isOwner }) => {
 handler.help = ['setwelcome <text>']
 handler.tags = ['group']
 handler.command = ['setwelcome'] 
-handler.admin = true
-handler.owner = false
+handler.admin = false
+handler.owner = true
 
 export default handler
