@@ -58,7 +58,7 @@ handler.tags = ['dl', 'prem']
 
 handler.command = ['mediafire', 'mfire'] 
 
-handler.diamond = false
+handler.diamond = true
 
 handler.premium = false
 
