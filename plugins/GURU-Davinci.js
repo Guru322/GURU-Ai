@@ -7,5 +7,5 @@ await conn.sendFile(m.chat, tiores.data, null, null, m)
 } catch {
 throw `*INTERNAL ERROR*`
 }}
-handler.command = ['ai2', 'dalle', 'gen', 'gimg', 'openai2']
+handler.command = ['ai2', 'dalle', 'gen', 'gimg', 'openai2', 'gpt2']
 export default handler
