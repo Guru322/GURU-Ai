@@ -7,13 +7,13 @@ import axios from 'axios'
 
 
 global.owner = [
-  ['923042205427', 'Prince', true],
-  ['6281255369012', 'Ash', true], 
-  [''] 
+  ['923042205427', 'Prince The Owner', true],
+  ['923316034576', 'Jani', true], 
+  ['923042205427',  '🇵🇰OWNER🇵🇰', true],
 ] //Number of owners
 
-global.mods = ['923042205427','32460248586'] 
-global.prems = ['923042205427', '32460248586', '919398758484']
+global.mods = ['923042205427','923042205427'] 
+global.prems = ['923042205427', '923042205427', '923042205427']
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.keysxteammm = ['29d4b59a4aa687ca', '5LTV57azwaid7dXfz5fzJu', 'cb15ed422c71a2fb', '5bd33b276d41d6b4', 'HIRO', 'kurrxd09', 'ebb6251cc00f9c63']
@@ -47,16 +47,16 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.botname = 'ᴘʀɪɴᴄᴇ-ʙᴏᴛ-ᴍᴅ'
+global.botname = '🇵🇰ᴘʀɪɴᴄᴇ-ʙᴏᴛ-ᴍᴅ🇵🇰'
 global.premium = 'true'
-global.packname = 'ᴘʀɪɴᴄᴇ-ʙᴏᴛ-ᴍᴅ' 
-global.author = '@𝓜𝓻 𝓟𝓻𝓲𝓷𝓬𝓮♥️' 
-global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru69\n' 
+global.packname = '𝓜𝓻 𝓟𝓻𝓲𝓷𝓬𝓮♥️' 
+global.author = '𝓜𝓻 𝓟𝓻𝓲𝓷𝓬𝓮♥️' 
+global.igfg = '▢ 🇵🇰LOVE FROM PAKISTAN🇵🇰' 
 global.dygp = 'https://chat.whatsapp.com/FFDazafm9Z5IYthaQecbyN'
-global.fgsc = 'https://github.com/Guru322/GURU-BOT-V1' 
-global.fgyt = 'https://youtube.com/@Asliguru'
-global.fgpyp = 'https://youtube.com/@Asliguru'
-global.fglog = 'https://raw.githubusercontent.com/Guru322/api/Guru/guru.jpg' 
+global.fgsc = 'https://github.com/Princegds786/GURU-BOT' 
+global.fgyt = 'https://youtube.com/'
+global.fgpyp = 'https://youtube.com/'
+global.fglog = '🎀🇵🇰🇵🇰🇵🇰🇵🇰🇵🇰🇵🇰🇵🇰🇵🇰🇵🇰🇵🇰🇵🇰🎀' 
 
 
 global.wait = '*⌛ _Charging..._*\n*▰▰▰▱▱▱▱▱*'
