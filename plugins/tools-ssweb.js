@@ -1,18 +1,10 @@
-
 import fetch from 'node-fetch'
-let handler = async (m, { conn, command, args, text }) => {
-      
-    if (!args[0]) return m.reply('✳️ Enter the URL of a page')
-    m.react(rwait) 
-	let full = /f$/i.test(command)
-    let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
-    let ss = await (await fetch(global.API('nrtm', '/api/ssweb', { delay: 1000, url: u }))).buffer()
-    conn.sendFile(m.chat, ss, 'ssweb.png', '✅ Capture from the Page', m) 
-   m.react(done) 
-}
-handler.help = ['ssweb <url>']
+let handler = async (m, { conn, command, args }) => {
+if (!args[0]) return conn.reply(m.chat, '*[🔎] give url*', m)
+let ss = await (await fetch(`https://image.thum.io/get/fullpage/${args[0]}`)).buffer()
+conn.sendFile(m.chat, ss, 'error.png', args[0], m)}
+handler.help = ['ss', 'ssf'].map(v => v + ' <url>')
 handler.tags = ['tools']
-handler.command = ['ssweb', 'ss', 'captura'] 
-
-
+handler.command = /^ss(web)?f?$/i
 export default handler
+
