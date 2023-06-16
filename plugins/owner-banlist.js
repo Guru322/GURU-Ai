@@ -1,22 +1,15 @@
-//import db from '../lib/database.js'
-
-let handler = async (m, { conn, usedPrefix }) => {
-    let chats = Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned)
-    let users = Object.entries(global.db.data.users).filter(user => user[1].banned)
-    
-    m.reply(`
-≡ *USERS BANNED*
-
-▢ Total : *${users.length}* 
-
-${users ? '\n' + users.map(([jid], i) => `
-${i + 1}. ${conn.getName(jid) == undefined ? 'UNKNOWN' : conn.getName(jid)}
-▢ ${jid}
-`.trim()).join('\n') : ''}
-`.trim())
-}
-handler.help = ['listban']
-handler.tags = ['owner']
-handler.command = ['banlist', 'listban'] 
-
-export default handler
+let handler = async (m, { conn }) => {	
+    await conn.fetchBlocklist().then(async data => {
+    let txt = `*≡ Blocked list*\n\n*Total :* ${data.length}\n\n┌─⊷\n`
+    for (let i of data) {
+    txt += `▢ @${i.split("@")[0]}\n`}
+    txt += "└───────────"
+    return conn.reply(m.chat, txt, m, { mentions: await conn.parseMention(txt) })
+    }).catch(err => {
+    console.log(err);
+    throw 'There are no blocked numbers'})}
+    handler.help = ['blocklist']
+    handler.tags = ['main']
+    handler.command = ['blocklist', 'listblock'] 
+    handler.rowner = true
+    export default handler
