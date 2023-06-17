@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     let anime = await client.searchAnime(text);
     let result = anime.data[0];
     let resultes = await translate(`${result.background}`, { to: 'en', autoCorrect: true });
-    let resultes2 = await translate(`${result.synopsis}`, { to: 'en', autoCorrect: true });
+    let resultes2 = await translate(`${result.synopsis}`, { to: 'hi', autoCorrect: true });
     let AnimeInfo = `
 🎀 • *Title:* ${result.title}
 🎋 • *Format:* ${result.type}

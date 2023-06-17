@@ -1,14 +1,24 @@
-import fetch from 'node-fetch'
-let handler = async(m, { conn, text }) => {
-  let res = await (await fetch('https://katanime.vercel.app/api/getrandom?limit=1'))
-  if (!res.ok) throw await res.text()
-  let json = await res.json()
-  if(!json.result[0]) throw json
-  let { indo, character, anime } = json.result[0]
-m.reply(`${indo}\n\n${character}\n${anime}`)
-}
-handler.help = ['animequote']
-handler.tags = ['internet']
-handler.command = /^(katanime|kataanime)$/i
+import fetch from 'node-fetch';
 
-export default handler
+const handler = async (m, { conn }) => {
+  try {
+    const res = await fetch('https://some-random-api.com/animu/quote');
+    if (!res.ok) throw await res.text();
+    const json = await res.json();
+    const { sentence, character, anime } = json;
+
+    const message = `❖𝙌𝙐𝙊𝙏𝙀 ${sentence}\n\n❖𝘾𝙃𝘼𝙍𝘼𝘾𝙏𝙀𝙍 ${character}\n❖𝘼𝙉𝙄𝙈𝙀 ${anime}`;
+    conn.sendMessage(m.chat, { text: message }, 'extendedTextMessage', { quoted: m });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+handler.help = ['animequote'];
+handler.tags = ['internet'];
+handler.command = /^(animequote|quote)$/i;
+
+export default handler;
+
+
+
