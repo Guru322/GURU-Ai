@@ -44,6 +44,7 @@
         "awesome-phonenumber": "^3.4.0",
         "acrcloud": "^1.4.0",
         "@shineiichijo/marika": "^2.0.6",
+        "aptoide-scraper": "^1.0.1",
         "axios": "^0.24.0",
         "cfonts": "^3.1.1",
         "chalk": "^5.1.0",

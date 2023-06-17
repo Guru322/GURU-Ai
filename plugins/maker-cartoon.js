@@ -146,9 +146,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 		conn.cartoon[m.sender] ? delete conn.cartoon[m.sender] : false;
 	}
 };
-handler.help = ["cartoon"];
+handler.help = ["tocartoon"];
 handler.tags = ["ai"];
-handler.command = ["cartoon"];
+handler.command = ["tocartoon"];
 
 handler.premium = false
 
