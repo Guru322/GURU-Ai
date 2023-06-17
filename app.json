@@ -16,6 +16,11 @@
       "description": "openai organisation id",
       "required": false,
       "value": "null"
+    },
+    "REMOVE_BG_API_KEY": {
+      "description": "removebg api key",
+      "required": false,
+      "value": "only if you want to use removebg"
     }
     },
     "buildpacks": [
