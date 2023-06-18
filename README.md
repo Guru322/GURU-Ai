@@ -78,7 +78,7 @@ SUPPORT GROUP: <a href="https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp"><img a
 
 - Star ⭐ the repo if you like GURU-BOT.
 
-## BASE OG BY [BochilGaming](https://github.com/BochilGaming/games-wabot/tree/multi-device)
+## BASE OG BY [FG98](https://github.com/FG98F/dylux-fg)
 
 
  **THANKS TO** |[GURU](https://github.com/Guru322/GURU-BOT) | 
