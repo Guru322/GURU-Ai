@@ -199,10 +199,7 @@ ${readMore}
 ⎪⌲👑 _${usedPrefix}toimg_
 ⎪⌲👑 _${usedPrefix}tovid_
 ⎪⌲👑 _${usedPrefix}ttp_
-⎪⌲👑 _${usedPrefix}ttp2_
-⎪⌲👑 _${usedPrefix}ttp3_
-⎪⌲👑 _${usedPrefix}ttp4_
-⎪⌲👑 _${usedPrefix}ttp5_
+⎪⌲👑 _${usedPrefix}telesticker_
 ⎪⌲👑 _${usedPrefix}attp_
 ⎪⌲👑 _${usedPrefix}attp2_
 ⎪⌲👑 _${usedPrefix}attp3_
@@ -232,6 +229,14 @@ ${readMore}
 ⎪⌲👑 _${usedPrefix}siri_
 ⎪⌲👑 _${usedPrefix}alexa_
 ⎪⌲👑 _${usedPrefix}dalle_
+⎪⌲👑 _${usedPrefix}tocartoon_
+⎪⌲👑 _${usedPrefix}quote_
+⎪⌲👑 _${usedPrefix}technews_
+⎪⌲👑 _${usedPrefix}define_
+⎪⌲👑 _${usedPrefix}pokedex_
+⎪⌲👑 _${usedPrefix}removebg_
+⎪⌲👑 _${usedPrefix}apk_
+⎪⌲👑 _${usedPrefix}tinyurl/shorturl_
 ┗━━━ʕ•㉨•ʔ━━━┛
 
 ❀° ┄──•••───╮
