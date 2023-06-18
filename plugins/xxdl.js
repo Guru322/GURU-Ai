@@ -16,39 +16,60 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   let url;
   try {
     url = new URL(text);
-    if (!allowedHosts.includes(url.hostname)) throw new Error('Invalid URL');
+    if (!allowedHosts.some(host => url.hostname.includes(host))) {
+      throw new Error('Invalid URL');
+    }
   } catch (error) {
     url = null;
   }
 
   if (url) {
     try {
-      let xn = await (await fetch(global.API('fgmods', '/api/dowloader/xnxxdl', { url: text }, 'apikey'))).json();
-      conn.sendFile(m.chat, xn.result.files.high, xn.result.title + '.mp4', `
-        ≡  *XNXX DL*
+      let response = await fetch(global.API('fgmods', '/api/dowloader/xnxxdl', { url: url.href }, 'apikey'));
+      let json = await response.json();
+      if (json.status) {
+        let downloadUrl = json.result.files.high || json.result.files.low || json.result.files.med;
+        if (downloadUrl) {
+          conn.sendFile(
+            m.chat,
+            downloadUrl,
+            `${json.result.title}.mp4`,
+            `
+              ≡  *XNXX DL*
         
-        ▢ *📌Title*: ${xn.result.title}
-        ▢ *⌚Duration*: ${xn.result.duration}
-        ▢ *🎞️Quality*: ${xn.result.quality}
-      `.trim(), m, false, { asDocument: chat.useDocument });
-      m.react('✅');
+              ▢ *📌Title*: ${json.result.title}
+              ▢ *⌚Duration*: ${json.result.duration}
+              ▢ *🎞️Quality*: ${json.result.quality}
+            `.trim(),
+            m,
+            false,
+            { asDocument: chat.useDocument }
+          );
+          m.react('✅');
+        } else {
+          m.reply('🔴 Error: Failed to retrieve the download URL.');
+        }
+      } else {
+        m.reply('🔴 Error: Failed to fetch the video details.');
+      }
     } catch (e) {
-      m.reply(`🔴 Error: We encountered a problem while processing the request.`);
+      m.reply('🔴 Error: We encountered a problem while processing the request.');
     }
   } else {
     try {
-      let res = await fetch(global.API('fgmods', '/api/search/xnxxsearch', { text }, 'apikey'));
-      let json = await res.json();
+      let response = await fetch(global.API('fgmods', '/api/search/xnxxsearch', { text }, 'apikey'));
+      let json = await response.json();
       let listSections = [];
       Object.values(json.result).map((v, index) => {
-        listSections.push([`${index}┃ ${v.title}`, [
-          ['🎥 MP4', `${usedPrefix}xnxxdl ${v.link}`, `▢ 📌 *Title*: ${v.title}`]
-        ]]);
+        listSections.push([
+          `${index}┃ ${v.title}`,
+          [['🎥 MP4', `${usedPrefix}xnxxdl ${v.link}`, `▢ 📌 *Title*: ${v.title}`]]
+        ]);
       });
       let ff = json.result.map((v, i) => `${i + 1}┃ *Title*: ${v.title}\n*Link*: ${v.link}\n`).join('\n');
       if (json.status) m.reply(ff);
     } catch (e) {
-      m.reply(`🔴 Error: We encountered a problem while processing the request.`);
+      m.reply('🔴 Error: We encountered a problem while processing the request.');
     }
   }
 };
