@@ -1,5 +1,3 @@
-//Inspired from https://github.com/FantoX001/Atlas-MD
-//Made by Guru
 import fetch from 'node-fetch'
 import { sticker } from '../lib/sticker.js'
 
@@ -14,7 +12,19 @@ let handler = async (m, { conn, text }) => {
 
     let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     if (!(who in global.db.data.users)) throw '✳️ The user is not found in my database'
-    userPfp = await conn.profilePictureUrl(who, 'image').catch(_ => './Guru.jpg')
+    try {
+      userPfp = await conn.profilePictureUrl(who, 'image')
+      // Add a validation to check if the URL is valid
+      try {
+        new URL(userPfp);
+      } catch (_) {
+        throw new Error("Invalid URL for profile picture");
+      }
+    } catch (e) {
+      console.error(e);
+      userPfp = './src/avatar_contact.png'; // Ensure the fallback image  exists in the right directory
+    }
+
     let user = global.db.data.users[who]
     let { name } = global.db.data.users[who]
 
@@ -25,8 +35,8 @@ let handler = async (m, { conn, text }) => {
       type: "quote",
       format: "png",
       backgroundColor: "#FFFFFF",
-      width: 700,
-      height: 580, // Adjust the height value as desired
+      width: 1800,
+      height: 200, // Adjust the height value as desired
       scale: 2,
       messages: [
         {
@@ -65,5 +75,3 @@ handler.tags = ['fun'];
 handler.command = ['quote'];
 
 export default handler;
-
-

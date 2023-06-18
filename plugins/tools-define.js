@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 let handler = async (m, { conn, text }) => {
   if (!text) throw 'Please provide a word to search for.';
 
-  const url = `https://some-random-api.com/dictionary?word=${encodeURIComponent(text)}`;
+  const url = `https://api.urbandictionary.com/v0/define?term=${encodeURIComponent(text)}`;
 
   const response = await fetch(url);
   const json = await response.json();
@@ -12,14 +12,15 @@ let handler = async (m, { conn, text }) => {
     throw `An error occurred: ${json.message}`;
   }
 
-  if (!json.word) {
+  if (!json.list.length) {
     throw 'Word not found in the dictionary.';
   }
 
-  const definition = json.definition;
-  const example = json.example ? `*Example:* ${json.example}` : '';
+  const firstEntry = json.list[0];
+  const definition = firstEntry.definition;
+  const example = firstEntry.example ? `*Example:* ${firstEntry.example}` : '';
 
-  const message = `*Word:* ${json.word}\n*Definition:* ${definition}\n${example}`;
+  const message = `*Word:* ${text}\n*Definition:* ${definition}\n${example}`;
   conn.sendMessage(m.chat, { text: message }, 'extendedTextMessage', { quoted: m });
 };
 
