@@ -1,24 +1,44 @@
-import fetch from 'node-fetch'
-import { JSDOM } from 'jsdom'
-let handler = async (m, { conn, text }) => {
-conn.reply(m.chat, Object.entries(await stylizeText(text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text)).map(([name, value]) => `*${name}*\n${value}`).join`\n\n`, m)
-}
-handler.help = ['style'].map(v => v + ' <text>')
-handler.tags = ['tools']
-handler.command = /^(style(text)?)$/i
-handler.exp = 0
-export default handler
+import fetch from 'node-fetch';
 
-async function stylizeText(text) {
-let res = await fetch('http://qaz.wtf/u/convert.cgi?text=' + encodeURIComponent(text))
-let html = await res.text()
-let dom = new JSDOM(html)
-let table = dom.window.document.querySelector('table').children[0].children
-let obj = {}
-for (let tr of table) {
-let name = tr.querySelector('.aname').innerHTML
-let content = tr.children[1].textContent.replace(/^\n/, '').replace(/\n$/, '')
-obj[name + (obj[name] ? ' Reversed' : '')] = content
+let handler = async (m, { conn, text }) => {
+  // Split the text into words
+  let words = text.split(' ');
+
+  // The first word should be the key, the rest is the text to stylize
+  let key = words[0];
+  let textToStyle = words.slice(1).join(' ');
+
+  // If no key and text provided, show all styles of a default text
+  if (words.length === 0 || !key || !textToStyle) {
+    let defaultText = 'GURU BOT';
+    let styledTexts = await Promise.all([...Array(34).keys()].map(i => stylizeText(defaultText, i + 1)));
+    conn.reply(m.chat, styledTexts.join`\n\n`, m);
+    return;
+  }
+
+  // Check if the key is a number between 1 and 34
+  if (!Number.isInteger(+key) || +key < 1 || +key > 34) {
+    throw 'Invalid key. Please provide a number between 1 and 34.';
+  }
+
+  // Get the styled text
+  let styledText = await stylizeText(textToStyle, key);
+
+  conn.reply(m.chat, styledText, m);
 }
-return obj
+
+handler.help = ['style'].map(v => v + ' <key> <text>');
+handler.tags = ['tools'];
+handler.command = /^(fancy)$/i;
+handler.exp = 0;
+
+export default handler;
+
+async function stylizeText(text, key) {
+  let res = await fetch(`https://inrl-web.onrender.com/api/fancy?text=${encodeURIComponent(text)}&key=${key}`);
+  let data = await res.json();
+
+  // Use 'result' field for the styled text.
+  return `*Key ${key}*\n${data.result}`;
 }
+
