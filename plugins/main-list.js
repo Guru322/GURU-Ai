@@ -224,7 +224,7 @@ ${readMore}
 ⎪⌲👑 _${usedPrefix}nowa_
 ⎪⌲👑 _${usedPrefix}qrmaker_
 ⎪⌲👑 _${usedPrefix}readqr_
-⎪⌲👑 _${usedPrefix}styletext_
+⎪⌲👑 _${usedPrefix}fancy_
 ⎪⌲👑 _${usedPrefix}weather_
 ⎪⌲👑 _${usedPrefix}siri_
 ⎪⌲👑 _${usedPrefix}alexa_
@@ -237,6 +237,8 @@ ${readMore}
 ⎪⌲👑 _${usedPrefix}removebg_
 ⎪⌲👑 _${usedPrefix}apk_
 ⎪⌲👑 _${usedPrefix}tinyurl/shorturl_
+⎪⌲👑 _${usedPrefix}readvo_
+⎪⌲👑 _${usedPrefix}true_
 ┗━━━ʕ•㉨•ʔ━━━┛
 
 ❀° ┄──•••───╮
