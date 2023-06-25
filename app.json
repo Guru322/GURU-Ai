@@ -15,12 +15,17 @@
     "OPENAI_ORGANIZATION": {
       "description": "openai organisation id",
       "required": false,
-      "value": "null"
+      "value": ""
+    },
+    "MONGO_DB": {
+      "description": "your mongodb database url",
+      "required": false,
+      "value": ""
     },
     "REMOVE_BG_API_KEY": {
       "description": "removebg api key",
       "required": false,
-      "value": "only if you want to use removebg"
+      "value": ""
     }
     },
     "buildpacks": [
