@@ -1,5 +1,3 @@
-let { MessageType } = (await import('@adiwajshing/baileys')).default
-
 let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
   let type = (args[0] || '').toLowerCase()
   let _type = (args[0] || '').toLowerCase()
@@ -41,26 +39,6 @@ let lgocraft = `
 〉6 Diamond
 〉10k Money
 `
-const sections = [
-   {
-	title: "CRAFT A TOOLS",
-	rows: [
-	    {title: "SWORD ⚔️", rowId: ".craft sword", description: "Crafting A Sword"},
-	    {title: "PICKAXE ⛏️", rowId: ".craft pickaxe", description: "Crafting A Pickaxe"},
-	    {title: "FISHINGROD 🎣", rowId: ".craft fishingrod", description: "Crafting A Fishingrod"},
-	    {title: "ARMOR 🥼", rowId: ".craft armor", description: "Crafting A Armor"},
-	    {title: "ATM 💳", rowId: ".craft atm", description: "Crafting A Atm (but that's ilegal)"},
-	]
-    },
-]
-
-const listMessage = {
-  text: caption,
-  footer: wm,
-  title: lgocraft,
-  buttonText: " C R A F T ",
-  sections
-}
 
   try {
     if (/craft|Crafting/i.test(command)) {
@@ -68,77 +46,67 @@ const listMessage = {
         switch (type) {
           case 'pickaxe':
           if (user.pickaxe > 0) return m.reply('You already have this')
-            if(user.rock < 5 || user.wood < 10 || user.iron < 5 || user.string < 20) return m.reply(`Not enough goods!\nTo make a pickaxe. you need : \n10 wood🪵 \n5 iron⛓\n20 String🕸️\n5 rock1 🪨`)
+            if(user.rock < 5 || user.wood < 10 || user.iron < 5 || user.string < 20) return conn.sendMessage(m.chat, { text: `Not enough goods!\nTo make a pickaxe. you need : \n10 wood🪵 \n5 iron⛓\n20 String🕸️\n5 rock1 🪨`, quoted: m, contextInfo: { mentionedJid: [m.sender] } })
             global.db.data.users[m.sender].wood -= 10
             global.db.data.users[m.sender].iron -= 5
             user.rock -= 5
             global.db.data.users[m.sender].string -= 20
             global.db.data.users[m.sender].pickaxe += 1
             user.pickaxedurability = 40
-            m.reply("Sucess making 1 pickaxe 🔨")
+            conn.sendMessage(m.chat, { text: "Sucess making 1 pickaxe 🔨", quoted: m, contextInfo: { mentionedJid: [m.sender] } })
             break
           case 'sword':
           if (user.sword > 0) return m.reply(' You already have this')
-            if(user.wood < 10 || user.iron < 15) return m.reply(`Not enough goods!\nTo make swords. you need :\n10 Wood🪵\n15 iron⛓️`)
+            if(user.wood < 10 || user.iron < 15) return conn.sendMessage(m.chat, { text: `Not enough goods!\nTo make swords. you need :\n10 Wood🪵\n15 iron⛓️`, quoted: m, contextInfo: { mentionedJid: [m.sender] } })
             global.db.data.users[m.sender].wood -= 10
             global.db.data.users[m.sender].iron -= 15
             global.db.data.users[m.sender].sword += 1
             user.sworddurability = 40
-            m.reply("Sucess making 1 sword 🗡️")
+            conn.sendMessage(m.chat, { text: "Sucess making 1 sword 🗡️", quoted: m, contextInfo: { mentionedJid: [m.sender] } })
             break
           case 'fishingrod':
           if (user.fishingrod > 0) return m.reply('You already have this')
-            if(user.wood < 20 || user.iron < 5 || user.string < 20) return m.reply(`Not enough goods!\nTo make a fishing rod. you need :\n10 wood🪵\n5 iron⛓\n20 String🕸️`)
+            if(user.wood < 20 || user.iron < 5 || user.string < 20) return conn.sendMessage(m.chat, { text: `Not enough goods!\nTo make a fishing rod. you need :\n10 wood🪵\n5 iron⛓\n20 String🕸️`, quoted: m, contextInfo: { mentionedJid: [m.sender] } })
             global.db.data.users[m.sender].wood -= 10
             global.db.data.users[m.sender].iron -= 2
             global.db.data.users[m.sender].string -= 20
             global.db.data.users[m.sender].fishingrod += 1
             user.fishingroddurability = 40
-            m.reply("Sucess making 1 fishing rod 🎣")
+            conn.sendMessage(m.chat, { text: "Sucess making 1 fishing rod 🎣", quoted: m, contextInfo: { mentionedJid: [m.sender] } })
             break
           case 'armor':
           if (user.armor > 0) return m.reply(' already have this')
-            if(user.iron < 30 || user.emerald < 1 || user.diamond < 5) return m.reply(`Not enough goods!\nto make armor. you need :\n30 Iron ⛓️\n1 Emerald ❇️\n5 Diamond 💎`)
+            if(user.iron < 15 || user.emerald < 1 || user.diamond < 5) return conn.sendMessage(m.chat, { text: `Not enough goods!\nto make armor. you need :\n30 Iron ⛓️\n1 Emerald ❇️\n5 Diamond 💎`, quoted: m, contextInfo: { mentionedJid: [m.sender] } })
             global.db.data.users[m.sender].emerald -= 1
-            global.db.data.users[m.sender].iron -= 30
+            global.db.data.users[m.sender].iron -= 15
             global.db.data.users[m.sender].diamond -= 5
             global.db.data.users[m.sender].armor += 1
             user.armordurability = 50
-            m.reply("Sucess making 1 Armor 🥼")
+            conn.sendMessage(m.chat, { text: "Sucess making 1 Armor 🥼", quoted: m, contextInfo: { mentionedJid: [m.sender] } })
             break
             case 'atm':
           if (user.atm > 0) return m.reply('you already have this')
-            if(user.emerald < 3 || user.money < 10000 || user.diamond < 6) return m.reply(`not enough goods!\nto make  atm.you need  :\n10k Money 💹\n3 Emerald ❇️\n6 Diamond 💎`)
+            if(user.emerald < 3 || user.money < 10000 || user.diamond < 6) return conn.sendMessage(m.chat, { text: `not enough goods!\nto make  atm.you need  :\n10k Money 💹\n3 Emerald ❇️\n6 Diamond 💎`, quoted: m, contextInfo: { mentionedJid: [m.sender] } })
             global.db.data.users[m.sender].emerald -= 3
             global.db.data.users[m.sender].money -= 10000
             global.db.data.users[m.sender].diamond -= 6
             global.db.data.users[m.sender].atm += 1
-            global.db.data.users[m.sender].fullatm = 5000000
-            m.reply("Sucess making 1 Atm 💳")
+            conn.sendMessage(m.chat, { text: "Sucess making 1 atm 💳", quoted: m, contextInfo: { mentionedJid: [m.sender] } })
             break
-
-          default:
-            return await conn.sendMessage(m.chat, listMessage)
+            default:
+            return conn.sendMessage(m.chat, { text: lgocraft + caption, quoted: m, contextInfo: { mentionedJid: [m.sender] } })
         }
-    } else if (/enchant|enchan/i.test(command)) {
-      const count = args[2] && args[2].length > 0 ? Math.min(99999999, Math.max(parseInt(args[2]), 1)) : !args[2] || args.length < 4 ? 1 :Math.min(1, count)
-      switch (_type) {
-        case 't':
-          break
-        case '':
-          break
-
-        default:
-          return conn.sendButton( m.chat, caption, wm, null, [`⋮☰ Menu`, `.menu`], m)
       }
+  } catch (e) {
+    conn.reply(m.chat, 'Sorry, there was an error running the command!', m)
+    if (DevMode) {
+      m.reply(`*Error:* ${util.format(e)}`)
     }
-  } catch (err) {
-    m.reply("Error\n\n\n" + err.stack)
   }
 }
-
-handler.help = ['craft']
+handler.help = ['crafting']
 handler.tags = ['rpg']
-handler.command = /^(craft|crafting|chant)/i
+handler.command = /^(craft)$/i
+
 
 export default handler

@@ -25,7 +25,7 @@ let handler = async(m, { conn, usedPrefix, command, text }) => {
             buttons: buttons,
             headerType: 1
         }
-        return conn.reply(m.chat, lmao, false, { quoted: m} )// nak durung menuhi syarat
+        return conn.reply(m.chat, lmao, false, { quoted: m} )
     }
     global.dungeon = global.dungeon ? global.dungeon : {}
     if (Object.values(global.dungeon).find(room => room.id.startsWith('dungeon') && [room.game.player1, room.game.player2, room.game.player3, room.game.player4].includes(m.sender))) return m.reply('You are still in the Dungeon') // nek iseh neng njero dungeon
@@ -67,7 +67,7 @@ let handler = async(m, { conn, usedPrefix, command, text }) => {
             buttons: buttons,
             headerType: 1
         }
-        conn.sendButton(m.chat, `*${htki} DUNGEON ${htka}*`, lmao, null, ['send', ''], false, {quoted: m})
+        return conn.reply(m.chat, lmao, false, { quoted: m} )
         
         if (room.game.player1 && room.game.player2 && room.game.player3 && room.game.player4) {
 
@@ -354,7 +354,7 @@ let handler = async(m, { conn, usedPrefix, command, text }) => {
             buttons: buttons,
             headerType: 1
         }
-        conn.sendButton(m.chat, `*DUNGEON*`,lmao, null, ['send', 'Gass..'], false, { quoted: m})
+        conn.sendMessage(m.chat, { text: lmao, quoted: m, contextInfo: { mentionedJid: [m.sender] } })
         global.dungeon[room.id] = room
       }
 }

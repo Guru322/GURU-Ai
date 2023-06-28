@@ -16,17 +16,17 @@ let handler = async (m, { conn, args, participants }) => {
        ≡ *𝐋𝐄𝐀𝐃𝐄𝐑𝐁𝐎𝐀𝐑𝐃*
     
 ▢ *TOP ${len} XP* 🧬
-YOU : *${usersExp.indexOf(m.sender) + 1}* de *${usersExp.length}*
+YOU : *${usersExp.indexOf(m.sender) + 1}* from *${usersExp.length}*
 
 ${sortedExp.slice(0, len).map(({ jid, exp }, i) => `*${i + 1}.* ${participants.some(p => areJidsSameUser(jid, p.id)) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} ➭ _*XP ${exp}*_`).join`\n`}
 
 ▢ *TOP ${len} DIAMONDS💎* 
-YOU : *${usersLim.indexOf(m.sender) + 1}* de *${usersLim.length}*
+YOU : *${usersLim.indexOf(m.sender) + 1}* from *${usersLim.length}*
 
 ${sortedLim.slice(0, len).map(({ jid, diamond }, i) => `*${i + 1}.* ${participants.some(p => areJidsSameUser(jid, p.id)) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} ➭ _*Diamonds ${diamond}*_`).join`\n`}
 
 ▢ *TOP ${len} LEVEL* ⬆️
-YOU : *${usersLevel.indexOf(m.sender) + 1}* de *${usersLevel.length}*
+YOU : *${usersLevel.indexOf(m.sender) + 1}* from *${usersLevel.length}*
 
 ${sortedLevel.slice(0, len).map(({ jid, level }, i) => `*${i + 1}.* ${participants.some(p => areJidsSameUser(jid, p.id)) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} ➭ _*Level ${level}*_`).join`\n`}
 `.trim()
