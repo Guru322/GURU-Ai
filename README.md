@@ -46,6 +46,17 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Guru322/GURU-BOT"> <img src="https://img.shields.io/badge/Heroku%20Deploy-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
+#### DEPLOY TO OKTETO 
+
+1. If You don't have an account On Okteto. Create a account.
+    <br>
+<p align="center"><a href="https://www.okteto.com/pricing/?plan=SaaS"> <img src="https://img.shields.io/badge/Okteto%20Account-blue?style=for-the-badge&logo=okteto" width="220" height="38.45"/></a></p>
+
+2. Now Deploy
+    <br>
+<p align="center"><a href=""> <img src="https://img.shields.io/badge/Okteto%20Deploy-blue?style=for-the-badge&logo=okteto" width="220" height="38.45"/></a></p>
+
+
 #### DEPLOY TO Replit 
 
 1. If You don't have an account in Replit. Create a account.
