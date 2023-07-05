@@ -1,9 +1,7 @@
-version: "3.9" 
+version: "3.9"
 services:
-  web:
+  worker:
     build: .
-    ports:
-      - "8000:5000"
     volumes:
       - .:/code
       - logvolume01:/var/log
