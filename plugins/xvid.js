@@ -1,6 +1,13 @@
 import { xvideosSearch, xvideosdl } from '../lib/scraper.js';
 
-let handler = async (m, { text }) => {
+let handler = async (m, { conn, args, text, usedPrefix, command }) => {
+  let chat = global.db.data.chats[m.chat];
+  if (!chat.nsfw) throw `🚫 This group does not support NSFW content.\n\nTo turn it on, use: *${usedPrefix}enable* nsfw`;
+  let user = global.db.data.users[m.sender].age;
+  if (user < 18) throw `❎ You must be 18 years or older to use this feature.`;
+  if (!text) throw `✳️ What do you want to search?\n📌 Usage: *${usedPrefix + command} <search>*\n\nExample: Hot desi bhabi or you can use a link as well\nExample: .xnxx link *`;
+
+  m.react('⌛');
     if (!text) throw 'Please provide a search query or a valid Xvideos URL.';
   
     // Check if the input is a valid Xvideos URL
@@ -43,6 +50,9 @@ let handler = async (m, { text }) => {
   };
 
 handler.command = ['xvid'];
+handler.group = true;
+handler.premium = false;
+handler.register = true;
 
 handler.premium = false;
 
