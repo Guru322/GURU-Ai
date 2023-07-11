@@ -47,7 +47,7 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.botname = 'KURUMI TOKISAKI'
+global.botname = 'AKENO HIMEJIMA'
 global.premium = 'true'
 global.packname = 'ANIBOT' 
 global.author = '@Anish' 
