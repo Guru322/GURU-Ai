@@ -21,9 +21,9 @@ m.react(rwait)
     console.log("Message sent.");
   };
   
-  handler.help = ['nsfwmenu'];
+  handler.help = ['nsfw'];
   handler.tags = ['nsfw'];
-  handler.command = ['nsfwmenu' , 'nsfw'];
+  handler.command = ['nsfw'];
   handler.group = true
   handler.register = true;
 
