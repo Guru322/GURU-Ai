@@ -32,8 +32,10 @@ let totaluser = Object.values(global.db.data.users).length
 let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length 
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
+let greeting = ucapan()
+
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
-let str = `
+let str = `_*Hii ${name} ${greeting}*_\n
 ┌─•✧𝑰𝑵𝑭𝑶 𝑼𝑺𝑬𝑹✧•─┐
 ┊ 👨‍💻  *𝑼𝑺𝑬𝑹:* ${taguser}
 ┊ 👨‍💻  *𝙉𝘼𝙈𝙀:* ${name}
@@ -60,7 +62,7 @@ let str = `
 ✎𝙐𝙎𝙀 ${usedPrefix}list 𝑻𝑶 𝑺𝑬𝑬 𝑨𝑳𝑳 𝑼𝑺𝑨𝑩𝑳𝑬 𝑪𝑶𝑴𝑴𝑨𝑵𝑫𝑺
 ≻───── ⋆✩⋆ ─────≺
 `
-    conn.sendFile(m.chat, pp, 'perfil.jpg', str, m, false, { mentions: [who] })
+    conn.sendFile(m.chat, pp, 'perfil.jpg', str, m, null, rpyt)
     m.react(done)
 
 }
