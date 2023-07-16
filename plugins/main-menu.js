@@ -33,35 +33,41 @@ let rtotalreg = Object.values(global.db.data.users).filter(user => user.register
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
 let greeting = ucapan()
+let quote = quotes[Math.floor(Math.random() * quotes.length)];
 
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
-let str = `_*Hii ${name} ${greeting}*_\n
-┌─•✧𝑰𝑵𝑭𝑶 𝑼𝑺𝑬𝑹✧•─┐
-┊ 👨‍💻  *𝑼𝑺𝑬𝑹:* ${taguser}
-┊ 👨‍💻  *𝙉𝘼𝙈𝙀:* ${name}
-┊ 😈  𝙊𝙒𝙉𝙀𝙍 𝙉𝘼𝙈𝙀 :${author}
-┊ 💎  *𝘿𝙄𝘼𝙈𝙊𝙉𝘿𝙎:* ${diamond}
-┊ 📱  *𝙍𝘼𝙉𝙆:* ${role}
-┊ 🃏  *𝙀𝙓𝙋𝙀𝙍𝙄𝙀𝙉𝘾𝙀:* ${exp}
-└─── •✧✧• ────┘
+let str = `
+🚀 *_Buckle up ${name}, ${greeting}! We're going on an adventure!_* 🚀
 
-┌──•✧𝑻𝒐𝒅𝒂𝒚✧•─────┐
-┊ 📅   *𝘿𝘼𝙏𝙀:* ${date}
-┊ ⏲️   *𝙏𝙄𝙈𝙀:* ${wib}
-└── •✧✧• ───────┘ 
+📜 *_Quote of the day: ${quote}_* 📜
 
-┌─•✧𝑩𝑶𝑻 𝑰𝑵𝑭𝑶✧•──┐
-┊ 🤖  *𝘽𝙊𝙏 𝙉𝘼𝙈𝙀:*${botname}
-┊ 👨‍💻   𝙋𝙇𝘼𝙏𝙁𝙊𝙍𝙈:Linux 
-┊ 🛑  *𝙋𝙍𝙀𝙁𝙄𝙓:* ${usedPrefix}
-┊ 🕛  *𝙐𝙋𝙏𝙄𝙈𝙀:* ${uptime} 
-┊ 💌  *𝘿𝘼𝙏𝘼𝘽𝘼𝙎𝙀:* ${rtotalreg} FROM ${totaluser}
-┊ 🗃️  *𝑻𝑶𝑻𝑨𝑳 𝑼𝑺𝑬𝑹𝑺:* ${totaluser}
-└─── •✧✧• ────┘ 
-≻───── ⋆✩⋆ ─────≺
-✎𝙐𝙎𝙀 ${usedPrefix}list 𝑻𝑶 𝑺𝑬𝑬 𝑨𝑳𝑳 𝑼𝑺𝑨𝑩𝑳𝑬 𝑪𝑶𝑴𝑴𝑨𝑵𝑫𝑺
-≻───── ⋆✩⋆ ─────≺
+┏━💼 _User Info:_ 💼━┓
+┃ 👾  *User Tag:* ${taguser} 
+┃ 🎩  *Name:* ${name} 
+┃ 🦸  *Master Mind:* ${author} 
+┃ 💎  *Diamonds:* ${diamond} 
+┃ 🏆  *Rank:* ${role}
+┃ 🎮  *XP:* ${exp} 
+┗━━━━━━━━━━━┛
+
+┏━━⏰ _Today's Sauce!_ ⏰━┓
+┃ 📆  *Today's Date:* ${date} 
+┃ ⏲️  *Current Time:* ${wib} 
+┗━━━━━━━━━━━━━┛
+
+┏━━🤖 _BOT STATUS:_🤖━━┓
+┃ 🤡  *Bot Name:* ${botname} 
+┃ 💻  *Platform:* Linux 
+┃ 📣  *Prefix:* ${usedPrefix} 
+┃ 🕓  *Uptime:* ${uptime}
+┃ 💌  *Database:* ${rtotalreg} of ${totaluser} 
+┃ 📚  *Total Users:* ${totaluser} 
+┗━━━━━━━━━━━━━┛
+
+💡 *_Remember, when in doubt, use ${usedPrefix}list. It's like my magic spell book!_* 💡
 `
+
+
     conn.sendFile(m.chat, pp, 'perfil.jpg', str, m, null, rpyt)
     m.react(done)
 
@@ -94,3 +100,26 @@ function clockString(ms) {
       }
       return res
     }
+    const quotes = [
+      "I'm not lazy, I'm just on my energy saving mode.",
+      "Life is short, smile while you still have teeth.",
+      "I may be a bad influence, but darn I am fun!",
+      "वक्त हमे बहुत कुछ सिखा देता है, खासकर तब जब हमारे पास वक्त नहीं होता।",
+      "जिंदगी एक किताब की तरह होती है, हर दिन नया पन्ना बदलता है। कभी हंसते हैं, कभी रोते हैं, पर हर किसी की कहानी अधूरी होती है!",
+      "पढ़ाई करो तो दिल लगता नही, दिल लगाओ तो दिमाग़ लगता नहीं।",
+      "दोस्ती इतनी गहरी करो की दिल में बस जाओ, ऐसे दोस्ती निभाओ की हमे भी तुम्हारे दोस्त होने पर नाज हो।",
+      "मेरे दोस्त तुम बहुत याद आते हो, जब भी भूख लगती है वो समोसे बहुत याद आते है।",
+      "जीवन का असली मज़ा तो तब आता है, जब दूसरे आपकी ज़िंदगी जीने की कोशिश करते हैं।",
+      "कुछ लोग तो इतने फालतू होते हैं, खुद की ज़िंदगी खुद ही नहीं जी पाते और दूसरों की ज़िंदगी में टांग अड़ा देते हैं।",
+      "I'm on a whiskey diet. I've lost three days already.",
+      "Why don't some couples go to the gym? Because some relationships don't work out.",
+      "I told my wife she should embrace her mistakes... She gave me a hug.",
+      "If I'm not back in five minutes, wait longer!",
+      "I asked my wife if I was the only one she's been with. She said, 'Yes, the others were nines and tens.'",
+      "Don’t worry if plan A fails, there are 25 more letters in the alphabet.",
+      "I'm great at multitasking. I can waste time, be unproductive, and procrastinate all at once.",
+      "You know you're getting old when you stoop to tie your shoelaces and wonder what else you could do while you're down there.",
+      "I'm so good at sleeping, I can do it with my eyes closed.",
+      "If you think nobody cares if you’re alive, try missing a couple of payments."
+    ]
+    
