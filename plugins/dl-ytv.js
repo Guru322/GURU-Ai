@@ -1,49 +1,70 @@
+import ytdl from 'ytdl-core';
+import fs from 'fs';
+import os from 'os';
 
-import fg from 'api-dylux'
-import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper'
-let limit = 350
+let limit = 500;
 let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
-	if (!args || !args[0]) throw `✳️ Example :\n${usedPrefix + command} https://youtu.be/YzkTFFwxtXI`
-    if (!args[0].match(/youtu/gi)) throw `❎ Verify that the YouTube link`
-	 let chat = global.db.data.chats[m.chat]
-	 m.react(rwait) 
-	try {
-		let q = args[1] || '360p'
-		let v = args[0]
-		const yt = await youtubedl(v).catch(async () => await youtubedlv2(v)).catch(async () => await youtubedlv3(v))
-		const dl_url = await yt.video[q].download()
-		const title = await yt.title
-		const size = await yt.video[q].fileSizeH 
-		
-       if (size.split('MB')[0] >= limit) return m.reply(` ≡  *GURU YTDL*\n\n▢ *⚖️Size* : ${size}\n▢ *🎞️quality* : ${q}\n\n▢ _The file exceeds the download limit_ *+${limit} MB*`)    
-	  conn.sendFile(m.chat, dl_url, title + '.mp4', `
- ≡  *GURU YTDL*
-  
-▢ *📌Títle* : ${title}
-▢ *📟 Ext* : mp4
-▢ *🎞️Quality* : ${q}
-▢ *⚖️Size* : ${size}
-`.trim(), m, false, { asDocument: chat.useDocument })
-		m.react(done) 
-		
-	} catch {
-		
-		const { title, result, quality, size, duration, thumb, channel } = await fg.ytv(args[0]) 
-		if (size.split('MB')[0] >= limit) return m.reply(` ≡  *GURU YTDL2*\n\n▢ *⚖️Size* : ${size}\n▢ *🎞️Quality* : ${quality}\n\n▢ _The file exceeds the download limit_ *+${limit} MB*`)
-	conn.sendFile(m.chat, result, title + '.mp4', `
- ≡  *GURU YTDL2*
-  
-▢ *📌Títle* : ${title}
-▢ *📟 Ext* : mp4
-▢ *⚖️size* : ${size}
-`.trim(), m, false, { asDocument: chat.useDocument })
-		m.react(done) 
-	} 
-		 
-}
-handler.help = ['ytmp4 <link yt>']
-handler.tags = ['dl'] 
-handler.command = ['ytmp4', 'video']
-handler.diamond = true
+  if (!args || !args[0]) throw `✳️ Example:\n${usedPrefix + command} https://youtu.be/YzkTFFwxtXI`;
+  if (!args[0].match(/youtu/gi)) throw `❎ Verify that the YouTube link`;
 
-export default handler
+  let chat = global.db.data.chats[m.chat];
+  m.react(rwait);
+  try {
+    const info = await ytdl.getInfo(args[0]);
+    const format = ytdl.chooseFormat(info.formats, { quality: 'highest' });
+    if (!format) {
+      throw new Error('No valid formats found');
+    }
+
+    if (format.contentLength / (1024 * 1024) >= limit) {
+      return m.reply(`≡ *GURU YTDL*\n\n▢ *⚖️Size*: ${format.contentLength / (1024 * 1024).toFixed(2)}MB\n▢ *🎞️Quality*: ${format.qualityLabel}\n\n▢ The file exceeds the download limit *+${limit} MB*`);
+    }
+
+    const tmpDir = os.tmpdir();
+    const fileName = `${tmpDir}/${info.videoDetails.videoId}.mp4`;
+
+    const writableStream = fs.createWriteStream(fileName);
+    ytdl(args[0], {
+      quality: format.itag,
+    }).pipe(writableStream);
+
+    writableStream.on('finish', () => {
+      conn.sendFile(
+        m.chat,
+        fs.readFileSync(fileName),
+        `${info.videoDetails.videoId}.mp4`,
+        `✼ ••๑⋯❀ Y O U T U B E ❀⋯⋅๑•• ✼
+	  
+	  ❏ Title: ${info.videoDetails.title}
+	  ❐ Duration: ${info.videoDetails.lengthSeconds} seconds
+	  ❑ Views: ${info.videoDetails.viewCount}
+	  ❒ Upload: ${info.videoDetails.publishDate}
+	  ❒ Link: ${args[0]}
+	  
+	  ⊱─━⊱༻●༺⊰━─⊰`,
+        m,
+        false,
+        { asDocument: chat.useDocument }
+      );
+
+      fs.unlinkSync(fileName); // Delete the temporary file
+      m.react(done);
+    });
+
+    writableStream.on('error', (error) => {
+      console.error(error);
+      m.reply('Error while trying to download the video. Please try again.');
+    });
+  } catch (error) {
+    console.error(error);
+    m.reply('Error while trying to process the video. Please try again.');
+  }
+};
+
+handler.help = ['ytmp4 <yt-link>'];
+handler.tags = ['dl'];
+handler.command = ['ytmp4', 'video'];
+handler.diamond = false;
+
+export default handler;
+

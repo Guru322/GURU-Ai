@@ -673,43 +673,91 @@ export async function participantsUpdate({ id, participants, action }) {
     let chat = global.db.data.chats[id] || {}
     let text = ''
     switch (action) {
-        case 'add':
-case 'remove':
-    if (chat.welcome) {
-        let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata;
-        for (let user of participants) {
-            let pp, ppgp;
-            try {
-                pp = await this.profilePictureUrl(user, 'image');
-                ppgp = await this.profilePictureUrl(id, 'image');
-            } catch (error) {
-                console.error(`Error retrieving profile picture: ${error}`);
-                pp = 'https://i.imgur.com/8B4jwGq.jpeg'; // Assign default image URL
-                ppgp = 'https://i.imgur.com/8B4jwGq.jpeg'; // Assign default image URL
-            } finally {
-                let text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user').replace('@group', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'Desconocido') :
-                    (chat.sBye || this.bye || conn.bye || 'HELLO, @user')).replace('@user', '@' + user.split('@')[0]);
-
-                let nthMember = groupMetadata.participants.length;
-                let secondText = action === 'add' ? `Welcome, ${await this.getName(user)}, our ${nthMember}th member` : `Goodbye, our ${nthMember}th group member`;
-
+     case 'add':
+            if (chat.welcome) {
+              let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata;
+              for (let user of participants) {
+                let pp, ppgp;
                 try {
-                    let apiKey = "gandu";  // Replace with your actual API Key
-                    let wel = await fetch(`https://oni-chan.my.id/api/canvas/welcome_v1?ppurl=${encodeURIComponent(pp)}&bgurl=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoyd4vOi-tJEhN-voL-yVTYsko8dcBvloa2A&usqp=CAU&username=${encodeURIComponent(await this.getName(user))}&totalmember=${encodeURIComponent(nthMember.toString())}&secondtext=${encodeURIComponent(secondText)}&apikey=${apiKey}`);
-                    let lea = await fetch(`https://oni-chan.my.id/api/canvas/leave_v1?ppurl=${encodeURIComponent(pp)}&bgurl=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoyd4vOi-tJEhN-voL-yVTYsko8dcBvloa2A&usqp=CAU&username=${encodeURIComponent(await this.getName(user))}&totalmember=${encodeURIComponent(nthMember.toString())}&secondtext=${encodeURIComponent(secondText)}&apikey=${apiKey}`);
-
-                    let welBuffer = await wel.buffer();
-                    let leaBuffer = await lea.buffer();
-
-                    this.sendFile(id, action === 'add' ? welBuffer : leaBuffer, 'welcome.png', text, null, false, { mentions: [user] });
+                  pp = await this.profilePictureUrl(user, 'image');
+                  ppgp = await this.profilePictureUrl(id, 'image');
                 } catch (error) {
-                    console.error(`Error generating welcome/leave image: ${error}`);
+                  console.error(`Error retrieving profile picture: ${error}`);
+                  pp = 'https://i.imgur.com/8B4jwGq.jpeg'; // Assign default image URL
+                  ppgp = 'https://i.imgur.com/8B4jwGq.jpeg'; // Assign default image URL
+                } finally {
+                  let text = (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user')
+                    .replace('@group', await this.getName(id))
+                    .replace('@desc', groupMetadata.desc?.toString() || 'Desconocido')
+                    .replace('@user', '@' + user.split('@')[0]);
+          
+                  let nthMember = groupMetadata.participants.length;
+                  let secondText = `Welcome, ${await this.getName(user)}, our ${nthMember}th member`;
+          
+                  let welcomeApiUrl = `https://wecomeapi.onrender.com/welcome-image?username=${encodeURIComponent(
+                    await this.getName(user)
+                  )}&guildName=${encodeURIComponent(await this.getName(id))}&guildIcon=${encodeURIComponent(
+                    ppgp
+                  )}&memberCount=${encodeURIComponent(
+                    nthMember.toString()
+                  )}&avatar=${encodeURIComponent(pp)}&background=${encodeURIComponent(
+                    'https://i.imgur.com/8B4jwGq.jpeg'
+                  )}`;
+          
+                  try {
+                    let welcomeResponse = await fetch(welcomeApiUrl);
+                    let welcomeBuffer = await welcomeResponse.buffer();
+          
+                    this.sendFile(id, welcomeBuffer, 'welcome.png', text, null, false, { mentions: [user] });
+                  } catch (error) {
+                    console.error(`Error generating welcome image: ${error}`);
+                  }
                 }
+              }
             }
-        }
-    }
-
-            break
+            break;
+          
+          case 'remove':
+            if (chat.welcome) {
+              let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata;
+              for (let user of participants) {
+                let pp, ppgp;
+                try {
+                  pp = await this.profilePictureUrl(user, 'image');
+                  ppgp = await this.profilePictureUrl(id, 'image');
+                } catch (error) {
+                  console.error(`Error retrieving profile picture: ${error}`);
+                  pp = 'https://i.imgur.com/8B4jwGq.jpeg'; // Assign default image URL
+                  ppgp = 'https://i.imgur.com/8B4jwGq.jpeg'; // Assign default image URL
+                } finally {
+                  let text = (chat.sBye || this.bye || conn.bye || 'HELLO, @user')
+                    .replace('@user', '@' + user.split('@')[0]);
+          
+                  let nthMember = groupMetadata.participants.length;
+                  let secondText = `Goodbye, our ${nthMember}th group member`;
+          
+                  let leaveApiUrl = `https://wecomeapi.onrender.com/leave-image?username=${encodeURIComponent(
+                    await this.getName(user)
+                  )}&guildName=${encodeURIComponent(await this.getName(id))}&guildIcon=${encodeURIComponent(
+                    ppgp
+                  )}&memberCount=${encodeURIComponent(
+                    nthMember.toString()
+                  )}&avatar=${encodeURIComponent(pp)}&background=${encodeURIComponent(
+                    'https://i.imgur.com/8B4jwGq.jpeg'
+                  )}`;
+          
+                  try {
+                    let leaveResponse = await fetch(leaveApiUrl);
+                    let leaveBuffer = await leaveResponse.buffer();
+          
+                    this.sendFile(id, leaveBuffer, 'leave.png', text, null, false, { mentions: [user] });
+                  } catch (error) {
+                    console.error(`Error generating leave image: ${error}`);
+                  }
+                }
+              }
+            }
+            break;
         case 'promote':
         case 'promover':
             text = (chat.sPromote || this.spromote || conn.spromote || '@user is now administrador')
