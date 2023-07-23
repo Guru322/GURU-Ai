@@ -62,7 +62,14 @@ const listMessage = {
           }}
       chat.jarvis = isEnable
      break
-      
+	case 'pmblocker':
+isAll = true
+if (!isROwner) {
+global.dfail('rowner', m, conn)
+throw false
+}
+bot.pmblocker = isEnable
+break	   
       case 'detect':
       case 'detector':
         if (!m.isGroup) {
