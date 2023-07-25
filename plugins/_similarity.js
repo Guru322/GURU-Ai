@@ -1,5 +1,6 @@
 
 import didyoumean from 'didyoumean'
+
 import similarity from 'similarity'
 //import { plugins } from '../lib/plugins.js'
 
@@ -16,14 +17,10 @@ export async function before(m, { conn, match, usedPrefix, command }) {
 		let som = sim * 100
 		let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 		let name = await conn.getName(who)
-		let caption = `
-🧿  Hello @${who.split("@")[0]}
-
-maybe you meant : 
-
- இ *${usedPrefix + mean}*
- இ *Similarity:* _${parseInt(som)}%_`
- if (mean) this.sendButton(m.chat, caption, igfg, null, [['✅ yes', `ok`], ['❎ NO', 'OK']], m, { mentions: [who]})
+		
+		let caption = `Hey ${name} senpai are you trying to use  *${usedPrefix + mean} ?*`
+ if (mean) this.reply(m.chat, `${caption}`, m)
 	    }
 }
 export const disabled = false
+
