@@ -1,9 +1,10 @@
-
+//need fix
 let handler = async (m, { conn, text, usedPrefix, command, args, participants, isOwner }) => {
 	
-   if (!isOwner) return conn.sendButton(m.chat, `*Invite bot to a group*\n\nHello @${m.sender.split('@')[0]}\nyou can rent the bot to join a group\n\n_more info click on the button_`.trim(), igfg, null, [
-       ['Alquilar', `${usedPrefix}buyprem`]] , m, { mentions: [m.sender] })
-	
+  if (!isOwner) return conn.sendMessage(m.chat,{text:`*Invite bot to a group*\n\nHello @${m.sender.split('@')[0]}\nyou can rent the bot to join a group\n\n_For more info you can DM the owner_\n*Type* \`\`\`.owner\`\`\` *to DM the owner*`.trim()}, {quoted:m});
+   /*if (!isOwner) return conn.sendButton(m.chat, `*Invite bot to a group*\n\nHello @${m.sender.split('@')[0]}\nyou can rent the bot to join a group\n\n_more info click on the button_`.trim(), igfg, null, [
+    ['Alquilar', `${usedPrefix}buyprem`]] , m, { mentions: [m.sender] })*/
+  
   let time = global.db.data.users[m.sender].lastjoin + 86400000
   let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
   let delay = time => new Promise(res => setTimeout(res, time))
@@ -50,9 +51,9 @@ to see the menu of the bot write
 
 ${usedPrefix}help
 @${conn.user.jid.split('@')[0]} will exit automatically after \n\n${msToDate(global.db.data.chats[res].expired - now)}`
-  await conn.sendButton(res, mes, igfg, null, [[`✆ Owner`, `${usedPrefix}fgowner`], [`⦙☰ Menu`, `${usedPrefix}help`]], m, {
-        mentions: d
-         })
+  await conn.sendMessage(m.chat, mes,  m, {
+  mentions: d
+   })
      })
     } catch (e) {
       conn.reply(global.owner[1]+'@s.whatsapp.net', e)
