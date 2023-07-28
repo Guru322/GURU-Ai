@@ -20,7 +20,8 @@ if (!img) return
 stiker = await createSticker(img, false, packname || global.packname, author || global.author)
 //stiker = await sticker(img, false, packname, author)
 } else if (/video/g.test(mime)) {
-if (/video/g.test(mime)) if ((q.msg || q).seconds > 8) return await this.sendButton(m.chat, '*Send video of 7 seconds*', wm, [['DEACTIVE AUTOSTICKER', '/disable autosticker']], m)
+//if (/video/g.test(mime)) if ((q.msg || q).seconds > 8) return await this.sendButton(m.chat, '*Send video of 7 seconds*', wm, [['DEACTIVE AUTOSTICKER', '/disable autosticker']], m)
+if (/video/g.test(mime)) if ((q.msg || q).seconds > 8) return await this.sendReply(m.chat,{text:'*Send video of 7 seconds*'}, m.sender)    
 let img = await q.download()
 if (!img) return
 stiker = await mp4ToWebp(img, { pack: packname || global.packname, author: author || global.author })
