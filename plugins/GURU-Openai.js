@@ -1,7 +1,15 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { text, usedPrefix, command }) => {
-  if (!text) throw `*Enter a request or an order to use ChatGpt*\n\n*Example*\n* ${usedPrefix + command} Latest Netflix series*\n* ${usedPrefix + command} write a JS code*`;
+  
+  if (!text && !(m.quoted && m.quoted.text)) {
+    throw `Please provide some text or quote a message to get a response.`;
+  }
+
+ 
+  if (!text && m.quoted && m.quoted.text) {
+    text = m.quoted.text;
+  }
 
   try {
     const response = await fetch(`https://gurugpt4-85987f3ed9b3.herokuapp.com/api/gpt4?query=${encodeURIComponent(text)}`);
