@@ -40,7 +40,7 @@
     "dependencies": {
         "@adiwajshing/baileys": "npm:@whiskeysockets/baileys@^6.0.1",
         "@adiwajshing/keyed-db": "^0.2.4",
-        "@bochilteam/scraper": "^3.0.0",
+        "@bochilteam/scraper": "^4.2.3",
         "awesome-phonenumber": "^3.4.0",
         "acrcloud": "^1.4.0",
         "@shineiichijo/marika": "^2.0.6",
