@@ -2,13 +2,16 @@ import axios from 'axios';
 
 const handler = async (m, { conn, usedPrefix, command }) => {
   try {
-    const response = await axios.get('https://shizoapi.cyclic.app/api/memes/cheems?apikey=shizo', {
-      responseType: 'arraybuffer',
+    const response = await axios.get('https://meme-api.com/gimme', {
+      responseType: 'json', 
     });
 
     const memeData = response.data;
-    const buffer = Buffer.from(memeData, 'binary');
-    conn.sendFile(m.chat, buffer, 'meme.jpg', '', m);
+    const imageUrl = memeData.url;
+    const title = memeData.title;
+
+    
+    conn.sendFile(m.chat, imageUrl, 'meme.jpg', title, m);
     m.react('😆');
   } catch (error) {
     console.error(error);
@@ -19,6 +22,6 @@ const handler = async (m, { conn, usedPrefix, command }) => {
 handler.help = ['meme'];
 handler.tags = ['img'];
 handler.command = ['meme', 'memes'];
-handler.diamond = true;
+handler.diamond = false;
 
 export default handler;
