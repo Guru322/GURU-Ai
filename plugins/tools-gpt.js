@@ -15,11 +15,16 @@ const openai = new OpenAIApi(configuration);
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
   try {
-    if (!text) throw new Error(`Chatgpt .\n\nuse:\n${usedPrefix}${command} Halo?`);
+    let quotedMsg = m.quoted ? m.quoted : null;
+    let userQuery = quotedMsg ? quotedMsg.text : text;
+
+    if (!userQuery) {
+      throw new Error(`Chatgpt .\n\nuse:\n${usedPrefix}${command} Hello?`);
+    }
 
     const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: text }],
+      messages: [{ role: "user", content: userQuery }],
     });
 
     if (response.data.choices && response.data.choices.length > 0) {
