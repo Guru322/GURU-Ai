@@ -15,8 +15,22 @@ const openai = new OpenAIApi(configuration);
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
   try {
-    let quotedMsg = m.quoted ? m.quoted : null;
-    let userQuery = quotedMsg ? quotedMsg.text : text;
+    let userQuery = text; // Start with the user's message
+
+    if (m.quoted && m.quoted.text) {
+      let quotedMsg = m.quoted.text;
+
+      // Remove ".ai" from the quoted message if detected
+      if (quotedMsg.includes('.ai')) {
+        quotedMsg = quotedMsg.replace('.ai', '');
+      }
+
+      if (userQuery) {
+        userQuery += ` ${quotedMsg}`; // Concatenate the sanitized quoted message with the user's message
+      } else {
+        userQuery = quotedMsg; // If userQuery is empty, use only the quoted message
+      }
+    }
 
     if (!userQuery) {
       throw new Error(`Chatgpt .\n\nuse:\n${usedPrefix}${command} Hello?`);
