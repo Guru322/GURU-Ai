@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
     m.reply('*Please wait, generating images...*');
 
-    const response = await fetch(`https://gurugpt4-85987f3ed9b3.herokuapp.com/api/imgai?prompt=${encodeURIComponent(text)}&count=2`);
+    const response = await fetch(`https://guru-gpt4-prod-gpt4-reverse-o8hyfh.mo1.mogenius.io/api/imgai?prompt=${encodeURIComponent(text)}&count=2`);
     const data = await response.json();
 
     
