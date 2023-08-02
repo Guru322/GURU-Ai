@@ -12,7 +12,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
   }
 
   try {
-    const response = await fetch(`https://gurugpt4-85987f3ed9b3.herokuapp.com/api/gpt4?query=${encodeURIComponent(text)}`);
+    const response = await fetch(`https://guru-gpt4-prod-gpt4-reverse-o8hyfh.mo1.mogenius.io/api/gpt4?query=${encodeURIComponent(text)}`);
     const data = await response.json();
     const { response: result } = data; 
     m.reply(result.trim()); 
