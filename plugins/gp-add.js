@@ -6,7 +6,7 @@ import fetch from 'node-fetch'
 /**
  * @type {import('@adiwajshing/baileys')}
  */
-const { getBinaryNodeChild, getBinaryNodeChildren } = (await import('@adiwajshing/baileys')).default
+const { getBinaryNodeChild, getBinaryNodeChildren } = (await import('@whiskeysockets/baileys')).default
 let handler = async (m, { conn, text, participants }) => {
     let _participants = participants.map(user => user.id)
     let users = (await Promise.all(

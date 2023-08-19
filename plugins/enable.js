@@ -160,6 +160,14 @@ break
     isUser = true
      user.autolevelup = isEnable
      break
+     case 'antispam':
+      isAll = true;
+      if (!isROwner) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      bot.antispam = isEnable;
+      break;
      
      case 'chatbot':
      case 'autosimi':

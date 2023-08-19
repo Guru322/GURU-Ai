@@ -6,16 +6,18 @@ let handler = async (m, { text, usedPrefix, command }) => {
     throw `Please provide some text or quote a message to get a response.`;
   }
 
- 
   if (!text && m.quoted && m.quoted.text) {
     text = m.quoted.text;
   }
 
+  const endpoint = 'https://gurugpt.cyclic.app/gpt4'; // New API endpoint
+
   try {
-    const response = await fetch(`https://guru-gpt4-prod-gpt4-reverse-o8hyfh.mo1.mogenius.io/api/gurugpt?query=${encodeURIComponent(text)}`);
+    conn.sendPresenceUpdate('composing', m.chat);
+    const response = await fetch(`${endpoint}?prompt=${encodeURIComponent(text)}&model=llama`);
     const data = await response.json();
-    const { response: result } = data; 
-    m.reply(result.trim()); 
+    const result = data.data.trim(); // Assuming the response key is "data"
+    m.reply(result); 
   } catch (error) {
     console.error('Error:', error); 
     throw `*ERROR*`;
