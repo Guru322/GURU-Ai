@@ -6,17 +6,15 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
     m.reply('*Please wait, generating images...*');
 
-    const response = await fetch(`https://guru-gpt4-prod-gpt4-reverse-o8hyfh.mo1.mogenius.io/api/imgai?prompt=${encodeURIComponent(text)}&count=2`);
+    const endpoint = `https://gurugpt.cyclic.app/dalle?prompt=${encodeURIComponent(text)}&model=art`;
+    const response = await fetch(endpoint);
     const data = await response.json();
 
-    
-    if (data.images && Array.isArray(data.images)) {
-      
-      for (const image of data.images) {
-        const imageResponse = await fetch(image.url);
+    if (data.result && Array.isArray(data.result)) {
+      for (let i = 0; i < Math.min(data.result.length, 2); i++) {
+        const imageUrl = data.result[i];
+        const imageResponse = await fetch(imageUrl);
         const imageBuffer = await imageResponse.buffer();
-
-        
         await conn.sendFile(m.chat, imageBuffer, null, null, m);
       }
     } else {
@@ -29,3 +27,4 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 handler.command = ['ai2', 'dalle', 'gen', 'gimg', 'openai2'];
 export default handler;
+
