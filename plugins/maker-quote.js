@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
-import { support, sticker } from '../lib/sticker.js';
-import uploadImage from '../lib/uploadImage.js'
+import { Sticker, createSticker, StickerTypes } from "wa-sticker-formatter";
+
 import fs from 'fs';
 import os from 'os';
 import path from 'path';
@@ -64,20 +64,36 @@ let json = await res.json();
 if (!json.result || !json.result.image) {
   throw new Error('Unexpected response structure');
 }
+function randomId() {
+	return Math.floor(100000 + Math.random() * 900000);
+}
 
 let bufferImage = Buffer.from(json.result.image, 'base64');
 
 
-    // Save the bufferImage to a file
+    
     let tempImagePath = path.join(os.tmpdir(), 'tempImage.png');
     fs.writeFileSync(tempImagePath, bufferImage);
+    let sticker = new Sticker(tempImagePath, {
+      pack: global.packname,
+      author: name,
+      type: StickerTypes.FULL,
+      categories: ["🤩", "🎉"],
+      id: randomId(),
+      quality: 100,
+      background: "#00000000",
+    });
+    
+    try {
+      await conn.sendMessage(m.chat, await sticker.toMessage(), { quoted: m });
+    } catch (stickerError) {
+      console.error('Error sending sticker:', stickerError);
+      m.reply('Error sending sticker. Sending image instead.');
+      
+      await conn.sendFile(m.chat, tempImagePath, 'quote.png', 'Here is the quote image:', m);
+    }
 
-   // Send the image as a file
-await conn.sendFile(m.chat, tempImagePath, 'quote.png', 'Here is the quote image:', m);
 
-
-
-    // Delete the temp file after using
     fs.unlinkSync(tempImagePath);
 
     m.react("🤡");
