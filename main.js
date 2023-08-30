@@ -1,1 +1,333 @@
-const _0x48a56c=_0x416e;(function(_0x3daf48,_0x357f92){const _0x26b8d7=_0x416e,_0x8e0879=_0x3daf48();while(!![]){try{const _0x1a84ca=-parseInt(_0x26b8d7(0x1c8))/0x1*(-parseInt(_0x26b8d7(0x1d9))/0x2)+parseInt(_0x26b8d7(0x1a1))/0x3*(-parseInt(_0x26b8d7(0x1e6))/0x4)+parseInt(_0x26b8d7(0x1c5))/0x5+parseInt(_0x26b8d7(0x170))/0x6*(-parseInt(_0x26b8d7(0x19e))/0x7)+parseInt(_0x26b8d7(0x1a7))/0x8+-parseInt(_0x26b8d7(0x190))/0x9*(parseInt(_0x26b8d7(0x186))/0xa)+-parseInt(_0x26b8d7(0x1d7))/0xb*(-parseInt(_0x26b8d7(0x1da))/0xc);if(_0x1a84ca===_0x357f92)break;else _0x8e0879['push'](_0x8e0879['shift']());}catch(_0x3756d5){_0x8e0879['push'](_0x8e0879['shift']());}}}(_0x1451,0x6ef61),process[_0x48a56c(0x172)][_0x48a56c(0x1b0)]='0');import'./config.js';import{createRequire}from'module';import _0x16700d,{join}from'path';import{fileURLToPath,pathToFileURL}from'url';import{platform}from'process';import*as _0x3980ff from'ws';import{readdirSync,statSync,unlinkSync,existsSync,readFileSync,watch,rmSync}from'fs';function _0x1451(){const _0x493a95=['includes','groupsUpdate','bye','yellow','‎z/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.,\x5c-','plugins','entries','\x20folder\x20and\x20rescan\x20the\x20QR\x20code','121VEuDcB','ffmpegWebp','60qKpYhC','1372296mXRjBI','race','map','.gif','message.delete','3.1.0','.flv','DATABASE','lastIndexOf','.xlsx','*@user\x20LEAVES\x20THE\x20ADMIN\x20GROUP\x20!!*','🚩ᅠConnection\x20closed,\x20please\x20delete\x20the\x20','223860PqZyHY','payload','.bin','open','.png','parse','mtimeMs','--version','syntax\x20error\x20while\x20loading\x20\x27','creds.update','config','server','Stickers\x20may\x20not\x20animated\x20without\x20libwebp\x20on\x20ffmpeg\x20(--enable-ibwebp\x20while\x20compiling\x20ffmpeg)','__require','push','__dirname','magick','error\x20require\x20plugin\x20\x27','log','messages.upsert','Safari','.ppt','dirname','.ogg','freeze','read','handler','stopped','-filter_complex','statusCode','test','🚩ᅠScan\x20this\x20QR\x20code,\x20the\x20QR\x20code\x20expires\x20in\x2060\x20seconds.','sDesc','APIKeys','./handler.js?update=','./handler.js','conn','win32','deleteUpdate','close','ffmpeg','./server.js','.wma','warn','__filename','support','Stickers\x20may\x20not\x20work\x20without\x20imagemagick\x20if\x20libwebp\x20on\x20ffmpeg\x20doesnt\x20isntalled\x20(pkg\x20install\x20imagemagick)','cyanBright','*THE\x20GROUP\x20NAME\x20HAS\x20BEEN\x20MODIFIED*\x0a*NEW\x20NAME:*\x20@subject','then','.wav','New\x20plugin\x20-\x20\x27','CONNECTED\x20CORRECTLY\x20TO\x20WHATSAPP','spromote','connection.update','timestamp','connect','210InCjZr','onDelete','env','-hide_banner','✅\x20Quick\x20test\x20Done','keys','*THE\x20GROUP\x20PHOTO\x20HAS\x20BEEN\x20CHANGED!!*','socket','connectionUpdate','logger','?update=','.wmv','.svg','all','info','now','database.json','filter','color','Auto\x20clear\x20Temp\x20folder\x20cleared.\x20Deleted\x20','off','ffprobe','130reGrUZ','fromEntries','opts','.docx','reload','sSubject','loggedOut','SERVER_PORT','silent','uncaughtException','148581KjEPOA','Error\x20deleting\x20','.flac','error','*THE\x20GROUP\x20DESCRIPTION\x20HAS\x20BEEN\x20MODIFIED*\x0a\x0a*NEW\x20DESCRIPTION:*\x20@desc','-loglevel','.doc','reloadHandler','READ','chats','mongodbv2','data','group-participants.update','./tmp','150325GyJScK','length','.aac','48cAlIsm','prefix','GURU-V2','.pptx','url','PORT','2599776iYhocr','argv','write','default','.tif','./plugins/index','slice','sIcon','forEach','NODE_TLS_REJECT_UNAUTHORIZED','.ico','Deleted\x20plugin\x20-\x20\x27','*THE\x20GROUP\x20LINK\x20HAS\x20BEEN\x20UPDATED!!*\x0a*NEW\x20LINK:*\x20@revoke','loadDatabase','bind','.jpg','groups.update','-frames:v','output','isFile','credsUpdate','.bmp','.webm','APIs','isInit','authFolder','*@user\x20JOINS\x20THE\x20ADMIN\x20GROUP!!*','participantsUpdate','*@user\x20SEE\x20YOU\x20SOON*','.jpeg','248895EMEkTv','replace','sRevoke','22783CPmmps','.mp3','.tiff','*@user\x20Welcome\x20to\x20the\x20Group','.pdf','catch','.mov'];_0x1451=function(){return _0x493a95;};return _0x1451();}import _0x4927e1 from'yargs';import{spawn}from'child_process';import _0x2bc0c6 from'lodash';import _0x582f35 from'chalk';function _0x416e(_0x2528d8,_0x20de74){const _0x1451fa=_0x1451();return _0x416e=function(_0x416eed,_0x474e63){_0x416eed=_0x416eed-0x153;let _0x3b7195=_0x1451fa[_0x416eed];return _0x3b7195;},_0x416e(_0x2528d8,_0x20de74);}import _0x5000f0 from'syntax-error';import _0x43484c from'./sessions.js';import{tmpdir}from'os';import{format}from'util';import{makeWASocket,protoType,serialize}from'./lib/simple.js';import{Low,JSONFile}from'lowdb';import _0x450d9f from'pino';import{mongoDB,mongoDBV2}from'./lib/mongoDB.js';import _0x43a66d from'./lib/store.js';import _0x5ee64a from'dotenv';import{useMultiFileAuthState,DisconnectReason,fetchLatestBaileysVersion}from'@whiskeysockets/baileys';const {CONNECTING}=_0x3980ff,{chain}=_0x2bc0c6,PORT=process[_0x48a56c(0x172)][_0x48a56c(0x1a6)]||process['env'][_0x48a56c(0x18d)]||0xbb8;protoType(),serialize(),global[_0x48a56c(0x163)]=function filename(_0x427859=import.meta[_0x48a56c(0x1a5)],_0x1eed3e=platform!==_0x48a56c(0x15c)){const _0x4a2f29=_0x48a56c;return _0x1eed3e?/file:\/\/\//[_0x4a2f29(0x155)](_0x427859)?fileURLToPath(_0x427859):_0x427859:pathToFileURL(_0x427859)['toString']();},global[_0x48a56c(0x1f5)]=function dirname(_0x5111e0){const _0x3aee82=_0x48a56c;return _0x16700d[_0x3aee82(0x1fc)](global[_0x3aee82(0x163)](_0x5111e0,!![]));},global[_0x48a56c(0x1f3)]=function require(_0x178a0b=import.meta[_0x48a56c(0x1a5)]){return createRequire(_0x178a0b);},global['API']=(_0x29a5f4,_0x20d3c3='/',_0x19a475={},_0x504aaa)=>(_0x29a5f4 in global[_0x48a56c(0x1be)]?global[_0x48a56c(0x1be)][_0x29a5f4]:_0x29a5f4)+_0x20d3c3+(_0x19a475||_0x504aaa?'?'+new URLSearchParams(Object[_0x48a56c(0x1d5)]({..._0x19a475,..._0x504aaa?{[_0x504aaa]:global[_0x48a56c(0x158)][_0x29a5f4 in global[_0x48a56c(0x1be)]?global[_0x48a56c(0x1be)][_0x29a5f4]:_0x29a5f4]}:{}})):''),global[_0x48a56c(0x16e)]={'start':new Date()};const __dirname=global['__dirname'](import.meta[_0x48a56c(0x1a5)]);global[_0x48a56c(0x188)]=new Object(_0x4927e1(process[_0x48a56c(0x1a8)]['slice'](0x2))['exitProcess'](![])[_0x48a56c(0x1eb)]()),global[_0x48a56c(0x1a2)]=new RegExp('^['+(opts['prefix']||_0x48a56c(0x1d3))[_0x48a56c(0x1c6)](/[|\\{}()[\]^$+*?.\-\^]/g,'\x5c$&')+']'),_0x5ee64a[_0x48a56c(0x1f0)](),global[_0x48a56c(0x188)]['db']=process[_0x48a56c(0x172)]['mongodb'],global['db']=new Low(/https?:\/\//[_0x48a56c(0x155)](opts['db']||'')?new cloudDBAdapter(opts['db']):/mongodb(\+srv)?:\/\//i[_0x48a56c(0x155)](opts['db'])?opts[_0x48a56c(0x19a)]?new mongoDBV2(opts['db']):new mongoDB(opts['db']):new JSONFile((opts['_'][0x0]?opts['_'][0x0]+'_':'')+_0x48a56c(0x180))),global[_0x48a56c(0x1e1)]=global['db'],global[_0x48a56c(0x1b4)]=async function loadDatabase(){const _0x3cae82=_0x48a56c;if(global['db']['READ'])return new Promise(_0x12476c=>setInterval(async function(){const _0x1622cd=_0x416e;!global['db'][_0x1622cd(0x198)]&&(clearInterval(this),_0x12476c(global['db'][_0x1622cd(0x19b)]==null?global[_0x1622cd(0x1b4)]():global['db'][_0x1622cd(0x19b)]));},0x1*0x3e8));if(global['db']['data']!==null)return;global['db'][_0x3cae82(0x198)]=!![],await global['db'][_0x3cae82(0x1ff)]()['catch'](console[_0x3cae82(0x193)]),global['db'][_0x3cae82(0x198)]=null,global['db'][_0x3cae82(0x19b)]={'users':{},'chats':{},'stats':{},'msgs':{},'sticker':{},'settings':{},...global['db'][_0x3cae82(0x19b)]||{}},global['db']['chain']=chain(global['db']['data']);},loadDatabase(),_0x43484c(__dirname),global[_0x48a56c(0x1c0)]='sessions';const {state,saveCreds}=await useMultiFileAuthState(global[_0x48a56c(0x1c0)]);let {version,isLatest}=await fetchLatestBaileysVersion();const connectionOptions={'version':version,'printQRInTerminal':!![],'auth':state,'browser':[_0x48a56c(0x1a3),_0x48a56c(0x1fa),_0x48a56c(0x1df)],'logger':_0x450d9f({'level':_0x48a56c(0x18e)})};global[_0x48a56c(0x15b)]=makeWASocket(connectionOptions),conn[_0x48a56c(0x1bf)]=![];!opts[_0x48a56c(0x155)]&&setInterval(async()=>{const _0x444340=_0x48a56c;if(global['db'][_0x444340(0x19b)])await global['db'][_0x444340(0x1a9)]()[_0x444340(0x1cd)](console[_0x444340(0x193)]);if(opts['autocleartmp'])try{clearTmp();}catch(_0x150f4a){console[_0x444340(0x193)](_0x150f4a);}},0x3c*0x3e8);if(opts[_0x48a56c(0x1f1)])(await import(_0x48a56c(0x160)))[_0x48a56c(0x1aa)](global[_0x48a56c(0x15b)],PORT);function clearTmp(){const _0x1a3365=_0x48a56c,_0x116a8f=[tmpdir(),join(__dirname,_0x1a3365(0x19d))],_0x2e1166=[],_0x18c1e6=['.mp4','.avi','.mkv',_0x1a3365(0x1ce),_0x1a3365(0x17b),_0x1a3365(0x1e0),_0x1a3365(0x1bd),_0x1a3365(0x1c9),_0x1a3365(0x169),_0x1a3365(0x192),_0x1a3365(0x1fd),_0x1a3365(0x1a0),_0x1a3365(0x161),_0x1a3365(0x1b6),_0x1a3365(0x1c4),_0x1a3365(0x1ea),_0x1a3365(0x1dd),_0x1a3365(0x1bc),'.webp',_0x1a3365(0x17c),_0x1a3365(0x1b1),_0x1a3365(0x1ab),_0x1a3365(0x1ca),_0x1a3365(0x1cc),_0x1a3365(0x196),_0x1a3365(0x189),'.xls',_0x1a3365(0x1e3),_0x1a3365(0x1fb),_0x1a3365(0x1a4),_0x1a3365(0x1e8)];return _0x116a8f[_0x1a3365(0x1af)](_0x368015=>{const _0x1adbc7=_0x1a3365,_0x59603c=readdirSync(_0x368015);_0x59603c[_0x1adbc7(0x1af)](_0x394ee8=>_0x2e1166[_0x1adbc7(0x1f4)](join(_0x368015,_0x394ee8)));}),_0x2e1166[_0x1a3365(0x1dc)](_0x162876=>{const _0x5699fa=_0x1a3365,_0xf40869=statSync(_0x162876),_0x51e205=_0x162876[_0x5699fa(0x1ad)](_0x162876[_0x5699fa(0x1e2)]('.'));if(_0xf40869[_0x5699fa(0x1ba)]()&&Date[_0x5699fa(0x17f)]()-_0xf40869[_0x5699fa(0x1ec)]>=0x3e8*0x3c*0x1&&_0x18c1e6[_0x5699fa(0x1cf)](_0x51e205))try{return unlinkSync(_0x162876),!![];}catch(_0x3da264){return console[_0x5699fa(0x193)](_0x5699fa(0x191)+_0x162876+':\x20'+_0x3da264),![];}return![];});}const interval=setInterval(()=>{const _0xe4cb6f=_0x48a56c;if(stopped===_0xe4cb6f(0x15e)){clearInterval(interval);return;}try{const _0x16eb0b=clearTmp();console['log'](_0x582f35[_0xe4cb6f(0x166)](_0xe4cb6f(0x183)+_0x16eb0b[_0xe4cb6f(0x181)](Boolean)[_0xe4cb6f(0x19f)]+'\x20files.'));}catch(_0x30c1bd){console[_0xe4cb6f(0x193)]('Auto\x20clear\x20Temp\x20folder\x20error:\x20'+_0x30c1bd);}},0xea60);async function connectionUpdate(_0x30063d){const _0x1ffc2f=_0x48a56c,{connection:_0x14d8c2,lastDisconnect:_0x10a98a,isNewLogin:_0x3492f9}=_0x30063d;global[_0x1ffc2f(0x201)]=_0x14d8c2;if(_0x3492f9)conn[_0x1ffc2f(0x1bf)]=!![];const _0x162998=_0x10a98a?.['error']?.[_0x1ffc2f(0x1b9)]?.[_0x1ffc2f(0x154)]||_0x10a98a?.[_0x1ffc2f(0x193)]?.[_0x1ffc2f(0x1b9)]?.[_0x1ffc2f(0x1e7)]?.[_0x1ffc2f(0x154)];_0x162998&&_0x162998!==DisconnectReason[_0x1ffc2f(0x18c)]&&conn?.['ws'][_0x1ffc2f(0x177)]==null&&(console[_0x1ffc2f(0x1f8)](await global[_0x1ffc2f(0x197)](!![])[_0x1ffc2f(0x1cd)](console[_0x1ffc2f(0x193)])),global[_0x1ffc2f(0x16e)][_0x1ffc2f(0x16f)]=new Date());if(global['db'][_0x1ffc2f(0x19b)]==null)loadDatabase();_0x30063d['qr']!=0x0&&_0x30063d['qr']!=undefined&&console['log'](_0x582f35[_0x1ffc2f(0x1d2)](_0x1ffc2f(0x156))),_0x14d8c2==_0x1ffc2f(0x1e9)&&console[_0x1ffc2f(0x1f8)](_0x582f35[_0x1ffc2f(0x1d2)](_0x1ffc2f(0x16b))),_0x14d8c2==_0x1ffc2f(0x15e)&&console['log'](_0x582f35[_0x1ffc2f(0x1d2)](_0x1ffc2f(0x1e5)+global['authFile']+_0x1ffc2f(0x1d6)));}process['on'](_0x48a56c(0x18f),console[_0x48a56c(0x193)]);let isInit=!![],handler=await import(_0x48a56c(0x15a));global[_0x48a56c(0x197)]=async function(_0x3f9742){const _0x33e331=_0x48a56c;try{const _0x3aad44=await import(_0x33e331(0x159)+Date[_0x33e331(0x17f)]())[_0x33e331(0x1cd)](console[_0x33e331(0x193)]);if(Object[_0x33e331(0x175)](_0x3aad44||{})['length'])handler=_0x3aad44;}catch(_0x4b1a98){console[_0x33e331(0x193)](_0x4b1a98);}if(_0x3f9742){const _0x3d4b67=global[_0x33e331(0x15b)][_0x33e331(0x199)];try{global['conn']['ws'][_0x33e331(0x15e)]();}catch{}conn['ev']['removeAllListeners'](),global[_0x33e331(0x15b)]=makeWASocket(connectionOptions,{'chats':_0x3d4b67}),isInit=!![];}return!isInit&&(conn['ev'][_0x33e331(0x184)]('messages.upsert',conn['handler']),conn['ev'][_0x33e331(0x184)](_0x33e331(0x19c),conn[_0x33e331(0x1c2)]),conn['ev']['off'](_0x33e331(0x1b7),conn[_0x33e331(0x1d0)]),conn['ev']['off'](_0x33e331(0x1de),conn[_0x33e331(0x171)]),conn['ev'][_0x33e331(0x184)](_0x33e331(0x16d),conn[_0x33e331(0x178)]),conn['ev']['off'](_0x33e331(0x1ef),conn[_0x33e331(0x1bb)])),conn['welcome']=_0x33e331(0x1cb),conn[_0x33e331(0x1d1)]=_0x33e331(0x1c3),conn[_0x33e331(0x16c)]=_0x33e331(0x1c1),conn['sdemote']=_0x33e331(0x1e4),conn[_0x33e331(0x157)]=_0x33e331(0x194),conn[_0x33e331(0x18b)]=_0x33e331(0x167),conn[_0x33e331(0x1ae)]=_0x33e331(0x176),conn[_0x33e331(0x1c7)]=_0x33e331(0x1b3),conn[_0x33e331(0x200)]=handler[_0x33e331(0x200)]['bind'](global['conn']),conn[_0x33e331(0x1c2)]=handler[_0x33e331(0x1c2)][_0x33e331(0x1b5)](global[_0x33e331(0x15b)]),conn[_0x33e331(0x1d0)]=handler[_0x33e331(0x1d0)][_0x33e331(0x1b5)](global[_0x33e331(0x15b)]),conn[_0x33e331(0x171)]=handler[_0x33e331(0x15d)]['bind'](global['conn']),conn[_0x33e331(0x178)]=connectionUpdate[_0x33e331(0x1b5)](global['conn']),conn[_0x33e331(0x1bb)]=saveCreds[_0x33e331(0x1b5)](global['conn'],!![]),conn['ev']['on'](_0x33e331(0x1f9),conn[_0x33e331(0x200)]),conn['ev']['on'](_0x33e331(0x19c),conn['participantsUpdate']),conn['ev']['on'](_0x33e331(0x1b7),conn[_0x33e331(0x1d0)]),conn['ev']['on'](_0x33e331(0x1de),conn[_0x33e331(0x171)]),conn['ev']['on'](_0x33e331(0x16d),conn['connectionUpdate']),conn['ev']['on'](_0x33e331(0x1ef),conn[_0x33e331(0x1bb)]),isInit=![],!![];};const pluginFolder=global['__dirname'](join(__dirname,_0x48a56c(0x1ac))),pluginFilter=_0x2ae2e2=>/\.js$/['test'](_0x2ae2e2);global[_0x48a56c(0x1d4)]={};async function filesInit(){const _0x311753=_0x48a56c;for(let _0x2ba828 of readdirSync(pluginFolder)[_0x311753(0x181)](pluginFilter)){try{let _0x556558=global[_0x311753(0x163)](join(pluginFolder,_0x2ba828));const _0x1aff44=await import(_0x556558);global[_0x311753(0x1d4)][_0x2ba828]=_0x1aff44[_0x311753(0x1aa)]||_0x1aff44;}catch(_0x5db4e2){conn[_0x311753(0x179)]['error'](_0x5db4e2),delete global[_0x311753(0x1d4)][_0x2ba828];}}}filesInit()['then'](_0x1581f4=>console[_0x48a56c(0x1f8)](Object[_0x48a56c(0x175)](global[_0x48a56c(0x1d4)])))[_0x48a56c(0x1cd)](console[_0x48a56c(0x193)]),global[_0x48a56c(0x18a)]=async(_0x5ab7a7,_0x1b7087)=>{const _0x3cc0ce=_0x48a56c;if(pluginFilter(_0x1b7087)){let _0x401876=global[_0x3cc0ce(0x163)](join(pluginFolder,_0x1b7087),!![]);if(_0x1b7087 in global[_0x3cc0ce(0x1d4)]){if(existsSync(_0x401876))conn[_0x3cc0ce(0x179)]['info'](_0x3cc0ce(0x16a)+_0x1b7087+'\x27');else return conn['logger'][_0x3cc0ce(0x162)](_0x3cc0ce(0x1b2)+_0x1b7087+'\x27'),delete global['plugins'][_0x1b7087];}else conn[_0x3cc0ce(0x179)][_0x3cc0ce(0x17e)](_0x3cc0ce(0x16a)+_0x1b7087+'\x27');let _0xfe9af0=_0x5000f0(readFileSync(_0x401876),_0x1b7087,{'sourceType':'module','allowAwaitOutsideFunction':!![]});if(_0xfe9af0)conn[_0x3cc0ce(0x179)][_0x3cc0ce(0x193)](_0x3cc0ce(0x1ee)+_0x1b7087+'\x27\x0a'+format(_0xfe9af0));else try{const _0x1afa38=await import(global[_0x3cc0ce(0x163)](_0x401876)+_0x3cc0ce(0x17a)+Date[_0x3cc0ce(0x17f)]());global[_0x3cc0ce(0x1d4)][_0x1b7087]=_0x1afa38[_0x3cc0ce(0x1aa)]||_0x1afa38;}catch(_0x9698fd){conn[_0x3cc0ce(0x179)][_0x3cc0ce(0x193)](_0x3cc0ce(0x1f7)+_0x1b7087+'\x0a'+format(_0x9698fd)+'\x27');}finally{global['plugins']=Object[_0x3cc0ce(0x187)](Object[_0x3cc0ce(0x1d5)](global['plugins'])['sort'](([_0x9ee701],[_0x5b25ff])=>_0x9ee701['localeCompare'](_0x5b25ff)));}}},Object['freeze'](global['reload']),watch(pluginFolder,global[_0x48a56c(0x18a)]),await global['reloadHandler']();async function _quickTest(){const _0x254c4c=_0x48a56c;let _0x21b23e=await Promise[_0x254c4c(0x17d)]([spawn(_0x254c4c(0x15f)),spawn(_0x254c4c(0x185)),spawn(_0x254c4c(0x15f),[_0x254c4c(0x173),_0x254c4c(0x195),_0x254c4c(0x193),_0x254c4c(0x153),_0x254c4c(0x182),_0x254c4c(0x1b8),'1','-f','webp','-']),spawn('convert'),spawn('magick'),spawn('gm'),spawn('find',[_0x254c4c(0x1ed)])][_0x254c4c(0x1dc)](_0x57faf2=>{const _0x1c96e1=_0x254c4c;return Promise[_0x1c96e1(0x1db)]([new Promise(_0x59ee6c=>{const _0x3f90c2=_0x1c96e1;_0x57faf2['on'](_0x3f90c2(0x15e),_0xfc0274=>{_0x59ee6c(_0xfc0274!==0x7f);});}),new Promise(_0x367a36=>{const _0x49ce75=_0x1c96e1;_0x57faf2['on'](_0x49ce75(0x193),_0x1e8f4d=>_0x367a36(![]));})]);})),[_0x4b11dc,_0x2f57c1,_0x1ed2b4,_0x14c75c,_0x56153b,_0x31f5e7,_0x41ab2d]=_0x21b23e;console[_0x254c4c(0x1f8)](_0x21b23e);let _0x28c2b3=global[_0x254c4c(0x164)]={'ffmpeg':_0x4b11dc,'ffprobe':_0x2f57c1,'ffmpegWebp':_0x1ed2b4,'convert':_0x14c75c,'magick':_0x56153b,'gm':_0x31f5e7,'find':_0x41ab2d};Object[_0x254c4c(0x1fe)](global[_0x254c4c(0x164)]);if(!_0x28c2b3[_0x254c4c(0x15f)])conn[_0x254c4c(0x179)][_0x254c4c(0x162)]('Please\x20install\x20ffmpeg\x20for\x20sending\x20videos\x20(pkg\x20install\x20ffmpeg)');if(_0x28c2b3[_0x254c4c(0x15f)]&&!_0x28c2b3[_0x254c4c(0x1d8)])conn[_0x254c4c(0x179)][_0x254c4c(0x162)](_0x254c4c(0x1f2));if(!_0x28c2b3['convert']&&!_0x28c2b3[_0x254c4c(0x1f6)]&&!_0x28c2b3['gm'])conn[_0x254c4c(0x179)][_0x254c4c(0x162)](_0x254c4c(0x165));}_quickTest()[_0x48a56c(0x168)](()=>conn[_0x48a56c(0x179)][_0x48a56c(0x17e)](_0x48a56c(0x174)))['catch'](console[_0x48a56c(0x193)]);
+ 
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+import './config.js'; 
+import { createRequire } from "module"; // Bring in the ability to create the 'require' method
+import path, { join } from 'path'
+import { fileURLToPath, pathToFileURL } from 'url'
+import { platform } from 'process'
+import * as ws from 'ws';
+import { readdirSync, statSync, unlinkSync, existsSync, readFileSync, watch, rmSync } from 'fs';
+import yargs from 'yargs';
+import { spawn } from 'child_process';
+import lodash from 'lodash';
+import chalk from 'chalk'
+import syntaxerror from 'syntax-error';
+import writeSessionToCreds from './sessions.js';
+import { tmpdir } from 'os';
+import { format } from 'util';
+import { makeWASocket, protoType, serialize } from './lib/simple.js';
+import { Low, JSONFile } from 'lowdb';
+import pino from 'pino';
+import { mongoDB, mongoDBV2 } from './lib/mongoDB.js';
+import store from './lib/store.js'
+import dotenv from 'dotenv';
+import {
+    useMultiFileAuthState,
+    DisconnectReason,
+    fetchLatestBaileysVersion 
+   } from '@whiskeysockets/baileys'
+const { CONNECTING } = ws
+const { chain } = lodash
+const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
+
+protoType()
+serialize()
+
+global.__filename = function filename(pathURL = import.meta.url, rmPrefix = platform !== 'win32') { return rmPrefix ? /file:\/\/\//.test(pathURL) ? fileURLToPath(pathURL) : pathURL : pathToFileURL(pathURL).toString() }; global.__dirname = function dirname(pathURL) { return path.dirname(global.__filename(pathURL, true)) }; global.__require = function require(dir = import.meta.url) { return createRequire(dir) } 
+
+global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
+
+global.timestamp = {
+  start: new Date
+}
+
+const __dirname = global.__dirname(import.meta.url)
+
+global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
+global.prefix = new RegExp('^[' + (opts['prefix'] || '‎z/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.,\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
+dotenv.config();
+
+
+global.opts['db'] = process.env.MONGODB;
+
+
+global.db = new Low(
+  /https?:\/\//.test(opts['db'] || '') ?
+    new cloudDBAdapter(opts['db']) : /mongodb(\+srv)?:\/\//i.test(opts['db']) ?
+      (opts['mongodbv2'] ? new mongoDBV2(opts['db']) : new mongoDB(opts['db'])) :
+      new JSONFile(`${opts._[0] ? opts._[0] + '_' : ''}database.json`)
+)
+
+
+global.DATABASE = global.db 
+global.loadDatabase = async function loadDatabase() {
+  if (global.db.READ) return new Promise((resolve) => setInterval(async function () {
+    if (!global.db.READ) {
+      clearInterval(this)
+      resolve(global.db.data == null ? global.loadDatabase() : global.db.data)
+    }
+  }, 1 * 1000))
+  if (global.db.data !== null) return
+  global.db.READ = true
+  await global.db.read().catch(console.error)
+  global.db.READ = null
+  global.db.data = {
+    users: {},
+    chats: {},
+    stats: {},
+    msgs: {},
+    sticker: {},
+    settings: {},
+    ...(global.db.data || {})
+  }
+  global.db.chain = chain(global.db.data)
+}
+loadDatabase()
+
+writeSessionToCreds(__dirname);
+
+
+//-- SESSION
+global.authFolder = `sessions`
+const { state, saveCreds } = await useMultiFileAuthState(global.authFolder)
+let { version, isLatest } = await fetchLatestBaileysVersion() 
+const connectionOptions = {
+  version,
+    printQRInTerminal: true,
+    auth: state,
+    browser: ['GURU-V2', 'Safari', '3.1.0'], 
+  logger: pino({ level: 'silent' })
+} 
+
+//--
+global.conn = makeWASocket(connectionOptions)
+conn.isInit = false
+
+if (!opts['test']) {
+  setInterval(async () => {
+    if (global.db.data) await global.db.write().catch(console.error)
+    if (opts['autocleartmp']) try {
+      clearTmp()
+
+    } catch (e) { console.error(e) }
+  }, 60 * 1000)
+}
+
+if (opts['server']) (await import('./server.js')).default(global.conn, PORT)
+
+/* Clear */
+function clearTmp() {
+    const tmp = [tmpdir(), join(__dirname, './tmp')];
+    const filename = [];
+    const allowedExtensions = [
+      '.mp4', '.avi', '.mkv', '.mov', '.wmv', '.flv', '.webm',
+      '.mp3', '.wav', '.flac', '.ogg', '.aac', '.wma',
+      '.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp',
+      '.svg', '.ico', '.tif', '.tiff',
+      '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx',
+      '.bin' 
+      // Add more extensions as needed
+    ];
+    
+  
+    tmp.forEach((dirname) => {
+      const files = readdirSync(dirname);
+      files.forEach((file) => filename.push(join(dirname, file)));
+    });
+  
+    return filename.map((file) => {
+      const stats = statSync(file);
+      const extension = file.slice(file.lastIndexOf('.'));
+      
+      if (stats.isFile() && (Date.now() - stats.mtimeMs >= 1000 * 60 * 1) && allowedExtensions.includes(extension)) {
+        try {
+          unlinkSync(file);
+          return true; // File was deleted
+        } catch (error) {
+          console.error(`Error deleting ${file}: ${error}`);
+          return false; // File could not be deleted
+        }
+      }
+      
+      return false; // File doesn't meet conditions
+    });
+  }
+  
+  const interval = setInterval(() => {
+    if (stopped === 'close') {
+      clearInterval(interval); // Stop the interval
+      return;
+    }
+  
+    try {
+      const deletedFiles = clearTmp();
+      console.log(chalk.cyanBright(`Auto clear Temp folder cleared. Deleted ${deletedFiles.filter(Boolean).length} files.`));
+    } catch (error) {
+      console.error(`Auto clear Temp folder error: ${error}`);
+    }
+  }, 60000); // Set interval to 1 minute
+
+  async function connectionUpdate(update) {
+    const {connection, lastDisconnect, isNewLogin} = update;
+    global.stopped = connection;
+    if (isNewLogin) conn.isInit = true;
+    const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode;
+    if (code && code !== DisconnectReason.loggedOut && conn?.ws.socket == null) {
+      console.log(await global.reloadHandler(true).catch(console.error));
+      global.timestamp.connect = new Date;
+    }
+    if (global.db.data == null) loadDatabase();
+    if (update.qr != 0 && update.qr != undefined) {
+      console.log(chalk.yellow('🚩ᅠScan this QR code, the QR code expires in 60 seconds.'));
+    }
+    if (connection == 'open') {
+      console.log(chalk.yellow('CONNECTED CORRECTLY TO WHATSAPP'));
+    }
+    if (connection == 'close') {
+      console.log(chalk.yellow(`🚩ᅠConnection closed, please delete the ${global.authFile} folder and rescan the QR code`));
+    }
+  }
+  
+  process.on('uncaughtException', console.error);
+  // conn.ev.on('messages.update', console.log);
+  
+  let isInit = true;
+  let handler = await import('./handler.js');
+global.reloadHandler = async function (restatConn) {
+  try {
+    const Handler = await import(`./handler.js?update=${Date.now()}`).catch(console.error)
+    if (Object.keys(Handler || {}).length) handler = Handler
+  } catch (e) {
+    console.error(e)
+  }
+  if (restatConn) {
+    const oldChats = global.conn.chats
+    try { global.conn.ws.close() } catch { }
+    conn.ev.removeAllListeners()
+    global.conn = makeWASocket(connectionOptions, { chats: oldChats })
+    isInit = true
+  }
+  if (!isInit) {
+    conn.ev.off('messages.upsert', conn.handler)
+    conn.ev.off('group-participants.update', conn.participantsUpdate)
+    conn.ev.off('groups.update', conn.groupsUpdate)
+    conn.ev.off('message.delete', conn.onDelete)
+    conn.ev.off('connection.update', conn.connectionUpdate)
+    conn.ev.off('creds.update', conn.credsUpdate)
+  }
+  conn.welcome = '*@user Welcome to the Group';
+  conn.bye = '*@user SEE YOU SOON*';
+  conn.spromote = '*@user JOINS THE ADMIN GROUP!!*';
+  conn.sdemote = '*@user LEAVES THE ADMIN GROUP !!*'; 
+  conn.sDesc = '*THE GROUP DESCRIPTION HAS BEEN MODIFIED*\n\n*NEW DESCRIPTION:* @desc';
+  conn.sSubject = '*THE GROUP NAME HAS BEEN MODIFIED*\n*NEW NAME:* @subject';
+  conn.sIcon = '*THE GROUP PHOTO HAS BEEN CHANGED!!*';
+  conn.sRevoke = '*THE GROUP LINK HAS BEEN UPDATED!!*\n*NEW LINK:* @revoke';
+
+  conn.handler = handler.handler.bind(global.conn)
+  conn.participantsUpdate = handler.participantsUpdate.bind(global.conn)
+  conn.groupsUpdate = handler.groupsUpdate.bind(global.conn)
+  conn.onDelete = handler.deleteUpdate.bind(global.conn)
+  conn.connectionUpdate = connectionUpdate.bind(global.conn)
+  conn.credsUpdate = saveCreds.bind(global.conn, true)
+
+  conn.ev.on('messages.upsert', conn.handler)
+  conn.ev.on('group-participants.update', conn.participantsUpdate)
+  conn.ev.on('groups.update', conn.groupsUpdate)
+  conn.ev.on('message.delete', conn.onDelete)
+  conn.ev.on('connection.update', conn.connectionUpdate)
+  conn.ev.on('creds.update', conn.credsUpdate)
+  isInit = false
+  return true
+}
+
+const pluginFolder = global.__dirname(join(__dirname, './plugins/index'))
+const pluginFilter = filename => /\.js$/.test(filename)
+global.plugins = {}
+async function filesInit() {
+  for (let filename of readdirSync(pluginFolder).filter(pluginFilter)) {
+    try {
+      let file = global.__filename(join(pluginFolder, filename))
+      const module = await import(file)
+      global.plugins[filename] = module.default || module
+    } catch (e) {
+      conn.logger.error(e)
+      delete global.plugins[filename]
+    }
+  }
+}
+filesInit().then(_ => console.log(Object.keys(global.plugins))).catch(console.error)
+
+global.reload = async (_ev, filename) => {
+  if (pluginFilter(filename)) {
+    let dir = global.__filename(join(pluginFolder, filename), true)
+    if (filename in global.plugins) {
+      if (existsSync(dir)) conn.logger.info(`New plugin - '${filename}'`)
+      else {
+        conn.logger.warn(`Deleted plugin - '${filename}'`)
+        return delete global.plugins[filename]
+      }
+    } else conn.logger.info(`New plugin - '${filename}'`)
+    let err = syntaxerror(readFileSync(dir), filename, {
+      sourceType: 'module',
+      allowAwaitOutsideFunction: true
+    })
+    if (err) conn.logger.error(`syntax error while loading '${filename}'\n${format(err)}`)
+    else try {
+      const module = (await import(`${global.__filename(dir)}?update=${Date.now()}`))
+      global.plugins[filename] = module.default || module
+    } catch (e) {
+      conn.logger.error(`error require plugin '${filename}\n${format(e)}'`)
+    } finally {
+      global.plugins = Object.fromEntries(Object.entries(global.plugins).sort(([a], [b]) => a.localeCompare(b)))
+    }
+  }
+}
+Object.freeze(global.reload)
+watch(pluginFolder, global.reload)
+await global.reloadHandler()
+
+// Quick Test
+async function _quickTest() {
+  let test = await Promise.all([
+    spawn('ffmpeg'),
+    spawn('ffprobe'),
+    spawn('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-filter_complex', 'color', '-frames:v', '1', '-f', 'webp', '-']),
+    spawn('convert'),
+    spawn('magick'),
+    spawn('gm'),
+    spawn('find', ['--version'])
+  ].map(p => {
+    return Promise.race([
+      new Promise(resolve => {
+        p.on('close', code => {
+          resolve(code !== 127)
+        })
+      }),
+      new Promise(resolve => {
+        p.on('error', _ => resolve(false))
+      })
+    ])
+  }))
+  let [ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm, find] = test
+  console.log(test)
+  let s = global.support = {
+    ffmpeg,
+    ffprobe,
+    ffmpegWebp,
+    convert,
+    magick,
+    gm,
+    find
+  }
+  // require('./lib/sticker').support = s
+  Object.freeze(global.support)
+
+  if (!s.ffmpeg) conn.logger.warn('Please install ffmpeg for sending videos (pkg install ffmpeg)')
+  if (s.ffmpeg && !s.ffmpegWebp) conn.logger.warn('Stickers may not animated without libwebp on ffmpeg (--enable-ibwebp while compiling ffmpeg)')
+  if (!s.convert && !s.magick && !s.gm) conn.logger.warn('Stickers may not work without imagemagick if libwebp on ffmpeg doesnt isntalled (pkg install imagemagick)')
+}
+
+_quickTest()
+  .then(() => conn.logger.info('✅ Quick test Done'))
+  .catch(console.error)
