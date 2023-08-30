@@ -3,25 +3,26 @@ import { join } from 'path';
 import axios from 'axios';
 
 let handler = async function (m, { conn, __dirname }) {
-  let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({})))  {};
+  try {
+    let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({})));
 
-  let repoUrl = _package.repository && _package.repository.url ? _package.repository.url : null;
+    let repoUrl = _package.repository && _package.repository.url ? _package.repository.url : null;
 
-  let match = repoUrl.match(/github\.com\/(.+?)\/(.+?)(\.git)?$/);
-  if (match) {
-    let owner = match[1];
-    let repoName = match[2];
+    if (repoUrl) {
+      let match = repoUrl.match(/github\.com\/(.+?)\/(.+?)(\.git)?$/);
+      if (match) {
+        let owner = match[1];
+        let repoName = match[2];
 
-    try {
-      let response = await axios.get(`https://api.github.com/repos/${owner}/${repoName}`);
-      let repoData = response.data;
+        try {
+          let response = await axios.get(`https://api.github.com/repos/${owner}/${repoName}`);
+          let repoData = response.data;
 
-      
-      let replyMessage = `
+          let replyMessage = `
 *≡ REPOSITORY DETAILS *
 
 📚 Repository: ${repoData.full_name}
-📄 Description: ${repoData.description  'No description available'}
+📄 Description: ${repoData.description || 'No description available'}
 🌟 Stars: ${repoData.stargazers_count}
 🍴 Forks: ${repoData.forks_count}
 🔗 URL: ${repoData.html_url}
@@ -29,31 +30,34 @@ let handler = async function (m, { conn, __dirname }) {
 🛠 Language: ${repoData.language || 'Unknown'}
 `.trim();
 
-      // Prepare the message object
-      let messageObject = {
-        requestPaymentMessage: {
-          currencyCodeIso4217: 'INR',
-          amount1000: '6900000000',
-          requestFrom: '0@s.whatsapp.net',
-          noteMessage: {
-            extendedTextMessage: {
-              text: replyMessage,
-              contextInfo: {
-                mentionedJid: [m.sender],
-                externalAdReply: {
-                  showAdAttribution: true
+          // Prepare the message object
+          let messageObject = {
+            requestPaymentMessage: {
+              currencyCodeIso4217: 'INR',
+              amount1000: '6900000000',
+              requestFrom: '0@s.whatsapp.net',
+              noteMessage: {
+                extendedTextMessage: {
+                  text: replyMessage,
+                  contextInfo: {
+                    mentionedJid: [m.sender],
+                    externalAdReply: {
+                      showAdAttribution: true
+                    }
+                  }
                 }
               }
             }
-          }
-        }
-      };
+          };
 
-   
-      await conn.relayMessage(m.chat, messageObject, {});
-    } catch (error) {
-      console.error('Error fetching repository data:', error);
+          await conn.relayMessage(m.chat, messageObject, {});
+        } catch (error) {
+          console.error('Error fetching repository data:', error);
+        }
+      }
     }
+  } catch (error) {
+    console.error('Error reading package.json:', error);
   }
 };
 
@@ -62,3 +66,4 @@ handler.tags = ['main'];
 handler.command = ['sc', 'git', 'script'];
 
 export default handler;
+
