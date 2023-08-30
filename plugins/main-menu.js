@@ -70,20 +70,18 @@ let str = `
 
 
   conn.sendMessage(m.chat, {
-    text: str,
-    contextInfo: {
-      externalAdReply: {
-        title: " 𝐺 𝑈 𝑅 𝑈 𝐵 𝛩 𝑇 𝛧",
-        body: "",
-        thumbnailUrl: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/082cba8a-f7f2-4aec-a934-a2475ca4c9de/deeyai9-da3f3470-31df-412d-8c06-c4dd78eed3f5.png/v1/fill/w_1192,h_670,q_70,strp/akeno_pc_wallpaper_by_rgt_oppai_deeyai9-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvMDgyY2JhOGEtZjdmMi00YWVjLWE5MzQtYTI0NzVjYTRjOWRlXC9kZWV5YWk5LWRhM2YzNDcwLTMxZGYtNDEyZC04YzA2LWM0ZGQ3OGVlZDNmNS5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.kSdn3cxPUikz4H5SP6f8JF6NGCOvTpk3J4vv3vlAp84",
-        sourceUrl: "https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp",
-        mediaType: 1,
-        renderLargerThumbnail: true
-      }
-    }
-  }, { quoted: m });
-};
-
+        text: str,
+        contextInfo: {
+            externalAdReply: {
+                title: " 𝐺 𝑈 𝑅 𝑈 𝐵 𝛩 𝑇 𝛧",
+                body: "",
+                thumbnailUrl: "https://cutewallpaper.org/21/akeno-wallpaper/Browse-Akeno-Himejima-Wallpapers-Minitokyo.jpg",
+                sourceUrl: "https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp",
+                mediaType: 1,
+                renderLargerThumbnail: true
+            }
+        }
+    }, { quoted: m });
     m.react(done)
 
 }
