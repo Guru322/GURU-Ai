@@ -287,7 +287,22 @@ break;
           lkr = `Invalid command. Type ${usedPrefix}list to see available options.`;
       }
     
-      conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] });
+    
+  conn.sendMessage(m.chat, {
+    text: lkr,
+    contextInfo: {
+      externalAdReply: {
+        title: " 𝐺 𝑈 𝑅 𝑈 𝐵 𝛩 𝑇 𝛧",
+        body: "",
+        thumbnailUrl: "https://cutewallpaper.org/21/akeno-wallpaper/Browse-Akeno-Himejima-Wallpapers-Minitokyo.jpg",
+        sourceUrl: "https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp",
+        mediaType: 1,
+        renderLargerThumbnail: true
+      }
+    }
+  }, { quoted: m });
+};
+
     
       let done = '👍';
       m.react(done);
