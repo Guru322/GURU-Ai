@@ -17,7 +17,7 @@
       "required": false,
       "value": ""
     },
-    "MONGO_DB": {
+    "MONGODB": {
       "description": "your mongodb database url",
       "required": false,
       "value": ""
