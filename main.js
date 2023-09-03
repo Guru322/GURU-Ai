@@ -91,12 +91,16 @@ writeSessionToCreds(__dirname);
 global.authFolder = `sessions`
 const { state, saveCreds } = await useMultiFileAuthState(global.authFolder)
 let { version, isLatest } = await fetchLatestBaileysVersion() 
+console.log(`using WA v${version.join('.')}, isLatest: ${isLatest}`)
 const connectionOptions = {
   version,
     printQRInTerminal: true,
     auth: state,
     browser: ['GURU-V2', 'Safari', '3.1.0'], 
-  logger: pino({ level: 'silent' })
+  logger: pino({ level: 'silent' }),
+  markOnlineOnConnect: true, 
+  generateHighQualityLinkPreview: true,
+  defaultQueryTimeoutMs: undefined
 } 
 
 //--
@@ -168,9 +172,12 @@ function clearTmp() {
   }, 60000); // Set interval to 1 minute
 
   async function connectionUpdate(update) {
-    const {connection, lastDisconnect, isNewLogin} = update;
+    const {connection, lastDisconnect, isOnline, receivedPendingNotifications, isNewLogin} = update;
     global.stopped = connection;
     if (isNewLogin) conn.isInit = true;
+   if (isOnline == true) console.log(chalk.green('BOT ACTIVE'))
+  if (isOnline == false) console.log(chalk.red('BOT OFF'))
+  if (receivedPendingNotifications) console.log(chalk.yellow('Waiting for New Messages'))
     const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode;
     if (code && code !== DisconnectReason.loggedOut && conn?.ws.socket == null) {
       console.log(await global.reloadHandler(true).catch(console.error));
