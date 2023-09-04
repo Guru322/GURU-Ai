@@ -50,13 +50,13 @@ global.APIKeys = { // APIKey Here
 global.botname = 'DENNIS BOT'
 global.premium = 'true'
 global.packname = 'DENNIS' 
-global.author = '@Asliguru' 
+global.author = 'BIG BROTHER' 
 global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru_2k23\n' 
-global.dygp = 'https://chat.whatsapp.com/BibVE6tUICp3qOm2a1Ur8f'
+global.dygp = 'https://chat.whatsapp.com/Ei20n1qFAqM1npApxnTFhw'
 global.fgsc = 'https://github.com/Guru322/GURU-BOT' 
-global.fgyt = 'https://youtube.com/@Asliguru'
-global.fgpyp = 'https://youtube.com/@Asliguru'
-global.fglog = 'https://raw.githubusercontent.com/Guru322/api/Guru/guru.jpg' 
+global.fgyt = 'https://youtube.com/@deeAds'
+global.fgpyp = 'https://youtube.com/@deeAds'
+global.fglog = 'https://i.imgur.com/NJrqizw.jpeg' 
 
 
 global.wait = '*⌛ _Charging..._*\n*▰▰▰▱▱▱▱▱*'
