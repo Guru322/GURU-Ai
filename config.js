@@ -7,8 +7,8 @@ import axios from 'axios'
 
 
 global.owner = [
-  ['2347018087851', 'DENNIS', true],
-  ['2347018087851', 'DENNIS', true], 
+  ['2349169548224', 'DARK HEART', true],
+  ['2349169548224', 'DARK HEART', true], 
   [''] 
 ] //Number of owners
 
@@ -47,10 +47,10 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.botname = 'DENNIS BOT'
+global.botname = 'DARK HEART BOT'
 global.premium = 'true'
-global.packname = 'DENNIS' 
-global.author = 'BIG BROTHER' 
+global.packname = 'DARK HEART' 
+global.author = 'DARK HEART' 
 global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru_2k23\n' 
 global.dygp = 'https://chat.whatsapp.com/Ei20n1qFAqM1npApxnTFhw'
 global.fgsc = 'https://github.com/Guru322/GURU-BOT' 
