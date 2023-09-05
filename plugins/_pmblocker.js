@@ -8,6 +8,9 @@ export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner }
   
     // Ignore messages sent in group chats
     if (m.isGroup) return false;
+
+     const allowlist = global.allowed || [];
+    if (allowlist.includes(m.sender.split('@')[0])) return false;
  
     // If the message is not sent in a group, it's a private message 
     if (!m.isGroup) {
