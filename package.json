@@ -95,7 +95,7 @@
         "api-dylux": "^1.2.8",
         "@vitalets/google-translate-api": "^8.0.0",
         "yargs": "^17.6.0",
-        "ytdl-core": "^4.11.5",
+        "ytdl-core": "git+ssh://git@github.com:khlevon/node-ytdl-core.git#v4.11.4-patch.2",
          "wa-sticker-formatter": "^4.3.2"
        
     }
