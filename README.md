@@ -15,6 +15,18 @@
 <a href="https://github.com/Guru322/GURU-BOT/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Guru322/GURU-BOT?label=Watching&style=social"></a>
 </p>
 
+**Important Notice**: The current version of GURU-BOT is outdated, and I will no longer be actively maintaining it. I appreciate your support and interest.
+
+## Version 2 Coming Soon
+
+I'm excited to announce that a new and improved version (Version 2) of GURU-BOT is in development and will be released in the near future. Version 2 will come with exciting features, bug fixes, and enhancements.
+
+In the meantime, I encourage you to stay tuned for updates and follow the progress of Version 2. Thank you for your patience, and I apologize for any inconvenience caused by the outdated version.
+
+If you have any questions or need assistance, please feel free to reach out to me via [sahioguru@gmail.com].
+
+Thank you for your understanding and continued support!
+
 ####  
 GURU-BOT- Simple Multi Device whatsapp bot.
 
