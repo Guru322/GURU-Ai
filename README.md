@@ -23,7 +23,7 @@ I'm excited to announce that a new and improved version (Version 2) of GURU-BOT 
 
 In the meantime, I encourage you to stay tuned for updates and follow the progress of Version 2. Thank you for your patience, and I apologize for any inconvenience caused by the outdated version.
 
-If you have any questions or need assistance, please feel free to reach out to me via [sahioguru@gmail.com].
+If you have any questions or need assistance, please feel free to reach out to me via [support@gurubhai.is-a.dev].
 
 Thank you for your understanding and continued support!
 
