@@ -1,4 +1,4 @@
-import Presence from '@adiwajshing/baileys'
+
 let handler  = async (m, { conn, args, text }) => {
 if (!text) throw `*ENTER THE NAME YOU WANT TO BE THE NEW GROUP NAME*`
 try {

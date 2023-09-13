@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 import axios from 'axios'
 import { sticker } from '../lib/sticker.js'
-import MessageType from '@adiwajshing/baileys'
+import MessageType from '@whiskeysockets/baileys'
 //import db from '../lib/database.js'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {

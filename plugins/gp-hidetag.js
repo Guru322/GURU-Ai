@@ -1,5 +1,5 @@
-import MessageType from '@adiwajshing/baileys'
-import { generateWAMessageFromContent } from '@adiwajshing/baileys'
+import MessageType from '@whiskeysockets/baileys'
+import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
 
 let handler = async (m, { conn, text, participants }) => {
 let users = participants.map(u => conn.decodeJid(u.id))
