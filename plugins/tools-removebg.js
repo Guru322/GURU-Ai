@@ -12,6 +12,7 @@ const handler = async (m, { conn, text }) => {
     const q = m.quoted ? m.quoted : m;
     const mime = (q.msg || q).mimetype || '';
     const img = await q.download();
+    let apikey = 'HP1LME2sjA6BeBb6jHtfsU7h' //replace with your apikey if its dead
 
     const formData = new FormData();
     formData.append('size', 'auto');
@@ -20,7 +21,7 @@ const handler = async (m, { conn, text }) => {
     const response = await axios.post('https://api.remove.bg/v1.0/removebg', formData, {
       headers: {
         ...formData.getHeaders(),
-        'X-Api-Key': process.env.REMOVE_BG_API_KEY,
+        'X-Api-Key': apikey,
       },
       responseType: 'arraybuffer',
       encoding: null,
