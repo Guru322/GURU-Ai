@@ -1,31 +1,16 @@
-const rewards = {
-  exp: 9999,
-  money: 4999,
-  potion: 5,
-}
-const cooldown = 86400000
-let handler = async (m, {conn, isPrems }) => {
-  let user = global.db.data.users[m.sender]
-  let time = global.db.data.users[m.sender].lastclaim + 86400000
-  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `You have already claimed this daily claim!, wait for *${msToTime(time - new Date())}* `
-  let text = ''
-  for (let reward of Object.keys(rewards)) {
-    if (!(reward in user)) continue
-    user[reward] += rewards[reward]
-    text += `*+${rewards[reward]}* ${global.rpg.emoticon(reward)}${reward}\n`
-  }
-  m.reply(`
-🎁 *daily reward*
+const free = 2000
+const prem = 5000
 
-▢ *Has recieved:*
- ${text}`)
+let handler = async (m, {conn, isPrems }) => {
+  let time = global.db.data.users[m.sender].lastclaim + 86400000
+  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `You have already claimed your daily gold recently. Claim again in *${msToTime(time - new Date())}* `
+  global.db.data.users[m.sender].credit += isPrems ? prem : free
+  m.reply(`🎉 *${isPrems ? prem : free} gold has been added to your wallet*`)
   global.db.data.users[m.sender].lastclaim = new Date * 1
 }
-handler.help = ['daily', 'claim']
-handler.tags = ['xp']
-handler.command = /^(daily|claim)$/i
-
-handler.cooldown = cooldown
+handler.help = ['daily']
+handler.tags = ['econ']
+handler.command = ['daily'] 
 
 export default handler
 

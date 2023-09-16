@@ -1,21 +1,28 @@
-//import db from '../lib/database.js'
+
 let reg = 40
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    let fa = `
-How much you want to bet? 
 
-📌 Example :
-*${usedPrefix + command}* 100`.trim()
+
+   /* if (global.db.data.users[m.sender].level < 5) {
+        return conn.reply(m.chat, 'You must be at least level 5 to use this command.', m);
+    }*/
+
+    let fa = `🟥 *Provide the amount of gold to bet*
+
+*Example :
+${usedPrefix + command} 500*`.trim()
     if (!args[0]) throw fa
     if (isNaN(args[0])) throw fa
-    let apuesta = parseInt(args[0])
+    let amount = parseInt(args[0])
+    m.react('🎰')
     let users = global.db.data.users[m.sender]
     let time = users.lastslot + 10000
-    if (new Date - users.lastslot < 10000) throw `⏳ wait *${msToTime(time - new Date())}* to use again`
-    if (apuesta < 100) throw '✳️ Minimum of the bet is *100 XP*'
-    if (users.exp < apuesta) {
-        throw `✳️ You do not have enough xp`
+    if (new Date - users.lastslot < 10000) throw `⏳ Wait *${msToTime(time - new Date())}* to use again`
+    if (amount < 500) throw `🟥 *You can't bet gold less than 500*`
+    if (users.credit < amount) {
+        throw `🟥 *You do not have enough gold to bet*`
     }
+    if (amount > 100000) throw `🟥 *You can't bet gold more than 100000*`
 
     let emojis = ["🕊️", "🦀", "🦎"];
     let a = Math.floor(Math.random() * emojis.length);
@@ -41,31 +48,31 @@ How much you want to bet?
     }
     let end;
     if (a == b && b == c) {
-        end = `🎁 WON\n *+${apuesta + apuesta} XP*`
-        users.exp += apuesta + apuesta
-    } else if (a == b || a == c || b == c) {
-        end = `🔮 You almost made it keep trying :) \nTen *+${reg} XP*`
-        users.exp += reg
+        end = `🎊 *Jackpot!* You won ${amount + amount} gold`
+        users.credit += amount + amount
+   // } else if (a == b || a == c || b == c) {
+   //     end = `You lost  *₹${amount}*\n*But you almost made it keep trying*`
+   //     users.credit -= amount
     } else {
-        end = `😔 You lost  *-${apuesta} XP*`
-        users.exp -= apuesta
+        end = `      You lost ${amount} gold`
+        users.credit -= amount
     }
     users.lastslot = new Date * 1
     return await m.reply(
         `
-       🎰 ┃ *SLOTS* 
+     🎰 ┃ *SLOTS* ┃ 🎰
      ───────────
-       ${x[0]} : ${y[0]} : ${z[0]}
-       ${x[1]} : ${y[1]} : ${z[1]}
-       ${x[2]} : ${y[2]} : ${z[2]}
-     ───────────
-        🎰┃🎰┃ 🎰
-        
+         ${x[0]} : ${y[0]} : ${z[0]}
+         ${x[1]} : ${y[1]} : ${z[1]}
+         ${x[2]} : ${y[2]} : ${z[2]}
+     ───────────     
 ${end}`) 
 }
-handler.help = ['slot <bet amount>']
+handler.help = ['slot <amount>']
 handler.tags = ['game']
 handler.command = ['slot']
+
+handler.group = true
 
 export default handler
 
@@ -79,5 +86,5 @@ function msToTime(duration) {
     minutes = (minutes < 10) ? "0" + minutes : minutes
     seconds = (seconds < 10) ? "0" + seconds : seconds
 
-    return seconds + " Seconds(s)"
+    return seconds + " seconds"
 }

@@ -59,8 +59,10 @@ export async function handler(chatUpdate) {
         m = smsg(this, m) || m
         if (!m)
             return
-        m.exp = 0
-        m.limit = false
+            m.exp = 0
+            m.credit = false
+            m.bank = false
+            m.chicken = false
         try {
             // TODO: use loop to insert data instead of this
             let user = global.db.data.users[m.sender]
@@ -68,61 +70,63 @@ export async function handler(chatUpdate) {
                 global.db.data.users[m.sender] = {}
             if (user) {
                 if (!isNumber(user.exp))
-                user.exp = 0
-            if (!isNumber(user.diamond))
-                user.diamond = 10
-            if (!isNumber(user.lastclaim))
-                user.lastclaim = 0
-            if (!('registered' in user))
-                user.registered = false
-                //-- user registered 
-            if (!user.registered) {
-                if (!('name' in user))
-                    user.name = m.name
-                if (!isNumber(user.age))
-                    user.age = -1
-                if (!isNumber(user.regTime))
-                    user.regTime = -1
-            }
-            //--user number
-            if (!isNumber(user.afk))
-                user.afk = -1
-            if (!('afkReason' in user))
-                user.afkReason = ''
-            if (!('banned' in user))
-                user.banned = false
-                if (!isNumber(user.antispam)) user.antispam = 0;
-                if (!isNumber(user.antispamlastclaim)) user.antispamlastclaim = 0;
-            if (!isNumber(user.warn))
-                user.warn = 0
-            if (!isNumber(user.level))
-                user.level = 0
-            if (!('role' in user))
-                user.role = 'NewBie'
-            if (!('autolevelup' in user))
-                user.autolevelup = false
-            if (!('chatbot' in user))
-                user.chatbot = false
+                    user.exp = 0
+                if (!isNumber(user.credit))
+                    user.credit = 10
+                if (!isNumber(user.bank))
+                    user.bank = 0
+                if (!isNumber(user.chicken))
+                    user.chicken = 0  
+                if (!isNumber(user.lastclaim))
+                    user.lastclaim = 0
+                if (!('registered' in user))
+                    user.registered = false
+                    //-- user registered 
+                if (!user.registered) {
+                    if (!('name' in user))
+                        user.name = m.name
+                    if (!isNumber(user.age))
+                        user.age = -1
+                    if (!isNumber(user.regTime))
+                        user.regTime = -1
+                }
+                //--user number
+                if (!isNumber(user.afk))
+                    user.afk = -1
+                if (!('afkReason' in user))
+                    user.afkReason = ''
+                if (!('banned' in user))
+                    user.banned = false
+                if (!isNumber(user.warn))
+                    user.warn = 0
+                if (!isNumber(user.level))
+                    user.level = 0
+                if (!('role' in user))
+                    user.role = 'Tadpole'
+                if (!('autolevelup' in user))
+                    user.autolevelup = false
+                if (!('chatbot' in user))
+                    user.chatbot = false
             } else {
-            global.db.data.users[m.sender] = {
-                exp: 0,
-                diamond: 10,
-                lastclaim: 0,
-                registered: false,
-                name: m.name,
-                age: -1,
-                regTime: -1,
-                afk: -1,
-                afkReason: '',
-                banned: false,
-                antispam: 0,
-                antispamlastclaim: 0,
-                warn: 0,
-                level: 0,
-                role: 'Novato',
-                autolevelup: false,
-                chatbot: false,
-              }; 
+                global.db.data.users[m.sender] = {
+                    exp: 0,
+                    credit: 0,
+                    bank: 0,
+                    chicken: 0,
+                    lastclaim: 0,
+                    registered: false,
+                    name: m.name,
+                    age: -1,
+                    regTime: -1,
+                    afk: -1,
+                    afkReason: '',
+                    banned: false,
+                    warn: 0,
+                    level: 0,
+                    role: 'Tadpole',
+                    autolevelup: false,
+                    chatbot: false,
+                }
                 }
             let chat = global.db.data.chats[m.chat]
             if (typeof chat !== "object")
@@ -385,16 +389,14 @@ export async function handler(chatUpdate) {
                     })
                 else
                     m.exp += xp
-                if (plugin.level > _user.level) {
-                    this.sendMessage(m.chat, {
-                        text: `[💬] *Level ${plugin.level}* is required to use this command. Your level is *${_user.level}🎋*`,
-
-                        mentions: [m.sender]
-                    }, {
-                        quoted: m
-                    })
-                    continue // If the level has not been reached
-                }
+                    if (!isPrems && plugin.credit && global.db.data.users[m.sender].credit < plugin.credit * 1) {
+                        this.reply(m.chat, `🟥 You don't have enough gold`, m)
+                        continue // Gold finished
+                    }
+                    if (plugin.level > _user.level) {
+                        this.reply(m.chat, `🟥 Level required ${plugin.level} to use this command. \nYour level ${_user.level}`, m)
+                        continue // If the level has not been reached
+                    }
                 let extra = {
                     match,
                     usedPrefix,
@@ -421,7 +423,7 @@ export async function handler(chatUpdate) {
                 try {
                     await plugin.call(this, m, extra)
                     if (!isPrems)
-                        m.limit = m.limit || plugin.limit || false
+                        m.credit = m.credit || plugin.credit || false
                 } catch (e) {
                     // Error occured
                     m.error = e
@@ -447,7 +449,8 @@ export async function handler(chatUpdate) {
                             console.error(e)
                         }
                     }
-                   
+                    if (m.credit)
+                    m.reply(`You used *${+m.credit}*`) 
                 }
                 break
             }
@@ -464,8 +467,9 @@ export async function handler(chatUpdate) {
         let user, stats = global.db.data.stats
         if (m) {
             if (m.sender && (user = global.db.data.users[m.sender])) {
-                user.exp += m.exp
-                user.limit -= m.limit * 1
+                user.credit -= m.credit * 1
+                user.bank -= m.bank
+                user.chicken -= m.chicken
             }
 
             let stat
