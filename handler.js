@@ -378,15 +378,9 @@ export async function handler(chatUpdate) {
                     continue
                 }
                 m.isCommand = true
-                let xp = "exp" in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
+               let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
                 if (xp > 200)
-                    this.sendMessage(m.chat, {
-                        text: `[❗] *It seems like you are cheating*`,
-
-                        mentions: [m.sender]
-                    }, {
-                        quoted: m
-                    })
+                    m.reply('cheater')
                 else
                     m.exp += xp
                     if (!isPrems && plugin.credit && global.db.data.users[m.sender].credit < plugin.credit * 1) {
