@@ -461,6 +461,7 @@ export async function handler(chatUpdate) {
         let user, stats = global.db.data.stats
         if (m) {
             if (m.sender && (user = global.db.data.users[m.sender])) {
+                user.exp += m.exp
                 user.credit -= m.credit * 1
                 user.bank -= m.bank
                 user.chicken -= m.chicken
