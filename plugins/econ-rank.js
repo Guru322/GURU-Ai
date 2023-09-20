@@ -13,7 +13,7 @@ let handler = async (m, { conn }) => {
   let username = conn.getName(who);
 
   let crxp = exp - min
-  let customBackground  = './src/rankbg.jpg'
+  let customBackground  = './Assets/rankbg.jpg'
   let requiredXpToLevelUp = xp
 
   const card = await new Canvacord.Rank()
