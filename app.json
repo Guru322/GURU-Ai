@@ -17,9 +17,9 @@
       "required": false,
       "value": ""
     },
-    "MONGO_DB": {
+    "DATABASE_URL": {
       "description": "your mongodb database url",
-      "required": false,
+      "required": true,
       "value": ""
     },
     "REMOVE_BG_API_KEY": {
