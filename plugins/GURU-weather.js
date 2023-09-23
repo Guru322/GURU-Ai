@@ -16,7 +16,7 @@ const wea = `「 📍 」PLACE: ${name}\n「 🗺️ 」COUNTRY: ${Country}\n「
 m.reply(wea)
 } catch {
 return "*ERROR*"}}
-handler.help = ['climate *<place>*']
-handler.tags = ['herramientas']
+handler.help = ['weather *<place>*']
+handler.tags = ['tools']
 handler.command = /^(climate|weather)$/i
 export default handler
