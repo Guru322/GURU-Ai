@@ -1,1 +1,34 @@
-const _0x3b2b75=_0x456c;function _0x456c(_0x27cb81,_0x5a2aba){const _0xe6994e=_0xe699();return _0x456c=function(_0x456c1d,_0x19b408){_0x456c1d=_0x456c1d-0x1d4;let _0x474f08=_0xe6994e[_0x456c1d];return _0x474f08;},_0x456c(_0x27cb81,_0x5a2aba);}(function(_0x135626,_0x555a16){const _0x35484b=_0x456c,_0xdafbcb=_0x135626();while(!![]){try{const _0x178d5b=-parseInt(_0x35484b(0x1df))/0x1*(-parseInt(_0x35484b(0x1da))/0x2)+parseInt(_0x35484b(0x1ea))/0x3+-parseInt(_0x35484b(0x1ec))/0x4+parseInt(_0x35484b(0x1d5))/0x5*(parseInt(_0x35484b(0x1e7))/0x6)+parseInt(_0x35484b(0x1d8))/0x7+-parseInt(_0x35484b(0x1eb))/0x8+-parseInt(_0x35484b(0x1e6))/0x9;if(_0x178d5b===_0x555a16)break;else _0xdafbcb['push'](_0xdafbcb['shift']());}catch(_0x65a056){_0xdafbcb['push'](_0xdafbcb['shift']());}}}(_0xe699,0xeed92));function _0xe699(){const _0x1b637c=['data','sendMessage','3524607yiAUSC','4083528TtElpx','349432sMXsVO','composing','slice','Please\x20provide\x20some\x20text\x20or\x20quote\x20a\x20message\x20to\x20get\x20a\x20response.','error','215345bQVwXE','*ERROR*','diamond','11946760VAYYRJ','sendPresenceUpdate','2803288hjECMG','bro','relayMessage','json','text','1yHgMPH','command','&model=','llama','chat','quoted','gpt','27464616AgPJjA','48YvgUeB'];_0xe699=function(){return _0x1b637c;};return _0xe699();}import _0x1e1007 from'node-fetch';async function typewriterEffect(_0x4acbec,_0x5267c7,_0xd2be85){const _0xc7e49b=_0x456c;let {key:_0x383f61}=await _0x4acbec[_0xc7e49b(0x1e9)](_0x5267c7,{'text':'Thinking...'});for(let _0x337737=0x0;_0x337737<_0xd2be85['length'];_0x337737++){const _0x500ca5=_0xd2be85[_0xc7e49b(0x1ee)](0x0,_0x337737+0x1);await _0x4acbec[_0xc7e49b(0x1dc)](_0x5267c7,{'protocolMessage':{'key':_0x383f61,'type':0xe,'editedMessage':{'conversation':_0x500ca5}}},{}),await new Promise(_0x5ad41f=>setTimeout(_0x5ad41f,0x64));}}let handler=async(_0x5e5917,{text:_0x1269ad,usedPrefix:_0x592ed7,command:_0x3013e7})=>{const _0x285926=_0x456c;if(!_0x1269ad&&!(_0x5e5917[_0x285926(0x1e4)]&&_0x5e5917[_0x285926(0x1e4)][_0x285926(0x1de)]))throw _0x285926(0x1ef);!_0x1269ad&&_0x5e5917[_0x285926(0x1e4)]&&_0x5e5917['quoted'][_0x285926(0x1de)]&&(_0x1269ad=_0x5e5917[_0x285926(0x1e4)]['text']);try{conn[_0x285926(0x1d9)](_0x285926(0x1ed),_0x5e5917[_0x285926(0x1e3)]);const _0x165094=encodeURIComponent(_0x1269ad),_0xde0489=_0x285926(0x1e2),_0x15e0da='https://gurugpt.cyclic.app/gpt4?prompt='+_0x165094+_0x285926(0x1e1)+_0xde0489,_0x554cd2=await _0x1e1007(_0x15e0da),_0x434265=await _0x554cd2[_0x285926(0x1dd)](),_0x2db3f0=_0x434265[_0x285926(0x1e8)];await typewriterEffect(conn,_0x5e5917[_0x285926(0x1e3)],_0x2db3f0);}catch(_0xcdeaa8){console[_0x285926(0x1d4)]('Error:',_0xcdeaa8);throw _0x285926(0x1d6);}};handler[_0x3b2b75(0x1e0)]=[_0x3b2b75(0x1db),'chatgpt','ai',_0x3b2b75(0x1e5)],handler[_0x3b2b75(0x1d7)]=![];export default handler;
+import fetch from 'node-fetch';
+
+let handler = async (m, { text, usedPrefix, command }) => {
+  
+  if (!text && !(m.quoted && m.quoted.text)) {
+    throw `Please provide some text or quote a message to get a response.`;
+  }
+
+  if (!text && m.quoted && m.quoted.text) {
+    text = m.quoted.text;
+  }
+
+  try {
+    conn.sendPresenceUpdate('composing', m.chat);
+    const prompt = encodeURIComponent(text);
+    const model = 'llama';
+    const endpoint = `https://gurugpt.cyclic.app/gpt4?prompt=${prompt}&model=${model}`;
+
+    const response = await fetch(endpoint);
+    const data = await response.json();
+    const result = data.data; 
+
+   m.reply(result);
+
+  } catch (error) {
+    console.error('Error:', error);
+    throw `*ERROR*`;
+  }
+};
+
+handler.command = ['bro', 'chatgpt', 'ai', 'gpt'];
+
+
+export default handler;
