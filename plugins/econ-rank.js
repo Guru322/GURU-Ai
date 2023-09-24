@@ -32,29 +32,7 @@ let handler = async (m, { conn }) => {
   .renderEmojis(true)
   .build();
 
-  const currentUserRole = global.rpg.role(level);
-
-  let pastRanksText = '';
-  let highestLevelReached = -1; // Initialize with a level that's lower than the lowest possible level
-
-  const levelSymbols = {
-    0: '',
-    5: '*➳*',
-    10: '*𐏓・*',
-  };
-
-  for (let i = 0; i <= level; i++) {
-    const pastRole = global.rpg.role(i);
-    if (pastRole.level > highestLevelReached) {
-      highestLevelReached = pastRole.level; // Update the highest level reached
-      const symbol = levelSymbols[i] || '';
-    pastRanksText = `*Level ${i} | ${pastRole.name}*\n` + pastRanksText 
-  }
-}
-
-  //const str = `🏮 *Username:* ${username}\n\n⭐ *Experience:* ${crxp} / ${requiredXpToLevelUp}\n\n🏅 *Rank:* ${role}\n\n🍀 *Level:* ${level}\n\n*Past Levels:*\n${pastRanksText}`
-
-  const str = `🏮 *Username:* ${username}\n\n⭐ *Experience:* ${crxp} / ${requiredXpToLevelUp}\n\n🏅 *Rank:* *${role}* \n${pastRanksText}`
+  const str = `🏮 *Username:* ${username}\n\n⭐ *Experience:* ${crxp} / ${requiredXpToLevelUp}\n\n🏅 *Rank:* *${role}*`
 
   try {
     conn.sendFile(m.chat, card, 'rank.jpg', str, m, false, { mentions: [who] });
