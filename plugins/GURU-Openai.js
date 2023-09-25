@@ -1,6 +1,7 @@
 import fetch from 'node-fetch';
+import displayLoadingScreen from '../lib/loading.js'
 
-let handler = async (m, { text, usedPrefix, command }) => {
+let handler = async (m, { text,conn,  usedPrefix, command }) => {
   
   if (!text && !(m.quoted && m.quoted.text)) {
     throw `Please provide some text or quote a message to get a response.`;
@@ -11,6 +12,8 @@ let handler = async (m, { text, usedPrefix, command }) => {
   }
 
   try {
+    await displayLoadingScreen(conn, m.chat)
+    let pingMsg = await conn.sendMessage(m.chat, {text: 'Thinking...'})
     conn.sendPresenceUpdate('composing', m.chat);
     const prompt = encodeURIComponent(text);
     const model = 'llama';
@@ -20,7 +23,15 @@ let handler = async (m, { text, usedPrefix, command }) => {
     const data = await response.json();
     const result = data.data; 
 
-   m.reply(result);
+    await conn.relayMessage(m.chat, {
+        protocolMessage: {
+          key: pingMsg.key,
+          type: 14,
+          editedMessage: {
+            conversation: result 
+          }
+        }
+      }, {})
 
   } catch (error) {
     console.error('Error:', error);
