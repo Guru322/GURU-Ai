@@ -23,7 +23,7 @@ let handler = async (m, { conn, isOwner, usedPrefix, command, args }) => {
 }
 
 handler.help = ["imagine"];
-handler.tags = ["ai"];
+handler.tags = ["AI"];
 handler.command = /^imagine$/i;
 
 export default handler;

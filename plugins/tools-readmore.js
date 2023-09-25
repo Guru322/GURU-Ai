@@ -6,7 +6,7 @@ let handler = async (m, { conn, text }) => {
 }
 handler.help = ['readmore <text1>|<text2>'] 
 handler.tags = ['tools']
-handler.command = ['leermas', 'readmore'] 
+handler.command = ['readmore'] 
 
 export default handler
 

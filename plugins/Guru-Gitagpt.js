@@ -25,7 +25,8 @@ let gitagptHandler = async (m, { text, usedPrefix, command }) => {
     throw `*ERROR*`;
   }
 };
-
+gitagptHandler.help = ['GITAGPT']
+gitagptHandler.tags = ['AI']
 gitagptHandler.command = ['gitagpt'];
 gitagptHandler.diamond = false;
 

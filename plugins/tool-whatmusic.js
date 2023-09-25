@@ -29,5 +29,8 @@ fs.unlinkSync(`./tmp/${m.sender}.${ext}`)
 m.reply(txt)
 } else throw '*𝚁𝙴𝚂𝙿𝙾𝙽𝙳 𝙰𝚄𝙳𝙸𝙾*'
 }
+
+handler.help = ['shazam']
+handler.tags = ['tools']
 handler.command = /^quemusica|shazam|whatmusic$/i
 export default handler

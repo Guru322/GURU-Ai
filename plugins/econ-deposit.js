@@ -10,7 +10,7 @@ let handler = async (m, { conn, command, args }) => {
     } else conn.reply(m.chat, `🟥 *You don't have sufficient amount of gold in your wallet to make this transaction*`, m)
   }
   handler.help = ['deposit']
-  handler.tags = ['econ']
+  handler.tags = ['economy']
   handler.command = ['deposit', 'dep', 'depall'] 
   
   handler.disabled = false

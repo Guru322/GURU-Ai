@@ -15,6 +15,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let txt = 'Registered\n\n' + array.filter(v => v.exists).map(v => `• Link: wa.me/${v.jid.split('@')[0]}\n*• Bio:* ${v.status || 'descripiion'}\n*• set on:* ${formatDate(v.setAt)}`).join('\n\n') + '\n\n*Not registered*\n\n' + array.filter(v => !v.exists).map(v => v.jid.split('@')[0]).join('\n')
     m.reply(txt)
     }
+    handler.help = ['nowa']
+handler.tags = ['tools']
     handler.command = /^nowa$/i
     export default handler
     function formatDate(n, locale = 'in') {

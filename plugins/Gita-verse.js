@@ -43,7 +43,7 @@ ${json.purport}`;
 };
 
 gitaVerseHandler.help = ['gita [verse_number]'];
-gitaVerseHandler.tags = ['gita', 'verse'];
+gitaVerseHandler.tags = ['religion'];
 gitaVerseHandler.command = ['gita', 'verse']
 
 export default gitaVerseHandler;

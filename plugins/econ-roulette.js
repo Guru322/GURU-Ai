@@ -4,9 +4,9 @@ let handler = async (m, { conn, args, text, usedPrefix , command }) => {
 
 
 
-    /*if (global.db.data.users[m.sender].level < 5) {
+    if (global.db.data.users[m.sender].level < 5) {
         return conn.reply(m.chat, 'You must be at least level 5 to use this command.', m);
-    }*/
+    }
    
     let amount = parseInt(args[0])
     let color = args[1]?.toLowerCase()
@@ -29,7 +29,7 @@ let handler = async (m, { conn, args, text, usedPrefix , command }) => {
     m.reply(result)
 }
 handler.help = ['roulette <amount> <color(red/black)>']
-handler.tags = ['econ']
+handler.tags = ['economy']
 handler.command = ['roulette', 'rt']
 
 handler.group = true

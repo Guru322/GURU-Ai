@@ -21,7 +21,7 @@ await conn.sendFile(m.chat, anime3, 'error.jpg', null, m)
 throw '*Error check if the persons face is visible*'
 }}}}
 handler.help = ["toanime"]
-handler.tags = ["tools"]
+handler.tags = ["AI"]
 handler.diamond = true
 handler.command = /^(imganime|toanime)$/i
 export default handler

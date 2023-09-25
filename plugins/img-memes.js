@@ -20,7 +20,7 @@ const handler = async (m, { conn, usedPrefix, command }) => {
 };
 
 handler.help = ['meme'];
-handler.tags = ['img'];
+handler.tags = ['fun'];
 handler.command = ['meme', 'memes'];
 handler.diamond = false;
 

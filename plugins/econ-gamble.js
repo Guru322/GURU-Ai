@@ -11,7 +11,7 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
     }*/
 
 const resolveRoulette = (chatId, conn) => {
-    let pp = './src/help.jpg'
+    
     let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let username = conn.getName(who)
     if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
@@ -94,7 +94,7 @@ const betRoulette = (user, chatId, amount, color) => {
 };
 
 handler.help = ['gamble <amount> <color(red/black)>'];
-handler.tags = ['econ'];
+handler.tags = ['economy'];
 handler.command = ['gamble'];
 
 handler.group = true;

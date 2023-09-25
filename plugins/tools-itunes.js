@@ -39,7 +39,7 @@ let itunesHandler = async (m, { conn, text }) => {
 };
 
 itunesHandler.help = ['itunes'];
-itunesHandler.tags = ['music'];
+itunesHandler.tags = ['tools'];
 itunesHandler.command = /^(itunes)$/i;
 
 export default itunesHandler;

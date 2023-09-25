@@ -28,14 +28,14 @@ import {
   ╰──────────⳹
  
   乂───『 *I N F O*』───乂
-  ⛥ *Bot Name:* %me
+  ⛥ *Bot Name:* ${botname}
   ⛥ *Mode:* %mode
   ⛥ *Platform:* %platform
   ⛥ *Type:* NodeJs
   ⛥ *Baileys:* Multi Device
   ⛥ *Prefix:* [ *%_p* ]
   ⛥ *Uptime:* %muptime
-  ⛥ *Database:* %rtotalreg out of %totalreg
+  ⛥ *Database:*  %totalreg
   ╰──────────⳹
   
   乂───『 *I N F O  C M D*』───乂 
@@ -108,7 +108,6 @@ import {
    
    let totalfeatures = Object.values(global.plugins).filter((v) => v.help && v.tags).length;
    let totalreg = Object.keys(glb).length
-   let rtotalreg = Object.values(glb).filter(user => user.registered == true).length
    let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
  return {
   help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
@@ -176,17 +175,16 @@ import {
  name,
  totalreg,
  totalfeatures,
- rtotalreg,
  role,
  readmore: readMore
    }
    text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, "g"), (_, name) => "" + replace[name])
-   const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => "./Guru.jpg")
-   var vid = 'https://telegra.ph/file/085c4b1068f0f4f8db970.mp4'
+   const pp = './Assets/Gurulogo.jpg'
+  
  
  let contact = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
  
-  conn.sendMessage(m.chat, { video: { url: vid  }, caption: text.trim(),  gifPlayback: true,
+  conn.sendMessage(m.chat, { video: { url: menuvid }, caption: text.trim(),  gifPlayback: true,
   gifAttribution: 0}, { quoted: contact })
 
   } catch (e) {

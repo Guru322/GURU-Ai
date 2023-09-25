@@ -32,7 +32,7 @@ default:
 }
 
 handler.help = ['waifu', 'neko', 'megumin', 'loli']
-handler.tags = ['nime']
+handler.tags = ['anime']
 handler.command = ['waifu', 'neko', 'megumin', 'loli'] 
 
 

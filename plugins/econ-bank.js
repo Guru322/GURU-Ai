@@ -32,7 +32,7 @@ let handler = async (m, {conn, usedPrefix}) => {
 `, m, { mentions: [who] })  //${user.chicken}
 }
 handler.help = ['bank']
-handler.tags = ['econ']
+handler.tags = ['economy']
 handler.command = ['bank', 'vault'] 
 
 export default handler

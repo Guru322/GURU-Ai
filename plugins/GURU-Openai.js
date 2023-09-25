@@ -28,6 +28,8 @@ let handler = async (m, { text, usedPrefix, command }) => {
   }
 };
 
+handler.help = ['chatgpt']
+handler.tags = ['AI']
 handler.command = ['bro', 'chatgpt', 'ai', 'gpt'];
 
 

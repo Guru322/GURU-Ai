@@ -47,7 +47,7 @@ ${usedPrefix + command} 1000`.trim()
 }
 
 handler.help = ['cock-fight <amount>']
-handler.tags = ['econ']
+handler.tags = ['economy']
 handler.command = ['cock-fight', 'cf']
 
 handler.group = true

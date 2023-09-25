@@ -16,7 +16,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   global.db.data.users[m.sender].lastwork = new Date * 1
 }
 handler.help = ['work']
-handler.tags = ['econ']
+handler.tags = ['economy']
 handler.command = ['work', 'w']
 
 handler.group = true

@@ -49,6 +49,8 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
     }
   };
 
+  handler.help = ['xvid']
+  handler.tags = ['nsfw']
 handler.command = ['xvid'];
 handler.group = true;
 handler.premium = false;

@@ -78,6 +78,6 @@ handler.tags = ['downloader'];
 handler.command = /^play$/i;
 
 handler.exp = 0;
-handler.diamond = false;
+
 
 export default handler;
