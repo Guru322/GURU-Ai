@@ -47,10 +47,10 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.botname = 'SIMI AI🇨🇳'
+global.botname = '𝐀𝐍 𝐀𝐔𝐒𝐓𝐑𝐈𝐀𝐍 𝐏𝐀𝐈𝐍𝐓𝐄𝐑🚩'
 global.premium = 'true'
 global.packname = '𝙂𝙚𝙣𝙚𝙧𝙖𝙩𝙚𝙙 𝙗𝙮 𝙗𝙤𝙩🦋                ╰┈➤₊₉₁₇₀₀₂₀₁₅₇₅₀' 
-global.author = '@Asliguru' 
+global.author = 'AS PROKENA' 
 global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru69\n' 
 global.dygp = 'https://chat.whatsapp.com/BibVE6tUICp3qOm2a1Ur8f'
 global.fgsc = 'https://github.com/Guru322/GURU-BOT-V1' 
