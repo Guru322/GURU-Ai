@@ -60,6 +60,7 @@
         "formdata-node": "^5.0.0",
         "human-readable": "^0.2.1",
         "instagram-url-direct": "^1.0.12",
+        "imagemaker.js": "*",
         "jimp": "^0.16.1",
         "jsdom": "^20.0.1",
         "knights-canvas": "^1.3.7-a",
@@ -100,7 +101,9 @@
         "@vitalets/google-translate-api": "^9.2.0",
         "yargs": "^17.6.0",
         "ytdl-core": "npm:@distube/ytdl-core",
-         "wa-sticker-formatter": "^4.3.2"
+        "wa-sticker-formatter": "^4.3.2",
+        "@xct007/frieren-scraper": "*",
+        "@xct007/tiktok-scraper": "*"
        
     }
 }
