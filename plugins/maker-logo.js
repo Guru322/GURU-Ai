@@ -9,7 +9,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 	switch (type) {
 	  case 'gfx1':
 		if (!text) throw tee;
-		let chut = `https://oni-chan.my.id/api/canvas/kaneki?name=${encodeURIComponent(text)}&apikey=Y`;
+		let chut = `https://api.caliph.biz.id/api/kaneki?nama=${encodeURIComponent(text)}&apikey=caliphkey`;
 		conn.sendFile(m.chat, chut, 'logo.png', `✅ Result`, m);
 		m.react(done);
 		break;
@@ -18,7 +18,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 		if (!text) throw too;
 		if (!text.includes('+')) throw too;
 		let [a, b] = text.split('+');
-		let loda = `https://oni-chan.my.id/api/canvas/nekosad?text1=${encodeURIComponent(a.trim())}&text2=${encodeURIComponent(b.trim())}&apikey=Y`;
+		let loda = `https://api.caliph.biz.id/api/girlneko?nama=${encodeURIComponent(a.trim())}&nama2=${encodeURIComponent(b.trim())}&apikey=caliphkey`;
 		conn.sendFile(m.chat, loda, 'logo.png', `✅ Result`, m);
 		
 		m.react(done);
@@ -26,29 +26,30 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 		
 	  case 'gfx3':
 		if (!text) throw tee;
-		let cp = `https://oni-chan.my.id/api/canvas/loliGgo?name=${encodeURIComponent(text.trim())}&apikey=Y`;
+		let cp = `https://api.caliph.biz.id/api/rem?nama=${encodeURIComponent(text.trim())}&apikey=caliphkey`;
 		conn.sendFile(m.chat, cp, 'logo.png', `✅ Result`, m);
 		m.react(done);
 		break;
 		
 	  case 'gfx4': 
 		if (!text) throw tee;
-		let gandu = `https://oni-chan.my.id/api/canvas/gura?name=${encodeURIComponent(text)}&apikey=Y`;
+		let gandu = `https://api.caliph.biz.id/api/textpro/matrix?text=${encodeURIComponent(text)}&apikey=caliphkey`;
 		conn.sendFile(m.chat, gandu, 'logo.png', `✅ Result`, m);
 		m.react(done);
 		break;
 		case 'gfx5':
-	if (!text) throw tee 
-	let chu = global.API('fgmods', '/api/photooxy/naruto', { text }, 'apikey')
-	conn.sendFile(m.chat, chu, 'logo.png', `✅ Result`, m)
-	m.react(done)
-	break
+    if (!text) throw tee
+    const apiUrll = `https://api.lolhuman.xyz/api/textprome/jokerlogo?apikey=${lolkeysapi}&text=${encodeURIComponent(text)}`;
+    conn.sendFile(m.chat, apiUrll, 'logo.png', '✅ Result', m);
+    m.react('✅');
+    break;
+
 	case 'gfx6': 
 	if (!text) throw too
 	if (!text.includes('+')) throw too  
 	let [c, d] = text.split`+`   
-	let lo = global.API('fgmods', '/api/photooxy/pubg', { text: c, text2: d}, 'apikey')
-	conn.sendFile(m.chat, lo, 'logo.png', `✅ Result`, m)
+	const apiUrl = `https://api.lolhuman.xyz/api/textprome2/lionlogo?apikey=${lolkeysapi}&text1=${encodeURIComponent(c)}&text2=${encodeURIComponent(d)}`
+	conn.sendFile(m.chat, apiUrl, 'logo.png', `✅ Result`, m)
 	m.react(done)
 	break 
 	case 'gfx7': 
