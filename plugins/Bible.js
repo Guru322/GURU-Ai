@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import translate from '@vitalets/google-translate-api';
+import { translate } from '@vitalets/google-translate-api';
 
 const BASE_URL = 'https://bible-api.com';
 
