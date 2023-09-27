@@ -7,16 +7,6 @@
   "repository": "https://github.com/Guru322/GURU-BOT",
   "stack": "container",
   "env": {
-    "OPENAI_API_KEY": {
-      "description": "openai apikey",
-      "required": false,
-      "value": ""
-    },
-    "OPENAI_ORGANIZATION": {
-      "description": "openai organisation id",
-      "required": false,
-      "value": ""
-    },
     "DATABASE_URL": {
       "description": "your mongodb database url",
       "required": true,
