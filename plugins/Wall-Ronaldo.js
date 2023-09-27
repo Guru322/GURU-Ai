@@ -5,6 +5,6 @@ let ronaldo = await cristiano[Math.floor(cristiano.length * Math.random())]
 conn.sendFile(m.chat, ronaldo, 'error.jpg', `*siuuuuuuuuuu*`, m)}
 //conn.sendButton(m.chat, "*Siiiuuuuuu*", author, ronaldo, [['⚽ NEXT ⚽', `${usedPrefix + command}`]], m)}
 handler.help = ['cristianoronaldo', 'cr7']
-handler.tags = ['internet']
+handler.tags = ['img']
 handler.command = /^(ronaldo|cr7)$/i
 export default handler

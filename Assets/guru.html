@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GURU-BOT Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff0000); /* RGB gradient background */
+            background-size: 400% 400%;
+            animation: backgroundGradient 10s linear infinite;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .status {
+            font-size: 36px;
+            font-weight: bold;
+            color: black; /* Text color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: moveRotate 4s linear infinite;
+            position: absolute;
+        }
+
+        @keyframes moveRotate {
+            0% {
+                top: 0;
+                left: 0;
+                transform: rotate(0deg);
+            }
+            25% {
+                top: 0;
+                left: calc(100% - 300px);
+                transform: rotate(90deg);
+            }
+            50% {
+                top: calc(100% - 100px);
+                left: calc(100% - 300px);
+                transform: rotate(180deg);
+            }
+            75% {
+                top: calc(100% - 100px);
+                left: 0;
+                transform: rotate(270deg);
+            }
+            100% {
+                top: 0;
+                left: 0;
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes backgroundGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="status">GURU BOT Online</div>
+</body>
+</html>

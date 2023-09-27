@@ -6,6 +6,7 @@ import { createRequire } from 'module'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const require = createRequire(__dirname)
+const baileys = require('@whiskeysockets/baileys')
 
 let handler = async (m, _2) => {
   let { conn, usedPrefix, noPrefix, args, groupMetadata } = _2
@@ -18,14 +19,14 @@ let handler = async (m, _2) => {
     let f = {
       exports: {}
     }
-    let exec = new (async () => { }).constructor('print', 'm', 'handler', 'require', 'conn', 'Array', 'process', 'args', 'groupMetadata', 'module', 'exports', 'argument', _text)
+    let exec = new (async () => { }).constructor('print', 'm', 'handler', 'require', 'conn', 'Array', 'process', 'args', 'groupMetadata', 'baileys', 'module', 'exports', 'argument', _text)
     _return = await exec.call(conn, (...args) => {
       if (--i < 1) return
       console.log(...args)
       return conn.reply(m.chat, format(...args), m)
-    }, m, handler, require, conn, CustomArray, process, args, groupMetadata, f, f.exports, [conn, _2])
+    }, m, handler, require, conn, CustomArray, process, args, groupMetadata, baileys, f, f.exports, [conn, _2])
   } catch (e) {
-    let err = syntaxerror(_text, 'Función de ejecución', {
+    let err = syntaxerror(_text, 'Execution Function', {
       allowReturnOutsideFunction: true,
       allowAwaitOutsideFunction: true,
         sourceType: 'module'
@@ -37,11 +38,8 @@ let handler = async (m, _2) => {
     m.exp = old
   }
 }
-handler.help = ['> ', '=> ']
-handler.tags = ['advanced']
 handler.customPrefix = /^=?> /
-handler.command = /(?:)/i
-
+handler.command = new RegExp
 handler.rowner = true
 
 export default handler

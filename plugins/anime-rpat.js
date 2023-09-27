@@ -25,7 +25,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 }
 
 handler.help = ['pat @tag']
-handler.tags = ['rnime']
+handler.tags = ['anime']
 handler.command = /^(acariciar|pat)$/i
 handler.diamond = true
 handler.group = true

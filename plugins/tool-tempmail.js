@@ -55,7 +55,8 @@ ${message.text}
     }
   }
 };
-
+handler.help = ['tempmail']
+handler.tags = ['tools']
 handler.command = ['tempmail', 'checkmail'];
 handler.diamond = false;
 

@@ -25,6 +25,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   }
 };
 
+handler.help = ['dalle']
+handler.tags = ['AI']
 handler.command = ['ai2', 'dalle', 'gen', 'gimg', 'openai2'];
 export default handler;
 

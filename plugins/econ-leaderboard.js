@@ -1,58 +1,77 @@
 
-import { areJidsSameUser } from '@adiwajshing/baileys'
+import { areJidsSameUser } from '@whiskeysockets/baileys'
+import { createHash } from 'crypto'
+import PhoneNumber from 'awesome-phonenumber'
+import { canLevelUp, xpRange } from '../lib/levelling.js'
 
-let handler = async (m, { conn, args, participants }) => {
+let handler = async (m, { conn, args, usedPrefix, participants }) => {
   let users = Object.entries(global.db.data.users).map(([key, value]) => {
     return {...value, jid: key}
   })
+  let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+  let user = global.db.data.users[who]
+  if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
+  let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './Assets/Gurulogo.js')
+  let about = (await conn.fetchStatus(who).catch(console.error) || {}).status || ''
+  let { name, exp, credit, lastclaim, registered, regTime, age, level, role, warn } = global.db.data.users[who]
+  let { min, xp, max } = xpRange(user.level, global.multiplier)
+  let username = conn.getName(who)
+  let math = max - xp
+  let prem = global.prems.includes(who.split`@`[0])
+  let sn = createHash('md5').update(who).digest('hex')
+
   let sortedExp = users.map(toNumber('exp')).sort(sort('exp'))
-  let sortedLim = users.map(toNumber('diamond')).sort(sort('diamond'))
+  let sortedLim = users.map(toNumber('credit')).sort(sort('credit'))
   let sortedLevel = users.map(toNumber('level')).sort(sort('level'))
+  let sortedBank = users.map(toNumber('bank')).sort(sort('bank'))
+  let sortedRank = users.map(toNumber('role')).sort(sort('role'))
+
   let usersExp = sortedExp.map(enumGetKey)
   let usersLim = sortedLim.map(enumGetKey)
   let usersLevel = sortedLevel.map(enumGetKey)
-  let len = args[0] && args[0].length > 0 ? Math.min(50, Math.max(parseInt(args[0]), 5)) : Math.min(5, sortedExp.length)
+  let usersBank = sortedBank.map(enumGetKey)
+  let usersRank = sortedRank.map(enumGetKey)
+
+  let tg = user.credit + user.bank
+  
+  let len = args[0] && args[0].length > 0 ? Math.min(50, Math.max(parseInt(args[0]), 5)) : Math.min(10, sortedExp.length)
   let text = `
-       ≡ *𝐋𝐄𝐀𝐃𝐄𝐑𝐁𝐎𝐀𝐑𝐃*
-    
-▢ *TOP ${len} XP* 🧬
-YOU : *${usersExp.indexOf(m.sender) + 1}* from *${usersExp.length}*
-
-${sortedExp.slice(0, len).map(({ jid, exp }, i) => `*${i + 1}.* ${participants.some(p => areJidsSameUser(jid, p.id)) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} ➭ _*XP ${exp}*_`).join`\n`}
-
-▢ *TOP ${len} DIAMONDS💎* 
-YOU : *${usersLim.indexOf(m.sender) + 1}* from *${usersLim.length}*
-
-${sortedLim.slice(0, len).map(({ jid, diamond }, i) => `*${i + 1}.* ${participants.some(p => areJidsSameUser(jid, p.id)) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} ➭ _*Diamonds ${diamond}*_`).join`\n`}
-
-▢ *TOP ${len} LEVEL* ⬆️
-YOU : *${usersLevel.indexOf(m.sender) + 1}* from *${usersLevel.length}*
-
-${sortedLevel.slice(0, len).map(({ jid, level }, i) => `*${i + 1}.* ${participants.some(p => areJidsSameUser(jid, p.id)) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} ➭ _*Level ${level}*_`).join`\n`}
-`.trim()
-  conn.reply(m.chat, text, m, {
-    mentions: [...usersExp.slice(0, len), ...usersLim.slice(0, len), ...usersLevel.slice(0, len)].filter(v => !participants.some(p => areJidsSameUser(v, p.id) )) 
+👑 GLOBAL  LEADERBOARD 👑
+  
+${sortedExp.slice(0, len).map(({ jid, exp, credit, level, bank, role }, i) => `*#${i + 1}.*
+*👑 Username:* ${participants.some(p => areJidsSameUser(jid, p.id)) ? `${conn.getName(jid)}` : ''}
+*🌟 Experience:* ${exp}
+*🏆 Rank:* ${role}
+*✨ Level:* ${level}
+*💰 Gold:* ${tg}
+*👛 Wallet:* ₹${credit}
+*🏦 Bank:* ₹${bank}
+`).join`\n\n\n`}
+*You are at ${usersExp.indexOf(m.sender) + 1} out of total ${usersExp.length} members*
+ `.trim()
+ conn.reply(m.chat, text, m, {
+   mentions: [...usersExp.slice(0, len), ...usersLim.slice(0, len), ...usersLevel.slice(0, len), ...usersBank.slice(0, len), ...usersRank.slice(0, len)].filter(v => !participants.some(p => areJidsSameUser(v, p.id) )) 
 })
- 
+
 }
 handler.help = ['leaderboard']
-handler.tags = ['econ']
-handler.command = ['leaderboard', 'lb', 'top'] 
+handler.tags = ['economy']
+handler.command = ['leaderbaord', 'lb'] 
 
 export default handler
 
 function sort(property, ascending = true) {
-  if (property) return (...args) => args[ascending & 1][property] - args[!ascending & 1][property]
-  else return (...args) => args[ascending & 1] - args[!ascending & 1]
+ if (property) return (...args) => args[ascending & 1][property] - args[!ascending & 1][property]
+ else return (...args) => args[ascending & 1] - args[!ascending & 1]
 }
 
 function toNumber(property, _default = 0) {
-  if (property) return (a, i, b) => {
-    return {...b[i], [property]: a[property] === undefined ? _default : a[property]}
-  }
-  else return a => a === undefined ? _default : a
+ if (property) return (a, i, b) => {
+   return {...b[i], [property]: a[property] === undefined ? _default : a[property]}
+ }
+ else return a => a === undefined ? _default : a
 }
 
 function enumGetKey(a) {
-  return a.jid
+ return a.jid
 }

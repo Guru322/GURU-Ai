@@ -10,7 +10,7 @@ let handler = async (m, { conn }) => {
   await conn.sendFile(m.chat, ciwi, '', '♀️', m)
 }
 handler.help = ['ppcouple', 'ppcp']
-handler.tags = ['internet']
+handler.tags = ['img']
 handler.command = ['couplepp','ppcouple'] 
 
 

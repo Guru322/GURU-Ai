@@ -1,31 +1,32 @@
 import { tiktokdl } from '@bochilteam/scraper';
+import fg from 'api-dylux';
 
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
-  if (!args[0]) throw `✳️ Enter a TikTok link\n\n📌 Example: ${usedPrefix + command} https://vm.tiktok.com/ZMYG92bUh/`;
-  if (!args[0].match(/tiktok/gi)) throw `❎ Verify that the link is from TikTok`;
+  if (!args[0]) throw `Enter the link of the video Tiktok`;
+  if (!args[0].match(/tiktok/gi)) throw `Verify that the link is from TikTok`;
+
+ 
+  let txt = 'Here your Requested video';
 
   try {
     const { author: { nickname }, video, description } = await tiktokdl(args[0]);
-    const url = video.no_watermark || video.no_watermark2 || video.no_watermark_raw;
-    if (!url) throw '❎ Error downloading the video';
-
-   
-
-    conn.sendFile(m.chat, url, 'tiktok.mp4', `
-┌─⊷ TIKTOK
-▢ *Nickname:* ${nickname} ${description ? `\n▢ *Description:* ${description}` : ''}
-└───────────`, m);
-  } catch (error) {
-    // Log the error
-    console.error('Error downloading TikTok video:', args[0], error);
-
-    m.reply(`❎ Error downloading the video`);
+    const url = video.no_watermark2 || video.no_watermark || 'https://tikcdn.net' + video.no_watermark_raw || video.no_watermark_hd;
+    
+    if (!url) throw global.error;
+    
+    conn.sendFile(m.chat, url, 'tiktok.mp4', '', m);
+  } catch (err) {
+    try {
+      let p = await fg.tiktok(args[0]);
+      conn.sendFile(m.chat, p.play, 'tiktok.mp4', txt, m);
+    } catch {
+      m.reply('*An unexpected error occurred*');
+    }
   }
 };
 
-handler.help = ['tiktok'];
-handler.tags = ['dl'];
-handler.command = /^(tiktok|ttdl|tiktokdl|tiktoknowm)$/i;
-
+handler.help = ['tiktok'].map((v) => v + ' <url>');
+handler.tags = ['downloader'];
+handler.command = /^t(t|iktok(d(own(load(er)?)?|l))?|td(own(load(er)?)?|l))$/i;
 
 export default handler;

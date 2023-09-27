@@ -44,5 +44,7 @@ const handler = async (m, { conn, text }) => {
   }
 };
 
+handler.help = ['removebg']
+handler.tags = ['tools']
 handler.command = /^rmbg|removebg$/i;
 export default handler;

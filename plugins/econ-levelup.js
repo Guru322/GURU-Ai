@@ -47,7 +47,7 @@ Your newfound power will strike fear into the hearts of trolls, and the bots wil
 }
 
 handler.help = ['levelup'];
-handler.tags = ['econ'];
-handler.command = ['nivel', 'lvl', 'levelup', 'level'];
+handler.tags = ['economy'];
+handler.command = ['lvl', 'levelup', 'level'];
 
 export default handler

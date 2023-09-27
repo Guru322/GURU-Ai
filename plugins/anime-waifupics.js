@@ -1,43 +1,50 @@
-import fetch from 'node-fetch'
-import axios from 'axios'
+import fetch from 'node-fetch';
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-m.react(rwait)
+  m.react(rwait);
 
-let type = (command).toLowerCase()
+  let type = (command).toLowerCase();
+  let baseUrl = 'https://weeb-api.vercel.app/';
 
-switch (type) {
-	
-	case 'loli':
-	     let img = await conn.getFile(global.API('fgmods', '/api/loli', {}, 'apikey'))
-	     let loli = img.data 
-	      conn.sendFile(m.chat, loli.data, 'img.jpg', `✅ Random ${command}`, m)
-	     m.react(dmoji) 
-	break
-	
-case 'waifu':
-case 'megumin':
-case 'neko':
-  let res = await fetch(`https://api.waifu.pics/sfw/${command}`)
-    if (!res.ok) throw await res.text()
-    let json = await res.json(`https://raw.githubusercontent.com/Guru322/api/Guru/BOT-JSON/waifu.json`)
-    if (!json.url) throw '❎ Error'
-    conn.sendFile(m.chat, json.url, 'img.jpg', `✅ Random ${command}`, m)
-   m.react(dmoji) 
-break
+  const fetchImage = async (endpoint) => {
+    try {
+      const response = await fetch(baseUrl + endpoint);
+      if (!response.ok) throw `❎ Error fetching ${type} image`;
+      const imageBuffer = await response.buffer(); // Get the image data as a buffer
+      conn.sendFile(m.chat, imageBuffer, 'img.jpg', `✅ Random ${type}`, m);
+      m.react(dmoji);
+    } catch (error) {
+      console.error(error);
+      m.reply(`❎ An error occurred while fetching the ${type} image.`);
+    }
+  };
 
+  switch (type) {
+    case 'loli':
+      fetchImage('loli');
+      break;
 
-default:
- }
-}
+    case 'waifu':
+      fetchImage('waifu');
+      break;
 
-handler.help = ['waifu', 'neko', 'megumin', 'loli']
-handler.tags = ['nime']
-handler.command = ['waifu', 'neko', 'megumin', 'loli'] 
+    case 'neko':
+      fetchImage('neko');
+      break;
+
+    case 'zerotwo':
+      fetchImage('zerotwo');
+      break;
+
+    default:
+      
+      break;
+  }
+};
+
+handler.help = ['waifu', 'neko', 'zerotwo', 'loli']
+handler.tags = ['anime']
+handler.command = ['waifu', 'neko', 'zerotwo', 'loli'] 
 
 
 export default handler
-
-function pickRandom(list) {
-  return list[Math.floor(list.length * Math.random())]
-}

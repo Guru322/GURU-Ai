@@ -41,7 +41,7 @@ let subredditHandler = async (m, { conn, text }) => {
 };
 
 subredditHandler.help = ['subreddit'];
-subredditHandler.tags = ['information'];
+subredditHandler.tags = ['tools'];
 subredditHandler.command = /^(subreddit|reddit)$/i;
 
 export default subredditHandler;

@@ -20,7 +20,7 @@ let handler= async (m, { conn, args, text, usedPrefix, command }) => {
      
 }
 handler.help = ['igstalk']
-handler.tags = ['dl']
+handler.tags = ['downloader']
 handler.command = ['igstalk'] 
 
 export default handler
