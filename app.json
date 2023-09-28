@@ -9,12 +9,17 @@
   "env": {
     "DATABASE_URL": {
       "description": "your mongodb database url",
-      "required": true,
+      "required": false,
       "value": ""
     },
     "SESSION_ID": {
       "description": "your session id",
       "required": true,
+      "value": ""
+    },
+     "REMOVEBG_KEY": {
+      "description": "your RemoveBg api key",
+      "required": false,
       "value": ""
     }
     },
