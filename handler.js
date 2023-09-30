@@ -151,11 +151,11 @@ export async function handler(chatUpdate) {
                 if (!isNumber(chat.expired)) chat.expired = 0
             } else
                 global.db.data.chats[m.chat] = {
-                    antiDelete: true,
+                    antiDelete: false,
                     antiLink: false,
                     antiSticker: false,
                     antiToxic: false,
-                    detect: true,
+                    detect: false,
                     expired: 0,
                     getmsg: true,
                     isBanned: false,
@@ -168,7 +168,7 @@ export async function handler(chatUpdate) {
                     sWelcome: "",
                     useDocument: false,
                     viewOnce: false,
-                    welcome: true,
+                    welcome: false,
                 }
           
                 
@@ -546,7 +546,7 @@ export async function participantsUpdate({
                 } finally {
                   let text = (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user')
                     .replace('@group', await this.getName(id))
-                    .replace('@desc', groupMetadata.desc?.toString() || 'Desconocido')
+                    .replace('@desc', groupMetadata.desc?.toString() || 'error')
                     .replace('@user', '@' + user.split('@')[0]);
           
                   let nthMember = groupMetadata.participants.length;
@@ -559,14 +559,25 @@ export async function participantsUpdate({
                   )}&memberCount=${encodeURIComponent(
                     nthMember.toString()
                   )}&avatar=${encodeURIComponent(pp)}&background=${encodeURIComponent(
-                    'https://i.imgur.com/8B4jwGq.jpeg'
+                    'https://cdn.wallpapersafari.com/71/19/7ZfcpT.png'
                   )}`;
           
                   try {
                     let welcomeResponse = await fetch(welcomeApiUrl);
                     let welcomeBuffer = await welcomeResponse.buffer();
           
-                    this.sendFile(id, welcomeBuffer, 'welcome.png', text, null, false, { mentions: [user] });
+                    this.sendMessage(id, {
+                        text: text,
+                        contextInfo: {
+                        mentionedJid: [user],
+                        externalAdReply: {
+                        title: "ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ",
+                        body: "welcome to Group",
+                        thumbnailUrl: welcomeApiUrl,
+                        sourceUrl: 'https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp',
+                        mediaType: 1,
+                        renderLargerThumbnail: true
+                        }}})
                   } catch (error) {
                     console.error(`Error generating welcome image: ${error}`);
                   }
@@ -601,14 +612,25 @@ export async function participantsUpdate({
                   )}&memberCount=${encodeURIComponent(
                     nthMember.toString()
                   )}&avatar=${encodeURIComponent(pp)}&background=${encodeURIComponent(
-                    'https://i.imgur.com/8B4jwGq.jpeg'
+                    'https://cdn.wallpapersafari.com/71/19/7ZfcpT.png'
                   )}`;
           
                   try {
                     let leaveResponse = await fetch(leaveApiUrl);
                     let leaveBuffer = await leaveResponse.buffer();
           
-                    this.sendFile(id, leaveBuffer, 'leave.png', text, null, false, { mentions: [user] });
+                    this.sendMessage(id, {
+                        text: text,
+                        contextInfo: {
+                        mentionedJid: [user],
+                        externalAdReply: {
+                        title: "ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ",
+                        body: "Goodbye from  Group",
+                        thumbnailUrl: leaveApiUrl,
+                        sourceUrl: 'https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp',
+                        mediaType: 1,
+                        renderLargerThumbnail: true
+                        }}})
                   } catch (error) {
                     console.error(`Error generating leave image: ${error}`);
                   }
@@ -617,7 +639,7 @@ export async function participantsUpdate({
             }
             break;
             case "promote":
-                const promoteText = (chat.sPromote || this.spromote || conn.spromote || `${emoji.promote} @user *telah diangkat menjadi Admin*`).replace("@user", "@" + participants[0].split("@")[0]);
+                const promoteText = (chat.sPromote || this.spromote || conn.spromote || `${emoji.promote} @user *is now admin*`).replace("@user", "@" + participants[0].split("@")[0]);
                 if (chat.detect) {
                     this.sendMessage(id, {
                         text: promoteText.trim(),
@@ -626,7 +648,7 @@ export async function participantsUpdate({
                 }
                 break;
             case "demote":
-                const demoteText = (chat.sDemote || this.sdemote || conn.sdemote || `${emoji.demote} @user *tidak lagi menjadi Admin*`).replace("@user", "@" + participants[0].split("@")[0]);
+                const demoteText = (chat.sDemote || this.sdemote || conn.sdemote || `${emoji.demote} @user *demoted from admin*`).replace("@user", "@" + participants[0].split("@")[0]);
                 if (chat.detect) {
                     this.sendMessage(id, {
                         text: demoteText.trim(),

@@ -4,10 +4,7 @@ let handler = async (m, { conn, args, text, usedPrefix , command }) => {
 
 
 
-    if (global.db.data.users[m.sender].level < 5) {
-        return conn.reply(m.chat, 'You must be at least level 5 to use this command.', m);
-    }
-   
+
     let amount = parseInt(args[0])
     let color = args[1]?.toLowerCase()
     if (args.length < 2 )  throw `✳️ Command Usage: ${usedPrefix + command} <amount> <color>\n\n Example: ${usedPrefix + command} 500 red`
