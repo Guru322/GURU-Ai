@@ -1,6 +1,17 @@
 import fetch from 'node-fetch'
-import { sticker } from '../lib/sticker.js'
-//import db from '../lib/database.js'
+
+import GIFBufferToVideoBuffer from '../lib/Gifbuffer.js';
+
+const getBuffer = async (url) => {
+  try {
+    const response = await fetch(url);
+    const buffer = await response.arrayBuffer();
+    return Buffer.from(buffer);
+  } catch (error) {
+    console.error("Failed to get buffer", error);
+    throw new Error("Failed to get buffer");
+  }
+}
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 	
@@ -18,8 +29,19 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!rki.ok) throw await rki.text()
    let jkis = await rki.json()
    let { url } = jkis
-   let stiker = await sticker(null, url, `(${name2}) kissed`, `${name}`)
-   conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+
+
+
+   const gifBuffer = await getBuffer(url)
+   const gifToVideoBuffer = await GIFBufferToVideoBuffer(gifBuffer);
+
+  
+   conn.sendMessage(
+     m.chat,
+     { video: gifToVideoBuffer, caption: `(${name2}) kissed ${name}`, gifPlayback: true, gifAttribution: 0 },
+     { quoted: m }
+   );
+
    m.react('😚') 
    
 }
@@ -27,7 +49,5 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['kiss @tag']
 handler.tags = ['anime']
 handler.command = /^(kiss|beso)$/i
-handler.diamond = true
-handler.group = true
 
 export default handler
