@@ -1,6 +1,16 @@
 import fetch from 'node-fetch'
-import { sticker } from '../lib/sticker.js'
-//import db from '../lib/database.js'
+import GIFBufferToVideoBuffer from '../lib/Gifbuffer.js';
+
+const getBuffer = async (url) => {
+  try {
+    const response = await fetch(url);
+    const buffer = await response.arrayBuffer();
+    return Buffer.from(buffer);
+  } catch (error) {
+    console.error("Failed to get buffer", error);
+    throw new Error("Failed to get buffer");
+  }
+}
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 	
@@ -18,8 +28,16 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!rpat.ok) throw await rpat.text()
    let json = await rpat.json()
    let { url } = json
-   let stiker = await sticker(null, url, `(${name2}) caress to`, `${name}`)
-   conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
+   const gifBuffer = await getBuffer(url)
+   const gifToVideoBuffer = await GIFBufferToVideoBuffer(gifBuffer);
+
+  
+   conn.sendMessage(
+     m.chat,
+     { video: gifToVideoBuffer, caption: `(${name2}) pat ${name}`, gifPlayback: true, gifAttribution: 0 },
+     { quoted: m }
+   );
+
    m.react('☺️') 
    
 }
