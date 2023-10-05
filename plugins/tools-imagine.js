@@ -1,4 +1,4 @@
-import fetch from "node-fetch"
+import fetch from "node-fetch";
 
 let handler = async (m, { conn, isOwner, usedPrefix, command, args }) => {
     let query = "Oops! I need an input text. Try something like this:\n.midjourney man kissing";
@@ -14,9 +14,14 @@ let handler = async (m, { conn, isOwner, usedPrefix, command, args }) => {
     
     try {
         m.reply("Brewing up some AI magic... 🧙‍♂️");
-        await Draw(text).then((img) => {
-            conn.sendFile(m.chat, img, text, `*[Ta-da! Here's your result:]*\n"${text}"`, m);
-        });
+        const imgURLs = await Draw(text);
+        if (imgURLs.length > 0) {
+            const randomIndex = Math.floor(Math.random() * imgURLs.length);
+            const randomImgURL = imgURLs[randomIndex];
+            conn.sendFile(m.chat, randomImgURL, text, `*[Ta-da! Here's your result:]*\n"${text}"`, m);
+        } else {
+            throw 'No images found in the API response.';
+        }
     } catch (e) {
         throw 'Oh snap! Something went wrong while generating the image. 🥺';
     }
@@ -29,19 +34,16 @@ handler.command = /^imagine$/i;
 export default handler;
 
 async function Draw(prompt) {
-    const Blobs = await fetch(
-        "https://api-inference.huggingface.co/models/prompthero/openjourney-v2",
-        {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-                Authorization: "Bearer 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",
-            },
-            body: JSON.stringify({ inputs: prompt }),
+    try {
+        const response = await fetch(`https://v2-guru-indratensei.cloud.okteto.net/scrape?query=${encodeURIComponent(prompt)}`);
+        const responseData = await response.json();
+        
+        if (responseData.image_links && responseData.image_links.length > 0) {
+            return responseData.image_links;
+        } else {
+            throw 'No image links found in the API response.';
         }
-    ).then((res) => res.blob());
-    
-    const arrayBuffer = await Blobs.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-    return buffer;
+    } catch (error) {
+        throw 'Failed to fetch image links from the API.';
+    }
 }
