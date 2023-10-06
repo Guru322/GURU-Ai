@@ -66,7 +66,6 @@ handler.help = [
   'glomp @tag',
   'slap @tag',
   'kill @tag',
-  'kick @tag',
   'happy @tag',
   'wink @tag',
   'poke @tag',
@@ -74,7 +73,7 @@ handler.help = [
   'cringe @tag'
 ];
 
-handler.command = /^(bully|cuddle|cry|hug|awoo|kiss|lick|pat|smug|bonk|yeet|blush|smile|wave|highfive|handhold|nom|bite|glomp|slap|kill|kick|happy|wink|poke|dance|cringe)$/i;
+handler.command = /^(bully|cuddle|cry|hug|awoo|kiss|lick|pat|smug|bonk|yeet|blush|smile|wave|highfive|handhold|nom|bite|glomp|slap|kill|happy|wink|poke|dance|cringe)$/i;
 handler.group = true;
 
 export default handler;
