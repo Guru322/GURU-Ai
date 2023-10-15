@@ -31,6 +31,6 @@ handler.help = ['deleteplugin <name>'];
 handler.tags = ['owner'];
 handler.command = /^(deleteplugin|dp|remove)$/i;
 
-handler.mods = true;
+handler.owner = true;
 
 export default handler;
