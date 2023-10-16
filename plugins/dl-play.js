@@ -1,5 +1,5 @@
-import ytdl from 'ytdl-core';
-import yts from 'yt-search';
+import ytdl from 'youtubedl-core';
+import yts from 'youtube-yts';
 import fs from 'fs';
 import { pipeline } from 'stream';
 import { promisify } from 'util';
