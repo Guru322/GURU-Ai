@@ -147,6 +147,7 @@ export async function handler(chatUpdate) {
                 if (!("sWelcome" in chat)) chat.sWelcome = ""
                 if (!("useDocument" in chat)) chat.useDocument = false
                 if (!("viewOnce" in chat)) chat.viewOnce = false
+                if (!("viewStory" in chat)) chat.viewStory = false
                 if (!("welcome" in chat)) chat.welcome = false
                 if (!isNumber(chat.expired)) chat.expired = 0
             } else
@@ -168,6 +169,7 @@ export async function handler(chatUpdate) {
                     sWelcome: "",
                     useDocument: false,
                     viewOnce: false,
+                    viewStory: false,
                     welcome: false,
                 }
           
