@@ -47,6 +47,20 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://gurubhai.is-a.dev"> <img src="https://img.shields.io/badge/Heroku%20Deploy-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
+#### DEPLOY TO RAILWAY
+
+1. If You don't have an account On Railway. Create a account.
+    <br>
+<p align="center"><a href="https://railway.app"> <img src="https://img.shields.io/badge/RailWay%20Account-blue?style=for-the-badge&logo=Railway" width="220" height="38.45"/></a></p>
+
+ - Fork this repo.
+- Now head towards https://railway.app/new, select Deploy from repo.
+- Now select the forked repository, select branch.
+- Now go to <b>Variables</b> and add variable listed below.
+   - DATABASE_URL, SESSION_ID, REMOVEBG_KEY
+- Go to <b>Deployments</b> and for deplyment to complete.
+- and you're good to go.
+
 #### DEPLOY TO OKTETO 
 
 1. If You don't have an account On Okteto. Create a account.
