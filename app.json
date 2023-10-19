@@ -4,7 +4,7 @@
   "keywords": [
     "whatsapp bot"
   ],
-  "repository": "https://github.com/Guru322/GURU-BOT",
+  "repository": "https://github.com/kashifcodebreaker/GURU-BOT/tree/patch-1",
   "stack": "container",
   "env": {
     "DATABASE_URL": {
