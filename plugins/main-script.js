@@ -1,54 +1,26 @@
-import { promises } from 'fs';
-import { join } from 'path';
-import axios from 'axios'; 
+import axios from 'axios';
 
-let handler = async function (m, { conn, __dirname }) {
-  const githubRepoURL = 'https://github.com/Guru322/GURU-BOT';
-
+let handler = async function (m, { conn }) {
   try {
-  
-    const [, username, repoName] = githubRepoURL.match(/github\.com\/([^/]+)\/([^/]+)/);
+    const funFacts = `
+🤖 *Silver Fox Robot Fun Facts* 🦊
 
-    const response = await axios.get(`https://api.github.com/repos/${username}/${repoName}`);
+🎉 *Exciting Mission:* Making your WhatsApp experience awesome!
 
-    if (response.status === 200) {
-      const repoData = response.data;
+🤖 *Special Feature:* I can do anything possible on WhatsApp. From fun to functional!
 
-      // Format the repository information with emojis
-      const formattedInfo = `
-📂 Repository Name: ${repoData.name}
-📝 Description: ${repoData.description}
-👤 Owner: ${repoData.owner.login}
-⭐ Stars: ${repoData.stargazers_count}
-🍴 Forks: ${repoData.forks_count}
-🌐 URL: ${repoData.html_url}
-      `.trim();
+🤣 *Note:* Don't call me, don't spam, and keep it fun! 😄
+    `.trim();
 
-      // Send the formatted information as a message
-      await conn.relayMessage(m.chat,  {
-        requestPaymentMessage: {
-          currencyCodeIso4217: 'INR',
-          amount1000: 69000,
-          requestFrom: m.sender,
-          noteMessage: {
-          extendedTextMessage: {
-          text: formattedInfo,
-          contextInfo: {
-          externalAdReply: {
-          showAdAttribution: true
-          }}}}}}, {})
-    } else {
-      // Handle the case where the API request fails
-      await conn.reply(m.chat, 'Unable to fetch repository information.', m);
-    }
+    await conn.reply(m.chat, funFacts, m);
   } catch (error) {
     console.error(error);
-    await conn.reply(m.chat, 'An error occurred while fetching repository information.', m);
+    await conn.reply(m.chat, 'An error occurred while fetching fun facts. My circuits are feeling a bit rusty!', m);
   }
 };
 
 handler.help = ['script'];
 handler.tags = ['main'];
-handler.command = ['sc', 'repo', 'script'];
+handler.command = ['sc', 'script'];
 
 export default handler;
