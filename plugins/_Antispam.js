@@ -3,7 +3,7 @@ import { performance } from 'perf_hooks';
 
 // This function is used to prevent users from sending too many messages in a chat application or bot.
 
-export async function before(m) {
+export async function before(m, { conn }) {
     // Get information about users and chats from global data.
     const users = global.db.data.users;
     const chats = global.db.data.chats;
@@ -37,21 +37,17 @@ export async function before(m) {
         // Increment the sender's spam count.
         this.spam[m.sender].count++;
 
-        // If the sender's spam count reaches 5 or more, mark the sender as banned and set a 5-second cooldown.
+        // If the sender's spam count reaches 5 or more, remove the sender from the group.
         if (this.spam[m.sender].count >= 5) {
-            users[m.sender].banned = true;
-            this.spam[m.sender].lastspam = now + 5000;
+            await conn.groupRemove(m.chat, [m.sender]);
 
-            // Schedule a timeout to unban the user and reset their spam count after 5 seconds.
-            setTimeout(() => {
-                users[m.sender].banned = false;
-                this.spam[m.sender].count = 0;
-                m.reply(`✅ *Cooldown finished*\nYou can send messages again.`);
-            }, 5000);
+            // Notify about the removal.
+            await conn.reply(m.chat, `❌ *@${m.sender.split('@')[0]}* has been removed from the group for spamming`, m);
 
-            // Notify the sender about the spamming and the remaining cooldown time.
-            const message = m.mtype.replace(/message$/i, '').replace('audio', m.msg.ptt ? 'PTT' : 'audio').replace(/^./, v => v.toUpperCase()) || 'Unknown';
-            return m.reply(`❌ *Please do not spam ${message}*\nWait for ${Math.ceil((this.spam[m.sender].lastspam - now) / 1000)} seconds`);
+            // Remove the sender's spam count.
+            this.spam[m.sender].count = 0;
+
+            return; // No need to proceed with further processing after removing the participant.
         }
     } else {
         // If the time difference is greater than or equal to 10 seconds, reset the sender's spam count.
