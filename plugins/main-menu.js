@@ -28,7 +28,7 @@ import {
   ╰──────────⳹
  
   乂───『 *I N F O*』───乂
-  ⛥ *Bot Name:* ${botname}
+  ⛥ *Robot Name:* ${botname}
   ⛥ *Mode:* %mode
   ⛥ *Platform:* %platform
   ⛥ *Type:* NodeJs
