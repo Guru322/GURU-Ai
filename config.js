@@ -14,7 +14,7 @@ global.owner = [
 //global.pairingNumber = "" //put your bot number here
 
 global.mods = ['923036631033'] 
-global.prems = ['923036631033]
+global.prems = ['923036631033']
 global.allowed = ['923036631033']
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
