@@ -1,33 +1,33 @@
 let handler = async m => m.reply(`
-
-≡  *GURU  ┃ ᴮᴼᵀ*   GROUPS
-
-─────────────
-▢ Join public bot group and support
-https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp
-
-▢ Group 2
-https://chat.whatsapp.com/LwLQab5mZVW6WWRbBPnDGC
-
-▢ Group 3
-https://chat.whatsapp.com/Jn9qVerYN6Q1L0vlVFe2XL
+≡  *GIGGLING ROBOT ┃ Silver Fox*   HIDEOUTS
 
 ─────────────
-≡ Disabled links? enter here! 
+▢ Explore the chuckles at the robot's secret hideout!
+▢ (Oops! I wasn't supposed to tell you that... 🤭)
 
-▢ Group WhatsApp 
- https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp
+▢ Mystery Spot #1
+▢ (Shh... it's not a secret, but don't tell anyone! 😄)
+
+▢ Mystery Spot #2
+▢ (Psst... these spots have more jokes than a clown convention! 🤡)
+
 ─────────────
-▢ *Owner Telegram*
- https://t.me/i_want_to_be_isekaied
+≡ Can't click links? Here's a map to the laughter!
 
-▢ *YouTube*
-• https://www.youtube.com/@Asliguru
+▢ Laughter Lane
+▢ (Follow the trail of giggles! 🗺️)
 
+─────────────
+▢ *Owner's Lair*
+▢ (He's like the wizard behind the curtain... but with memes! 🧙)
+
+▢ *YouTube Theater*
+▢ (Subscribe for videos that make your pet rock laugh! 🪨🤣)
 
 `.trim())
+
 handler.help = ['gpguru']
 handler.tags = ['main']
-handler.command = ['groups', 'groupguru', 'gugp', 'ggp', 'gpguru'] 
+handler.command = ['hideouts', 'robotguru', 'rgp', 'rg', 'gpguru'] 
 
-export default handler
+export default handler;
