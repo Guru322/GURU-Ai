@@ -7,8 +7,8 @@ const { levelling } = '../lib/levelling.js'
 import moment from 'moment-timezone'
 import { promises } from 'fs'
 import { join } from 'path'
-const time = moment.tz('Asia/Kolkata').format('HH')
-let wib = moment.tz('Asia/Kolkata').format('HH:mm:ss')
+const time = moment.tz('Asia/Karachi').format('HH')
+let wib = moment.tz('Asia/Karachi').format('HH:mm:ss')
 //import db from '../lib/database.js'
 
 let handler = async (m, { conn, usedPrefix, command}) => {
@@ -55,9 +55,9 @@ let str = `
 ┃ ⏲️  *Current Time:* ${wib} 
 ┗━━━━━━━━━━━━━┛
 
-┏━━🤖 _BOT STATUS:_🤖━━┓
-┃ 🤡  *Bot Name:* ${botname} 
-┃ 💻  *Platform:* Linux 
+┏━━🤖 _ROBOT STATUS:_🤖━━┓
+┃ 🤡  *Robot Name:* ${botname} 
+┃ 💻  *Platform:* Cyberspace
 ┃ 📣  *Prefix:* ${usedPrefix} 
 ┃ 🕓  *Uptime:* ${uptime}
 ┃ 💌  *Database:* ${rtotalreg} of ${totaluser} 
