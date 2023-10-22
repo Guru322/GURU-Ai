@@ -17,20 +17,20 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     const query = encodeURIComponent(text);
 
     // Make a GET request to the API
-    const response = await axios.get(`https://weeb-api.vercel.app/ytsearch?query=${query}`);
-    const result = response.data[0]; // Get the first result
+    const response = await axios.get(`${gurubot}/ytsearch?text=${query}`);
+    const result = response.data.results[0]; // Get the first result
 
     if (!result) throw 'Video Not Found, Try Another Title';
 
     // Extract video information from the API response
-    const { title, thumbnail, timestamp, views, ago, url } = result;
+    const { title, thumbnail, duration, views, uploaded, url } = result;
 
     // Create a message caption with video information
     const captvid = `✼ ••๑⋯ ❀ Y O U T U B E ❀ ⋯⋅๑•• ✼
   ❏ Title: ${title}
-  ❐ Duration: ${timestamp}
+  ❐ Duration: ${duration}
   ❑ Views: ${views}
-  ❒ Upload: ${ago}
+  ❒ Upload: ${uploaded}
   ❒ Link: ${url}
 ⊱─━━━━⊱༻●༺⊰━━━━─⊰`;
 
@@ -57,8 +57,8 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       audio: {
         url: `${tmpDir}/${title}.mp3`
       },
-      mimetype: 'audio/mp4',
-      ptt: true,
+      mimetype: 'audio/mpeg',
+      ptt: false,
       waveform: [100, 0, 0, 0, 0, 0, 100],
       fileName: `${title}`,
       contextInfo: {
@@ -98,3 +98,4 @@ handler.command = /^play$/i;
 handler.exp = 0;
 
 export default handler;
+
