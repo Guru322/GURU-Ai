@@ -154,11 +154,14 @@ case 'autobio':
      break
      
      case 'chatbot':
-     case 'autosimi':
-     case 'autosimsimi':
-      isUser = true
-      user.chatbot = isEnable
-     break
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.chatbot = isEnable
+      break
      
     case 'restrict':
     case 'restringir':

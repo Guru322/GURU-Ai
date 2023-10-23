@@ -105,8 +105,6 @@ export async function handler(chatUpdate) {
                     user.role = 'Tadpole'
                 if (!('autolevelup' in user))
                     user.autolevelup = false
-                if (!('chatbot' in user))
-                    user.chatbot = false
             } else {
                 global.db.data.users[m.sender] = {
                     exp: 0,
@@ -125,7 +123,7 @@ export async function handler(chatUpdate) {
                     level: 0,
                     role: 'Tadpole',
                     autolevelup: false,
-                    chatbot: false,
+                    
                 }
                 }
             let chat = global.db.data.chats[m.chat]
@@ -149,6 +147,7 @@ export async function handler(chatUpdate) {
                 if (!("viewOnce" in chat)) chat.viewOnce = false
                 if (!("viewStory" in chat)) chat.viewStory = false
                 if (!("welcome" in chat)) chat.welcome = false
+                if (!("chatbot" in chat)) chat.chatbot = false
                 if (!isNumber(chat.expired)) chat.expired = 0
             } else
                 global.db.data.chats[m.chat] = {
@@ -171,6 +170,7 @@ export async function handler(chatUpdate) {
                     viewOnce: false,
                     viewStory: false,
                     welcome: false,
+                    chatbot: false
                 }
           
                 
