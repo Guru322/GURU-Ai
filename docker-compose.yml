@@ -10,9 +10,9 @@ services:
     ports:
       - "3000:3000"  
     environment:
-      - DATABASE_URL=${DATABASE_URL}
-      - SESSION_ID=${SESSION_ID}
-      - REMOVEBG_KEY=${REMOVEBG_KEY}
+      DATABASE_URL: ${DATABASE_URL}
+      SESSION_ID: ${SESSION_ID}
+      REMOVEBG_KEY: ${REMOVEBG_KEY}
   redis:
     image: redis
 volumes:
