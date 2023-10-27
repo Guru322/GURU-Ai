@@ -1,5 +1,5 @@
 {
-  "name": "whatsapp-bot (GURU-BOT)",
+  "name": "Ult-AR",
   "description": " Whatsapp bot.",
   "keywords": [
     "whatsapp bot"
@@ -8,12 +8,13 @@
   "stack": "container",
   "env": {
     "DATABASE_URL": {
-      "description": "your mongodb database url",
+      "description": "mongodb+srv://cluster:cluster@cluster0.lw26a7l.mongodb.net/?retryWrites=true&w=majority",
       "required": false,
       "value": ""
     },
     "SESSION_ID": {
-      "description": "your session id",
+      "description": "Guru_HybridHuddle
+",
       "required": true,
       "value": ""
     },
