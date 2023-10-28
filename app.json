@@ -18,7 +18,7 @@
       "value": ""
     },
     "PREFIX": {
-      "description": "you can put any symbol here except @ , leave it Blank if you want to use multiple prefix",
+      "description": "put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
       "required": false,
       "value": ""
     },
