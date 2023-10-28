@@ -17,6 +17,11 @@
       "required": true,
       "value": ""
     },
+    "PREFIX": {
+      "description": "you can put any symbol here except @ , leave it Blank if you want to use multiple prefix",
+      "required": false,
+      "value": ""
+    },
      "REMOVEBG_KEY": {
       "description": "your RemoveBg api key",
       "required": false,
