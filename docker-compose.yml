@@ -13,6 +13,7 @@ services:
       DATABASE_URL: ${DATABASE_URL}
       SESSION_ID: ${SESSION_ID}
       REMOVEBG_KEY: ${REMOVEBG_KEY}
+      PREFIX: ${PREFIX}
   redis:
     image: redis
 volumes:
