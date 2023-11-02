@@ -13,12 +13,13 @@
       "value": ""
     },
     "SESSION_ID": {
-      "description": "your session id",
+      "description": "Guru_BargingHysteria
+",
       "required": true,
       "value": ""
     },
     "PREFIX": {
-      "description": "put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
+      "description": ".",
       "required": false,
       "value": ""
     },
