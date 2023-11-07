@@ -32,7 +32,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
 
 
-#### DEPLOY TO Heroku 
+#### DEPLOY TO HEROKU
 
 1. If You don't have an account in Heroku. Create a account.
     <br>
@@ -53,25 +53,30 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://railway.app"> <img src="https://img.shields.io/badge/RailWay%20Account-blue?style=for-the-badge&logo=Railway" width="220" height="38.45"/></a></p>
 
- - Fork this repo.
+ - Fork and star this repo.
 - Now head towards https://railway.app/new, select Deploy from repo.
 - Now select the forked repository, select branch.
 - Now go to <b>Variables</b> and add variable listed below.
-   - DATABASE_URL, SESSION_ID, REMOVEBG_KEY
-- Go to <b>Deployments</b> and for deplyment to complete.
+   - DATABASE_URL, SESSION_ID, REMOVEBG_KEY, PREFIX
+- Go to <b>Deployments</b> and wait for deplyment to complete.
 - and you're good to go.
-
+  
+2. TUTORIAL (SOON)
 #### DEPLOY TO OKTETO 
 
 1. If You don't have an account On Okteto. Create a account.
     <br>
 <p align="center"><a href="https://www.okteto.com/pricing/?plan=SaaS"> <img src="https://img.shields.io/badge/Okteto%20Account-blue?style=for-the-badge&logo=okteto" width="220" height="38.45"/></a></p>
 
-2. Now Deploy
-    <br>
-<p align="center"><a href=""> <img src="https://img.shields.io/badge/Okteto%20Deploy-blue?style=for-the-badge&logo=okteto" width="220" height="38.45"/></a></p>
+ - Fork and star this repo.
+- Now head towards Lunch Dev Environment
+- Now select the forked GURU BOT repository.
+- Now go to <b>Variables</b> and add variable listed below.
+   - DATABASE_URL, SESSION_ID, REMOVEBG_KEY, PREFIX
+- Then Click Lunch and wait for deplyment to complete.
+- and you're good to go.
 
-
+2. TUTORIAL (SOON)
 #### DEPLOY TO Replit 
 
 1. If You don't have an account in Replit. Create a account.
