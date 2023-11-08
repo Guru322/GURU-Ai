@@ -17,6 +17,11 @@
       "required": true,
       "value": ""
     },
+    "PRIVATE": {
+      "description": "Set it true if you want to make the bot private, leave Blank for public",
+      "required": false,
+      "value": ""
+    },
     "PREFIX": {
       "description": "put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
       "required": false,
@@ -43,3 +48,4 @@
     }
   ]
 }
+
