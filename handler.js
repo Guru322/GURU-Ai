@@ -195,8 +195,6 @@ export async function handler(chatUpdate) {
         }
         if (opts["nyimak"])
             return
-        if (!m.fromMe && opts["self"])
-            return
         if (opts["pconly"] && m.chat.endsWith("g.us"))
             return
         if (opts["gconly"] && !m.chat.endsWith("g.us"))
@@ -221,7 +219,9 @@ export async function handler(chatUpdate) {
                 await delay(time)
             }, time)
         }
-
+         if (process.env.PRIVATE && !(isROwner || isOwner))
+            return
+        
         if (m.isBaileys)
             return
         m.exp += Math.ceil(Math.random() * 10)
