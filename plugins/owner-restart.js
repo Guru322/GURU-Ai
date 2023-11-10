@@ -1,5 +1,6 @@
 import { spawn } from 'child_process';
-import { Heroku } from 'heroku-client';
+import Heroku from 'heroku-client';
+
 
 let handler = async (m, { isROwner }) => {
 
