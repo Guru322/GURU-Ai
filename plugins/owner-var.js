@@ -7,6 +7,8 @@ let handler = async (m, { isROwner, text }) => {
    
         const args = text.trim().split(' ');
 
+        console.log(args)
+
         if (args.length !== 2 || !args[1].includes(':')) {
             throw 'Usage: !var key:value';
         }
