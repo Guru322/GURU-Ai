@@ -27,14 +27,14 @@
       "required": false,
       "value": ""
     },
-     "KEY": {
-      "description": "TEST",
-      "required": false,
+     "HKEY": {
+      "description": "Put your Heroku api key Here , Get one from here https://dashboard.heroku.com/account",
+      "required": true,
       "value": ""
     },
-     "APP": {
-      "description": "GURU",
-      "required": false,
+     "HAPP": {
+      "description": "Put the Heroku app name, same as above entered",
+      "required": true,
       "value": ""
     },
      "REMOVEBG_KEY": {
