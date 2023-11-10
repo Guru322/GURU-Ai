@@ -27,6 +27,16 @@
       "required": false,
       "value": ""
     },
+     "HKEY": {
+      "description": "Put your Heroku api key Here , Get one from here https://dashboard.heroku.com/account",
+      "required": true,
+      "value": ""
+    },
+     "HAPP": {
+      "description": "Put the Heroku app name, same as above entered",
+      "required": true,
+      "value": ""
+    },
      "REMOVEBG_KEY": {
       "description": "your RemoveBg api key",
       "required": false,
