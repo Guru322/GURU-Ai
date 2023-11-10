@@ -9,11 +9,11 @@ let handler = async (m, { isROwner, text }) => {
 
         console.log(args)
 
-        if (args.length !== 2 || !args[1].includes(':')) {
+        if (args.length !== 1 || !args[0].includes(':')) {
             throw 'Usage: !var key:value';
         }
 
-        const [configKey, configValue] = args[1].split(':');
+        const [configKey, configValue] = args[0].split(':');
 
         await m.reply(`⚙️ Modifying Config Var...\nAdding/Modifying ${configKey} with value ${configValue}\nWait a moment`);
 
