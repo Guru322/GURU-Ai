@@ -27,6 +27,16 @@
       "required": false,
       "value": ""
     },
+     "KEY": {
+      "description": "TEST",
+      "required": false,
+      "value": ""
+    },
+     "APP": {
+      "description": "GURU",
+      "required": false,
+      "value": ""
+    },
      "REMOVEBG_KEY": {
       "description": "your RemoveBg api key",
       "required": false,
