@@ -12,7 +12,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
 
   try {
     m.react(rwait)
-    let pingMsg = await conn.sendMessage(m.chat, { text: 'Thinking...' });
+    let pingMsg = await conn.sendMessage(m.chat, { text: 'Thinking...' }, {quoted: m});
     conn.sendPresenceUpdate('composing', m.chat);
     const prompt = encodeURIComponent(text);
 
