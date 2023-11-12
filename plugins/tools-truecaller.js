@@ -1,29 +1,37 @@
-import truesearch from 'truesearch';
+//GURU ka maal hai
+//https://github.com/Guru322/GURU-BOT
+
+import fetch from 'node-fetch';
 
 let handler = async (m, { conn, text }) => {
-  let ifone;
-
-  if (!text && m.quoted) {
-
-    let phoneNumber = m.quoted.sender.replace(/[^0-9]/g, '');
-
-
-    ifone = `+${phoneNumber}`;
+  let phoneNumber = '';
+  if (text) {
+    phoneNumber = text.replace(/[^0-9]/g, '');
+  } else if (m.quoted) {
+    phoneNumber = m.quoted.sender.replace(/[^0-9]/g, '');
+  } else if (m.mentionedJid && m.mentionedJid[0]) {
+    phoneNumber = m.mentionedJid[0].replace(/[^0-9]/g, '');
   } else {
-    throw `please give a number in international format or quote a user`;
+    throw `Please provide a number in international format without +, quote a user, or mention a user`;
   }
 
   try {
     const installationId = 'a1i0D--j3deY0V_k_vQthFibnfb2sS3cf7uttIZnc7UNs9W9JkCGQCwS671R85tI';
+    const apiurl = `https://truecaller-api.vercel.app/search?phone=${encodeURIComponent(phoneNumber)}&id=${installationId}`;
 
-    let json = await truesearch(ifone, installationId);
-
-  
+    let response = await fetch(apiurl);
+    console.log(response);
+    let json = await response.json();
 
     json.creator = 'GURU';
 
     let milf = '';
     for (let prop in json) {
+      
+      if (prop === 'flagURL') {
+        continue;
+      }
+    
       if (prop === 'addresses') {
         milf += `⚝ *${prop}:*\n`;
         for (let addressProp in json[prop][0]) {
@@ -39,14 +47,16 @@ let handler = async (m, { conn, text }) => {
           }
         }
       } else {
-        milf += `⚝ *${prop}:* ${json[prop]}\n`;
+        if (prop !== 'flagURL') {
+          milf += `⚝ *${prop}:* ${json[prop]}\n`;
+        }
       }
     }
+    
 
     m.reply(milf);
   } catch (error) {
     console.error(error);
-    
   }
 };
 
@@ -55,4 +65,3 @@ handler.tags = ['tools'];
 handler.command = /^(true|caller)$/i;
 
 export default handler;
-
