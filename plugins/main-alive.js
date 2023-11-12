@@ -16,15 +16,15 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
         mimetype: 'audio/mp4',
         ptt: true,
         waveform:  [100, 0, 100, 0, 100, 0, 100],
-        fileName: "Guru",
+        fileName: "CM",
     
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
           title: "I AM ALIVE",
-          body: "GURU BOT",
+          body: "CM-SFYAN BOT",
           thumbnailUrl: img,
-          sourceUrl: 'https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp',
+          sourceUrl: 'https://chat.whatsapp.com/BEyJPD3Ey9lLu6xRwjJ3ig',
           mediaType: 1,
           renderLargerThumbnail: true
           }}

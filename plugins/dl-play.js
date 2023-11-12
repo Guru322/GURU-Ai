@@ -32,6 +32,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   ❑ Views: ${views}
   ❒ Upload: ${uploaded}
   ❒ Link: ${url}
+  ❒ SENDER: CMSFYAN 
 ⊱─━━━━⊱༻●༺⊰━━━━─⊰`;
 
     // Send the video information along with the thumbnail to the Discord channel

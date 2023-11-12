@@ -15,7 +15,7 @@ import {
  
  const defaultMenu = {
   before: `
-  「 ${botname} あ⁩ 」\n
+  「 ${botname} CM」\n
   *%ucpn*
  
  乂───『 *U S E R*』───乂

@@ -56,7 +56,7 @@ let infobt = `
 ▢ *${chats.length}* Total Chats
 
 *≡ OWNER*
-  *GURU*
+  *CM SAFYAN*
 ▢ Instagram :
   • https://instagram.com/asli_guru69
 ▢ GitHub :
