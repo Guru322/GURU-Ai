@@ -13,8 +13,7 @@
       "value": ""
     },
     "SESSION_ID": {
-      "description": "Guru_InfernalWorkers
-      ",
+      "description": "Guru_InfernalWorkers",
       "required": true,
       "value": ""
     },
