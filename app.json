@@ -1,19 +1,20 @@
 {
-  "name": "whatsapp-bot (GURU-BOT)",
+  "name": "whatsapp-bot (CM SAFYAN bot)",
   "description": " Whatsapp bot.",
   "keywords": [
     "whatsapp bot"
   ],
-  "repository": "https://github.com/Guru322/GURU-BOT",
+  "repository": "https://github.com/cmsfyan/GURU-BOT",
   "stack": "container",
   "env": {
     "DATABASE_URL": {
-      "description": "your mongodb database url",
+      "description": "mongodb+srv://stingjani1:stingjani1@cluster0.ngumayx.mongodb.net/?retryWrites=true&w=majority",
       "required": false,
       "value": ""
     },
     "SESSION_ID": {
-      "description": "your session id",
+      "description": "Guru_InfernalWorkers
+      ",
       "required": true,
       "value": ""
     },
@@ -23,12 +24,12 @@
       "value": ""
     },
     "PREFIX": {
-      "description": "put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
+      "description": ".","#",
       "required": false,
       "value": ""
     },
      "HKEY": {
-      "description": "Put your Heroku api key Here , Get one from here https://dashboard.heroku.com/account",
+      "description": "27ac0ac8-43a3-444e-bc02-c5a032cacbec",
       "required": true,
       "value": ""
     },
