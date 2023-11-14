@@ -13,7 +13,7 @@
       "value": ""
     },
     "SESSION_ID": {
-      "description": "Guru_InfernalWorkers",
+      "description": "qr code id",
       "required": true,
       "value": ""
     },
