@@ -101,10 +101,12 @@
         "api-dylux": "^1.6.9",
         "@vitalets/google-translate-api": "^9.2.0",
         "yargs": "^17.6.0",
-        "youtubedl-core": "^4.11.5",
+        "youtubedl-core": "npm:@distube/ytdl-core",
         "wa-sticker-formatter": "^4.3.2",
         "@xct007/frieren-scraper": "*",
-        "@xct007/tiktok-scraper": "*"
-       
-    }
+        "@xct007/tiktok-scraper": "*"  
+    },
+    "overrides": {
+"cache-manager": "5.2.2"
+}
 }
