@@ -26,15 +26,13 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <a href='https://github.com/Guru322/GURU-BOT/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
-You can use any one of the methods Below 
+
 
 2. Get Session ID (Pairing Code)
     <br>
 <a href='https://replit.com/@Gurucharan-saho/GURU-BOT-PAIR?v=1' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
-3. Get Session ID (Qr code)
-    <br>
-<a href='https://qr-gurubot.vercel.app' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+
 #### DEPLOY TO HEROKU
 
 1. If You don't have an account in Heroku. Create a account.
