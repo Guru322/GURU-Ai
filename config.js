@@ -9,7 +9,7 @@ import axios from 'axios'
 global.owner = [
   ['17245423663', '𝕋𝕆𝔾𝔼 𝕀ℕ𝕌𝕄𝔸𝕂𝕀', true],
   ['15104174739', '𝕋𝕆𝔾𝔼 𝕀ℕ𝕌𝕄𝔸𝕂𝕀', true], 
-  ['24102150169', '𝙶𝙾𝙹𝙾 𝚂𝙰𝚃𝙾𝚁𝚄' , true],
+  ['']
 ] //Number of owners
 
 //global.pairingNumber = "" //put your bot number here
@@ -54,8 +54,8 @@ global.botname = '𝕋𝕆𝔾𝔼 𝕀ℕ𝕌𝕄𝔸𝕂𝕀'
 global.premium = 'true'
 global.packname = '𝕋𝕆𝔾𝔼 𝕀ℕ𝕌𝕄𝔸𝕂𝕀' 
 global.author = '@17245423663' 
-global.menuvid = 'https://telegra.ph/file/085c4b1068f0f4f8db970.mp4'
-global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru69\n' 
+global.menuvid = 'https://imgur.com/a/3QxH1BH'
+global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/lawliet.kfx\n' 
 global.dygp = 'https://chat.whatsapp.com/CL0rq2IZaUC14T748pthdQ'
 global.fgsc = 'https://github.com/Guru322/GURU-BOT' 
 global.fgyt = 'https://youtube.com/@kenzo3146?si=foD4COTZk4iWCPaQ'
