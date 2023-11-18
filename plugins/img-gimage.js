@@ -1,1 +1,44 @@
-const T=E;(function(N,V){const H=E,L=N();while(!![]){try{const F=parseInt(H(0x1c3))/0x1*(-parseInt(H(0x1c6))/0x2)+parseInt(H(0x1c7))/0x3*(-parseInt(H(0x1be))/0x4)+-parseInt(H(0x1bb))/0x5*(parseInt(H(0x1b4))/0x6)+parseInt(H(0x1bc))/0x7*(-parseInt(H(0x1c4))/0x8)+parseInt(H(0x1b5))/0x9+parseInt(H(0x1ae))/0xa+parseInt(H(0x1c2))/0xb;if(F===V)break;else L['push'](L['shift']());}catch(O){L['push'](L['shift']());}}}(R,0xb2933));import P from'axios';const MAX_COUNT=0xf;let handler=async(N,{conn:V,args:L,text:F,usedPrefix:O,command:M})=>{const G=E;if(!F)throw G(0x1b1)+MAX_COUNT+G(0x1b9)+(O+M)+G(0x1b8);let n=F,q=0x1;const I=F['match'](/n:(\d+)/);I&&(q=parseInt(I[0x1]),n=n[G(0x1bd)](I[0x0],'')[G(0x1b6)]());q=Math['min'](q,MAX_COUNT);const Q=G(0x1b2)+encodeURIComponent(n)+G(0x1b7)+q;try{const o=await P[G(0x1c5)](Q),k=o[G(0x1ad)][G(0x1ba)];if(k[G(0x1b0)]===0x0)throw'No\x20images\x20found';for(let s=0x0;s<k['length'];s++){const r=k[s],C=await P[G(0x1c5)](r,{'responseType':'arraybuffer'}),A=Buffer['from'](C[G(0x1ad)]);V['sendFile'](N[G(0x1c8)],A,G(0x1af)+(s+0x1)+'.png',(G(0x1c1)+n+'*')[G(0x1b6)](),N);}}catch(f){throw G(0x1ac)+f['message'];}};function E(N,V){const L=R();return E=function(F,O){F=F-0x1ac;let M=L[F];return M;},E(N,V);}handler[T(0x1c0)]=['image'],handler[T(0x1bf)]=[T(0x1af)],handler[T(0x1b3)]=/^(img|image|gimage|imagen)$/i,handler['diamond']=![];export default handler;function R(){const x=['291572VrxzGJ','tags','help','\x0a✅\x20Results:\x20*','45386660sNYYVZ','1uDtnfh','632jIALTT','get','2199342VPOjKD','45iPrEvs','chat','Error\x20occurred\x20while\x20fetching\x20images:\x20','data','888010CSBrea','img','length','Give\x20a\x20query\x20and\x20optionally\x20specify\x20the\x20number\x20of\x20images\x20(up\x20to\x20','https://inrl-web.onrender.com/api/gis?text=','command','6wdQtEz','4110444rQgvyw','trim','&count=','\x20xxtentacion\x20n:12*\x0a\x0aYou\x20can\x20use\x20\x22n:number\x22\x20to\x20specify\x20the\x20number\x20of\x20images\x20(default\x20is\x201\x20if\x20not\x20specified).',').\x0a\x0a🖼️\x20Example:\x20*','result','5952565babKVr','49315VDFFQx','replace'];R=function(){return x;};return R();}
+import fetch from 'node-fetch';
+
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+  if (!text && !(m.quoted && m.quoted.text)) {
+    throw `Please provide some text , Example usage ${usedPrefix}img sunnyleone`;
+  }
+  if (!text && m.quoted && m.quoted.text) {
+    text = m.quoted.text;
+  }
+
+  const match = text.match(/(\d+)/);
+  const numberOfImages = match ? parseInt(match[1]) : 1;
+
+  try {
+    m.reply('*Please wait*');
+
+    const images = [];
+
+    for (let i = 0; i < numberOfImages; i++) {
+      const endpoint = `https://www.guruapi.tech/api/googleimage?text=${encodeURIComponent(text)}`;
+      const response = await fetch(endpoint);
+
+      if (response.ok) {
+        const imageBuffer = await response.buffer();
+        images.push(imageBuffer);
+      } else {
+        throw '*Image generation failed*';
+      }
+    }
+
+
+    for (let i = 0; i < images.length; i++) {
+      await conn.sendFile(m.chat, images[i], `image_${i + 1}.png`, null, m);
+    }
+  } catch {
+    throw '*Oops! Something went wrong while generating images. Please try again later.*';
+  }
+};
+
+handler.help = ['image'];
+handler.tags = ['fun'];
+handler.command = ['img', 'gimage'];
+
+export default handler;
