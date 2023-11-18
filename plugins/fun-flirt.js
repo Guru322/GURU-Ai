@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 let handler  = async (m, { conn }) => {
     let shizokeys = 'shizo'	
-  let res = await fetch(`https://shizoapi.cyclic.app/api/texts/flirt?apikey=${shizokeys}`)
+  let res = await fetch(`https://shizoapi.onrender.com/api/texts/flirt?apikey=${shizokeys}`)
   if (!res.ok) throw await res.text()
 	    let json = await res.json()
 
