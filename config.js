@@ -8,7 +8,7 @@ import axios from 'axios'
 
 global.owner = [
   ['17245423663', '𝕋𝕆𝔾𝔼 𝕀ℕ𝕌𝕄𝔸𝕂𝕀', true],
-  ['15104174739', '𝕋𝕆𝔾𝔼 𝕀ℕ𝕌𝕄𝔸𝕂𝕀', false], 
+  ['']
   ['']
 ] //Number of owners
 
@@ -54,7 +54,7 @@ global.botname = '𝕋𝕆𝔾𝔼 𝕀ℕ𝕌𝕄𝔸𝕂𝕀'
 global.premium = 'true'
 global.packname = '𝕋𝕆𝔾𝔼 𝕀ℕ𝕌𝕄𝔸𝕂𝕀' 
 global.author = '@17245423663' 
-global.menuvid = 'content://media/external/downloads/21284'
+global.menuvid = 'https://telegra.ph/file/085c4b1068f0f4f8db970.mp4'
 global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/lawliet.kfx\n' 
 global.dygp = 'https://chat.whatsapp.com/CL0rq2IZaUC14T748pthdQ'
 global.fgsc = 'https://github.com/Guru322/GURU-BOT' 
