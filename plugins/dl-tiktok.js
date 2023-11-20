@@ -2,9 +2,13 @@ import { tiktokdl } from '@bochilteam/scraper';
 import fg from 'api-dylux';
 
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
-  if (!args[0]) throw `Enter the link of the video Tiktok`;
-  if (!args[0].match(/tiktok/gi)) throw `Verify that the link is from TikTok`;
-
+  
+ if (!args[0] && m.quoted && m.quoted.text) {
+  args[0] = m.quoted.text;
+}
+if (!args[0] && !m.quoted) throw `Give the link of the video Tiktok or quote a tiktok link`;
+ if (!args[0].match(/tiktok/gi)) throw `Verify that the link is from TikTok`;
+ 
  
   let txt = 'Here your Requested video';
 

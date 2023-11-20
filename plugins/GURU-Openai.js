@@ -12,7 +12,10 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
 
   try {
     m.react(rwait)
-    let pingMsg = await conn.sendMessage(m.chat, { text: 'Thinking...' }, {quoted: m});
+    const { key } = await conn.sendMessage(m.chat, {
+      image: { url: 'https://telegra.ph/file/c3f9e4124de1f31c1c6ae.jpg' },
+      caption: 'Thinking....'
+    }, {quoted: m})
     conn.sendPresenceUpdate('composing', m.chat);
     const prompt = encodeURIComponent(text);
 
@@ -24,22 +27,22 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
 
  
     if (!result) {
-      const model = 'chatgpt';
+      const model = 'llama';
       const senderNumber = m.sender.replace(/[^0-9]/g, ''); 
       const session = `GURU_BOT_${senderNumber}`;
-      const guru2 = `https://gurugpt.cyclic.app/gpt4?prompt=${prompt}&session=${session}&model=${model}`;
+      const guru2 = `https://ultimetron.guruapi.tech/gpt3?prompt=${prompt}`;
       
       response = await fetch(guru2);
       data = await response.json();
-      result = data.data;
+      result = data.completion;
     }
 
     await conn.relayMessage(m.chat, {
       protocolMessage: {
-        key: pingMsg.key,
+        key,
         type: 14,
         editedMessage: {
-          conversation: result
+          imageMessage: { caption: result  }
         }
       }
     }, {});
