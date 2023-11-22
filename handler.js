@@ -545,8 +545,8 @@ export async function participantsUpdate({
                   ppgp = await this.profilePictureUrl(id, 'image');
                 } catch (error) {
                   console.error(`Error retrieving profile picture: ${error}`);
-                  pp = 'https://imgur.io/t/gaming/G6GCPKP'; // Assign default image URL
-                  ppgp = 'https://imgur.io/t/gaming/G6GCPKP'; // Assign default image URL
+                  pp = 'https://i.imgur.com/1cu575l.jpeg'; // Assign default image URL
+                  ppgp = 'https://i.imgur.com/1cu575l.jpeg'; // Assign default image URL
                 } finally {
                   let text = (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user')
                     .replace('@group', await this.getName(id))
@@ -600,8 +600,8 @@ export async function participantsUpdate({
                   ppgp = await this.profilePictureUrl(id, 'image');
                 } catch (error) {
                   console.error(`Error retrieving profile picture: ${error}`);
-                  pp = 'https://imgur.io/t/gaming/G6GCPKP'; // Assign default image URL
-                  ppgp = 'https://imgur.io/t/gaming/G6GCPKP'; // Assign default image URL
+                  pp = 'https://i.imgur.com/1cu575l.jpeg'; // Assign default image URL
+                  ppgp = 'https://i.imgur.com/1cu575l.jpeg'; // Assign default image URL
                 } finally {
                   let text = (chat.sBye || this.bye || conn.bye || 'HELLO, @user')
                     .replace('@user', '@' + user.split('@')[0]);
