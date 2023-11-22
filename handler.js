@@ -131,7 +131,7 @@ export async function handler(chatUpdate) {
                 global.db.data.chats[m.chat] = {}
             if (chat) {
                 if (!("antiDelete" in chat)) chat.antiDelete = true
-                if (!("antiLink" in chat)) chat.antiLink = false
+                if (!("antiLink" in chat)) chat.antiLink = true
                 if (!("antiSticker" in chat)) chat.antiSticker = false
                 if (!("antiToxic" in chat)) chat.antiToxic = false
                 if (!("detect" in chat)) chat.detect = false
@@ -146,7 +146,7 @@ export async function handler(chatUpdate) {
                 if (!("useDocument" in chat)) chat.useDocument = false
                 if (!("viewOnce" in chat)) chat.viewOnce = false
                 if (!("viewStory" in chat)) chat.viewStory = true 
-                if (!("welcome" in chat)) chat.welcome = true 
+                if (!("welcome" in chat)) chat.welcome = false 
                 if (!("chatbot" in chat)) chat.chatbot = true 
                 if (!isNumber(chat.expired)) chat.expired = 0
             } else
@@ -160,16 +160,16 @@ export async function handler(chatUpdate) {
                     getmsg: true,
                     isBanned: false,
                     nsfw: false, 
-                    sBye: "GOOD BYE 🫂",
+                    sBye: "",
                     sDemote: "",
                     simi: false,
                     sPromote: "",
                     sticker: false,
-                    sWelcome: "___🥏🦋🐉𝆺𝅥⃝🤴🏿⃟≛⃝𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝘾𝙤𝙣𝙣𝙚𝙘𝙩 𝙃𝙖𝙘𝙠𝙚𝙧 𝘽𝙤𝙮👾  LUCI๛³❤‍🩹𝆺𝅥⃝🕊𝄟✮⃝❤‍🩹✨🪀___",
+                    sWelcome: "",
                     useDocument: false,
                     viewOnce: false,
                     viewStory: true,
-                    welcome: true,
+                    welcome: false,
                     chatbot: true
                 }
           
