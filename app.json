@@ -19,8 +19,8 @@
     },
     "PRIVATE": {
       "description": "Set it true if you want to make the bot private, leave Blank for public",
-      "required": false,
-      "value": ""
+      "required": true,
+      "value": ""true
     },
     "PREFIX": {
       "description": "put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
@@ -39,8 +39,8 @@
     },
     "statusview": {
       "description": "make it true if you want bot to view status",
-      "required": false,
-      "value": ""
+      "required": true,
+      "value": "true"
     },
     "autoRead": {
       "description": "make it true if you want bot to read messages",
@@ -49,8 +49,8 @@
     },
      "REMOVEBG_KEY": {
       "description": "your RemoveBg api key",
-      "required": false,
-      "value": ""
+      "required": true,
+      "value": "true"
     }
     },
     "buildpacks": [
