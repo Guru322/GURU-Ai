@@ -54,13 +54,13 @@ global.botname = 'LUCI_😈'
 global.premium = 'true'
 global.packname = 'LUCI┃ᴮᴼᵀ' 
 global.author = '@LuciZR' 
-global.menuvid = 'https://imgur.io/t/gaming/G6GCPKP'
+global.menuvid = 'https://i.imgur.com/1cu575l.jpeg'
 global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/i.luci.zr\n' 
 global.dygp = 'https://chat.whatsapp.com/J0SQG0jc5rwDTtSpXbma5H'
 global.fgsc = 'https://github.com/LuciZR/GURU-BOT' 
 global.fgyt = 'https://youtube.com/@ANI_ZR'
 global.fgpyp = 'https://youtube.com/@ANI_ZR'
-global.fglog = 'https://imgur.io/t/gaming/G6GCPKP' 
+global.fglog = 'https://i.imgur.com/1cu575l.jpeg' 
 global.thumb = fs.readFileSync('./Assets/Gurulogo.jpg')
 
 
