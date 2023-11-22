@@ -20,7 +20,7 @@
     "PRIVATE": {
       "description": "Set it true if you want to make the bot private, leave Blank for public",
       "required": true,
-      "value": ""true
+      "value": "true"
     },
     "PREFIX": {
       "description": "put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
