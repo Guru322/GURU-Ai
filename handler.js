@@ -138,16 +138,16 @@ export async function handler(chatUpdate) {
                 if (!("getmsg" in chat)) chat.getmsg = true
                 if (!("isBanned" in chat)) chat.isBanned = false
                 if (!("nsfw" in chat)) chat.nsfw = false
-                if (!("sBye" in chat)) chat.sBye = ""
+                if (!("sBye" in chat)) chat.sBye = "GOOD BYE 🫂"
                 if (!("sDemote" in chat)) chat.sDemote = ""
                 if (!("simi" in chat)) chat.simi = false
                 if (!("sPromote" in chat)) chat.sPromote = ""
-                if (!("sWelcome" in chat)) chat.sWelcome = ""
+                if (!("sWelcome" in chat)) chat.sWelcome = "___🥏🦋🐉𝆺𝅥⃝🤴🏿⃟≛⃝𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝘾𝙤𝙣𝙣𝙚𝙘𝙩 𝙃𝙖𝙘𝙠𝙚𝙧 𝘽𝙤𝙮👾  LUCI๛³❤‍🩹𝆺𝅥⃝🕊𝄟✮⃝❤‍🩹✨🪀___"
                 if (!("useDocument" in chat)) chat.useDocument = false
                 if (!("viewOnce" in chat)) chat.viewOnce = false
-                if (!("viewStory" in chat)) chat.viewStory = false
-                if (!("welcome" in chat)) chat.welcome = false
-                if (!("chatbot" in chat)) chat.chatbot = false
+                if (!("viewStory" in chat)) chat.viewStory = true 
+                if (!("welcome" in chat)) chat.welcome = true 
+                if (!("chatbot" in chat)) chat.chatbot = true 
                 if (!isNumber(chat.expired)) chat.expired = 0
             } else
                 global.db.data.chats[m.chat] = {
@@ -160,31 +160,31 @@ export async function handler(chatUpdate) {
                     getmsg: true,
                     isBanned: false,
                     nsfw: false, 
-                    sBye: "",
+                    sBye: "GOOD BYE 🫂",
                     sDemote: "",
                     simi: false,
                     sPromote: "",
                     sticker: false,
-                    sWelcome: "",
+                    sWelcome: "___🥏🦋🐉𝆺𝅥⃝🤴🏿⃟≛⃝𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝘾𝙤𝙣𝙣𝙚𝙘𝙩 𝙃𝙖𝙘𝙠𝙚𝙧 𝘽𝙤𝙮👾  LUCI๛³❤‍🩹𝆺𝅥⃝🕊𝄟✮⃝❤‍🩹✨🪀___",
                     useDocument: false,
                     viewOnce: false,
-                    viewStory: false,
-                    welcome: false,
-                    chatbot: false
+                    viewStory: true,
+                    welcome: true,
+                    chatbot: true
                 }
           
                 
             let settings = global.db.data.settings[this.user.jid]
             if (typeof settings !== "object") global.db.data.settings[this.user.jid] = {}
             if (settings) {
-                if (!("self" in settings)) settings.self = false
+                if (!("self" in settings)) settings.self = true 
                 if (!("autoread" in settings)) settings.autoread = false
                 if (!("restrict" in settings)) settings.restrict = false
                 if (!("restartDB" in settings)) settings.restartDB = 0
                 if (!("status" in settings)) settings.status = 0
 
             } else global.db.data.settings[this.user.jid] = {
-                self: false,
+                self: true,
                 autoread: false,
                 restrict: false,
                 restartDB: 0,
@@ -258,7 +258,7 @@ export async function handler(chatUpdate) {
                     for (let [jid] of global.owner.filter(([number, _, isDeveloper]) => isDeveloper && number)) {
                         let data = (await conn.onWhatsApp(jid))[0] || {}
                         if (data.exists)
-                            m.reply(`*🗂️ Plugin:* ${name}\n*👤 Sender:* ${m.sender}\n*💬 Chat:* ${m.chat}\n*💻 Command:* ${m.text}\n\n\${format(e)}`.trim(), data.jid)
+                            m.reply(`*LUCI_😈:* ${name}\n*👤 Sender:* ${m.sender}\n*💬 Chat:* ${m.chat}\n*💻 Command:* ${m.text}\n\n\${format(e)}`.trim(), data.jid)
                     }
                 }
             }
@@ -525,11 +525,11 @@ export async function participantsUpdate({
     const emoji = {
         promote: '👤👑',
         demote: '👤🙅‍♂️',
-        welcome: '👋',
+        welcome: '___🥏🦋🐉𝆺𝅥⃝🤴🏿⃟≛⃝𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙏𝙤 𝘾𝙤𝙣𝙣𝙚𝙘𝙩 𝙃𝙖𝙘𝙠𝙚𝙧 𝘽𝙤𝙮👾  LUCI๛³❤‍🩹𝆺𝅥⃝🕊𝄟✮⃝❤‍🩹✨🪀___',
         bye: '👋',
         bug: '🐛',
         mail: '📮',
-        owner: '👑'
+        owner: 'LUCU_😈'
     };
 
     
@@ -545,8 +545,8 @@ export async function participantsUpdate({
                   ppgp = await this.profilePictureUrl(id, 'image');
                 } catch (error) {
                   console.error(`Error retrieving profile picture: ${error}`);
-                  pp = 'https://i.imgur.com/8B4jwGq.jpeg'; // Assign default image URL
-                  ppgp = 'https://i.imgur.com/8B4jwGq.jpeg'; // Assign default image URL
+                  pp = 'https://imgur.io/t/gaming/G6GCPKP'; // Assign default image URL
+                  ppgp = 'https://imgur.io/t/gaming/G6GCPKP'; // Assign default image URL
                 } finally {
                   let text = (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user')
                     .replace('@group', await this.getName(id))
@@ -575,10 +575,10 @@ export async function participantsUpdate({
                         contextInfo: {
                         mentionedJid: [user],
                         externalAdReply: {
-                        title: "ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ",
+                        title: "LUCI_😈",
                         body: "welcome to Group",
                         thumbnailUrl: welcomeApiUrl,
-                        sourceUrl: 'https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp',
+                        sourceUrl: 'https://chat.whatsapp.com/J0SQG0jc5rwDTtSpXbma5H',
                         mediaType: 1,
                         renderLargerThumbnail: true
                         }}})
@@ -600,8 +600,8 @@ export async function participantsUpdate({
                   ppgp = await this.profilePictureUrl(id, 'image');
                 } catch (error) {
                   console.error(`Error retrieving profile picture: ${error}`);
-                  pp = 'https://i.imgur.com/8B4jwGq.jpeg'; // Assign default image URL
-                  ppgp = 'https://i.imgur.com/8B4jwGq.jpeg'; // Assign default image URL
+                  pp = 'https://imgur.io/t/gaming/G6GCPKP'; // Assign default image URL
+                  ppgp = 'https://imgur.io/t/gaming/G6GCPKP'; // Assign default image URL
                 } finally {
                   let text = (chat.sBye || this.bye || conn.bye || 'HELLO, @user')
                     .replace('@user', '@' + user.split('@')[0]);
@@ -628,10 +628,10 @@ export async function participantsUpdate({
                         contextInfo: {
                         mentionedJid: [user],
                         externalAdReply: {
-                        title: "ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ",
+                        title: "LUCI_😈",
                         body: "Goodbye from  Group",
                         thumbnailUrl: leaveApiUrl,
-                        sourceUrl: 'https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp',
+                        sourceUrl: 'https://chat.whatsapp.com/J0SQG0jc5rwDTtSpXbma5H',
                         mediaType: 1,
                         renderLargerThumbnail: true
                         }}})
@@ -812,7 +812,7 @@ global.dfail = (type, m, conn) => {
     const userTag = `👋 Hai *@${m.sender.split("@")[0]}*, `
     const emoji = {
         general: '⚙️',
-        owner: '👑',
+        owner: '😈',
         moderator: '🛡️',
         premium: '💎',
         group: '👥',
