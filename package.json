@@ -1,6 +1,6 @@
 { 
-    "name": "gurubot",
-    "version": "2.0.0",
+    "name": "LUCI_😈",
+    "version": "1.0",
     "description": "Advanced WhatsApp Bot",
     "main": "index.js",
     "type": "module",
@@ -19,22 +19,22 @@
         "whatsapp",
         "js-whatsapp",
         "whatsapp",
-        "guru-bot",
-        "GURU-bot-md",
+        "lici-bot",
+        "LUCI-bot-md",
         "multi-device",
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/Guru322/GURU-BOT",
+    "homepage": "https://github.com/LuciZR/GURU-BOT",
     "author": {
         "name": "GURU"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Guru322/GURU-BOT.git"
+        "url": "git+https://github.com/LuciZR/GURU-BOT.git"
     },
     "bugs": {
-        "url": "https://github.com/Guru322/GURU-BOT/issues"
+        "url": "https://github.com/LuciZR/GURU-BOT/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
