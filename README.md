@@ -2,7 +2,7 @@
 <p align="center">  
   <a href="https://youtube.com/@ANI_ZR?si=4a887EnZ0sbsaKET">
     <img alt="Guru" src="https://i.imgur.com/1cu575l.jpeg">
-    <h1 align="center">GURU-BOT 2.O</h1>
+    <h1 align="center">LUCI_😈-BOT 1.O</h1>
   </a>
 </p>
 <p align="center">
