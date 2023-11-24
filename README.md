@@ -96,12 +96,6 @@ SUPPORT GROUP: <a href="https://chat.whatsapp.com/J0SQG0jc5rwDTtSpXbma5H"><img a
 
 - Star ⭐ the repo if you like GURU-BOT.
 
-## CREDITS 
-<div><button id="boton" type="button">Baileys - By WhiskeySockets & adiwajshing</button></div>
-<a href="https://github.com/WhiskeySockets/Baileys"><img src="https://github.com/WhiskeySockets.png" width="150" height="150" alt="adiwajshing"/></a>
-
-<div><button id="boton" type="button">Base  - By FG98F</button></div>
-<a href="https://github.com/FG98F"><img src="https://github.com/FG98F.png" width="150" height="150" alt="adiwajshing"/></a>
 
 
 
