@@ -102,17 +102,9 @@ SUPPORT GROUP: <a href="https://chat.whatsapp.com/J0SQG0jc5rwDTtSpXbma5H"><img a
 ## `Main Dev` 
 <a href="https://github.com/LuciZR"><img src="https://github.com/LuciZR.png" width="250" height="250" alt="LuciZR"/></a>
   
-`GURU-BOT - By Guru322`
+`LUCI-BOT V.1.0.0  - By LuciZR`
 
-### CONTRIBUTORS
-<a href="https://github.com/LuciZR"><img src="https://github.com/LuciZR.png" width="200" height="200" alt="LuciZR"/></a>
-<a href="https://github.com/LuciZR"><img src="https://github.com/LuciZR.png" width="200" height="200" alt="LuciZR"/></a>
-<a href="https://github.com/LuciZR"><img src="https://github.com/LuciZR.png" width="200" height="200" alt="LuciZR"/></a>
-<a href="https://github.com/LuciZR"><img src="https://github.com/LuciZR.png" width="200" height="200" alt="LuciZR"/></a>
 
-<h2 align="center">  Reminder
-</h2>
-   
 ## 
 - This bot is not made by `WhatsApp Inc.` So misusing the bot might `ban` your `WhatsApp account!`(Though your WhatsApp account can be unbanned only once.)
 - I am not responsible for banning your account.
