@@ -1,5 +1,5 @@
 {
-  "name": "whatsapp-bot (GURU-BOT)",
+  "name": "whatsapp-bot (shenu-BOT)",
   "description": " Whatsapp bot.",
   "keywords": [
     "whatsapp bot"
@@ -44,7 +44,7 @@
     },
     "autoRead": {
       "description": "make it true if you want bot to read messages",
-      "required": false,
+      "required": true,
       "value": ""
     },
      "REMOVEBG_KEY": {
