@@ -2,7 +2,7 @@
   "name": "whatsapp-bot (GURU-BOT)",
   "description": " Whatsapp bot.",
   "keywords": [
-    "whatsapp bot"
+    "GOKU X LILLTH"
   ],
   "repository": "https://github.com/Guru322/GURU-BOT",
   "stack": "container",
@@ -15,7 +15,7 @@
     "SESSION_ID": {
       "description": "your session id",
       "required": true,
-      "value": ""
+      "value": "eyJub2lzZUtleSI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiNk5aaW80TWUvVWNxQUY0eHVqMTUxV3VEMnJuMFpJbjlFbVJ4ZHJKQ3FYaz0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiYlV0TVl6NjYxRjZnMXg2SG5GRlJDQmdnRHRVcHMxaWtqMTIvR3NPTGlXYz0ifX0sInBhaXJpbmdFcGhlbWVyYWxLZXlQYWlyIjp7InByaXZhdGUiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJFSk1sSndlMHNtSDJCTFdnQis0ckMzTEtHakY3TGl1ODdpL3RMTXdmamtnPSJ9LCJwdWJsaWMiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJJdm9kQldkVGdFV1BuSFZaTStTYjVCUG5KWVc2S1VwOHBsMlNJeFRvRGpBPSJ9fSwic2lnbmVkSWRlbnRpdHlLZXkiOnsicHJpdmF0ZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IjBNa1RTS0czOEwxdGtJMWs5Y0h2RXR1RjRWOERqckFudGpqa0Y0MlNVVzQ9In0sInB1YmxpYyI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IjJzQi82QTh1ZWkwK2hVb2JkOGh3MlRFbmhuT3RWT1c2TWg3bkRmMXcwMmM9In19LCJzaWduZWRQcmVLZXkiOnsia2V5UGFpciI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiR1BzQVlhQlZsN2Y5OGpGQWFkK3NtcWVjT0g1YUtTd3E1cGt6RkllT0ozTT0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiczFzb2FTMFRlbEVwTHI4VW9KNHgwWE9Yb0RGcWF4U3hXTmhHSGpXSlZqYz0ifX0sInNpZ25hdHVyZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IjR5Rmpyb3hSNE1WUGkvcFdaT2FnM2hlVnVzRjgxTlJYbnZpamtZb2M1eGM2Ym1DaDhtUFVmemtuZGZGMDgvOFlCcjUyK2x3K1RnYUhOa3JVSE9ycWl3PT0ifSwia2V5SWQiOjF9LCJyZWdpc3RyYXRpb25JZCI6MCwiYWR2U2VjcmV0S2V5IjoiYUV4OEZqTlpnemhoQ1NiK0xmUnFGbEU5U3o1TGNRb3c1RldkeXY5ZWt1UT0iLCJwcm9jZXNzZWRIaXN0b3J5TWVzc2FnZXMiOltdLCJuZXh0UHJlS2V5SWQiOjMxLCJmaXJzdFVudXBsb2FkZWRQcmVLZXlJZCI6MzEsImFjY291bnRTeW5jQ291bnRlciI6MCwiYWNjb3VudFNldHRpbmdzIjp7InVuYXJjaGl2ZUNoYXRzIjpmYWxzZX0sImRldmljZUlkIjoiQV9aR3NGQThSWEdVUTVrU2RwM0lzUSIsInBob25lSWQiOiI0NmUxN2NkZi1iMjVmLTRjZWYtOWI5MS01MDMyZDkzMWZiZjkiLCJpZGVudGl0eUlkIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoibzIxUHNuc2JCS09IbExwMktKaFAydGQ1Wk1VPSJ9LCJyZWdpc3RlcmVkIjp0cnVlLCJiYWNrdXBUb2tlbiI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IjY5azBpODZOOVVIS1gwQWhCMWtEQ091ajBEVT0ifSwicmVnaXN0cmF0aW9uIjp7fSwicGFpcmluZ0NvZGUiOiJMSEgxUERUOCIsIm1lIjp7ImlkIjoiOTE5MzI0NjIwODQ1OjI3QHMud2hhdHNhcHAubmV0IiwibmFtZSI6IuK4uOKbpfCdlbcg8J2WjiDwnZaRIPCdlo4g8J2WmSDwnZaN4pul4ri4In0sImFjY291bnQiOnsiZGV0YWlscyI6IkNLdW0xWUlERUxib2k2c0dHQUk9IiwiYWNjb3VudFNpZ25hdHVyZUtleSI6ImV4blpjRXptL1VCdWJSSHpwcTJnSlVDRmJ2b0ZwekxLeVhTMTBiMkkveG89IiwiYWNjb3VudFNpZ25hdHVyZSI6Im1XVmROK1J3c3VtdGxReHV5QXhvREIrdVZLbFFNdGpmUEtTejBaYVIyYmdlV1dIR3ZaNHhnVDNIeWdMV3RlZlVma2YwTXB6ZXViVnZJMnd4N2xrN0JnPT0iLCJkZXZpY2VTaWduYXR1cmUiOiJYN0dIc0dHSmwvSGdzY0tkOVhJSEtVeEhiRGt5VzJKVnJZU1pKTTdmZncwYlhPRVNJckVnRTFhRjIwTU0wRW5FSDFJUVpEN0FXTHNoYm42eFpIN0Nodz09In0sInNpZ25hbElkZW50aXRpZXMiOlt7ImlkZW50aWZpZXIiOnsibmFtZSI6IjkxOTMyNDYyMDg0NToyN0BzLndoYXRzYXBwLm5ldCIsImRldmljZUlkIjowfSwiaWRlbnRpZmllcktleSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IkJYc1oyWEJNNXYxQWJtMFI4NmF0b0NWQWhXNzZCYWN5eXNsMHRkRzlpUDhhIn19XSwicGxhdGZvcm0iOiJhbmRyb2lkIiwibGFzdEFjY291bnRTeW5jVGltZXN0YW1wIjoxNzAwOTgzODY1LCJteUFwcFN0YXRlS2V5SWQiOiJBQUFBQU5iLyJ9"
     },
     "MODE": {
       "description": "mode public or private",
@@ -25,17 +25,17 @@
     "PREFIX": {
       "description": "put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
       "required": false,
-      "value": ""
+      "value": "."
     },
      "HKEY": {
       "description": "Put your Heroku api key Here , Get one from here https://dashboard.heroku.com/account",
       "required": true,
-      "value": ""
+      "value": "c1238022-1ca8-4e87-9062-c9b1e8169d61"
     },
      "HAPP": {
       "description": "Put the Heroku app name, same as above entered",
       "required": true,
-      "value": ""
+      "value": "touqeer786gf"
     },
     "statusview": {
       "description": "make it true if you want bot to view status",
