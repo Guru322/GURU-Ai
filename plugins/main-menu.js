@@ -18,7 +18,7 @@ import {
   「 ${botname} あ⁩ 」\n
   *%ucpn*
  
- 乂───『 *U S E R*』───乂
+ 乂───『 *ⓁⓊⒸⒾ ⒷⓄⓉ*』───乂
  ⛥ *Name:* %name
   ⛥ *Gold:* %credit
   ⛥ *Role:* %role
@@ -31,7 +31,7 @@ import {
   ⛥ *Bot Name:* ${botname}
   ⛥ *Mode:* %mode
   ⛥ *Platform:* %platform
-  ⛥ *Type:* NodeJs
+  ⛥ *Type:* ᴘᴜʙʟɪᴄ
   ⛥ *Baileys:* Multi Device
   ⛥ *Prefix:* [ *%_p* ]
   ⛥ *Uptime:* %muptime
