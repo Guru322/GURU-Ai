@@ -35,7 +35,7 @@ handler.exp = 0;
 export default handler;
 
 async function stylizeText(text, key) {
-  let res = await fetch(`https://inrl-web.onrender.com/api/fancy?text=${encodeURIComponent(text)}&key=${key}`);
+  let res = await fetch(`https://inrl-web-fkns.onrender.com/api/fancy?text=${encodeURIComponent(text)}&key=${key}`);
   let data = await res.json();
 
   // Use 'result' field for the styled text.
