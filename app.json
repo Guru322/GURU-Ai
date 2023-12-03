@@ -1,5 +1,5 @@
 {
-  "name": "whatsapp-bot (GURU-BOT)",
+  "name": "whatsapp-bot (GMAx-BOT)",
   "description": " Whatsapp bot.",
   "keywords": [
     "whatsapp bot"
@@ -39,7 +39,7 @@
     },
     "statusview": {
       "description": "make it true if you want bot to view status",
-      "required": false,
+      "required": true,
       "value": ""
     },
     "autoRead": {
