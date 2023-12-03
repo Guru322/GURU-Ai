@@ -14,9 +14,9 @@ global.owner = [
 
 //global.pairingNumber = "13304089487" //put your bot number here
 
-global.mods = ['917605902011','32460248586'] 
-global.prems = ['917605902011', '32460248586', '919398758484']
-global.allowed = ['917605902011', '32460248586', '19152999993']
+global.mods = ['917605902011','32460248586', '13304089487'] 
+global.prems = ['917605902011', '32460248586', '919398758484', '13304089487']
+global.allowed = ['917605902011', '32460248586', '19152999993', '13304089487']
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.keysxteammm = ['29d4b59a4aa687ca', '5LTV57azwaid7dXfz5fzJu', 'cb15ed422c71a2fb', '5bd33b276d41d6b4', 'HIRO', 'kurrxd09', 'ebb6251cc00f9c63']
@@ -53,15 +53,15 @@ global.APIKeys = { // APIKey Here
 global.botname = 'ʀᴏʙᴏᴛ'
 global.premium = 'true'
 global.packname = 'ROBO┃ᴮᴼᵀ' 
-global.author = '@Asliguru' 
+global.author = '@ʀᴏʙᴏᴛ' 
 global.menuvid = 'https://i.imgur.com/LYrI3JI.jpg'
-global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru69\n' 
-global.dygp = 'https://chat.whatsapp.com/BibVE6tUICp3qOm2a1Ur8f'
-global.fgsc = 'https://github.com/Guru322/GURU-BOT' 
-global.fgyt = 'https://youtube.com/@Asliguru'
-global.fgpyp = 'https://youtube.com/@Asliguru'
-global.fglog = 'https://raw.githubusercontent.com/Guru322/api/Guru/guru.jpg' 
-global.thumb = fs.readFileSync('./Assets/Gurulogo.jpg')
+global.igfg = '' 
+global.dygp = ''
+global.fgsc = '' 
+global.fgyt = ''
+global.fgpyp = ''
+global.fglog = '' 
+global.thumb = fs.readFileSync('https://i.imgur.com/LYrI3JI.jpg')
 
 
 global.wait = '*⌛ _Charging..._*\n*▰▰▰▱▱▱▱▱*'
