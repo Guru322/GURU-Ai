@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 let handler = async (m, { text, usedPrefix, command }) => {
   if (command === 'tempmail') {
     try {
-      const response = await fetch('https://inrl-web.onrender.com/api/getmail?apikey=inrl');
+      const response = await fetch('https://inrl-web-fkns.onrender.com/api/getmail?apikey=inrl');
       const data = await response.json();
 
       if (data.status && data.result && data.result.length > 0) {
@@ -31,7 +31,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
     }
 
     try {
-      const response = await fetch(`https://inrl-web.onrender.com/api/getmailinfo?email=${encodeURIComponent(text)}&apikey=inrl`);
+      const response = await fetch(`https://inrl-web-fkns.onrender.com/api/getmailinfo?email=${encodeURIComponent(text)}&apikey=inrl`);
       const data = await response.json();
 
       if (data.status && data.result && data.result.length > 0) {
