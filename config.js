@@ -52,7 +52,7 @@ global.APIKeys = { // APIKey Here
 // Sticker WM
 global.botname = 'Itz Cp´s Bot'
 global.premium = 'true'
-global.packname = 'I t ᴢ  C p ´ ꜱ ;  B ᴏ ᴛ  />  ☑️' 
+global.packname = 'I t ᴢ  C p ´ ꜱ ; B ᴏ ᴛ  />  ☑️' 
 global.author = '@Itz_Cp' 
 global.menuvid = 'https://telegra.ph/file/d79b0afebef5f9cd1263a.jpg'
 global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/Cpmodzyt\n' 
