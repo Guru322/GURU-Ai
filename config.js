@@ -50,11 +50,11 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.botname = 'I t ᴢ  C p ´ ꜱ  B ᴏ ᴛ  />  ☑️'
+global.botname = 'C p ´ ꜱ  B ᴏ ᴛ  />  ☑️'
 global.premium = 'true'
 global.packname = 'I t ᴢ  C p ´ ꜱ  B ᴏ ᴛ  />  ☑️' 
 global.author = '@Itz_Cp' 
-global.menuvid = 'https://telegra.ph/file/d79b0afebef5f9cd1263a.jpg'
+global.menuvid = 'https://i.imgur.com/lPKCEZ2.jpg'
 global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/Cpmodzyt\n' 
 global.dygp = 'https://chat.whatsapp.com/HPl9gi585raKVZjzEmcvDH'
 global.fgsc = 'https://github.com/Guru322/GURU-BOT' 
