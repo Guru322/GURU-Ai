@@ -17,7 +17,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     const images = [];
 
     for (let i = 0; i < numberOfImages; i++) {
-      const endpoint = `https://guruapi.tech-guru322.cloud.okteto.net/api/googleimage?text=${encodeURIComponent(text)}`;
+      const endpoint = `https://api.guruapi.tech/api/googleimage?text=${encodeURIComponent(text)}`;
       const response = await fetch(endpoint);
 
       if (response.ok) {

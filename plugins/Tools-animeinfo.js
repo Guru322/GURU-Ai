@@ -1,4 +1,4 @@
-import translate from '@vitalets/google-translate-api';
+import {translate} from '@vitalets/google-translate-api';
 import { Anime } from '@shineiichijo/marika';
 
 const client = new Anime();
