@@ -17,8 +17,8 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     const query = encodeURIComponent(text);
 
     // Make a GET request to the API
-    const response = await axios.get(`${gurubot}/ytsearch?text=${query}`);
-    const result = response.data.results[0]; // Get the first result
+    const response = await axios.get(`https://api-brunosobrino.zipponodes.xyz/api/ytsearch?text=${query}`);
+    const result = response.data.resultado[0]; // Get the first result
 
     if (!result) throw 'Video Not Found, Try Another Title';
 
