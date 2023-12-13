@@ -12,8 +12,7 @@ global.owner = [salty
   [''] 
 ] //Number of owners 
 
-//global.pairingNumber = "" //put your bot number here
-
+//global.pairingNumber = "" //put your bot number Guru_f2ce6d0f-57b3-4166-a8a0-f3b5c5abb39f
 global.mods = ['917605902011','32460248586'] 
 global.prems = ['917605902011', '32460248586', '919398758484']
 global.allowed = ['917605902011', '32460248586', '19152999993']
