@@ -6,11 +6,11 @@ import fetch from 'node-fetch'
 import axios from 'axios'
 
 
-global.owner = [
-  ['917605902011', 'GURU', true],
+global.owner = [salty
+  ['2349063376402', 'GURU', true],
   ['6281255369012', 'Ash', true], 
   [''] 
-] //Number of owners
+] //Number of owners 
 
 //global.pairingNumber = "" //put your bot number here
 
