@@ -129,7 +129,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-sessions/
+sessions/Guru_72b008b2-550b-4b61-9a55-62f19038ee1c
 data.store.json
 database.json
 package-lock.json
