@@ -61,7 +61,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
 2. Now deploy
    <br>
-   <p align="center"><a href="https://app.koyeb.com/apps/deploy?type=git&repository=github.com%2FGuru322%2FGURU-BOT&branch=main&name=GuruBhai&builder=dockerfile&env%5BDATABASE_URL%5D=Your+Database+url&env%5BSESSION_ID%5D=your+sessionid+here&env%5BPREFIX%5D=%21&env%5BMODE%5D=public&env%5BautoRead%5D=false&env%5Bstatusview%5D=false&env%5BREMOVEBG_KEY%5D=your+rmbg+key&env%5Bantidelete%5D=false&env%5BPORT%5D=3000"> <img src="https://www.koyeb.com/static/images/deploy/button.svg" width="380" height="38.45"/></a></p>
+  <p align="center"><a href="https://app.koyeb.com/apps/deploy?type=git&repository=github.com%2FGuru322%2FGURU-BOT&branch=main&name=gurubhay&builder=dockerfile&env[DATABASE_URL]=&env[SESSION_ID]=your+sessionid+here&env[PREFIX]=!&env[MODE]=public&env=[autoRead]=false&env[statusview]=false&env[REMOVEBG_KEY]=your+rmbg+key&env[antidelete]=false"> <img src="https://www.koyeb.com/static/images/deploy/button.svg" width="380" height="38.45"/></a></p>
 
 
 
