@@ -53,6 +53,19 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://web-guru-bot.vercel.app"> <img src="https://img.shields.io/badge/Heroku%20Deploy-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
+#### DEPLOY TO KOYEB
+
+1. if you don't have a koyeb account. Create an account.
+   <br>
+   <p align="center"><a href="https://app.koyeb.com/auth/signup"> <img src="https://img.shields.io/badge/Koyeb account-blue?style=for-the-badge&logo=koyeb" width="220" height="38.45"/></a></p>
+
+2. Now deploy
+   <br>
+   <p align="center"><a href="https://app.koyeb.com/apps/deploy?type=git&repository=github.com%2FGuru322%2FGURU-BOT&branch=main&name=GuruBhai&builder=dockerfile&env%5BDATABASE_URL%5D=Your+Database+url&env%5BSESSION_ID%5D=your+sessionid+here&env%5BPREFIX%5D=%21&env%5BMODE%5D=public&env%5BautoRead%5D=false&env%5Bstatusview%5D=false&env%5BREMOVEBG_KEY%5D=your+rmbg+key&env%5Bantidelete%5D=false&env%5BPORT%5D=3000"> <img src="https://www.koyeb.com/static/images/deploy/button.svg" width="380" height="38.45"/></a></p>
+
+
+
+
 #### DEPLOY TO RAILWAY(idk if this still works)
 
 1. If You don't have an account On Railway. Create a account.
@@ -85,7 +98,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 2. TUTORIAL (Never)
 #### DEPLOY TO Replit (This shit also Going paid)
 
-1. If You don't have an account in Replit. Create a account.
+1. If You don't have an account in Replit. Create an account.
     <br>
 <p align="center"><a href="https://replit.com/signup"> <img src="https://img.shields.io/badge/replit%20Account-blue?style=for-the-badge&logo=replit" width="220" height="38.45"/></a></p>
 
@@ -93,11 +106,6 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://repl.it/github/Guru322/GURU-BOT"> <img src="https://img.shields.io/badge/replit%20Deploy-blue?style=for-the-badge&logo=replit" width="220" height="38.45"/></a></p>
 
-#### DEPLOY TO ??? 
-
-stay tuned 
-
- 
  
  ## 🤩 Support
 
