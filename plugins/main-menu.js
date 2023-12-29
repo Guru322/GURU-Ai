@@ -439,6 +439,8 @@ import {
   ◈ .ai
   ◈ .bard
   ◈ .alexa
+  ◈ .bingimg
+  ◈ .gemini
   ╰──────────⳹
   `
   let religionmenu = `
