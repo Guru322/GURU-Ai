@@ -35,7 +35,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
 3. Get Session ID (Server 2) (use this if server 1 Doesn't work)
     <br>
-<a href='https://replit.com/@Gurucharan-saho/GURU-BOT-PAIR?v=1' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://replit.com/@UsharaniSahoo1/GURU-BOT-PAIR?v=1' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
 #### DEPLOY TO HEROKU
@@ -53,7 +53,20 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://web-guru-bot.vercel.app"> <img src="https://img.shields.io/badge/Heroku%20Deploy-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
-#### DEPLOY TO RAILWAY
+#### DEPLOY TO KOYEB
+
+1. if you don't have a koyeb account. Create an account.
+   <br>
+   <p align="center"><a href="https://app.koyeb.com/auth/signup"> <img src="https://img.shields.io/badge/Koyeb account-blue?style=for-the-badge&logo=koyeb" width="220" height="38.45"/></a></p>
+
+2. Now deploy
+   <br>
+  <p align="center"><a href="https://app.koyeb.com/apps/deploy?type=git&repository=github.com%2FGuru322%2FGURU-BOT&branch=main&name=gurubhay&builder=dockerfile&env[DATABASE_URL]=&env[SESSION_ID]=your+sessionid+here&env[PREFIX]=!&env[MODE]=public&env=[autoRead]=false&env[statusview]=false&env[REMOVEBG_KEY]=your+rmbg+key&env[antidelete]=false"> <img src="https://www.koyeb.com/static/images/deploy/button.svg" width="380" height="38.45"/></a></p>
+
+
+
+
+#### DEPLOY TO RAILWAY(idk if this still works)
 
 1. If You don't have an account On Railway. Create a account.
     <br>
@@ -67,8 +80,8 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 - Go to <b>Deployments</b> and wait for deplyment to complete.
 - and you're good to go.
   
-2. TUTORIAL (SOON)
-#### DEPLOY TO OKTETO 
+2. TUTORIAL (Huh if i get free time)
+#### DEPLOY TO OKTETO ( okteto ending it's free tier on January 15, 2024)
 
 1. If You don't have an account On Okteto. Create a account.
     <br>
@@ -82,10 +95,10 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 - Then Click Lunch and wait for deplyment to complete.
 - and you're good to go.
 
-2. TUTORIAL (SOON)
-#### DEPLOY TO Replit 
+2. TUTORIAL (Never)
+#### DEPLOY TO Replit (This shit also Going paid)
 
-1. If You don't have an account in Replit. Create a account.
+1. If You don't have an account in Replit. Create an account.
     <br>
 <p align="center"><a href="https://replit.com/signup"> <img src="https://img.shields.io/badge/replit%20Account-blue?style=for-the-badge&logo=replit" width="220" height="38.45"/></a></p>
 
@@ -93,7 +106,6 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://repl.it/github/Guru322/GURU-BOT"> <img src="https://img.shields.io/badge/replit%20Deploy-blue?style=for-the-badge&logo=replit" width="220" height="38.45"/></a></p>
 
- 
  
  ## 🤩 Support
 
@@ -135,6 +147,7 @@ SUPPORT GROUP: <a href="https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp"><img a
    
 ## 
 - Not For Sale
+- If A plugin's code is obfuscated , You don't have permission to edit it in any form 
 - Don't Forget to Give Credits If you are using or Reuploading My Plugins/files
 - Have A Good Day Ahead
 

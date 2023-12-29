@@ -7,38 +7,23 @@ let handler = async (m, { conn, text }) => {
         console.log('No song name provided.');
         throw `*Please enter a song name*`;
     }
-    try {
-        const apiUrl = `${gurubot}/spotifyinfo?text=${encodeURIComponent(text)}`;
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            console.log('Error searching for song:', response.statusText);
-            throw 'Error searching for song';
-        }
-        const data = await response.json();
-        const coverimage = data.spty.results.thumbnail;
-        const name = data.spty.results.title
-        const slink = data.spty.results.url;
+  m.react('🎶')
+    const query = encodeURIComponent(text);
+       let spi = `https://api.lolhuman.xyz/api/spotifysearch?apikey=GataDios&query=${query}`
 
-        const dlapi = `${gurubot}/spotifydl?text=${encodeURIComponent(text)}`;
-        const audioResponse = await fetch(dlapi);
-        if (!audioResponse.ok) {
-            console.log('Error fetching audio:', audioResponse.statusText);
-            throw 'Error fetching audio';
-        }
-        const audioBuffer = await audioResponse.buffer();
-        const tempDir = os.tmpdir();
-        const audioFilePath = path.join(tempDir, 'audio.mp3');
+       let res1 = await fetch(spi)
+       let data1 = await res1.json()
+       let link = data1.result[0].link
 
-        try {
-            await fs.promises.writeFile(audioFilePath, audioBuffer);
-        } catch (writeError) {
-            console.error('Error writing audio file:', writeError);
-            throw 'Error writing audio file';
-        }
-
+       let apiurl = `https://vihangayt.me/download/spotify?url=${link}`
+       let res = await fetch(apiurl)
+         let data = await res.json()
+         let buffer = await data.data.url
+         let coverimage = data.data.cover_url
+         let name = data.song
         let doc = {
             audio: {
-              url: audioFilePath
+              url: buffer
             },
             mimetype: 'audio/mpeg',
             ptt: true,
@@ -51,7 +36,7 @@ let handler = async (m, { conn, text }) => {
                 title: "↺ |◁   II   ▷|   ♡",
                 body: `Now playing: ${name}`,
                 thumbnailUrl: coverimage,
-                sourceUrl: slink,
+                sourceUrl: link,
                 mediaType: 1,
                 renderLargerThumbnail: true
               }
@@ -59,10 +44,7 @@ let handler = async (m, { conn, text }) => {
         };
         
         await conn.sendMessage(m.chat, doc, { quoted: m });
-    } catch (error) {
-        console.error('Error fetching Spotify data:', error);
-        throw '*Error*';
-    }
+    
 };
 handler.help = ['spotify'];
 handler.tags = ['downloader'];
