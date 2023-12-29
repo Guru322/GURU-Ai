@@ -603,7 +603,7 @@ import {
           delete: key
       });
       delete conn.gurumenu[m.sender];
-  }, 60 * 1000),
+  }, 150 * 1000),
   };
   };
   

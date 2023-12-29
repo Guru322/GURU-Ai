@@ -43,7 +43,7 @@ const orderedLinks = result.allLinks.map((link, index) => {
                 delete: key
             });
             delete conn.GURUPLAY[m.sender];
-        }, 60 * 1000),
+        }, 150 * 1000),
     };
 };
 
@@ -57,6 +57,7 @@ handler.before = async (m, {
         key,
         timeout
     } = conn.GURUPLAY[m.sender];
+    console.log(conn.GURUPLAY)
     if (!m.quoted || m.quoted.id !== key.id || !m.text) return;
     const choice = m.text.trim();
     const inputNumber = Number(choice);
@@ -93,8 +94,9 @@ handler.before = async (m, {
         await conn.sendMessage(m.chat, doc, { quoted: m });
     
     
-        clearTimeout(timeout);
-        delete conn.GURUPLAY[m.sender];
+       
+
+        
     } else {
         m.reply("Invalid sequence number. Please select the appropriate number from the list above.\nBetween 1 to " + result.allLinks.length);
     }
