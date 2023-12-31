@@ -1,6 +1,8 @@
+import displayLoadingScreen from '../lib/loading.js'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-	
+let pp = 'https://i.pinimg.com/736x/eb/a7/25/eba725b9c8df5d9b199e950694f18aaf.jpg'
+await displayLoadingScreen(conn, m.chat)
 	let _muptime
     if (process.send) {
       process.send('uptime')
@@ -10,7 +12,27 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       }) * 1000
     }
     let muptime = clockString(_muptime)
-   m.reply(`🏮 *Bot active duration*  \n\n${muptime}`) 
+    let str = `あR U N T I M Eあ \n\n${muptime}`
+    conn.sendMessage(m.chat, {
+      text: str,
+      contextInfo: {
+      
+      mentionedJid: [m.sender],
+      isForwarded: true,
+            forwardedNewsletterMessageInfo: {
+                newsletterJid: '120363144038483540@newsletter',
+                newsletterName: global.author,
+                serverMessageId: -1
+            },
+      forwardingScore: 999,
+      externalAdReply: {
+      title: "ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ",
+      body: "R U N T I M E",
+      thumbnailUrl: pp,
+      sourceUrl: 'https://guruapi.tech',
+      mediaType: 1,
+      renderLargerThumbnail: false
+      }}})
 }
 handler.help = ['runtime']
 handler.tags = ['main']
