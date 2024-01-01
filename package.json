@@ -103,7 +103,7 @@
         "api-dylux": "^1.6.9",
         "@vitalets/google-translate-api": "^9.2.0",
         "yargs": "^17.6.0",
-        "youtubedl-core": "npm:@distube/ytdl-core",
+        "youtubedl-core": "git+ssh://git@github.com:khlevon/node-ytdl-core.git#v4.11.4-patch.2",
         "wa-sticker-formatter": "^4.3.2",
         "@xct007/frieren-scraper": "*",
         "@xct007/tiktok-scraper": "*"  
