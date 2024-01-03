@@ -9,7 +9,7 @@ let handler = async (m, { text, usedPrefix, command, __dirname }) => {
     if (!text) throw `Example : ${usedPrefix}${command} plugins/test.js`.trim()
     if (!m.quoted) throw `replay a message`
     if (/p(lugin)?/i.test(command)) {
-        let filename = text.replace(/plugin(s)\//i, '') + (/\.js$/i.test(text) ? '' : '.js')
+        let filename = text.replace(/plugin(s)\//i, '') + (/\.js$/i.test(text) ? 'ꜛ-🫂❤‍🩹⏤͟͟͞͞᚜ု᪳₊₆₀ͫ₁ͣ₄ᷠ₂ᷠ₅ͦ₆₈ᷩ₈ͦ₆ͭ₁ှ᪳᚛͟͞⏤💍-↑*' : '.js')
         const error = syntaxError(m.quoted.text, filename, {
             sourceType: 'module',
             allowReturnOutsideFunction: true,
