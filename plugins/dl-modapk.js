@@ -15,7 +15,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
   await conn.sendMessage(m.chat, {
     image: { url: info.icon },
-    caption: `*Name:* ${info.name}\n*Package:* ${info.packageN}\n*OBB:* ${info.⏜✩.ϻaͣŋͫŋ̑ο̑˼.𓃮•:},
+    caption: `*Name:* ${info.name}\n*Package:* ${info.packageN}\n*OBB:* ${info.obb_link}`,
     footer: '_Apk files..._',
   });
 
@@ -76,4 +76,4 @@ async function apk(url) {
   let mimetype = (await fetch(download, { method: 'head' })).headers.get('content-type');
 
   return { fileName, mimetype, download, size };
-}
+          }
