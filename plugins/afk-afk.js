@@ -5,15 +5,15 @@ let handler = async (m, { text, conn }) => {
     user.afk = + new Date
     user.afkReason = text
     m.reply(`
-  😴 *AFK* 
-You are now afk until u send a message 
+  🥡⛓️ *Sealed* 
+You are now sealed until u send a message 
 ▢ *User:* ${conn.getName(m.sender)} 
 ▢ *Reason:* ${text ? text : ''}
   `)
 }
 handler.help = ['afk <reason>']
 handler.tags = ['fun']
-handler.command = ['afk']
+handler.command = ['seal']
 handler.group = true
 
 export default handler
