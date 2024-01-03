@@ -8,12 +8,12 @@
 
 let handler = m => m
 handler.all = async function (m, conn) {
-    var vn = "https://raw.githubusercontent.com/Guru322/GURU-BOT/main/Assets/mp3/Guru1.mp3"
-    let url = "https://github.com/Guru322/GURU-BOT"
-    let murl = "https://www.instagram.com/asli_guru_2k23"
+    var vn = "https://raw.githubusercontent.com/Yuujikun/GURU-BOT/main/Assets/mp3/Guru.mp3"
+    let url = "https://github.com/Yuujikun/GURU-BOT"
+    let murl = "https://www.instagram.com/black_yuuji?igsh=MzNlNGNkZWQ4Mg=="
     let hash = global.botname
-    let img = "https://telegra.ph/file/dbed2fc0abfabcd411327.jpg"
-    let num = "917605902011"
+    let img = "https://i.imgur.com/rEAtcVu.jpg"
+    let num = "2348153995521"
 
     let doc = {
         audio: {
@@ -22,7 +22,7 @@ handler.all = async function (m, conn) {
         mimetype: 'audio/mpeg',
         ptt: true,
         waveform: [0,99,0,99,0,99,0],
-        fileName: "Guru",
+        fileName: "JUJUTSU BLACCEN🎴",
     
         contextInfo: {
           mentionedJid: [m.sender],
