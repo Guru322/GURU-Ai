@@ -27,5 +27,5 @@ let txt = `*乂  B O T  -  F E A T U R E*\n\n`
 }
 handler.help = ['totalfeature']
 handler.tags = ['main']
-handler.command = /^(feature|totalfeature)$/i
+handler.command = /^(feature|core)$/i
 export default handler
