@@ -1,33 +1,33 @@
 let handler = async m => m.reply(`
 
-≡  *GURU  ┃ ᴮᴼᵀ*   GROUPS
+≡  *YUJI  ┃ ᴮᴼᵀ*   GROUPS
 
 ─────────────
-▢ Join public bot group and support
-https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp
+▢ Join public anime bot group and support
+https://chat.whatsapp.com/Dk5mQ2e3LcBAYf75Q9VXcA
 
-▢ Group 2
-https://chat.whatsapp.com/LwLQab5mZVW6WWRbBPnDGC
+▢ Group 2 Anime
+https://chat.whatsapp.com/BAEv4VxNWvN4VfoB9dngUO
 
-▢ Group 3
-https://chat.whatsapp.com/Jn9qVerYN6Q1L0vlVFe2XL
+▢ Group 3 Mangahut
+https://chat.whatsapp.com/CzCmQfDw2YTHiU8EwNtiws
 
 ─────────────
 ≡ Disabled links? enter here! 
 
-▢ Group WhatsApp 
- https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp
+▢ WhatsApp Community
+ https://chat.whatsapp.com/CxkwIQDANWlE37pyiyFajX
 ─────────────
 ▢ *Owner Telegram*
  https://t.me/i_want_to_be_isekaied
 
 ▢ *YouTube*
-• https://www.youtube.com/@Asliguru
+• https://www.youtube.com/@blacyuuji
 
 
 `.trim())
 handler.help = ['gpguru']
 handler.tags = ['main']
-handler.command = ['groups', 'groupguru', 'gugp', 'ggp', 'gpguru'] 
+handler.command = ['groups', 'groupyuji', 'yugp', 'gl', 'gpyuji'] 
 
 export default handler
