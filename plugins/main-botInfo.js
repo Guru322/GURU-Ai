@@ -46,7 +46,7 @@ let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './Guru.jpg')
 let user = global.db.data.users[who]
   
 let infobt = `
-≡ *INFO BOT*
+≡ *MECHAMARU INFO*
   
 *STATE*
 ▢ *${groupsIn.length}* GROUP CHATS
@@ -56,15 +56,15 @@ let infobt = `
 ▢ *${chats.length}* Total Chats
 
 *≡ OWNER*
-  *GURU*
+  *YUJI*
 ▢ Instagram :
-  • https://instagram.com/asli_guru69
+  • https://www.instagram.com/black_yuuji?igsh=MzNlNGNkZWQ4Mg==
 ▢ GitHub :
-  • https://github.com/Guru322
-▢ Telegram : 
-  • t.me/i_want_to_be_isekaied (GURU) 
+  • https://github.com/Yuujikun
+▢ WhatsApp Channel : 
+  • https://whatsapp.com/channel/0029Va8VuWo4o7qRFa9pEF47 
 ▢ YouTube : 
-  • https://youtube.com/@Asliguru
+  • https://youtube.com/@blacyuuji
 
  *≡ S E R V E R*
 *🛑 RAM:* ${format(totalmem() - freemem())} / ${format(totalmem())}
