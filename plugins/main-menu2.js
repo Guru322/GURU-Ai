@@ -37,7 +37,7 @@ let quote = quotes[Math.floor(Math.random() * quotes.length)];
 
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let str = `
-🚀 *_Buckle up ${name}, ${greeting}! We're going on an adventure!_* 🚀
+🚀 *_Buckle up ${name}, ${greeting}! We're going on a Shibuya adventure!_* 🚀
 
 📜 *_Quote of the day: ${quote}_* 📜
 
