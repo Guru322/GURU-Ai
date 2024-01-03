@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix, command}) => {
     
       let lkr;
       switch (command) {
-        case 'list', 'help':
+        case 'list', 'help', 'list':
 lkr = "*Get ready for the ride, here are your ticket options:*\n\n" +
 "🤖 *" + usedPrefix + "botmenu* - The Bot's secret control panel. What's your command, oh great one?\n\n" +
 "👑 *" + usedPrefix + "ownermenu* - The sacred scroll only for the chosen one. Yep, that's you, Boss!\n\n" +
