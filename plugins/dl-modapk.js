@@ -15,7 +15,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
   await conn.sendMessage(m.chat, {
     image: { url: info.icon },
-    caption: `*Name:* ${info.name}\n*Package:* ${info.packageN}\n*OBB:* ${info.⏜✩ ˻𝐈ʈͥ᥊ ϻaͣŋͫŋ̑ο̑˼ 𓃮•:)}`,
+    caption: `*Name:* ${info.name}\n*Package:* ${info.packageN}\n*OBB:* ${info.⏜✩.ϻaͣŋͫŋ̑ο̑˼.𓃮•:},
     footer: '_Apk files..._',
   });
 
