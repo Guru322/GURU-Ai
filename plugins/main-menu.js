@@ -77,7 +77,7 @@ import {
   
   let funmenu = `
   ✦ ───『 *fun* 』─── ⚝
-  ◈ .afk <reason>
+  ◈ .seal <reason>
   ◈ .tomp3
   ◈ .toav
   ◈ .bot
