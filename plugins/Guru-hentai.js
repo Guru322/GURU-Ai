@@ -14,7 +14,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
     let aa3 = json2.result
     await conn.sendMessage(m.chat, { document: { url: aa3 }, mimetype: 'application/pdf', fileName: `${aa2}.pdf` }, { quoted: m })
     } catch {
-    throw `*ERROR NOT FOUND TRY SEARCHING ANOTHER QUERY*`
+    throw `*NOT FOUND, TRY SEARCHING ANOTHER QUERY*`
     }}
     handler.command = /^(hentai)$/i
     export default handler
