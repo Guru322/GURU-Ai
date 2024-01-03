@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix, command}) => {
     
       let lkr;
       switch (command) {
-        case 'list':
+        case 'list', 'help':
 lkr = "*Get ready for the ride, here are your ticket options:*\n\n" +
 "🤖 *" + usedPrefix + "botmenu* - The Bot's secret control panel. What's your command, oh great one?\n\n" +
 "👑 *" + usedPrefix + "ownermenu* - The sacred scroll only for the chosen one. Yep, that's you, Boss!\n\n" +
@@ -86,7 +86,9 @@ break;
     ⎪⌲💎 _${usedPrefix}warn *<@tag>*_
     ⎪⌲💎 _${usedPrefix}unwarn *<@tag>*_
     ⎪⌲💎 _${usedPrefix}group *<open/close>*_
-    ⎪⌲💎 _${usedPrefix}enable
+    ⎪⌲💎 _${usedPrefix}enable *<option>*_
+    ⎪⌲💎 _${usedPrefix}disable *<option>*_
+    ⎪⌲💎 _${usedPrefix}seal *<reason>*_
     ┗━━━ʕ•㉨•ʔ━━━┛`; // 
           break;
           case 'downloadermenu':
@@ -295,7 +297,7 @@ break;
     
     handler.help = ['list', 'botmenu', 'ownermenu', 'groupmenu', 'dlmenu', 'downloadermenu', 'economymenu', 'funmenu', 'gamemenu', 'stickermenu', 'nsfwmenu', 'logomenu', 'toolmenu'];
     handler.tags = ['main'];
-    handler.command = ['list', 'botmenu', 'ownermenu', 'groupmenu', 'dlmenu', 'downloadermenu', 'economymenu', 'funmenu', 'gamemenu', 'stickermenu', 'nsfwmenu', 'logomenu', 'toolmenu'];
+    handler.command = ['list', 'help', 'botmenu', 'ownermenu', 'groupmenu', 'dlmenu', 'downloadermenu', 'economymenu', 'funmenu', 'gamemenu', 'stickermenu', 'nsfwmenu', 'logomenu', 'toolmenu'];
     
     export default handler
     
