@@ -18,8 +18,8 @@ https://chat.whatsapp.com/CzCmQfDw2YTHiU8EwNtiws
 ▢ WhatsApp Community
  https://chat.whatsapp.com/CxkwIQDANWlE37pyiyFajX
 ─────────────
-▢ *Owner Telegram*
- https://t.me/i_want_to_be_isekaied
+▢ *Owner insta*
+ https://www.instagram.com/black_yuuji?igsh=MzNlNGNkZWQ4Mg==
 
 ▢ *YouTube*
 • https://www.youtube.com/@blacyuuji
