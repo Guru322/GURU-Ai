@@ -789,14 +789,14 @@ export async function presenceUpdate(presenceUpdate) {
     if (user?.afk && status === "composing" && user.afk > -1) {
         if (user.banned) {
             user.afk = -1;
-            user.afkReason = "User Banned Afk";
+            user.afkReason = "User Banned, seal🥡⛓️";
             return;
         }
 
         await console.log("AFK");
         const username = nouser[0].split("@")[0];
         const timeAfk = new Date() - user.afk;
-        const caption = `\n@${username} has stopped being AFK and is currently typing.\n\nReason: ${
+        const caption = `\n@${username} has been unsealed and is currently typing.\n\nReason: ${
             user.afkReason ? user.afkReason : "No Reason"
           }\nFor the past ${timeAfk.toTimeString()}.\n`;
           
