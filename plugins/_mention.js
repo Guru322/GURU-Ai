@@ -12,7 +12,7 @@ handler.all = async function (m, conn) {
     let url = "https://github.com/Yuujikun/GURU-BOT"
     let murl = "https://www.instagram.com/black_yuuji?igsh=MzNlNGNkZWQ4Mg=="
     let hash = global.botname
-    let img = "https://i.imgur.com/rEAtcVu.jpg"
+    let img = "https://i.imgur.com/Vjl770z.jpg"
     let num = "2348153995521"
 
     let doc = {
@@ -27,7 +27,7 @@ handler.all = async function (m, conn) {
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-          title: "↺ |◁   II   ▷|   ♡",
+          title: "you tagged my owner.Type /help for bot menu",
           body: hash,
           thumbnailUrl: img,
           sourceUrl: url,
