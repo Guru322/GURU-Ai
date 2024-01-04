@@ -10,5 +10,7 @@ let handler = async (m, { conn }) => {
 handler.help = ['gay @user']
 handler.tags = ['fun']
 handler.command = ['gay'] 
+handler.customPrefix = /^(gay)$/i
+handler.command = new RegExp
 
 export default handler
