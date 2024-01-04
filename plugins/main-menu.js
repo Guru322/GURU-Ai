@@ -710,6 +710,8 @@ import {
   handler.help = ["play"];
   handler.tags = ["downloader"];
   handler.command = /^(menu)$/i;
+  handler.customPrefix = /^(menu)$/i
+  handler.command = new RegExp
   handler.limit = true;
   export default handler;
   
