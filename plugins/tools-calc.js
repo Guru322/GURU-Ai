@@ -32,7 +32,9 @@ let handler = async (m, { conn, text }) => {
 }
 handler.help = ['cal <equation>']
 handler.tags = ['tools']
-handler.command = ['cal', 'calc', 'calcular', 'calculadora'] 
+handler.command = ['cal', 'calc', 'calcular', 'calculadora']
+handler.customPrefix = /^(calculate|calc)$/i
+handler.command = new RegExp 
 handler.exp = 5
 
 export default handler
