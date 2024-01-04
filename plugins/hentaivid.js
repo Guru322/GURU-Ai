@@ -1,5 +1,5 @@
-import fetch from 'node-fetch';
-import displayLoadingScreen from '../lib/loading.js';
+import axios from 'axios'
+import displayLoadingScreen from '../lib/loading.js'
 
 let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
   let chat = global.db.data.chats[m.chat];
@@ -27,3 +27,9 @@ async function hentaivid() {
         })
     })
 }
+
+
+handler.help = ['hentaivid']
+handler.tags = ['mp4']
+handler.command = /^(hentaivid)$/i
+export default handler
