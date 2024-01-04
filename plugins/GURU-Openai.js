@@ -75,4 +75,5 @@ handler.tags = ['AI']
 handler.command = ['bro', 'chatgpt', 'ai', 'mechamaru'];
 handler.customPrefix = /^(bro|ai)$/i
 handler.command = new RegExp
+
 export default handler;
