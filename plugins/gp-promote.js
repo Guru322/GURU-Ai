@@ -19,11 +19,11 @@ var user = number + '@s.whatsapp.net'
 } catch (e) {
 } finally {
 conn.groupParticipantsUpdate(m.chat, [user], 'promote')
-m.reply(`✅ User promoted`)
+m.reply(`✅ User promoted to Special grade`)
 }}
 handler.help = ['promote']
 handler.tags = ['group']
-handler.command = ['promote', 'promover'] 
+handler.command = ['promote', 'makeadmin'] 
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
