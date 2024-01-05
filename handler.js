@@ -576,7 +576,7 @@ export async function participantsUpdate({
                         contextInfo: {
                         mentionedJid: [user],
                         externalAdReply: {
-                        title: "Mechamaru",
+                        title: "Okaeri🌻",
                         body: "welcome to Group",
                         thumbnailUrl: welcomeApiUrl,
                         sourceUrl: 'https://chat.whatsapp.com/Dk5mQ2e3LcBAYf75Q9VXcA',
@@ -629,7 +629,7 @@ export async function participantsUpdate({
                         contextInfo: {
                         mentionedJid: [user],
                         externalAdReply: {
-                        title: "ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ",
+                        title: "Sayonara🌸",
                         body: "Goodbye from  Group",
                         thumbnailUrl: leaveApiUrl,
                         sourceUrl: 'https://chat.whatsapp.com/Dk5mQ2e3LcBAYf75Q9VXcA',
