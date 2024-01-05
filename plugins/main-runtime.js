@@ -12,7 +12,7 @@ await displayLoadingScreen(conn, m.chat)
       }) * 1000
     }
     let muptime = clockString(_muptime)
-    let str = `*あMANNO RUNTIMEあ* *\n\n${muptime}*`
+    let str = `*あMANNO RUNTIMEあ \n\n${muptime}*`
     conn.sendMessage(m.chat, {
       text: str,
       contextInfo: {
