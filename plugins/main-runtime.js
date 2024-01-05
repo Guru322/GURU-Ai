@@ -20,7 +20,7 @@ await displayLoadingScreen(conn, m.chat)
       mentionedJid: [m.sender],
       isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363144038483540@newsletter',
+                newsletterJid: '120363178281296360@newsletter',
                 newsletterName: global.author,
                 serverMessageId: -1
             },
