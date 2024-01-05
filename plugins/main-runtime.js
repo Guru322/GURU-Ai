@@ -26,10 +26,10 @@ await displayLoadingScreen(conn, m.chat)
             },
       forwardingScore: 999,
       externalAdReply: {
-      title: "ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ",
+      title: "ᴛʜᴇ-ᴍᴀɴɴᴏ -ʙᴏᴛ",
       body: "R U N T I M E",
       thumbnailUrl: pp,
-      sourceUrl: 'https://guruapi.tech',
+      sourceUrl: 'https://i.imgur.com/EOU8n5C.jpg',
       mediaType: 1,
       renderLargerThumbnail: false
       }}})
