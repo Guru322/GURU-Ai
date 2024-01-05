@@ -579,7 +579,7 @@ export async function participantsUpdate({
                         title: "Mechamaru",
                         body: "welcome to Group",
                         thumbnailUrl: welcomeApiUrl,
-                        sourceUrl: 'https://chat.whatsapp.com/BFfD1C0mTDDDfVdKPkxRAA',
+                        sourceUrl: 'https://chat.whatsapp.com/Dk5mQ2e3LcBAYf75Q9VXcA',
                         mediaType: 1,
                         renderLargerThumbnail: true
                         }}})
@@ -632,7 +632,7 @@ export async function participantsUpdate({
                         title: "ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ",
                         body: "Goodbye from  Group",
                         thumbnailUrl: leaveApiUrl,
-                        sourceUrl: 'https://chat.whatsapp.com/BFfD1C0mTDDDfVdKPkxRAA',
+                        sourceUrl: 'https://chat.whatsapp.com/Dk5mQ2e3LcBAYf75Q9VXcA',
                         mediaType: 1,
                         renderLargerThumbnail: true
                         }}})
