@@ -22,5 +22,5 @@ export async function before(m, { conn, match, usedPrefix, command }) {
  if (mean) this.reply(m.chat, `${caption}`, m)
 	    }
 }
-export const disabled = false
+export const disabled = true
 
