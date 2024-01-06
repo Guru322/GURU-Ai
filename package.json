@@ -107,7 +107,7 @@
         "xfarr-api": "^1.0.3",
         "yargs": "^17.6.0",
         "youtube-yts": "^2.0.0",
-        "youtubedl-core": "npm:ytdl-core@4.10.0"
+        "youtubedl-core": "npm:@distube/ytdl-core"
     },
     "overrides": {
         "cache-manager": "5.2.2"
