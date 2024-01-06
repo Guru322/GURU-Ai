@@ -18,7 +18,7 @@ let handler = async (m, { conn, text }) => {
         mimetype: 'audio/mpeg',
         ptt: true,
         waveform:  [100, 0, 100, 0, 100, 0, 100],
-        fileName: "Yuji.mp3",
+        fileName: "${text}.mp3",
     
         contextInfo: {
           mentionedJid: [m.sender],
