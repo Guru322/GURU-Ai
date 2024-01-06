@@ -33,5 +33,5 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 handler.help = ['dalle'];
 handler.tags = ['AI'];
-handler.command = ['imagine', 'create'];
+handler.command = ['imagine', 'create', 'make'];
 export default handler;
