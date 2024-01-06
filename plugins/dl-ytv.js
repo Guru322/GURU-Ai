@@ -3,7 +3,7 @@ import fs from 'fs';
 import os from 'os';
 import fetch from 'node-fetch';
 
-let limit = 500;
+let limit = 1000;
 let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
   let chat = global.db.data.chats[m.chat];
   if (!args || !args[0]) throw `✳️ Example:\n${usedPrefix + command} https://youtu.be/YzkTFFwxtXI`;
