@@ -398,6 +398,7 @@ import {
   ◈ .dehaze
   ◈ .recolor
   ◈ .hdr
+  ◈ .imagine <query>
   ◈ .length <amount>
   ◈ .tinyurl <link>
   ◈ .shorten <link>
@@ -431,6 +432,7 @@ import {
   let Aimenu = `
   ✦ ───『 *AI* 』─── ⚝
   ◈ .bing
+  ◈ .imagine
   ◈ .dalle
   ◈ .chatgpt
   ◈ .toanime
