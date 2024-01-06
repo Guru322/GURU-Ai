@@ -302,6 +302,7 @@ import {
   ◈ .loli
   ◈ .pokedex <pokemon>
   ◈ .trace
+  ◈ .amv
   ╰──────────⳹
   `
   let nsfwmenu = `
