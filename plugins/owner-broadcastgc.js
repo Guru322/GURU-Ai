@@ -9,8 +9,8 @@ let handler = async (m, { conn, isROwner, text }) => {
     await delay(500)
     conn.relayMessage(i, 
 { liveLocationMessage: {
-  degreesLatitude: 35.685506276233525,
-  degreesLongitude: 139.75270667105852,
+  degreesLatitude: 35.6620,
+  degreesLongitude: 139.7038,
   accuracyInMeters: 0,
 degreesClockwiseFromMagneticNorth: 2,
 caption: '[ATTENTION]\n\n' + pesan + '\n\nTHIS IS AN OFFICIAL STATEMENT',
