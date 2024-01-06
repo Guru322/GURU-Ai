@@ -57,10 +57,10 @@ global.author = '@Yuji'
 global.menuvid = 'https://i.imgur.com/PLiscRk.mp4'
 global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/black_yuuji?igsh=MzNlNGNkZWQ4Mg==\n' 
 global.dygp = 'https://chat.whatsapp.com/BFfD1C0mTDDDfVdKPkxRAA'
-global.fgsc = 'https://github.com/Guru322/GURU-BOT' 
-global.fgyt = 'https://youtube.com/@Asliguru'
-global.fgpyp = 'https://youtube.com/@Asliguru'
-global.fglog = 'https://raw.githubusercontent.com/Yuujikun/api/Guru/guru.jpg' 
+global.fgsc = 'https://github.com/Yuujikun/GURU-BOT' 
+global.fgyt = 'https://whatsapp.com/channel/0029Va8VuWo4o7qRFa9pEF47'
+global.fgpyp = 'https://whatsapp.com/channel/0029Va8VuWo4o7qRFa9pEF47'
+global.fglog = 'https://i.imgur.com/NXGmR5H.jpg' 
 global.thumb = fs.readFileSync('./Assets/Gurulogo.jpg')
 
 
