@@ -26,7 +26,7 @@ let handler = async (m, { conn, text }) => {
             title: "↺ |◁   II   ▷|   ♡",
             body: `Now playing: ${text}`,
             thumbnailUrl: pp,
-            sourceUrl: https://whatsapp.com/channel/0029Va8VuWo4o7qRFa9pEF47,
+            sourceUrl: null,
             mediaType: 1,
             renderLargerThumbnail: false
           }
