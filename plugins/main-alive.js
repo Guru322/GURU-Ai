@@ -23,7 +23,7 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
           title: "KING B2K ✓ IS ALIVE",
           body: "KING BOT",
           thumbnailUrl: img,
-          sourceUrl: 'https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp',
+          sourceUrl: 'https://chat.whatsapp.com/Bkp0IXmbNhF2h4jZbH5I34',
           mediaType: 1,
           renderLargerThumbnail: true
           }}
