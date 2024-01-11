@@ -23,8 +23,8 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 	  
   ❏ Title: ${data.data.title}
   ❒ Link: ${args[0]}
-  ⊱─━⊱༻●༺⊰━─⊰`
- let vres = data.data.vid_360p
+  ⊱─━⊱༻MANNO-MD༺⊰━─⊰`
+ let vres = data.data.vid_480p
 
   let vid = await fetch(vres)
   const vidBuffer = await vid.buffer();
