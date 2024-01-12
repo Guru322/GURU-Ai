@@ -27,7 +27,7 @@ await displayLoadingScreen(conn, m.chat)
       forwardingScore: 999,
       externalAdReply: {
       title: "ᴛʜᴇ-ᴍᴀɴɴᴏ -ʙᴏᴛ",
-      body: "🌸🤭- " 𝐀 𝐅ɑkə 𝐒mıɭə 𝐂ɑη ┣𝐥ıdə  𝐌ıɭɭıoηs 𝐎f 𝐓əɑrs ||%❤😚",
+      body: "R U N T I M E",
       thumbnailUrl: pp,
       sourceUrl: 'https://i.imgur.com/EOU8n5C.jpg',
       mediaType: 1,
