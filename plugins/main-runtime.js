@@ -12,7 +12,7 @@ await displayLoadingScreen(conn, m.chat)
       }) * 1000
     }
     let muptime = clockString(_muptime)
-    let str = `*あMANNO RUNTIMEあ \n\n${muptime}*`
+    let str = `*あMANNO RUNTIMEあ* \n\n*${muptime}*`
     conn.sendMessage(m.chat, {
       text: str,
       contextInfo: {
@@ -31,7 +31,7 @@ await displayLoadingScreen(conn, m.chat)
       thumbnailUrl: pp,
       sourceUrl: 'https://i.imgur.com/EOU8n5C.jpg',
       mediaType: 1,
-      renderLargerThumbnail: false
+      renderLargerThumbnail: true
       }}})
 }
 handler.help = ['runtime']
