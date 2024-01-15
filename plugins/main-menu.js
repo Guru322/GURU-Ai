@@ -539,25 +539,11 @@ import {
     ${botname}  」\n
     Hii ${name} Senpai
     
-    *${ucpn}* 
-   
+    *${ucpn}*
     乂───『 *U S E R*』───乂
     ⛥ *Name:* ${name}
-    ⛥ *Gold:* ${credit}
-    ⛥ *Role:* ${role}
     ⛥ *Level:* ${level}
     ⛥ *Xp:* ${exp}
-    ╰──────────⳹
-   
-    乂───『 *I N F O*』───乂
-    ⛥ *Bot Name:* ${botname}
-    ⛥ *Mode:* ${mode}
-    ⛥ *Platform:* ${platform}
-    ⛥ *Type:* NodeJs
-    ⛥ *Baileys:* Multi Device
-    ⛥ *Prefix:* [ *${usedPrefix}* ]
-    ⛥ *Uptime:* ${muptime}
-    ⛥ *Database:*  ${totalreg}
     ╰──────────⳹
     
     乂───『 *I N F O  C M D*』───乂 
