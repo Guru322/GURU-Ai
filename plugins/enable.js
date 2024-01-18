@@ -216,7 +216,6 @@ case 'autobio':
 ⛊ nsfw
 ⛊ autosticker
 ⛊ detect
-⛊ antidelete
 ⛊ jarvis
 ⛊ antispam
 ⛊ antitoxic
