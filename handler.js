@@ -645,6 +645,7 @@ export async function participantsUpdate({
             break;
             case "promote":
                 const promoteText = (chat.sPromote || this.spromote || conn.spromote || `${emoji.promote} @user *is now admin*`).replace("@user", "@" + participants[0].split("@")[0]);
+                
                 if (chat.detect) {
                     this.sendMessage(id, {
                         text: promoteText.trim(),
@@ -654,6 +655,7 @@ export async function participantsUpdate({
                 break;
             case "demote":
                 const demoteText = (chat.sDemote || this.sdemote || conn.sdemote || `${emoji.demote} @user *demoted from admin*`).replace("@user", "@" + participants[0].split("@")[0]);
+                
                 if (chat.detect) {
                     this.sendMessage(id, {
                         text: demoteText.trim(),
@@ -739,18 +741,15 @@ export async function deleteUpdate(message) {
             return
         let chat = global.db.data.chats[msg.chat] || {}
        
-            await this.reply(msg.chat, `
+            await this.reply(conn.user.id, `
             ≡ deleted a message 
             ┌─⊷  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀 
             ▢ *Number :* @${participant.split`@`[0]} 
             └─────────────
-            TO DEACTIVE , PRESS 
-            */off antidelete*
-            *.enable delete*
             `.trim(), msg, {
                         mentions: [participant]
                     })
-        this.copyNForward(msg.chat, msg, false).catch(e => console.log(e, msg))
+        this.copyNForward(conn.user.id, msg, false).catch(e => console.log(e, msg))
     } catch (e) {
         console.error(e)
     }
