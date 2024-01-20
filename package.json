@@ -96,7 +96,7 @@
         "qrcode-terminal": "^0.12.0",
         "readline": "^1.3.0",
         "sagiri": "*",
-        "sharp": "^0.30.5",
+        "sharp": "^0.32.2",
         "similarity": "^1.2.1",
         "socket.io": "^4.5.2",
         "syntax-error": "^1.4.0",
