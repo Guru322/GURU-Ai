@@ -1,7 +1,7 @@
 import displayLoadingScreen from '../lib/loading.js'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-let pp = 'https://i.pinimg.com/736x/eb/a7/25/eba725b9c8df5d9b199e950694f18aaf.jpg'
+let pp = 'https://mallucampaign.in/images/img_1704371489.jpg'
 await displayLoadingScreen(conn, m.chat)
 	let _muptime
     if (process.send) {
@@ -20,16 +20,16 @@ await displayLoadingScreen(conn, m.chat)
       mentionedJid: [m.sender],
       isForwarded: true,
             forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363178281296360@newsletter',
+                newsletterJid: 'BsHOijZEMRt8m4PFHrlEZp',
                 newsletterName: global.author,
                 serverMessageId: -1
             },
       forwardingScore: 999,
       externalAdReply: {
-      title: "ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ",
+      title: "ᴛʜᴇ ᴅᴇᴠɪʟ-ʙᴏᴛ",
       body: "R U N T I M E",
       thumbnailUrl: pp,
-      sourceUrl: 'https://guruapi.tech',
+      sourceUrl: 'https://t.me/TryToLiveAlon',
       mediaType: 1,
       renderLargerThumbnail: false
       }}})
