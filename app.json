@@ -7,23 +7,48 @@
   "repository": "https://github.com/Guru322/GURU-BOT",
   "stack": "container",
   "env": {
-    "OPENAI_API_KEY": {
-      "description": "openai apikey",
-      "required": false,
-      "value": ""
-    },
-    "OPENAI_ORGANIZATION": {
-      "description": "openai organisation id",
-      "required": false,
-      "value": ""
-    },
-    "MONGO_DB": {
+    "DATABASE_URL": {
       "description": "your mongodb database url",
       "required": false,
       "value": ""
     },
-    "REMOVE_BG_API_KEY": {
-      "description": "removebg api key",
+    "SESSION_ID": {
+      "description": "your session id",
+      "required": true,
+      "value": ""
+    },
+    "MODE": {
+      "description": "mode public or private",
+      "required": true,
+      "value": "public"
+    },
+    "PREFIX": {
+      "description": "put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
+      "required": false,
+      "value": ""
+    },
+     "HKEY": {
+      "description": "Put your Heroku api key Here , Get one from here https://dashboard.heroku.com/account",
+      "required": true,
+      "value": ""
+    },
+     "HAPP": {
+      "description": "Put the Heroku app name, same as above entered",
+      "required": true,
+      "value": ""
+    },
+    "statusview": {
+      "description": "make it true if you want bot to view status",
+      "required": false,
+      "value": ""
+    },
+    "autoRead": {
+      "description": "make it true if you want bot to read messages",
+      "required": false,
+      "value": ""
+    },
+     "REMOVEBG_KEY": {
+      "description": "your RemoveBg api key",
       "required": false,
       "value": ""
     }
@@ -33,6 +58,9 @@
       "url": "heroku/nodejs"
     },
     {
+      "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git"
+    },
+    {
       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
     },
     {
@@ -40,3 +68,4 @@
     }
   ]
 }
+
