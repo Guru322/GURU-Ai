@@ -56,7 +56,7 @@ let infobt = `
 ▢ *${chats.length}* Total Chats
 
 *≡ OWNER*
-  *GURU*
+  *DEVIL*
 ▢ Instagram :
   • https://instagram.com/trytolivealon
   • https://instagram.com/trytolivealon_personal
