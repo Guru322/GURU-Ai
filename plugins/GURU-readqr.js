@@ -8,6 +8,6 @@ let img = await q.download?.()
 let url = await uploadImage(img)
 let anu = await fetch(`https://api.lolhuman.xyz/api/read-qr?apikey=${lolkeysapi}&img=${url}`)
 let json = await anu.json()
-await m.reply(`*here u go:* ${json.result}`)}
+await m.reply(`*here you go:* ${json.result}`)}
 handler.command = /^(readqr)$/i
 export default handler
