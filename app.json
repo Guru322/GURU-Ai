@@ -37,27 +37,27 @@
       "required": true,
       "value": ""
     },
-    "statusview": {true}
+    "statusview": {
       "description": "make it true if you want bot to view status",
       "required": true,
       "value": ""
     },
-    "autoRead": {false}
+    "autoRead": {
       "description": "make it true if you want bot to read messages",
       "required": false,
       "value": "false"
     },
-    "antidelete": {false}
+    "antidelete": {
       "description": "bot will forward deleted messages if you make it true",
       "required": false,
       "value": "false"
-    },
+    
      "REMOVEBG_KEY": {
       "description": "your RemoveBg api key",
       "required": false,
       "value": ""
     }
-    },
+    
     "buildpacks": [
     {
       "url": "heroku/nodejs"
