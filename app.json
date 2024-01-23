@@ -1,15 +1,15 @@
 {
-  "name": "whatsapp-bot (GURU-BOT)",
+  "name": "whatsapp-bot (KÌÑG M-ÇRØSS)",
   "description": " Whatsapp bot.",
   "keywords": [
-    "whatsapp bot"
+    "KÌÑG M-ÇRØSS BOT"
   ],
-  "repository": "https://github.com/Guru322/GURU-BOT",
+  "repository": "https://github.com/M-cross1/GURU-BOT",
   "stack": "container",
   "env": {
     "DATABASE_URL": {
       "description": "your mongodb database url",
-      "required": false,
+      "required": true,
       "value": ""
     },
     "SESSION_ID": {
@@ -20,7 +20,7 @@
     "MODE": {
       "description": "mode public or private",
       "required": true,
-      "value": "public"
+      "value": "private"
     },
     "PREFIX": {
       "description": "put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
@@ -37,17 +37,17 @@
       "required": true,
       "value": ""
     },
-    "statusview": {
+    "statusview": {true}
       "description": "make it true if you want bot to view status",
-      "required": false,
+      "required": true,
       "value": ""
     },
-    "autoRead": {
+    "autoRead": {false}
       "description": "make it true if you want bot to read messages",
       "required": false,
-      "value": ""
+      "value": "false"
     },
-    "antidelete": {
+    "antidelete": {false}
       "description": "bot will forward deleted messages if you make it true",
       "required": false,
       "value": "false"
