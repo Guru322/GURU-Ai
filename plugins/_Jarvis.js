@@ -15,8 +15,21 @@ export async function before(m, { conn }) {
     return false;
   }
 
-  let chat = global.db.data.chats[m.chat]
+  const users = global.db.data.users;
+  const chats = global.db.data.chats;
 
+  const user = global.db.data.users[m.sender];
+  const chat = global.db.data.chats[m.chat];
+
+  if (m.mtype === 'protocolMessage' || m.mtype === 'pollUpdateMessage' || m.mtype === 'reactionMessage' || m.mtype === 'stickerMessage') {
+    return;
+  }
+
+  if (!m.msg   || !m.message || m.key.remoteJid !== m.chat || users[m.sender].banned || chats[m.chat].isBanned) {
+    return;
+  }
+
+  if (!m.quoted ||!m.quoted.isBaileys) return;
   if (!chat.jarvis) {
     return true;
   }
