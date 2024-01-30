@@ -12,7 +12,7 @@ await displayLoadingScreen(conn, m.chat)
       }) * 1000
     }
     let muptime = clockString(_muptime)
-    let str = `あR U N T I M Eあ \n\n${muptime}`
+    let str = `*あCYBER WARRIOR RUNTIMEあ* *\n\n${muptime}*`
     conn.sendMessage(m.chat, {
       text: str,
       contextInfo: {
@@ -26,12 +26,12 @@ await displayLoadingScreen(conn, m.chat)
             },
       forwardingScore: 999,
       externalAdReply: {
-      title: "ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ",
+      title: "𝐂𝐘𝐁𝐄𝐑_𝐖𝐀𝐑𝐑𝐈𝐎𝐑 𝐁𝐎𝐓",
       body: "R U N T I M E",
       thumbnailUrl: pp,
-      sourceUrl: 'https://guruapi.tech',
+      sourceUrl: 'https://i.imgur.com/EOU8n5C.jpg',
       mediaType: 1,
-      renderLargerThumbnail: false
+      renderLargerThumbnail: true
       }}})
 }
 handler.help = ['runtime']
