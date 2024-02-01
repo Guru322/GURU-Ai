@@ -4,12 +4,12 @@ import fetch from 'node-fetch';
 let handler = async (m, { text, usedPrefix, command }) => {
   if (command === 'tempmail') {
     try {
-      const response = await fetch('https://inrl-web-fkns.onrender.com/api/getmail?apikey=inrl');
+      const response = await fetch('https://privatix-temp-mail-v1.p.rapidapi.com/request/delete/id/%7Bmail_id%7D/');
       const data = await response.json();
 
       if (data.status && data.result && data.result.length > 0) {
         const tempMails = data.result.join('\n');
-        const replyMessage = `*Temporary Email Addresses:*\n\n${tempMails}\n\n use \`\`\`\.checkmail <mail-address>\`\`\`\ if you want to check inbox of any temp mail used from above`;
+        const replyMessage = `*Temporary Email Addresses from KING B2K:*\n\n${tempMails}\n\n use \`\`\`\.checkmail <mail-address>\`\`\`\ if you want to check inbox of any temp mail used from above`;
         m.reply(replyMessage);
       } else {
         m.reply('No temporary email addresses found.');
@@ -31,7 +31,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
     }
 
     try {
-      const response = await fetch(`https://inrl-web-fkns.onrender.com/api/getmailinfo?email=${encodeURIComponent(text)}&apikey=inrl`);
+      const response = await fetch(`https://privatix-temp-mail-v1.p.rapidapi.com/request/delete/id/%7Bmail_id%7D/=${encodeURIComponent(text)}&apikey=inrl`);
       const data = await response.json();
 
       if (data.status && data.result && data.result.length > 0) {
