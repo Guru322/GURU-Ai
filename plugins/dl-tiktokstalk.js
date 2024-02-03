@@ -6,11 +6,12 @@ let handler = async (m, { conn, text, args }) => {
   let res = await fg.ttStalk(args[0])
   let txt = `
 ┌──「 *MANNO STALK* 
-▢ *🔖Number:* ${res.name}
-▢ *🔖Username:* ${res.username}
-▢ *👥followers:* ${res.followers}
-▢ *🫂following:* ${res.following}
-▢ *📌Desc:* ${res.desc}
+▢ *🔖Number:* *${res.name}*
+▢ *🔖Username:* *${res.username}*
+▢ *👥followers:* *${res.followers}*
+▢ *🫂following:* *${res.following}*
+▢ *❤️Likes:*      *${res.Likes}*
+▢ *📌Desc:* *${res.desc}*
 
 ▢ *🔗 Link* : https://tiktok.com/${res.username}
 └────────────`
