@@ -1,6 +1,6 @@
 <p align="center">  
   <a href="https://youtu.be/WcA7GZuaN0A">
-    <img alt="MANNO" width="700" height="500" src="https://telegra.ph/file/2461d42e064f30e0f69de.jpg">
+    <img alt="MANNO" width="700" height="350" src="https://telegra.ph/file/2461d42e064f30e0f69de.jpg">
     <h1 align="center">GURU-BOT 2.O</h1>
   </a>
 </p>
