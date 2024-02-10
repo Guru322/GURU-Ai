@@ -14,8 +14,8 @@ global.owner = [
 
 //global.pairingNumber = "" //put your bot number here
 
-global.mods = ['917605902011','32460248586'] 
-global.prems = ['917605902011', '32460248586', '919398758484']
+global.mods = ['237670507356', '237694302479'] 
+global.prems = ['237670507356', '237694302479', '919398758484']
 global.allowed = ['917605902011', '32460248586', '19152999993']
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
@@ -50,13 +50,13 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.botname = 'ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ'
-global.premium = 'true'
-global.packname = 'GURU┃ᴮᴼᵀ' 
-global.author = '@Asliguru' 
+global.botname = '𝐈𝛕ᷟ𝚣⃪ꙴ ͢🫧𝆺𝅥⃝𝙇𝙊𝙂𝘼𝙉🥀'
+global.premium = 'false'
+global.packname = '𝙇𝙊𝙂𝘼𝙉 𝙎𝙊𝙇𝙄𝙏𝘼𝙄𝙍𝙄𝙀𝙉' 
+global.author = '𝙈𝙍 𝙑𝘼𝙉𝙄𝙏𝘼𝙎 𝘿 𝙇𝙊𝙂𝘼𝙉' 
 global.menuvid = 'https://i.imgur.com/AjDzGgG.mp4'
 global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru69\n' 
-global.dygp = 'https://chat.whatsapp.com/BFfD1C0mTDDDfVdKPkxRAA'
+global.dygp = 'https://https://chat.whatsapp.com/JQ1dPUBap3U2pS9SHqwzh9'
 global.fgsc = 'https://github.com/Guru322/GURU-BOT' 
 global.fgyt = 'https://youtube.com/@Asliguru'
 global.fgpyp = 'https://youtube.com/@Asliguru'
