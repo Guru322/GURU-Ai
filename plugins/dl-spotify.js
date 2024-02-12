@@ -15,20 +15,25 @@ let handler = async (m, { conn, text }) => {
         audio: {
           url: res
         },
-        mimetype: 'audio/mpeg',
-        ptt: true,
-        waveform:  [100, 0, 100, 0, 100, 0, 100],
-        fileName: "Guru.mp3",
-    
-        contextInfo: {
-          mentionedJid: [m.sender],
-          externalAdReply: {
-            title: "↺ |◁   II   ▷|   ♡",
-            body: `Now playing: ${text}`,
-            thumbnailUrl: pp,
-            sourceUrl: null,
-            mediaType: 1,
-            renderLargerThumbnail: false
+            if (results.length === 0) {
+      throw 'No results found for the given query.';
+    }
+
+    const firstResult = results[0];
+
+    const message = `
+乂 ${firstResult.title}
+乂 *Link* : ${firstResult.url}
+乂 *Duration* : ${firstResult.timestamp}
+乂 *Published :* ${firstResult.ago}
+乂 *Views:* ${firstResult.views}
+
+    `;
+
+    conn.sendFile(m.chat, firstResult.thumbnail, 'yts.jpeg', message, m);
+  } catch (error) {
+    console.error(error);
+    throw 'An error occurred while searching for  Song.';
           }
         }
     };
