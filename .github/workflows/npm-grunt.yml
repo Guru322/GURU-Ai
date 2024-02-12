@@ -1,28 +1,28 @@
 name: ERNEST 
 
-on:
-  push:
+on:github 
+  push:4 picks 
     branches: [ "26096062603]
-  pull_request:
-    branches: [ "main" ]
+  pull_request:matrix
+    branches: [ "0864662467" ]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+jobs:building 
+  build:github 
+    runs-on: guru bot
 
-    strategy:
-      matrix:
+    strategy:5
+      matrix:45
         node-version: [14.x, 16.x, 18.x]
 
-    steps:
+    steps:1 
     - uses: actions/checkout@v3
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
-      with:
+      with:github 
         node-version: ${{ matrix.node-version }}
 
     - name: Build
-      run: |
+      run: |github 
         npm install
         grunt
