@@ -1,6 +1,4 @@
-
-privacy.js
- import pkg from '@whiskeysockets/baileys';
+import pkg from '@whiskeysockets/baileys';
 const {
     WA_DEFAULT_EPHEMERAL
 } = pkg;
