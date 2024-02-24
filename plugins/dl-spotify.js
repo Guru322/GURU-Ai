@@ -7,7 +7,7 @@ let handler = async (m, { conn, text }) => {
     }
   m.react('🎶')
   await displayLoadingScreen(conn, m.chat);
-  let pp = 'https://wallpapercave.com/wp/wp7932387.jpg'
+  let pp = 'https://i.imgur.com/ur24PoA.jpg'
     const query = encodeURIComponent(text);
     let res = `https://guruapi.tech/api/spotifydl?url=${query}`
    // let spotify = await (await fetch(res)).buffer()
@@ -18,7 +18,7 @@ let handler = async (m, { conn, text }) => {
         mimetype: 'audio/mpeg',
         ptt: true,
         waveform:  [100, 0, 100, 0, 100, 0, 100],
-        fileName: "Guru.mp3",
+        fileName: "𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹.mp3",
     
         contextInfo: {
           mentionedJid: [m.sender],
