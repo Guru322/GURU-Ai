@@ -541,55 +541,33 @@ import {
     
     *${ucpn}* 
    
-    乂───『 *U S E R*』───乂
-    ⛥ *Name:* ${name}
-    ⛥ *Gold:* ${credit}
-    ⛥ *Role:* ${role}
-    ⛥ *Level:* ${level}
-    ⛥ *Xp:* ${exp}
-    ╰──────────⳹
-   
-    乂───『 *I N F O*』───乂
-    ⛥ *Bot Name:* ${botname}
-    ⛥ *Mode:* ${mode}
-    ⛥ *Platform:* ${platform}
-    ⛥ *Type:* NodeJs
-    ⛥ *Baileys:* Multi Device
-    ⛥ *Prefix:* [ *${usedPrefix}* ]
-    ⛥ *Uptime:* ${muptime}
-    ⛥ *Database:*  ${totalreg}
-    ╰──────────⳹
-    
-    乂───『 *I N F O  C M D*』───乂 
-    │ *${totalfeatures}* Commands
-    ╰──────────⳹
-     ${readMore}
 
-    乂───『 *INFO*』───乂 
-  │*Reply with the number*
-  │ to get respected Menu*
-  ╰───────⳹
-  ╭───────⳹
-  │ *1.* Bot Menu
-  │ *2.* Owner Menu
-  │ *3.* Group Menu
-  │ *4.* Fun Menu
-  │ *5.* Reaction Menu
-  │ *6.* Downloader Menu
-  │ *7.* Game Menu
-  │ *8.* Logo Menu
-  │ *9.* Sticker Menu
-  │ *10.* Audio Menu
-  │ *11.* News Menu
-  │ *12.* Economy Menu
-  │ *13.* Anime Menu
-  │ *14.* NSFW Menu
-  │ *15.* Tools Menu
-  │ *16.* AI Menu
-  │ *17.* Religion Menu
-  │ *18.* Plugin Menu
-  ╰───────⳹
- ${readMore}` 
+  ╭━༻𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹༺━╮
+  
+🌸🤭- " 𝐀 𝐅ɑkə 𝐒mıɭə 𝐂ɑη ┣𝐥ıdə  𝐌ıɭɭıoηs 𝐎f 𝐓əɑrs ||%❤😚
+
+  ╭━⊱Wᴇʟᴄᴏᴍᴇ ᴛᴏ ᴄᴍᴅ ᴍᴇɴᴜ⊱━╮
+  ✫ *1.* Bot Menu
+  ✫ *2.* Owner Menu
+  ✫ *3.* Group Menu
+  ✫ *4.* Fun Menu
+  ✫ *5.* Reaction Menu
+  ✫ *6.* Downloader Menu
+  ✫ *7.* Game Menu
+  ✫ *8.* Logo Menu
+  ✫ *9.* Sticker Menu
+  ✫ *10.* Audio Menu
+  ✫ *11.* News Menu
+  ✫ *12.* Economy Menu
+  ✫ *13.* Anime Menu
+  ✫ *14.* NSFW Menu
+  ✫ *15.* Tools Menu
+  ✫ *16.* AI Menu
+  ✫ *17.* Religion Menu
+  ✫ *18.* Plugin Menu
+  ╰━━━━━━━━━━━━━━━━━━╯
+  
+  ` 
 ;
 
   
