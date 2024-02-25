@@ -16,7 +16,7 @@ const handler = async (m, {
     usedPrefix
 }) => {
     if (!text) throw `give a text to search Example: *${usedPrefix + command}* sefali odia song`;
-    conn.GURUPLAY = conn.GURUPLAY ? conn.GURUPLAY : {};
+    conn.GURUsong = conn.GURUsong ? conn.GURUsong: {};
     await conn.reply(m.chat, wait, m);
     const result = await searchAndDownloadMusic(text);
     const infoText = `╭━༻𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹༺━╮ \n\n [ ⭐ Reply the number of the desired search result to get the Audio]. \n\n` ;
@@ -35,14 +35,14 @@ const orderedLinks = result.allLinks.map((link, index) => {
     const {
         key
     } = await conn.reply(m.chat, fullText, m);
-    conn.GURUplay[m.sender] = {
+    conn.GURUsong[m.sender] = {
         result,
         key,
         timeout: setTimeout(() => {
             conn.sendMessage(m.chat, {
                 delete: key
             });
-            delete conn.GURUPLAY[m.sender];
+            delete conn.GURUsong[m.sender];
         }, 150 * 1000),
     };
 };
@@ -50,13 +50,13 @@ const orderedLinks = result.allLinks.map((link, index) => {
 handler.before = async (m, {
     conn
 }) => {
-    conn.GURUPLAY = conn.GURUPLAY ? conn.GURUPLAY : {};
-    if (m.isBaileys || !(m.sender in conn.GURUPLAY)) return;
+    conn.GURUsong = conn.GURUsong ? conn.GURUsong : {};
+    if (m.isBaileys || !(m.sender in conn.GURUsong)) return;
     const {
         result,
         key,
         timeout
-    } = conn.GURUPLAY[m.sender];
+    } = conn.GURUsong[m.sender];
    
     if (!m.quoted || m.quoted.id !== key.id || !m.text) return;
     const choice = m.text.trim();
