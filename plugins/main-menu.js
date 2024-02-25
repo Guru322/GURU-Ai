@@ -536,35 +536,33 @@ import {
    
     global.fcontact = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: 'status@broadcast' }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
     const infoText = `
-    ${botname} あ⁩ 」\n
-    Hii ${name} Senpai
-    
+    ╭━༻𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹༺━╮
+ 
     *${ucpn}* 
-   
 
-  ╭━༻𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹༺━╮
-  
+
 🌸🤭- " 𝐀 𝐅ɑkə 𝐒mıɭə 𝐂ɑη ┣𝐥ıdə  𝐌ıɭɭıoηs 𝐎f 𝐓əɑrs ||%❤😚
 
   ╭━⊱Wᴇʟᴄᴏᴍᴇ ᴛᴏ ᴄᴍᴅ ᴍᴇɴᴜ⊱━╮
-  ✫ *1.* Bot Menu
-  ✫ *2.* Owner Menu
-  ✫ *3.* Group Menu
-  ✫ *4.* Fun Menu
-  ✫ *5.* Reaction Menu
-  ✫ *6.* Downloader Menu
-  ✫ *7.* Game Menu
-  ✫ *8.* Logo Menu
-  ✫ *9.* Sticker Menu
-  ✫ *10.* Audio Menu
-  ✫ *11.* News Menu
-  ✫ *12.* Economy Menu
-  ✫ *13.* Anime Menu
-  ✫ *14.* NSFW Menu
-  ✫ *15.* Tools Menu
-  ✫ *16.* AI Menu
-  ✫ *17.* Religion Menu
-  ✫ *18.* Plugin Menu
+  𓄂≛͙⃝͙🩷◉➵ 1. Bot Menu
+  𓄂≛͙⃝͙🩷◉➵ 2. Owner Menu
+  𓄂≛͙⃝͙🩷◉➵ 3. Group Menu
+  𓄂≛͙⃝͙🩷◉➵ 4. Fun Menu
+  𓄂≛͙⃝͙🩷◉➵ 5. Reaction Menu
+  𓄂≛͙⃝͙🩷◉➵ 6. Downloader Menu
+  𓄂≛͙⃝͙🩷◉➵ 7. Game Menu
+  𓄂≛͙⃝͙🩷◉➵ 8. Logo Menu
+  𓄂≛͙⃝͙🩷◉➵ 9. Sticker Menu
+  𓄂≛͙⃝͙🩷◉➵ 10. Audio Menu
+  𓄂≛͙⃝͙🩷◉➵ 11. News Menu
+  𓄂≛͙⃝͙🩷◉➵ 12. Economy Menu
+  𓄂≛͙⃝͙🩷◉➵ 13. Anime Menu
+  𓄂≛͙⃝͙🩷◉➵ 14. NSFW Menu
+  𓄂≛͙⃝͙🩷◉➵ 15. Tools Menu
+  𓄂≛͙⃝͙🩷◉➵ 16. AI Menu
+  𓄂≛͙⃝͙🩷◉➵ 17. Religion Menu
+  𓄂≛͙⃝͙🩷◉➵ 18. Plugin Menu
+  
   ╰━━━━━━━━━━━━━━━━━━╯
   
   ` 
