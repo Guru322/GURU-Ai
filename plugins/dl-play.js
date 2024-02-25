@@ -19,7 +19,7 @@ const handler = async (m, {
     conn.GURUPLAY = conn.GURUPLAY ? conn.GURUPLAY : {};
     await conn.reply(m.chat, wait, m);
     const result = await searchAndDownloadMusic(text);
-    const infoText = `✦ ──『 *GURU PLAYER* 』── ⚝ \n\n [ ⭐ Reply the number of the desired search result to get the Audio]. \n\n` ;
+    const infoText = `✦ ──『 *𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹 PLAYER* 』── ⚝ \n\n [ ⭐ Reply the number of the desired search result to get the Audio]. \n\n` ;
 
 const orderedLinks = result.allLinks.map((link, index) => {
     const sectionNumber = index + 1;
