@@ -19,7 +19,7 @@ const handler = async (m, {
     conn.GURUPLAY = conn.GURUPLAY ? conn.GURUPLAY : {};
     await conn.reply(m.chat, wait, m);
     const result = await searchAndDownloadMusic(text);
-    const infoText = `✦ ──『 *𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹 PLAYER* 』── ⚝ \n\n [ ⭐ Reply the number of the desired search result to get the Audio]. \n\n` ;
+    const infoText = `╭━༻𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹༺━╮ \n\n [ ⭐ Reply the number of the desired search result to get the Audio]. \n\n` ;
 
 const orderedLinks = result.allLinks.map((link, index) => {
     const sectionNumber = index + 1;
@@ -35,7 +35,7 @@ const orderedLinks = result.allLinks.map((link, index) => {
     const {
         key
     } = await conn.reply(m.chat, fullText, m);
-    conn.GURUPLAY[m.sender] = {
+    conn.GURUplay[m.sender] = {
         result,
         key,
         timeout: setTimeout(() => {
@@ -102,9 +102,9 @@ handler.before = async (m, {
     }
 };
 
-handler.help = ["play"];
+handler.help = ["song"];
 handler.tags = ["downloader"];
-handler.command = /^(play)$/i;
+handler.command = /^(song)$/i;
 handler.limit = true;
 export default handler;
 
