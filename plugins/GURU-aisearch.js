@@ -19,7 +19,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
     }
     await displayLoadingScreen(conn, m.chat)
     conn.sendPresenceUpdate('composing', m.chat);
-    let emsg = await conn.sendMessage(m.chat, {text: 'Thinking...'})
+    let emsg = await conn.sendMessage(m.chat, {text: 'Thinking.....'})
     const prompt = encodeURIComponent(text);
 
     const response = await fetch(endpoint + prompt);
