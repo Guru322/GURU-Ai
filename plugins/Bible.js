@@ -9,7 +9,7 @@ let bibleChapterHandler = async (m, { conn }) => {
     let chapterInput = m.text.split(' ').slice(1).join('').trim();
 
     if (!chapterInput) {
-      throw new Error(`Please specify the chapter number or name. Example: -bible john 3:16`);
+      throw new Error(`Please specify the chap number or name. Example: -bible john 3:16`);
     }
 
     // Encode the chapterInput to handle special characters
