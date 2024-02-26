@@ -47,4 +47,4 @@ async function typewriterEffect(conn, quoted ,from, text) {
    
        await delay(100); // Adjust the delay time (in milliseconds) as needed
     }
-  }
+}
