@@ -16,7 +16,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       throw '*Image generation failed*';
     }
   } catch {
-    throw '*Oops! Something went wrong while generating images. Please try again later.*';
+    throw '*Ooops! Something went wrong while generating images. Please try again later.*';
   }
 };
 
