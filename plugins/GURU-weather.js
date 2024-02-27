@@ -1,6 +1,6 @@
 import axios from "axios"
 let handler = async (m, { args }) => {
-if (!args[0]) throw "*Give a place to search for weather*"
+if (!args[0]) throw "*Give a place to search weather*"
 try {
 const response = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${args}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273`)
 const res = await response
