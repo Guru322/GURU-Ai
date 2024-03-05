@@ -1,7 +1,7 @@
 <p align="center">  
   <a href="https://youtu.be/WcA7GZuaN0A">
     <img alt="Guru" height="300" src="https://cdn.jsdelivr.net/gh/Guru322/api@Guru/K.jpg">
-    <h1 align="center">GURU-BOT 2.O</h1>
+    <h1 align="center">KING B2K ✓-BOT 2.O</h1>
   </a>
 </p>
 <p align="center">
@@ -16,7 +16,7 @@
 </p>
 
 ####  
-KING B2K- Simple Multi Device whatsapp bot.
+KING B2K ✓- Simple Multi Device whatsapp bot.
 
 ***
 
@@ -38,7 +38,7 @@ KING B2K- Simple Multi Device whatsapp bot.
 <a href='https://replit.com/@UsharaniSahoo1/GURU-BOT-PAIR?v=1' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
-#### DEPLOY TO HEROKU
+#### DEPLOY KING B2K BOT ✓ TO HEROKU
 
 1. If You don't have an account in Heroku. Create a account.
     <br>
@@ -53,7 +53,7 @@ KING B2K- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://guru-bot-deploy.vercel.app"> <img src="https://img.shields.io/badge/Heroku%20Deploy-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
-#### DEPLOY TO KOYEB
+#### DEPLOY KING B2K BOT ✓ TO KOYEB
 
 1. if you don't have a koyeb account. Create an account.
    <br>
@@ -66,7 +66,7 @@ KING B2K- Simple Multi Device whatsapp bot.
 
 
 
-#### DEPLOY TO RAILWAY(idk if this still works)
+#### DEPLOY KING B2K ✓ BOT TO RAILWAY(idk if this still works)
 
 1. If You don't have an account On Railway. Create a account.
     <br>
@@ -111,7 +111,7 @@ KING B2K- Simple Multi Device whatsapp bot.
 
 SUPPORT GROUP: <a href="https://chat.whatsapp.com/Bkp0IXmbNhF2h4jZbH5I34"><img alt="WhatsApp" src="https://camo.githubusercontent.com/2157131829ac512183ee8f8b6c6f803688a4cc66a2e686602844e80478401a7c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6f696e2047726f75702d3235443336363f7374796c653d666f722d7468652d6261646765266c6f676f3d7768617473617070266c6f676f436f6c6f723d7768697465"/></a>
 
-- Star ⭐ the repo if you like KING-BOT.
+- Star ⭐ the repo if you like KING B2K ✓-BOT.
 
 ## CREDITS 
 <div><button id="boton" type="button">Baileys - By WhiskeySockets & adiwajshing</button></div>
