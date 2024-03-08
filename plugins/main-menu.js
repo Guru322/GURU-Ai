@@ -537,39 +537,30 @@ import {
     global.fcontact = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: 'status@broadcast' }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
     const infoText = `
     ╭━༻𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹༺━╮
+    
     Hii ${name} 
     
     *${ucpn}* 
-   
-    乂───『 *U S E R*』───乂
-    ⛥ *Name:* ${name}
-    ⛥ *Gold:* ${credit}
-    ⛥ *Role:* ${role}
-    ⛥ *Level:* ${level}
-    ⛥ *Xp:* ${exp}
-    ╰──────────⳹
    
     乂───『 *I N F O*』───乂
     ⛥ *Bot Name:* ${botname}
     ⛥ *Mode:* ${mode}
     ⛥ *Platform:* ${platform}
-    ⛥ *Type:* NodeJs
-    ⛥ *Baileys:* Multi Device
     ⛥ *Prefix:* [ *${usedPrefix}* ]
     ⛥ *Uptime:* ${muptime}
     ⛥ *Database:*  ${totalreg}
-    ╰──────────⳹
+    ╰━━━━━━━━━━━━━···▸▸
     
     乂───『 *I N F O  C M D*』───乂 
     │ *${totalfeatures}* Commands
-    ╰──────────⳹
+    ╰━━━━━━━━━━━━━···▸▸
      
 
     乂───『 *INFO*』───乂 
   │*Reply with the number*
   │ to get respected Menu*
-  ╰───────⳹
-  ╭───────⳹
+  ╰━━━━━━━━━━━━━···▸▸
+  ╭━⊱Wᴇʟᴄᴏᴍᴇ ᴛᴏ ᴄᴍᴅ ᴍᴇɴᴜ⊱━╮
   │ *1.* Bot Menu
   │ *2.* Owner Menu
   │ *3.* Group Menu
@@ -588,8 +579,8 @@ import {
   │ *16.* AI Menu
   │ *17.* Religion Menu
   │ *18.* Plugin Menu
-  ╰───────⳹
- ${readMore}` 
+  ╰━━━━━━━━━━━━━···▸▸
+ ` 
 ;
 
   
