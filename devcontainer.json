@@ -1,0 +1,7 @@
+{
+    "remoteEnv": {
+      "autoRead": "true",
+      "PREFIX": "!",
+      "MODE": "private"
+   }
+}

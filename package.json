@@ -33,6 +33,11 @@
         "type": "git",
         "url": "git+https://github.com/Guru322/GURU-BOT.git"
     },
+    "remoteEnv": {
+        "autoRead": "true",
+        "PREFIX": "!",
+        "MODE": "private"
+     },
     "bugs": {
         "url": "https://github.com/Guru322/GURU-BOT/issues"
     },
