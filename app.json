@@ -1,10 +1,10 @@
 {
-  "name": "whatsapp-bot (GURU-BOT)",
+  "name": "whatsapp-bot (AMECA-BOT)",
   "description": " Whatsapp bot.",
   "keywords": [
     "whatsapp bot"
   ],
-  "repository": "https://github.com/Guru322/GURU-BOT",
+  "repository": "https://github.com/keithbaraza/AMECA-BOT",
   "stack": "container",
   "env": {
     "DATABASE_URL": {
