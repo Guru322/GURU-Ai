@@ -8,11 +8,11 @@
 <a href="https://github.com/Ameca"><img title="Author" src="https://img.shields.io/badge/AMECA-BOT-black?style=for-the-badge&logo=telegram"></a>
 <p/>
 <p align="center">
-<a href="https://github.com/Ameca?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/Ameca?label=Followers&style=social"></a>
-<a href="https://github.com/Ameca/AMECA-BOT/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Ameca/AMECA-BOT?&style=social"></a>
-<a href="https://github.com/Ameca/AMECA-BOT/network/members"><img title="Fork" src="https://img.shields.io/github/forks/Ameca/AMECA-BOT?style=social"></a>
-<a href="https://github.com/Ameca/AMECA-BOT/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Ameca/AMECA-BOT?label=Watching&style=social"></a>
-<a href="https://app.fossa.com/projects/git%2Bgithub.com%2FAmeca%2FAMECA-BOT?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FAmeca%2FAMECA-BOT.svg?type=shield"/></a>
+<a href="https://github.com/keithbaraza?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/Ameca?label=Followers&style=social"></a>
+<a href="https://github.com/keithbaraza/AMECA-BOT/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/keithbaraza/AMECA-BOT?&style=social"></a>
+<a href="https://github.com/keithbaraza/AMECA-BOT/network/members"><img title="Fork" src="https://img.shields.io/github/forks/keithbaraza/AMECA-BOT?style=social"></a>
+<a href="https://github.com/keithbaraza/AMECA-BOT/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Ameca/AMECA-BOT?label=Watching&style=social"></a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fkeithbaraza%2FAMECA-BOT?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkeithbaraza%2FAMECA-BOT.svg?type=shield"/></a>
 </p>
 
 ####  
@@ -24,7 +24,7 @@ AMECA-BOT- Simple Multi Device whatsapp bot.
 
 1. Fork the repo
     <br>
-<a href='https://github.com/Ameca/AMECA-BOT/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://github.com/keithbaraza/AMECA-BOT/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
 
@@ -104,7 +104,7 @@ AMECA-BOT- Simple Multi Device whatsapp bot.
 
 2. Now Deploy
     <br>
-<p align="center"><a href="https://repl.it/github/Ameca/AMECA-BOT"> <img src="https://img.shields.io/badge/replit%20Deploy-blue?style=for-the-badge&logo=replit" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://repl.it/github/keithbaraza/AMECA-BOT"> <img src="https://img.shields.io/badge/replit%20Deploy-blue?style=for-the-badge&logo=replit" width="220" height="38.45"/></a></p>
 
  
  ## 🤩 Support
