@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import displayLoadingScreen from '../lib/loading.js'
 
-const endpoint = 'https://v2-guru-indratensei.cloud.okteto.net/perplexity?query=';
+const endpoint = 'https://v2-ameca-indratensei.cloud.okteto.net/perplexity?query=';
 
 let handler = async (m, { text, conn, usedPrefix, command }) => {
   try {
