@@ -123,9 +123,9 @@ SUPPORT GROUP: <a href="https://chat.whatsapp.com/JmELzjCWxp55Cdu8dw3vFt"><img a
 
 
 ## `Main Dev` 
-<a href="https://github.com/Ameca"><img src="https://github.com/Guru322.png" width="250" height="250" alt="Guru322"/></a>
-  
-`GURU-BOT - By Guru322`
+<a href="https://telegra.ph/file/930a15e7c801a0dfc9cf1.jpg"><img src="https://telegra.ph/file/930a15e7c801a0dfc9cf1.jpg" width="250" height="250" alt="Ameca"/></a>
+ 
+`AMECA-BOT - By KEITH`
 
 ### CONTRIBUTORS
 <a href="https://github.com/IndraTensei"><img src="https://github.com/IndraTensei.png" width="200" height="200" alt="Ash"/></a>
