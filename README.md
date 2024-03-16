@@ -1,22 +1,22 @@
 <p align="center">  
-  <a href="https://youtu.be/WcA7GZuaN0A">
-    <img alt="Guru" height="300" src="https://cdn.jsdelivr.net/gh/Guru322/api@Guru/K.jpg">
-    <h1 align="center">GURU-BOT 2.O</h1>
+  <a href="https://telegra.ph/file/a7509b4968064f3020f80.jpg">
+    <img alt="Ameca" height="300" src="https://cdn.jsdelivr.net/gh/Ameca/api@Ameca/K.jpg">
+    <h1 align="center">AMECA-BOT 2.O</h1>
   </a>
 </p>
 <p align="center">
-<a href="https://github.com/Guru322"><img title="Author" src="https://img.shields.io/badge/GURU-BOT-black?style=for-the-badge&logo=telegram"></a>
+<a href="https://github.com/Ameca"><img title="Author" src="https://img.shields.io/badge/AMECA-BOT-black?style=for-the-badge&logo=telegram"></a>
 <p/>
 <p align="center">
-<a href="https://github.com/Guru322?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/Guru322?label=Followers&style=social"></a>
-<a href="https://github.com/Guru322/GURU-BOT/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Guru322/GURU-BOT?&style=social"></a>
-<a href="https://github.com/Guru322/GURU-BOT/network/members"><img title="Fork" src="https://img.shields.io/github/forks/Guru322/GURU-BOT?style=social"></a>
-<a href="https://github.com/Guru322/GURU-BOT/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Guru322/GURU-BOT?label=Watching&style=social"></a>
-<a href="https://app.fossa.com/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT.svg?type=shield"/></a>
+<a href="https://github.com/Ameca?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/Ameca?label=Followers&style=social"></a>
+<a href="https://github.com/Ameca/AMECA-BOT/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Ameca/AMECA-BOT?&style=social"></a>
+<a href="https://github.com/Ameca/AMECA-BOT/network/members"><img title="Fork" src="https://img.shields.io/github/forks/Ameca/AMECA-BOT?style=social"></a>
+<a href="https://github.com/Ameca/AMECA-BOT/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Ameca/AMECA-BOT?label=Watching&style=social"></a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2FAmeca%2FAMECA-BOT?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FAmeca%2FAMECA-BOT.svg?type=shield"/></a>
 </p>
 
 ####  
-GURU-BOT- Simple Multi Device whatsapp bot.
+AMECA-BOT- Simple Multi Device whatsapp bot.
 
 ***
 
@@ -24,18 +24,18 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
 1. Fork the repo
     <br>
-<a href='https://github.com/Guru322/GURU-BOT/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://github.com/Ameca/AMECA-BOT/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
 
 2. Get Session ID (Server 1)
     <br>
-<a href='https://session.guruapi.tech' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://session.amecaapi.tech' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
 3. Get Session ID (Server 2) (use this if server 1 Doesn't work)
     <br>
-<a href='https://replit.com/@UsharaniSahoo1/GURU-BOT-PAIR?v=1' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://replit.com/@UsharaniSahoo1/AMECA-BOT-PAIR?v=1' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
 #### DEPLOY TO HEROKU
@@ -51,7 +51,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
 3. Now Deploy
     <br>
-<p align="center"><a href="https://guru-bot-deploy.vercel.app"> <img src="https://img.shields.io/badge/Heroku%20Deploy-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://ameca-bot-deploy.vercel.app"> <img src="https://img.shields.io/badge/Heroku%20Deploy-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 #### DEPLOY TO KOYEB
 
@@ -61,7 +61,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
 2. Now deploy
    <br>
-  <p align="center"><a href="https://guru-bot-deploy.vercel.app"> <img src="https://www.koyeb.com/static/images/deploy/button.svg" width="380" height="38.45"/></a></p>
+  <p align="center"><a href="https://ameca-bot-deploy.vercel.app"> <img src="https://www.koyeb.com/static/images/deploy/button.svg" width="380" height="38.45"/></a></p>
 
 
 
@@ -89,7 +89,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
  - Fork and star this repo.
 - Now head towards Lunch Dev Environment
-- Now select the forked GURU BOT repository.
+- Now select the forked AMECA BOT repository.
 - Now go to <b>Variables</b> and add variable listed below.
    - DATABASE_URL, SESSION_ID, REMOVEBG_KEY, PREFIX
 - Then Click Lunch and wait for deplyment to complete.
@@ -104,14 +104,14 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 
 2. Now Deploy
     <br>
-<p align="center"><a href="https://repl.it/github/Guru322/GURU-BOT"> <img src="https://img.shields.io/badge/replit%20Deploy-blue?style=for-the-badge&logo=replit" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://repl.it/github/Ameca/AMECA-BOT"> <img src="https://img.shields.io/badge/replit%20Deploy-blue?style=for-the-badge&logo=replit" width="220" height="38.45"/></a></p>
 
  
  ## 🤩 Support
 
 SUPPORT GROUP: <a href="https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp"><img alt="WhatsApp" src="https://camo.githubusercontent.com/2157131829ac512183ee8f8b6c6f803688a4cc66a2e686602844e80478401a7c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6f696e2047726f75702d3235443336363f7374796c653d666f722d7468652d6261646765266c6f676f3d7768617473617070266c6f676f436f6c6f723d7768697465"/></a>
 
-- Star ⭐ the repo if you like GURU-BOT.
+- Star ⭐ the repo if you like AMECA-BOT.
 
 ## CREDITS 
 <div><button id="boton" type="button">Baileys - By WhiskeySockets & adiwajshing</button></div>
@@ -123,7 +123,7 @@ SUPPORT GROUP: <a href="https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp"><img a
 
 
 ## `Main Dev` 
-<a href="https://github.com/Guru322"><img src="https://github.com/Guru322.png" width="250" height="250" alt="Guru322"/></a>
+<a href="https://github.com/Ameca"><img src="https://github.com/Guru322.png" width="250" height="250" alt="Guru322"/></a>
   
 `GURU-BOT - By Guru322`
 
@@ -154,4 +154,12 @@ SUPPORT GROUP: <a href="https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp"><img a
 
 
 ## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FAmeca%2FAMECA-BOT?ref=badge_large)
+
+
+
+## developer
+keith tech
+
+whatsapp
++254796299159
