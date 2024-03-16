@@ -12,16 +12,16 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
   try {
     m.react(rwait)
     const { key } = await conn.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/c3f9e4124de1f31c1c6ae.jpg' },
+      image: { url: 'https://telegra.ph/file/a7509b4968064f3020f80.jpg' },
       caption: 'Thinking....'
     }, {quoted: m})
     conn.sendPresenceUpdate('composing', m.chat);
     const prompt = encodeURIComponent(text);
 
-    const guru1 = `${gurubot}/chatgpt?text=${prompt}`;
+    const ameca1 = `${amecabot}/chatgpt?text=${prompt}`;
     
     try {
-      let response = await fetch(guru1);
+      let response = await fetch(ameca1);
       let data = await response.json();
       let result = data.result;
 
@@ -46,10 +46,10 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
   
       const model = 'llama';
       const senderNumber = m.sender.replace(/[^0-9]/g, ''); 
-      const session = `GURU_BOT_${senderNumber}`;
+      const session = `AMECA_BOT_${senderNumber}`;
       const guru2 = `https://ultimetron.guruapi.tech/gpt3?prompt=${prompt}`;
       
-      let response = await fetch(guru2);
+      let response = await fetch(ameca2);
       let data = await response.json();
       let result = data.completion;
 
