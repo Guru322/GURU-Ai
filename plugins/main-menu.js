@@ -536,7 +536,7 @@ import {
    
     global.fcontact = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: 'status@broadcast' }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
     const infoText = `
-    ${namebot} あ⁩ 」\n
+    ${botname} あ⁩ 」\n
     Hii ${name} Senpai
     
     *${ucpn}* 
@@ -550,7 +550,7 @@ import {
     ╰──────────⳹
    
     乂───『 *معلومات البوت*』───乂
-    ⛥ *اسم البوت* ${namebot}
+    ⛥ *اسم البوت* ${botname}
     ⛥ *الوضع:* ${mode}
     ⛥ *المنصه:* ${platform}
     ⛥ *النوع:* NodeJs
