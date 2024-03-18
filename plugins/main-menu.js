@@ -536,38 +536,37 @@ import {
    
     global.fcontact = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: 'status@broadcast' }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
     const infoText = `
-    ${botname} あ⁩ 」\n
+    ${namebot} あ⁩ 」\n
     Hii ${name} Senpai
     
     *${ucpn}* 
    
     乂───『 *U S E R*』───乂
-    ⛥ *Name:* ${name}
-    ⛥ *Gold:* ${credit}
-    ⛥ *Role:* ${role}
-    ⛥ *Level:* ${level}
-    ⛥ *Xp:* ${exp}
+    ⛥ *الاسم:* ${name}
+    ⛥ *الذهب:* ${credit}
+    ⛥ *الرتبة:* ${role}
+    ⛥ *المستوي:* ${level}
+    ⛥ *الخبره:* ${exp}
     ╰──────────⳹
    
-    乂───『 *I N F O*』───乂
-    ⛥ *Bot Name:* ${botname}
-    ⛥ *Mode:* ${mode}
-    ⛥ *Platform:* ${platform}
-    ⛥ *Type:* NodeJs
+    乂───『 *معلومات البوت*』───乂
+    ⛥ *اسم البوت* ${namebot}
+    ⛥ *الوضع:* ${mode}
+    ⛥ *المنصه:* ${platform}
+    ⛥ *النوع:* NodeJs
     ⛥ *Baileys:* Multi Device
-    ⛥ *Prefix:* [ *${usedPrefix}* ]
-    ⛥ *Uptime:* ${muptime}
-    ⛥ *Database:*  ${totalreg}
+    ⛥ *قبل كل امر:* [ *${usedPrefix}* ]
+    ⛥ *مدة التشغيل:* ${muptime}
+    ⛥ *البيانات:*  ${totalreg}
     ╰──────────⳹
     
-    乂───『 *I N F O  C M D*』───乂 
-    │ *${totalfeatures}* Commands
+    乂───『 *معلومات الاوامر』───乂 
+    │ *${totalfeatures}* الاوامر
     ╰──────────⳹
      ${readMore}
 
-    乂───『 *INFO*』───乂 
-  │*Reply with the number*
-  │ to get respected Menu*
+    乂───『 *ملاحظه*』───乂 
+  │*منشن رسالة المنيو بالرقم الي تبغاه عشان يرد عليك*
   ╰───────⳹
   ╭───────⳹
   │ *1.* اوامر البوت
