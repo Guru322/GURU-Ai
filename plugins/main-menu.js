@@ -12,7 +12,7 @@ import {
    import os from "os"
 
   
-   let قائمة القروب = `
+   let BotMenu = `
    ✦ ───『 *group* 』─── ⚝
   ◈ .getbio <@tag/reply>  Ⓛ
   ◈ .animequote
@@ -43,7 +43,7 @@ import {
   ◈ .main
   ╰──────────⳹`
   
-  let اوامر المطور = `
+  let  OwnerMenu = `
   ✦ ───『 *owner* 』─── ⚝
   ◈ .addprem <@tag>
   ◈ .addowner @user
@@ -75,7 +75,7 @@ import {
   ◈ .deleteplugin <name>
   ╰──────────⳹`
   
-  let اوامر المتعه = `
+  let funmenu  = `
   ✦ ───『 *fun* 』─── ⚝
   ◈ .afk <reason>
   ◈ .tomp3
@@ -97,7 +97,7 @@ import {
   ◈ .quote
   ╰──────────⳹`
   
-  let اوامر الرياكت = `
+  let ReactionMenu = `
   ✦ ───『 *reaction* 』─── ⚝
   ◈ .bully @tag
   ◈ .cuddle @tag
