@@ -560,13 +560,13 @@ import {
     ⛥ *البيانات:*  ${totalreg}
     ╰──────────⳹
     
-    乂───『 *معلومات الاوامر』───乂 
+    乂───『 *معلومات الاوامر*』───乂 
     │ *${totalfeatures}* الاوامر
     ╰──────────⳹
      ${readMore}
 
     乂───『 *ملاحظه*』───乂 
-  │*منشن رسالة المنيو بالرقم الي تبغاه عشان يرد عليك*
+  *│منشن رسالة المنيو بالرقم الي تبغاه عشان يرد عليك*
   ╰───────⳹
   ╭───────⳹
   │ *1.* اوامر البوت
@@ -697,7 +697,7 @@ import {
   
   handler.help = ["play"];
   handler.tags = ["downloader"];
-  handler.command = /^(menu)$/i;
+  handler.command = /^(menu|اوامر)$/i;
   handler.limit = true;
   export default handler;
   
