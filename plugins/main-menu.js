@@ -541,7 +541,7 @@ import {
     
     *${ucpn}* 
    
-    乂───『 *U S E R*』───乂
+    乂───『 *المستخدم*』───乂
     ⛥ *الاسم:* ${name}
     ⛥ *الذهب:* ${credit}
     ⛥ *الرتبة:* ${role}
@@ -553,7 +553,7 @@ import {
     ⛥ *اسم البوت* ${botname}
     ⛥ *الوضع:* ${mode}
     ⛥ *المنصه:* ${platform}
-    ⛥ *النوع:* NodeJs
+    ⛥ *الموديل:* NodeJs
     ⛥ *Baileys:* Multi Device
     ⛥ *قبل كل امر:* [ *${usedPrefix}* ]
     ⛥ *مدة التشغيل:* ${muptime}
@@ -730,18 +730,18 @@ import {
    
    function ucapan() {
     const time = moment.tz("Asia/Kolkata").format("HH")
-    let res = "Good morning ☀️"
+    let res = "صباح النور ☀️"
     if (time >= 4) {
-     res = "Good Morning 🌄"
+     res = "صباح العسل 🌄"
     }
     if (time >= 10) {
-     res = "Good Afternoon ☀️"
+     res = "صباح السكر ☀️"
     }
     if (time >= 15) {
-     res = "Good Afternoon 🌇"
+     res = "مساء الخير 🌇"
     }
     if (time >= 18) {
-     res = "Good Night 🌙"
+     res = "القمر الي سهران 🌙"
     }
     return res
    }
