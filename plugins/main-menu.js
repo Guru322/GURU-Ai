@@ -43,7 +43,7 @@ import {
   ◈ .main
   ╰──────────⳹`
   
-  let  OwnerMenu = `
+  let OwnerMenu = `
   ✦ ───『 *owner* 』─── ⚝
   ◈ .addprem <@tag>
   ◈ .addowner @user
