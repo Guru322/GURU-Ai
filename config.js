@@ -50,11 +50,11 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.botname = 'ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ'
+global.botname = 'DAZAI BOT'
 global.premium = 'true'
 global.packname = 'Dazai bot' 
 global.author = '@AsliDazai' 
-global.menuvid = 'https://i.imgur.com/AjDzGgG.mp4'
+global.menuvid = 'https://telegra.ph/file/0fe06d0eda559e194ab7e.mp4'
 global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/asli_guru69\n' 
 global.dygp = 'https://chat.whatsapp.com/BFfD1C0mTDDDfVdKPkxRAA'
 global.fgsc = 'https://github.com/Guru322/GURU-BOT' 
