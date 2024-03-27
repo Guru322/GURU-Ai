@@ -3,7 +3,7 @@ import fg from 'api-dylux'
 import fetch from 'node-fetch'
 import { sticker } from '../lib/sticker.js'
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
-    if (!args[0]) throw `✳️ enter what you want to search \n\n📌*Example:*\n${usedPrefix + command} homero`
+    if (!args[0]) throw `✳️ enter what you want to search \n\n📌*Example:*\n${usedPrefix + command} KING B2K 😗`
     
     //Result https://getstickerpack.com/
     try {
