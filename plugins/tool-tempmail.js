@@ -12,15 +12,15 @@ let handler = async (m, { text, usedPrefix, command }) => {
         const replyMessage = `*Temporary Email Addresses from KING B2K:*\n\n${tempMails}\n\n use \`\`\`\.checkmail <mail-address>\`\`\`\ if you want to check inbox of any temp mail used from above`;
         m.reply(replyMessage);
       } else {
-        m.reply('No temporary email addresses found.');
+        m.reply('Nahi Mili Bhai...');
       }
     } catch (error) {
       console.error('Error:', error);
-      m.reply('Failed to fetch temporary email addresses.');
+      m.reply('Nahi mili bhai temporary Email..Bhot dhunda..');
     }
   } else if (command === 'checkmail') {
     if (!text && !(m.quoted && m.quoted.text)) {
-      m.reply('Please provide some text or quote a message to get a response.');
+      m.reply('Mail address to bata chutiye...');
       return;
     }
 
