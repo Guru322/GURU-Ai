@@ -1,11 +1,11 @@
-const free = 2000
-const prem = 5000
+const free = 5000
+const prem = 1000000
 
 let handler = async (m, {conn, isPrems }) => {
   let time = global.db.data.users[m.sender].lastclaim + 86400000
-  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `You have already claimed your daily gold recently. Claim again in *${msToTime(time - new Date())}* `
+  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `Abhi to claim kiya h chomu. Claim again in *${msToTime(time - new Date())}* `
   global.db.data.users[m.sender].credit += isPrems ? prem : free
-  m.reply(`🎉 *${isPrems ? prem : free} gold has been added to your wallet*`)
+  m.reply(`🎉 *${isPrems ? prem : free} Rupees wallet me agyee...ab to maje maje*`)
   global.db.data.users[m.sender].lastclaim = new Date * 1
 }
 handler.help = ['daily']
