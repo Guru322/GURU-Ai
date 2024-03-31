@@ -1,4 +1,4 @@
-import { createHash } from 'crypto'
+limport { createHash } from 'crypto'
 import PhoneNumber from 'awesome-phonenumber'
 import { canLevelUp, xpRange } from '../lib/levelling.js'
 import fetch from 'node-fetch'
@@ -41,28 +41,28 @@ let str = `
 
 📜 *_Quote of the day: ${quote}_* 📜
 
-┏━💼 _User Info:_ 💼━┓
-┃ 👾  *User Tag:* ${taguser} 
-┃ 🎩  *Name:* ${name} 
-┃ 🦸  *Master Mind:* ${author} 
-┃ 💎  *Diamonds:* ${diamond} 
-┃ 🏆  *Rank:* ${role}
-┃ 🎮  *XP:* ${exp} 
-┗━━━━━━━━━━━┛
+*┏━🧾_User Info:_ 🧾━┓*
+*┃ 👾  User Tag: ${taguser}*
+*┃ 🎩  Name: ${name}*
+*┃ 🦸  Master Mind: ${author}*
+*┃ 💎  Diamonds: ${diamond}*
+*┃ 🏆  Rank: ${role}*
+*┃ 🎮  XP: ${exp}*
+*┗━━━━━━━━━━━┛*
 
-┏━━⏰ _Today's Sauce!_ ⏰━┓
-┃ 📆  *Today's Date:* ${date} 
-┃ ⏲️  *Current Time:* ${wib} 
-┗━━━━━━━━━━━━━┛
+*┏━━⏰ _Today's Sauce!_ ⏰━┓*
+*┃ 📆  Today's Date: ${date}*
+*┃ ⏲️  Current Time: ${wib}*
+*┗━━━━━━━━━━━━━┛*
 
-┏━━🤖 _BOT STATUS:_🤖━━┓
-┃ 🤡  *Bot Name:* ${botname} 
-┃ 💻  *Platform:* Linux 
-┃ 📣  *Prefix:* ${usedPrefix} 
-┃ 🕓  *Uptime:* ${uptime}
-┃ 💌  *Database:* ${rtotalreg} of ${totaluser} 
-┃ 📚  *Total Users:* ${totaluser} 
-┗━━━━━━━━━━━━━┛
+*┏━━🤖 _BOT STATUS:_🤖━━┓*
+*┃ 🤡  Bot Name: ${botname}*
+*┃ 💻  Platform: Linux*
+*┃ 📣  Prefix: ${usedPrefix}*
+*┃ 🕓  Uptime: ${uptime}*
+*┃ 💌  Database: ${rtotalreg} of ${totaluser}* 
+*┃ 📚  Total Users: ${totaluser}*
+*┗━━━━━━━━━━━━━┛*
 
 💡 *_Remember, when in doubt, use ${usedPrefix}list or ${usedPrefix}help2. It's like my magic spell book!_* 💡
 `
