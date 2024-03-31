@@ -238,7 +238,7 @@ case 'autobio':
   }
 
 m.reply(`
-✅ *${type}* Now *${isEnable ? 'Active' : 'Deactive'}* ${isAll ? 'for this bot' : isUser ? '' : 'for this bot'}
+✅ *${type}* Now *${isEnable ? 'Active' : 'Deactive'}* ${isAll ? 'ғᴏʀ ᴍᴀɴɴᴏ ʙᴏᴛ' : isUser ? '' : 'ғᴏʀ ᴍᴀɴɴᴏ ʙᴏᴛ'}
 `.trim()) 
 
 }
