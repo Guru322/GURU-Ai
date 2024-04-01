@@ -12,8 +12,8 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
   try {
     m.react(rwait)
     const { key } = await conn.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/8b5d743b222bd98db9208.jpg' },
-      caption: 'Thinking ....'
+      image: { url: 'https://telegra.ph/file/c3f9e4124de1f31c1c6ae.jpg' },
+      caption: 'Thinking....'
     }, {quoted: m})
     conn.sendPresenceUpdate('composing', m.chat);
     const prompt = encodeURIComponent(text);
@@ -46,7 +46,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
   
       const model = 'llama';
       const senderNumber = m.sender.replace(/[^0-9]/g, ''); 
-      const session = `MANNO_BOT_${senderNumber}`;
+      const session = `GURU_BOT_${senderNumber}`;
       const guru2 = `https://ultimetron.guruapi.tech/gpt3?prompt=${prompt}`;
       
       let response = await fetch(guru2);
