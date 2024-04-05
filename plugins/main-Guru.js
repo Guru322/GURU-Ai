@@ -4,15 +4,15 @@ let handler = async m => m.reply(`
 
 *─────────────*
 *▢ Join public post group and support*
-*https://chat.whatsapp.com/Esn7W3azds7EWBtJcn16Zt*
+*https://chat.whatsapp.com/JLYhBR3rZPC00zyBHMyqDL*
 
-*ꜛ-🫂❤‍🩹⏤͟͟͞͞᚜ု᪳₊₆₀̄₁₄ᷟ₂ͣ₅ᷠ₆ᷠ₈ͦ₈₆̄₁ှ᪳᚛͟͞⏤🌸↑*                
+*⏜✩ ˻𝐈ʈͥ᥊ ϻaͣŋͫŋ̑ο̑˼ 𓃮•:)*                
 
 *🌸🤭- " 𝐀 𝐅ɑkə 𝐒mıɭə 𝐂ɑη ┣𝐥ıdə  𝐌ıɭɭıoηs 𝐎f 𝐓əɑrs ||%❤😚*
 
 `.trim())
 handler.help = ['gpmanno']
 handler.tags = ['gpmanno']
-handler.command = ['groups', 'groupguru', 'gugp', 'ggp', 'gpguru'] 
+handler.command = ['groups', 'groupmanno', 'gugp', 'ggp', 'gpmanno'] 
 
 export default handler
