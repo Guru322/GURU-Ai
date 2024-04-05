@@ -22,9 +22,9 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
           mentionedJid: [m.sender],
           externalAdReply: {
           title: "I AM ALIVE 🫀🄼 ˻𝐈ʈͥ᥊ ϻaͣŋͫŋ̑ο̑˼²⁴⁶ ᴡᴀ ʙᴏᴛ ᴛᴇᴀᴍ",
-          body: "GURU BOT",
+          body: "MANNO BOT",
           thumbnailUrl: img,
-          sourceUrl: 'https://Wa.me//+60142568861',
+          sourceUrl: 'https://Wa.me//+923097045246',
           mediaType: 1,
           renderLargerThumbnail: true
           }}
