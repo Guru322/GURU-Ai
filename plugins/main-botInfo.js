@@ -49,22 +49,17 @@ let infobt = `
 ≡ *INFO BOT*
   
 *STATE*
-▢ *${groupsIn.length}* GROUP CHATS
-▢ *${groupsIn.length}* united groups
-▢ *${groupsIn.length - groupsIn.length}* abandoned groups
-▢ *${chats.length - groupsIn.length}* private chats
-▢ *${chats.length}* Total Chats
+▢ *${groupsIn.length}* *GROUP CHATS*
+▢ *${groupsIn.length}* *united groups*
+▢ *${groupsIn.length - *groupsIn.length}* abandoned groups*
+▢ *${chats.length - *groupsIn.length}* private chats*
+▢ *${chats.length}* *Total Chats*
 
 *≡ OWNER*
-  *GURU*
-▢ Instagram :
-  • https://instagram.com/asli_guru69
-▢ GitHub :
-  • https://github.com/Guru322
-▢ Telegram : 
-  • t.me/i_want_to_be_isekaied (GURU) 
-▢ YouTube : 
-  • https://youtube.com/@Asliguru
+  *MANNO-2.0*
+
+*▢ GitHub :*
+  *• https://github.com/Itxmanno05/MANNO-BOT*
 
  *≡ S E R V E R*
 *🛑 RAM:* ${format(totalmem() - freemem())} / ${format(totalmem())}
