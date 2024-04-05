@@ -10,7 +10,7 @@ let handler = async(m, { conn, text }) => {
 
   // If the input is valid (contains exactly one symbol), update the prefix
   global.prefix = new RegExp('^[' + text.replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
-  await m.reply(`ᴛʜᴇ ᴘʀᴇғɪx ʜᴀs ʙᴇᴇɴ ᴄʜᴀɴɢᴇᴅ ᴍᴀɴɴᴏ ʙᴏᴛ to *${text}*`)
+  await m.reply(`*𝙏𝙃𝙀 𝙋𝙍𝙀𝙁𝙄𝙓 𝙃𝘼𝙎 𝘽𝙀𝙀𝙉 𝘾𝙃𝘼𝙉𝙂𝙀𝘿 𝙈𝘼𝙉𝙉𝙊-𝘽𝙊𝙏* to *${text}*`)
 }
 handler.help = ['.setprefix ', '.setprefix [symbol]']
 handler.tags = ['owner']
