@@ -51,9 +51,9 @@ let infobt = `
 *╅╌❐-" 𝙎𝙏𝘼𝙏𝙀 🂱*
 
  *╅╌❐-"  ${groupsIn.length}  𝙂𝙍𝙊𝙐𝙋 𝘾𝙃𝘼𝙏 🂱*
- *╅╌❐-" ${groupsIn.length}  𝙐𝙉𝙄𝙏𝙀𝘿 𝙂𝙍𝙊𝙐𝙋𝙎 🂱*
- *╅╌❐-" ${groupsIn.length - groupsIn.length}  𝘼𝘽𝘼𝙉𝘿𝙊𝙉𝙀𝘿 𝙂𝙍𝙊𝙐𝙋𝙎 🂱*
- *╅╌❐-" ${chats.length - groupsIn.length}  𝙋𝙍𝙄𝙑𝘼𝙏𝙀 𝘾𝙃𝘼𝙏𝙎 🂱*
+ *╅╌❐-"  ${groupsIn.length}  𝙐𝙉𝙄𝙏𝙀𝘿 𝙂𝙍𝙊𝙐𝙋𝙎 🂱*
+ *╅╌❐-"  ${groupsIn.length - groupsIn.length}  𝘼𝘽𝘼𝙉𝘿𝙊𝙉𝙀𝘿 𝙂𝙍𝙊𝙐𝙋𝙎 🂱*
+ *╅╌❐-"  ${chats.length - groupsIn.length}  𝙋𝙍𝙄𝙑𝘼𝙏𝙀 𝘾𝙃𝘼𝙏𝙎 🂱*
  *╅╌❐-"  ${chats.length} 𝙏𝙊𝙏𝘼𝙇 𝘾𝙃𝘼𝙏𝙎 🂱*
 
 *╅╌❐-" 𝙊𝙒𝙉𝙀𝙍 ☞︎︎︎ 𝙈𝘼𝙉𝙉𝙊-🂱*
