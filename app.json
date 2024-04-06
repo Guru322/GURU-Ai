@@ -1,5 +1,5 @@
 {
-  "name": "whatsapp-bot (GURU-BOT)",
+  "name": "whatsapp-bot (𝑺𝒆𝒓𝒆𝒏𝒅𝒊𝒑𝒊𝒕𝒚𝒚𝒚𝒚𝒚𝒚𝒚𝒚)",
   "description": " Whatsapp bot.",
   "keywords": [
     "whatsapp bot"
@@ -20,7 +20,7 @@
     "MODE": {
       "description": "mode public or private",
       "required": true,
-      "value": "public"
+      "value": "private"
     },
     "PREFIX": {
       "description": "put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
