@@ -41,4 +41,3 @@ async function stylizeText(text, key) {
   // Use 'result' field for the styled text.
   return `*Key ${key}*\n${data.result}`;
 }
-
