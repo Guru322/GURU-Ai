@@ -23,7 +23,7 @@ MANNO-BOT- Simple Multi Device whatsapp bot.
 #### SETUP
 
 1. Fork the repo
-    <br>
+    <https://github.com/Itxmanno05/MANNO-BOT>
 <a href='https://github.com/Itxmanno05/MANNO-BOT/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
