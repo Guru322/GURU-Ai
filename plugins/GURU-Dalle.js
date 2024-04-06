@@ -4,7 +4,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) throw `*This command generates images from text prompts*\n\n*𝙴xample usage*\n*◉ ${usedPrefix + command} Beautiful anime girl*\n*◉ ${usedPrefix + command} Elon Musk in pink output*`;
 
   try {
-    m.reply('*Please wait, generating images...*');
+    m.reply('*𝗣𝗟𝗘𝗔𝗖𝗘 𝗪𝗔𝗜𝗧, 𝗚𝗘𝗡𝗥𝗘𝗔𝗧𝗜𝗡𝗚 𝗜𝗠𝗔𝗚𝗘...*');
 
     const endpoint = `https://cute-tan-gorilla-yoke.cyclic.app/imagine?text=${encodeURIComponent(text)}`;
     const response = await fetch(endpoint);
