@@ -46,27 +46,28 @@ let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './Guru.jpg')
 let user = global.db.data.users[who]
   
 let infobt = `
-*╅╌❐-" 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏*
+*╅╌❐-" 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏 🂱*
   
-*╅╌❐-" 𝙎𝙏𝘼𝙏𝙀*
+*╅╌❐-" 𝙎𝙏𝘼𝙏𝙀 🂱*
+
  *${groupsIn.length} ╅╌❐-" 𝙂𝙍𝙊𝙐𝙋 𝘾𝙃𝘼𝙏*
  *${groupsIn.length} ╅╌❐-" 𝙐𝙉𝙄𝙏𝙀𝘿 𝙂𝙍𝙊𝙐𝙋𝙎*
  *${groupsIn.length - groupsIn.length} ╅╌❐-" 𝘼𝘽𝘼𝙉𝘿𝙊𝙉𝙀𝘿 𝙂𝙍𝙊𝙐𝙋𝙎*
  *${chats.length - groupsIn.length} ╅╌❐-" 𝙋𝙍𝙄𝙑𝘼𝙏𝙀 𝘾𝙃𝘼𝙏𝙎*
  *${chats.length} ╅╌❐-" 𝙏𝙊𝙏𝘼𝙇 𝘾𝙃𝘼𝙏𝙎*
 
-*╅╌❐-" 𝙊𝙒𝙉𝙀𝙍*
-  *𝙈𝘼𝙉𝙉𝙊-🂱*
+*╅╌❐-" 𝙊𝙒𝙉𝙀𝙍 ☞︎︎︎ 𝙈𝘼𝙉𝙉𝙊-🂱*
+  
   
 *╅╌❐-" 𝙂𝙞𝙩𝙝𝙪𝙗:*
-  *╅╌❐-"  https://github.com/Itxmanno05/MANNO-BOT*
+*╅╌❐-"  https://github.com/Itxmanno05/MANNO-BOT*
 
- *╅╌❐-" 𝙎 𝙀 𝙍 𝙑 𝙀 𝙍*
+*╅╌❐-" 𝙎 𝙀 𝙍 𝙑 𝙀 𝙍*
 *🛑 𝙍𝘼𝙈: ${format(totalmem() - freemem())} / ${format(totalmem())}*
 *🔵 𝙁𝙍𝙀𝙀 𝙍𝘼𝙈𝙀: ${format(freemem())}*
 
 *╅╌❐-" 𝙉𝙊𝘿𝙀 𝙅𝙎 𝙈𝙀𝙈𝙊𝙍𝙔*
-*${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}*
+${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}
 `
 conn.sendFile(m.chat, pp, 'prefil.jpg', infobt, m, false, { mentions: [who] })
 m.react(done)
