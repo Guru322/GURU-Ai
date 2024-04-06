@@ -5,19 +5,24 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) {
     throw `Hi *${name}*, do you want to talk? Respond with *${usedPrefix + command}* (your message)\n\n📌 Example: *${usedPrefix + command}* Hi bot`;
   }
-  
+
   m.react('🗣️');
 
-  const msg = encodeURIComponent(text);
-  
-  const res = await fetch(`https://ultimetron.guruapi.tech/rekha?prompt=${msg}`);
+  const options = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `text=${encodeURIComponent(text)}&lc=en&key=`
+  };
 
+  const res = await fetch('https://api.simsimi.vn/v1/simtalk', options);
   const json = await res.json();
-  
-  
-    let reply = json.result.response;
-    m.reply(reply);
 
+  if (json.status === '200') {
+    const reply = json.message;
+    m.reply(reply);
+  } else {
+    throw json;
+  }
 };
 
 handler.help = ['bot'];
