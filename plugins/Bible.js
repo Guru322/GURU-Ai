@@ -29,7 +29,7 @@ let bibleChapterHandler = async (m, { conn }) => {
     let translatedChapterEnglish = await translate(chapterData.text, { to: 'en', autoCorrect: true });
 
     let bibleChapter = `
-📖 *The Holy Bible*\n
+📖 *𝗧𝗛𝗘 𝗛𝗢𝗟𝗬 𝗕𝗜𝗕𝗟𝗘*\n
 📜 *Chapter ${chapterData.reference}*\n
 Type: ${chapterData.translation_name}\n
 Number of verses: ${chapterData.verses.length}\n
