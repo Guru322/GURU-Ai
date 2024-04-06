@@ -49,15 +49,15 @@ let infobt = `
 ≡ *INFO BOT*
   
 *STATE*
-▢ *${groupsIn.length}* *GROUP CHATS*
-▢ *${groupsIn.length}* *united groups*
-▢ *${groupsIn.length - *groupsIn.length}* abandoned groups*
-▢ *${chats.length - *groupsIn.length}* private chats*
-▢ *${chats.length}* *Total Chats*
+▢ *${groupsIn.length}* GROUP CHATS
+▢ *${groupsIn.length}* united groups
+▢ *${groupsIn.length - groupsIn.length}* abandoned groups
+▢ *${chats.length - groupsIn.length}* private chats
+▢ *${chats.length}* Total Chats
 
 *≡ OWNER*
   *MANNO-2.0*
-
+  
 *▢ GitHub :*
   *• https://github.com/Itxmanno05/MANNO-BOT*
 
