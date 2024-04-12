@@ -12,7 +12,7 @@ let handler = async (m, { args, usedPrefix, command }) => {
 
 ≡ *List of supported languages:* 
 
-https://cloud.google.com/translate/docs/languages
+https://i.imgur.com/jB1OijJ.jpeg
 `.trim()
 
     let lang = args[0]
@@ -33,6 +33,6 @@ https://cloud.google.com/translate/docs/languages
 }
 handler.help = ['translate <lang> <text>']
 handler.tags = ['tools']
-handler.command = ['translate', 'tl', 'trad', 'tr']
+handler.command = ['trt', 'tl', 'trad', 'tr']
 
 export default handler
