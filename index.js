@@ -4,6 +4,7 @@ import express from 'express'
 import figlet from 'figlet'
 import fs from 'fs'
 import path from 'path'
+import { fileURLToPath } from 'url';
 
 figlet(
   'GURU BOT',
@@ -39,14 +40,14 @@ figlet(
 const app = express()
 const port = process.env.PORT || 8080
 
-const basePath = new URL(import.meta.url).pathname
-const htmlDir = path.join(path.dirname(basePath), 'Assets')
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const sendHtml = (req, res, name) => {
-  res.sendFile(path.join(htmlDir, `${name}.html`))
-}
+app.use(express.static(path.join(__dirname, 'Assets')));
 
-app.get('/', (req, res) => sendHtml(req, res, 'guru'))
+app.get('/', (req, res) => {
+  res.redirect('/guru.html');
+});
 
 app.listen(port, () => {
   console.log(chalk.green(`Port ${port} is open`))
