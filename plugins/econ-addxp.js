@@ -10,7 +10,7 @@ let handler = async (m, { conn, text }) => {
   if (isNaN(txt)) throw ' 🔢 only numbers'
   let xp = parseInt(txt)
   let exp = xp
-  
+
   if (exp < 1) throw '✳️ Mínimum *1*'
   let users = global.db.data.users
   users[who].exp += xp
@@ -19,13 +19,12 @@ let handler = async (m, { conn, text }) => {
 ┌──────────────
 ▢  *Total:* ${xp}
 └──────────────`)
- conn.fakeReply(m.chat, `▢ Did you recieve \n\n *+${xp} XP*`, who, m.text)
+  conn.fakeReply(m.chat, `▢ Did you recieve \n\n *+${xp} XP*`, who, m.text)
 }
 
 handler.help = ['addxp <@user>']
 handler.tags = ['economy']
-handler.command = ['addxp'] 
+handler.command = ['addxp']
 handler.rowner = true
 
 export default handler
-

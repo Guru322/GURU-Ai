@@ -1,34 +1,59 @@
-let handler = async (m, { conn, usedPrefix, command}) => {
-      let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
-      if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`;
-    
-      let pp = './Assets/Gurulogo.jpg'
-      let more = String.fromCharCode(8206);
-      let readMore = more.repeat(850); 
-    
-      let lkr;
-      switch (command) {
-        case 'list':
-lkr = "*Get ready for the ride, here are your ticket options:*\n\n" +
-"🤖 *" + usedPrefix + "botmenu* - The Bot's secret control panel. What's your command, oh great one?\n\n" +
-"👑 *" + usedPrefix + "ownermenu* - The sacred scroll only for the chosen one. Yep, that's you, Boss!\n\n" +
-"🧑‍🤝‍🧑 *" + usedPrefix + "groupmenu* - Group shenanigans central! Unite, chat, conquer!\n\n" +
-"📥 *" + usedPrefix + "dlmenu* - 'DL' stands for 'Delicious Loot'. Come grab your goodies!\n\n" +
-"🎉 *" + usedPrefix + "funmenu* - The bot's party hat. Games, jokes and instant ROFLs. Let's get this party started!\n\n" +
-"💰 *" + usedPrefix + "economymenu* - Bling bling! Your personal vault of virtual economy. Spend or save? Choose wisely!\n\n" +
-"🎮 *" + usedPrefix + "gamemenu* - Enter the gaming arena. May the odds be ever in your favor!\n\n" +
-"🎨 *" + usedPrefix + "stickermenu* - A rainbow of stickers for your inner artist. Make your chats pop!\n\n" +
-"🧰 *" + usedPrefix + "toolmenu* - Your handy-dandy toolkit. What's your pick, genius?\n\n" +
-"🎩 *" + usedPrefix + "logomenu* - Create a logo that screams YOU. Or whispers. You choose the volume.\n\n" +
-"🌙 *" + usedPrefix + "nsfwmenu* - The After Dark menu. But remember, sharing adult secrets must be consent-based.";
-break;
+let handler = async (m, { conn, usedPrefix, command }) => {
+  let who = m.quoted
+    ? m.quoted.sender
+    : m.mentionedJid && m.mentionedJid[0]
+      ? m.mentionedJid[0]
+      : m.fromMe
+        ? conn.user.jid
+        : m.sender
+  if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
 
-          
-        
-        
+  let pp = './Assets/Gurulogo.jpg'
+  let more = String.fromCharCode(8206)
+  let readMore = more.repeat(850)
 
-        case 'botmenu':
-          lkr = `❀° ┄──•••───╮
+  let lkr
+  switch (command) {
+    case 'list':
+      lkr =
+        '*Get ready for the ride, here are your ticket options:*\n\n' +
+        '🤖 *' +
+        usedPrefix +
+        "botmenu* - The Bot's secret control panel. What's your command, oh great one?\n\n" +
+        '👑 *' +
+        usedPrefix +
+        "ownermenu* - The sacred scroll only for the chosen one. Yep, that's you, Boss!\n\n" +
+        '🧑‍🤝‍🧑 *' +
+        usedPrefix +
+        'groupmenu* - Group shenanigans central! Unite, chat, conquer!\n\n' +
+        '📥 *' +
+        usedPrefix +
+        "dlmenu* - 'DL' stands for 'Delicious Loot'. Come grab your goodies!\n\n" +
+        '🎉 *' +
+        usedPrefix +
+        "funmenu* - The bot's party hat. Games, jokes and instant ROFLs. Let's get this party started!\n\n" +
+        '💰 *' +
+        usedPrefix +
+        'economymenu* - Bling bling! Your personal vault of virtual economy. Spend or save? Choose wisely!\n\n' +
+        '🎮 *' +
+        usedPrefix +
+        'gamemenu* - Enter the gaming arena. May the odds be ever in your favor!\n\n' +
+        '🎨 *' +
+        usedPrefix +
+        'stickermenu* - A rainbow of stickers for your inner artist. Make your chats pop!\n\n' +
+        '🧰 *' +
+        usedPrefix +
+        "toolmenu* - Your handy-dandy toolkit. What's your pick, genius?\n\n" +
+        '🎩 *' +
+        usedPrefix +
+        'logomenu* - Create a logo that screams YOU. Or whispers. You choose the volume.\n\n' +
+        '🌙 *' +
+        usedPrefix +
+        'nsfwmenu* - The After Dark menu. But remember, sharing adult secrets must be consent-based.'
+      break
+
+    case 'botmenu':
+      lkr = `❀° ┄──•••───╮
           𝘽𝙊𝙏 𝙈𝙀𝙉𝙐  
    ╰───•••──┄ °❀     
    ┏━━━ʕ•㉨•ʔ━━━┓
@@ -45,10 +70,10 @@ break;
    ⎪⌲👑 _${usedPrefix}blocklist_
    ⎪⌲👑 _${usedPrefix}listprem_
    ⎪⌲👑    Guru
-   ┗━━━ʕ•㉨•ʔ━━━┛`; // Your bot menu message here
-          break;
-        case 'ownermenu':
-          lkr = `❀° ┄──•••───╮
+   ┗━━━ʕ•㉨•ʔ━━━┛` // Your bot menu message here
+      break
+    case 'ownermenu':
+      lkr = `❀° ┄──•••───╮
           𝙊𝙒𝙉𝙀𝙍 𝙈𝙀𝙉𝙐  
      ╰───•••──┄ °❀     
      ┏━━━ʕ•㉨•ʔ━━━┓
@@ -64,10 +89,10 @@ break;
      ⎪⌲👑 _${usedPrefix}resetprefix_
      ⎪⌲👑 _${usedPrefix}getfile_
      ⎪⌲👑 _${usedPrefix}getplugin_
-     ┗━━━ʕ•㉨•ʔ━━━┛`; // 
-          break;
-          case 'groupmenu':
-          lkr = `❀° ┄──•••───╮
+     ┗━━━ʕ•㉨•ʔ━━━┛` //
+      break
+    case 'groupmenu':
+      lkr = `❀° ┄──•••───╮
           𝙂𝙍𝙊𝙐𝙋 𝙈𝙀𝙉𝙐 
     ╰───•••──┄ °❀     
     ┏━━━ʕ•㉨•ʔ━━━┓
@@ -87,11 +112,11 @@ break;
     ⎪⌲💎 _${usedPrefix}unwarn *<@tag>*_
     ⎪⌲💎 _${usedPrefix}group *<open/close>*_
     ⎪⌲💎 _${usedPrefix}enable
-    ┗━━━ʕ•㉨•ʔ━━━┛`; // 
-          break;
-          case 'downloadermenu':
-            case 'dlmenu' :
-          lkr = `❀° ┄──•••───╮
+    ┗━━━ʕ•㉨•ʔ━━━┛` //
+      break
+    case 'downloadermenu':
+    case 'dlmenu':
+      lkr = `❀° ┄──•••───╮
           𝘿𝙇 𝙈𝙀𝙉𝙐 
    ╰───•••──┄ °❀     
    ┏━━━ʕ•㉨•ʔ━━━┓
@@ -112,10 +137,10 @@ break;
    ⎪⌲💎 _${usedPrefix}instagram <link>_
    ⎪⌲💎 _${usedPrefix}spotify_
    ⎪⌲💎 _${usedPrefix}facebook <link>_
-   ┗━━━ʕ•㉨•ʔ━━━┛`; // 
-          break;
-          case 'economymenu':
-          lkr = `❀° ┄──•••───╮
+   ┗━━━ʕ•㉨•ʔ━━━┛` //
+      break
+    case 'economymenu':
+      lkr = `❀° ┄──•••───╮
           𝙀𝘾𝙊𝙉𝙊𝙈𝙔 
    ╰───•••──┄ °❀     
    ┏━━━ʕ•㉨•ʔ━━━┓
@@ -136,10 +161,10 @@ break;
    ⎪⌲👑 _${usedPrefix}transfer_
    ⎪⌲👑 _${usedPrefix}todiamond_
    ⎪⌲👑 _${usedPrefix}tomoney_
-   ┗━━━ʕ•㉨•ʔ━━━┛`; // 
-          break;
-          case 'funmenu':
-          lkr = `❀° ┄──•••───╮
+   ┗━━━ʕ•㉨•ʔ━━━┛` //
+      break
+    case 'funmenu':
+      lkr = `❀° ┄──•••───╮
           𝙁𝙐𝙉 𝙈𝙀𝙉𝙐
     ╰───•••──┄ °❀     
     ┏━━━ʕ•㉨•ʔ━━━┓
@@ -156,10 +181,10 @@ break;
     ⎪⌲👑 _${usedPrefix}ytcomment_
     ⎪⌲👑 _${usedPrefix}stupid_
     ⎪⌲👑 _${usedPrefix}lolicon_
-    ┗━━━ʕ•㉨•ʔ━━━┛`; // 
-          break;
-          case 'animemenu':
-          lkr = `❀° ┄──•••───╮
+    ┗━━━ʕ•㉨•ʔ━━━┛` //
+      break
+    case 'animemenu':
+      lkr = `❀° ┄──•••───╮
           𝐴𝑁𝐼𝑀𝐸 𝑀𝐸𝑁𝑈
     ╰───•••──┄ °❀     
     ┏━━━ʕ•㉨•ʔ━━━┓
@@ -201,10 +226,10 @@ break;
     ⎪⌲👑 _${usedPrefix}sakura_
     ⎪⌲👑 _${usedPrefix}kotori_
     ┗━━━ʕ•㉨•ʔ━━━┛
-    `; 
-          break;
-          case 'gamemenu':
-          lkr = `❀° ┄──•••───╮
+    `
+      break
+    case 'gamemenu':
+      lkr = `❀° ┄──•••───╮
           𝙂𝘼𝙈𝙀 𝙈𝙀𝙉𝙐 
     ╰───•••──┄ °❀     
     ┏━━━ʕ•㉨•ʔ━━━┓
@@ -217,10 +242,10 @@ break;
     ⎪⌲👑 _${usedPrefix}casino_
     ⎪⌲👑 _${usedPrefix}yourmom_
     ⎪⌲👑 _${usedPrefix}teri mummy_
-    ┗━━━ʕ•㉨•ʔ━━━┛`; // 
-          break;
-          case 'stickermenu':
-          lkr = `❀° ┄──•••───╮
+    ┗━━━ʕ•㉨•ʔ━━━┛` //
+      break
+    case 'stickermenu':
+      lkr = `❀° ┄──•••───╮
           𝙎𝙏𝙄𝘾𝙆𝙀𝙍 𝙈𝙀𝙉𝙐
      ╰───•••──┄ °❀     
      ┏━━━ʕ•㉨•ʔ━━━┓
@@ -238,10 +263,10 @@ break;
      ⎪⌲👑 _${usedPrefix}attp_
      ⎪⌲👑 _${usedPrefix}attp2_
      ⎪⌲👑 _${usedPrefix}attp3_
-     ┗━━━ʕ•㉨•ʔ━━━┛`; 
-          break;
-          case 'toolmenu':
-          lkr = `❀° ┄──•••───╮
+     ┗━━━ʕ•㉨•ʔ━━━┛`
+      break
+    case 'toolmenu':
+      lkr = `❀° ┄──•••───╮
           𝙏𝙊𝙊𝙇𝙎 𝙈𝙀𝙉𝙐
      ╰───•••──┄ °❀     
      ┏━━━ʕ•㉨•ʔ━━━┓
@@ -275,28 +300,54 @@ break;
      ⎪⌲👑 _${usedPrefix}tinyurl/shorturl_
      ⎪⌲👑 _${usedPrefix}readvo_
      ⎪⌲👑 _${usedPrefix}true_
-     ┗━━━ʕ•㉨•ʔ━━━┛`; // 
-          break;
-          case 'nsfwmenu':
-          lkr = `use command ${usedPrefix}nsfw`; // 
-          break;
-          case 'logomenu':
-          lkr = `use ${usedPrefix}logo to see all options \ngfx cmd upto 12`; // 
-          break;
-        default:
-          lkr = `Invalid command. Type ${usedPrefix}list to see available options.`;
-      }
-    
-      conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] });
-    
-      let done = '👍';
-      m.react(done);
-    };
-    
-    handler.help = ['list', 'botmenu', 'ownermenu', 'groupmenu', 'dlmenu', 'downloadermenu', 'economymenu', 'funmenu', 'gamemenu', 'stickermenu', 'nsfwmenu', 'logomenu', 'toolmenu'];
-    handler.tags = ['main'];
-    handler.command = ['list', 'botmenu', 'ownermenu', 'groupmenu', 'dlmenu', 'downloadermenu', 'economymenu', 'funmenu', 'gamemenu', 'stickermenu', 'nsfwmenu', 'logomenu', 'toolmenu'];
-    
-    export default handler
-    
+     ┗━━━ʕ•㉨•ʔ━━━┛` //
+      break
+    case 'nsfwmenu':
+      lkr = `use command ${usedPrefix}nsfw` //
+      break
+    case 'logomenu':
+      lkr = `use ${usedPrefix}logo to see all options \ngfx cmd upto 12` //
+      break
+    default:
+      lkr = `Invalid command. Type ${usedPrefix}list to see available options.`
+  }
 
+  conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] })
+
+  let done = '👍'
+  m.react(done)
+}
+
+handler.help = [
+  'list',
+  'botmenu',
+  'ownermenu',
+  'groupmenu',
+  'dlmenu',
+  'downloadermenu',
+  'economymenu',
+  'funmenu',
+  'gamemenu',
+  'stickermenu',
+  'nsfwmenu',
+  'logomenu',
+  'toolmenu',
+]
+handler.tags = ['main']
+handler.command = [
+  'list',
+  'botmenu',
+  'ownermenu',
+  'groupmenu',
+  'dlmenu',
+  'downloadermenu',
+  'economymenu',
+  'funmenu',
+  'gamemenu',
+  'stickermenu',
+  'nsfwmenu',
+  'logomenu',
+  'toolmenu',
+]
+
+export default handler

@@ -1,38 +1,40 @@
 import displayLoadingScreen from '../lib/loading.js'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-let pp = 'https://i.pinimg.com/736x/eb/a7/25/eba725b9c8df5d9b199e950694f18aaf.jpg'
-await displayLoadingScreen(conn, m.chat)
-	let _muptime
-    if (process.send) {
-      process.send('uptime')
-      _muptime = await new Promise(resolve => {
+  let pp = 'https://i.pinimg.com/736x/eb/a7/25/eba725b9c8df5d9b199e950694f18aaf.jpg'
+  await displayLoadingScreen(conn, m.chat)
+  let _muptime
+  if (process.send) {
+    process.send('uptime')
+    _muptime =
+      (await new Promise(resolve => {
         process.once('message', resolve)
         setTimeout(resolve, 1000)
-      }) * 1000
-    }
-    let muptime = clockString(_muptime)
-    let str = `あR U N T I M Eあ \n\n${muptime}`
-    conn.sendMessage(m.chat, {
-      text: str,
-      contextInfo: {
-      
+      })) * 1000
+  }
+  let muptime = clockString(_muptime)
+  let str = `あR U N T I M Eあ \n\n${muptime}`
+  conn.sendMessage(m.chat, {
+    text: str,
+    contextInfo: {
       mentionedJid: [m.sender],
       isForwarded: true,
-            forwardedNewsletterMessageInfo: {
-                newsletterJid: '120363178281296360@newsletter',
-                newsletterName: global.author,
-                serverMessageId: -1
-            },
+      forwardedNewsletterMessageInfo: {
+        newsletterJid: '120363178281296360@newsletter',
+        newsletterName: global.author,
+        serverMessageId: -1,
+      },
       forwardingScore: 999,
       externalAdReply: {
-      title: "ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ",
-      body: "R U N T I M E",
-      thumbnailUrl: pp,
-      sourceUrl: 'https://guruapi.tech',
-      mediaType: 1,
-      renderLargerThumbnail: false
-      }}})
+        title: 'ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ',
+        body: 'R U N T I M E',
+        thumbnailUrl: pp,
+        sourceUrl: 'https://guruapi.tech',
+        mediaType: 1,
+        renderLargerThumbnail: false,
+      },
+    },
+  })
 }
 handler.help = ['runtime']
 handler.tags = ['main']

@@ -1,4 +1,4 @@
-let handler = async(m, { conn, text }) => {
+let handler = async (m, { conn, text }) => {
   if (!text) throw `No symbol detected ...`
 
   // Regular expression to check if the input contains exactly one symbol
