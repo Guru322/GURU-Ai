@@ -513,63 +513,84 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
     },
   }
   const infoText = `
-    ${botname} あ⁩ 」\n
-    Hii ${name} Senpai
+   > ${botname} あ⁩ 」\n
+- Hii ${name} Senpai
     
-    *${ucpn}* 
+- *${ucpn}* 
    
-    乂───『 *U S E R*』───乂
-    ⛥ *Name:* ${name}
-    ⛥ *Gold:* ${credit}
-    ⛥ *Role:* ${role}
-    ⛥ *Level:* ${level}
-    ⛥ *Xp:* ${exp}
-    ╰──────────⳹
+乂───『 *U S E R*』───乂
+⛥ *Name:* ${name}
+⛥ *Gold:* ${credit}
+⛥ *Role:* ${role}
+⛥ *Level:* ${level}
+⛥ *Xp:* ${exp}
+╰──────────⳹
    
-    乂───『 *I N F O*』───乂
-    ⛥ *Bot Name:* ${botname}
-    ⛥ *Mode:* ${mode}
-    ⛥ *Platform:* ${platform}
-    ⛥ *Type:* NodeJs
-    ⛥ *Baileys:* Multi Device
-    ⛥ *Prefix:* [ *${usedPrefix}* ]
-    ⛥ *Uptime:* ${muptime}
-    ⛥ *Database:*  ${totalreg}
-    ╰──────────⳹
-    
-    乂───『 *I N F O  C M D*』───乂 
-    │ *${totalfeatures}* Commands
-    ╰──────────⳹
-     ${readMore}
+乂───『 *I N F O*』───乂
+⛥ *Bot Name:* ${botname}
+⛥ *Mode:* ${mode}
+⛥ *Platform:* ${platform}
+⛥ *Type:* NodeJs
+⛥ *Baileys:* Multi Device
+⛥ *Prefix:* [ *${usedPrefix}* ]
+⛥ *Uptime:* ${muptime}
+⛥ *Database:*  ${totalreg}
+╰──────────⳹
+> © Guru Sensei\n\n
+${readMore}
+乂───『 *I N F O  C M D*』───乂 
+│ *${totalfeatures}* Commands
+╰──────────⳹
+     
 
-    乂───『 *INFO*』───乂 
-  │*Reply with the number*
-  │ to get respected Menu*
-  ╰───────⳹
-  ╭───────⳹
-  │ *1.* Bot Menu
-  │ *2.* Owner Menu
-  │ *3.* Group Menu
-  │ *4.* Fun Menu
-  │ *5.* Reaction Menu
-  │ *6.* Downloader Menu
-  │ *7.* Game Menu
-  │ *8.* Logo Menu
-  │ *9.* Sticker Menu
-  │ *10.* Audio Menu
-  │ *11.* News Menu
-  │ *12.* Economy Menu
-  │ *13.* Anime Menu
-  │ *14.* NSFW Menu
-  │ *15.* Tools Menu
-  │ *16.* AI Menu
-  │ *17.* Religion Menu
-  │ *18.* Plugin Menu
-  ╰───────⳹
- ${readMore}`
+乂───『 *INFO*』───乂 
+│*Reply with the number*
+│ to get respected Menu*
+╰───────⳹
+╭───────⳹
+│ *1.* Bot Menu
+│ *2.* Owner Menu
+│ *3.* Group Menu
+│ *4.* Fun Menu
+│ *5.* Reaction Menu
+│ *6.* Downloader Menu
+│ *7.* Game Menu
+│ *8.* Logo Menu
+│ *9.* Sticker Menu
+│ *10.* Audio Menu
+│ *11.* News Menu
+│ *12.* Economy Menu
+│ *13.* Anime Menu
+│ *14.* NSFW Menu
+│ *15.* Tools Menu
+│ *16.* AI Menu
+│ *17.* Religion Menu
+│ *18.* Plugin Menu
+╰───────⳹
+ `
   const { result, key, timeout } = await conn.sendMessage(
     m.chat,
-    { video: { url: menuvid }, caption: infoText.trim(), gifPlayback: true, gifAttribution: 0 },
+    { video: { url: menuvid }, caption: infoText.trim(),
+    contextInfo: {
+      mentionedJid: [m.sender],
+      isForwarded: true,
+      forwardedNewsletterMessageInfo: {
+        newsletterJid: '120363178281296360@newsletter',
+        newsletterName: 'Click Here or u Gay',
+        serverMessageId: -1,
+      },
+      forwardingScore: 999,
+      externalAdReply: {
+        title: 'ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ',
+        body: 'ᴍᴇɴᴜ',
+        thumbnailUrl: 'https://i.pinimg.com/736x/67/4b/41/674b416d858ce262be0c53253b3f1dcc.jpg',
+        sourceUrl: 'https://guruapi.tech',
+        mediaType: 1,
+        renderLargerThumbnail: false,
+      },
+    },
+    
+    gifPlayback: true, gifAttribution: 0 },
     { quoted: fcontact }
   )
 

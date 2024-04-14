@@ -1,4 +1,4 @@
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '1'
 import './config.js'
 
 import dotenv from 'dotenv'
@@ -319,7 +319,7 @@ function runCleanup() {
 
 runCleanup()
 
-function purgeSession() {
+function clearsession() {
   let prekey = []
   const directorio = readdirSync('./session')
   const filesFolderPreKeys = directorio.filter(file => {
@@ -552,7 +552,7 @@ async function _quickTest() {
 
 async function saafsafai() {
   if (stopped === 'close' || !conn || !conn.user) return
-  purgeSession()
+  clearsession()
   console.log(chalk.cyanBright('\nStored Sessions Cleared'))
 }
 
