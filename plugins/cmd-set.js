@@ -23,5 +23,6 @@ handler.help = ['cmd'].map(v => 'set' + v + ' <txt>')
 handler.tags = ['cmd']
 handler.command = ['setcmd']
 handler.owner = true
+handler.register = true
 
 export default handler

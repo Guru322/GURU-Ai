@@ -11,5 +11,6 @@ handler.tags = ['group']
 handler.command = ['setwelcome'] 
 handler.admin = true
 handler.owner = false
+handler.register = true
 
 export default handler

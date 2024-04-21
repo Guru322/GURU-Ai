@@ -4,22 +4,22 @@ global.rpg = {
     if (isNaN(level)) return { name: "", level: "" };
 
     const role = [
-      { name: "Tadpole", level: 0 },
-      { name: "Lobster Larva", level: 5 }, //»»————⍟——««\n
-      { name: "Octopus Apprentice", level: 10 },
-      { name: "Siren's Apprentice", level: 15 },
-      { name: "🐬 Dolphin Diplomat", level: 20 },
-      { name: "🥷 Sea Serpent Tamer", level: 25 }, //𐏓・,〔𒁷, 𒆜〢
-      { name: "⚔ Kraken Hunter", level: 30 },
-      { name: "👑 Sea King", level: 35 },
-      { name: "🪼 Neptune's Protege", level: 40 },
-      { name: "🐍 Abyssal Ambassador", level: 45 },
-      { name: "👹 Guardian of the Abyss", level: 50 },
-      { name: "🧙‍♂️ Deep Sea Sage", level: 60 },
-      { name: "🧝‍♂️ Master of Atlantis", level: 70 },
-      { name: "🐲 Legendary Leviathan", level: 80 },
-      { name: "🔮 Ocean Overlord 🔮", level: 90 },
-      { name: "🔱 Emperor of the Seven Seas 🔱", level: 100 },
+      { name: "Känckebrot", level: 0 },
+      { name: "Anfänger", level: 5 }, //»»————⍟——««\n
+      { name: "katzen fleisch", level: 10 },
+      { name: "hunde fleisch", level: 15 },
+      { name: "kek24", level: 20 },
+      { name: "🥷 deutsche DB ist zu spät", level: 25 }, //𐏓・,〔𒁷, 𒆜〢
+      { name: "⚔ geh kacken", level: 30 },
+      { name: "👑 Technoblade", level: 35 },
+      { name: "🪼 kauf in kaufland", level: 40 },
+      { name: "🐍 wir sind im lidell", level: 45},
+      { name: "👹 chippi chippi chappa chapäa", level: 50 },
+      { name: "🧙‍♂️ klau nicht", level: 60 },
+      { name: "🧝‍♂️ neger", level: 70 },
+      { name: "🐲 fischiiii", level: 80 },
+      { name: "🔮 katoffel salat🔮", level: 90 },
+      { name: "🔱 master 100 🔱", level: 100 },
     ];
 
     return role.reverse().find((role) => level >= role.level);

@@ -6,7 +6,7 @@ let handler = async (m, { conn, args, text, usedPrefix , command }) => {
     return conn.reply(m.chat, 'You must be at least level 5 to use this command.', m);
   }*/
 
-    let fa = `🟥 *Provide the amount of gold to bet*
+    let fa = `🟥 *Geben sie den gold betrag an denn sie setzten möchten*
 
 *Example:*
 ${usedPrefix + command} 1000`.trim()
@@ -18,9 +18,9 @@ ${usedPrefix + command} 1000`.trim()
     let amount = (args[0] && number(parseInt(args[0])) ? Math.max(parseInt(args[0]), 1) : /all/i.test(args[0]) ? Math.floor(parseInt(users.credit)) : 1) * 1
 
     let time = users.lastcf + 90000
-        if (new Date - users.lastcf < 90000) throw `You can play cock-fight again in ${msToTime(time - new Date())}`
-        if (amount < 100) throw `🟥 *You can't bet gold less than 100*`
-        if (users.credit < amount) throw `🟥 *You don't have enough money for this bet.*\n*You currently have only ${credit} in gold.*`
+        if (new Date - users.lastcf < 90000) throw `du kannst eneut spielem ${msToTime(time - new Date())}`
+        if (amount < 100) throw `🟥 *nur100 möglich*`
+        if (users.credit < amount) throw `🟥 *geld reicht nicht aus .*\n*You currently have only ${credit} in gold.*`
         if (users.chicken < 1) {
         throw `🟥 *You do not have any chicks to bet* \nUse the command ${usedPrefix}buy-chicken`
     }
@@ -48,7 +48,7 @@ ${usedPrefix + command} 1000`.trim()
 
 handler.help = ['cock-fight <amount>']
 handler.tags = ['economy']
-handler.command = ['cock-fight', 'cf']
+handler.command = ['huhnplay', 'cf']
 
 handler.group = true
 

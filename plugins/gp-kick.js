@@ -11,11 +11,13 @@ m.reply(`✅ User kicked`)
 
 }
 
-handler.help = ['kick @user']
+handler.help = ['entfernen @user']
 handler.tags = ['group']
-handler.command = ['kick', 'expulsar'] 
+handler.command = ['entfernen', 'expulsar'] 
 handler.admin = true
 handler.group = true
 handler.botAdmin = true
+handler.register = true 
+handler.premium = true 
 
 export default handler

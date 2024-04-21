@@ -23,10 +23,12 @@ m.reply(`✅ User promoted`)
 }}
 handler.help = ['promote']
 handler.tags = ['group']
-handler.command = ['promote', 'promover'] 
+handler.command = ['+admin', 'promover'] 
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
+handler.botowner = true
 handler.fail = null
+handler.register = true
 
 export default handler

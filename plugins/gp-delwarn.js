@@ -18,11 +18,12 @@ let handler = async (m, { conn, args, groupMetadata}) => {
         }
 
 }
-handler.help = ['delwarn @user']
+handler.help = ['Zurück @user']
 handler.tags = ['group']
-handler.command = ['delwarn', 'unwarn'] 
+handler.command = ['zurück', 'unwarn'] 
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
+handler.register = true
 
 export default handler

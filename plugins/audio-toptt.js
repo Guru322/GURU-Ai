@@ -12,6 +12,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 }
 handler.help = ['toav']
 handler.tags = ['fun']
+handler.register
 
 handler.command = ['toav', 'tovn'] 
 

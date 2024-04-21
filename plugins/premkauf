@@ -1,0 +1,22 @@
+let handler = async (m, { conn, command, args, usedPrefix }) => {
+    let user = global.db.data.users[m.sender]
+    
+    // Überprüfen, ob der Benutzer bereits Premium ist
+    if (user.premium) return m.reply('Du bist bereits Premium-Mitglied.')
+
+    // Überprüfen, ob der Benutzer genug Gold hat
+    if (user.gold < 500) return m.reply('Du hast nicht genug Gold, um Premium zu kaufen.')
+
+    // Abziehen des Goldes und Setzen der Premium-Mitgliedschaft
+    user.gold -= 500
+    user.premium = true
+    
+    m.reply('Glückwunsch! Du hast jetzt eine Premium-Mitgliedschaft.')
+}
+
+handler.help = ['']
+handler.tags = ['economy']
+handler.command = ['premkauf']
+handler.group = true
+
+export default handler

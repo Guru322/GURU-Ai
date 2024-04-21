@@ -18,5 +18,6 @@ ${Object.entries(global.db.data.sticker).map(([key, value], index) => `${index +
 handler.help = ['listcmd']
 handler.tags = ['cmd']
 handler.command = ['listcmd']
+handler.register = true
 
 export default handler

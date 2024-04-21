@@ -16,28 +16,29 @@ let prem = global.prems.includes(who.split`@`[0])
 let sn = createHash('md5').update(who).digest('hex')
 
 // • @${who.replace(/@.+/, '')}
-let str = `*🪪 Name:* ${username}${about ? '\n\n 🎌 *Bio:* ' + about : ''}
+let str = `*Dein Name:* 
+${username}
+${about ? 
+'\n\n *deine info* ' + about : ''}
+___________________________________
+*😝 deine verwarnungen:* ${warn}/${maxwarn}
+(deinlevel = ${level} 
+(deinGeld  = ${credit}
+(XPstand   = ${exp} 
+(xp anzeige bis zum nächten level up)
+${user.exp - min} / ${xp})\n${math <= 0 ? `Ready for *${usedPrefix}*` : `*${math}xp`}
+deine liga heißt: ${role}
+_____________________
+📇 Registert : ${registered ? 'joa': 'Nö'}
+⭐ Premium : ${prem ? 'joa' : 'Nö'}
 
-*⚠️ Warnings:* ${warn}/${maxwarn}
-
-*💰 Gold :* ${credit}
-
-*✨ Level* : ${level}
-
-*⬆️ XP* : Total ${exp} (${user.exp - min} / ${xp})\n${math <= 0 ? `Ready for *${usedPrefix}levelup*` : `*${math}xp* missing to level up`}
-
-*🏆 Rank:* ${role}
-
-*📇 Registered :* ${registered ? 'Yes': 'No'}
-
-*⭐ Premium* : ${prem ? 'Yes' : 'No'}
-`
-    conn.sendFile(m.chat, pp, 'profil.jpg', str, m, false, { mentions: [who] })
+Willkomen Mein senpai
+`  
+ conn.sendFile(m.chat, pp, 'profil.jpg', str, m, false, { mentions: [who] })
     m.react(done)
-
 }
 handler.help = ['profile']
 handler.tags = ['group']
-handler.command = ['profile'] 
+handler.command = ['anzeige']
 
 export default handler

@@ -5,13 +5,13 @@ let handler = async (m, {conn, isPrems }) => {
   let time = global.db.data.users[m.sender].lastclaim + 86400000
   if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `You have already claimed your daily gold recently. Claim again in *${msToTime(time - new Date())}* `
   global.db.data.users[m.sender].credit += isPrems ? prem : free
-  m.reply(`🎉 *${isPrems ? prem : free} gold has been added to your wallet*`)
+  m.reply(`ðŸŽ‰ *${isPrems ? prem : free} gold has been added to your wallet*`)
   global.db.data.users[m.sender].lastclaim = new Date * 1
 }
 handler.help = ['daily']
 handler.tags = ['economy']
-handler.command = ['daily'] 
-
+handler.command = ['bunos'] 
+handler.register = true
 export default handler
 
 

@@ -26,4 +26,6 @@ handler.limit = false
 
 handler.command = /^(bpink|bp|blackpink)$/i
 
+handler.register = true
+
 export default handler

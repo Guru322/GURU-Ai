@@ -17,6 +17,7 @@ const handler = async (m, { conn }) => {
 handler.help = ['animequote'];
 handler.tags = ['group'];
 handler.command = /^(animequote)$/i;
+handler.register = true
 
 export default handler;
 

@@ -43,6 +43,7 @@ let handler = async (m, { conn }) => {
 
 handler.help = ['rank'];
 handler.tags = ['economy'];
-handler.command = ['rank'];
+handler.command = ['meinrank'];
+handler.register = true
 
 export default handler;

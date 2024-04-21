@@ -10,11 +10,12 @@ return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id
 return conn.sendMessage(m.chat, { delete: m.quoted.vM.key })
 }
 }
-handler.help = ['delete']
+handler.help = ['löschen']
 handler.tags = ['group']
-handler.command = /^del(ete)?$/i
+handler.command = /^lös(chen)?$/i
 handler.group = false
 handler.admin = true
 handler.botAdmin = true
+handler.register = true
 
 export default handler

@@ -1,44 +1,46 @@
-import fetch from 'node-fetch';
+const starterGold = 50;
+const free = 2000;
 
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text && !(m.quoted && m.quoted.text)) {
-    throw `Please provide some text , Example usage ${usedPrefix}img sunnyleone`;
+let handler = async (m, { conn, isOwner }) => {
+  let user = global.db.data.users[m.sender];
+  
+  // Überprüfen, ob der Benutzer der Eigentümer des Bots ist
+  if (isOwner) {
+    // Gold hinzufügen
+    user.credit += starterGold;
+
+    // Starterpaket als beansprucht markieren
+    user.starterPackClaimed = true;
+
+    // Zeitstempel setzen, wann das Starterpaket erhalten wurde
+    user.starterPackClaimedTime = Date.now();
+    
+    m.reply(`🎁 Du hast das Starterpaket erfolgreich erhalten:\n- ${starterGold} Gold`);
+    return;
   }
-  if (!text && m.quoted && m.quoted.text) {
-    text = m.quoted.text;
+  
+  // Überprüfen, ob der Benutzer bereits das Starterpaket erhalten hat
+  if (user.starterPackClaimed) {
+    let claimedTime = new Date(user.starterPackClaimedTime);
+    m.reply(`Du hast bereits das Starterpaket erhalten am ${claimedTime.toLocaleString()} von ${m.sender}.\nDein damaliges Profilbild:`);
+    conn.sendProfilePicture(m.chat, user.imgUrl || 'https://telegra.ph/file/a488eabf2c2fd4cf3dc49.jpg', '📷 Hier ist dein damaliges Profilbild');
+    return;
   }
 
-  const match = text.match(/(\d+)/);
-  const numberOfImages = match ? parseInt(match[1]) : 1;
+  // Gold hinzufügen
+  user.credit += starterGold;
 
-  try {
-    m.reply('*Please wait*');
+  // Antwortnachricht
+  m.reply(`🎁 Herzlichen Glückwunsch! Du hast das Starterpaket erhalten:\n- ${starterGold} Gold`);
 
-    const images = [];
+  // Starterpaket als beansprucht markieren
+  user.starterPackClaimed = true;
 
-    for (let i = 0; i < numberOfImages; i++) {
-      const endpoint = `https://api.guruapi.tech/api/googleimage?text=${encodeURIComponent(text)}`;
-      const response = await fetch(endpoint);
-
-      if (response.ok) {
-        const imageBuffer = await response.buffer();
-        images.push(imageBuffer);
-      } else {
-        throw '*Image generation failed*';
-      }
-    }
-
-
-    for (let i = 0; i < images.length; i++) {
-      await conn.sendFile(m.chat, images[i], `image_${i + 1}.png`, null, m);
-    }
-  } catch {
-    throw '*Oops! Something went wrong while generating images. Please try again later.*';
-  }
+  // Zeitstempel setzen, wann das Starterpaket erhalten wurde
+  user.starterPackClaimedTime = Date.now();
 };
-
-handler.help = ['image'];
-handler.tags = ['fun'];
-handler.command = ['img', 'gimage'];
-
+handler.help = ['starter'];
+handler.tags = ['economy'];
+handler.command = ['starter']; 
+handler.register = true;
 export default handler;

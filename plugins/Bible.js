@@ -1,5 +1,6 @@
 import fetch from 'node-fetch';
 import { translate } from '@vitalets/google-translate-api';
+import handler from './afk-afk';
 
 const BASE_URL = 'https://bible-api.com';
 
@@ -48,5 +49,6 @@ ${translatedChapterHindi.text}`;
 bibleChapterHandler.help = ['bible [chapter_number|chapter_name]'];
 bibleChapterHandler.tags = ['religion'];
 bibleChapterHandler.command = ['bible', 'chapter'];
+handler.register = true 
 
 export default bibleChapterHandler;

@@ -49,5 +49,5 @@ Your newfound power will strike fear into the hearts of trolls, and the bots wil
 handler.help = ['levelup'];
 handler.tags = ['economy'];
 handler.command = ['lvl', 'levelup', 'level'];
-
+habder.register = true
 export default handler

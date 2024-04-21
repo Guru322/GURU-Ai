@@ -5,10 +5,10 @@ let handler = async (m, { conn, text, participants, isAdmin, isOwner, groupMetad
     })
 }
 
-handler.help = ['tagall']
+handler.help = ['Tagall']
 handler.tags = ['group']
-handler.command = ['tagall']
+handler.command = ['alle']
 handler.admin = true
 handler.group = true
-
+handler.register = true 
 export default handler

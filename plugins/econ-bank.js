@@ -4,28 +4,28 @@ let handler = async (m, {conn, usedPrefix}) => {
     let user = global.db.data.users[who]
     let username = conn.getName(who)
     //let { wealth } = global.db.data.users[who]
-    if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
+    if (!(who in global.db.data.users)) throw `âœ³ï¸ The user is not found in my database`
 
-    var wealth = 'Broke😭'
+    var wealth = 'BrokeðŸ˜­'
      if (`${user.bank}`           <= 3000){
-            wealth = 'Broke😭'
+            wealth = 'BrokeðŸ˜­'
       } else if (`${user.bank}`   <= 6000){
-            wealth = 'Poor😢'
+            wealth = 'PoorðŸ˜¢'
         } else if (`${user.bank}` <= 100000){
-            wealth = 'Average💸'
+            wealth = 'AverageðŸ’¸'
         } else if (`${user.bank}` <= 1000000){
-            wealth = 'Rich💸💰'
+            wealth = 'RichðŸ’¸ðŸ’°'
         } else if (`${user.bank}` <= 10000000){
-            wealth = 'Millionaire🤑'
+            wealth = 'MillionaireðŸ¤‘'
         } else if (`${user.bank}` <= 1000000000){
-            wealth = 'Multi-Millionaire🤑'
+            wealth = 'Multi-MillionaireðŸ¤‘'
         } else if (`${user.bank}` <= 10000000000){
-            wealth = 'Billionaire🤑🤑'
+            wealth = 'BillionaireðŸ¤‘ðŸ¤‘'
         }    
     
-    conn.reply(m.chat, `🏦 *Bank | ${username}*
+    conn.reply(m.chat, `ðŸ¦ *Bank | ${username}*
 
-*🪙 Gold* : ${user.bank}
+*ðŸª™ Gold* : ${user.bank}
 
 *Wealth :* ${wealth}
 
@@ -34,5 +34,5 @@ let handler = async (m, {conn, usedPrefix}) => {
 handler.help = ['bank']
 handler.tags = ['economy']
 handler.command = ['bank', 'vault'] 
-
+handler.register = true
 export default handler

@@ -1,26 +1,26 @@
 const petik = '```'
-const items = ['credit', 'exp']
+const items = ['gold', 'exp']
 let confirmation = {}
 
 async function handler(m, { conn, args, usedPrefix, command }) {
     if (confirmation[m.sender]) return m.reply('You are making a transfer')
     let user = global.db.data.users[m.sender]
     const item = items.filter(v => v in user && typeof user[v] == 'number')
-    let lol = `✳️ Correct use of the command 
+    let lol = `âœ³ï¸ Correct use of the command 
 *${usedPrefix + command}*  credit [amount] [@user]
 
-📌 Example : 
-*${usedPrefix + command}* credit 1000 @${m.sender.split('@')[0]}
+ðŸ“Œ Example : 
+*${usedPrefix + command}* gold 1000 @${m.sender.split('@')[0]}
 `.trim()
     const type = (args[0] || '').toLowerCase()
     if (!item.includes(type)) return conn.reply(m.chat, lol, m, { mentions: [m.sender] })
     const count = Math.min(Number.MAX_SAFE_INTEGER, Math.max(1, (isNumber(args[1]) ? parseInt(args[1]) : 1))) * 1
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : args[2] ? (args[2].replace(/[@ .+-]/g, '') + '@s.whatsapp.net') : ''
-    if (!who) return m.reply('✳️ Tag the user')
-    if (!(who in global.db.data.users)) return m.reply(`✳️ User is not in my database`)
-    if (user[type] * 1 < count) return m.reply(`✳️  *${type}*  insufficient to transfer`)
+    if (!who) return m.reply('âœ³ï¸ Tag the user')
+    if (!(who in global.db.data.users)) return m.reply(`âœ³ï¸ User is not in my database`)
+    if (user[type] * 1 < count) return m.reply(`âœ³ï¸  *${type}*  insufficient to transfer`)
     let confirm = `
-    Are you sure you want to transfer *₹${count}* to *@${(who || '').replace(/@s\.whatsapp\.net/g, '')}* ? 
+    Are you sure you want to transfer *â‚¹${count}* to *@${(who || '').replace(/@s\.whatsapp\.net/g, '')}* ? 
 
 - Have  *60s* 
 Reply ${petik}Yes${petik} or ${petik}no${petik}
@@ -34,7 +34,7 @@ Reply ${petik}Yes${petik} or ${petik}no${petik}
         message: m,
         type,
         count,
-        timeout: setTimeout(() => (m.reply('⏳ Time is over'), delete confirmation[m.sender]), 60 * 1000)
+        timeout: setTimeout(() => (m.reply('â³ Time is over'), delete confirmation[m.sender]), 60 * 1000)
     }
 }
 
@@ -49,27 +49,27 @@ handler.before = async m => {
     if (/no?/g.test(m.text.toLowerCase())) {
         clearTimeout(timeout)
         delete confirmation[sender]
-        return m.reply('✅ Transfer Canceled')
+        return m.reply('âœ… Transfer Canceled')
     }
     if (/yes?/g.test(m.text.toLowerCase())) {
         let previous = user[type] * 1
         let _previous = _user[type] * 1
         user[type] -= count * 1
         _user[type] += count * 1
-        if (previous > user[type] * 1 && _previous < _user[type] * 1) m.reply(`Transaction Successful ✅ \n\n*₹${count}* was transfered to @${(to || '').replace(/@s\.whatsapp\.net/g, '')}`, null, { mentions: [to] })
+        if (previous > user[type] * 1 && _previous < _user[type] * 1) m.reply(`Transaction Successful âœ… \n\n*â‚¹${count}* was transfered to @${(to || '').replace(/@s\.whatsapp\.net/g, '')}`, null, { mentions: [to] })
         else {
             user[type] = previous
             _user[type] = _previous
-            m.reply(`❎ Transfer Failed *${count}* ${type} a *@${(to || '').replace(/@s\.whatsapp\.net/g, '')}*`, null, { mentions: [to] })
+            m.reply(`âŽ Transfer Failed *${count}* ${type} a *@${(to || '').replace(/@s\.whatsapp\.net/g, '')}*`, null, { mentions: [to] })
         }
         clearTimeout(timeout)
         delete confirmation[sender]
     }
 }
 
-handler.help = ['give'].map(v => v + ' credit [amount] [@tag]')
+handler.help = ['giwallet'].map(v => v + ' credit [amount] [@tag]')
 handler.tags = ['economy']
-handler.command = ['payxp', 'transfer', 'give']
+handler.command = ['P', 'transfer', 'give']
 
 handler.disabled = false
 
