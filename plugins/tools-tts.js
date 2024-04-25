@@ -4,7 +4,6 @@ import { join } from 'path'
 
 const defaultLang = 'en'
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-
   let lang = args[0]
   let text = args.slice(1).join(' ')
   if ((args[0] || '').length !== 2) {
@@ -14,8 +13,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!text && m.quoted?.text) text = m.quoted.text
 
   let res
-  try { res = await tts(text, lang) }
-  catch (e) {
+  try {
+    res = await tts(text, lang)
+  } catch (e) {
     m.reply(e + '')
     text = args.join(' ')
     if (!text) throw `📌 Example : \n${usedPrefix}${command} en hello world`
@@ -26,7 +26,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 }
 handler.help = ['tts <lang> <task>']
 handler.tags = ['tools']
-handler.command = ['tts', 'voz'] 
+handler.command = ['tts', 'voz']
 
 export default handler
 
@@ -35,11 +35,13 @@ function tts(text, lang = 'en-en') {
   return new Promise((resolve, reject) => {
     try {
       let tts = gtts(lang)
-      let filePath = join(global.__dirname(import.meta.url), '../tmp', (1 * new Date) + '.wav')
+      let filePath = join(global.__dirname(import.meta.url), '../tmp', 1 * new Date() + '.wav')
       tts.save(filePath, text, () => {
         resolve(readFileSync(filePath))
         unlinkSync(filePath)
       })
-    } catch (e) { reject(e) }
+    } catch (e) {
+      reject(e)
+    }
   })
 }

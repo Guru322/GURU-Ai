@@ -17,22 +17,22 @@ let handler = async (m, { conn, args }) => {
         code: codeText,
         backgroundColor: '#1F816D',
       }),
-    });
+    })
 
     if (!response.ok) {
       throw new Error('Failed to generate the code image.')
     }
 
-    let imageBuffer = await response.buffer();
+    let imageBuffer = await response.buffer()
     conn.sendFile(m.chat, imageBuffer, 'code.png', 'Here is the code image:', m)
   } catch (error) {
-    console.error(error);
+    console.error(error)
     conn.reply(m.chat, 'An error occurred while generating the code image.', m)
   }
 }
 
 handler.help = ['.carbon <code>']
 handler.tags = ['tools']
-handler.command = /^carbon$/i;
+handler.command = /^carbon$/i
 
 export default handler

@@ -22,17 +22,18 @@ let handler = async (m, { conn, text }) => {
     .replace(/\*×/g, '×')
   try {
     console.log(val)
-    let result = (new Function('return ' + val))()
+    let result = new Function('return ' + val)()
     if (!result) throw result
     m.reply(`*${format}* = _${result}_`)
   } catch (e) {
-    if (e == undefined) throw '✳️ enter the equation\n\ncompatible symbols -, +, *, /, ×, ÷, π, e, (, )'
+    if (e == undefined)
+      throw '✳️ enter the equation\n\ncompatible symbols -, +, *, /, ×, ÷, π, e, (, )'
     throw 'Incorrect format, only 0-9 and symbol -, +, *, /, ×, ÷, π, e, (, ) what can you use'
   }
 }
 handler.help = ['cal <equation>']
 handler.tags = ['tools']
-handler.command = ['cal', 'calc', 'calcular', 'calculadora'] 
+handler.command = ['cal', 'calc', 'calcular', 'calculadora']
 handler.exp = 5
 
 export default handler

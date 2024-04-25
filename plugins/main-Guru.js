@@ -1,4 +1,6 @@
-let handler = async m => m.reply(`
+let handler = async m =>
+  m.reply(
+    `
 
 ≡  *GURU  ┃ ᴮᴼᵀ*   GROUPS
 
@@ -25,9 +27,10 @@ https://chat.whatsapp.com/Jn9qVerYN6Q1L0vlVFe2XL
 • https://www.youtube.com/@Asliguru
 
 
-`.trim())
+`.trim()
+  )
 handler.help = ['gpguru']
 handler.tags = ['main']
-handler.command = ['groups', 'groupguru', 'gugp', 'ggp', 'gpguru'] 
+handler.command = ['groups', 'groupguru', 'gugp', 'ggp', 'gpguru']
 
 export default handler

@@ -1,7 +1,7 @@
 {
-    "name": "gurubot",
+    "name": "guruai",
     "version": "2.0.0",
-    "description": "Advanced WhatsApp Bot",
+    "description": "Advanced WhatsApp Ai",
     "main": "index.js",
     "type": "module",
     "directories": {
@@ -9,6 +9,9 @@
         "src": "src",
         "plugins": "plugins"
     },
+    "engines": {
+        "node": ">=20.0.0" 
+      },
     "scripts": {
         "start": "node index.js",
         "test": "node test.js"
@@ -51,8 +54,6 @@
         "aptoide-scraper": "^1.0.1",
         "awesome-phonenumber": "^3.4.0",
         "axios": "^1.4.0",
-        "canvacord": "^5.4.8",
-        "cfonts": "^3.1.1",
         "chalk": "^5.1.0",
         "cheerio": "^1.0.0-rc.12",
         "chess.js": "*",
@@ -63,6 +64,7 @@
         "express": "^4.18.1",
         "fb-downloader-scrapper": "^1.0.1",
         "fg-ig": "^0.0.2",
+        "figlet": "^1.7.0",
         "file-type": "^18.0.0",
         "fluent-ffmpeg": "^2.1.2",
         "formdata-node": "^5.0.0",
@@ -87,7 +89,6 @@
         "node-fetch": "^3.3.1",
         "node-gtts": "^2.0.2",
         "node-webpmux": "^3.1.3",
-        "openai": "^3.2.1",
         "pastebin-js": "^1.0.6",
         "pdfkit": "^0.13.0",
         "perf_hooks": "^0.0.1",
@@ -96,7 +97,6 @@
         "qrcode": "^1.5.1",
         "qrcode-terminal": "^0.12.0",
         "readline": "^1.3.0",
-        "sagiri": "*",
         "similarity": "^1.2.1",
         "socket.io": "^4.5.2",
         "syntax-error": "^1.4.0",
@@ -111,5 +111,8 @@
     },
     "overrides": {
         "cache-manager": "5.2.2"
+    },
+    "devDependencies": {
+        "prettier": "^3.2.5"
     }
 }

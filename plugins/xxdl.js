@@ -1,68 +1,61 @@
-
-import { xnxxSearch, xnxxdl } from '../lib/scraper.js';
-
-
+import { xnxxSearch, xnxxdl } from '../lib/scraper.js'
 
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
-  let chat = global.db.data.chats[m.chat];
-  if (!chat.nsfw) throw `🚫 This group does not support NSFW content.\n\nTo turn it on, use: *${usedPrefix}enable* nsfw`;
-  let user = global.db.data.users[m.sender].age;
-  if (user < 18) throw `❎ You must be 18 years or older to use this feature.`;
-  if (!text) throw `✳️ What do you want to search?\n📌 Usage: *${usedPrefix + command} <search>*\n\nExample: Hot desi bhabi or you can use a link as well\nExample: .xnxx link *`;
+  let chat = global.db.data.chats[m.chat]
+  if (!chat.nsfw)
+    throw `🚫 This group does not support NSFW content.\n\nTo turn it on, use: *${usedPrefix}enable* nsfw`
+  let user = global.db.data.users[m.sender].age
+  if (user < 18) throw `❎ You must be 18 years or older to use this feature.`
+  if (!text)
+    throw `✳️ What do you want to search?\n📌 Usage: *${usedPrefix + command} <search>*\n\nExample: Hot desi bhabi or you can use a link as well\nExample: .xnxx link *`
 
-  m.react('⌛');
+  m.react('⌛')
 
-  let url;
+  let url
   try {
-    url = new URL(text);
+    url = new URL(text)
   } catch (error) {
-    url = null;
+    url = null
   }
 
   if (url) {
     try {
-      const files = await xnxxdl(url.href);
+      const files = await xnxxdl(url.href)
       if (files && files.high) {
-        conn.sendFile(
-          m.chat,
-          files.high,
-          'video.mp4',
-          'Here is your video',
-          m
-        );
-        m.react('✅');
+        conn.sendFile(m.chat, files.high, 'video.mp4', 'Here is your video', m)
+        m.react('✅')
       } else {
-        m.reply('🔴 Error: Failed to retrieve the download URL.');
+        m.reply('🔴 Error: Failed to retrieve the download URL.')
       }
     } catch (e) {
-      console.error(e);
-      m.reply('🔴 Error: We encountered a problem while processing the request.');
+      console.error(e)
+      m.reply('🔴 Error: We encountered a problem while processing the request.')
     }
   } else {
     try {
-      const results = await xnxxSearch(text);
+      const results = await xnxxSearch(text)
       if (results.length > 0) {
-        const message = results.map((r, i) => `${i + 1}. [${r.title}](${r.link})`).join('\n');
+        const message = results.map((r, i) => `${i + 1}. [${r.title}](${r.link})`).join('\n')
         m.reply(message, null, {
           contextInfo: {
             mentionJid: conn.parseMention(message),
           },
-        });
+        })
       } else {
-        m.reply('🔴 Error: No search results found.');
+        m.reply('🔴 Error: No search results found.')
       }
     } catch (e) {
-      console.error(e);
-      m.reply('🔴 Error: We encountered a problem while processing the request.');
+      console.error(e)
+      m.reply('🔴 Error: We encountered a problem while processing the request.')
     }
   }
-};
+}
 
-handler.help = ['xnxx'];
-handler.tags = ['nsfw', 'premium'];
-handler.command = ['xnxxsearch', 'xnxxdl', 'xnxx'];
-handler.group = true;
-handler.premium = false;
-handler.register = true;
+handler.help = ['xnxx']
+handler.tags = ['nsfw', 'premium']
+handler.command = ['xnxxsearch', 'xnxxdl', 'xnxx']
+handler.group = true
+handler.premium = false
+handler.register = true
 
-export default handler;
+export default handler

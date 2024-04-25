@@ -1,27 +1,27 @@
-import fetch from 'node-fetch';
+import fetch from 'node-fetch'
 
 let yoMamaJokeHandler = async (m, { conn, text }) => {
   try {
-    let res = await fetch(`https://yomamaindra.onrender.com/jokes`);
+    let res = await fetch(`https://yomamaindra.onrender.com/jokes`)
 
     if (!res.ok) {
-      throw new Error(`API request failed with status ${res.status}`);
+      throw new Error(`API request failed with status ${res.status}`)
     }
 
-    let json = await res.json();
+    let json = await res.json()
 
-    console.log('JSON response:', json);
+    console.log('JSON response:', json)
 
-    let yoMamaJoke = `${json.joke}`;
+    let yoMamaJoke = `${json.joke}`
 
-    m.reply(yoMamaJoke);
+    m.reply(yoMamaJoke)
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
-};
+}
 
-yoMamaJokeHandler.help = ['yomamajoke'];
-yoMamaJokeHandler.tags = ['fun'];
-yoMamaJokeHandler.command = /^(yomamajoke|yomama|terimummy)$/i;
+yoMamaJokeHandler.help = ['yomamajoke']
+yoMamaJokeHandler.tags = ['fun']
+yoMamaJokeHandler.command = /^(yomamajoke|yomama|terimummy)$/i
 
-export default yoMamaJokeHandler;
+export default yoMamaJokeHandler

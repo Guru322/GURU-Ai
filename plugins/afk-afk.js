@@ -1,10 +1,10 @@
 //import db from '../lib/database.js'
 
 let handler = async (m, { text, conn }) => {
-    let user = global.db.data.users[m.sender]
-    user.afk = + new Date
-    user.afkReason = text
-    m.reply(`
+  let user = global.db.data.users[m.sender]
+  user.afk = +new Date()
+  user.afkReason = text
+  m.reply(`
   😴 *AFK* 
 You are now afk until u send a message 
 ▢ *User:* ${conn.getName(m.sender)} 
