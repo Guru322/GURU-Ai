@@ -48,10 +48,13 @@ KING B2K ✓- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://youtu.be/yfdzckCcbPk?si=doxesZtn87BepUBw"> <img src="https://img.shields.io/badge/heroku%20Tutorial-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
-```
-Temporarily discontinuing deploy support to Heroku due to recent changes in their policies.
-will update this README as soon as i find a solution to this shit
-```
+***
+
+Deploy To Heroku ONLY FOR KING B2K
+     <br>
+<a href="https://heroku.com/deploy?template=https://github.com/DanielRajput/GURU-BOT/"><img title="KING B2K BOT" src="https://img.shields.io/badge/DEPLOY TO HEROKU-h?color=black&style=for-the-badge&logo=stackshare"></a>
+
+***
 
 #### DEPLOY KING B2K BOT ✓ TO KOYEB
 
