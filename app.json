@@ -7,6 +7,16 @@
   "repository": "https://github.com/Guru322/GURU-BOT",
   "stack": "container",
   "env": {
+    "OWNERS": {
+      "description": "owner numbers",
+      "required": true,
+      "value": "917605902011;GURU;6281255369012;Ash"
+    },
+    "BOTNAME": {
+      "description": "Give your BOT a name",
+      "required": true,
+      "value": "ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ"
+    },
     "DATABASE_URL": {
       "description": "your mongodb database url",
       "required": false,
@@ -79,4 +89,3 @@
     }
   }
 }
-
