@@ -1,4 +1,5 @@
 import fetch from 'node-fetch'
+import uploadImage from '../lib/uploadImage.js'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text)
@@ -7,12 +8,13 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
     m.reply('*Please wait, generating images...*')
 
-    const endpoint = `https://cute-tan-gorilla-yoke.cyclic.app/imagine?text=${encodeURIComponent(text)}`
+    const endpoint = `https://api.gurusensei.workers.dev/dream?prompt=${encodeURIComponent(text)}`
     const response = await fetch(endpoint)
 
     if (response.ok) {
       const imageBuffer = await response.buffer()
-      await conn.sendFile(m.chat, imageBuffer, 'image.png', null, m)
+      let imgurl = await uploadImage(imageBuffer)
+      await conn.sendButton(m.chat,'Here is your Result', author, imgurl, [['Script', `.sc`]], null, [['Follow Me', `https://github.com/Guru322`]], m)
     } else {
       throw '*Image generation failed*'
     }
@@ -25,3 +27,6 @@ handler.help = ['dalle']
 handler.tags = ['AI']
 handler.command = ['dalle', 'gen', 'imagine', 'openai2']
 export default handler
+
+
+
