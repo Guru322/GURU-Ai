@@ -11,41 +11,22 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
 
   try {
     m.react(rwait)
-    const { key } = await conn.sendMessage(
-      m.chat,
-      {
-        image: { url: 'https://telegra.ph/file/c3f9e4124de1f31c1c6ae.jpg' },
-        caption: 'Thinking....',
-      },
-      { quoted: m }
-    )
+    
     conn.sendPresenceUpdate('composing', m.chat)
     const prompt = encodeURIComponent(text)
 
-    const guru1 = `${gurubot}/chatgpt?text=${prompt}`
+    const guru1 = `https://api.gurusensei.workers.dev/llama?prompt=${prompt}`
 
     try {
       let response = await fetch(guru1)
       let data = await response.json()
-      let result = data.result
+      let result = data.response.response
 
       if (!result) {
         throw new Error('No valid JSON response from the first API')
       }
 
-      await conn.relayMessage(
-        m.chat,
-        {
-          protocolMessage: {
-            key,
-            type: 14,
-            editedMessage: {
-              imageMessage: { caption: result },
-            },
-          },
-        },
-        {}
-      )
+      await conn.sendButton(m.chat,result, null, null, [['Script', `.sc`]], null, [['Follow Me', `https://github.com/Guru322`]], m)
       m.react(done)
     } catch (error) {
       console.error('Error from the first API:', error)
@@ -59,19 +40,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
       let data = await response.json()
       let result = data.completion
 
-      await conn.relayMessage(
-        m.chat,
-        {
-          protocolMessage: {
-            key,
-            type: 14,
-            editedMessage: {
-              imageMessage: { caption: result },
-            },
-          },
-        },
-        {}
-      )
+      await conn.sendButton(m.chat,result, null, null, [['Script', `.sc`]], null, [['Follow Me', `https://github.com/Guru322`]], m)
       m.react(done)
     }
   } catch (error) {
