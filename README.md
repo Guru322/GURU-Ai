@@ -49,10 +49,13 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://youtu.be/yfdzckCcbPk?si=doxesZtn87BepUBw"> <img src="https://img.shields.io/badge/heroku%20Tutorial-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
-```
-Temporarily discontinuing deploy support to Heroku due to recent changes in their policies.
-will update this README as soon as i find a solution to this shit
-```
+3. Now Deploy.(No Ban)
+   <br>
+ <div align="center">
+  <a href="https://heroku.com/deploy?template=https://github.com/Guru322/Bypass">
+    <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku">
+  </a>
+</div>
 
 #### DEPLOY TO KOYEB
 
