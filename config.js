@@ -6,18 +6,10 @@ import fs from 'fs'
 import dotenv from 'dotenv'
 dotenv.config()
 
-const ownervb = process.env.OWNERS;
-if (!ownervb) {
-    throw new Error("OWNERS env is not set");
-}
+const ownervb = process.env.OWNERS || "917605902011;GURU;6281255369012;Ash"
 
-const fownerlist = [
-  ['917605902011', 'GURU', true],
-  ['6281255369012', 'Ash', true],
-  [''],
-];
 
-const ownerlist = process.env.OWNERS ? process.env.OWNERS.split(';') : fownerlist;
+const ownerlist = ownervb.split(';') 
 
 global.owner = [];
 for (let i = 0; i < ownerlist.length; i += 2) {
