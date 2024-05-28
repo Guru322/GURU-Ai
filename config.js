@@ -11,7 +11,13 @@ if (!ownervb) {
     throw new Error("OWNERS env is not set");
 }
 
-const ownerlist = ownervb.split(';');
+const fownerlist = [
+  ['917605902011', 'GURU', true],
+  ['6281255369012', 'Ash', true],
+  [''],
+];
+
+const ownerlist = process.env.OWNERS ? process.env.OWNERS.split(';') : fownerlist;
 
 global.owner = [];
 for (let i = 0; i < ownerlist.length; i += 2) {
