@@ -9,7 +9,7 @@ dotenv.config()
 const ownervb = process.env.OWNERS || "917605902011;GURU;6281255369012;Ash"
 
 
-const ownerlist = ownervb.split(';') 
+const ownerlist = ownervb.split(';');
 
 global.owner = [];
 for (let i = 0; i < ownerlist.length; i += 2) {
