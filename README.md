@@ -49,7 +49,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
     <br>
 <p align="center"><a href="https://youtu.be/yfdzckCcbPk?si=doxesZtn87BepUBw"> <img src="https://img.shields.io/badge/heroku%20Tutorial-blue?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
-3. Now Deploy.(No Ban)
+3. Now Deploy
    <br>
  <div align="center">
   <a href="https://heroku.com/deploy?template=https://github.com/Guru322/Bypass">
