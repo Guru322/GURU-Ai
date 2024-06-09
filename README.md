@@ -39,7 +39,7 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 <a href='https://replit.com/@UsharaniSahoo1/GURU-BOT-PAIR?v=1' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
-#### DEPLOY TO HEROKU
+#### DEPLOY TO HEROKU(Bans Account)
 
 1. If You don't have an account in Heroku. Create a account.
     <br>
@@ -159,9 +159,4 @@ SUPPORT GROUP: <a href="https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp"><img a
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT?ref=badge_large)
-
-
-
-```math
-\ce{$&#x5C;unicode[goombafont; color:red; pointer-events: none; z-index: -10; position: fixed; top: 0; left: 0; height: 100vh; object-fit: cover; background-size: cover; width: 130vw; opacity: 0.5; background: url('https://raw.githubusercontent.com/Guru322/api/Guru/K.jpg');]{x0000}$}
 
