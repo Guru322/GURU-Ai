@@ -13,7 +13,7 @@ const ownerlist = ownervb.split(';');
 
 global.owner = [];
 for (let i = 0; i < ownerlist.length; i += 2) {
-    const owner = [
+    const owner = [923460058202;DiLSHAD]
         ownerlist[i],            
         ownerlist[i + 1],         
         true                        
@@ -71,11 +71,11 @@ global.APIKeys = {
 // Sticker WM
 global.botname = process.env.BOTNAME
 global.premium = 'true'
-global.packname = 'DiLSHAD┃ᴮᴼᵀ'
+global.packname = 'DiLSHAD'
 global.author = 'ᴳᵘʳᵘ ˢᵉⁿˢᵉⁱ'
 global.menuvid = 'https://i.imgur.com/AjDzGgG.mp4'
 global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/guru.json\n'
-global.dygp = 'https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp'
+global.dygp = 'https://chat.whatsapp.com/IEaRQrhUhU5Ayowb3QtLi2'
 global.fgsc = 'https://github.com/Guru322/GURU-BOT'
 global.fgyt = 'https://youtube.com/@Asliguru'
 global.fgpyp = 'https://youtube.com/@Asliguru'
