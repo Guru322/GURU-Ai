@@ -39,11 +39,11 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 <a href='https://replit.com/@UsharaniSahoo1/GURU-BOT-PAIR?v=1' target="_blank"><img alt='SESSION ID' src='https://img.shields.io/badge/Session_id-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 
-#### DEPLOY TO ""
+#### DEPLOY TO Toystack
 
-1. If You don't have an account in "". Create a account.
+1. If You don't have an account in Toystack. Create an account.
     <br>
-<p align="center"><a href=""> <img src="https://img.shields.io/badge/cornhub%20Account-blue?style=for-the-badge&logo=cornhub" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://toystack.ai"> <img src="https://img.shields.io/badge/Toystack%20Account-blue?style=for-the-badge&logo=Toystack" width="220" height="38.45"/></a></p>
 
 2. set the Env Vars.
     <br>
@@ -68,8 +68,8 @@ GURU-BOT- Simple Multi Device whatsapp bot.
 3. Now Deploy
    <br>
  <div align="center">
-  <a href="">
-    <img src="" alt="Deploy to ">
+  <a href="https://toystack.ai">
+    <img src="https://img.shields.io/badge/Toystack%20Account-blue?style=for-the-badge&logo=Toystack" width="220" height="38.45" alt="Deploy to Toystack ">
   </a>
 </div>
 
