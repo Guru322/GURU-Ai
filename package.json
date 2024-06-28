@@ -10,8 +10,8 @@
         "plugins": "plugins"
     },
     "engines": {
-        "node": ">=20.0.0" 
-      },
+        "node": ">=20.0.0"
+    },
     "scripts": {
         "start": "node index.js",
         "test": "node test.js"
@@ -99,6 +99,7 @@
         "similarity": "^1.2.1",
         "socket.io": "^4.5.2",
         "syntax-error": "^1.4.0",
+        "tempmail.lol": "^4.1.0",
         "terminal-image": "^2.0.0",
         "truesearch": "^1.0.2",
         "url-regex-safe": "^3.0.0",
