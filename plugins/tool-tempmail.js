@@ -1,67 +1,64 @@
-//thanks to inrl:https://github.com/inrl-official
-import fetch from 'node-fetch'
+import { TempMail } from 'tempmail.lol';
+
+const tempmail = new TempMail();
 
 let handler = async (m, { text, usedPrefix, command }) => {
   if (command === 'tempmail') {
     try {
-      const response = await fetch('https://inrl-web-fkns.onrender.com/api/getmail?apikey=inrl')
-      const data = await response.json()
+      const inbox = await tempmail.createInbox();
+      const emailMessage = `*Temporary Email Address:*\n\n${inbox.address}\n\nA token for checking this inbox will be sent in the next message. Use it with the .checkmail command.`;
+      await m.reply(emailMessage);
+      
+      // Send the token as a separate, individual message
+      await m.reply(inbox.token);
 
-      if (data.status && data.result && data.result.length > 0) {
-        const tempMails = data.result.join('\n')
-        const replyMessage = `*Temporary Email Addresses:*\n\n${tempMails}\n\n use \`\`\`\.checkmail <mail-address>\`\`\`\ if you want to check inbox of any temp mail used from above`
-        m.reply(replyMessage)
-      } else {
-        m.reply('No temporary email addresses found.')
-      }
+      // Send instructions as a third message
+      await m.reply('Long press and copy the token above to use with the .checkmail command.');
+
     } catch (error) {
-      console.error('Error:', error)
-      m.reply('Failed to fetch temporary email addresses.')
+      console.error('Error:', error);
+      m.reply('Failed to create a temporary email address.');
     }
   } else if (command === 'checkmail') {
-    if (!text && !(m.quoted && m.quoted.text)) {
-      m.reply('Please provide some text or quote a message to get a response.')
-      return
-    }
-
-    if (!text && m.quoted && m.quoted.text) {
-      text = m.quoted.text
-    } else if (text && m.quoted && m.quoted.text) {
-      text = `${text} ${m.quoted.text}`
+    if (!text) {
+      m.reply('Please provide the token of the temporary email you want to check.');
+      return;
     }
 
     try {
-      const response = await fetch(
-        `https://inrl-web-fkns.onrender.com/api/getmailinfo?email=${encodeURIComponent(text)}&apikey=inrl`
-      )
-      const data = await response.json()
-
-      if (data.status && data.result && data.result.length > 0) {
-        const messages = data.result
-          .map(message => {
-            return `
-*From:* ${message.from}
-*Subject:* ${message.subject}
-*Date:* ${message.date}
-*Body:*
-${message.text}
-          `
-          })
-          .join('\n\n---\n\n')
-        const replyMessage = `*Messages in* ${text}:\n\n${messages}`
-        m.reply(replyMessage)
-      } else {
-        m.reply(`No messages found in ${text}.`)
+      const emails = await tempmail.checkInbox(text);
+      if (!emails) {
+        m.reply(`No messages found or the inbox has expired.`);
+        return;
       }
+
+      if (emails.length === 0) {
+        m.reply(`No messages found in the inbox.`);
+        return;
+      }
+
+      const messages = emails.map(email => {
+        return `
+*From:* ${email.from}
+*Subject:* ${email.subject}
+*Date:* ${new Date(email.date).toLocaleString()}
+*Body:*
+${email.body}
+        `;
+      }).join('\n\n---\n\n');
+
+      const replyMessage = `*Messages in inbox:*\n\n${messages}`;
+      m.reply(replyMessage);
     } catch (error) {
-      console.error('Error:', error)
-      m.reply(`Failed to check messages in ${text}.`)
+      console.error('Error:', error);
+      m.reply(`Failed to check messages.`);
     }
   }
-}
-handler.help = ['tempmail']
-handler.tags = ['tools']
-handler.command = ['tempmail', 'checkmail']
-handler.diamond = false
+};
 
-export default handler
+handler.help = ['tempmail', 'checkmail <token>'];
+handler.tags = ['tools'];
+handler.command = ['tempmail', 'checkmail'];
+handler.diamond = false;
+
+export default handler;
