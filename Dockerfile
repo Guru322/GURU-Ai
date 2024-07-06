@@ -1,19 +1,20 @@
-FROM node:lts-buster
+FROM node:21 AS builder
 
-RUN apt-get update && \
-  apt-get install -y \
-  ffmpeg \
-  imagemagick \
-  webp && \
-  apt-get upgrade -y && \
-  rm -rf /var/lib/apt/lists/*
+WORKDIR /app
 
-COPY package.json .
-
-RUN npm install && npm install qrcode-terminal
+COPY package*.json ./
+RUN npm install --platform=linuxmusl
 
 COPY . .
 
-EXPOSE 5000
+RUN apt-get update && apt-get install -y ffmpeg imagemagick webp
 
-CMD ["npm", "start"]
+FROM node:21-alpine
+
+WORKDIR /app
+
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app .
+
+EXPOSE 5000
+CMD [ "npm", "start" ]
