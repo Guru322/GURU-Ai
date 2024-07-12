@@ -4,7 +4,7 @@ let handler = async (m, { conn }) => {
   let name = conn.getName(m.sender)
   let pp = await conn
     .profilePictureUrl(m.sender, 'image')
-    .catch(_ => 'https://i.imgur.com/whjlJSf.jpg')
+    .catch(_ => './bot.jpg')
   let user = global.db.data.users[m.sender]
   let background = 'https://i.ibb.co/4YBNyvP/images-76.jpg' // Fixed background URL
 
@@ -12,10 +12,10 @@ let handler = async (m, { conn }) => {
     let { min, xp, max } = xpRange(user.level, global.multiplier)
     let txt = `
 ┌───⊷ *LEVEL*
-▢ Number : *${name}*
-▢ Level : *${user.level}*
-▢ XP : *${user.exp - min}/${xp}*
-▢ Role : *${user.role}*
+▢ Access guy : *${name}*\n
+▢ Level : *${user.level}*\n
+▢ XP : *${user.exp - min}/${xp}*\n
+▢ Karma : *${user.role}*\n
 └──────────────
 
 Hey there, ${name}! You're not ready to level up just yet. It seems like you need to munch up *${max - user.exp}* more XP to level up and reach new heights! Keep going, and the bots will be singing your praises soon! 🚀
@@ -30,9 +30,9 @@ Hey there, ${name}! You're not ready to level up just yet. It seems like you nee
   } else {
     let str = `
 ┌─⊷ *LEVEL UP*
-▢ Previous level : *${user.level - 1}*
-▢ Current level : *${user.level}*
-▢ Role : *${user.role}*
+▢ Previous level : *${user.level - 1}*\n
+▢ Current level : *${user.level}*\n
+▢ Role : *${user.role}*\n
 └──────────────
 
 Woo-hoo, ${name}! You've soared to new heights and reached level ${user.level}! 🎉 Time to celebrate! 🎊
@@ -51,5 +51,6 @@ Your newfound power will strike fear into the hearts of trolls, and the bots wil
 handler.help = ['levelup']
 handler.tags = ['economy']
 handler.command = ['lvl', 'levelup', 'level']
+handler.group = true 
 
 export default handler
