@@ -513,7 +513,8 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
     },
   }
   const infoText = `
-   > ${botname}  」\n
+ ||   श्री   ||
+> ${botname}  」\n
 - Hii ${name} Senpai
     
 - *${ucpn}* 
