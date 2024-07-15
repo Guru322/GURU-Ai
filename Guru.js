@@ -263,6 +263,7 @@ const connectionOptions = {
 },
   msgRetryCounterCache,
   defaultQueryTimeoutMs: undefined,
+  syncFullHistory: false
 }
 
 global.conn = makeWASocket(connectionOptions)
