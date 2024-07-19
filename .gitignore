@@ -7,3 +7,5 @@ database.json
 session
 tmp
 session.json
+.idx/integrations.json
+.idx/dev.nix
