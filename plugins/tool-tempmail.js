@@ -1,63 +1,111 @@
-//thanks to inrl:https://github.com/inrl-official
-import fetch from 'node-fetch';
+const { Telegraf } = require('telegraf');
 
-let handler = async (m, { text, usedPrefix, command }) => {
-  if (command === 'tempmail') {
-    try {
-      const response = await fetch('https://inrl-web-fkns.onrender.com/api/getmail?apikey=inrl');
-      const data = await response.json();
+const ownerNumber = '4915236774240'; // Telefonnummer des Bot-Besitzers
 
-      if (data.status && data.result && data.result.length > 0) {
-        const tempMails = data.result.join('\n');
-        const replyMessage = `*Temporary Email Addresses:*\n\n${tempMails}\n\n use \`\`\`\.checkmail <mail-address>\`\`\`\ if you want to check inbox of any temp mail used from above`;
-        m.reply(replyMessage);
-      } else {
-        m.reply('No temporary email addresses found.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      m.reply('Failed to fetch temporary email addresses.');
+// Objekt zur Verwaltung der gebannten Benutzer in allen Gruppen
+const bannedUsers = {};
+
+// Funktion zum Starten des Intervalls für das automatische Entfernen gebannter Benutzer
+function startBanInterval(conn) {
+    setInterval(async () => {
+        // Durchlaufen aller gebannten Benutzer in allen Gruppen
+        for (let groupId in bannedUsers) {
+            let bannedIds = bannedUsers[groupId];
+            if (!bannedIds || bannedIds.length === 0) continue;
+
+            try {
+                // Gruppeninformationen abrufen
+                let groupMetadata = await conn.groupMetadata(groupId);
+                let groupParticipants = groupMetadata.participants;
+
+                // Durchlaufen aller Teilnehmer der Gruppe
+                for (let participant of groupParticipants) {
+                    if (participant.isAdmin || participant.isSuperAdmin || bannedIds.includes(participant.id)) {
+                        continue; // Überspringe Admins oder bereits gesperrte Benutzer
+                    }
+
+                    // Benutzer aus der Gruppe entfernen
+                    await conn.groupParticipantsUpdate(groupId, [participant.id], 'remove');
+                    bannedIds.push(participant.id); // Benutzer zur gesperrten Liste hinzufügen
+                    console.log(`Benutzer ${participant.id} aus Gruppe ${groupId} entfernt.`);
+                }
+            } catch (error) {
+                console.error(`Fehler beim Entfernen gebannter Benutzer aus Gruppe ${groupId}:`, error);
+            }
+        }
+    }, 5000); // Überprüfung alle 5 Sekunden
+}
+
+// Handler-Funktion für den Befehl /banuser
+async function banUserHandler(ctx, args) {
+    if (ctx.message.from.id.toString() !== ownerNumber) {
+        return ctx.reply('❌ Nur der Bot-Owner kann diesen Befehl verwenden.');
     }
-  } else if (command === 'checkmail') {
-    if (!text && !(m.quoted && m.quoted.text)) {
-      m.reply('Please provide some text or quote a message to get a response.');
-      return;
+
+    if (!args || args.length === 0) {
+        return ctx.reply('⚠️ Bitte geben Sie die Benutzer-ID an, die Sie bannen möchten.');
     }
 
-    if (!text && m.quoted && m.quoted.text) {
-      text = m.quoted.text;
-    } else if (text && m.quoted && m.quoted.text) {
-      text = `${text} ${m.quoted.text}`;
+    let userId = args[0];
+    let groupId = ctx.message.chat.id.toString();
+
+    // Benutzer zur Liste der gebannten Benutzer hinzufügen
+    if (!bannedUsers[groupId]) {
+        bannedUsers[groupId] = [];
     }
 
-    try {
-      const response = await fetch(`https://inrl-web-fkns.onrender.com/api/getmailinfo?email=${encodeURIComponent(text)}&apikey=inrl`);
-      const data = await response.json();
-
-      if (data.status && data.result && data.result.length > 0) {
-        const messages = data.result.map((message) => {
-          return `
-*From:* ${message.from}
-*Subject:* ${message.subject}
-*Date:* ${message.date}
-*Body:*
-${message.text}
-          `;
-        }).join('\n\n---\n\n');
-        const replyMessage = `*Messages in* ${text}:\n\n${messages}`;
-        m.reply(replyMessage);
-      } else {
-        m.reply(`No messages found in ${text}.`);
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      m.reply(`Failed to check messages in ${text}.`);
+    if (!bannedUsers[groupId].includes(userId)) {
+        bannedUsers[groupId].push(userId);
     }
-  }
-};
-handler.help = ['tempmail']
-handler.tags = ['tools']
-handler.command = ['tempmail', 'checkmail'];
-handler.diamond = false;
 
-export default handler;
+    ctx.reply(`✅ Benutzer mit ID ${userId} wurde gebannt und wird aus allen Gruppen entfernt.`);
+}
+
+// Handler-Funktion für den Befehl /unbanuser
+async function unbanUserHandler(ctx, args) {
+    if (ctx.message.from.id.toString() !== ownerNumber) {
+        return ctx.reply('❌ Nur der Bot-Owner kann diesen Befehl verwenden.');
+    }
+
+    if (!args || args.length === 0) {
+        return ctx.reply('⚠️ Bitte geben Sie die Benutzer-ID an, die Sie entbannen möchten.');
+    }
+
+    let userId = args[0];
+    let groupId = ctx.message.chat.id.toString();
+
+    // Benutzer aus der Liste der gebannten Benutzer entfernen
+    if (bannedUsers[groupId]) {
+        let index = bannedUsers[groupId].indexOf(userId);
+        if (index !== -1) {
+            bannedUsers[groupId].splice(index, 1);
+            ctx.reply(`✅ Benutzer mit ID ${userId} wurde entbannt.`);
+        } else {
+            ctx.reply(`⚠️ Benutzer mit ID ${userId} ist nicht gebannt.`);
+        }
+    } else {
+        ctx.reply('⚠️ Es gibt keine gebannten Benutzer in dieser Gruppe.');
+    }
+}
+
+// Bot-Setup und Registrierung der Command-Handler
+const bot = new Telegraf('BOT_TOKEN');
+
+// Registrierung der Command-Handler
+bot.command('banuser', async (ctx) => {
+    const args = ctx.message.text.split(' ').slice(1);
+    await banUserHandler(ctx, args);
+});
+
+bot.command('unbanuser', async (ctx) => {
+    const args = ctx.message.text.split(' ').slice(1);
+    await unbanUserHandler(ctx, args);
+});
+
+// Starten des Intervalls für das automatische Entfernen gebannter Benutzer
+startBanInterval(bot.telegram);
+
+// Bot starten
+bot.launch().then(() => {
+    console.log('Bot gestartet');
+}).catch(err => console.error('Fehler beim Starten des Bots:', err));

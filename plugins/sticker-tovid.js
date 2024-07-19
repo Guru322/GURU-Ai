@@ -1,27 +1,42 @@
-import { webp2mp4 } from '../lib/webp2mp4.js'
-import { ffmpeg } from '../lib/converter.js'
+const exchangeDictionary = {
+    'hey': 'baum',
+    'hello': 'tree',
+    'hi': 'forest',
+    'how are you': 'I am fine, thank you!',
+    'wie gehts dir': 'Mir geht es gut, danke!',
+    'was machst du': 'Ich chatte gerade mit dir!',
+    // Füge hier weitere Austauschpaare hinzu
+};
 
-let handler = async (m, { conn }) => {
-    if (!m.quoted) throw '✳️ Respond to an animated sticker'
-    let mime = m.quoted.mimetype || ''
-    if (!/webp|audio/.test(mime)) throw '✳️ Respond to an animated sticker'
-    let media = await m.quoted.download()
-    let out = Buffer.alloc(0)
-    if (/webp/.test(mime)) {
-        out = await webp2mp4(media)
-    } else if (/audio/.test(mime)) {
-        out = await ffmpeg(media, [
-            '-filter_complex', 'color',
-            '-pix_fmt', 'yuv420p',
-            '-crf', '51',
-            '-c:a', 'copy',
-            '-shortest'
-        ], 'mp3', 'mp4')
+let handler = async (m, { text }) => {
+    try {
+        // Überprüfen, ob eine Nachricht angegeben wurde
+        if (!text) {
+            throw 'Du hast keine Nachricht angegeben.';
+        }
+
+        // Durchsuche die Nachricht nach Schlüsselwörtern und ersetze diese
+        let replacedText = replaceKeywords(text);
+
+        // Sende die Nachricht mit ersetzen Schlüsselwörtern zurück
+        await m.reply(`Ersetzte Nachricht: ${replacedText}`);
+    } catch (error) {
+        console.error('Fehler beim Ersetzen:', error);
+        await m.reply(`Es ist ein Fehler aufgetreten: ${error}`);
     }
-    await conn.sendFile(m.chat, out, 'tovid.mp4', '✅ sticker a video' , m)
-}
-handler.help = ['tovid']
-handler.tags = ['sticker']
-handler.command = ['tovideo', 'tovid']
+};
 
-export default handler
+// Funktion zum Ersetzen von Schlüsselwörtern in der Nachricht
+function replaceKeywords(text) {
+    // Trenne die Nachricht in Wörter und ersetze Schlüsselwörter aus dem Wörterbuch
+    let words = text.toLowerCase().split(' ');
+    let replacedWords = words.map(word => {
+        return exchangeDictionary[word] || word; // Wenn Schlüsselwort existiert, ersetze es, ansonsten behalte das Wort bei
+    });
+    return replacedWords.join(' ');
+}
+
+handler.command = /^skyin$/i;
+handler.group = true;
+
+module.exports = handler;9

@@ -1,28 +1,24 @@
-import uploadImage from '../lib/uploadImage.js';
-import fetch from 'node-fetch';
+let handler = async (m, { conn, isAdmin, isBotAdmin, participants }) => {
+  if (!isAdmin) throw 'Nur Gruppenadministratoren können diesen Befehl verwenden!';
+  if (!isBotAdmin) throw 'Ich muss ein Gruppenadministrator sein, um diesen Befehl auszuführen!';
 
-let handler = async (m, { conn, usedPrefix, command, args, text }) => {
-  let q = m.quoted ? m.quoted : m;
-  let mime = (q.msg || q).mimetype || '';
-  
-  if (!mime) throw '⚠️️ Reply to an image or video.';
-  if (!text) throw '⚠️️ Enter the new file size for the image/video.';
-  if (isNaN(text)) throw '🔢 Only numbers are allowed.';
-  
-  if (!/image\/(jpe?g|png)|video|document/.test(mime)) throw '⚠️️ Unsupported format.';
-  
-  let img = await q.download();
-  let url = await uploadImage(img);
+  let kickParticipants = participants.filter(member => !member.admin && member.id !== m.sender && !member.isAdmin).map(member => member.id);
 
-  if (/image\/(jpe?g|png)/.test(mime)) {
-    conn.sendMessage(m.chat, { image: { url: url }, caption: `Here you go`, fileLength: `${text}`, mentions: [m.sender] }, { ephemeralExpiration: 24 * 3600, quoted: m });
-  } else if (/video/.test(mime)) {
-    return conn.sendMessage(m.chat, { video: { url: url }, caption: `Here you go`, fileLength: `${text}`, mentions: [m.sender] }, { ephemeralExpiration: 24 * 3600, quoted: m });
+  if (kickParticipants.length === 0) {
+      return m.reply('Keine Teilnehmer zum Entfernen gefunden.');
   }
+
+  for (let user of kickParticipants) {
+      await conn.groupParticipantsUpdate(m.chat, [user], 'remove');
+  }
+
+  m.reply(`✅ ${kickParticipants.length} Mitglieder wurden aus der Gruppe entfernt.`);
 };
 
-handler.tags = ['tools'];
-handler.help = ['length <amount>'];
-handler.command = /^(length|filelength|edittamaño|totamaño|tamaño)$/i;
+handler.help = ['kickall'];
+handler.tags = ['group'];
+handler.command = ['kickall'];
+handler.admin = true;
+handler.botAdmin = true;
 
 export default handler;

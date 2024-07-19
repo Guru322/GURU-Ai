@@ -1,45 +1,42 @@
-import gtts from 'node-gtts'
-import { readFileSync, unlinkSync } from 'fs'
-import { join } from 'path'
+import Jimp from 'jimp';
 
-const defaultLang = 'en'
-let handler = async (m, { conn, args, usedPrefix, command }) => {
+let handler = async (m, { conn }) => {
+  try {
+    // Beispiel-URL für das Bild
+    let imageUrl = 'https://files.fm/thumb_show.php?i=a94jx4v8z5';
 
-  let lang = args[0]
-  let text = args.slice(1).join(' ')
-  if ((args[0] || '').length !== 2) {
-    lang = defaultLang
-    text = args.join(' ')
+    // Lade das Bild von der URL herunter
+    let image = await Jimp.read(imageUrl);
+
+    // Lade das Wasserzeichen (Text) in Jimp
+    let watermark = await Jimp.loadFont(Jimp.FONT_SANS_16_BLACK); // Schriftart und Größe anpassen
+
+    // Positioniere das Wasserzeichen auf dem Bild (oben links)
+    let watermarkX = 10; // X-Position des Wasserzeichens
+    let watermarkY = 10; // Y-Position des Wasserzeichens
+    let watermarkOptions = {
+      text: '<《errox1322》>',
+      alignmentX: Jimp.HORIZONTAL_ALIGN_LEFT,
+      alignmentY: Jimp.VERTICAL_ALIGN_TOP
+    };
+    
+    // Drucke das Wasserzeichen auf das Bild
+    image.print(watermark, watermarkX, watermarkY, watermarkOptions);
+
+    // Konvertiere das Bild zu einem Buffer
+    let outputBuffer = await image.getBufferAsync(Jimp.MIME_JPEG);
+
+    // Sende das Bild mit Wasserzeichen in den Chat
+    await conn.sendFile(m.chat, outputBuffer, 'image_with_watermark.jpg', 'Hier ist das Bild mit Wasserzeichen.');
+
+  } catch (error) {
+    console.error(error);
+    throw error; // Fehlerbehandlung je nach Bedarf
   }
-  if (!text && m.quoted?.text) text = m.quoted.text
+};
 
-  let res
-  try { res = await tts(text, lang) }
-  catch (e) {
-    m.reply(e + '')
-    text = args.join(' ')
-    if (!text) throw `📌 Example : \n${usedPrefix}${command} en hello world`
-    res = await tts(text, defaultLang)
-  } finally {
-    if (res) conn.sendFile(m.chat, res, 'tts.opus', null, m, true)
-  }
-}
-handler.help = ['tts <lang> <task>']
-handler.tags = ['tools']
-handler.command = ['tts', 'voz'] 
+handler.help = ['anibild'];
+handler.tags = ['utility'];
+handler.command = /^anibild$/i;
 
-export default handler
-
-function tts(text, lang = 'en-en') {
-  console.log(lang, text)
-  return new Promise((resolve, reject) => {
-    try {
-      let tts = gtts(lang)
-      let filePath = join(global.__dirname(import.meta.url), '../tmp', (1 * new Date) + '.wav')
-      tts.save(filePath, text, () => {
-        resolve(readFileSync(filePath))
-        unlinkSync(filePath)
-      })
-    } catch (e) { reject(e) }
-  })
-}
+export default handler;

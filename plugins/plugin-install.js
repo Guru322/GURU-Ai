@@ -12,7 +12,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
     if (!gistId) throw `Invalid plugin URL`;
 
     const gistName = gistId[1];
-    const gistURL = `https://api.github.com/gists/${gistName}`;
+    const gistURL = `https://api.github.om/gists/${gistName}`;
 
     try {
         const response = await axios.get(gistURL);

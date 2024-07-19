@@ -1,27 +1,35 @@
-let handler = async (m, { conn, usedPrefix, text, command }) => {
-  let waLin = '';
-  if (text) {
-    waLin = text.replace(/[^0-9]/g, '');
-  } else if (m.quoted) {
-    waLin = m.quoted.sender.replace(/[^0-9]/g, '');
-  } else if (m.mentionedJid && m.mentionedJid[0]) {
-    waLin = m.mentionedJid[0].replace(/[^0-9]/g, '');
-  } else {
-    throw `Please provide a number, quote a user, or mention a user`;
-  }
-  const waLink = `https://wa.me/${waLin}`;
-  const message = `*WhatsApp Link:*\n${waLink}`;
+const fs = require('fs');
+const { createCanvas, loadImage } = require('canvas');
 
-  conn.sendMessage(m.chat, { text: message, quoted: m, contextInfo: { mentionedJid: [m.sender] } });
+let handlerAnisticker = async (m, { conn, text }) => {
+  let imageUrl = 'https://example.com/image.jpg'; // Beispiel-URL zu einem Bild
 
-  m.react('✅');
-}
+  // Laden des Bildes
+  let image = await loadImage(imageUrl);
+  
+  // Erstellen eines Canvas
+  const canvas = createCanvas(image.width, image.height);
+  const ctx = canvas.getContext('2d');
+  
+  // Zeichnen des Bildes auf das Canvas
+  ctx.drawImage(image, 0, 0, image.width, image.height);
 
-handler.help = ['wa'];
-handler.tags = ['tools'];
-handler.command = ['wa'];
+  // Konvertieren des Canvas in ein Buffer
+  const buffer = canvas.toBuffer('image/webp');
+  
+  // Speichern des Stickers temporär
+  let tempFileName = './temp/sticker.webp'; // Pfad zum temporären Speichern
+  fs.writeFileSync(tempFileName, buffer);
 
-export default handler;
+  // Senden des Stickers
+  await conn.sendSticker(m.chat, tempFileName, { author: 'Bot', pack: 'Sticker Pack' });
 
+  // Optional: Löschen der temporären Datei nach dem Senden
+  fs.unlinkSync(tempFileName);
+};
 
+handlerAnisticker.help = ['anisticker'];
+handlerAnisticker.tags = ['utility'];
+handlerAnisticker.command = /^anisticker$/i;
 
+export default handlerAnisticker;

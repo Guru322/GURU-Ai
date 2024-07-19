@@ -75,7 +75,7 @@
         "imagemaker.js": "*",
         "imgur": "2.3.0",
         "instagram-url-direct": "^1.0.12",
-        "jimp": "^0.16.1",
+        "jimp": "^0.16.13",
         "jsdom": "^20.0.1",
         "knights-canvas": "^1.3.7-a",
         "link-preview-js": "^3.0.0",
