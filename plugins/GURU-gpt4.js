@@ -14,7 +14,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
     const result = await fetch(apiurl)
     const response = await result.json()
     console.log(response)
-    const textt = response.result.reply
+    const textt = response.result
     await typewriterEffect(conn, m, m.chat, textt)
   } catch (error) {
     console.error(error)
