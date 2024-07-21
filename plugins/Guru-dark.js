@@ -6,19 +6,19 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
     await m.react('🤖');
 
     const prompt = encodeURIComponent(text);
-    let apiurl = `https://ultimetron.guruapi.tech/gpt4?prompt=${prompt}`;
+    let apiurl = `https://dark.guruapi.tech/egpt?prompt=${prompt}`;
 
     const result = await fetch(apiurl);
     const response = await result.json();
     
-    if (!response.result) throw 'No result found';
+    if (!response.message) throw 'No result found';
 
-    const replyText = response.result;
+    const replyText = response.message;
     await conn.sendButton(
       m.chat, 
       replyText, 
       author, 
-      'https://telegra.ph/file/c3f9e4124de1f31c1c6ae.jpg', 
+      'https://letemoinhaiti.com/home/wp-content/uploads/2024/03/img_9025-1-850x560.jpg', 
       [['Script', `.sc`]], 
       null, 
       [['Follow Me', `https://github.com/Guru322`]], 
@@ -30,9 +30,9 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
   }
 };
 
-handler.help = ['gpt4 <text>'];
+handler.help = ['darky <text>'];
 handler.tags = ['tools'];
-handler.command = /^(gpt4)$/i;
+handler.command = ['darky', 'darkgpt']
 
 export default handler;
 
