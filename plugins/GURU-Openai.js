@@ -26,7 +26,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
         throw new Error('No valid JSON response from the first API')
       }
 
-      await conn.sendButton(m.chat,result, author, 'https://telegra.ph/file/c3f9e4124de1f31c1c6ae.jpg', [['Script', `.sc`]], null, [['Follow Me', `https://github.com/Guru322`]], m)
+      await conn.sendButton(m.chat,result, author, 'https://telegra.ph/file/c3f9e4124de1f31c1c6ae.jpg', [['Go with Bing', `.bing ${text}`]], null, [['Follow Me', `https://github.com/Guru322`]], m)
       m.react(done)
     } catch (error) {
       console.error('Error from the first API:', error)
@@ -40,7 +40,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
       let data = await response.json()
       let result = data.completion
 
-      await conn.sendButton(m.chat,result, author, 'https://telegra.ph/file/c3f9e4124de1f31c1c6ae.jpg', [['Script', `.sc`]], null, [['Follow Me', `https://github.com/Guru322`]], m)
+      await conn.sendButton(m.chat,result, author, 'https://telegra.ph/file/c3f9e4124de1f31c1c6ae.jpg', [['Go with Bing', `.bing ${text}`]], null, [['Follow Me', `https://github.com/Guru322`]], m)
       m.react(done)
     }
   } catch (error) {

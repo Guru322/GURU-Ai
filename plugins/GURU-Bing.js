@@ -4,9 +4,9 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
   try {
     if (!text) throw 'uhm.. what do you want to say?';
     await m.react('🤖');
-
+    let username = m.sender.split('@')[0];
     const prompt = encodeURIComponent(text);
-    let apiurl = `https://gpt4.guruapi.tech/bing?username=defailt&query=${prompt}`;
+    let apiurl = `https://gpt4.guruapi.tech/bing?username=${username}&query=${prompt}`;
 
     const result = await fetch(apiurl);
     const response = await result.json();
@@ -19,7 +19,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
       replyText, 
       author, 
       'https://techcrunch.com/wp-content/uploads/2023/11/microsoft-copilot-bing.jpg', 
-      [['Script', `.sc`]], 
+      [['Go with Gpt', `.gpt ${text}`]], 
       null, 
       [['Follow Me', `https://github.com/Guru322`]], 
       m
