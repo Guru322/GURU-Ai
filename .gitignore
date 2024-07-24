@@ -9,3 +9,4 @@ tmp
 session.json
 .idx/integrations.json
 .idx/dev.nix
+session/file
