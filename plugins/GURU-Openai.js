@@ -14,13 +14,14 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
     
     conn.sendPresenceUpdate('composing', m.chat)
     const prompt = encodeURIComponent(text)
-
-    const guru1 = `https://api.gurusensei.workers.dev/llama?prompt=${prompt}`
+    const senderNumber = m.sender.replace(/[^0-9]/g, '')
+    const session = `GURU_BOT_${senderNumber}`
+    const guru1 = `https://gpt4.guruapi.tech/user?username=${session}&query=${prompt}`
 
     try {
       let response = await fetch(guru1)
       let data = await response.json()
-      let result = data.response.response
+      let result = data.result
 
       if (!result) {
         throw new Error('No valid JSON response from the first API')
