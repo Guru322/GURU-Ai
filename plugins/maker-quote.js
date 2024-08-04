@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 import { Sticker, createSticker, StickerTypes } from 'wa-sticker-formatter'
-
+import uploadFile from "../lib/uploadFile.js";
 import fs from 'fs'
 import os from 'os'
 import path from 'path'
@@ -13,52 +13,44 @@ let handler = async (m, { conn, text }) => {
     if (!text && m.quoted && m.quoted.text) {
       text = m.quoted.text
     }
-
-    let who = m.quoted
-      ? m.quoted.sender
-      : m.mentionedJid && m.mentionedJid[0]
-        ? m.mentionedJid[0]
-        : m.fromMe
-          ? conn.user.jid
-          : m.sender
-    if (!(who in global.db.data.users)) throw '✳️ The user is not found in my database'
-    let userPfp = await conn
-      .profilePictureUrl(who, 'image')
-      .catch(_ => 'https://cdn.jsdelivr.net/gh/Guru322/api@Guru/guru.jpg')
-    let user = global.db.data.users[who]
-    let { name } = global.db.data.users[who]
+    const logo = 'https://avatars.githubusercontent.com/u/106463398?v=4'
+    const q = m.quoted || m;
+    const match = q?.mimetype?.match(/^(image|video|webp)\//);
+    const mediaUrl = match ? await uploadFile(await q?.download()) : logo;
+    const senderId = parseInt(m.sender.split("@")[0]);
+    const senderName = m.name || await conn.getName(m.sender);
+    const senderPhotoUrl = await conn.profilePictureUrl(m.sender, "image").catch(() => logo);
+    const replyMessage = q !== m ? {
+      entities: [],
+      avatar: true,
+      id: parseInt(q.sender.split("@")[0]),
+      name: q.name || await conn.getName(q.sender),
+      photo: {
+        url: await conn.profilePictureUrl(q.sender, "image").catch(() => logo)
+      },
+      text: q.text || q.caption || q.description || q.message?.documentMessage?.caption || ""
+    } : null;
+    const messageText = text || q?.text || q?.caption || q?.description || q?.message?.documentMessage?.caption || m.text || m.caption || m.message?.documentMessage?.caption || "";
 
     m.react(rwait)
+    const url = 'https://api.guruapi.tech/qc';
+    const data = {
+  mediaUrl: mediaUrl,
+  senderId: senderId,
+  senderName: senderName,
+  senderPhotoUrl: senderPhotoUrl,
+  messageText: messageText,
+  replyMessage: replyMessage || null
+};
 
-    let quoteJson = {
-      type: 'quote',
-      format: 'png',
-      backgroundColor: '#FFFFFF',
-      width: 1800,
-      height: 200, // Adjust the height value as desired
-      scale: 2,
-      messages: [
-        {
-          entities: [],
-          avatar: true,
-          from: {
-            id: 1,
-            name: name,
-            photo: {
-              url: userPfp,
-            },
-          },
-          text: text,
-          replyMessage: {},
-        },
-      ],
-    }
-
-    let res = await fetch('https://bot.lyo.su/quote/generate', {
-      method: 'POST',
-      body: JSON.stringify(quoteJson),
-      headers: { 'Content-Type': 'application/json' },
-    })
+const options = {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data)
+};
+let res = await fetch(url, options);
 
     if (!res.ok) {
       throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`)
@@ -66,20 +58,20 @@ let handler = async (m, { conn, text }) => {
 
     let json = await res.json()
 
-    if (!json.result || !json.result.image) {
+    if (!json || !json.image) {
       throw new Error('Unexpected response structure')
     }
     function randomId() {
       return Math.floor(100000 + Math.random() * 900000)
     }
 
-    let bufferImage = Buffer.from(json.result.image, 'base64')
+    let bufferImage = Buffer.from(json.image, 'base64')
 
     let tempImagePath = path.join(os.tmpdir(), 'tempImage.png')
     fs.writeFileSync(tempImagePath, bufferImage)
     let sticker = new Sticker(tempImagePath, {
       pack: global.packname,
-      author: name,
+      author: senderName,
       type: StickerTypes.FULL,
       categories: ['🤩', '🎉'],
       id: randomId(),

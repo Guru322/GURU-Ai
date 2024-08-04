@@ -6,14 +6,19 @@ let handler = async (m, { conn, text }) => {
     throw `*Please enter a song name*`
   }
   m.react('🎶')
-  await displayLoadingScreen(conn, m.chat)
+  //await displayLoadingScreen(conn, m.chat)
   let pp = 'https://wallpapercave.com/wp/wp7932387.jpg'
   const query = encodeURIComponent(text)
-  let res = `https://guruapi.tech/api/spotifydl?url=${query}`
-  // let spotify = await (await fetch(res)).buffer()
+  let res = `https://api.guruapi.tech/spotifysearch?query=${query}`
+  let spurl = await fetch(res)
+  spurl = await spurl.json()
+  let dlres = await fetch(`https://api.guruapi.tech/spotifydl?url=${spurl.data[0].url}`)
+  dlres = await dlres.json()
+  let sturl  = dlres.data.url
+
   let doc = {
     audio: {
-      url: res,
+      url: sturl,
     },
     mimetype: 'audio/mpeg',
     ptt: true,
@@ -25,7 +30,7 @@ let handler = async (m, { conn, text }) => {
       externalAdReply: {
         title: '↺ |◁   II   ▷|   ♡',
         body: `Now playing: ${text}`,
-        thumbnailUrl: pp,
+        thumbnailUrl: dlres.data.thumbnail,
         sourceUrl: null,
         mediaType: 1,
         renderLargerThumbnail: false,

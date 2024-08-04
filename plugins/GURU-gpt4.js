@@ -6,14 +6,15 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
     await m.react('🤖');
 
     const prompt = encodeURIComponent(text);
-    let apiurl = `https://ultimetron.guruapi.tech/gpt4?prompt=${prompt}`;
+    let userid = conn.getName(m.sender) || "default"
+    let apiurl = `https://api.guruapi.tech/ai/gpt4?username=${userid}&query=hii${prompt}`;
 
     const result = await fetch(apiurl);
     const response = await result.json();
     
-    if (!response.result) throw 'No result found';
+    if (!response.msg) throw 'No result found';
 
-    const replyText = response.result;
+    const replyText = response.msg;
     await conn.sendButton(
       m.chat, 
       replyText, 
