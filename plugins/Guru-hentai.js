@@ -1,28 +1,38 @@
+import fetch from 'node-fetch';
+
 let handler = async (m, { conn, text, usedPrefix, command, args }) => {
   if (!global.db.data.chats[m.chat].nsfw)
-    throw `🚫 group doesnt supprt nsfw \n\n enable it by \n*${usedPrefix}enable* nsfw`
-  let user = global.db.data.users[m.sender].age
-  if (user < 17) throw m.reply(`❎ uneed to be atleast 18 years`)
-  if (!text) throw `*This command provides sauce from nhentai: ${usedPrefix + command} miku*`
+    throw `🚫 Group doesn't support NSFW. Enable it by using *${usedPrefix}enable* nsfw.`;
+
+  let userAge = global.db.data.users[m.sender].age;
+  if (userAge < 17) throw `❎ You need to be at least 18 years old.`;
+
   try {
-    m.reply(global.wait)
-    let res = await fetch(
-      `https://api.lolhuman.xyz/api/nhentaisearch?apikey=${lolkeysapi}&query=${text}`
-    )
-    let json = await res.json()
-    let aa = json.result[0].id
-    let aa2 = json.result[0].title_native
-    let res2 = await fetch(`https://api.lolhuman.xyz/api/nhentaipdf/${aa}?apikey=${lolkeysapi}`)
-    let json2 = await res2.json()
-    let aa3 = json2.result
-    await conn.sendMessage(
-      m.chat,
-      { document: { url: aa3 }, mimetype: 'application/pdf', fileName: `${aa2}.pdf` },
-      { quoted: m }
-    )
-  } catch {
-    throw `*ERROR NOT FOUND TRY SEARCHING ANOTHER QUERY*`
+    m.reply(global.wait);
+    let res = await fetch('https://api.guruapi.tech/hanime/trend');
+    let json = await res.json();
+
+    if (!json || json.length === 0) throw 'No data found';
+
+    let topTrending = json.slice(0, 8);
+
+    let message = '🔥 **Top 8 Trending Hentai of the Week** 🔥\n\n';
+
+    topTrending.forEach((data, index) => {
+      message += `
+${index + 1}. **${data.name}**
+   - 📎 Link: https://hanime.tv/videos/hentai/${data.slug}
+   - 👁️ Views: ${data.views}
+
+`;
+    });
+
+    await conn.sendFile(m.chat, topTrending[0].cover_url, 'hanime.jpeg', message, m);
+  } catch (error) {
+    console.error(error);
+    throw `*ERROR: Something went wrong. Please try again later.*`;
   }
-}
-handler.command = /^(hentai)$/i
-export default handler
+};
+
+handler.command = /^(hentai)$/i;
+export default handler;
