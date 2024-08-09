@@ -26,10 +26,8 @@ jobs:
 
     - name: Build and tag the Docker image
       run: |
-        docker build . --file Dockerfile --tag ghcr.io/${{ github.repository_owner }}/deploy-guru:${{ github.sha }}
+        docker build . --file Dockerfile --tag ghcr.io/${{ github.repository_owner | toLower }}/deploy-guru:${{ github.sha }}
 
     - name: Push the Docker image
       run: |
-        docker push ghcr.io/${{ github.repository_owner }}/deploy-guru:${{ github.sha }}
-
-
+        docker push ghcr.io/${{ github.repository_owner | toLower }}/deploy-guru:${{ github.sha }}
