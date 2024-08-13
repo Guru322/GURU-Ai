@@ -1,4 +1,4 @@
-import fg from 'api-dylux'
+/* import fg from 'api-dylux'
 import fetch from 'node-fetch'
 import { sticker } from '../lib/sticker.js'
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
@@ -9,7 +9,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   try {
     /*let res = await fetch(global.API('fgmods', '/api/getsticker', { q:text }, 'apikey'))
    let json = await res.json()*/
-    let json = await fg.StickerSearch(text)
+   /* let json = await fg.StickerSearch(text)
     m.reply(`
 ✅ Result
 
@@ -32,4 +32,4 @@ handler.diamond = false
 
 export default handler
 
-const delay = time => new Promise(res => setTimeout(res, time))
+const delay = time => new Promise(res => setTimeout(res, time)) */

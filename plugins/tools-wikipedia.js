@@ -1,5 +1,5 @@
 import axios from 'axios'
-import cheerio from 'cheerio'
+import * as cheerio from 'cheerio'
 
 let handler = async (m, { text }) => {
   if (!text) throw `✳️ Enter what you want to search for on Wikipedia`
