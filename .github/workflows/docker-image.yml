@@ -27,9 +27,10 @@ jobs:
     - name: Build and tag the Docker image
       run: |
         REPO_OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-        docker build . --file Dockerfile --tag ghcr.io/$REPO_OWNER/deploy-guru:${{ github.sha }}
+        docker build . --file Dockerfile --tag ghcr.io/$REPO_OWNER/deploy-guru:latest
 
     - name: Push the Docker image
       run: |
         REPO_OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-        docker push ghcr.io/$REPO_OWNER/deploy-guru:${{ github.sha }}
+        docker push ghcr.io/$REPO_OWNER/deploy-guru:latest
+
