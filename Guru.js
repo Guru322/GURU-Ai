@@ -213,10 +213,10 @@ global.loadDatabase = async function loadDatabase() {
 loadDatabase()
 global.authFolder = `session`
 const { state, saveCreds } = await useMultiFileAuthState(global.authFolder)
-let { version, isLatest } = await fetchLatestWaWebVersion()
+//let { version, isLatest } = await fetchLatestWaWebVersion()
 
 const connectionOptions = {
-  version,
+  version: [2, 3000, 1015901307],
   logger: Pino({
     level: 'fatal',
   }),
