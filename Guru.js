@@ -239,31 +239,31 @@ const connectionOptions = {
     let msg = await store.loadMessage(jid, key.id)
     return msg?.message || ''
   },
-  patchMessageBeforeSending: (message) => {
+  patchMessageBeforeSending: message => {
     const requiresPatch = !!(
-        message.buttonsMessage 
-        || message.templateMessage
-        || message.listMessage
-    );
+      message.buttonsMessage ||
+      message.templateMessage ||
+      message.listMessage
+    )
     if (requiresPatch) {
-        message = {
-            viewOnceMessage: {
-                message: {
-                    messageContextInfo: {
-                        deviceListMetadataVersion: 2,
-                        deviceListMetadata: {},
-                    },
-                    ...message,
-                },
+      message = {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadataVersion: 2,
+              deviceListMetadata: {},
             },
-        };
+            ...message,
+          },
+        },
+      }
     }
 
-    return message;
-},
+    return message
+  },
   msgRetryCounterCache,
   defaultQueryTimeoutMs: undefined,
-  syncFullHistory: false
+  syncFullHistory: false,
 }
 
 global.conn = makeWASocket(connectionOptions)
@@ -357,42 +357,42 @@ function clearsession() {
 async function connectionUpdate(update) {
   const { connection, lastDisconnect, isNewLogin, qr } = update
   global.stopped = connection
+
   if (isNewLogin) conn.isInit = true
+
   const code =
     lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode
+
   if (code && code !== DisconnectReason.loggedOut && conn?.ws.socket == null) {
-    conn.logger.info(await global.reloadHandler(true).catch(console.error))
+    try {
+      conn.logger.info(await global.reloadHandler(true))
+    } catch (error) {
+      console.error('Error reloading handler:', error)
+    }
   }
-  if (code && code == DisconnectReason.restartRequired) {
-    conn.logger.info(chalk.yellow('\n🚩Restart Required... Restarting'))
+
+  if (code && (code === DisconnectReason.restartRequired || code === 428)) {
+    conn.logger.info(chalk.yellow('\n🚩 Restart Required... Restarting'))
     process.send('reset')
   }
 
   if (global.db.data == null) loadDatabase()
-  if (!pairingCode && useQr && qr != 0 && qr != undefined) {
+
+  if (!pairingCode && useQr && qr !== 0 && qr !== undefined) {
     conn.logger.info(chalk.yellow('\nLogging in....'))
   }
+
   if (connection === 'open') {
     const { jid, name } = conn.user
+    const msg = `Hai🤩 ${name}, Congrats you have successfully deployed GURU-BOT\nJoin my support Group for any Query\n https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp`
 
-    let msgf = `Hai🤩${name} Congrats you have successfully deployed GURU-BOT\nJoin my support Group for any Query\n https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp`
-
-    let gmes = conn.sendMessage(
-      jid,
-      {
-        text: msgf,
-        mentions: [jid],
-      },
-      {
-        quoted: null,
-      }
-    )
+    await conn.sendMessage(jid, { text: msg, mentions: [jid] }, { quoted: null })
 
     conn.logger.info(chalk.yellow('\n🚩 R E A D Y'))
   }
 
-  if (connection == 'close') {
-    conn.logger.error(chalk.yellow(`\nconnection closed....Get a New Session`))
+  if (connection === 'close') {
+    conn.logger.error(chalk.yellow(`\nConnection closed... Get a new session`))
   }
 }
 
