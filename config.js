@@ -8,15 +8,15 @@ import axios from 'axios'
 
 global.owner = [
   ['919654970780', 'KING B2K ✓', true],
-  ['918512849649', 'KING B2K ✓', true], 
+  ['919654934474', 'KING B2K ✓', true], 
   ['']
 ] //Number of owners
 
-//global.pairingNumber = "" //put your bot number here
+//global.pairingNumber = "919654934474" //put your bot number here
 
-global.mods = ['919654970780','918512849649'] 
-global.prems = ['919654970780','918512849649']
-global.allowed = ['919654970780','918512849649']
+global.mods = ['919654970780','919654934474'] 
+global.prems = ['919654970780','919654934474']
+global.allowed = ['919654970780','919654934474']
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.keysxteammm = ['29d4b59a4aa687ca', '5LTV57azwaid7dXfz5fzJu', 'cb15ed422c71a2fb', '5bd33b276d41d6b4', 'HIRO', 'kurrxd09', 'ebb6251cc00f9c63']
@@ -55,7 +55,7 @@ global.premium = 'true'
 global.packname = 'KING B2K ✓' 
 global.author = '' 
 global.menuvid = 'https://i.imgur.com/dOu5OfX.mp4'
-global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/danielrajput000?igsh=ZGtvZmc1OHl4ajEy\n' 
+global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/KINGB2KOFFICIAL\n' 
 global.dygp = 'https://chat.whatsapp.com/KzeFPLfFllL9r20W4qUunI'
 global.fgsc = 'https://github.com/DanielRajput/GURU-BOT' 
 global.fgyt = 'https://youtube.com/@Asliguru'
