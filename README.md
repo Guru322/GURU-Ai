@@ -19,6 +19,9 @@
 GURU-Ai- Simple Multi Device whatsapp bot.
 
 ***
+## important
+
+This project  uses Mega.nz's services exclusively for generating session IDs. The creator confirms that the functionality is used only for its intended purpose and not for any unauthorized or malicious activities. It is ultimately up to the user to decide whether to utilize the project or not.
 
 #### SETUP
 
