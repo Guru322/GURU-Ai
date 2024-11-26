@@ -11,24 +11,24 @@ const ownervb = process.env.OWNERS || "917605902011;GURU;6281255369012;Ash"
 
 const ownerlist = ownervb.split(';');
 
-global.owner = [];
+global.owner = [];2347077745580
 for (let i = 0; i < ownerlist.length; i += 2) {
     const owner = [
         ownerlist[i],            
         ownerlist[i + 1],         
         true                        
     ];
-    global.owner.push(owner);
+    global.owner.push(owner);2347077745580
 }
 
-//global.pairingNumber = "" //put your bot number here
+//global.pairingNumber = "2347077745580" //put your bot number here
 
-global.mods = ['917605902011', '32460248586']
-global.prems = ['917605902011', '32460248586', '919398758484']
-global.allowed = ['917605902011', '32460248586', '19152999993']
+global.mods = ['2347077745580', '2347077745580']2347077745580
+global.prems = ['2347077745580', '2347077745580', '2347077745580']
+global.allowed = ['2347077745580', '2347077745580', '2347077745580']
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
-global.keysxteammm = [
+global.keysxteammm = [2347077745580
   '29d4b59a4aa687ca',
   '5LTV57azwaid7dXfz5fzJu',
   'cb15ed422c71a2fb',
