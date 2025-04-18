@@ -54,17 +54,13 @@ import readline from 'readline'
 
 dotenv.config()
 
-// Group metadata cache for fast access
 const groupMetadataCache = new NodeCache({ stdTTL: 5 * 60, useClones: false })
 
-// MongoDB config
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017'
 const DB_NAME = process.env.DB_NAME || 'guru_bot'
 
-// Use the same MongoDB URI for both auth and bot properties
 const globalDB = new MongoDB(MONGODB_URI)
 
-// Replace global.db and global.DATABASE with MongoDB
 global.db = globalDB
 
 global.loadDatabase = async function loadDatabase() {
@@ -78,7 +74,6 @@ global.loadDatabase = async function loadDatabase() {
   }
 }
 
-// Save database periodically
 setInterval(async () => {
   if (global.db.data) await global.db.write(global.db.data)
 }, 60 * 1000)
@@ -141,7 +136,6 @@ global.opts['db'] = process.env.DATABASE_URL
 
 global.authFolder = `session`
 
-// Replace useMultiFileAuthState with useMongoDBAuthState
 const { state, saveCreds, closeConnection } = await useMongoDBAuthState(MONGODB_URI, DB_NAME)
 
 const connectionOptions = {
@@ -303,7 +297,6 @@ async function connectionUpdate(update) {
   }
 }
 
-// Event listeners for MongoDB store
 conn.ev.on('messaging-history.set', ({ messages }) => {
   if (messages && messages.length > 0) {
     mongoStore.saveMessages({ messages, type: 'append' }, DB_NAME)
@@ -343,7 +336,6 @@ conn.ev.on('group-participants.update', async (event) => {
   }
 })
 
-// MongoDB connection cleanup
 process.on('exit', async () => { await closeConnection() })
 process.on('SIGINT', async () => { await closeConnection(); process.exit(0) })
 process.on('SIGTERM', async () => { await closeConnection(); process.exit(0) })
