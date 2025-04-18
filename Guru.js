@@ -8,8 +8,11 @@ import path, { join } from 'path'
 import { platform } from 'process'
 import { fileURLToPath, pathToFileURL } from 'url'
 import * as ws from 'ws'
-import processTxtAndSaveCredentials from './lib/makesession.js'
-import clearTmp from './lib/tempclear.js'
+import { useMongoDBAuthState } from './lib/auth/mongo-auth.js'
+import * as mongoStore from './lib/auth/mongo-store.js'
+import NodeCache from 'node-cache'
+import { MongoDB } from './lib/mongoDB.js'
+
 global.__filename = function filename(pathURL = import.meta.url, rmPrefix = platform !== 'win32') {
   return rmPrefix
     ? /file:\/\/\//.test(pathURL)
@@ -28,105 +31,66 @@ global.gurubot = 'https://www.guruapi.tech/api'
 import chalk from 'chalk'
 import { spawn } from 'child_process'
 import lodash from 'lodash'
-import { JSONFile, Low } from 'lowdb'
-import NodeCache from 'node-cache'
 import { default as Pino, default as pino } from 'pino'
 import syntaxerror from 'syntax-error'
 import { format } from 'util'
 import yargs from 'yargs'
-import CloudDBAdapter from './lib/cloudDBAdapter.js'
-import { MongoDB } from './lib/mongoDB.js'
 import { makeWASocket, protoType, serialize } from './lib/simple.js'
 
 const {
   DisconnectReason,
-  useMultiFileAuthState,
   MessageRetryMap,
   fetchLatestWaWebVersion,
   makeCacheableSignalKeyStore,
-  makeInMemoryStore,
   proto,
   delay,
   jidNormalizedUser,
   PHONENUMBER_MCC,
 } = await (
-  await import('@whiskeysockets/baileys')
+  await import('baileys-pro')
 ).default
 
 import readline from 'readline'
 
 dotenv.config()
 
-async function main() {
-  const txt = process.env.SESSION_ID
+// Group metadata cache for fast access
+const groupMetadataCache = new NodeCache({ stdTTL: 5 * 60, useClones: false })
 
-  if (!txt) {
-    console.error('Environment variable not found.')
-    return
-  }
+// MongoDB config
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017'
+const DB_NAME = process.env.DB_NAME || 'guru_bot'
 
-  try {
-    await processTxtAndSaveCredentials(txt)
-    console.log('processTxtAndSaveCredentials completed.')
-  } catch (error) {
-    console.error('Error:', error)
-  }
-}
+// Use the same MongoDB URI for both auth and bot properties
+const globalDB = new MongoDB(MONGODB_URI)
 
-main()
+// Replace global.db and global.DATABASE with MongoDB
+global.db = globalDB
 
-await delay(1000 * 10)
-
-async function gandu() {
-  try {
-    const packageJson = readFileSync('package.json', 'utf8')
-    const packageData = JSON.parse(packageJson)
-    const gnome = packageData.author && packageData.author.name
-
-    if (!gnome) {
-      console.log('LOl')
-      process.exit(1)
-    }
-
-    const lund = Buffer.from('Z3VydQ==', 'base64').toString()
-    const lawde = Buffer.from(
-      `Q2hlYXAgQ29weSBPZiBHdXJ1IEJvdCBGb3VuZCAsIFBsZWFzZSBVc2UgdGhlIE9yaWdpbmFsIEd1cnUgQm90IEZyb20gaHR0cHM6Ly9naXRodWIuY29tL0d1cnUzMjIvR1VSVS1CT1QK`,
-      'base64'
-    ).toString()
-    const endi = Buffer.from(
-      `U2VjdXJpdHkgY2hlY2sgcGFzc2VkLCBUaGFua3MgRm9yIHVzaW5nIEd1cnUgTXVsdGlEZXZpY2U=`,
-      'base64'
-    ).toString()
-
-    if (gnome && gnome.trim().toLowerCase() !== lund.toLowerCase()) {
-      console.log(lawde)
-      process.exit(1)
-    } else {
-      console.log(`${endi}`)
-      console.log(chalk.bgBlack(chalk.redBright('initializing Guru Bot')))
-    }
-  } catch (error) {
-    console.error('Error:', error)
+global.loadDatabase = async function loadDatabase() {
+  await global.db.read()
+  global.db.data = {
+    users: {},
+    chats: {},
+    settings: {},
+    stats: {},
+    ...(global.db.data || {})
   }
 }
 
-gandu()
+// Save database periodically
+setInterval(async () => {
+  if (global.db.data) await global.db.write(global.db.data)
+}, 60 * 1000)
+
+await global.loadDatabase()
 
 const pairingCode = !!global.pairingNumber || process.argv.includes('--pairing-code')
-const useQr = process.argv.includes('--qr')
-const useStore = true
 
 const MAIN_LOGGER = pino({ timestamp: () => `,"time":"${new Date().toJSON()}"` })
 
 const logger = MAIN_LOGGER.child({})
 logger.level = 'fatal'
-
-const store = useStore ? makeInMemoryStore({ logger }) : undefined
-store?.readFromFile('./session.json')
-
-setInterval(() => {
-  store?.writeToFile('./session.json')
-}, 10000 * 6)
 
 const msgRetryCounterCache = new NodeCache()
 
@@ -175,52 +139,17 @@ global.prefix = new RegExp(
 )
 global.opts['db'] = process.env.DATABASE_URL
 
-global.db = new Low(
-  /https?:\/\//.test(opts['db'] || '')
-    ? new CloudDBAdapter(opts['db'])
-    : /mongodb(\+srv)?:\/\//i.test(opts['db'])
-      ? new MongoDB(opts['db'])
-      : new JSONFile(`${opts._[0] ? opts._[0] + '_' : ''}database.json`)
-)
-
-global.DATABASE = global.db
-
-global.loadDatabase = async function loadDatabase() {
-  if (global.db.READ)
-    return new Promise(resolve =>
-      setInterval(async function () {
-        if (!global.db.READ) {
-          clearInterval(this)
-          resolve(global.db.data == null ? global.loadDatabase() : global.db.data)
-        }
-      }, 1 * 1000)
-    )
-  if (global.db.data !== null) return
-  global.db.READ = true
-  await global.db.read().catch(console.error)
-  global.db.READ = null
-  global.db.data = {
-    users: {},
-    chats: {},
-    stats: {},
-    msgs: {},
-    sticker: {},
-    settings: {},
-    ...(global.db.data || {}),
-  }
-  global.db.chain = chain(global.db.data)
-}
-loadDatabase()
 global.authFolder = `session`
-const { state, saveCreds } = await useMultiFileAuthState(global.authFolder)
-//let { version, isLatest } = await fetchLatestWaWebVersion()
+
+// Replace useMultiFileAuthState with useMongoDBAuthState
+const { state, saveCreds, closeConnection } = await useMongoDBAuthState(MONGODB_URI, DB_NAME)
 
 const connectionOptions = {
   version: [2, 3000, 1015901307],
   logger: Pino({
     level: 'fatal',
   }),
-  printQRInTerminal: !pairingCode,
+  printQRInTerminal: false,
   browser: ['chrome (linux)', '', ''],
   auth: {
     creds: state.creds,
@@ -234,9 +163,20 @@ const connectionOptions = {
   },
   markOnlineOnConnect: true,
   generateHighQualityLinkPreview: true,
+  cachedGroupMetadata: async (jid) => {
+    const cached = groupMetadataCache.get(jid)
+    if (cached) return cached
+    try {
+      const mongoMeta = await mongoStore.groupMetadata(jid, DB_NAME)
+      if (mongoMeta) groupMetadataCache.set(jid, mongoMeta)
+      return mongoMeta || null
+    } catch (e) {
+      return null
+    }
+  },
   getMessage: async key => {
     let jid = jidNormalizedUser(key.remoteJid)
-    let msg = await store.loadMessage(jid, key.id)
+    let msg = await mongoStore.loadMessage(key.id, jid, DB_NAME)
     return msg?.message || ''
   },
   patchMessageBeforeSending: message => {
@@ -268,7 +208,6 @@ const connectionOptions = {
 
 global.conn = makeWASocket(connectionOptions)
 conn.isInit = false
-store?.bind(conn.ev)
 
 if (pairingCode && !conn.authState.creds.registered) {
   let phoneNumber
@@ -314,8 +253,8 @@ conn.logger.info('\nWaiting For Login\n')
 if (!opts['test']) {
   if (global.db) {
     setInterval(async () => {
-      if (global.db.data) await global.db.write()
-      if (opts['autocleartmp'] && (global.support || {}).find)
+      if (global.db.data) await global.db.write(global.db.data)
+if (opts['autocleartmp'] && (global.support || {}).find)
         (tmp = [os.tmpdir(), 'tmp']),
           tmp.forEach(filename =>
             cp.spawn('find', [filename, '-amin', '3', '-type', 'f', '-delete'])
@@ -326,36 +265,8 @@ if (!opts['test']) {
 
 if (opts['server']) (await import('./server.js')).default(global.conn, PORT)
 
-function runCleanup() {
-  clearTmp()
-    .then(() => {
-      console.log('Temporary file cleanup completed.')
-    })
-    .catch(error => {
-      console.error('An error occurred during temporary file cleanup:', error)
-    })
-    .finally(() => {
-      // 2 minutes
-      setTimeout(runCleanup, 1000 * 60 * 2)
-    })
-}
-
-runCleanup()
-
-function clearsession() {
-  let prekey = []
-  const directorio = readdirSync('./session')
-  const filesFolderPreKeys = directorio.filter(file => {
-    return file.startsWith('pre-key-')
-  })
-  prekey = [...prekey, ...filesFolderPreKeys]
-  filesFolderPreKeys.forEach(files => {
-    unlinkSync(`./session/${files}`)
-  })
-}
-
 async function connectionUpdate(update) {
-  const { connection, lastDisconnect, isNewLogin, qr } = update
+  const { connection, lastDisconnect, isNewLogin } = update
   global.stopped = connection
 
   if (isNewLogin) conn.isInit = true
@@ -378,10 +289,6 @@ async function connectionUpdate(update) {
 
   if (global.db.data == null) loadDatabase()
 
-  if (!pairingCode && useQr && qr !== 0 && qr !== undefined) {
-    conn.logger.info(chalk.yellow('\nLogging in....'))
-  }
-
   if (connection === 'open') {
     const { jid, name } = conn.user
     const msg = `Hai🤩 ${name}, Congrats you have successfully deployed GURU-BOT\nJoin my support Group for any Query\n https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp`
@@ -395,6 +302,51 @@ async function connectionUpdate(update) {
     conn.logger.error(chalk.yellow(`\nConnection closed... Get a new session`))
   }
 }
+
+// Event listeners for MongoDB store
+conn.ev.on('messaging-history.set', ({ messages }) => {
+  if (messages && messages.length > 0) {
+    mongoStore.saveMessages({ messages, type: 'append' }, DB_NAME)
+  }
+})
+conn.ev.on('contacts.update', async (contacts) => {
+  for (const contact of contacts) await mongoStore.saveContact(contact, DB_NAME)
+})
+conn.ev.on('contacts.upsert', async (contacts) => {
+  for (const contact of contacts) await mongoStore.saveContact(contact, DB_NAME)
+})
+conn.ev.on('messages.upsert', ({ messages }) => {
+  mongoStore.saveMessages({ messages, type: 'upsert' }, DB_NAME)
+})
+conn.ev.on('messages.update', async (messageUpdates) => {
+  mongoStore.saveMessages({ messages: messageUpdates, type: 'update' }, DB_NAME)
+})
+conn.ev.on('message-receipt.update', async (messageReceipts) => {
+  mongoStore.saveReceipts(messageReceipts, DB_NAME)
+})
+conn.ev.on('groups.update', async ([event]) => {
+  if (event.id) {
+    const metadata = await conn.groupMetadata(event.id)
+    if (metadata) {
+      groupMetadataCache.set(event.id, metadata)
+      await mongoStore.saveGroupMetadata(event.id, metadata, DB_NAME).catch(() => {})
+    }
+  }
+})
+conn.ev.on('group-participants.update', async (event) => {
+  if (event.id) {
+    const metadata = await conn.groupMetadata(event.id)
+    if (metadata) {
+      groupMetadataCache.set(event.id, metadata)
+      await mongoStore.saveGroupMetadata(event.id, metadata, DB_NAME).catch(() => {})
+    }
+  }
+})
+
+// MongoDB connection cleanup
+process.on('exit', async () => { await closeConnection() })
+process.on('SIGINT', async () => { await closeConnection(); process.exit(0) })
+process.on('SIGTERM', async () => { await closeConnection(); process.exit(0) })
 
 process.on('uncaughtException', console.error)
 
@@ -572,13 +524,5 @@ async function _quickTest() {
   })
   Object.freeze(global.support)
 }
-
-async function saafsafai() {
-  if (stopped === 'close' || !conn || !conn.user) return
-  clearsession()
-  console.log(chalk.cyanBright('\nStored Sessions Cleared'))
-}
-
-setInterval(saafsafai, 10 * 60 * 1000)
 
 _quickTest().catch(console.error)

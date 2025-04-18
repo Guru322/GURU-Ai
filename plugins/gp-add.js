@@ -1,12 +1,10 @@
-/*
-recomiendo no usar en wa mod
-*/
+
 
 import fetch from 'node-fetch'
 /**
- * @type {import('@whiskeysockets/baileys')}
+ * @type {import('baileys-pro')}
  */
-const { getBinaryNodeChild, getBinaryNodeChildren } = (await import('@whiskeysockets/baileys'))
+const { getBinaryNodeChild, getBinaryNodeChildren } = (await import('baileys-pro'))
   .default
 let handler = async (m, { conn, text, participants }) => {
   let _participants = participants.map(user => user.id)

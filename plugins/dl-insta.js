@@ -1,14 +1,12 @@
-// filepath: /workspaces/GURU-Ai/plugins/dl-facebook.js
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `✳️ Example:\n${usedPrefix + command} https://www.facebook.com/watch?v=123456789`
+  if (!args[0]) throw `✳️ Example:\n${usedPrefix + command} https://www.instagram.com/p/ABC123/`
   
-  // Check for valid Facebook URL pattern
-  if (!/https?:\/\/(www\.|web\.|m\.)?facebook\.com/i.test(args[0]))
-    throw `❎ Please provide a valid Facebook URL`
+  // Check for valid Instagram URL patterns
+  if (!/https?:\/\/(www\.)?instagram\.(com|stories)\/([^/?#&]+)/i.test(args[0]))
+    throw `❎ Please provide a valid Instagram URL`
 
-  m.react(rwait)
   
   try {
     const apiUrl = `https://api.mobahub.com/`
@@ -28,11 +26,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     const requestBody = {
       url: args[0],
       filenameStyle: 'pretty',
-      videoQuality: 'max', // Get highest quality available
       downloadMode: 'auto'
     }
     
-    // Send request to Cobalt API
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: headers,
@@ -45,10 +41,24 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       throw new Error(`API error: ${data.error.code}`)
     }
     
-    // Handle picker response (multiple videos)
+    // Handle picker response (multiple media)
     if (data.status === 'picker') {
       await m.reply(`✅ *Found ${data.picker.length} media items!*\n\n📤 *Downloading now...*`)
       
+      // Download audio first if available
+      if (data.audio) {
+        await conn.sendFile(
+          m.chat, 
+          data.audio, 
+          data.audioFilename || 'instagram-audio.mp3', 
+          '🎵 *Instagram Audio*', 
+          m,
+          false,
+          { mimetype: 'audio/mp3' }
+        )
+      }
+      
+      // Download each media item
       for (let i = 0; i < data.picker.length; i++) {
         const item = data.picker[i]
         const isVideo = item.type === 'video'
@@ -57,18 +67,18 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
           await conn.sendFile(
             m.chat, 
             item.url, 
-            `facebook-video-${i+1}.mp4`, 
-            `📹 *Facebook Video ${i + 1}/${data.picker.length}*`, 
+            `instagram-video-${i+1}.mp4`,
+            `📹 *Instagram ${i + 1}/${data.picker.length}*`, 
             m,
             false,
             { mimetype: 'video/mp4' }
           )
-        } else if (item.type === 'photo') {
+        } else {
           await conn.sendFile(
             m.chat, 
             item.url, 
-            `facebook-photo-${i+1}.jpg`, 
-            `🖼️ *Facebook Photo ${i + 1}/${data.picker.length}*`, 
+            `instagram-photo-${i+1}.jpg`, 
+            `🖼️ *Instagram ${i + 1}/${data.picker.length}*`, 
             m,
             false,
             { mimetype: 'image/jpeg' }
@@ -76,44 +86,47 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         }
       }
     } 
-    // Handle redirect/tunnel response (single video)
+    // Handle redirect/tunnel response (single media)
     else if (data.status === 'redirect' || data.status === 'tunnel') {
       const mediaUrl = data.url
-      const filename = data.filename || 'facebook-video.mp4'
+      const filename = data.filename || 'instagram-media'
       
-      // Send a notification message while downloading
-      await m.reply('📥 *Downloading Facebook media...*')
+      // Determine if it's video based on filename
+      const isVideo = filename.endsWith('.mp4')
       
-      // Caption for the video
-      const caption = `
-      ≡ *GURU FB DOWNLOADER*
-      
-      ▢ *Filename:* ${filename}
-      `
-      
-      await conn.sendFile(
-        m.chat, 
-        mediaUrl, 
-        filename, 
-        caption, 
-        m, 
-        false, 
-        { mimetype: filename.endsWith('.mp4') ? 'video/mp4' : 'image/jpeg' }
-      )
+      if (isVideo) {
+        await conn.sendFile(
+          m.chat, 
+          mediaUrl, 
+          filename, 
+          `📹 *Instagram Video*`, 
+          m,
+          false,
+          { mimetype: 'video/mp4' }
+        )
+      } else {
+        await conn.sendFile(
+          m.chat, 
+          mediaUrl, 
+          filename, 
+          `🖼️ *Instagram Image*`, 
+          m,
+          false,
+          { mimetype: 'image/jpeg' }
+        )
+      }
     } else {
       throw new Error(`Unexpected response status: ${data.status}`)
     }
 
-    m.react(done)
   } catch (error) {
-    console.error('Facebook download error:', error)
-    m.react(error)
+    console.error('Instagram download error:', error)
     m.reply(`❎ Error: ${error.message}`)
   }
 }
 
-handler.help = ['facebook']
+handler.help = ['instagram']
 handler.tags = ['downloader']
-handler.command = ['fb', 'fbdl', 'facebook', 'fbvid']
+handler.command = ['ig', 'igdl', 'instagram', 'igimg', 'igvid']
 
 export default handler
