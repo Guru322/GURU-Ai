@@ -99,7 +99,7 @@ function startBot() {
   if (botProcess) return
 
   console.log(chalk.blue('Starting GURU Bot with:'))
-  console.log(chalk.blue(`MongoDB URI: ${mongodbUri}`))
+  console.log(chalk.blue(`MongoDB URI:`))
   console.log(chalk.blue(`Phone number is ${phoneNumber ? 'set' : 'not specified'}`))
 
   if (!mongodbUri) {
@@ -198,3 +198,38 @@ process.on('exit', code => {
     botProcess.kill()
   }
 })
+
+if (process.env.RENDER === 'true') {
+  let serverUrl = null;
+  
+  app.use((req, res, next) => {
+    if (!serverUrl) {
+      serverUrl = `${req.protocol}://${req.get('host')}`;
+      console.log(chalk.cyan(`Captured server URL: ${serverUrl}`));
+    }
+    next();
+  });
+  
+  setInterval(() => {
+    if (serverUrl) {
+      console.log(chalk.blue(`Pinging server URL: ${serverUrl}`));
+      require('child_process').exec(`curl -s ${serverUrl}`, (error, stdout, stderr) => {
+        if (error) {
+          console.error(chalk.red(`Server ping error: ${stderr}`));
+        } else {
+          console.log(chalk.green(`Server ping successful!`));
+        }
+      });
+    } else {
+      const hostname = require('os').hostname();
+      console.log(chalk.blue(`Pinging hostname: ${hostname}`));
+      require('child_process').exec(`ping -c 1 ${hostname}`, (error, stdout, stderr) => {
+        if (error) {
+          console.error(chalk.red(`Ping error: ${stderr}`));
+        } else {
+          console.log(chalk.green(`Ping response: ${stdout}`));
+        }
+      });
+    }
+  }, 30000);
+}
