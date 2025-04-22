@@ -4,7 +4,7 @@ import ytSearch from 'yt-search'
 const handler = async (m, { conn, command, text, args, usedPrefix }) => {
   if (!text) throw `give a text to search Example: *${usedPrefix + command}* sefali odia song`
   conn.GURUPLAY = conn.GURUPLAY ? conn.GURUPLAY : {}
-  await conn.reply(m.chat, wait, m)
+  await conn.reply(m.chat, '⏳ *Searching...* Please wait while I find your music.', m)
   const result = await searchAndDownloadMusic(text)
   const infoText = `✦ ──『 *GURU PLAYER* 』── ⚝ \n\n [ ⭐ Reply the number of the desired search result to get the Audio]. \n\n`
 
@@ -32,15 +32,35 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
 handler.before = async (m, { conn }) => {
   conn.GURUPLAY = conn.GURUPLAY || {}
   if (m.isBaileys || !(m.sender in conn.GURUPLAY)) return
-  const { result, key } = conn.GURUPLAY[m.sender]
+  const { result, key, timeout } = conn.GURUPLAY[m.sender]
   if (!m.quoted || m.quoted.id !== key.id || !m.text) return
   const inputNumber = Number(m.text.trim())
   if (inputNumber >= 1 && inputNumber <= result.allLinks.length) {
+    clearTimeout(timeout)
+    
     const { url: selectedUrl, title: songTitle } = result.allLinks[inputNumber - 1]
     const fileName = generateRandomName()
     await conn.reply(m.chat, `Sending the song (${songTitle}), please wait`, m)
     const streamUrl = `https://ironman.koyeb.app/ironman/dl/yta?url=${encodeURIComponent(selectedUrl)}`
-    await conn.sendFile(m.chat, streamUrl, `${fileName}.mp3`, '', m, false, { mimetype: 'audio/mpeg' })
+    
+    try {
+      const doc = {
+        audio: {
+          url: streamUrl,
+        },
+        mimetype: 'audio/mpeg',
+        ptt: false,
+        waveform: [100, 0, 0, 0, 0, 0, 100],
+        fileName: `${fileName}`,
+      }
+
+      await conn.sendMessage(m.chat, doc, { quoted: m })
+    } catch (error) {
+      conn.reply(m.chat, `Error sending audio: ${error.message}. Please try again later.`, m)
+    } finally {
+      delete conn.GURUPLAY[m.sender]
+    }
+
   } else {
     m.reply('Invalid sequence number. Please select a number between 1 and ' + result.allLinks.length)
   }
@@ -66,20 +86,6 @@ async function searchAndDownloadMusic(query) {
   if (!videos || !videos.length) throw 'Sorry, no video results were found for this search.'
   const allLinks = videos.map(video => ({ title: video.title, url: video.url }))
   return { allLinks }
-}
-
-async function fetchVideoBuffer() {
-  try {
-    const response = await fetch(url, {
-      method: 'GET',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
-    })
-    return await response.buffer()
-  } catch (error) {
-    return null
-  }
 }
 
 function generateRandomName() {
