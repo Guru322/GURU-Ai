@@ -50,8 +50,6 @@ const {
   await import('baileys-pro')
 ).default
 
-import readline from 'readline'
-
 dotenv.config()
 
 const groupMetadataCache = new NodeCache({ stdTTL: 5 * 60, useClones: false })
@@ -80,7 +78,7 @@ setInterval(async () => {
 
 await global.loadDatabase()
 
-const pairingCode = !!global.pairingNumber || process.argv.includes('--pairing-code')
+const phoneNumberFromEnv = process.env.PHONE_NUMBER
 
 const MAIN_LOGGER = pino({ timestamp: () => `,"time":"${new Date().toJSON()}"` })
 
@@ -89,12 +87,6 @@ logger.level = 'fatal'
 
 const msgRetryCounterCache = new NodeCache()
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-})
-const question = text => new Promise(resolve => rl.question(text, resolve))
-
 const { CONNECTING } = ws
 const { chain } = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
@@ -102,22 +94,8 @@ const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 protoType()
 serialize()
 
-global.API = (name, path = '/', query = {}, apikeyqueryname) =>
-  (name in global.APIs ? global.APIs[name] : name) +
-  path +
-  (query || apikeyqueryname
-    ? '?' +
-      new URLSearchParams(
-        Object.entries({
-          ...query,
-          ...(apikeyqueryname
-            ? {
-                [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name],
-              }
-            : {}),
-        })
-      )
-    : '')
+global.API = (name, path = '/', query = {}) =>
+  name + path + (query ? '?' + new URLSearchParams(Object.entries(query)) : '')
 global.timestamp = {
   start: new Date(),
 }
@@ -132,19 +110,18 @@ global.prefix = new RegExp(
     ) +
     ']'
 )
-global.opts['db'] = process.env.DATABASE_URL
+global.opts['db'] = process.env.MONGODB_URI
 
-global.authFolder = `session`
 
 const { state, saveCreds, closeConnection } = await useMongoDBAuthState(MONGODB_URI, DB_NAME)
 
 const connectionOptions = {
-  version: [2, 3000, 1015901307],
   logger: Pino({
     level: 'fatal',
   }),
   printQRInTerminal: false,
-  browser: ['chrome (linux)', '', ''],
+  version: [ 2, 3000, 1015901307 ],
+  browser: ["Ubuntu", "Chrome", "20.0.04"],
   auth: {
     creds: state.creds,
     keys: makeCacheableSignalKeyStore(
@@ -203,42 +180,64 @@ const connectionOptions = {
 global.conn = makeWASocket(connectionOptions)
 conn.isInit = false
 
-if (pairingCode && !conn.authState.creds.registered) {
+if (!conn.authState.creds.registered) {
   let phoneNumber
-  if (!!global.pairingNumber) {
-    phoneNumber = global.pairingNumber.replace(/[^0-9]/g, '')
-
-    if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
+  
+  if (phoneNumberFromEnv) {
+    phoneNumber = phoneNumberFromEnv.replace(/[^0-9]/g, '')
+    
+    if (!phoneNumber || phoneNumber.length < 8) {
       console.log(
-        chalk.bgBlack(chalk.redBright("Start with your country's WhatsApp code, Example : 62xxx"))
+        chalk.bgBlack(chalk.redBright("Invalid phone number format. Please include country code (Example: 62xxx)"))
       )
+      if (process.send) {
+        process.send({ 
+          type: 'pairing-code', 
+          code: 'ERROR: Invalid phone number format', 
+          error: true 
+        })
+      }
       process.exit(0)
     }
   } else {
-    phoneNumber = await question(
-      chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number : `))
-    )
-    phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
-
-    if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-      console.log(
-        chalk.bgBlack(chalk.redBright("Start with your country's WhatsApp code, Example : 62xxx"))
-      )
-
-      phoneNumber = await question(
-        chalk.bgBlack(chalk.greenBright(`Please type your WhatsApp number : `))
-      )
-      phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
-      rl.close()
+    console.log(chalk.red("No phone number provided. Please set the PHONE_NUMBER environment variable."))
+    if (process.send) {
+      process.send({ 
+        type: 'pairing-code', 
+        code: 'ERROR: No phone number provided', 
+        error: true 
+      })
     }
+    process.exit(0)
   }
 
   setTimeout(async () => {
-    let code = await conn.requestPairingCode(phoneNumber)
-    code = code?.match(/.{1,4}/g)?.join('-') || code
-    const pairingCode =
-      chalk.bold.greenBright('Your Pairing Code:') + ' ' + chalk.bgGreenBright(chalk.black(code))
-    console.log(pairingCode)
+    try {
+      let code = await conn.requestPairingCode(phoneNumber, "GURUAI11")
+      code = code?.match(/.{1,4}/g)?.join('-') || code
+      
+      global.pairingCode = code
+      
+      const pairingCodeFormatted = chalk.bold.greenBright('Your Pairing Code:') + ' ' + chalk.bgGreenBright(chalk.black(code))
+      console.log(pairingCodeFormatted)
+      
+      if (process.send) {
+        process.send({ 
+          type: 'pairing-code', 
+          code: code, 
+          error: false 
+        })
+      }
+    } catch (error) {
+      console.log(chalk.bgBlack(chalk.redBright("Failed to generate pairing code:")), error)
+      if (process.send) {
+        process.send({ 
+          type: 'pairing-code', 
+          code: 'ERROR: Failed to generate pairing code', 
+          error: true 
+        })
+      }
+    }
   }, 3000)
 }
 
@@ -277,22 +276,104 @@ async function connectionUpdate(update) {
   }
 
   if (code && (code === DisconnectReason.restartRequired || code === 428)) {
-    conn.logger.info(chalk.yellow('\n🚩 Restart Required... Restarting'))
-    process.send('reset')
+    conn.logger.info(chalk.yellow('\n🚩 Restart Required... Preparing for restart'))
+    
+    try {
+      if (global.db.data) {
+        conn.logger.info(chalk.blue('Saving database before restart...'))
+        await global.db.write(global.db.data)
+        conn.logger.info(chalk.green('Database saved successfully'))
+      }
+    } catch (error) {
+      console.error('Error saving database before restart:', error)
+    }
+    
+    try {
+      await global.db.read()
+      conn.logger.info(chalk.green('MongoDB connection verified, proceeding with restart'))
+    } catch (dbError) {
+      conn.logger.error(chalk.red('MongoDB connection error before restart, attempting to reconnect...'))
+      try {
+        global.db = new MongoDB(MONGODB_URI)
+        await global.db.read()
+        conn.logger.info(chalk.green('Successfully reconnected to MongoDB'))
+      } catch (reconnectError) {
+        conn.logger.error(chalk.red('Failed to reconnect to MongoDB:'), reconnectError)
+      }
+    }
+    
+    if (process.send) {
+      process.send('reset')
+    } else {
+      conn.logger.info(chalk.yellow('Reloading handler...'))
+      await global.reloadHandler(true)
+    }
   }
 
   if (global.db.data == null) loadDatabase()
 
   if (connection === 'open') {
+    if (process.send) {
+      process.send({ 
+        type: 'connection-status', 
+        connected: true 
+      })
+    }
+    
+    try {
+      await global.db.read()
+      conn.logger.info(chalk.green('MongoDB connection verified on open'))
+    } catch (error) {
+      conn.logger.error(chalk.red('MongoDB connection error on open, attempting to reconnect...'))
+      try {
+        global.db = new MongoDB(MONGODB_URI)
+        await global.db.read()
+        conn.logger.info(chalk.green('Successfully reconnected to MongoDB on open'))
+      } catch (reconnectError) {
+        conn.logger.error(chalk.red('Failed to reconnect to MongoDB on open:'), reconnectError)
+      }
+    }
+    
     const { jid, name } = conn.user
-    const msg = `Hai🤩 ${name}, Congrats you have successfully deployed GURU-BOT\nJoin my support Group for any Query\n https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp`
+    
+    try {
+      const dashboardStats = await generateDatabaseStats()
+      conn.logger.info(chalk.cyan('\n' + dashboardStats + '\n'))
+      
+      const welcomeMessage = `*🤖 GURU-BOT DASHBOARD*\n\nHai ${name}, your bot is now online!\n\n${dashboardStats}\n\nNeed help? Join support group:\nhttps://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp`
 
-    await conn.sendMessage(jid, { text: msg, mentions: [jid] }, { quoted: null })
+      await conn.sendMessage(jid, { text: welcomeMessage }, { quoted: null })
+    } catch (error) {
+      console.error('Error generating dashboard:', error)
+      const msg = `Hai🤩 ${name}, Congrats you have successfully deployed GURU-BOT\nJoin my support Group for any Query\n https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp`
+      await conn.sendMessage(jid, { text: msg, mentions: [jid] }, { quoted: null })
+    }
 
     conn.logger.info(chalk.yellow('\n🚩 R E A D Y'))
   }
 
   if (connection === 'close') {
+    if (process.send) {
+      process.send({ 
+        type: 'connection-status', 
+        connected: false 
+      })
+    }
+    
+    try {
+      await global.db.read()
+      conn.logger.info(chalk.blue('MongoDB connection maintained despite WhatsApp disconnection'))
+    } catch (error) {
+      conn.logger.error(chalk.red('MongoDB connection lost on WhatsApp disconnect, attempting to reconnect...'))
+      try {
+        global.db = new MongoDB(MONGODB_URI)
+        await global.db.read()
+        conn.logger.info(chalk.green('Successfully reconnected to MongoDB after disconnection'))
+      } catch (reconnectError) {
+        conn.logger.error(chalk.red('Failed to reconnect to MongoDB after disconnection:'), reconnectError)
+      }
+    }
+    
     conn.logger.error(chalk.yellow(`\nConnection closed... Get a new session`))
   }
 }
@@ -419,6 +500,52 @@ global.reloadHandler = async function (restatConn) {
   return true
 }
 
+if (process.on) {
+  process.on('message', async (data) => {
+    if (typeof data === 'object' && data.type === 'request-stats') {
+      try {
+        const stats = await generateStatsData()
+        if (process.send) {
+          process.send({ 
+            type: 'stats', 
+            stats: stats 
+          })
+        }
+      } catch (error) {
+        console.error('Error generating stats for parent process:', error)
+      }
+    }
+  })
+}
+
+async function generateStatsData() {
+  try {
+    if (!global.db.data) await global.loadDatabase()
+    
+    return {
+      users: Object.keys(global.db.data.users || {}).length,
+      groups: Object.keys(global.db.data.chats || {}).filter(id => id.endsWith('@g.us')).length,
+      privateChats: Object.keys(global.db.data.chats || {}).filter(id => !id.endsWith('@g.us')).length,
+      totalChats: Object.keys(global.db.data.chats || {}).length,
+      settings: Object.keys(global.db.data.settings || {}).length,
+      plugins: Object.keys(global.plugins || {}).length,
+      uptime: formatUptime(process.uptime()),
+      memoryUsage: `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`,
+      bannedUsers: Object.values(global.db.data.users || {}).filter(user => user.banned).length,
+      activeGroups: Object.values(global.db.data.chats || {}).filter(chat => !chat.isBanned && chat.id?.endsWith('@g.us')).length,
+      registeredUsers: Object.values(global.db.data.users || {}).filter(user => user.registered).length,
+      topPlugins: global.db.data.stats ? 
+        Object.entries(global.db.data.stats)
+          .map(([name, stat]) => ({ name, total: stat.total || 0 }))
+          .sort((a, b) => b.total - a.total)
+          .slice(0, 5) : []
+    }
+  } catch (error) {
+    console.error("Error generating stats data:", error)
+    return { error: "Failed to generate statistics" }
+  }
+}
+
 const pluginFolder = global.__dirname(join(__dirname, './plugins/index'))
 const pluginFilter = filename => /\.js$/.test(filename)
 global.plugins = {}
@@ -518,3 +645,82 @@ async function _quickTest() {
 }
 
 _quickTest().catch(console.error)
+
+
+async function generateDatabaseStats() {
+  try {
+    if (!global.db.data) await global.loadDatabase()
+    
+    const stats = {
+      users: Object.keys(global.db.data.users || {}).length,
+      groups: Object.keys(global.db.data.chats || {}).filter(id => id.endsWith('@g.us')).length,
+      privateChats: Object.keys(global.db.data.chats || {}).filter(id => !id.endsWith('@g.us')).length,
+      totalChats: Object.keys(global.db.data.chats || {}).length,
+      settings: Object.keys(global.db.data.settings || {}).length,
+      plugins: Object.keys(global.plugins || {}).length,
+      uptime: formatUptime(process.uptime()),
+      memoryUsage: `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`,
+      bannedUsers: Object.values(global.db.data.users || {}).filter(user => user.banned).length,
+      activeGroups: Object.values(global.db.data.chats || {}).filter(chat => !chat.isBanned && chat.id?.endsWith('@g.us')).length,
+      registeredUsers: Object.values(global.db.data.users || {}).filter(user => user.registered).length,
+    }
+    
+    let activeChats = []
+    if (global.db.data.stats) {
+      const pluginStats = global.db.data.stats
+      // Get plugin with most usage
+      const topPlugins = Object.entries(pluginStats)
+        .map(([name, stat]) => ({ name, total: stat.total || 0 }))
+        .sort((a, b) => b.total - a.total)
+        .slice(0, 5)
+      
+      stats.topPlugins = topPlugins
+    }
+    
+    return `
+┌─────────────────────────────┐
+│   🤖 GURU-BOT DASHBOARD 🤖   │
+├─────────────────────────────┤
+│                             │
+│ 👥 Users: ${padRight(stats.users, 19)} │
+│ 🛡️ Banned Users: ${padRight(stats.bannedUsers, 13)} │
+│ 📝 Registered: ${padRight(stats.registeredUsers, 14)} │
+│                             │
+│ 👥 Groups: ${padRight(stats.groups, 18)} │
+│ 💬 Private Chats: ${padRight(stats.privateChats, 11)} │
+│ 📊 Total Chats: ${padRight(stats.totalChats, 13)} │
+│ 🟢 Active Groups: ${padRight(stats.activeGroups, 11)} │
+│                             │
+│ ⚙️ Settings: ${padRight(stats.settings, 16)} │
+│ 🔌 Plugins: ${padRight(stats.plugins, 17)} │
+│                             │
+│ ⏱️ Uptime: ${padRight(stats.uptime, 18)} │
+│ 💾 Memory: ${padRight(stats.memoryUsage, 18)} │
+│                             │
+${stats.topPlugins ? `│ 🔝 Top Plugins:               │\n${stats.topPlugins.map(p => `│   • ${padRight(p.name.replace('.js', ''), 20)} ${p.total} │`).join('\n')}` : ''}
+└─────────────────────────────┘
+    `.trim()
+  } catch (error) {
+    console.error("Error generating dashboard:", error)
+    return "Error generating dashboard statistics"
+  }
+}
+
+
+function formatUptime(seconds) {
+  const days = Math.floor(seconds / (3600 * 24))
+  const hours = Math.floor((seconds % (3600 * 24)) / 3600)
+  const minutes = Math.floor((seconds % 3600) / 60)
+  
+  let result = ''
+  if (days > 0) result += `${days}d `
+  if (hours > 0) result += `${hours}h `
+  result += `${minutes}m`
+  
+  return result
+}
+
+
+function padRight(text, length) {
+  return String(text).padEnd(length)
+}

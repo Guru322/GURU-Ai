@@ -3,73 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GURU-BOT Status</title>
+    <title>GURU-Ai Status</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff0000); /* RGB gradient background */
-            background-size: 400% 400%;
-            animation: backgroundGradient 10s linear infinite;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
+            color: #fff;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .status {
-            font-size: 36px;
+            font-size: 24px;
             font-weight: bold;
-            color: black; /* Text color */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            animation: moveRotate 4s linear infinite;
-            position: absolute;
+            margin-bottom: 20px;
+            text-align: center;
         }
-
-        @keyframes moveRotate {
-            0% {
-                top: 0;
-                left: 0;
-                transform: rotate(0deg);
-            }
-            25% {
-                top: 0;
-                left: calc(100% - 300px);
-                transform: rotate(90deg);
-            }
-            50% {
-                top: calc(100% - 100px);
-                left: calc(100% - 300px);
-                transform: rotate(180deg);
-            }
-            75% {
-                top: calc(100% - 100px);
-                left: 0;
-                transform: rotate(270deg);
-            }
-            100% {
-                top: 0;
-                left: 0;
-                transform: rotate(360deg);
-            }
+        .pairing-code {
+            font-size: 28px;
+            font-weight: bold;
+            background-color: rgba(50, 50, 50, 0.8);
+            color: #4CAF50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+            letter-spacing: 2px;
+            border: 1px solid rgba(76, 175, 80, 0.3);
         }
-
-        @keyframes backgroundGradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
+        .instructions {
+            text-align: left;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(40, 40, 40, 0.5);
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+        .hidden {
+            display: none;
+        }
+        .success-message {
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        #loading-container {
+            text-align: center;
+        }
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid #4CAF50;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Dashboard styles */
+        .dashboard {
+            background-color: rgba(40, 40, 40, 0.7);
+            border-radius: 8px;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+        .dashboard-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .stat-item {
+            background-color: rgba(50, 50, 50, 0.5);
+            padding: 10px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .stat-label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .stat-value {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .divider {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 15px 0;
+        }
+        .top-plugins {
+            margin-top: 15px;
+        }
+        .plugin-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
         }
     </style>
 </head>
 <body>
-    <div class="status">GURU BOT Online</div>
+    <div class="container">
+        <div class="status">GURU Ai Status</div>
+        
+        <div id="loading-container">
+            <p>Starting GURU Ai... Please wait.</p>
+            <div class="loading-spinner"></div>
+        </div>
+        
+        <div id="pairing-container" class="hidden">
+            <p>Use this pairing code to connect WhatsApp:</p>
+            <div id="pairing-code" class="pairing-code">Loading pairing code...</div>
+            
+            <div class="instructions">
+                <h3>Connection Instructions:</h3>
+                <ol>
+                    <li>Open WhatsApp on your phone</li>
+                    <li>Tap Menu or Settings and select Linked Devices</li>
+                    <li>Tap on "Link a Device"</li>
+                    <li>When prompted for a QR code, tap "Link with phone number instead"</li>
+                    <li>Enter the pairing code shown above</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div id="success-container" class="hidden">
+            <div class="success-message">Ai is now working!</div>
+            <p>Your WhatsApp Ai is successfully connected and running.</p>
+            
+            <div class="dashboard">
+                <div class="dashboard-title">🤖 GURU Ai DASHBOARD 🤖</div>
+                
+                <div class="dashboard-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">👥 Users</span>
+                        <span id="user-count" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">📝 Registered</span>
+                        <span id="registered-users" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">👥 Groups</span>
+                        <span id="group-count" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">💬 Private Chats</span>
+                        <span id="chat-count" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">🛡️ Banned Users</span>
+                        <span id="banned-users" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">🟢 Active Groups</span>
+                        <span id="active-groups" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">🔌 Plugins</span>
+                        <span id="plugin-count" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">⏱️ Uptime</span>
+                        <span id="uptime" class="stat-value">-</span>
+                    </div>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="top-plugins">
+                    <div class="dashboard-title">🔝 Top Plugins</div>
+                    <div id="plugins-container">
+                        <div class="plugin-item">Loading plugin data...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check for pairing status on page load and every 3 seconds
+        function checkStatus() {
+            fetch('/pairing-status')
+                .then(response => response.json())
+                .then(data => {
+                    // Hide loading once we have data
+                    document.getElementById('loading-container').classList.add('hidden');
+                    
+                    if (data.connected) {
+                        // If connected, show success message and dashboard
+                        document.getElementById('pairing-container').classList.add('hidden');
+                        document.getElementById('success-container').classList.remove('hidden');
+                        
+                        // If stats are available, update the dashboard
+                        if (data.stats) {
+                            updateDashboard(data.stats);
+                        } else {
+                            // If no stats yet, fetch them
+                            fetchAiStats();
+                        }
+                    } else if (data.pairingCode) {
+                        // If pairing code available but not connected, show the code
+                        document.getElementById('pairing-container').classList.remove('hidden');
+                        document.getElementById('pairing-code').textContent = data.pairingCode;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking status:', error);
+                });
+        }
+        
+        // Fetch Ai statistics
+        function fetchAiStats() {
+            fetch('/bot-stats')
+                .then(response => response.json())
+                .then(data => {
+                    updateDashboard(data);
+                })
+                .catch(error => {
+                    console.error('Error fetching stats:', error);
+                });
+        }
+        
+        // Update dashboard with statistics
+        function updateDashboard(stats) {
+            // Update user statistics
+            document.getElementById('user-count').textContent = stats.users || '-';
+            document.getElementById('registered-users').textContent = stats.registeredUsers || '-';
+            document.getElementById('banned-users').textContent = stats.bannedUsers || '-';
+            
+            // Update chat statistics
+            document.getElementById('group-count').textContent = stats.groups || '-';
+            document.getElementById('chat-count').textContent = stats.privateChats || '-';
+            document.getElementById('active-groups').textContent = stats.activeGroups || '-';
+            
+            // Update system info
+            document.getElementById('plugin-count').textContent = stats.plugins || '-';
+            document.getElementById('uptime').textContent = stats.uptime || '-';
+            
+            // Update top plugins
+            if (stats.topPlugins && stats.topPlugins.length > 0) {
+                const pluginsContainer = document.getElementById('plugins-container');
+                pluginsContainer.innerHTML = '';
+                
+                stats.topPlugins.forEach(plugin => {
+                    const pluginItem = document.createElement('div');
+                    pluginItem.className = 'plugin-item';
+                    pluginItem.innerHTML = `
+                        <span>${plugin.name.replace('.js', '')}</span>
+                        <span class="stat-value">${plugin.total}</span>
+                    `;
+                    pluginsContainer.appendChild(pluginItem);
+                });
+            } else {
+                document.getElementById('plugins-container').innerHTML = 
+                    '<div class="plugin-item">No plugin usage data available yet</div>';
+            }
+        }
+
+        // Check immediately and then every 3 seconds
+        checkStatus();
+        setInterval(checkStatus, 3000);
+        
+        // Fetch updated stats every 30 seconds when connected
+        setInterval(() => {
+            if (!document.getElementById('success-container').classList.contains('hidden')) {
+                fetchAiStats();
+            }
+        }, 30000);
+    </script>
 </body>
 </html>
