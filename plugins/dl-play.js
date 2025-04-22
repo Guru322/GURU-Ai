@@ -1,5 +1,12 @@
 import fetch from 'node-fetch'
 import ytSearch from 'yt-search'
+import fs from 'fs'
+import { pipeline } from 'stream'
+import { promisify } from 'util'
+import os from 'os'
+
+const streamPipeline = promisify(pipeline)
+const tmpDir = os.tmpdir()
 
 const handler = async (m, { conn, command, text, args, usedPrefix }) => {
   if (!text) throw `give a text to search Example: *${usedPrefix + command}* sefali odia song`
@@ -39,28 +46,52 @@ handler.before = async (m, { conn }) => {
     clearTimeout(timeout)
     
     const { url: selectedUrl, title: songTitle } = result.allLinks[inputNumber - 1]
-    const fileName = generateRandomName()
-    await conn.reply(m.chat, `Sending the song (${songTitle}), please wait`, m)
-    const streamUrl = `https://ironman.koyeb.app/ironman/dl/yta?url=${encodeURIComponent(selectedUrl)}`
+    const safeTitle = songTitle.replace(/[^\w\s]/gi, '').replace(/\s+/g, '_').substring(0, 100)
     
     try {
+      await conn.reply(m.chat, `⏳ *Downloading* "${songTitle}", please wait...`, m)
+      
+      const apiUrl = `https://ironman.koyeb.app/ironman/dl/yta?url=${encodeURIComponent(selectedUrl)}`
+      
+      const filePath = `${tmpDir}/${safeTitle}.mp3`
+      
+      const response = await fetch(apiUrl)
+      if (!response.ok) throw new Error(`API responded with status: ${response.status}`)
+      
+      const fileStream = fs.createWriteStream(filePath)
+      await streamPipeline(response.body, fileStream)
+      
+      await conn.reply(m.chat, `✅ *Download complete!* Sending the audio now...`, m)
+      
       const doc = {
         audio: {
-          url: streamUrl,
+          url: filePath,
         },
         mimetype: 'audio/mpeg',
         ptt: false,
         waveform: [100, 0, 0, 0, 0, 0, 100],
-        fileName: `${fileName}`,
+        fileName: `${safeTitle}.mp3`,
       }
-
+      
       await conn.sendMessage(m.chat, doc, { quoted: m })
+      
+      setTimeout(() => {
+        try {
+          if (fs.existsSync(filePath)) {
+            fs.unlinkSync(filePath)
+            console.log(`Deleted temp file: ${filePath}`)
+          }
+        } catch (cleanupErr) {
+          console.error('Error during file cleanup:', cleanupErr)
+        }
+      }, 5000)
+      
     } catch (error) {
-      conn.reply(m.chat, `Error sending audio: ${error.message}. Please try again later.`, m)
+      console.error('Download error:', error)
+      conn.reply(m.chat, `❌ Error downloading audio: ${error.message}. Please try again later.`, m)
     } finally {
       delete conn.GURUPLAY[m.sender]
     }
-
   } else {
     m.reply('Invalid sequence number. Please select a number between 1 and ' + result.allLinks.length)
   }
