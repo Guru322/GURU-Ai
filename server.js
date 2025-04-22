@@ -4,6 +4,7 @@ import path from 'path'
 import { toBuffer } from 'qrcode'
 import fetch from 'node-fetch'
 import { fileURLToPath } from 'url'
+import rateLimit from 'express-rate-limit'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -17,7 +18,12 @@ function connect(conn, PORT) {
   
   app.use('/assets', express.static(path.join(__dirname, 'Assets')))
 
-  app.get('/', (req, res) => {
+  const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+  })
+
+  app.get('/', limiter, (req, res) => {
     res.sendFile(path.join(__dirname, 'Assets', 'guru.html'))
   })
 
