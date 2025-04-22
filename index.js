@@ -100,7 +100,7 @@ function startBot() {
 
   console.log(chalk.blue('Starting GURU Bot with:'))
   console.log(chalk.blue(`MongoDB URI: ${mongodbUri}`))
-  console.log(chalk.blue(`Phone number: ${phoneNumber || 'Not specified'}`))
+  console.log(chalk.blue(`Phone number is ${phoneNumber ? 'set' : 'not specified'}`))
 
   if (!mongodbUri) {
     console.error(chalk.red('MONGODB_URI environment variable is required!'))
