@@ -48,6 +48,7 @@ figlet(
   }
 )
 
+import rateLimit from 'express-rate-limit'
 const app = express()
 const port = process.env.PORT || 5000
 
@@ -58,7 +59,12 @@ app.use(express.static(path.join(__dirname, 'Assets')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.get('/', (req, res) => {
+const homeLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+})
+
+app.get('/', homeLimiter, (req, res) => {
   res.sendFile(path.join(__dirname, 'Assets', 'guru.html'))
 })
 

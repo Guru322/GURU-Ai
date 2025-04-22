@@ -73,7 +73,8 @@
         "url-regex-safe": "^4.0.0",
         "wa-sticker-formatter": "^4.4.4",
         "yargs": "^17.6.0",
-        "yt-search": "^2.12.1"
+        "yt-search": "^2.12.1",
+        "express-rate-limit": "^7.5.0"
     },
     "overrides": {
         "cache-manager": "5.2.2"
