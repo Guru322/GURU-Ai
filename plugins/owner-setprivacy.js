@@ -1,4 +1,4 @@
-import pkg from '@whiskeysockets/baileys'
+import pkg from 'baileys-pro'
 const { WA_DEFAULT_EPHEMERAL } = pkg
 const handler = async (m, { conn, args, usedPrefix }) => {
   const validValues = {

@@ -32,15 +32,6 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         '🎉 *' +
         usedPrefix +
         "funmenu* - The bot's party hat. Games, jokes and instant ROFLs. Let's get this party started!\n\n" +
-        '💰 *' +
-        usedPrefix +
-        'economymenu* - Bling bling! Your personal vault of virtual economy. Spend or save? Choose wisely!\n\n' +
-        '🎮 *' +
-        usedPrefix +
-        'gamemenu* - Enter the gaming arena. May the odds be ever in your favor!\n\n' +
-        '🎨 *' +
-        usedPrefix +
-        'stickermenu* - A rainbow of stickers for your inner artist. Make your chats pop!\n\n' +
         '🧰 *' +
         usedPrefix +
         "toolmenu* - Your handy-dandy toolkit. What's your pick, genius?\n\n" +
@@ -137,30 +128,6 @@ let handler = async (m, { conn, usedPrefix, command }) => {
    ⎪⌲💎 _${usedPrefix}instagram <link>_
    ⎪⌲💎 _${usedPrefix}spotify_
    ⎪⌲💎 _${usedPrefix}facebook <link>_
-   ┗━━━ʕ•㉨•ʔ━━━┛` //
-      break
-    case 'economymenu':
-      lkr = `❀° ┄──•••───╮
-          𝙀𝘾𝙊𝙉𝙊𝙈𝙔 
-   ╰───•••──┄ °❀     
-   ┏━━━ʕ•㉨•ʔ━━━┓
-   ⎪⌲👑 _${usedPrefix}claim/daily_
-   ⎪⌲👑 _${usedPrefix}weekly_
-   ⎪⌲👑 _${usedPrefix}monthly_
-   ⎪⌲👑 _${usedPrefix}leaderboard_
-   ⎪⌲👑 _${usedPrefix}bet_
-   ⎪⌲👑 _${usedPrefix}heal_
-   ⎪⌲👑 _${usedPrefix}craft_
-   ⎪⌲👑 _${usedPrefix}balance_
-   ⎪⌲👑 _${usedPrefix}shop_
-   ⎪⌲👑 _${usedPrefix}sell_
-   ⎪⌲👑 _${usedPrefix}adventure_
-   ⎪⌲👑 _${usedPrefix}opencrate_
-   ⎪⌲👑 _${usedPrefix}mine_
-   ⎪⌲👑 _${usedPrefix}work_
-   ⎪⌲👑 _${usedPrefix}transfer_
-   ⎪⌲👑 _${usedPrefix}todiamond_
-   ⎪⌲👑 _${usedPrefix}tomoney_
    ┗━━━ʕ•㉨•ʔ━━━┛` //
       break
     case 'funmenu':

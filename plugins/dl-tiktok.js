@@ -1,12 +1,11 @@
-// filepath: /workspaces/GURU-Ai/plugins/dl-facebook.js
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `✳️ Example:\n${usedPrefix + command} https://www.facebook.com/watch?v=123456789`
+  if (!args[0]) throw `✳️ Example:\n${usedPrefix + command} https://www.tiktok.com/@username/video/1234567890123456789`
   
-  // Check for valid Facebook URL pattern
-  if (!/https?:\/\/(www\.|web\.|m\.)?facebook\.com/i.test(args[0]))
-    throw `❎ Please provide a valid Facebook URL`
+  // Check for valid TikTok URL pattern
+  if (!/https?:\/\/(www\.|vm\.|vt\.)?tiktok\.com/i.test(args[0]))
+    throw `❎ Please provide a valid TikTok URL`
 
   m.react(rwait)
   
@@ -28,11 +27,11 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     const requestBody = {
       url: args[0],
       filenameStyle: 'pretty',
-      videoQuality: 'max', // Get highest quality available
-      downloadMode: 'auto'
+      videoQuality: 'max',
+      downloadMode: 'auto',
+      tiktokFullAudio: true // Enable downloading of original sound
     }
     
-    // Send request to Cobalt API
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: headers,
@@ -45,33 +44,49 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       throw new Error(`API error: ${data.error.code}`)
     }
     
-    // Handle picker response (multiple videos)
+    // Handle picker response (multiple items like slideshows)
     if (data.status === 'picker') {
       await m.reply(`✅ *Found ${data.picker.length} media items!*\n\n📤 *Downloading now...*`)
       
+      // Download audio first if available
+      if (data.audio) {
+        await conn.sendFile(
+          m.chat, 
+          data.audio, 
+          data.audioFilename || 'tiktok-audio.mp3', 
+          '🎵 *TikTok Original Sound*', 
+          m,
+          false,
+          { mimetype: 'audio/mp3' }
+        )
+      }
+      
+      // Download each media item
       for (let i = 0; i < data.picker.length; i++) {
         const item = data.picker[i]
-        const isVideo = item.type === 'video'
         
-        if (isVideo) {
+        if (item.type === 'video') {
           await conn.sendFile(
             m.chat, 
             item.url, 
-            `facebook-video-${i+1}.mp4`, 
-            `📹 *Facebook Video ${i + 1}/${data.picker.length}*`, 
+            `tiktok-video-${i+1}.mp4`, 
+            `📹 *TikTok Video ${i + 1}/${data.picker.length}*`, 
             m,
             false,
             { mimetype: 'video/mp4' }
           )
-        } else if (item.type === 'photo') {
+        } else if (item.type === 'photo' || item.type === 'gif') {
+          const mimetype = item.type === 'gif' ? 'image/gif' : 'image/jpeg'
+          const extension = item.type === 'gif' ? 'gif' : 'jpg'
+          
           await conn.sendFile(
             m.chat, 
             item.url, 
-            `facebook-photo-${i+1}.jpg`, 
-            `🖼️ *Facebook Photo ${i + 1}/${data.picker.length}*`, 
+            `tiktok-${item.type}-${i+1}.${extension}`, 
+            `🖼️ *TikTok ${item.type} ${i + 1}/${data.picker.length}*`, 
             m,
             false,
-            { mimetype: 'image/jpeg' }
+            { mimetype: mimetype }
           )
         }
       }
@@ -79,14 +94,14 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     // Handle redirect/tunnel response (single video)
     else if (data.status === 'redirect' || data.status === 'tunnel') {
       const mediaUrl = data.url
-      const filename = data.filename || 'facebook-video.mp4'
+      const filename = data.filename || 'tiktok-video.mp4'
       
       // Send a notification message while downloading
-      await m.reply('📥 *Downloading Facebook media...*')
+      await m.reply('📥 *Downloading TikTok video...*')
       
       // Caption for the video
       const caption = `
-      ≡ *GURU FB DOWNLOADER*
+      ≡ *GURU TIKTOK DL*
       
       ▢ *Filename:* ${filename}
       `
@@ -106,14 +121,14 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
     m.react(done)
   } catch (error) {
-    console.error('Facebook download error:', error)
+    console.error('TikTok download error:', error)
     m.react(error)
     m.reply(`❎ Error: ${error.message}`)
   }
 }
 
-handler.help = ['facebook']
+handler.help = ['tiktok']
 handler.tags = ['downloader']
-handler.command = ['fb', 'fbdl', 'facebook', 'fbvid']
+handler.command = ['tiktok', 'tt', 'tiktokdl', 'ttvid']
 
 export default handler

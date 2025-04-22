@@ -1,13 +1,11 @@
-//import db from '../lib/database.js'
-
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
-  let isEnable = /true|enable|(turn)?on|1/i.test(command)
+  let type = (args[0] || '').toLowerCase()
+  let state = (args[1] || '').toLowerCase()
+  let isEnable = /true|enable|on|1/i.test(state)
   let chat = global.db.data.chats[m.chat]
   let user = global.db.data.users[m.sender]
   let bot = global.db.data.settings[conn.user.jid] || {}
-  let type = (args[0] || '').toLowerCase()
-  let isAll = false,
-    isUser = false
+  let isAll = false, isUser = false
   switch (type) {
     case 'welcome':
       if (!m.isGroup) {
@@ -20,33 +18,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         throw false
       }
       chat.welcome = isEnable
-      break
-    case 'jarvis':
-    case 'autotalk':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.jarvis = isEnable
-      break
-    case 'pmblocker':
-      isAll = true
-      if (!isROwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      bot.pmblocker = isEnable
-      break
-    case 'autobio':
-      isAll = true
-      if (!isROwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      bot.autoBio = isEnable
-      break
+      break;
     case 'detect':
     case 'detector':
       if (!m.isGroup) {
@@ -59,7 +31,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         throw false
       }
       chat.detect = isEnable
-      break
+      break;
     case 'autosticker':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -68,7 +40,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         }
       }
       chat.autosticker = isEnable
-      break
+      break;
     case 'antispam':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -77,7 +49,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         }
       }
       chat.antiSpam = isEnable
-      break
+      break;
     case 'antidelete':
     case 'delete':
       if (m.isGroup) {
@@ -86,8 +58,8 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
           throw false
         }
       }
-      chat.delete = !isEnable
-      break
+      chat.antiDelete = isEnable
+      break;
     case 'antitoxic':
     case 'antibadword':
       if (m.isGroup) {
@@ -97,24 +69,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         }
       }
       chat.antiToxic = isEnable
-      break
-
-    case 'document':
-    case 'documento':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) return dfail('admin', m, conn)
-      }
-      chat.useDocument = isEnable
-      break
-    case 'autostatus':
-      isAll = true
-      if (!isROwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      chat.viewStory = isEnable
-      break
-
+      break;
     case 'antilink':
     case 'antilinkwa':
     case 'antilinkwha':
@@ -125,8 +80,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         }
       }
       chat.antiLink = isEnable
-      break
-
+      break;
     case 'nsfw':
     case '+18':
       if (m.isGroup) {
@@ -136,13 +90,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         }
       }
       chat.nsfw = isEnable
-      break
-
-    case 'autolevelup':
-      isUser = true
-      user.autolevelup = isEnable
-      break
-
+      break;
     case 'chatbot':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -151,8 +99,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         }
       }
       chat.chatbot = isEnable
-      break
-
+      break;
     case 'restrict':
     case 'restringir':
       isAll = true
@@ -161,7 +108,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         throw false
       }
       bot.restrict = isEnable
-      break
+      break;
     case 'autotype':
     case 'alwaysonline':
       isAll = true
@@ -170,8 +117,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         throw false
       }
       chat.autotype = isEnable
-      break
-
+      break;
     case 'anticall':
     case 'nocall':
       isAll = true
@@ -180,7 +126,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         throw false
       }
       bot.antiCall = isEnable
-      break
+      break;
     case 'onlypv':
     case 'onlydm':
     case 'onlymd':
@@ -190,9 +136,8 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         global.dfail('rowner', m, conn)
         throw false
       }
-      global.opts['pconly'] = isEnable
-      break
-
+      bot.pconly = isEnable
+      break;
     case 'gponly':
     case 'onlygp':
     case 'grouponly':
@@ -203,49 +148,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         global.dfail('rowner', m, conn)
         throw false
       }
-      global.opts['gconly'] = isEnable
-      break
-
+      bot.gconly = isEnable
+      break;
     default:
-      if (!/[01]/.test(command))
-        return m.reply(`
-≡ List of options
-
-◈──『 *ADMIN*』───⳹
-⛊ welcome
-⛊ antilink
-⛊ nsfw
-⛊ autosticker
-⛊ detect
-⛊ jarvis
-⛊ antispam
-⛊ antitoxic
-╰──────────⳹ 
-◈──『 *USERS*』───⳹
-⛊ autolevelup
-⛊ chatbot 
-╰──────────⳹
-◈──『 *OWNER*』───⳹
-⛊ onlydm
-⛊ grouponly
-⛊ autotype
-⛊ autobio
-╰──────────⳹
-*📌 Example :*
-*${usedPrefix}on* welcome
-*${usedPrefix}off* welcome
-`)
-      throw false
+      return m.reply(`\n*Usage:*\n  ${usedPrefix}<option> on/off\n\n*Examples:*\n  ${usedPrefix}welcome on\n  ${usedPrefix}grouponly off\n  ${usedPrefix}antilink on\n\n*Available options:*\n  welcome, grouponly, onlydm, chatbot, antilink, nsfw, detect, autosticker, antispam, antidelete, antitoxic, restrict, autotype, anticall\n`)
   }
-
-  m.reply(
-    `
-✅ *${type}* Now *${isEnable ? 'Active' : 'Deactive'}* ${isAll ? 'for this bot' : isUser ? '' : 'for this bot'}
-`.trim()
-  )
+  m.reply(`\n✅ *${type}* is now *${isEnable ? 'ON' : 'OFF'}* ${isAll ? 'for the bot' : ''}`.trim())
 }
-handler.help = ['en', 'dis'].map(v => v + 'able <option>')
+handler.help = ['<option> on/off']
 handler.tags = ['config']
-handler.command = /^((en|dis)able|(turn)?o(n|ff)|[01])$/i
+handler.command = /^((en|dis)able|(turn)?o(n|ff)|[01]|welcome|grouponly|onlydm|antilink|nsfw|detect|autosticker|antispam|antidelete|antitoxic|restrict|autotype|anticall)$/i
 
 export default handler

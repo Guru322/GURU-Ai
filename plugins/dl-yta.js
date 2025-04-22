@@ -1,23 +1,15 @@
-import { youtubedl, youtubedlv2 } from '@bochilteam/scraper'
 
-let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, command }) => {
+let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args || !args[0]) throw `✳️ Example :\n${usedPrefix + command} https://youtu.be/YzkTFFwxtXI`
   if (!args[0].match(/youtu/gi)) throw `❎ Verify that it is a YouTube link.`
-
-  m.react(rwait)
-
   try {
-    let q = '128kbps'
-    let v = args[0]
-    const yt = await youtubedl(v).catch(async () => await youtubedlv2(v))
-    const dl_url = await yt.audio[q].download()
-    const title = await yt.title
-
-    conn.sendFile(m.chat, dl_url, title + '.mp3', null, m, false, { mimetype: 'audio/mpeg' })
-
-    m.react(xmoji)
-  } catch {
-    await m.reply(`❎ Error: Could not download the audio.`)
+    await m.reply('⏳ Processing your request, please wait...');
+    const streamUrl = `https://ironman.koyeb.app/ironman/dl/yta?url=${encodeURIComponent(args[0])}`;
+    const filename = 'audio.mp3';
+    await conn.sendFile(m.chat, streamUrl, filename, '', m, false, { mimetype: 'audio/mpeg' });
+  } catch (error) {
+    console.error('Error in YouTube audio download:', error);
+    await m.reply(`❎ Error: Could not download the audio. ${error.message}`);
   }
 }
 

@@ -1,12 +1,5 @@
 import fetch from 'node-fetch'
-import ytdl from 'youtubedl-core'
-import yts from 'youtube-yts'
-import fs from 'fs'
-import { pipeline } from 'stream'
-import { promisify } from 'util'
-import os from 'os'
-
-const streamPipeline = promisify(pipeline)
+import ytSearch from 'yt-search'
 
 const handler = async (m, { conn, command, text, args, usedPrefix }) => {
   if (!text) throw `give a text to search Example: *${usedPrefix + command}* sefali odia song`
@@ -37,44 +30,19 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
 }
 
 handler.before = async (m, { conn }) => {
-  conn.GURUPLAY = conn.GURUPLAY ? conn.GURUPLAY : {}
+  conn.GURUPLAY = conn.GURUPLAY || {}
   if (m.isBaileys || !(m.sender in conn.GURUPLAY)) return
-  const { result, key, timeout } = conn.GURUPLAY[m.sender]
-
+  const { result, key } = conn.GURUPLAY[m.sender]
   if (!m.quoted || m.quoted.id !== key.id || !m.text) return
-  const choice = m.text.trim()
-  const inputNumber = Number(choice)
+  const inputNumber = Number(m.text.trim())
   if (inputNumber >= 1 && inputNumber <= result.allLinks.length) {
-    const selectedUrl = result.allLinks[inputNumber - 1].url
-    console.log('selectedUrl', selectedUrl)
-    let title = generateRandomName()
-    const audioStream = ytdl(selectedUrl, {
-      filter: 'audioonly',
-      quality: 'highestaudio',
-    })
-
-    const tmpDir = os.tmpdir()
-
-    const writableStream = fs.createWriteStream(`${tmpDir}/${title}.mp3`)
-
-    await streamPipeline(audioStream, writableStream)
-
-    const doc = {
-      audio: {
-        url: `${tmpDir}/${title}.mp3`,
-      },
-      mimetype: 'audio/mpeg',
-      ptt: false,
-      waveform: [100, 0, 0, 0, 0, 0, 100],
-      fileName: `${title}`,
-    }
-
-    await conn.sendMessage(m.chat, doc, { quoted: m })
+    const { url: selectedUrl, title: songTitle } = result.allLinks[inputNumber - 1]
+    const fileName = generateRandomName()
+    await conn.reply(m.chat, `Sending the song (${songTitle}), please wait`, m)
+    const streamUrl = `https://ironman.koyeb.app/ironman/dl/yta?url=${encodeURIComponent(selectedUrl)}`
+    await conn.sendFile(m.chat, streamUrl, `${fileName}.mp3`, '', m, false, { mimetype: 'audio/mpeg' })
   } else {
-    m.reply(
-      'Invalid sequence number. Please select the appropriate number from the list above.\nBetween 1 to ' +
-        result.allLinks.length
-    )
+    m.reply('Invalid sequence number. Please select a number between 1 and ' + result.allLinks.length)
   }
 }
 
@@ -94,29 +62,10 @@ function formatBytes(bytes, decimals = 2) {
 }
 
 async function searchAndDownloadMusic(query) {
-  try {
-    const { videos } = await yts(query)
-    if (!videos.length) return 'Sorry, no video results were found for this search.'
-
-    const allLinks = videos.map(video => ({
-      title: video.title,
-      url: video.url,
-    }))
-
-    const jsonData = {
-      title: videos[0].title,
-      description: videos[0].description,
-      duration: videos[0].duration,
-      author: videos[0].author.name,
-      allLinks: allLinks,
-      videoUrl: videos[0].url,
-      thumbnail: videos[0].thumbnail,
-    }
-
-    return jsonData
-  } catch (error) {
-    return 'Error: ' + error.message
-  }
+  const { videos } = await ytSearch(query)
+  if (!videos || !videos.length) throw 'Sorry, no video results were found for this search.'
+  const allLinks = videos.map(video => ({ title: video.title, url: video.url }))
+  return { allLinks }
 }
 
 async function fetchVideoBuffer() {

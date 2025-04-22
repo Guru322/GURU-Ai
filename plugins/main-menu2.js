@@ -1,15 +1,12 @@
 import { createHash } from 'crypto'
 import PhoneNumber from 'awesome-phonenumber'
-import { canLevelUp, xpRange } from '../lib/levelling.js'
 import fetch from 'node-fetch'
 import fs from 'fs'
-const { levelling } = '../lib/levelling.js'
 import moment from 'moment-timezone'
 import { promises } from 'fs'
 import { join } from 'path'
 const time = moment.tz('Asia/Kolkata').format('HH')
 let wib = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-//import db from '../lib/database.js'
 
 let handler = async (m, { conn, usedPrefix, command }) => {
   let d = new Date(new Date() + 3600000)
@@ -28,13 +25,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
   let pp = './Assets/Gurulogo.jpg'
   let user = global.db.data.users[who]
-  let { name, exp, diamond, lastclaim, registered, regTime, age, level, role, warn } =
-    global.db.data.users[who]
-  let { min, xp, max } = xpRange(user.level, global.multiplier)
+  let { name, warn, registered, regTime, age } = global.db.data.users[who]
   let username = conn.getName(who)
-  let math = max - xp
-  let prem = global.prems.includes(who.split`@`[0])
-  let sn = createHash('md5').update(who).digest('hex')
   let totaluser = Object.values(global.db.data.users).length
   let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
   let more = String.fromCharCode(8206)
@@ -52,9 +44,6 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ┃ 👾  *User Tag:* ${taguser} 
 ┃ 🎩  *Name:* ${name} 
 ┃ 🦸  *Master Mind:* ${author} 
-┃ 💎  *Diamonds:* ${diamond} 
-┃ 🏆  *Rank:* ${role}
-┃ 🎮  *XP:* ${exp} 
 ┗━━━━━━━━━━━┛
 
 ┏━━⏰ _Today's Sauce!_ ⏰━┓
