@@ -48,7 +48,17 @@ export async function handler(chatUpdate) {
   try {
     m = smsg(this, m) || m
     if (!m) return
-    // Initialize user and chat data
+    
+    if (m.message) {
+      if (m.message.buttonsResponseMessage) {
+        m.text = m.message.buttonsResponseMessage.selectedButtonId || ''
+      } else if (m.message.templateButtonReplyMessage) {
+        m.text = m.message.templateButtonReplyMessage.selectedId || ''
+      } else if (m.message.listResponseMessage) {
+        m.text = m.message.listResponseMessage.singleSelectReply.selectedRowId || ''
+      }
+    }
+    
     try {
       let user = global.db.data.users[m.sender]
       if (typeof user !== 'object') global.db.data.users[m.sender] = {}
