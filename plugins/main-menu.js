@@ -1,5 +1,3 @@
-
-
 import moment from 'moment-timezone'
 
 const time = moment.tz('Asia/Kolkata').format('HH')
@@ -33,7 +31,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let quote = quotes[Math.floor(Math.random() * quotes.length)]
 
     let taguser = '@' + m.sender.split('@s.whatsapp.net')[0]
-    
+    const logo = 'https://cdn.jsdelivr.net/gh/Guru322/api@Guru/K.jpg' 
+
     let str = `
 🚀 *_Buckle up ${name}, ${greeting}! We're going on an adventure!_* 🚀
 
@@ -62,28 +61,27 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 💡 *_Remember, when in doubt, use ${usedPrefix}list or ${usedPrefix}help2. It's like my magic spell book!_* 💡
 `
 
-    await conn.sendMessage(
-      m.chat,
-      {
-        text: str,
-        footer: 'GURU-Ai  © 2025',
-        buttons: [
-          {
-            buttonId: `${usedPrefix}ping`,
-            buttonText: { displayText: 'Check Ping' },
-            type: 1
-          },
-          {
-            buttonId: `${usedPrefix}help`,
-            buttonText: { displayText: 'Help' },
-            type: 1
-          }
-        ],
-        headerType: 1,
-        viewOnce: true
-      },
-      { quoted: m }
-    )
+const buttons = [
+  ['Check ping', `${usedPrefix}ping`],
+  ['List commands', `${usedPrefix}list`],
+]
+
+const urls = [
+  ['GitHub Profile', 'https://github.com/Guru322'],
+  ['YouTube Channel', 'https://www.youtube.com/@Asliguru'],
+  ['Telegram Channel', 'https://t.me/NAKLI_GURU']
+]
+
+await conn.sendButton(
+  m.chat, 
+  str,
+  '© GURU-AI  2025', 
+  logo, 
+  buttons, 
+  null, 
+  urls,
+  m 
+)
     m.react('👍')
   } catch (e) {
     console.error(e)
@@ -94,6 +92,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 handler.help = ['menu', 'help', 'h']
 handler.tags = ['main']
 handler.command = ['menu', 'help', 'h']
+handler.desc = 'Display the bot\'s main menu with commands, user info and bot status'
 
 export default handler
 

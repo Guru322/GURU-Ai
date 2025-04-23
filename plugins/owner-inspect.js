@@ -24,6 +24,9 @@ let handler = async (m, { conn, text }) => {
 }
 
 handler.command = /^(inspect)$/i
+handler.desc = 'Get group metadata from a group link'
+handler.tags = ['owner']
+handler.help = ['inspect <group link>']
 
 export default handler
 

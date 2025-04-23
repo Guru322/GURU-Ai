@@ -30,6 +30,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['ytmp4 <url>']
 handler.tags = ['downloader']
 handler.command = ['ytmp4', 'ytv']
+handler.desc = 'Download YouTube video using a URL'
 
 export default handler
 

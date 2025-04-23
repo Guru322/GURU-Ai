@@ -10,6 +10,7 @@ let handler = async (m, { conn, isROwner, text }) => {
 handler.help = ['restart']
 handler.tags = ['owner']
 handler.command = ['restart']
+handler.desc = 'Restart the bot'
 
 handler.rowner = true
 

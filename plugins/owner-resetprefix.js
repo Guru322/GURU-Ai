@@ -12,6 +12,7 @@ let handler = async (m, { conn }) => {
 handler.help = ['resetprefix']
 handler.tags = ['owner']
 handler.command = /^(resetprefix)$/i
+handler.desc = 'Reset the prefix of the bot to default'
 handler.owner = true
 
 export default handler

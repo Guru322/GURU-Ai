@@ -185,5 +185,6 @@ function formatUptime(seconds) {
 handler.help = ['info']
 handler.tags = ['main']
 handler.command = ['info', 'infobot', 'botinfo']
+handler.desc = 'Display bot information, system stats, and user info'
 
 export default handler

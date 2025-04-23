@@ -475,37 +475,23 @@ export async function participantsUpdate({ id, participants, action }) {
             let nthMember = groupMetadata.participants.length
             let secondText = `Welcome, ${await this.getName(user)}, our ${nthMember}th member`
 
-            let welcomeApiUrl = `https://welcome.guruapi.tech/welcome-image?username=${encodeURIComponent(
-              await this.getName(user)
-            )}&guildName=${encodeURIComponent(await this.getName(id))}&guildIcon=${encodeURIComponent(
-              ppgp
-            )}&memberCount=${encodeURIComponent(
-              nthMember.toString()
-            )}&avatar=${encodeURIComponent(pp)}&background=${encodeURIComponent(
-              'https://cdn.wallpapersafari.com/71/19/7ZfcpT.png'
-            )}`
+            // Use simple static welcome image
+            let welcomeImage = 'https://st.depositphotos.com/1823785/2635/i/450/depositphotos_26357899-stock-photo-banner-with-welcome.jpg'
 
-            try {
-              let welcomeResponse = await fetch(welcomeApiUrl)
-              let welcomeBuffer = await welcomeResponse.buffer()
-
-              this.sendMessage(id, {
-                text: text,
-                contextInfo: {
-                  mentionedJid: [user],
-                  externalAdReply: {
-                    title: 'ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ',
-                    body: 'welcome to Group',
-                    thumbnailUrl: welcomeApiUrl,
-                    sourceUrl: 'https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp',
-                    mediaType: 1,
-                    renderLargerThumbnail: true,
-                  },
+            this.sendMessage(id, {
+              text: text,
+              contextInfo: {
+                mentionedJid: [user],
+                externalAdReply: {
+                  title: 'ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ',
+                  body: 'welcome to Group',
+                  thumbnailUrl: welcomeImage,
+                  sourceUrl: 'https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp',
+                  mediaType: 1,
+                  renderLargerThumbnail: true,
                 },
-              })
-            } catch (error) {
-              console.error(`Error generating welcome image: ${error}`)
-            }
+              },
+            })
           }
         }
       }
@@ -532,37 +518,23 @@ export async function participantsUpdate({ id, participants, action }) {
             let nthMember = groupMetadata.participants.length
             let secondText = `Goodbye, our ${nthMember}th group member`
 
-            let leaveApiUrl = `https://welcome.guruapi.tech/leave-image?username=${encodeURIComponent(
-              await this.getName(user)
-            )}&guildName=${encodeURIComponent(await this.getName(id))}&guildIcon=${encodeURIComponent(
-              ppgp
-            )}&memberCount=${encodeURIComponent(
-              nthMember.toString()
-            )}&avatar=${encodeURIComponent(pp)}&background=${encodeURIComponent(
-              'https://cdn.wallpapersafari.com/71/19/7ZfcpT.png'
-            )}`
+            // Use simple static bye image
+            let byeImage = 'https://st5.depositphotos.com/10811838/70765/i/600/depositphotos_707650604-stock-photo-good-bye-phrase-made-wooden.jpg'
 
-            try {
-              let leaveResponse = await fetch(leaveApiUrl)
-              let leaveBuffer = await leaveResponse.buffer()
-
-              this.sendMessage(id, {
-                text: text,
-                contextInfo: {
-                  mentionedJid: [user],
-                  externalAdReply: {
-                    title: 'ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ',
-                    body: 'Goodbye from  Group',
-                    thumbnailUrl: leaveApiUrl,
-                    sourceUrl: 'https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp',
-                    mediaType: 1,
-                    renderLargerThumbnail: true,
-                  },
+            this.sendMessage(id, {
+              text: text,
+              contextInfo: {
+                mentionedJid: [user],
+                externalAdReply: {
+                  title: 'ᴛʜᴇ ɢᴜʀᴜ-ʙᴏᴛ',
+                  body: 'Goodbye from Group',
+                  thumbnailUrl: byeImage,
+                  sourceUrl: 'https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp',
+                  mediaType: 1,
+                  renderLargerThumbnail: true,
                 },
-              })
-            } catch (error) {
-              console.error(`Error generating leave image: ${error}`)
-            }
+              },
+            })
           }
         }
       }

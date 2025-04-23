@@ -11,6 +11,7 @@ let handler = async (m, { conn, text }) => {
 handler.help = ['update']
 handler.tags = ['owner']
 handler.command = ['update', 'actualizar', 'fix', 'fixed']
+handler.desc = 'Update the bot'
 handler.rowner = true
 
 export default handler

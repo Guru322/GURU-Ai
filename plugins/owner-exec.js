@@ -15,10 +15,22 @@ let handler = async (m, _2) => {
   let _text = (/^=/.test(usedPrefix) ? 'return ' : '') + noPrefix
   let old = m.exp * 1
   try {
-    let i = 15
+    let i = 50 
+    let printBuffer = []
     let f = {
       exports: {},
     }
+    
+    const print = (...args) => {
+      if (--i < 1) {
+        printBuffer.push('... (output truncated, too many lines)')
+        return
+      }
+      const formatted = format(...args)
+      printBuffer.push(formatted)
+      console.log(...args)
+    }
+    
     let exec = new (async () => {}).constructor(
       'print',
       'm',
@@ -35,13 +47,10 @@ let handler = async (m, _2) => {
       'argument',
       _text
     )
+    
     _return = await exec.call(
       conn,
-      (...args) => {
-        if (--i < 1) return
-        console.log(...args)
-        return conn.reply(m.chat, format(...args), m)
-      },
+      print,
       m,
       handler,
       require,
@@ -55,6 +64,19 @@ let handler = async (m, _2) => {
       f.exports,
       [conn, _2]
     )
+    
+    
+    if (_return === undefined && /^=/.test(usedPrefix) && !_text.includes(';')) {
+      try {
+        _return = eval(_text.replace('return ', ''))
+      } catch (evalError) {
+        console.log('Direct evaluation failed:', evalError)
+      }
+    }
+    
+    if (printBuffer.length > 0) {
+      await conn.reply(m.chat, printBuffer.join('\n'), m)
+    }
   } catch (e) {
     let err = syntaxerror(_text, 'Execution Function', {
       allowReturnOutsideFunction: true,
@@ -64,7 +86,11 @@ let handler = async (m, _2) => {
     if (err) _syntax = '```' + err + '```\n\n'
     _return = e
   } finally {
-    conn.reply(m.chat, _syntax + format(_return), m)
+    conn.reply(
+      m.chat, 
+      _syntax + (_return === undefined ? 'undefined' : format(_return)), 
+      m
+    )
     m.exp = old
   }
 }

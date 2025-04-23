@@ -35,4 +35,5 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 handler.help = ['totalfeature']
 handler.tags = ['main']
 handler.command = /^(feature|totalfeature)$/i
+handler.desc = 'features of the bot'
 export default handler

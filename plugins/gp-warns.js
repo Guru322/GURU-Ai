@@ -19,6 +19,7 @@ let handler = async (m, { conn, args, groupMetadata }) => {
 handler.help = ['warns']
 handler.tags = ['group']
 handler.command = ['warns']
+handler.desc = 'Check the number of warnings of a user'
 handler.group = true
 
 export default handler

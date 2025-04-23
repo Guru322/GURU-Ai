@@ -17,5 +17,6 @@ let handler = async m => {
 handler.help = ['server']
 handler.tags = ['main']
 handler.command = /^(server)$/i
+handler.desc = 'Check server status'
 
 export default handler

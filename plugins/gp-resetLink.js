@@ -7,6 +7,7 @@ let handler = async (m, { conn }) => {
 handler.help = ['resetlink']
 handler.tags = ['group']
 handler.command = ['revoke', 'resetlink', 'anularlink']
+handler.desc = 'Reset the group link and send the new one'
 handler.group = true
 handler.admin = true
 handler.botAdmin = true

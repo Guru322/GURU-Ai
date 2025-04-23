@@ -10,6 +10,7 @@ let handler = async (m, { conn, text, isROwner, isOwner }) => {
 handler.help = ['setwelcome <text>']
 handler.tags = ['group']
 handler.command = ['setwelcome']
+handler.desc = 'Set the welcome message for the group'
 handler.admin = true
 handler.owner = false
 

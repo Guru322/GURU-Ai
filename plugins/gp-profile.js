@@ -26,5 +26,6 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 handler.help = ['profile']
 handler.tags = ['group']
 handler.command = ['profile']
+handler.desc = 'View your profile or the profile of a tagged user'
 
 export default handler

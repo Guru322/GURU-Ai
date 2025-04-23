@@ -8,5 +8,6 @@ let handler = async (m, { conn, isOwner, isAdmin, isROwner }) => {
 handler.help = ['banchat']
 handler.tags = ['owner']
 handler.command = ['banchat', 'chatoff']
+handler.desc = 'Deactivate the bot in this group'
 
 export default handler

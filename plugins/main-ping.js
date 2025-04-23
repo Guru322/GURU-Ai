@@ -38,5 +38,6 @@ let handler = async (m, { conn }) => {
 handler.help = ['ping']
 handler.tags = ['main']
 handler.command = ['ping', 'speed']
+handler.desc = 'Check bot response time and server latency'
 
 export default handler

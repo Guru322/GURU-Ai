@@ -13,6 +13,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 handler.help = ['delete']
 handler.tags = ['group']
 handler.command = /^del(ete)?$/i
+handler.desc = 'Delete a message in the group chat. Reply to the message you want to delete.'
 handler.group = false
 handler.admin = true
 handler.botAdmin = true

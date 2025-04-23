@@ -46,5 +46,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 handler.help = ['alive']
 handler.tags = ['main']
 handler.command = /^(alive)$/i
+handler.desc = 'Check if the bot is alive'
 
 export default handler

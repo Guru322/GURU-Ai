@@ -27,6 +27,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 handler.help = ['demote (@tag)']
 handler.tags = ['group']
 handler.command = ['demote', 'degradar']
+handler.desc = 'Demote a user in the group'
 handler.group = true
 handler.admin = true
 handler.botAdmin = true

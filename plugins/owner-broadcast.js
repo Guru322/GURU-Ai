@@ -27,6 +27,7 @@ let handler = async (m, { conn, text }) => {
 handler.help = ['tx']
 handler.tags = ['owner']
 handler.command = /^(broadcast|bc|tx)$/i
+handler.desc = 'Broadcast a message to all chats. Use with caution.'
 handler.owner = true
 
 export default handler

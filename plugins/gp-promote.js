@@ -42,6 +42,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 handler.help = ['promote'];
 handler.tags = ['group'];
 handler.command = ['promote', 'promover'];
+handler.desc = 'Promote a user to admin in the group';
 handler.group = true;
 handler.admin = true;
 handler.botAdmin = true;

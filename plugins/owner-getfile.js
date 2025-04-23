@@ -62,6 +62,7 @@ ${error}
 handler.help = ['plugin', 'file'].map(v => `get${v} <name file>`)
 handler.tags = ['owner']
 handler.command = /^g(et)?(p(lugin)?|f(ile)?)$/i
+handler.desc = 'Get the content of a file'
 
 handler.rowner = true
 

@@ -4,7 +4,6 @@ import fetch from 'node-fetch'
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) throw `✳️ Example:\n${usedPrefix + command} https://www.facebook.com/watch?v=123456789`
   
-  // Check for valid Facebook URL pattern
   if (!/https?:\/\/(www\.|web\.|m\.)?facebook\.com/i.test(args[0]))
     throw `❎ Please provide a valid Facebook URL`
 
@@ -13,18 +12,15 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   try {
     const apiUrl = `https://api.mobahub.com/`
     
-    // Setup request headers
     const headers = {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
     
-    // Add authorization if you have an API key
     if (process.env.COBALT_API_KEY) {
       headers['Authorization'] = `Api-Key ${process.env.COBALT_API_KEY}`
     }
     
-    // Setup request body according to Cobalt API docs
     const requestBody = {
       url: args[0],
       filenameStyle: 'pretty',
@@ -32,7 +28,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       downloadMode: 'auto'
     }
     
-    // Send request to Cobalt API
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: headers,
@@ -45,7 +40,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       throw new Error(`API error: ${data.error.code}`)
     }
     
-    // Handle picker response (multiple videos)
     if (data.status === 'picker') {
       await m.reply(`✅ *Found ${data.picker.length} media items!*\n\n📤 *Downloading now...*`)
       
@@ -76,15 +70,12 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         }
       }
     } 
-    // Handle redirect/tunnel response (single video)
     else if (data.status === 'redirect' || data.status === 'tunnel') {
       const mediaUrl = data.url
       const filename = data.filename || 'facebook-video.mp4'
       
-      // Send a notification message while downloading
       await m.reply('📥 *Downloading Facebook media...*')
       
-      // Caption for the video
       const caption = `
       ≡ *GURU FB DOWNLOADER*
       
@@ -115,5 +106,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['facebook']
 handler.tags = ['downloader']
 handler.command = ['fb', 'fbdl', 'facebook', 'fbvid']
+handler.desc = 'Download Facebook videos/photos using a URL'
 
 export default handler

@@ -16,5 +16,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['ytmp3 <url>']
 handler.tags = ['downloader']
 handler.command = ['ytmp3', 'yta']
+handler.desc = 'Download YouTube audio using a URL'
 
 export default handler

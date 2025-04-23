@@ -35,6 +35,7 @@ let handler = async (m, { conn, isROwner, text }) => {
 handler.help = ['broadcastgroup', 'bcgc'].map(v => v + ' <text>')
 handler.tags = ['owner']
 handler.command = /^(broadcast|bc)(group|grup|gc)$/i
+handler.desc = 'Broadcast messages to all groups the bot is in'
 handler.owner = true
 
 export default handler

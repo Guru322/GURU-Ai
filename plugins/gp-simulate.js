@@ -57,7 +57,8 @@ let handler = async (m, { conn, usedPrefix, command, args: [event], text }) => {
 }
 handler.help = ['simulate <event> @user']
 handler.tags = ['group']
-handler.command = ['simular', 'simulate']
+handler.command = ['sim', 'simulate']
+handler.desc = `Simulate a group event`
 handler.admin = true
 handler.group = true
 

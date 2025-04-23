@@ -39,6 +39,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['runtime']
 handler.tags = ['main']
 handler.command = ['runtime', 'uptime']
+handler.desc = 'Check the bot\'s uptime'
 export default handler
 
 function clockString(ms) {

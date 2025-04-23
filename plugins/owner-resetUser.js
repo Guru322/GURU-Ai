@@ -45,9 +45,10 @@ let handler = async (m, { conn, text }) => {
     })
   }
 }
-handler.help = ['reset <54xxx>']
+handler.help = ['reset <91xxx>']
 handler.tags = ['owner']
 handler.command = ['reset']
+handler.desc = 'Reset the user from the database'
 handler.admin = false
 handler.rowner = true
 

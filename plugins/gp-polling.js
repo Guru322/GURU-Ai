@@ -22,6 +22,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 handler.help = ['poll question|option|option']
 handler.tags = ['group']
 handler.command = /^po(l((l?ing|ls)|l)|ols?)$/i
+handler.desc = 'Create a poll in the group chat. Format: question|option1|option2|...'
 
 export default handler
 

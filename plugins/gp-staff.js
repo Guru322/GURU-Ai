@@ -22,5 +22,6 @@ let handler = async (m, { conn, participants, groupMetadata, args }) => {
 handler.help = ['staff']
 handler.tags = ['group']
 handler.command = ['staff', 'admins', 'listadmin']
+handler.desc = 'List group admins'
 handler.group = true
 export default handler

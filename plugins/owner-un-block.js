@@ -37,5 +37,8 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
 }
 
 handler.command = /^(block|unblock)$/i
+handler.help = ['block', 'unblock'].map(v => v + ' @user')
+handler.tags = ['owner']
+handler.desc = 'Block or unblock a user'
 handler.rowner = true
 export default handler

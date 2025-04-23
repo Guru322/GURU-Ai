@@ -10,5 +10,6 @@ function handler(m) {
 handler.help = ['owner']
 handler.tags = ['main']
 handler.command = ['owner', 'creator', 'creador', 'dueño', 'Gowner']
+handler.desc = 'Get the bot owner\'s contact information'
 
 export default handler

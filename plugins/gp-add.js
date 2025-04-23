@@ -53,6 +53,7 @@ let handler = async (m, { conn, text, participants }) => {
 handler.help = ['add']
 handler.tags = ['group']
 handler.command = ['add']
+handler.desc = 'Add users to the group, separated by commas. Example: @user1, @user2'
 handler.admin = true
 handler.group = true
 handler.rowner = true

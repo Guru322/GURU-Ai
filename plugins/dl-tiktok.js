@@ -3,7 +3,6 @@ import fetch from 'node-fetch'
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) throw `✳️ Example:\n${usedPrefix + command} https://www.tiktok.com/@username/video/1234567890123456789`
   
-  // Check for valid TikTok URL pattern
   if (!/https?:\/\/(www\.|vm\.|vt\.)?tiktok\.com/i.test(args[0]))
     throw `❎ Please provide a valid TikTok URL`
 
@@ -12,24 +11,21 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   try {
     const apiUrl = `https://api.mobahub.com/`
     
-    // Setup request headers
     const headers = {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
     
-    // Add authorization if you have an API key
     if (process.env.COBALT_API_KEY) {
       headers['Authorization'] = `Api-Key ${process.env.COBALT_API_KEY}`
     }
     
-    // Setup request body according to Cobalt API docs
     const requestBody = {
       url: args[0],
       filenameStyle: 'pretty',
       videoQuality: 'max',
       downloadMode: 'auto',
-      tiktokFullAudio: true // Enable downloading of original sound
+      tiktokFullAudio: true 
     }
     
     const response = await fetch(apiUrl, {
@@ -44,11 +40,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       throw new Error(`API error: ${data.error.code}`)
     }
     
-    // Handle picker response (multiple items like slideshows)
     if (data.status === 'picker') {
       await m.reply(`✅ *Found ${data.picker.length} media items!*\n\n📤 *Downloading now...*`)
       
-      // Download audio first if available
       if (data.audio) {
         await conn.sendFile(
           m.chat, 
@@ -61,7 +55,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         )
       }
       
-      // Download each media item
       for (let i = 0; i < data.picker.length; i++) {
         const item = data.picker[i]
         
@@ -91,15 +84,12 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         }
       }
     } 
-    // Handle redirect/tunnel response (single video)
     else if (data.status === 'redirect' || data.status === 'tunnel') {
       const mediaUrl = data.url
       const filename = data.filename || 'tiktok-video.mp4'
       
-      // Send a notification message while downloading
       await m.reply('📥 *Downloading TikTok video...*')
       
-      // Caption for the video
       const caption = `
       ≡ *GURU TIKTOK DL*
       
@@ -130,5 +120,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['tiktok']
 handler.tags = ['downloader']
 handler.command = ['tiktok', 'tt', 'tiktokdl', 'ttvid']
+handler.desc = 'Download Tiiktok videos and audio. Reply with the TikTok URL.'
 
 export default handler

@@ -15,6 +15,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 handler.help = ['allow <@tag>']
 handler.tags = ['owner']
 handler.command = ['allow', 'makeallow', 'al']
+handler.desc = 'Allow a user to use the bot in DM'
 
 handler.group = true
 handler.rowner = true

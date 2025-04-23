@@ -100,6 +100,7 @@ handler.before = async (m, { conn }) => {
 handler.help = ['play']
 handler.tags = ['downloader']
 handler.command = /^(play)$/i
+handler.desc = 'Search and download music from YouTube. Reply with the number of the desired search result.'
 handler.limit = true
 export default handler
 

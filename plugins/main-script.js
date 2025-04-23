@@ -58,5 +58,6 @@ let handler = async function (m, { conn, __dirname }) {
 handler.help = ['script']
 handler.tags = ['main']
 handler.command = ['sc', 'repo', 'script']
+handler.desc = 'Get the GitHub repository information of GURU-Ai'
 
 export default handler

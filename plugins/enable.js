@@ -1,11 +1,22 @@
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
   let type = (args[0] || '').toLowerCase()
   let state = (args[1] || '').toLowerCase()
+  
+  if (/^(on|off)$/i.test(command)) {
+    state = command.toLowerCase()
+    type = (args[0] || '').toLowerCase()
+  }
+  
   let isEnable = /true|enable|on|1/i.test(state)
   let chat = global.db.data.chats[m.chat]
   let user = global.db.data.users[m.sender]
   let bot = global.db.data.settings[conn.user.jid] || {}
   let isAll = false, isUser = false
+  
+  if (!type) {
+    return m.reply(`\n*Usage:*\n  ${usedPrefix}enable <option> on/off\n  ${usedPrefix}on <option>\n  ${usedPrefix}off <option>\n\n*Examples:*\n  ${usedPrefix}enable welcome on\n  ${usedPrefix}on welcome\n  ${usedPrefix}off grouponly\n\n*Available options:*\n  welcome, grouponly, onlydm, chatbot, antilink, nsfw, detect, autosticker, antispam, antidelete, antitoxic, restrict, autotype, anticall\n`)
+  }
+  
   switch (type) {
     case 'welcome':
       if (!m.isGroup) {
@@ -151,12 +162,13 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       bot.gconly = isEnable
       break;
     default:
-      return m.reply(`\n*Usage:*\n  ${usedPrefix}<option> on/off\n\n*Examples:*\n  ${usedPrefix}welcome on\n  ${usedPrefix}grouponly off\n  ${usedPrefix}antilink on\n\n*Available options:*\n  welcome, grouponly, onlydm, chatbot, antilink, nsfw, detect, autosticker, antispam, antidelete, antitoxic, restrict, autotype, anticall\n`)
+      return m.reply(`\n*Unknown option:* ${type}\n\n*Usage:*\n  ${usedPrefix}enable <option> on/off\n  ${usedPrefix}on <option>\n  ${usedPrefix}off <option>\n\n*Examples:*\n  ${usedPrefix}enable welcome on\n  ${usedPrefix}on welcome\n  ${usedPrefix}off grouponly\n\n*Available options:*\n  welcome, grouponly, onlydm, chatbot, antilink, nsfw, detect, autosticker, antispam, antidelete, antitoxic, restrict, autotype, anticall\n`)
   }
   m.reply(`\n✅ *${type}* is now *${isEnable ? 'ON' : 'OFF'}* ${isAll ? 'for the bot' : ''}`.trim())
 }
-handler.help = ['<option> on/off']
+handler.help = ['enable <option> on/off', 'on <option>', 'off <option>']
 handler.tags = ['config']
-handler.command = /^((en|dis)able|(turn)?o(n|ff)|[01]|welcome|grouponly|onlydm|antilink|nsfw|detect|autosticker|antispam|antidelete|antitoxic|restrict|autotype|anticall)$/i
+handler.command = /^((en|dis)able|(turn)?o(n|ff)|[01])$/i
+handler.desc = 'Enable or disable various features for the bot or group. Use "enable" or "on" to turn on, and "disable" or "off" to turn off. Type "enable" without any options to see available options.'
 
 export default handler

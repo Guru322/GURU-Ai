@@ -99,8 +99,9 @@ ${usedPrefix}help
 handler.help = ['join <chat.whatsapp.com> <dias>']
 handler.tags = ['owner']
 handler.command = ['join', 'invite']
+handler.desc = 'Invite the bot to a group'
 
-//handler.owner = true
+handler.owner = true
 
 export default handler
 

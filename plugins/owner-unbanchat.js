@@ -8,5 +8,6 @@ let handler = async (m, { conn, isOwner, isAdmin, isROwner }) => {
 handler.help = ['unbanchat']
 handler.tags = ['owner']
 handler.command = ['chaton', 'unbanchat']
+handler.desc = 'Unban the bot in this group'
 
 export default handler

@@ -53,5 +53,5 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
 handler.help = ['upscale']
 handler.tags = ['tools']
 handler.command = ['upscale', 'hdr']
-
+handler.desc = 'Upscale an image or sticker. Reply to an image or provide a URL.'
 export default handler

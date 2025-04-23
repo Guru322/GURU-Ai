@@ -1,36 +1,43 @@
-let handler = async m =>
-  m.reply(
-    `
+import fetch from 'node-fetch'
 
-≡  *GURU  ┃ ᴮᴼᵀ*   GROUPS
+let handler = async (m, { conn }) => {
+  const logo = 'https://cdn.jsdelivr.net/gh/Guru322/api@Guru/K.jpg' 
+  
+  const text = `
+╭━━━━━━━━━━━━╮
+┃ * SOCIALS *
+╰━━━━━━━━━━━━╯
 
-─────────────
-▢ Join public bot group and support
-https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp
+Join our official groups & channels to stay connected!
 
-▢ Group 2
-https://chat.whatsapp.com/LwLQab5mZVW6WWRbBPnDGC
-
-▢ Group 3
-https://chat.whatsapp.com/Jn9qVerYN6Q1L0vlVFe2XL
-
-─────────────
-≡ Disabled links? enter here! 
-
-▢ Group WhatsApp 
- https://chat.whatsapp.com/F3sB3pR3tClBvVmlIkqDJp
-─────────────
-▢ *Owner Telegram*
- https://t.me/i_want_to_be_isekaied
-
-▢ *YouTube*
-• https://www.youtube.com/@Asliguru
-
-
+Thank you for your support!
 `.trim()
+
+  const buttons = []
+  
+  const urls = [
+    ['GitHub Profile', 'https://github.com/Guru322'],
+    ['YouTube Channel', 'https://www.youtube.com/@Asliguru'],
+    ['Telegram Channel', 'https://t.me/NAKLI_GURU']
+  ]
+  
+  await conn.sendButton(
+    m.chat, 
+    text,
+    '© GURU-AI  2025', 
+    logo, 
+    buttons, 
+    null, 
+    urls,
+    m 
   )
+  
+  m.react('✅')
+}
+
 handler.help = ['gpguru']
 handler.tags = ['main']
 handler.command = ['groups', 'groupguru', 'gugp', 'ggp', 'gpguru']
+handler.desc = 'Get the official groups and channels of GURU-Ai'
 
 export default handler

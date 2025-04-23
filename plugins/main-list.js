@@ -1,320 +1,149 @@
-let handler = async (m, { conn, usedPrefix, command }) => {
-  let who = m.quoted
-    ? m.quoted.sender
-    : m.mentionedJid && m.mentionedJid[0]
-      ? m.mentionedJid[0]
-      : m.fromMe
-        ? conn.user.jid
-        : m.sender
-  if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
+import { promises as fs } from 'fs'
+import { join } from 'path'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
-  let pp = './Assets/Gurulogo.jpg'
-  let more = String.fromCharCode(8206)
-  let readMore = more.repeat(850)
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-  let lkr
-  switch (command) {
-    case 'list':
-      lkr =
-        '*Get ready for the ride, here are your ticket options:*\n\n' +
-        '🤖 *' +
-        usedPrefix +
-        "botmenu* - The Bot's secret control panel. What's your command, oh great one?\n\n" +
-        '👑 *' +
-        usedPrefix +
-        "ownermenu* - The sacred scroll only for the chosen one. Yep, that's you, Boss!\n\n" +
-        '🧑‍🤝‍🧑 *' +
-        usedPrefix +
-        'groupmenu* - Group shenanigans central! Unite, chat, conquer!\n\n' +
-        '📥 *' +
-        usedPrefix +
-        "dlmenu* - 'DL' stands for 'Delicious Loot'. Come grab your goodies!\n\n" +
-        '🎉 *' +
-        usedPrefix +
-        "funmenu* - The bot's party hat. Games, jokes and instant ROFLs. Let's get this party started!\n\n" +
-        '🧰 *' +
-        usedPrefix +
-        "toolmenu* - Your handy-dandy toolkit. What's your pick, genius?\n\n" +
-        '🎩 *' +
-        usedPrefix +
-        'logomenu* - Create a logo that screams YOU. Or whispers. You choose the volume.\n\n' +
-        '🌙 *' +
-        usedPrefix +
-        'nsfwmenu* - The After Dark menu. But remember, sharing adult secrets must be consent-based.'
-      break
-
-    case 'botmenu':
-      lkr = `❀° ┄──•••───╮
-          𝘽𝙊𝙏 𝙈𝙀𝙉𝙐  
-   ╰───•••──┄ °❀     
-   ┏━━━ʕ•㉨•ʔ━━━┓
-   ⎪⌲👑 _${usedPrefix}gita_
-   ⎪⌲👑 _${usedPrefix}ping_
-   ⎪⌲👑 _${usedPrefix}uptime_
-   ⎪⌲👑 _${usedPrefix}bot_
-   ⎪⌲👑 _${usedPrefix}owner_
-   ⎪⌲👑 _${usedPrefix}script_
-   ⎪⌲👑 _${usedPrefix}runtime_
-   ⎪⌲👑 _${usedPrefix}infobot_
-   ⎪⌲👑 _${usedPrefix}donate_
-   ⎪⌲👑 _${usedPrefix}groups_
-   ⎪⌲👑 _${usedPrefix}blocklist_
-   ⎪⌲👑 _${usedPrefix}listprem_
-   ⎪⌲👑    Guru
-   ┗━━━ʕ•㉨•ʔ━━━┛` // Your bot menu message here
-      break
-    case 'ownermenu':
-      lkr = `❀° ┄──•••───╮
-          𝙊𝙒𝙉𝙀𝙍 𝙈𝙀𝙉𝙐  
-     ╰───•••──┄ °❀     
-     ┏━━━ʕ•㉨•ʔ━━━┓
-     ⎪⌲👑 _${usedPrefix}banchat_
-     ⎪⌲👑 _${usedPrefix}unbanchat_
-     ⎪⌲👑 _${usedPrefix}banuser_
-     ⎪⌲👑 _${usedPrefix}unbanuser_
-     ⎪⌲👑 _${usedPrefix}Broadcast_
-     ⎪⌲👑 _${usedPrefix}Broadcastgc_
-     ⎪⌲👑 _${usedPrefix}join_
-     ⎪⌲👑 _${usedPrefix}setppbot_
-     ⎪⌲👑 _${usedPrefix}setprefix_
-     ⎪⌲👑 _${usedPrefix}resetprefix_
-     ⎪⌲👑 _${usedPrefix}getfile_
-     ⎪⌲👑 _${usedPrefix}getplugin_
-     ┗━━━ʕ•㉨•ʔ━━━┛` //
-      break
-    case 'groupmenu':
-      lkr = `❀° ┄──•••───╮
-          𝙂𝙍𝙊𝙐𝙋 𝙈𝙀𝙉𝙐 
-    ╰───•••──┄ °❀     
-    ┏━━━ʕ•㉨•ʔ━━━┓
-    ⎪⌲💎_${usedPrefix}kick *<@tag>*_
-    ⎪⌲💎_${usedPrefix}promote *<@tag>*_
-    ⎪⌲💎 _${usedPrefix}demote *<@tag>*_
-    ⎪⌲💎 _${usedPrefix}infogroup_
-    ⎪⌲💎 _${usedPrefix}resetlink_
-    ⎪⌲💎 _${usedPrefix}link_
-    ⎪⌲💎 _${usedPrefix}setpp *<image>*_
-    ⎪⌲💎 _${usedPrefix}setname *<text>*_
-    ⎪⌲💎 _${usedPrefix}setdesc *<text>*_
-    ⎪⌲💎 _${usedPrefix}setwelcome *<text>*_
-    ⎪⌲💎 _${usedPrefix}setbye *<text>*_
-    ⎪⌲💎 _${usedPrefix}hidetag *<text/image/audio/vid>*_
-    ⎪⌲💎 _${usedPrefix}warn *<@tag>*_
-    ⎪⌲💎 _${usedPrefix}unwarn *<@tag>*_
-    ⎪⌲💎 _${usedPrefix}group *<open/close>*_
-    ⎪⌲💎 _${usedPrefix}enable
-    ┗━━━ʕ•㉨•ʔ━━━┛` //
-      break
-    case 'downloadermenu':
-    case 'dlmenu':
-      lkr = `❀° ┄──•••───╮
-          𝘿𝙇 𝙈𝙀𝙉𝙐 
-   ╰───•••──┄ °❀     
-   ┏━━━ʕ•㉨•ʔ━━━┓
-   ⎪⌲💎_${usedPrefix}play_
-   ⎪⌲💎_${usedPrefix}song_
-   ⎪⌲💎 _${usedPrefix}yta <link>_
-   ⎪⌲💎 _${usedPrefix}ytv <link>_
-   ⎪⌲💎 _${usedPrefix}ytmp3 <link>_
-   ⎪⌲💎 _${usedPrefix}ytmp4 <link>_
-   ⎪⌲💎 _${usedPrefix}gimage_
-   ⎪⌲💎 _${usedPrefix}pinterest_
-   ⎪⌲💎 _${usedPrefix}mediafire <link>_
-   ⎪⌲💎 _${usedPrefix}gdrive <link>_
-   ⎪⌲💎 _${usedPrefix}gitclone <link>_
-   ⎪⌲💎 _${usedPrefix}twitter <link>_
-   ⎪⌲💎 _${usedPrefix}tiktok <link>_
-   ⎪⌲💎 _${usedPrefix}tiktokstalk_
-   ⎪⌲💎 _${usedPrefix}instagram <link>_
-   ⎪⌲💎 _${usedPrefix}spotify_
-   ⎪⌲💎 _${usedPrefix}facebook <link>_
-   ┗━━━ʕ•㉨•ʔ━━━┛` //
-      break
-    case 'funmenu':
-      lkr = `❀° ┄──•••───╮
-          𝙁𝙐𝙉 𝙈𝙀𝙉𝙐
-    ╰───•••──┄ °❀     
-    ┏━━━ʕ•㉨•ʔ━━━┓
-    ⎪⌲👑 _${usedPrefix}character_
-    ⎪⌲👑 _${usedPrefix}truth_
-    ⎪⌲👑 _${usedPrefix}dare_
-    ⎪⌲👑 _${usedPrefix}flirt_
-    ⎪⌲👑 _${usedPrefix}gay_
-    ⎪⌲👑 _${usedPrefix}shayeri_
-    ⎪⌲👑 _${usedPrefix}ship_
-    ⎪⌲👑 _${usedPrefix}waste_
-    ⎪⌲👑 _${usedPrefix}simpcard_
-    ⎪⌲👑 _${usedPrefix}hornycard_
-    ⎪⌲👑 _${usedPrefix}ytcomment_
-    ⎪⌲👑 _${usedPrefix}stupid_
-    ⎪⌲👑 _${usedPrefix}lolicon_
-    ┗━━━ʕ•㉨•ʔ━━━┛` //
-      break
-    case 'animemenu':
-      lkr = `❀° ┄──•••───╮
-          𝐴𝑁𝐼𝑀𝐸 𝑀𝐸𝑁𝑈
-    ╰───•••──┄ °❀     
-    ┏━━━ʕ•㉨•ʔ━━━┓
-    ⎪⌲👑 _${usedPrefix}waifu_
-    ⎪⌲👑 _${usedPrefix}neko_
-    ⎪⌲👑 _${usedPrefix}loli_
-    ⎪⌲👑 _${usedPrefix}couplepp_
-    ⎪⌲👑 _${usedPrefix}toanime_
-    ⎪⌲👑 _${usedPrefix}naruto_
-    ⎪⌲👑 _${usedPrefix}itachi_
-    ⎪⌲👑 _${usedPrefix}akira_
-    ⎪⌲👑 _${usedPrefix}asuna_
-    ⎪⌲👑 _${usedPrefix}akiyama_
-    ⎪⌲👑 _${usedPrefix}boruto_
-    ⎪⌲👑 _${usedPrefix}hornycard_
-    ⎪⌲👑 _${usedPrefix}ayuzawa_
-    ⎪⌲👑 _${usedPrefix}anna_
-    ⎪⌲👑 _${usedPrefix}chiho_
-    ⎪⌲👑 _${usedPrefix}chitoge_
-    ⎪⌲👑 _${usedPrefix}deidara_
-    ⎪⌲👑 _${usedPrefix}erza_
-    ⎪⌲👑 _${usedPrefix}elaina_
-    ⎪⌲👑 _${usedPrefix}emilia_
-    ⎪⌲👑 _${usedPrefix}hestia_
-    ⎪⌲👑 _${usedPrefix}hinata_
-    ⎪⌲👑 _${usedPrefix}inori_
-    ⎪⌲👑 _${usedPrefix}isuzu_
-    ⎪⌲👑 _${usedPrefix}kagura_
-    ⎪⌲👑 _${usedPrefix}kaori_
-    ⎪⌲👑 _${usedPrefix}keneki_
-    ⎪⌲👑 _${usedPrefix}kurumi_
-    ⎪⌲👑 _${usedPrefix}madara_
-    ⎪⌲👑 _${usedPrefix}mikasa_
-    ⎪⌲👑 _${usedPrefix}miku_
-    ⎪⌲👑 _${usedPrefix}minato_
-    ⎪⌲👑 _${usedPrefix}nezuko_
-    ⎪⌲👑 _${usedPrefix}sagiri_
-    ⎪⌲👑 _${usedPrefix}sasuke_
-    ⎪⌲👑 _${usedPrefix}sakura_
-    ⎪⌲👑 _${usedPrefix}kotori_
-    ┗━━━ʕ•㉨•ʔ━━━┛
-    `
-      break
-    case 'gamemenu':
-      lkr = `❀° ┄──•••───╮
-          𝙂𝘼𝙈𝙀 𝙈𝙀𝙉𝙐 
-    ╰───•••──┄ °❀     
-    ┏━━━ʕ•㉨•ʔ━━━┓
-    ⎪⌲👑 _${usedPrefix}tictactoe_
-    ⎪⌲👑 _${usedPrefix}delttt_
-    ⎪⌲👑 _${usedPrefix}math_
-    ⎪⌲👑 _${usedPrefix}math answer_
-    ⎪⌲👑 _${usedPrefix}ppt_
-    ⎪⌲👑 _${usedPrefix}slot_
-    ⎪⌲👑 _${usedPrefix}casino_
-    ⎪⌲👑 _${usedPrefix}yourmom_
-    ⎪⌲👑 _${usedPrefix}teri mummy_
-    ┗━━━ʕ•㉨•ʔ━━━┛` //
-      break
-    case 'stickermenu':
-      lkr = `❀° ┄──•••───╮
-          𝙎𝙏𝙄𝘾𝙆𝙀𝙍 𝙈𝙀𝙉𝙐
-     ╰───•••──┄ °❀     
-     ┏━━━ʕ•㉨•ʔ━━━┓
-     ⎪⌲👑 _${usedPrefix}sticker_
-     ⎪⌲👑 _${usedPrefix}take_
-     ⎪⌲👑 _${usedPrefix}scircle_
-     ⎪⌲👑 _${usedPrefix}smaker_
-     ⎪⌲👑 _${usedPrefix}sremovebg_
-     ⎪⌲👑 _${usedPrefix}getsticker_
-     ⎪⌲👑 _${usedPrefix}emojimix_
-     ⎪⌲👑 _${usedPrefix}toimg_
-     ⎪⌲👑 _${usedPrefix}tovid_
-     ⎪⌲👑 _${usedPrefix}ttp_
-     ⎪⌲👑 _${usedPrefix}telesticker_
-     ⎪⌲👑 _${usedPrefix}attp_
-     ⎪⌲👑 _${usedPrefix}attp2_
-     ⎪⌲👑 _${usedPrefix}attp3_
-     ┗━━━ʕ•㉨•ʔ━━━┛`
-      break
-    case 'toolmenu':
-      lkr = `❀° ┄──•••───╮
-          𝙏𝙊𝙊𝙇𝙎 𝙈𝙀𝙉𝙐
-     ╰───•••──┄ °❀     
-     ┏━━━ʕ•㉨•ʔ━━━┓
-     ⎪⌲👑 _${usedPrefix}autosticker_
-     ⎪⌲👑 _${usedPrefix}pdf_
-     ⎪⌲👑 _${usedPrefix}whatmusic_
-     ⎪⌲👑 _${usedPrefix}calc_
-     ⎪⌲👑 _${usedPrefix}google_
-     ⎪⌲👑 _${usedPrefix}lyrics_
-     ⎪⌲👑 _${usedPrefix}readmore_
-     ⎪⌲👑 _${usedPrefix}ssweb_
-     ⎪⌲👑 _${usedPrefix}tts_
-     ⎪⌲👑 _${usedPrefix}translate_
-     ⎪⌲👑 _${usedPrefix}tourl_
-     ⎪⌲👑 _${usedPrefix}wikipedia_
-     ⎪⌲👑 _${usedPrefix}nowa_
-     ⎪⌲👑 _${usedPrefix}qrmaker_
-     ⎪⌲👑 _${usedPrefix}readqr_
-     ⎪⌲👑 _${usedPrefix}fancy_
-     ⎪⌲👑 _${usedPrefix}weather_
-     ⎪⌲👑 _${usedPrefix}siri_
-     ⎪⌲👑 _${usedPrefix}alexa_
-     ⎪⌲👑 _${usedPrefix}dalle_
-     ⎪⌲👑 _${usedPrefix}tocartoon_
-     ⎪⌲👑 _${usedPrefix}quote_
-     ⎪⌲👑 _${usedPrefix}technews_
-     ⎪⌲👑 _${usedPrefix}define_
-     ⎪⌲👑 _${usedPrefix}pokedex_
-     ⎪⌲👑 _${usedPrefix}removebg_
-     ⎪⌲👑 _${usedPrefix}apk_
-     ⎪⌲👑 _${usedPrefix}tinyurl/shorturl_
-     ⎪⌲👑 _${usedPrefix}readvo_
-     ⎪⌲👑 _${usedPrefix}true_
-     ┗━━━ʕ•㉨•ʔ━━━┛` //
-      break
-    case 'nsfwmenu':
-      lkr = `use command ${usedPrefix}nsfw` //
-      break
-    case 'logomenu':
-      lkr = `use ${usedPrefix}logo to see all options \ngfx cmd upto 12` //
-      break
-    default:
-      lkr = `Invalid command. Type ${usedPrefix}list to see available options.`
-  }
-
-  conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] })
-
-  let done = '👍'
-  m.react(done)
+let tags = {
+  'main': '👑 Main',
+  'tools': '🧰 Tools',
+  'downloader': '📥 Downloader',
+  'group': '👥 Group',
+  'owner': '👑 Owner'
 }
 
-handler.help = [
-  'list',
-  'botmenu',
-  'ownermenu',
-  'groupmenu',
-  'dlmenu',
-  'downloadermenu',
-  'economymenu',
-  'funmenu',
-  'gamemenu',
-  'stickermenu',
-  'nsfwmenu',
-  'logomenu',
-  'toolmenu',
-]
+const defaultMenu = {
+  before: `
+╭━━━━━━━━━⬣
+┃ 💫 *%username* 
+┃ *Here are the available commands:*
+╰━━━━━━━━━⬣
+%readmore`.trimStart(),
+  header: '╭━━━⬣ *%category* ⬣━━━┓',
+  body: '┃ 👉 *%cmd* %isPremium %isLimit',
+  footer: '┗━━━━━━━━⬣\n',
+  after: '✔️ *GURU-AI * by @Guru322',
+}
+
+let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command }) => {
+  try {
+    const pluginsDir = join(__dirname, '..')
+    const pluginFiles = await fs.readdir(pluginsDir)
+    
+    let commandsMap = {}
+    let descMap = {}
+    
+    for (let file of pluginFiles) {
+      if (!file.endsWith('.js')) continue
+      
+      try {
+        const plugin = (await import('../' + file)).default
+        
+        if (!plugin || !plugin.help || !plugin.tags) continue
+        
+        const tag = Array.isArray(plugin.tags) ? plugin.tags[0] : plugin.tags
+        
+        if (!(tag in tags)) continue
+        
+        let help = Array.isArray(plugin.help) ? plugin.help : [plugin.help]
+        const descriptions = plugin.desc || {}
+        
+        for (let cmd of help) {
+          if (!commandsMap[tag]) commandsMap[tag] = []
+          commandsMap[tag].push(cmd)
+          
+          if (plugin.desc) {
+            descMap[cmd] = plugin.desc
+          }
+        }
+      } catch (e) {
+        console.error(e)
+        continue
+      }
+    }
+    
+    let tag = args[0]?.toLowerCase()
+    
+    let text = ''
+    
+    if (tag && tags[tag]) {
+      text = generateMenu(defaultMenu, tags[tag], commandsMap[tag], _p, descMap)
+    } else {
+      for (let tag in commandsMap) {
+        if (commandsMap[tag].length === 0) continue
+        text += generateMenu(defaultMenu, tags[tag], commandsMap[tag], _p, descMap)
+      }
+    }
+    
+    let readMore = readmore(defaultMenu.before.length)
+    let replace = {
+      '%readmore': readMore,
+      '%username': conn.getName(m.sender),
+      '%botname': conn.user.name,
+      '%botdate': new Date().toLocaleDateString('en-US', { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      })
+    }
+    
+    for (let [key, value] of Object.entries(replace)) {
+      text = text.replace(new RegExp(key, 'g'), value)
+    }
+    
+    const githubUrl = 'https://github.com/Guru322'
+    
+    const urls = [
+      ['GitHub Profile', githubUrl]
+    ]
+    
+    const buttons = [
+        ['Ping', '.ping']
+    ]
+    
+    await conn.sendButton(
+      m.chat,
+      text,
+      '✧ GURU-AI © 2025 ✧',
+      'https://cdn.jsdelivr.net/gh/Guru322/api@Guru/K.jpg',
+      buttons,
+      null,
+      urls,
+      m
+    )
+    
+  } catch (e) {
+    console.error(e)
+    m.reply('Error generating command list!')
+  }
+}
+
+function generateMenu(menu, category, commands, prefix, descMap) {
+  let text = menu.header.replace(/%category/g, category) + '\n'
+  
+  for (let command of commands) {
+    let desc = descMap[command] || ''
+    let cmd = command.replace(/:/g, '')
+    
+    text += menu.body
+      .replace(/%cmd/g, prefix + cmd)
+      .replace(/%isPremium/g, '')
+      .replace(/%isLimit/g, '')
+      .replace(/%desc/g, desc) + '\n'
+  }
+  
+  return text + menu.footer
+}
+
+function readmore(length) {
+  return String.fromCharCode(8206).repeat(4001 - length)
+}
+
+handler.help = ['list', 'listcmd', 'cmdlist']
 handler.tags = ['main']
-handler.command = [
-  'list',
-  'botmenu',
-  'ownermenu',
-  'groupmenu',
-  'dlmenu',
-  'downloadermenu',
-  'economymenu',
-  'funmenu',
-  'gamemenu',
-  'stickermenu',
-  'nsfwmenu',
-  'logomenu',
-  'toolmenu',
-]
+handler.command = /^(list|listcmd|cmdlist)$/i
+handler.desc = 'Lists all available commands with their descriptions, organized by category'
 
 export default handler

@@ -17,6 +17,7 @@ let handler = async (m, { conn, text }) => {
 handler.help = ['addowner @user']
 handler.tags = ['owner']
 handler.command = /^(add|give|-)(owner|sudo)$/i
+handler.desc = 'Add a user as an owner'
 handler.owner = true
 
 export default handler

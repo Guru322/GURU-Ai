@@ -133,6 +133,7 @@ const handler = async (m, { conn, args, usedPrefix }) => {
 handler.help = ['setprivacy']
 handler.tags = ['main']
 handler.command = /^(setprivacy)$/i
+handler.desc = 'Set privacy options for your account'
 handler.owner = true
 
 export default handler

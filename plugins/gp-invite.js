@@ -17,6 +17,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 handler.help = ['invite <917xxx>']
 handler.tags = ['group']
 handler.command = ['invite', 'invitar']
+handler.desc = 'Send a group invite link to a user'
 handler.group = true
 handler.admin = false
 handler.botAdmin = true

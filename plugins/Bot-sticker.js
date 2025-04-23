@@ -17,6 +17,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['sfull']
 handler.tags = ['sticker']
 handler.command = ['s', 'sticker', '', '']
+handler.desc = 'Convert an image, video, or GIF to a sticker. Use with a URL or reply to a media message.'
 export default handler
 const isUrl = text =>
   text.match(

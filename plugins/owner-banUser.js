@@ -22,6 +22,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 handler.help = ['ban @user']
 handler.tags = ['owner']
 handler.command = /^ban$/i
+handler.desc = 'Ban a user from using the bot'
 handler.rowner = true
 
 export default handler
