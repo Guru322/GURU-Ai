@@ -27,8 +27,7 @@ const defaultMenu = {
 
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   try {
-    
-    const pluginsDir = '/workspaces/GURU-Ai/plugins'
+    const pluginsDir = path.join(path.dirname(path.dirname(fileURLToPath(import.meta.url))), 'plugins')
     
     let pluginFiles;
     try {
