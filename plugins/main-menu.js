@@ -1,7 +1,5 @@
 import moment from 'moment-timezone'
-
-const time = moment.tz('Asia/Kolkata').format('HH')
-let wib = moment.tz('Asia/Kolkata').format('HH:mm:ss')
+import { getPlatform } from '../lib/helper.js'
 
 let handler = async (m, { conn, usedPrefix, command }) => {
   try {
@@ -33,59 +31,63 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let taguser = '@' + m.sender.split('@s.whatsapp.net')[0]
     const logo = 'https://cdn.jsdelivr.net/gh/Guru322/api@Guru/K.jpg' 
 
+    const platform = getPlatform()
+
     let str = `
-🚀 *_Buckle up ${name}, ${greeting}! We're going on an adventure!_* 🚀
+╭━━━⊰ *GURU-AI* ⊱━━━╮
+┃
+┃ 👋 Hello, ${taguser}!
+┃ ${greeting}
+┃
+┃ 📜 *${quote}*
+┃
+╰━━━━━━━━━━━━━━━╯
 
-📜 *_Quote of the day: ${quote}_* 📜
+╭━━━⊰ *TODAY* ⊱━━━╮
+┃ 📅 *Date:* ${date}
+┃ ⏰ *Time:* ${moment().tz('Asia/Kolkata').format('HH:mm:ss')}
+╰━━━━━━━━━━━━━━━╯
 
-┏━💼 _User Info:_ 💼━┓
-┃ 👾  *User Tag:* ${taguser} 
-┃ 🎩  *Name:* ${name} 
-┃ 🦸  *Master Mind:* ${author} 
-┗━━━━━━━━━━━┛
+╭━━━⊰ *BOT INFO* ⊱━━━╮
+┃ 🤖 *Bot Name:* ${global.botname || 'GURU-AI'}
+┃ 👑 *Owner:* ${global.author || 'Guru'}
+┃ 🖥️ *Platform:* ${platform}
+┃ ⌨️ *Prefix:* ${usedPrefix}
+┃ ⏱️ *Uptime:* ${uptime}
+┃ 📊 *Users:* ${totaluser}
+┃ 📂 *Registered:* ${rtotalreg}
+╰━━━━━━━━━━━━━━━╯
 
-┏━━⏰ _Today's Sauce!_ ⏰━┓
-┃ 📆  *Today's Date:* ${date} 
-┃ ⏲️  *Current Time:* ${wib} 
-┗━━━━━━━━━━━━━┛
-
-┏━━🤖 _BOT STATUS:_🤖━━┓
-┃ 🤡  *Bot Name:* ${botname} 
-┃ 💻  *Platform:* Linux 
-┃ 📣  *Prefix:* ${usedPrefix} 
-┃ 🕓  *Uptime:* ${uptime}
-┃ 💌  *Database:* ${rtotalreg} of ${totaluser} 
-┃ 📚  *Total Users:* ${totaluser} 
-┗━━━━━━━━━━━━━┛
-
-💡 *_Remember, when in doubt, use ${usedPrefix}list or ${usedPrefix}help2. It's like my magic spell book!_* 💡
+Type *${usedPrefix}list* to see all commands
+${readMore}
 `
 
-const buttons = [
-  ['Check ping', `${usedPrefix}ping`],
-  ['List commands', `${usedPrefix}list`],
-]
+    const buttons = [
+      ['🔍 Commands', `${usedPrefix}list`],
+      ['⚡ Ping', `${usedPrefix}ping`]
+        ]
 
-const urls = [
-  ['GitHub Profile', 'https://github.com/Guru322'],
-  ['YouTube Channel', 'https://www.youtube.com/@Asliguru'],
-  ['Telegram Channel', 'https://t.me/NAKLI_GURU']
-]
+    const urls = [
+      ['💻 GitHub', 'https://github.com/Guru322'],
+      ['🎥 YouTube', 'https://www.youtube.com/@Asliguru'],
+      ['💬 Telegram', 'https://t.me/NAKLI_GURU']
+    ]
 
-await conn.sendButton(
-  m.chat, 
-  str,
-  '© GURU-AI  2025', 
-  logo, 
-  buttons, 
-  null, 
-  urls,
-  m 
-)
-    m.react('👍')
+    await conn.sendButton(
+      m.chat, 
+      str,
+      '© GURU-AI | 2025', 
+      logo, 
+      buttons, 
+      null, 
+      urls,
+      m 
+    )
+    
+    m.react('🤖')
   } catch (e) {
     console.error(e)
-    await m.reply('*GURU-Ai Bot Menu*\n\nUse these commands:\n• .help - Show all commands\n• .ping - Check response time\n• .alive - Bot status\n\nVisit: https://github.com/Guru322/GURU-BOT')
+    await m.reply('*GURU-Ai Menu*\n\nUse these commands:\n• .help - Show all commands\n• .ping - Check response time\n• .alive - Bot status\n\nVisit: https://github.com/Guru322/GURU-BOT')
   }
 }
 
@@ -103,24 +105,24 @@ function clockString(ms) {
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
 
+// Fixed ucapan function with proper hour conditions
 function ucapan() {
-  const time = moment.tz('Asia/Kolkata').format('HH')
-  let res = 'happy early in the day☀️'
-  if (time >= 4) {
-    res = 'Good Morning 🌄'
+  const hour = parseInt(moment().tz('Asia/Kolkata').format('HH'))
+  
+  if (hour >= 0 && hour < 4) {
+    return 'Good Night 🌙'
+  } else if (hour >= 4 && hour < 12) {
+    return 'Good Morning 🌄'
+  } else if (hour >= 12 && hour < 16) {
+    return 'Good Afternoon ☀️'
+  } else if (hour >= 16 && hour < 19) {
+    return 'Good Evening 🌇'
+  } else {
+    return 'Good Night 🌙'
   }
-  if (time >= 10) {
-    res = 'Good Afternoon ☀️'
-  }
-  if (time >= 15) {
-    res = 'Good Afternoon 🌇'
-  }
-  if (time >= 18) {
-    res = 'Good Night 🌙'
-  }
-  return res
 }
 
+// Keep existing quotes array
 const quotes = [
   "I'm not lazy, I'm just on my energy saving mode.",
   'Life is short, smile while you still have teeth.',

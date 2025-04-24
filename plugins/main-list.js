@@ -1,5 +1,4 @@
 import { promises as fs } from 'fs'
-import { join } from 'path'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -16,77 +15,98 @@ let tags = {
 const defaultMenu = {
   before: `
 ╭━━━━━━━━━⬣
-┃ 💫 *%username* 
+┃ 💫 ${packname}
 ┃ *Here are the available commands:*
 ╰━━━━━━━━━⬣
 %readmore`.trimStart(),
   header: '╭━━━⬣ *%category* ⬣━━━┓',
   body: '┃ 👉 *%cmd* %isPremium %isLimit',
   footer: '┗━━━━━━━━⬣\n',
-  after: '✔️ *GURU-AI * by @Guru322',
+  after: '✔️ *GURU-AI *',
 }
 
-let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command }) => {
+let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   try {
-    const pluginsDir = join(__dirname, '..')
-    const pluginFiles = await fs.readdir(pluginsDir)
+    
+    const pluginsDir = '/workspaces/GURU-Ai/plugins'
+    
+    let pluginFiles;
+    try {
+      pluginFiles = await fs.readdir(pluginsDir);
+      console.log(`Found ${pluginFiles.length} files in plugins directory`);
+    } catch (e) {
+      console.error('Error reading plugins directory:', e);
+      return m.reply(`Failed to read plugins directory: ${e.message}`);
+    }
     
     let commandsMap = {}
     let descMap = {}
+    let helpTexts = {}
+    
+    for (let tag in tags) {
+      commandsMap[tag] = [];
+    }
+    
+    let processedCount = 0;
     
     for (let file of pluginFiles) {
       if (!file.endsWith('.js')) continue
       
       try {
-        const plugin = (await import('../' + file)).default
+        let filePath = path.join(pluginsDir, file);
+        const plugin = (await import(filePath)).default;
         
         if (!plugin || !plugin.help || !plugin.tags) continue
         
-        const tag = Array.isArray(plugin.tags) ? plugin.tags[0] : plugin.tags
+        processedCount++;
         
-        if (!(tag in tags)) continue
+        let pluginTags = Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags];
         
-        let help = Array.isArray(plugin.help) ? plugin.help : [plugin.help]
-        const descriptions = plugin.desc || {}
-        
-        for (let cmd of help) {
-          if (!commandsMap[tag]) commandsMap[tag] = []
-          commandsMap[tag].push(cmd)
+        for (const tag of pluginTags) {
+          if (!(tag in tags)) continue;
           
-          if (plugin.desc) {
-            descMap[cmd] = plugin.desc
+          let help = Array.isArray(plugin.help) ? plugin.help : [plugin.help];
+          
+          for (let cmd of help) {
+            if (!commandsMap[tag]) commandsMap[tag] = [];
+            commandsMap[tag].push(cmd);
+            
+            if (plugin.desc) {
+              descMap[cmd] = plugin.desc;
+            }
+            
+            helpTexts[cmd] = `${_p}${cmd.replace(/:/g, '')}`;
           }
         }
       } catch (e) {
-        console.error(e)
+        console.error(`Error processing plugin ${file}:`, e);
         continue
       }
     }
     
-    let tag = args[0]?.toLowerCase()
+    console.log(`Successfully processed ${processedCount} plugins`);
     
-    let text = ''
+    console.log('Commands collected:', Object.keys(commandsMap).map(k => `${k}: ${commandsMap[k].length}`));
     
-    if (tag && tags[tag]) {
-      text = generateMenu(defaultMenu, tags[tag], commandsMap[tag], _p, descMap)
+    let tag = args[0]?.toLowerCase();
+    
+    let text = defaultMenu.before;
+    
+    if (tag && tags[tag] && commandsMap[tag]) {
+      text += generateMenu(defaultMenu, tags[tag], commandsMap[tag], _p, descMap)
     } else {
       for (let tag in commandsMap) {
-        if (commandsMap[tag].length === 0) continue
+        if (!commandsMap[tag] || commandsMap[tag].length === 0) continue;
         text += generateMenu(defaultMenu, tags[tag], commandsMap[tag], _p, descMap)
       }
     }
     
-    let readMore = readmore(defaultMenu.before.length)
+    text += defaultMenu.after;
+    
     let replace = {
-      '%readmore': readMore,
+      '%readmore': readMore(defaultMenu.before.length),
       '%username': conn.getName(m.sender),
-      '%botname': conn.user.name,
-      '%botdate': new Date().toLocaleDateString('en-US', { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
-      })
+      '%botname': conn.user.name || 'GURU-AI',
     }
     
     for (let [key, value] of Object.entries(replace)) {
@@ -95,28 +115,35 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command }) => {
     
     const githubUrl = 'https://github.com/Guru322'
     
+    
     const urls = [
       ['GitHub Profile', githubUrl]
     ]
     
     const buttons = [
-        ['Ping', '.ping']
+      ['Ping', '.ping']
     ]
     
-    await conn.sendButton(
-      m.chat,
-      text,
-      '✧ GURU-AI © 2025 ✧',
-      'https://cdn.jsdelivr.net/gh/Guru322/api@Guru/K.jpg',
-      buttons,
-      null,
-      urls,
-      m
-    )
+    try {
+      await conn.sendButton(
+        m.chat,
+        text,
+        '✧ GURU-AI © 2025 ✧',
+        'https://cdn.jsdelivr.net/gh/Guru322/GURU-Ai@latest/Assets/Gurulogo.jpg',
+        buttons,
+        null,
+        urls,
+        m
+      );
+      console.log('Message sent successfully');
+    } catch (e) {
+      console.error('Error sending message:', e);
+      m.reply(`Error sending command list: ${e.message}`);
+    }
     
   } catch (e) {
-    console.error(e)
-    m.reply('Error generating command list!')
+    console.error('Main error in list command:', e);
+    m.reply(`Error generating command list: ${e.message}`)
   }
 }
 
@@ -137,7 +164,7 @@ function generateMenu(menu, category, commands, prefix, descMap) {
   return text + menu.footer
 }
 
-function readmore(length) {
+function readMore(length) {
   return String.fromCharCode(8206).repeat(4001 - length)
 }
 
