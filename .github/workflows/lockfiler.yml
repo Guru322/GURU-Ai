@@ -1,0 +1,40 @@
+name: lockfiler
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  update-lockfile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Set GitHub Actions Bot Identity
+        run: |
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Run Lockfiler
+        uses: IRON-M4N/lockfiler@v1.0.6
+        with:
+          package-manager: npm
+          bump-dependencies: true
+          dry-run: false
+          commit-message: "chore: update lockfile"
