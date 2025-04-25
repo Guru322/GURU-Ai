@@ -204,7 +204,12 @@ if (process.env.RENDER === 'true') {
   
   app.use((req, res, next) => {
     if (!serverUrl) {
-      serverUrl = `${req.protocol}://${req.get('host')}`;
+      const host = req.get('host');
+      if (!/^[a-zA-Z0-9.-]+$/.test(host)) {
+        console.error(chalk.red(`Invalid host header: ${host}`));
+        return res.status(400).send('Invalid Host header');
+      }
+      serverUrl = `${req.protocol}://${host}`;
       console.log(chalk.cyan(`Captured server URL: ${serverUrl}`));
     }
     next();
@@ -213,7 +218,7 @@ if (process.env.RENDER === 'true') {
   setInterval(() => {
     if (serverUrl) {
       console.log(chalk.blue(`Pinging server URL: ${serverUrl}`));
-      require('child_process').exec(`curl -s ${serverUrl}`, (error, stdout, stderr) => {
+      require('child_process').execFile('curl', ['-s', serverUrl], (error, stdout, stderr) => {
         if (error) {
           console.error(chalk.red(`Server ping error: ${stderr}`));
         } else {
@@ -223,7 +228,7 @@ if (process.env.RENDER === 'true') {
     } else {
       const hostname = require('os').hostname();
       console.log(chalk.blue(`Pinging hostname: ${hostname}`));
-      require('child_process').exec(`ping -c 1 ${hostname}`, (error, stdout, stderr) => {
+      require('child_process').execFile('ping', ['-c', '1', hostname], (error, stdout, stderr) => {
         if (error) {
           console.error(chalk.red(`Ping error: ${stderr}`));
         } else {
