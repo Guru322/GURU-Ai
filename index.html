@@ -42,22 +42,22 @@
       font-size: 3rem;
       margin-bottom: 1rem;
     }
-    .badges a {
-      margin: 0.3rem;
-      display: inline-block;
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
     }
     .badge-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px; 
-  margin-top: 20px;
-}
-
-.badge-container img {
-  width: 90%; 
-  max-width: 400px; /* don't let them grow too big on desktops */
-}
+      margin-top: 20px;
+    }
     #themeToggle {
       position: fixed;
       top: 20px;
@@ -111,14 +111,33 @@
   <h1>GURU Ai</h1>
   
   <div class="badge-container">
-    <a href="https://github.com/Guru322"><img src="https://img.shields.io/badge/GURU-BOT-black?style=for-the-badge&logo=telegram" alt="Guru Bot"></a>
-    <a href="https://github.com/Guru322?tab=followers"><img src="https://img.shields.io/github/followers/Guru322?label=Followers&style=social" alt="Followers"></a>
-    <a href="https://github.com/Guru322/GURU-BOT/stargazers/"><img src="https://img.shields.io/github/stars/Guru322/GURU-BOT?&style=social" alt="Stars"></a>
-    <a href="https://github.com/Guru322/GURU-BOT/network/members"><img src="https://img.shields.io/github/forks/Guru322/GURU-BOT?style=social" alt="Forks"></a>
-    <a href="https://github.com/Guru322/GURU-BOT/watchers"><img src="https://img.shields.io/github/watchers/Guru322/GURU-BOT?label=Watching&style=social" alt="Watching"></a>
-    <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT?ref=badge_shield"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT.svg?type=shield" alt="License"></a>
+    <div class="badge-row">
+      <a href="https://github.com/Guru322">
+        <img src="https://img.shields.io/badge/GURU-BOT-black?style=for-the-badge&logo=telegram" alt="Guru Bot">
+      </a>
+    </div>
+    
+    <div class="badge-row">
+      <a href="https://github.com/Guru322?tab=followers">
+        <img src="https://img.shields.io/github/followers/Guru322?label=Followers&style=social" alt="Followers">
+      </a>
+      <a href="https://github.com/Guru322/GURU-BOT/stargazers/">
+        <img src="https://img.shields.io/github/stars/Guru322/GURU-BOT?&style=social" alt="Stars">
+      </a>
+      <a href="https://github.com/Guru322/GURU-BOT/network/members">
+        <img src="https://img.shields.io/github/forks/Guru322/GURU-BOT?style=social" alt="Forks">
+      </a>
+    </div>
+    
+    <div class="badge-row">
+      <a href="https://github.com/Guru322/GURU-BOT/watchers">
+        <img src="https://img.shields.io/github/watchers/Guru322/GURU-BOT?label=Watching&style=social" alt="Watching">
+      </a>
+      <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT?ref=badge_shield">
+        <img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT.svg?type=shield" alt="License">
+      </a>
+    </div>
   </div>
-  
 </div>
 
 <div class="content">
