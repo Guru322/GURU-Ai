@@ -65,12 +65,12 @@ let handler = async (m, _2) => {
       [conn, _2]
     )
     
-    
-    if (_return === undefined && /^=/.test(usedPrefix) && !_text.includes(';')) {
+    if (_return === undefined) {
       try {
-        _return = eval(_text.replace('return ', ''))
+        _return = eval(noPrefix)
       } catch (evalError) {
         console.log('Direct evaluation failed:', evalError)
+        _return = 'Error: ' + evalError.message
       }
     }
     
@@ -88,7 +88,7 @@ let handler = async (m, _2) => {
   } finally {
     conn.reply(
       m.chat, 
-      _syntax + (_return === undefined ? 'undefined' : format(_return)), 
+      _syntax + (_return === undefined ? 'No output or undefined result' : format(_return)), 
       m
     )
     m.exp = old
