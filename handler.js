@@ -6,6 +6,7 @@ import { unwatchFile, watchFile } from 'fs'
 import chalk from 'chalk'
 import fetch from 'node-fetch'
 import Pino from 'pino'
+import { loadMessage as mongoLoadMessage } from './lib/auth/mongo-store.js'
 
 /**
  * @type {import("baileys-pro")}
@@ -660,20 +661,19 @@ Delete Chat
  */
 export async function deleteUpdate(message) {
   try {
-    if (
-      typeof process.env.antidelete === 'undefined' ||
-      process.env.antidelete.toLowerCase() === 'false'
-    )
-      return
-
-    const { fromMe, id, participant } = message
+    const { fromMe, id } = message
+    const remoteJid = message.remoteJid || message.jid
+    const participant = message.participant || remoteJid
     if (fromMe) return
-    let msg = this.serializeM(this.loadMessage(id))
+    const raw = await mongoLoadMessage(id, remoteJid, process.env.DB_NAME || 'guru_bot')
+    if (!raw) return
+    const msg = this.serializeM(raw)
     if (!msg) return
-    let chat = global.db.data.chats[msg.chat] || {}
+    const chat = global.db.data.chats[msg.chat] || {}
+    if (!chat.antiDelete) return
 
     await this.reply(
-      conn.user.id,
+      msg.chat,
       `
             ≡ deleted a message 
             ┌─⊷  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀 
@@ -685,7 +685,7 @@ export async function deleteUpdate(message) {
         mentions: [participant],
       }
     )
-    this.copyNForward(conn.user.id, msg, false).catch(e => console.log(e, msg))
+    this.copyNForward(msg.chat, msg, false).catch(e => console.log(e, msg))
   } catch (e) {
     console.error(e)
   }
