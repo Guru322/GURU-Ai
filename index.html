@@ -5,167 +5,213 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GURU Ai</title>
   <style>
-    body, html {
+    :root {
+      --bg-color-light: #f5f5f5;
+      --text-color-light: #111;
+      --bg-color-dark: #0d0d0d;
+      --text-color-dark: #f5f5f5;
+    }
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #fff;
-      background: #0d0d0d;
+      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background: var(--bg-color-dark);
+      color: var(--text-color-dark);
+      transition: all 0.5s ease;
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero img {
+      height: 200px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .badges a {
+      margin: 0.3rem;
+      display: inline-block;
+    }
+    #themeToggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.6;
+      z-index: 1;
+      position: relative;
+    }
+    pre {
+      background: rgba(255,255,255,0.05);
+      padding: 1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: monospace;
+      font-size: 0.95rem;
     }
     canvas {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: -1;
+      z-index: 0;
     }
-    .container {
-      position: relative;
-      max-width: 960px;
-      margin: 30px auto;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    }
-    h1, h2 {
-      text-align: center;
-    }
-    .badges {
-      text-align: center;
-      margin: 10px 0;
-    }
-    .badges a img {
-      margin: 5px;
-      transition: transform 0.2s;
-    }
-    .badges a img:hover {
-      transform: scale(1.1);
-    }
-    pre {
-      background: rgba(0,0,0,0.5);
-      padding: 10px;
-      border-radius: 8px;
-      overflow-x: auto;
-    }
-    hr {
-      margin: 40px 0;
-      border: none;
-      border-top: 1px solid #555;
+    a {
+      color: inherit;
     }
   </style>
 </head>
-
 <body>
-  <canvas id="background"></canvas>
 
-  <div class="container">
-    <p align="center">  
-      <a href="https://youtu.be/WcA7GZuaN0A">
-        <img alt="Guru" height="300" src="https://cdn.jsdelivr.net/gh/Guru322/api@Guru/K.jpg">
-      </a>
-    </p>
+<button id="themeToggle">Toggle Theme</button>
+<canvas id="stars"></canvas>
 
-    <h1>GURU Ai</h1>
+<div class="hero">
+  <a href="https://youtu.be/WcA7GZuaN0A">
+    <img src="https://cdn.jsdelivr.net/gh/Guru322/api@Guru/K.jpg" alt="Guru">
+  </a>
+  <h1>GURU Ai</h1>
+  <div class="badges">
+    <a href="https://github.com/Guru322"><img src="https://img.shields.io/badge/GURU-BOT-black?style=for-the-badge&logo=telegram" alt="Guru Bot"></a>
+    <a href="https://github.com/Guru322?tab=followers"><img src="https://img.shields.io/github/followers/Guru322?label=Followers&style=social" alt="Followers"></a>
+    <a href="https://github.com/Guru322/GURU-BOT/stargazers/"><img src="https://img.shields.io/github/stars/Guru322/GURU-BOT?&style=social" alt="Stars"></a>
+    <a href="https://github.com/Guru322/GURU-BOT/network/members"><img src="https://img.shields.io/github/forks/Guru322/GURU-BOT?style=social" alt="Forks"></a>
+    <a href="https://github.com/Guru322/GURU-BOT/watchers"><img src="https://img.shields.io/github/watchers/Guru322/GURU-BOT?label=Watching&style=social" alt="Watching"></a>
+    <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT?ref=badge_shield"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT.svg?type=shield" alt="License"></a>
+  </div>
+</div>
 
-    <div class="badges">
-      <a href="https://github.com/Guru322">
-        <img title="Author" src="https://img.shields.io/badge/GURU-BOT-black?style=for-the-badge&logo=telegram">
-      </a>
-      <a href="https://github.com/Guru322?tab=followers">
-        <img title="Followers" src="https://img.shields.io/github/followers/Guru322?label=Followers&style=social">
-      </a>
-      <a href="https://github.com/Guru322/GURU-BOT/stargazers/">
-        <img title="Stars" src="https://img.shields.io/github/stars/Guru322/GURU-BOT?&style=social">
-      </a>
-      <a href="https://github.com/Guru322/GURU-BOT/network/members">
-        <img title="Fork" src="https://img.shields.io/github/forks/Guru322/GURU-BOT?style=social">
-      </a>
-      <a href="https://github.com/Guru322/GURU-BOT/watchers">
-        <img title="Watching" src="https://img.shields.io/github/watchers/Guru322/GURU-BOT?label=Watching&style=social">
-      </a>
-      <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT?ref=badge_shield">
-        <img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT.svg?type=shield" alt="FOSSA Status">
-      </a>
-    </div>
-
-    <hr>
-
-    <h2>Installation</h2>
-    <pre><code>git clone https://github.com/Guru322/GURU-Ai.git
+<div class="content">
+  <h2>Installation</h2>
+  <pre><code>git clone https://github.com/Guru322/GURU-Ai.git
 cd GURU-Ai
 npm install</code></pre>
 
-    <h2>Configuration</h2>
-    <p>Create a <code>.env</code> file or set these environment variables:</p>
-    <pre><code>MONGODB_URI=&lt;Your MongoDB connection URI&gt;
-PHONE_NUMBER=&lt;Your WhatsApp phone number&gt;
-BOTNAME=&lt;Bot display name&gt;
-OWNERS="&lt;owner1;john;owner2;doe&gt;"</code></pre>
+  <h2>Configuration</h2>
+  <p>Create a <code>.env</code> file in the project root or set the following environment variables:</p>
+  <pre><code>MONGODB_URI=&lt;Your MongoDB connection URI&gt;
+PHONE_NUMBER=&lt;Your WhatsApp phone number with country code&gt;
+BOTNAME=&lt;Bot display name (optional)&gt;
+OWNERS=&quot;&lt;owner1;john;owner2;doe&gt;&quot;
+</code></pre>
+  <p>You can also edit <code>config.js</code> for additional settings like botname, packname, author, owners list, and sticker watermark.</p>
 
-    <h2>Running the Bot</h2>
-    <pre><code>npm start
+  <h2>Running the Bot</h2>
+  <pre><code>npm start
 # or
 node index.js</code></pre>
+  <p>By default, the server listens on port 5000 (or the port defined in the <code>PORT</code> environment variable). Open your browser at <code>http://localhost:5000</code> to access the pairing interface where the pairing code and connection status are displayed.</p>
 
-    <h2>Usage</h2>
-    <pre><code>.ping
-.menu
-.list
-.alive</code></pre>
+  <h2>Usage</h2>
+  <p>After starting, the bot will print a pairing code. Open WhatsApp &gt; Linked Devices &gt; Link a Device &gt; Link with phone number and enter the pairing code to connect.</p>
+  <p>Commands are invoked with a prefix (default is <code>.</code>). For example:</p>
+  <pre><code>.ping      # Check bot response time
+.menu      # Display command menu and help
+.list      # List all available commands
+.alive     # Show bot status</code></pre>
+  <p>Type <code>.help</code> or <code>.list</code> in chat to view all commands and descriptions.</p>
 
-    <hr>
+  <h2>Star History</h2>
+  <a href="https://www.star-history.com/#Guru322/GURU-Ai&Date">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Guru322/GURU-Ai&type=Date&theme=dark" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Guru322/GURU-Ai&type=Date" />
+      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Guru322/GURU-Ai&type=Date" />
+    </picture>
+  </a>
+</div>
 
-    <h2>Star History</h2>
-    <a href="https://www.star-history.com/#Guru322/GURU-Ai&Date">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Guru322/GURU-Ai&type=Date&theme=dark" />
-        <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Guru322/GURU-Ai&type=Date" />
-        <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Guru322/GURU-Ai&type=Date" />
-      </picture>
-    </a>
-  </div>
+<script>
+  // Theme toggle logic
+  const btn = document.getElementById('themeToggle');
+  btn.addEventListener('click', () => {
+    if (document.body.style.background === 'var(--bg-color-light)') {
+      document.body.style.background = 'var(--bg-color-dark)';
+      document.body.style.color = 'var(--text-color-dark)';
+    } else {
+      document.body.style.background = 'var(--bg-color-light)';
+      document.body.style.color = 'var(--text-color-light)';
+    }
+  });
 
-  <script>
-    const canvas = document.getElementById('background');
-    const ctx = canvas.getContext('2d');
+  // Starry background
+  const canvas = document.getElementById('stars');
+  const ctx = canvas.getContext('2d');
+  let stars = [], FPS = 60, numStars = 200;
+
+  for (let i = 0; i < numStars; i++) {
+    stars.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      radius: Math.random() * 1.5,
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: (Math.random() - 0.5) * 0.5
+    });
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    for (let i = 0; i < stars.length; i++) {
+      const s = stars[i];
+      ctx.moveTo(s.x, s.y);
+      ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+    }
+    ctx.fill();
+    updateStars();
+  }
+
+  function updateStars() {
+    for (let i = 0; i < stars.length; i++) {
+      const s = stars[i];
+      s.x += s.vx;
+      s.y += s.vy;
+      if (s.x < 0 || s.x > window.innerWidth) s.vx = -s.vx;
+      if (s.y < 0 || s.y > window.innerHeight) s.vy = -s.vy;
+    }
+  }
+
+  function tick() {
+    drawStars();
+    requestAnimationFrame(tick);
+  }
+
+  window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+  });
 
-    const particles = [];
-    for (let i = 0; i < 150; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 2,
-        dx: (Math.random() - 0.5) * 0.5,
-        dy: (Math.random() - 0.5) * 0.5
-      });
-    }
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  tick();
+</script>
 
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'white';
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      }
-      requestAnimationFrame(animate);
-    }
-    animate();
-
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
 </body>
 </html>
