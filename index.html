@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GURU Ai</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background: #0d0d0d;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .container {
+      position: relative;
+      max-width: 960px;
+      margin: 30px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .badges {
+      text-align: center;
+      margin: 10px 0;
+    }
+    .badges a img {
+      margin: 5px;
+      transition: transform 0.2s;
+    }
+    .badges a img:hover {
+      transform: scale(1.1);
+    }
+    pre {
+      background: rgba(0,0,0,0.5);
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    hr {
+      margin: 40px 0;
+      border: none;
+      border-top: 1px solid #555;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="background"></canvas>
+
+  <div class="container">
+    <p align="center">  
+      <a href="https://youtu.be/WcA7GZuaN0A">
+        <img alt="Guru" height="300" src="https://cdn.jsdelivr.net/gh/Guru322/api@Guru/K.jpg">
+      </a>
+    </p>
+
+    <h1>GURU Ai</h1>
+
+    <div class="badges">
+      <a href="https://github.com/Guru322">
+        <img title="Author" src="https://img.shields.io/badge/GURU-BOT-black?style=for-the-badge&logo=telegram">
+      </a>
+      <a href="https://github.com/Guru322?tab=followers">
+        <img title="Followers" src="https://img.shields.io/github/followers/Guru322?label=Followers&style=social">
+      </a>
+      <a href="https://github.com/Guru322/GURU-BOT/stargazers/">
+        <img title="Stars" src="https://img.shields.io/github/stars/Guru322/GURU-BOT?&style=social">
+      </a>
+      <a href="https://github.com/Guru322/GURU-BOT/network/members">
+        <img title="Fork" src="https://img.shields.io/github/forks/Guru322/GURU-BOT?style=social">
+      </a>
+      <a href="https://github.com/Guru322/GURU-BOT/watchers">
+        <img title="Watching" src="https://img.shields.io/github/watchers/Guru322/GURU-BOT?label=Watching&style=social">
+      </a>
+      <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT?ref=badge_shield">
+        <img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FGuru322%2FGURU-BOT.svg?type=shield" alt="FOSSA Status">
+      </a>
+    </div>
+
+    <hr>
+
+    <h2>Installation</h2>
+    <pre><code>git clone https://github.com/Guru322/GURU-Ai.git
+cd GURU-Ai
+npm install</code></pre>
+
+    <h2>Configuration</h2>
+    <p>Create a <code>.env</code> file or set these environment variables:</p>
+    <pre><code>MONGODB_URI=&lt;Your MongoDB connection URI&gt;
+PHONE_NUMBER=&lt;Your WhatsApp phone number&gt;
+BOTNAME=&lt;Bot display name&gt;
+OWNERS="&lt;owner1;john;owner2;doe&gt;"</code></pre>
+
+    <h2>Running the Bot</h2>
+    <pre><code>npm start
+# or
+node index.js</code></pre>
+
+    <h2>Usage</h2>
+    <pre><code>.ping
+.menu
+.list
+.alive</code></pre>
+
+    <hr>
+
+    <h2>Star History</h2>
+    <a href="https://www.star-history.com/#Guru322/GURU-Ai&Date">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Guru322/GURU-Ai&type=Date&theme=dark" />
+        <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Guru322/GURU-Ai&type=Date" />
+        <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Guru322/GURU-Ai&type=Date" />
+      </picture>
+    </a>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('background');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    for (let i = 0; i < 150; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 2,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'white';
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
