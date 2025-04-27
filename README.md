@@ -25,8 +25,13 @@ Back Soon
 
 ----
 
-## GitAds Sponsored
-[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=guru322/guru-ai@github)](https://gitads.dev/v1/ad-track?source=guru322/guru-ai@github)
+## Star History
 
-
+<a href="https://www.star-history.com/#Guru322/GURU-Ai&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Guru322/GURU-Ai&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Guru322/GURU-Ai&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Guru322/GURU-Ai&type=Date" />
+ </picture>
+</a>
 
