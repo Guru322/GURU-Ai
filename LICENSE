@@ -1,0 +1,56 @@
+Custom License: GURU Ai License v1.1  
+
+Terms and Conditions for Use, Reproduction, and Distribution
+
+This license is based on the Apache License 2.0 but includes additional provisions to address concerns about misuse and proper attribution.  
+
+
+1. License Grant  
+Subject to the terms and conditions of this license, you are granted a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable license to use, reproduce, fork, and distribute the Work in source or object form.  
+
+
+2. Additional Conditions  
+
+2.1. Proper Credit  
+- All copies or substantial portions of the Work, whether modified or unmodified, must include clear, visible, and prominent attribution to the original author(s) and the project.  
+- Credit must appear in:
+  - Any README, documentation, or equivalent user-facing material.  
+- Credit text must include the project name, repository link, and author's name (e.g., "Project by Guru322. GitHub: https://github.com/Guru322").  
+
+2.2. No Concealment  
+- Credit attribution must not be hidden, minimized, or obfuscated. For example:
+  - No light-gray text on white backgrounds.
+  - No placement where it is unlikely to be noticed.  
+
+2.3. DMCA Enforcement and Revocation  
+- The license may be revoked if:
+  - You fail to provide proper attribution.
+  - You obfuscate or conceal credit.  
+- In cases of violation, the author reserves the right to issue DMCA takedown notices to enforce these terms.  
+
+2.4. No Obfuscation  
+- Redistribution of the Work must not include obfuscated or minified code unless the unobfuscated source code is also provided and publicly accessible.  
+
+2.5. Partial Use  
+- Any use of a portion of the Work, including individual functions, algorithms, or other identifiable segments of the codebase, is subject to the same terms and conditions as the entire Work.  
+- Proper credit must be provided for all parts of the Work, even if integrated into other projects or combined with other codebases.  
+- Partial use does not exempt the user from:
+  - Providing clear and visible attribution as specified in Section 2.1.
+  - Avoiding misuse as outlined in Section 2.3.
+  - Compliance with all other terms of this license.  
+
+
+3. Termination  
+This license is automatically terminated if you fail to comply with the terms outlined above. Upon termination, you must cease all use, distribution, and modification of the Work.  
+
+
+4. Disclaimer  
+As stated in the Apache License 2.0:  
+THIS SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  
+
+
+Copyright Notice  
+Copyright (C) 2024 Guru322  
+All Rights Reserved.  
+
+---  
