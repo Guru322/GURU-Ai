@@ -47,7 +47,7 @@
         "express": "^4.18.1",
         "figlet": "^1.7.0",
         "file-type": "^18.0.0",
-        "form-data": "^4.0.2",
+        "form-data": "^4.0.4",
         "fs": "0.0.1-security",
         "human-readable": "^0.2.1",
         "lodash": "^4.17.21",
