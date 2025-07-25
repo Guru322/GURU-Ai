@@ -23,7 +23,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       conversationHistory[userId] = []
     }
     
-    const apiUrl = 'https://llm.gurucharan.me/v1/chat/completions'
+    const apiUrl = 'https://gurusensei.dev/v1/chat/completions'
     
     const messages = [
       {
