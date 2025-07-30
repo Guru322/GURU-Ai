@@ -50,6 +50,7 @@ figlet(
 
 import rateLimit from 'express-rate-limit'
 const app = express()
+app.set('trust proxy', 1)
 const port = process.env.PORT || 5000
 
 const __filename = fileURLToPath(import.meta.url)

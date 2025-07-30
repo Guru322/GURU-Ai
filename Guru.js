@@ -120,7 +120,7 @@ const connectionOptions = {
     level: 'fatal',
   }),
   printQRInTerminal: false,
-  version: [2, 3000, 1023223821],
+  version: [2, 3000, 1025091846],
   browser: ["Ubuntu", "Chrome", "20.0.04"],
   auth: {
     creds: state.creds,
