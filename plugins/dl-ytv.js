@@ -20,7 +20,12 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     const streamUrl = `https://ironman.koyeb.app/ironman/dl/v2/ytmp4?url=${encodeURIComponent(args[0])}`;
     const videoId = extractVideoId(args[0]) || 'video';
     const filename = `${videoId}.mp4`;
-    await conn.sendFile(m.chat, streamUrl, filename, '', m, false, { mimetype: 'video/mp4' });
+    const message = {
+      video: { url: streamUrl },
+      mimetype: 'video/mp4',
+      fileName: filename
+    };
+    await conn.sendMessage(m.chat, message, { quoted: m });
   } catch (error) {
     console.error('Error in YouTube video download:', error);
     await m.reply(`❎ Error: Could not download the video. ${error.message}`);
